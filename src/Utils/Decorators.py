@@ -1,5 +1,6 @@
 from ..Object import *
 
+
 def aero(func):
     def wrapper(self, *args, **kwargs):
         if not isinstance(self.object, IAerodependent):
@@ -7,6 +8,7 @@ def aero(func):
 
         return func(self, *args, **kwargs)
     return wrapper
+
 
 def grav(func):
     def wrapper(self, *args, **kwargs):
