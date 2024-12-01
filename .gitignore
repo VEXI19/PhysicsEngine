@@ -1,0 +1,7 @@
+.pytest_cache
+/venv
+/Simulations
+/Configs
+.venv
+.vscode
+.idea

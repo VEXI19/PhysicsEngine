@@ -1,4 +1,4 @@
-from src import IObject, IGravitational, IEnvironment, PhysicsEngine
+from PhysicsEngine import IObject, IGravitational, IEnvironment, PhysicsEngine
 
 
 class Apple(IObject, IGravitational):

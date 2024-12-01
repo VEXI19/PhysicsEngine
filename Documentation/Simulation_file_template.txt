@@ -1,0 +1,12 @@
+This document explains the formatting of the data in the simulation files.
+
+The simulation files are in data format. The first row contains simulation configuration:
+- simulation set time step
+
+The rest of the rows contain the data for each time step:
+- simulation tick
+- simulation time
+- position
+- rotation
+- velocity
+- acceleration
