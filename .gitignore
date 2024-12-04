@@ -1,7 +1,9 @@
 .pytest_cache
+/.venv
 /venv
+/.env
+/env
 /Simulations
 /Configs
-.venv
 .vscode
 .idea
