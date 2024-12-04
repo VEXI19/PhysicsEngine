@@ -38,6 +38,7 @@ class PhysicsEngine:
         return resulting_force
 
     def compute_change(self, force: NDArray[np.float64]):
+        # TODO: metoda numeryczna
         acceleration: NDArray[np.float64] = force / self.object.mass
         velocity_change = self.object.velocity + acceleration * self.time_step
         position_change = self.object.position + velocity_change * self.time_step
