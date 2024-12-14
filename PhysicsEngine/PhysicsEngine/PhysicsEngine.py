@@ -5,6 +5,7 @@ import datetime
 from ..Object.IObject import IObject
 from ..Environment.IEnvironment import IEnvironment
 import progressbar
+from ..Utils.EulerAngles import transform_to_local, transform_to_global
 
 
 class PhysicsEngine:
@@ -31,21 +32,48 @@ class PhysicsEngine:
 
     def compute_force(self):
         resulting_force = np.array([0, 0, 0], dtype=float)
+        resulting_torque = np.array([0, 0, 0], dtype=float)
 
         for force in self.pipeline:
-            resulting_force += force(self.object, self.environment, self.simulation_time)
+            resulting_force += force(self.object, self.environment, self.simulation_time)[0]
+            resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
 
-        return resulting_force
+        return resulting_force, resulting_torque
 
-    def compute_change(self, force: NDArray[np.float64]):
-        # TODO: metoda numeryczna
-        acceleration: NDArray[np.float64] = force / self.object.mass
-        velocity_change = self.object.velocity + acceleration * self.time_step
-        position_change = self.object.position + velocity_change * self.time_step
+    def compute_relative_values(self, resulting_force: NDArray[np.float64], resulting_torque: NDArray[np.float64]):
+        # @VEXI19 - tutaj obliczamy predkosc wzgledna i przyspieszenie wzgledne dla algorytmu
+        relative_acceleration = resulting_force / self.object.mass
+        relative_velocity = transform_to_local(self.object.velocity, self.object.rotation) + relative_acceleration * self.time_step
 
-        self.object.position = position_change
-        self.object.velocity = velocity_change
-        self.object.acceleration = acceleration
+        return relative_velocity, relative_acceleration
+
+    def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
+
+        global_force = transform_to_global(force, self.object.rotation)
+        self.object.acceleration = global_force / self.object.mass
+        velocity_change = self.object.acceleration * self.time_step
+        position_change = velocity_change * self.time_step
+
+        self.object.velocity += velocity_change
+        self.object.position += position_change
+
+        self.object.angular_acceleration = np.linalg.inv(self.object.inertia_tensor) @ torque
+        self.object.angular_velocity += self.object.angular_acceleration * self.time_step
+
+        wx, wy, wz = self.object.angular_velocity
+        phi, theta, psi = self.object.rotation
+
+        dot_phi = wx + (np.tan(theta) * np.sin(phi) * wy + np.cos(phi) * wz)
+        dot_theta = np.cos(phi) * wy - np.sin(phi) * wz
+        dot_psi = np.sin(phi) / np.cos(theta) * wy + np.cos(phi) * wz
+
+        self.object.rotation[0] += dot_phi * self.time_step
+        self.object.rotation[1] += dot_theta * self.time_step
+        self.object.rotation[2] += dot_psi * self.time_step
+
+
+
+
 
     def save_data(self, data):
         if not os.path.exists(self.file_path):
@@ -68,8 +96,8 @@ class PhysicsEngine:
         while self.object.position[2] >= 0 and self.simulation_time < self.max_simulation_time:
             bar.update(self.simulation_tick)
 
-            resulting_force = self.compute_force()
-            self.compute_change(resulting_force)
+            resulting_force, resulting_torque = self.compute_force()
+            self.compute_change(resulting_force, resulting_torque)
             self.next_tick()
             self.save_data(f"{self.simulation_tick},{self.simulation_time},{self.object.get_data()}")
 

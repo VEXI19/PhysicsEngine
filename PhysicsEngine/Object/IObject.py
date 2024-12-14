@@ -5,11 +5,19 @@ from numpy.typing import NDArray
 
 
 class IObject(ABC):
-    def __init__(self, position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity: NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None):
+    def __init__(self, mass: float = 1, length: float = 1,
+                 radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
+    NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
         self.position = position
         self.rotation = rotation
         self.velocity = velocity
         self.acceleration = acceleration
+        self.angular_velocity = angular_velocity
+        self.angular_acceleration = angular_acceleration
+        self.mass = mass
+        self._length = length
+        self._radius = radius
+        self._inertia_tensor = self.calculate_inertia_tensor()
 
     @property
     def position(self):
@@ -45,6 +53,28 @@ class IObject(ABC):
         self._acceleration = acceleration
 
     @property
+    def angular_velocity(self):
+        return self._angular_velocity
+
+    @angular_velocity.setter
+    def angular_velocity(self, angular_velocity: NDArray[np.float64]):
+        if angular_velocity is None:
+            angular_velocity = np.array([0, 0, 0], dtype=np.float64)
+
+        self._angular_velocity = angular_velocity
+
+    @property
+    def angular_acceleration(self):
+        return self._angular_acceleration
+
+    @angular_acceleration.setter
+    def angular_acceleration(self, angular_acceleration: NDArray[np.float64]):
+        if angular_acceleration is None:
+            angular_acceleration = np.array([0, 0, 0], dtype=np.float64)
+
+        self._angular_acceleration = angular_acceleration
+
+    @property
     def velocity(self):
         return self._velocity
 
@@ -54,6 +84,34 @@ class IObject(ABC):
             velocity = np.array([0, 0, 0], dtype=np.float64)
 
         self._velocity = velocity
+
+    @property
+    def mass(self):
+        return self._mass
+
+    @mass.setter
+    def mass(self, mass):
+        self._mass = mass
+
+    @property
+    def length(self):
+        return self._length
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @property
+    def inertia_tensor(self):
+        return self._inertia_tensor
+
+    def calculate_inertia_tensor(self):
+        Ix = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.length ** 2)
+        Iy = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.length ** 2)
+        Iz = 1 / 2 * self.mass * self.radius ** 2
+        return np.array([[Ix, 0, 0],
+                         [0, Iy, 0],
+                         [0, 0, Iz]])
 
     def update(self, position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity: NDArray[np.float64] = None):
         if position is not None:
