@@ -1,6 +1,3 @@
-from PyQt5 import QtWidgets
-import sys
-
 from PyQt5.QtGui import QIcon
 
 from PhysicsEngine import MainWindow
@@ -18,5 +15,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
