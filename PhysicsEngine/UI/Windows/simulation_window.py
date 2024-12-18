@@ -1,68 +1,35 @@
+import math
+import os
+
+import trimesh
 from PyQt5 import QtCore, QtWidgets
 import pyqtgraph as pg
 import pyqtgraph.opengl as gl
 import numpy as np
-import pandas as pd
-from .Timer import TimeLine
+from pyqtgraph.opengl import GLMeshItem
+
+from PhysicsEngine.UI.Services.Timer import TimeLine
+from PyQt5.QtCore import Qt
+from PhysicsEngine.Utils import calculate_vector_magnitude
+from ..Models import SimulationData
+from ..Widgets.text_box import TextBox
 
 
-class FlightData:
-    def __init__(self, file_path):
-        print(f"Reading data from file {file_path}")
-        self.read_data(file_path)
-        print("Data read successfully")
-
-    @property
-    def time_step(self):
-        return self._time_step
-
-    @property
-    def position_data(self):
-        return self._positions
-
-    @property
-    def velocity_data(self):
-        return self._velocities
-
-    @property
-    def acceleration_data(self):
-        return self._accelerations
-
-    @property
-    def starting_position(self):
-        return self._starting_position
-
-    @property
-    def data_points(self):
-        return self._data_points
-
-    def read_data(self, file_path):
-        with open(file_path, 'r') as file:
-            # reads first line with configuration information
-            self._time_step = float(file.readline().strip())
-
-            # reads simulation data
-            data = pd.read_csv(file_path, skiprows=1)
-            self._positions = np.column_stack([data['pos_x'], data['pos_y'], data['pos_z']])
-            self._velocities = np.array([data['vel_x'], data['vel_y'], data['vel_z']])
-            self._accelerations = np.array([data['acc_x'], data['acc_y'], data['acc_z']])
-            self._data_points = len(self._positions)
-            self._starting_position = self._positions[0]
-
-
-
-class Gui(QtWidgets.QWidget):
-    def __init__(self, file_path: str, camera_distance: int = 50):
+class SimulationWindow(QtWidgets.QWidget):
+    def __init__(self, file_path: str, camera_distance: int = 10):
         super().__init__()
+
+        self.base_path = os.path.dirname(__file__)
 
         # CONFIG
         self.camera_distance = camera_distance
 
         # WINDOW SETUP
-        self.setWindowTitle("Rocket flight visualization")
+        self.setWindowTitle("Simulation Window")
+        self.setWindowState(Qt.WindowMaximized)
 
         # DATA SETUP
-        self.sim_data = FlightData(file_path)
+        self.sim_data = SimulationData(file_path)
         # WIDGETS
         # 3D View
         self.view = gl.GLViewWidget()
@@ -72,43 +39,30 @@ class Gui(QtWidgets.QWidget):
         self.view.addItem(grid)
 
         # Change color and size of rocket point (make it larger and different color)
-        self.rocket_point = gl.GLScatterPlotItem(pos=np.array([[0, 0, 0]]), color=(1, 0, 0, 1),
-                                                 size=10)  # Adjusted size
+        # self.rocket_point = gl.GLScatterPlotItem(pos=np.array([[0, 0, 0]]), color=(1, 0, 0, 1),
+        #                                          size=10)  # Adjusted size
+        self.rocket = self.load_model(os.path.join(self.base_path, "rocket.obj"))
+        self.rocket_position = np.array([0, 0, 0])
         self.trajectory_line = gl.GLLinePlotItem(pos=np.array([[0, 0, 0]]), color=(0, 0, 1, 1), width=2)
-        self.view.addItem(self.rocket_point)
+        # self.view.addItem(self.rocket_point)
         self.view.addItem(self.trajectory_line)
+        self.view.addItem(self.rocket)
 
-        # Overlay Graphics View for displaying text on top of GLViewWidget
-        self.overlay_view = QtWidgets.QGraphicsView(self)
-        self.overlay_scene = QtWidgets.QGraphicsScene(self.overlay_view)
-        self.overlay_view.setScene(self.overlay_scene)
-        self.overlay_view.setStyleSheet("background: black; border: none")
-        self.overlay_view.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-
-        # Adding text to the overlay
-        self.text_item = QtWidgets.QGraphicsTextItem("Time: 0.00 s")
-        self.text_item.setDefaultTextColor(QtCore.Qt.white)  # Set text color
-        # self.text_item.setFont(QtWidgets.QFont("Arial", 16))  # Set font size and style
-        self.overlay_scene.addItem(self.text_item)
-        self.text_item.setPos(10, 10)  # Top-left corner
+        self.data_box = TextBox()
+        self.data_box.add_text_widget("time", "Time: 0 s")
+        self.data_box.add_text_widget("altitude", "Altitude: 0 m")
+        self.data_box.add_text_widget("velocity", "Velocity: 0 m/s")
+        self.data_box.add_text_widget("acceleration", "Acceleration: 0 m/s^2")
 
         # Layouts
         layout = QtWidgets.QHBoxLayout(self)
-
-
-        # 2D Plot Layout (for extra graphs)
         graph_layout = QtWidgets.QVBoxLayout()
 
-        text_layout = QtWidgets.QVBoxLayout()
-        text_layout.addWidget(self.overlay_view)
 
-        layout.addLayout(text_layout)  # Overlay text
-
-        layout_3d = QtWidgets.QVBoxLayout()
-        layout_3d.addWidget(self.view)
+        layout.addWidget(self.data_box)
         layout.addWidget(self.view, 2)
-
         layout.addLayout(graph_layout, 1)  # Side graphs
+
         self.setLayout(layout)
 
         # Data graphs
@@ -142,6 +96,52 @@ class Gui(QtWidgets.QWidget):
         # Sync slider with animation
         self._timeline.frameChanged.connect(self.sync_slider_with_animation)
 
+    def load_model(self, model_path):
+        """Loads a 3D model using trimesh and adds its components to the scene."""
+        try:
+            # Load the 3D model
+            mesh = trimesh.load(model_path)
+
+            if isinstance(mesh, trimesh.Scene):
+                # 1. Get all meshes in the scene
+                meshes = list(mesh.geometry.values())
+
+                # 2. Combine meshes into a single mesh
+                mesh = trimesh.util.concatenate(meshes)
+
+            # 3. Get the bounding box (used for translation and scaling)
+            min_bound, max_bound = mesh.bounds  # This combines the bounds of the combined mesh
+
+            # 4. Translate to center at (0, 0, 0)
+            scene_center = (min_bound + max_bound) / 2
+            mesh.apply_translation(-scene_center)  # Translate the combined mesh
+
+            # 6. Scale the combined mesh to a desired height (for example, height = 0.5)
+            current_height = max_bound[2] - min_bound[2]  # Height along z-axis
+            desired_height = 0.5
+            scale_factor = desired_height / current_height
+
+            # Apply the scale to the combined mesh
+            mesh.apply_scale(scale_factor)
+
+            vertices = np.array(mesh.vertices, dtype=np.float32)
+            faces = np.array(mesh.faces, dtype=np.int32)
+
+            # Create the GLMeshItem
+            mesh_item = GLMeshItem(
+                vertexes=vertices,
+                faces=faces,
+                smooth=True,  # Enable smooth shading
+                color=(1, 1, 1, 1),  # RGBA color for the model
+                # drawEdges=True  # Draw edges for better visibility
+            )
+            mesh_item.setGLOptions('opaque')
+
+            return mesh_item
+
+        except Exception as e:
+            print(f"Error loading model: {e}")
+
     def add_plot(self, parent, title: str, x_label: str, y_label: str, pen: str | list[str], name: str | list[str],
                  legend: bool = True):
         plot = pg.PlotWidget(title=title)
@@ -164,8 +164,12 @@ class Gui(QtWidgets.QWidget):
     @QtCore.pyqtSlot(int)
     def update_trajectory(self, i):
         # Update rocket point position (change it to the current position)
-        self.rocket_point.setData(pos=np.array([self.sim_data.position_data[i]]))  # Update rocket position
+        # self.rocket_point.setData(pos=np.array([self.sim_data.position_data[i]]))  # Update rocket position
         self.trajectory_line.setData(pos=self.sim_data.position_data[:i + 1])  # Update trajectory
+        translate_matrix = self.sim_data.position_data[i] - self.rocket_position
+        self.rocket_position = self.sim_data.position_data[i]
+        self.rocket.translate(translate_matrix[0], translate_matrix[1], translate_matrix[2])
+
 
         # Update velocity and acceleration graphs
         self.velocity_curve_dict["Velocity X"].setData(self.sim_data.velocity_data[0][:i + 1])
@@ -178,9 +182,35 @@ class Gui(QtWidgets.QWidget):
 
         self.altitude_curve.setData(self.sim_data.position_data[:i + 1, 2])
 
+        self.update_camera_position(i)
+
         # Update time text
         current_time = i * self.sim_data.time_step
-        self.text_item.setPlainText(f"Time: {current_time:.2f} s")
+        current_velocity = calculate_vector_magnitude(self.sim_data.velocity_data[:, i])
+        current_altitude = self.sim_data.position_data[i, 2]
+        current_acceleration = calculate_vector_magnitude(self.sim_data.acceleration_data[:, i])
+
+        text_dict: dict = {
+            "time": f"Time: {current_time:.2f} s",
+            "velocity": f"Velocity: {current_velocity:.2f} m/s",
+            "acceleration": f"Acceleration: {current_acceleration:.2f} m/s",
+            "altitude": f"Altitude: {current_altitude:.2f} m",
+        }
+
+        self.data_box.update_multiple_widgets(text_dict)
+
+    def update_camera_position(self, tick: int):
+        obj_position = np.array(self.sim_data.position_data[tick])
+        obj_position[2] = obj_position[2] / 2
+        pos = pg.Vector(*obj_position)
+
+        distance = int(self.camera_distance)
+        computed = (obj_position[2]) / math.tan(math.radians(45))
+        print(distance, computed)
+        if computed > distance:
+            distance = computed
+
+        self.view.setCameraPosition(pos=pos, distance=distance, rotation=pg.Vector(0,0,0,False))
 
     def sync_slider_with_animation(self, frame):
         self.slider.setValue(frame)
