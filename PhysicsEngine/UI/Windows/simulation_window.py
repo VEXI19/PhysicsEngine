@@ -182,7 +182,7 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.altitude_curve.setData(self.sim_data.position_data[:i + 1, 2])
 
-        self.update_camera_position(i)
+        # self.update_camera_position(i)
 
         # Update time text
         current_time = i * self.sim_data.time_step
@@ -210,7 +210,7 @@ class SimulationWindow(QtWidgets.QWidget):
         if computed > distance:
             distance = computed
 
-        self.view.setCameraPosition(pos=pos, distance=distance, rotation=pg.Vector(0,0,0,False))
+        self.view.setCameraPosition(pos=pos, distance=distance)
 
     def sync_slider_with_animation(self, frame):
         self.slider.setValue(frame)
