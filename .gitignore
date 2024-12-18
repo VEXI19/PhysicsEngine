@@ -5,5 +5,7 @@
 /env
 /Simulations
 /Configs
+/build
+/dist
 .vscode
 .idea
