@@ -31,14 +31,17 @@ class PhysicsEngine:
         self.pipeline = np.append(self.pipeline, force)
 
     def compute_force(self):
+        """
+        Function to compute resulting force and torque
+        @param: None
+        @return: None
+        """
         resulting_force = np.array([0, 0, 0], dtype=float)
         resulting_torque = np.array([0, 0, 0], dtype=float)
 
         for force in self.pipeline:
             resulting_force += force(self.object, self.environment, self.simulation_time)[0]
             resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
-
-        #print(f"Force: {resulting_force}, Torque: {resulting_torque}")
 
         return resulting_force, resulting_torque
 
@@ -50,7 +53,13 @@ class PhysicsEngine:
         return relative_velocity, relative_acceleration
 
     def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
-        print(f"Force: {force}")
+        """
+        Function to compute change in position, velocity, rotation and angular velocity
+        @param force: global force
+        @param torque: local torque
+
+        @return: None
+        """
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
         velocity_change = self.object.acceleration * self.time_step

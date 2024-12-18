@@ -6,7 +6,9 @@ from numpy.typing import NDArray
 class IThrust(ABC):
 
     def __init__(self, cot, engine_angle: NDArray[np.float64] = None):
-        """ @param cot: Center of Thrust, a distance in z axis from the center of mass of the object."""
+        """ @param cot: Center of Thrust, a distance in z axis from the center of mass of the rocket.
+            @param engine_angle: The angle of the engine relative to the local
+            frame of the rocket."""
         self._cot = cot
         self.engine_angle = engine_angle
 
