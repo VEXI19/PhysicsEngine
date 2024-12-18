@@ -8,7 +8,7 @@ class Rocket(IObject, IThrust):
         #IAerodependent.__init__(self)
 
     def mass_flow_rate(self, time: float) -> float:
-        return 1.2 if time < 10 else 0
+        return 1.4 if time < 10 else 0
 
     def exhaust_velocity(self, time: float) -> float:
         return 9

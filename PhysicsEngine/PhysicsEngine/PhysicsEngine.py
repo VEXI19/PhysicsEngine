@@ -38,6 +38,8 @@ class PhysicsEngine:
             resulting_force += force(self.object, self.environment, self.simulation_time)[0]
             resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
 
+        #print(f"Force: {resulting_force}, Torque: {resulting_torque}")
+
         return resulting_force, resulting_torque
 
     def compute_relative_values(self, resulting_force: NDArray[np.float64], resulting_torque: NDArray[np.float64]):
@@ -48,7 +50,7 @@ class PhysicsEngine:
         return relative_velocity, relative_acceleration
 
     def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
-
+        print(f"Force: {force}")
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
         velocity_change = self.object.acceleration * self.time_step
