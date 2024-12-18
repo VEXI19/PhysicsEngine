@@ -41,7 +41,7 @@ class PhysicsEngine:
         return resulting_force, resulting_torque
 
     def compute_relative_values(self, resulting_force: NDArray[np.float64], resulting_torque: NDArray[np.float64]):
-        # @VEXI19 - tutaj obliczamy predkosc wzgledna i przyspieszenie wzgledne dla algorytmu
+        # TODO @VEXI19 - tutaj obliczamy predkosc wzgledna i przyspieszenie wzgledne dla algorytmu
         relative_acceleration = resulting_force / self.object.mass
         relative_velocity = transform_to_local(self.object.velocity, self.object.rotation) + relative_acceleration * self.time_step
 
@@ -70,10 +70,6 @@ class PhysicsEngine:
         self.object.rotation[0] += dot_phi * self.time_step
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
-
-
-
-
 
     def save_data(self, data):
         if not os.path.exists(self.file_path):

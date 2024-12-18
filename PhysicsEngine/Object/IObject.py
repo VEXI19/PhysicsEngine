@@ -8,12 +8,18 @@ class IObject(ABC):
     def __init__(self, mass: float = 1, length: float = 1,
                  radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
     NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        # GLOBAL
         self.position = position
-        self.rotation = rotation
         self.velocity = velocity
         self.acceleration = acceleration
+
+        # LOCAL
         self.angular_velocity = angular_velocity
         self.angular_acceleration = angular_acceleration
+        self.rotation = rotation
+
+        # NA
         self.mass = mass
         self._length = length
         self._radius = radius
