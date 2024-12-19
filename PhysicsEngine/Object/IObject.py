@@ -3,15 +3,18 @@ from abc import ABC
 
 import trimesh
 
-from ..Types import Vector3
 import numpy as np
 from numpy.typing import NDArray
+
+from PhysicsEngine.Config import Config
 
 
 class IObject(ABC):
     def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
                  radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
     NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        self.config = Config()
 
         self.name = name
 
@@ -32,7 +35,6 @@ class IObject(ABC):
         self._inertia_tensor = self.calculate_inertia_tensor()
 
         self.object_model = self.load_model(object_model_path)
-        self._reference_area = self.calculate_reference_area()
 
     def load_model(self, object_model_path):
         """Loads a 3D model using trimesh and adds its components to the scene."""
@@ -46,9 +48,11 @@ class IObject(ABC):
 
             min_bound, max_bound = mesh.bounds
 
-            # moves model to the center of a scene
-            scene_center = (min_bound + max_bound) / 2
-            mesh.apply_translation(-scene_center)
+            # centers model and puts the bottom part on the ground
+            bottom_center_translation = -min_bound  # Align bottom face to z=0
+            bottom_center_translation[0] -= (max_bound[0] - min_bound[0]) / 2  # Center x-axis
+            bottom_center_translation[1] -= (max_bound[1] - min_bound[1]) / 2  # Center y-axis
+            mesh.apply_translation(bottom_center_translation)
 
             # scales model
             current_height = max_bound[2] - min_bound[2]
@@ -59,23 +63,6 @@ class IObject(ABC):
 
         except Exception as e:
             print(f"Error loading model: {e}")
-
-    def calculate_reference_area(self):
-        reference_area = 0
-
-        for face in self.object_model.faces:
-            vertices = self.object_model.vertices[face]
-
-            projected_vertices = vertices[:, :2]
-
-            x = projected_vertices[:, 0]
-            y = projected_vertices[:, 1]
-
-            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
-
-            reference_area += area
-
-        return reference_area
 
     # def calculate_diameter(self):
     #     # Define a plane equation for slicing along the z-axis
@@ -99,8 +86,21 @@ class IObject(ABC):
     #         return None
 
     @property
-    def reference_area(self):
-        return self._reference_area
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        simulations_path = self.config["SIMULATION"]["simulation_files_folder_path"]
+        approved: str = ""
+        if os.path.exists(simulations_path) and value in os.listdir(simulations_path):
+            while approved.lower() != "y" and approved.lower() != "n":
+                approved: str = input("Simulation with that name already exists, do you want to overwrite it? (y/n)")
+
+            if approved.lower() == "n":
+                exit(0)
+
+        self._name = value
 
     @property
     def position(self):

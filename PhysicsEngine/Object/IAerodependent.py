@@ -4,7 +4,6 @@ from numpy.typing import NDArray
 
 
 class IAerodependent(ABC):
-
     def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] = None):
         """ @param cop: Center of Pressure, a distance in z axis from the center of mass of the rocket.
             @param angle_of_attack: The angle between the rocket and the airflow.
@@ -12,8 +11,15 @@ class IAerodependent(ABC):
         self._cop = cop
         self.angle_of_attack = angle_of_attack
         self.relative_velocity = relative_velocity
+        self._reference_area = self.calculate_reference_area()
 
+        if not isinstance(self, IObject):
+            raise RuntimeError("Object needs to extend IObject to be IAerodependent")
 
+    @property
+    def reference_area(self):
+        return self._reference_area
+            
     @property
     def cop(self):
         return self._cop
@@ -44,6 +50,24 @@ class IAerodependent(ABC):
     def reference_area(self, alpha: float = None) -> float:
         raise NotImplementedError
 
+
     @abstractmethod
     def drag_coefficient(self, alpha: float = None) -> float:
         raise NotImplementedError
+
+    def calculate_reference_area(self: IObject):
+        reference_area = 0
+
+        for face in self.object_model.faces:
+            vertices = self.object_model.vertices[face]
+
+            projected_vertices = vertices[:, :2]
+
+            x = projected_vertices[:, 0]
+            y = projected_vertices[:, 1]
+
+            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+
+            reference_area += area
+
+        return reference_area
