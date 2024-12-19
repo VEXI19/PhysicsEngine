@@ -89,12 +89,12 @@ class SimulationWindow(QtWidgets.QWidget):
         self.setLayout(layout)
 
         # Data graphs
-        self.velocity_curve_dict = self.add_plot(graph_layout, "Velocity", "Time", "Velocity", ["r", "g", "b"],
+        self.velocity_curve_dict = self.add_plot(graph_layout, "Velocity", "Time [s]", "Velocity [m/s]", ["r", "g", "b"],
                                                  ["Velocity X", "Velocity Y", "Velocity Z"])
-        self.acceleration_curve_dict = self.add_plot(graph_layout, "Acceleration", "Time", "Acceleration",
+        self.acceleration_curve_dict = self.add_plot(graph_layout, "Acceleration", "Time [s]", "Acceleration [m/s^2]",
                                                      ["r", "g", "b"],
                                                      ["Acceleration X", "Acceleration Y", "Acceleration Z"])
-        self.altitude_curve = self.add_plot(graph_layout, "Altitude", "Time", "Altitude", "r", "Altitude")
+        self.altitude_curve = self.add_plot(graph_layout, "Altitude", "Time [s]", "Altitude [m]", "r", "Altitude")
 
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
@@ -138,24 +138,24 @@ class SimulationWindow(QtWidgets.QWidget):
 
     @QtCore.pyqtSlot(int)
     def update_trajectory(self, i):
-        # Update rocket point position (change it to the current position)
-        # self.rocket_point.setData(pos=np.array([self.sim_data.position_data[i]]))  # Update rocket position
-        self.trajectory_line.setData(pos=self.sim_data.position_data[:i + 1])  # Update trajectory
+        plot_time_axes = list(map(lambda x: x * self.sim_data.time_step, range(i)))
+
+        self.trajectory_line.setData(pos=self.sim_data.position_data[:i])
         translate_matrix = self.sim_data.position_data[i] - self.object_position
         self.object_position = self.sim_data.position_data[i]
         self.object_mesh_item.translate(translate_matrix[0], translate_matrix[1], translate_matrix[2])
 
 
         # Update velocity and acceleration graphs
-        self.velocity_curve_dict["Velocity X"].setData(self.sim_data.velocity_data[0][:i + 1])
-        self.velocity_curve_dict["Velocity Y"].setData(self.sim_data.velocity_data[1][:i + 1])
-        self.velocity_curve_dict["Velocity Z"].setData(self.sim_data.velocity_data[2][:i + 1])
+        self.velocity_curve_dict["Velocity X"].setData(plot_time_axes, self.sim_data.velocity_data[0][:i])
+        self.velocity_curve_dict["Velocity Y"].setData(plot_time_axes, self.sim_data.velocity_data[1][:i])
+        self.velocity_curve_dict["Velocity Z"].setData(plot_time_axes, self.sim_data.velocity_data[2][:i])
 
-        self.acceleration_curve_dict["Acceleration X"].setData(self.sim_data.acceleration_data[0][:i + 1])
-        self.acceleration_curve_dict["Acceleration Y"].setData(self.sim_data.acceleration_data[1][:i + 1])
-        self.acceleration_curve_dict["Acceleration Z"].setData(self.sim_data.acceleration_data[2][:i + 1])
+        self.acceleration_curve_dict["Acceleration X"].setData(plot_time_axes, self.sim_data.acceleration_data[0][:i])
+        self.acceleration_curve_dict["Acceleration Y"].setData(plot_time_axes, self.sim_data.acceleration_data[1][:i])
+        self.acceleration_curve_dict["Acceleration Z"].setData(plot_time_axes, self.sim_data.acceleration_data[2][:i])
 
-        self.altitude_curve.setData(self.sim_data.position_data[:i+1, 2])
+        self.altitude_curve.setData(plot_time_axes, self.sim_data.position_data[:i, 2])
 
         # self.update_camera_position(i)
 
