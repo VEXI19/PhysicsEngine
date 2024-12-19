@@ -6,11 +6,15 @@ import trimesh
 import numpy as np
 from numpy.typing import NDArray
 
+from PhysicsEngine.Config import Config
+
 
 class IObject(ABC):
     def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
                  radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
     NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        self.config = Config()
 
         self.name = name
 
@@ -102,6 +106,23 @@ class IObject(ABC):
     @property
     def reference_area(self):
         return self._reference_area
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        simulations_path = self.config["SIMULATION"]["simulation_files_folder_path"]
+        approved: str = ""
+        if os.path.exists(simulations_path) and value in os.listdir(simulations_path):
+            while approved.lower() != "y" and approved.lower() != "n":
+                approved: str = input("Simulation with that name already exists, do you want to overwrite it? (y/n)")
+
+            if approved.lower() == "n":
+                exit(0)
+
+        self._name = value
 
     @property
     def position(self):
