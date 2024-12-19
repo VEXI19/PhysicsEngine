@@ -4,6 +4,7 @@ import os
 import datetime
 
 from ..Config import Config
+from ..Object import IAerodependent
 from ..Object.IObject import IObject
 from ..Environment.IEnvironment import IEnvironment
 import progressbar
@@ -56,6 +57,25 @@ class PhysicsEngine:
 
         return relative_velocity, relative_acceleration
 
+    def calculate_angle_of_attack(self):
+        """
+        Function to calculate angle of attack
+        @param: None
+        @return: angle of attack
+        """
+        object_velocity = self.object.velocity
+        wind_velocity = self.environment.get_wind()
+        relative_velocity = object_velocity - wind_velocity
+        relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
+
+        reference_axis_local = np.array([0, 0, 1], dtype=float)
+        reference_axis_global = transform_to_global(reference_axis_local, self.object.rotation)
+
+        cos_theta = np.dot(relative_velocity_unit, reference_axis_global)
+        angle_of_attack = np.arccos(np.clip(cos_theta, -1.0, 1.0))
+
+        return angle_of_attack
+
     def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
         """
         Function to compute change in position, velocity, rotation and angular velocity
@@ -72,6 +92,12 @@ class PhysicsEngine:
         position_change = self.object.velocity * self.time_step
         self.object.position += position_change
 
+        if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
+            self.object.angle_of_attack = self.calculate_angle_of_attack()
+            self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
+
+        # obliczanie przyspieszenia katowego
+
         self.object.angular_acceleration = np.linalg.inv(self.object.inertia_tensor) @ torque
         self.object.angular_velocity += self.object.angular_acceleration * self.time_step
 
@@ -85,6 +111,7 @@ class PhysicsEngine:
         self.object.rotation[0] += dot_phi * self.time_step
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
+
 
     def save_data(self, data):
         path = os.path.join(self.file_path, self.object.name, "Simulations")
