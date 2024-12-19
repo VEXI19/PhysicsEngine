@@ -1,7 +1,7 @@
 import os
 
 from Configs.Rockets.gravity_thrust import Rocket
-from Configs.Environments.environment_1 import Environment
+from Configs.Environments.environment_1 import Environment1
 from PhysicsEngine import PhysicsEngine, Forces
 import pickle
 
@@ -20,7 +20,7 @@ def save(instance, path, file_name):
 
 
 object = Rocket()
-environment = Environment(1, 1, 20, 1, [1, 1, 1], [1, 1, 1])
+environment = Environment1()
 physics_engine = PhysicsEngine(object, environment, 0.1)
 
 physics_engine.add_force(Forces.gravity)
