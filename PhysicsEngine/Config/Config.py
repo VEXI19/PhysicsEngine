@@ -30,7 +30,7 @@ class Config:
     def restore_to_default(self):
         config = ConfigParser()
 
-        config["UI"] = {
+        config["SIMULATION"] = {
             "simulation_files_folder_path": "./Simulations/",
         }
 

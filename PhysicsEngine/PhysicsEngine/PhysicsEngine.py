@@ -2,6 +2,8 @@ import numpy as np
 from numpy.typing import NDArray
 import os
 import datetime
+
+from ..Config import Config
 from ..Object.IObject import IObject
 from ..Environment.IEnvironment import IEnvironment
 import progressbar
@@ -9,14 +11,16 @@ from ..Utils.EulerAngles import transform_to_local, transform_to_global
 
 
 class PhysicsEngine:
-    def __init__(self, object: IObject, environment: IEnvironment, time_step: float, max_simulation_time: float = 100.0, file_path: str = "./Simulations", file_name: str = "simulation"):
+    def __init__(self, object: IObject, environment: IEnvironment, time_step: float, max_simulation_time: float = 100.0, file_name: str = "simulation"):
+        self.config = Config()
+
         self.object: IObject = object
         self.environment: IEnvironment = environment
         self.time_step: float = time_step
         self.pipeline: NDArray = np.array([])
         self.simulation_time: float = 0
         self.simulation_tick: int = 0
-        self.file_path: str = file_path
+        self.file_path: str = self.config["SIMULATION"]["simulation_files_folder_path"]
         self.file_name: str = file_name
         self.max_simulation_time: float = max_simulation_time
 
@@ -83,10 +87,12 @@ class PhysicsEngine:
         self.object.rotation[2] += dot_psi * self.time_step
 
     def save_data(self, data):
-        if not os.path.exists(self.file_path):
-            os.makedirs(self.file_path)
+        path = os.path.join(self.file_path, self.object.name, "Simulations")
 
-        with open(f"{self.file_path}/{self.file_name}", "a") as file:
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+        with open(f"{path}/{self.file_name}", "a") as file:
             file.write(f"{data}\n")
 
     def start(self):

@@ -23,7 +23,7 @@ class FilePicker(QWidget):
         self.layout.addLayout(self.file_buttons_layout)
 
     def populate_view(self):
-        folder_path = self.parent.current_simulation_directory
+        folder_path = os.path.join(self.parent.current_simulation_directory, "Simulations")
         self.no_directory_label.setText("")
 
         # Clear existing buttons

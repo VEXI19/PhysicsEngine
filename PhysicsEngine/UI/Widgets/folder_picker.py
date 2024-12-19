@@ -24,7 +24,7 @@ class FolderPicker(QWidget):
         self.no_directory_label.setObjectName("error")
         self.layout.addWidget(self.no_directory_label)
 
-        self.folder_path = self.config["UI"]["simulation_files_folder_path"]
+        self.folder_path = self.config["SIMULATION"]["simulation_files_folder_path"]
         self.populate_view()
 
     def populate_view(self):

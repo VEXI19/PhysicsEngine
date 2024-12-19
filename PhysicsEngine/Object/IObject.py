@@ -1,13 +1,19 @@
+import os
 from abc import ABC
+
+import trimesh
+
 from ..Types import Vector3
 import numpy as np
 from numpy.typing import NDArray
 
 
 class IObject(ABC):
-    def __init__(self, mass: float = 1, length: float = 1,
+    def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
                  radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
     NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        self.name = name
 
         # GLOBAL
         self.position = position
@@ -21,9 +27,80 @@ class IObject(ABC):
 
         # NA
         self.mass = mass
-        self._length = length
+        self._height = height
         self._radius = radius
         self._inertia_tensor = self.calculate_inertia_tensor()
+
+        self.object_model = self.load_model(object_model_path)
+        self._reference_area = self.calculate_reference_area()
+
+    def load_model(self, object_model_path):
+        """Loads a 3D model using trimesh and adds its components to the scene."""
+        try:
+            mesh = trimesh.load(object_model_path)
+
+            if isinstance(mesh, trimesh.Scene):
+                meshes = list(mesh.geometry.values())
+
+                mesh = trimesh.util.concatenate(meshes)
+
+            min_bound, max_bound = mesh.bounds
+
+            # moves model to the center of a scene
+            scene_center = (min_bound + max_bound) / 2
+            mesh.apply_translation(-scene_center)
+
+            # scales model
+            current_height = max_bound[2] - min_bound[2]
+            scale_factor = self.height / current_height
+            mesh.apply_scale(scale_factor)
+
+            return mesh
+
+        except Exception as e:
+            print(f"Error loading model: {e}")
+
+    def calculate_reference_area(self):
+        reference_area = 0
+
+        for face in self.object_model.faces:
+            vertices = self.object_model.vertices[face]
+
+            projected_vertices = vertices[:, :2]
+
+            x = projected_vertices[:, 0]
+            y = projected_vertices[:, 1]
+
+            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+
+            reference_area += area
+
+        return reference_area
+
+    # def calculate_diameter(self):
+    #     # Define a plane equation for slicing along the z-axis
+    #     # This plane will be of the form z = z_value
+    #
+    #     # Create a slicing plane (normal to the z-axis)
+    #     plane_normal = np.array([0, 0, 1])
+    #     plane_origin = np.array([0, 0, 0.2])  # The slicing plane at z = z_value
+    #
+    #     # Slice the 3D object using the plane
+    #     section = self.object_model.section(plane_origin=plane_origin, plane_normal=plane_normal)
+    #
+    #     # Check if the object has an intersection with the slicing plane
+    #     if section:
+    #         # Create a 2D mesh or path from the section
+    #         # section_mesh = trimesh.Trimesh(vertices=section.vertices)
+    #         slice_2d: trimesh.path.Path2D = section.to_planar()[0]
+    #         return slice_2d.length
+    #     else:
+    #         print(f"No intersection found with the plane at z =")
+    #         return None
+
+    @property
+    def reference_area(self):
+        return self._reference_area
 
     @property
     def position(self):
@@ -100,8 +177,8 @@ class IObject(ABC):
         self._mass = mass
 
     @property
-    def length(self):
-        return self._length
+    def height(self):
+        return self._height
 
     @property
     def radius(self):
@@ -112,8 +189,8 @@ class IObject(ABC):
         return self._inertia_tensor
 
     def calculate_inertia_tensor(self):
-        Ix = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.length ** 2)
-        Iy = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.length ** 2)
+        Ix = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.height ** 2)
+        Iy = 1 / 12 * self.mass * (3 * self.radius ** 2 + self.height ** 2)
         Iz = 1 / 2 * self.mass * self.radius ** 2
         return np.array([[Ix, 0, 0],
                          [0, Iy, 0],
