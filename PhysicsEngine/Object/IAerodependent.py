@@ -2,10 +2,12 @@ from abc import ABC, abstractmethod
 import numpy as np
 from numpy.typing import NDArray
 from .IObject import IObject
+from ..Utils.Constants import Constants as C
 
 
 class IAerodependent(ABC):
-    def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] = None):
+    def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] =
+    None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value):
         """ @param cop: Center of Pressure, a distance in z axis from the center of mass of the rocket.
             @param angle_of_attack: The angle between the rocket and the airflow.
             @param relative_velocity: The relative velocity of the rocket and the airflow."""
@@ -13,6 +15,7 @@ class IAerodependent(ABC):
         self.angle_of_attack = angle_of_attack
         self.relative_velocity = relative_velocity
         self._reference_area = self.calculate_reference_area()
+        self.drag_coefficient = drag_coefficient
 
         if not isinstance(self, IObject):
             raise RuntimeError("Object needs to extend IObject to be IAerodependent")
@@ -47,14 +50,14 @@ class IAerodependent(ABC):
 
         self._relative_velocity = relative_velocity
 
-    @abstractmethod
-    def reference_area(self, alpha: float = None) -> float:
-        raise NotImplementedError
+    @property
+    def drag_coefficient(self):
+        return self._drag_coefficient
 
+    @drag_coefficient.setter
+    def drag_coefficient(self, drag_coefficient: float):
 
-    @abstractmethod
-    def drag_coefficient(self, alpha: float = None) -> float:
-        raise NotImplementedError
+        self._drag_coefficient = drag_coefficient
 
     def calculate_reference_area(self: IObject):
         reference_area = 0

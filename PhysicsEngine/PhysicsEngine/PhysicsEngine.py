@@ -3,6 +3,7 @@ from numpy.typing import NDArray
 import os
 import datetime
 
+from ..Utils.Constants import Constants as C
 from ..Config import Config
 from ..Object import IAerodependent
 from ..Object.IObject import IObject
@@ -95,6 +96,7 @@ class PhysicsEngine:
         if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
             self.object.angle_of_attack = self.calculate_angle_of_attack()
             self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
+            self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) **  2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
 
         # obliczanie przyspieszenia katowego
 
