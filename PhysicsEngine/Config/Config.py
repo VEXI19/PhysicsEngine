@@ -4,7 +4,7 @@ import os
 class Config:
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.realpath(__file__))
-        self.config_path = os.path.join(self.base_dir, 'config.ini')
+        self.config_path = os.path.abspath(os.path.join(__file__, "..", "..", "..", "config.ini"))
 
         if not os.path.isfile(self.config_path):
             self.restore_to_default()
