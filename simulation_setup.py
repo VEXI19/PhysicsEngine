@@ -1,5 +1,6 @@
 import os
 
+
 from Configs.Rockets.test_rocket import Rocket
 from Configs.Environments.test_env import Environment1 as Environment
 from PhysicsEngine import PhysicsEngine, Forces
@@ -19,6 +20,7 @@ def save(instance, path, file_name):
 
 
 object = Rocket()
+
 environment = Environment()
 physics_engine = PhysicsEngine(object, environment, 0.1)
 
