@@ -67,9 +67,9 @@ class PhysicsEngine:
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
         velocity_change = self.object.acceleration * self.time_step
-        position_change = velocity_change * self.time_step
-
         self.object.velocity += velocity_change
+
+        position_change = self.object.velocity * self.time_step
         self.object.position += position_change
 
         self.object.angular_acceleration = np.linalg.inv(self.object.inertia_tensor) @ torque
