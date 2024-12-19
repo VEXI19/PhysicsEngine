@@ -3,7 +3,6 @@ from abc import ABC
 
 import trimesh
 
-from ..Types import Vector3
 import numpy as np
 from numpy.typing import NDArray
 
@@ -46,9 +45,11 @@ class IObject(ABC):
 
             min_bound, max_bound = mesh.bounds
 
-            # moves model to the center of a scene
-            scene_center = (min_bound + max_bound) / 2
-            mesh.apply_translation(-scene_center)
+            # centers model and puts the bottom part on the ground
+            bottom_center_translation = -min_bound  # Align bottom face to z=0
+            bottom_center_translation[0] -= (max_bound[0] - min_bound[0]) / 2  # Center x-axis
+            bottom_center_translation[1] -= (max_bound[1] - min_bound[1]) / 2  # Center y-axis
+            mesh.apply_translation(bottom_center_translation)
 
             # scales model
             current_height = max_bound[2] - min_bound[2]
