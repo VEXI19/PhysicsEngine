@@ -1,5 +1,6 @@
 import math
 import os
+import pickle
 
 import trimesh
 from PyQt5 import QtCore, QtWidgets
@@ -13,6 +14,7 @@ from PyQt5.QtCore import Qt
 from PhysicsEngine.Utils import calculate_vector_magnitude
 from ..Models import SimulationData
 from ..Widgets.text_box import TextBox
+from ... import PhysicsEngine
 
 
 class SimulationWindow(QtWidgets.QWidget):
@@ -21,12 +23,20 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.base_path = os.path.dirname(__file__)
 
+        self.object_path = os.path.join(os.path.relpath(os.path.join(file_path, "..", "..")), "physics_engine.pkl")
+        with open(self.object_path, "rb") as f:
+            physics_engine: PhysicsEngine = pickle.load(f)
+            self.object = physics_engine.object
+
+        self.object_model = self.object.object_model
+
         # CONFIG
         self.camera_distance = camera_distance
 
         # WINDOW SETUP
         self.setWindowTitle("Simulation Window")
         self.setWindowState(Qt.WindowMaximized)
+
 
         # DATA SETUP
         self.sim_data = SimulationData(file_path)
@@ -41,12 +51,25 @@ class SimulationWindow(QtWidgets.QWidget):
         # Change color and size of rocket point (make it larger and different color)
         # self.rocket_point = gl.GLScatterPlotItem(pos=np.array([[0, 0, 0]]), color=(1, 0, 0, 1),
         #                                          size=10)  # Adjusted size
-        self.rocket = self.load_model(os.path.join(self.base_path, "rocket.obj"))
-        self.rocket_position = np.array([0, 0, 0])
+
+        vertices = np.array(self.object_model.vertices, dtype=np.float32)
+        faces = np.array(self.object_model.faces, dtype=np.int32)
+
+        # Create the GLMeshItem
+        self.object_mesh_item = GLMeshItem(
+            vertexes=vertices,
+            faces=faces,
+            smooth=True,  # Enable smooth shading
+            color=(1, 1, 1, 1),  # RGBA color for the model
+            # drawEdges=True  # Draw edges for better visibility
+        )
+        self.object_mesh_item.setGLOptions('opaque')
+
+        self.object_position = np.array([0, 0, 0])
         self.trajectory_line = gl.GLLinePlotItem(pos=np.array([[0, 0, 0]]), color=(0, 0, 1, 1), width=2)
         # self.view.addItem(self.rocket_point)
         self.view.addItem(self.trajectory_line)
-        self.view.addItem(self.rocket)
+        self.view.addItem(self.object_mesh_item)
 
         self.data_box = TextBox()
         self.data_box.add_text_widget("time", "Time: 0 s")
@@ -73,13 +96,6 @@ class SimulationWindow(QtWidgets.QWidget):
                                                      ["Acceleration X", "Acceleration Y", "Acceleration Z"])
         self.altitude_curve = self.add_plot(graph_layout, "Altitude", "Time", "Altitude", "r", "Altitude")
 
-        # Timer for 3D animation and 2D plot sync
-        self._timeline = TimeLine(loopCount=0, interval=int(1000 * self.sim_data.time_step))
-        self._timeline.setFrameRange(0, self.sim_data.data_points - 1)
-        self._timeline.frameChanged.connect(self.update_trajectory)
-
-        self._timeline.start()
-
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
         self.pause_button.clicked.connect(self.toggle_pause)
@@ -93,54 +109,15 @@ class SimulationWindow(QtWidgets.QWidget):
         self.slider.valueChanged.connect(self.slider_value_changed)
         graph_layout.addWidget(self.slider)
 
+        # Timer for 3D animation and 2D plot sync
+        self._timeline = TimeLine(loopCount=0, interval=int(1000 * self.sim_data.time_step))
+        self._timeline.setFrameRange(0, self.sim_data.data_points - 1)
+        self._timeline.frameChanged.connect(self.update_trajectory)
+
+        self._timeline.start()
+
         # Sync slider with animation
         self._timeline.frameChanged.connect(self.sync_slider_with_animation)
-
-    def load_model(self, model_path):
-        """Loads a 3D model using trimesh and adds its components to the scene."""
-        try:
-            # Load the 3D model
-            mesh = trimesh.load(model_path)
-
-            if isinstance(mesh, trimesh.Scene):
-                # 1. Get all meshes in the scene
-                meshes = list(mesh.geometry.values())
-
-                # 2. Combine meshes into a single mesh
-                mesh = trimesh.util.concatenate(meshes)
-
-            # 3. Get the bounding box (used for translation and scaling)
-            min_bound, max_bound = mesh.bounds  # This combines the bounds of the combined mesh
-
-            # 4. Translate to center at (0, 0, 0)
-            scene_center = (min_bound + max_bound) / 2
-            mesh.apply_translation(-scene_center)  # Translate the combined mesh
-
-            # 6. Scale the combined mesh to a desired height (for example, height = 0.5)
-            current_height = max_bound[2] - min_bound[2]  # Height along z-axis
-            desired_height = 0.5
-            scale_factor = desired_height / current_height
-
-            # Apply the scale to the combined mesh
-            mesh.apply_scale(scale_factor)
-
-            vertices = np.array(mesh.vertices, dtype=np.float32)
-            faces = np.array(mesh.faces, dtype=np.int32)
-
-            # Create the GLMeshItem
-            mesh_item = GLMeshItem(
-                vertexes=vertices,
-                faces=faces,
-                smooth=True,  # Enable smooth shading
-                color=(1, 1, 1, 1),  # RGBA color for the model
-                # drawEdges=True  # Draw edges for better visibility
-            )
-            mesh_item.setGLOptions('opaque')
-
-            return mesh_item
-
-        except Exception as e:
-            print(f"Error loading model: {e}")
 
     def add_plot(self, parent, title: str, x_label: str, y_label: str, pen: str | list[str], name: str | list[str],
                  legend: bool = True):
@@ -159,16 +136,14 @@ class SimulationWindow(QtWidgets.QWidget):
 
         return plot.plot(pen=pen, name=name)
 
-
-
     @QtCore.pyqtSlot(int)
     def update_trajectory(self, i):
         # Update rocket point position (change it to the current position)
         # self.rocket_point.setData(pos=np.array([self.sim_data.position_data[i]]))  # Update rocket position
         self.trajectory_line.setData(pos=self.sim_data.position_data[:i + 1])  # Update trajectory
-        translate_matrix = self.sim_data.position_data[i] - self.rocket_position
-        self.rocket_position = self.sim_data.position_data[i]
-        self.rocket.translate(translate_matrix[0], translate_matrix[1], translate_matrix[2])
+        translate_matrix = self.sim_data.position_data[i] - self.object_position
+        self.object_position = self.sim_data.position_data[i]
+        self.object_mesh_item.translate(translate_matrix[0], translate_matrix[1], translate_matrix[2])
 
 
         # Update velocity and acceleration graphs
@@ -180,7 +155,7 @@ class SimulationWindow(QtWidgets.QWidget):
         self.acceleration_curve_dict["Acceleration Y"].setData(self.sim_data.acceleration_data[1][:i + 1])
         self.acceleration_curve_dict["Acceleration Z"].setData(self.sim_data.acceleration_data[2][:i + 1])
 
-        self.altitude_curve.setData(self.sim_data.position_data[:i + 1, 2])
+        self.altitude_curve.setData(self.sim_data.position_data[:i+1, 2])
 
         # self.update_camera_position(i)
 
@@ -191,6 +166,7 @@ class SimulationWindow(QtWidgets.QWidget):
         current_acceleration = calculate_vector_magnitude(self.sim_data.acceleration_data[:, i])
 
         text_dict: dict = {
+            "time": f"Time: {current_time:.2f} s",
             "time": f"Time: {current_time:.2f} s",
             "velocity": f"Velocity: {current_velocity:.2f} m/s",
             "acceleration": f"Acceleration: {current_acceleration:.2f} m/s",

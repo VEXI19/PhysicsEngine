@@ -1,16 +1,13 @@
-from Configs.Rockets.rocket_1 import Rocket
-from Configs.Environments.environment_1 import Environment
-from PhysicsEngine import PhysicsEngine, Forces
-import numpy as np
+import os
+import pickle
+from PhysicsEngine.Config import Config
 
+simulation_name = "gravity_thrust"
 
-rocket = Rocket(1, 2, 0.2, 1)
-environment = Environment(1, 1, 20, 1, [1, 1, 1], [1, 1, 1])
-physics_engine = PhysicsEngine(rocket, environment, 0.1, file_path="./Simulations/Rocket_2")
+config = Config()
+path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], simulation_name, "physics_engine.pkl")
 
-physics_engine.add_force(Forces.gravity)
-physics_engine.add_force(Forces.thrust)
+with open(path, "rb") as file:
+    physics_engine = pickle.load(file)
 
 physics_engine.start()
-
-
