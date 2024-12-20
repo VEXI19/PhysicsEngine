@@ -52,15 +52,14 @@ class Config:
 
         Use double brackets to specify section and key
 
-        Examples:
-            config["Section"]["Key"]
-
         Args:
             item (string): section or key from the config file
 
         Returns:
             string: value of the item
 
+        Examples:
+            config["Section"]["Key"]
         """
         config = self._read()
         return config[item]
