@@ -129,7 +129,7 @@ class PhysicsEngine:
         self.file_name = f"{self.file_name}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
         print(f"Saving initial data to file {self.file_name}")
         self.save_data(self.get_config_data())
-        self.save_data("sim_tick,sim_time,pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,vel_x,vel_y,vel_z,acc_x,acc_y,acc_z,mass")
+        self.save_data(self.object.get_data_header())
         self.save_data(f"{self.simulation_tick},{self.simulation_time},{self.object.get_data()}")
 
         print("Starting simulation")

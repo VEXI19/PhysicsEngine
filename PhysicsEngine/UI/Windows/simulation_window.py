@@ -43,7 +43,8 @@ class SimulationWindow(QtWidgets.QWidget):
         # WIDGETS
         # 3D View
         self.view = gl.GLViewWidget()
-        self.view.setCameraPosition(distance=self.camera_distance)  # Adjusted for better view
+        self.view.setCameraPosition(distance=self.camera_distance)  # Adjusted for better vie
+        self.view.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         grid = gl.GLGridItem()
         grid.setSize(20, 20)
         self.view.addItem(grid)
@@ -59,15 +60,12 @@ class SimulationWindow(QtWidgets.QWidget):
         self.object_mesh_item = GLMeshItem(
             vertexes=vertices,
             faces=faces,
-            smooth=True,  # Enable smooth shading
-            color=(1, 1, 1, 1),  # RGBA color for the model
-            # drawEdges=True  # Draw edges for better visibility
+            # smooth=True,
+            color=(1, 1, 1, 1),
         )
         self.object_mesh_item.setGLOptions('opaque')
 
-        self.object_position = np.array([0, 0, 0])
         self.trajectory_line = gl.GLLinePlotItem(pos=np.array([[0, 0, 0]]), color=(0, 0, 1, 1), width=2)
-        # self.view.addItem(self.rocket_point)
         self.view.addItem(self.trajectory_line)
         self.view.addItem(self.object_mesh_item)
 
@@ -76,30 +74,52 @@ class SimulationWindow(QtWidgets.QWidget):
         self.data_box.add_text_widget("altitude", "Altitude: 0 m")
         self.data_box.add_text_widget("velocity", "Velocity: 0 m/s")
         self.data_box.add_text_widget("acceleration", "Acceleration: 0 m/s^2")
+        self.data_box.add_text_widget("angular_acceleration", "Angular acceleration: 0 rad/s^2")
+        self.data_box.add_text_widget("angular_velocity", "Angular velocity: 0 rad/s")
 
         # Layouts
-        layout = QtWidgets.QHBoxLayout(self)
-        graph_layout = QtWidgets.QVBoxLayout()
+        layout = QtWidgets.QGridLayout(self)
+        graph_layout_right = QtWidgets.QVBoxLayout()
+        graph_layout_left = QtWidgets.QHBoxLayout()
 
+        layout.setRowStretch(0, 1)  # Row 0 (graph_layout_left) gets a stretch factor of 1
+        layout.setRowStretch(1, 1)  # Row 1 (main_layout) gets a stretch factor of 1
+        layout.setRowStretch(2, 1)  # Row 1 (main_layout) gets a stretch factor of 1
 
-        layout.addWidget(self.data_box)
-        layout.addWidget(self.view, 2)
-        layout.addLayout(graph_layout, 1)  # Side graphs
+        # Set column stretch factors
+        layout.setColumnStretch(0, 1)  # Column 0 (graph_layout_left + main_layout) gets a stretch factor of 1
+        layout.setColumnStretch(1, 1)
+        layout.setColumnStretch(2, 1)
+
+        main_layout = QtWidgets.QGridLayout()
+        main_layout.addWidget(self.view, 0, 0)
+        main_layout.addWidget(self.data_box, 0, 0)
+
+        layout.addLayout(main_layout, 0, 0, 2, 2)
+        layout.addLayout(graph_layout_left, 2, 0, 1, 2)
+        layout.addLayout(graph_layout_right, 0, 2, 3, 1)
 
         self.setLayout(layout)
 
         # Data graphs
-        self.velocity_curve_dict = self.add_plot(graph_layout, "Velocity", "Time [s]", "Velocity [m/s]", ["r", "g", "b"],
+        self.velocity_curve_dict = self.add_plot(graph_layout_right, "Velocity", "Time [s]", "Velocity [m/s]", ["r", "g", "b"],
                                                  ["Velocity X", "Velocity Y", "Velocity Z"])
-        self.acceleration_curve_dict = self.add_plot(graph_layout, "Acceleration", "Time [s]", "Acceleration [m/s^2]",
+        self.acceleration_curve_dict = self.add_plot(graph_layout_right, "Acceleration", "Time [s]", "Acceleration [m/s^2]",
                                                      ["r", "g", "b"],
                                                      ["Acceleration X", "Acceleration Y", "Acceleration Z"])
-        self.altitude_curve = self.add_plot(graph_layout, "Altitude", "Time [s]", "Altitude [m]", "r", "Altitude")
+        self.altitude_curve = self.add_plot(graph_layout_right, "Altitude", "Time [s]", "Altitude [m]", "r", "Altitude")
+
+        self.angular_acceleration_curve_dict = self.add_plot(graph_layout_left, "Angular acceleration", "Time [s]", "Angular acceleration [rad/s^2]",
+                                                             ["r", "g", "b"],
+                                                             ["Angular acceleration X", "Angular acceleration Y", "Angular acceleration Z"])
+        self.angular_velocity_curve_dict = self.add_plot(graph_layout_left, "Angular velocity", "Time [s]", "Velocity [rad/s]",
+                                                         ["r", "g", "b"],
+                                                         ["Angular velocity X", "Angular velocity Y", "Angular velocity Z"])
 
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
         self.pause_button.clicked.connect(self.toggle_pause)
-        graph_layout.addWidget(self.pause_button)
+        graph_layout_right.addWidget(self.pause_button)
 
         # Add Slider to control the animation
         self.slider = QtWidgets.QSlider(QtCore.Qt.Horizontal)
@@ -107,7 +127,7 @@ class SimulationWindow(QtWidgets.QWidget):
         self.slider.setTickInterval(1)
         self.slider.setTickPosition(QtWidgets.QSlider.TicksBelow)
         self.slider.valueChanged.connect(self.slider_value_changed)
-        graph_layout.addWidget(self.slider)
+        graph_layout_right.addWidget(self.slider)
 
         # Timer for 3D animation and 2D plot sync
         self._timeline = TimeLine(loopCount=0, interval=int(1000 * self.sim_data.time_step))
@@ -141,10 +161,14 @@ class SimulationWindow(QtWidgets.QWidget):
         plot_time_axes = list(map(lambda x: x * self.sim_data.time_step, range(i)))
 
         self.trajectory_line.setData(pos=self.sim_data.position_data[:i])
-        translate_matrix = self.sim_data.position_data[i] - self.object_position
-        self.object_position = self.sim_data.position_data[i]
-        self.object_mesh_item.translate(translate_matrix[0], translate_matrix[1], translate_matrix[2])
 
+        # update rocket position and rotation
+        self.object_mesh_item.resetTransform()
+        transform_matrix = self.sim_data.rotation_data[i]
+        self.object_mesh_item.rotate(np.degrees(transform_matrix[0]), 1, 0, 0)
+        self.object_mesh_item.rotate(np.degrees(transform_matrix[1]), 0, 1, 0)
+        self.object_mesh_item.rotate(np.degrees(transform_matrix[2]), 0, 0, 1)
+        self.object_mesh_item.translate(self.sim_data.position_data[i][0], self.sim_data.position_data[i][1], self.sim_data.position_data[i][2])
 
         # Update velocity and acceleration graphs
         self.velocity_curve_dict["Velocity X"].setData(plot_time_axes, self.sim_data.velocity_data[0][:i])
@@ -155,6 +179,14 @@ class SimulationWindow(QtWidgets.QWidget):
         self.acceleration_curve_dict["Acceleration Y"].setData(plot_time_axes, self.sim_data.acceleration_data[1][:i])
         self.acceleration_curve_dict["Acceleration Z"].setData(plot_time_axes, self.sim_data.acceleration_data[2][:i])
 
+        self.angular_acceleration_curve_dict["Angular acceleration X"].setData(plot_time_axes, self.sim_data.angular_acceleration_data[0][:i])
+        self.angular_acceleration_curve_dict["Angular acceleration Y"].setData(plot_time_axes, self.sim_data.angular_acceleration_data[1][:i])
+        self.angular_acceleration_curve_dict["Angular acceleration Z"].setData(plot_time_axes, self.sim_data.angular_acceleration_data[2][:i])
+
+        self.angular_velocity_curve_dict["Angular velocity X"].setData(plot_time_axes, self.sim_data.angular_velocity_data[0][:i])
+        self.angular_velocity_curve_dict["Angular velocity Y"].setData(plot_time_axes, self.sim_data.angular_velocity_data[1][:i])
+        self.angular_velocity_curve_dict["Angular velocity Z"].setData(plot_time_axes, self.sim_data.angular_velocity_data[2][:i])
+
         self.altitude_curve.setData(plot_time_axes, self.sim_data.position_data[:i, 2])
 
         # self.update_camera_position(i)
@@ -164,13 +196,16 @@ class SimulationWindow(QtWidgets.QWidget):
         current_velocity = calculate_vector_magnitude(self.sim_data.velocity_data[:, i])
         current_altitude = self.sim_data.position_data[i, 2]
         current_acceleration = calculate_vector_magnitude(self.sim_data.acceleration_data[:, i])
+        current_angular_acceleration = calculate_vector_magnitude(self.sim_data.angular_acceleration_data[:, i])
+        current_angular_velocity = calculate_vector_magnitude(self.sim_data.angular_velocity_data[:, i])
 
         text_dict: dict = {
-            "time": f"Time: {current_time:.2f} s",
             "time": f"Time: {current_time:.2f} s",
             "velocity": f"Velocity: {current_velocity:.2f} m/s",
             "acceleration": f"Acceleration: {current_acceleration:.2f} m/s",
             "altitude": f"Altitude: {current_altitude:.2f} m",
+            "angular_acceleration": f"Angular acceleration: {current_angular_acceleration:.2f} rad/s^2",
+            "angular_velocity": f"Angular velocity: {current_angular_velocity:.2f} rad/s",
         }
 
         self.data_box.update_multiple_widgets(text_dict)
