@@ -49,4 +49,4 @@ class MenuBar:
     def simulations_path_trigger(self):
         file_path = QFileDialog.getExistingDirectory(options=QFileDialog.Options())
         if file_path:
-            self.config.set_value("UI", "simulation_files_folder_path", file_path)
+            self.config.set_value("SIMULATION", "simulation_files_folder_path", file_path)
