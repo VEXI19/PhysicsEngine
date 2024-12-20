@@ -134,7 +134,7 @@ class PhysicsEngine:
 
         print("Starting simulation")
 
-        bar = progressbar.ProgressBar(max_value=int(self.max_simulation_time / self.time_step))
+        bar = progressbar.ProgressBar(int(self.max_simulation_time / self.time_step)).start()
         while self.object.position[2] >= 0 and self.simulation_time < self.max_simulation_time:
             bar.update(self.simulation_tick)
 
