@@ -45,10 +45,12 @@ class FilePicker(QWidget):
 
         # Display files as buttons
         files = [f.path for f in os.scandir(folder_path) if f.is_file()]
+        sorted_files = sorted(files, key=os.path.getctime, reverse=True)
+
         if not files:
             self.no_directory_label.setText(f"No files found in: {folder_path}")
         else:
-            for file_path in reversed(files):
+            for file_path in sorted_files:
                 file_name = os.path.basename(file_path)
                 button = QPushButton(file_name)
                 button.setObjectName("big_button")
