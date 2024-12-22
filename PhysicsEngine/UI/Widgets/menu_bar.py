@@ -6,6 +6,9 @@ from PhysicsEngine.Config.Config import Config
 
 
 class MenuBar:
+    """
+    Class for the menu bar of the main window.
+    """
     def __init__(self, window: QMainWindow):
         self.window = window
         self.menubar = window.menuBar()
@@ -36,6 +39,19 @@ class MenuBar:
         self._add_action(help_menu, "About", trigger=self._about_trigger)
 
     def _add_action(self, menu: QMenu, text: str, shortcut: str = "", disabled: bool = False, trigger: Callable = None) -> QAction:
+        """
+        Adds an action to the menu.
+
+        Args:
+            menu (QMenu): Menu to which the action will be added.
+            text (str): Text of the action.
+            shortcut (str): Shortcut of the action.
+            disabled (bool): Whether the action is disabled.
+            trigger (Callable): Function to be called when the action is triggered.
+
+        Returns:
+            QAction: Created action.
+        """
         action = menu.addAction(text)
         action.setShortcut(shortcut)
         action.setDisabled(disabled)
@@ -43,10 +59,18 @@ class MenuBar:
             action.triggered.connect(trigger)
         return action
 
-    def _about_trigger(self):
+    def _about_trigger(self) -> None:
+        """
+        About menu action trigger. Displays about message box.
+        """
+
         QMessageBox.about(self.menubar, "About", "This is a sample application.")
 
-    def simulations_path_trigger(self):
+    def simulations_path_trigger(self) -> None:
+        """
+        Choose simulations path menu action trigger. Opens a dialog to choose a folder for simulation files.
+        """
+
         file_path = QFileDialog.getExistingDirectory(options=QFileDialog.Options())
         if file_path:
             self.config.set_value("UI", "simulation_files_folder_path", file_path)

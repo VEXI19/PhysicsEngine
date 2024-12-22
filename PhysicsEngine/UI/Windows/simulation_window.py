@@ -7,6 +7,7 @@ from PyQt5 import QtCore, QtWidgets
 import pyqtgraph as pg
 import pyqtgraph.opengl as gl
 import numpy as np
+from PyQt5.QtGui import QKeyEvent
 from pyqtgraph.opengl import GLMeshItem
 
 from PhysicsEngine.UI.Services.Timer import TimeLine
@@ -18,6 +19,10 @@ from ... import PhysicsEngine
 
 
 class SimulationWindow(QtWidgets.QWidget):
+    """
+    SimulationWindow class is a QWidget class that displays the simulation data in a 3D view and 2D graphs.
+    """
+
     def __init__(self, file_path: str, camera_distance: int = 10):
         super().__init__()
 
@@ -110,8 +115,8 @@ class SimulationWindow(QtWidgets.QWidget):
         graph_layout.addWidget(self.slider)
 
         # Timer for 3D animation and 2D plot sync
-        self._timeline = TimeLine(loopCount=0, interval=int(1000 * self.sim_data.time_step))
-        self._timeline.setFrameRange(0, self.sim_data.data_points - 1)
+        self._timeline = TimeLine(loop_count=0, interval=int(1000 * self.sim_data.time_step))
+        self._timeline.set_frame_range(0, self.sim_data.data_points - 1)
         self._timeline.frameChanged.connect(self.update_trajectory)
 
         self._timeline.start()
@@ -119,8 +124,24 @@ class SimulationWindow(QtWidgets.QWidget):
         # Sync slider with animation
         self._timeline.frameChanged.connect(self.sync_slider_with_animation)
 
-    def add_plot(self, parent, title: str, x_label: str, y_label: str, pen: str | list[str], name: str | list[str],
-                 legend: bool = True):
+    def add_plot(self, parent: QtWidgets.QLayout, title: str, x_label: str, y_label: str, pen: str | list[str], name: str | list[str],
+                 legend: bool = True) -> pg.PlotItem | dict:
+        """
+        Adds a plot to the layout.
+
+        Args:
+            parent (QtWidgets.QLayout): parent layout
+            title (str): title of the plot
+            x_label (str): x-axis label
+            y_label (str): y-axis label
+            pen (str | list[str]): color or colors of the plots
+            name (str | list[str]): name of the plot
+            legend (bool): show legend
+
+        Returns:
+            pg.PlotItem | dict: plot item or dictionary of plot items
+        """
+
         plot = pg.PlotWidget(title=title)
         parent.addWidget(plot)
         plot.setLabel('bottom', x_label)
@@ -137,7 +158,13 @@ class SimulationWindow(QtWidgets.QWidget):
         return plot.plot(pen=pen, name=name)
 
     @QtCore.pyqtSlot(int)
-    def update_trajectory(self, i):
+    def update_trajectory(self, i: int) -> None:
+        """
+        Updates windows on frame change.
+        Args:
+            i (int): frame number
+        """
+
         plot_time_axes = list(map(lambda x: x * self.sim_data.time_step, range(i)))
 
         self.trajectory_line.setData(pos=self.sim_data.position_data[:i])
@@ -175,7 +202,13 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.data_box.update_multiple_widgets(text_dict)
 
-    def update_camera_position(self, tick: int):
+    def update_camera_position(self, tick: int) -> None:
+        """
+        Updates camera position based on the simulation tick.
+        Args:
+            tick (int): simulation tick
+        """
+
         obj_position = np.array(self.sim_data.position_data[tick])
         obj_position[2] = obj_position[2] / 2
         pos = pg.Vector(*obj_position)
@@ -188,10 +221,21 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.view.setCameraPosition(pos=pos, distance=distance)
 
-    def sync_slider_with_animation(self, frame):
+    def sync_slider_with_animation(self, frame: int) -> None:
+        """
+        Syncs frame slider with animation.
+
+        Args:
+            frame (int): simulation frame
+        """
+
         self.slider.setValue(frame)
 
-    def toggle_pause(self):
+    def toggle_pause(self) -> None:
+        """
+        Toggles pause state of the simulation.
+        """
+
         if self._timeline.paused:
             self._timeline.resume()
             self.pause_button.setText('Pause')
@@ -199,11 +243,24 @@ class SimulationWindow(QtWidgets.QWidget):
             self._timeline.pause()
             self.pause_button.setText('Resume')
 
-    def slider_value_changed(self, value):
-        # Manually change frame based on slider
+    def slider_value_changed(self, value: int) -> None:
+        """
+        Pauses simulation and updates the simulation based on the slider value
+
+        Args:
+            value (int): slider value
+        """
+
+        self._timeline.pause()
         self._timeline._counter = value
         self.update_trajectory(value)
 
-    def keyPressEvent(self, event):
-        if event.key() == QtCore.Qt.Key_Space:
+    def keyPressEvent(self, event: QKeyEvent):
+        """
+        Key press event handler.
+        Args:
+            event (QKeyEvent): key event
+        """
+
+        if event.key() == Qt.Key_Space:
             self.toggle_pause()

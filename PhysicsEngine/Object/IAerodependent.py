@@ -6,11 +6,27 @@ from ..Utils.Constants import Constants as C
 
 
 class IAerodependent(ABC):
-    def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] =
+    """
+    Interface for aerodependent objects. It is used to create custom aerodependent objects for simulation
+
+    Attributes:
+        _cop: center of pressure
+        _angle_of_attack: angle of attack
+        _relative_velocity: relative velocity
+        _reference_area: reference area
+        _drag_coefficient: drag coefficient
+    """
+    def __init__(self, cop: float, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] =
     None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value):
-        """ @param cop: Center of Pressure, a distance in z axis from the center of mass of the rocket.
-            @param angle_of_attack: The angle between the rocket and the airflow.
-            @param relative_velocity: The relative velocity of the rocket and the airflow."""
+        """
+        Constructor for IAerodependent class
+
+        Args:
+            cop (float): center of pressure
+            angle_of_attack (NDArray[np.float64]): initial angle of attack
+            relative_velocity (NDArray[np.float64]): initial relative velocity
+            drag_coefficient (float): drag coefficient
+        """
         self._cop = cop
         self.angle_of_attack = angle_of_attack
         self.relative_velocity = relative_velocity
@@ -21,45 +37,102 @@ class IAerodependent(ABC):
             raise RuntimeError("Object needs to extend IObject to be IAerodependent")
 
     @property
-    def reference_area(self):
+    def reference_area(self) -> float:
+        """
+        Returns reference area of the object
+
+        Returns:
+            float: reference area of the object
+        """
+
         return self._reference_area
             
     @property
-    def cop(self):
+    def cop(self) -> float:
+        """
+        Returns center of pressure of the object
+
+        Returns:
+            float: center of pressure of the object
+        """
+
         return self._cop
 
     @property
-    def angle_of_attack(self):
+    def angle_of_attack(self) -> NDArray[np.float64]:
+        """
+        Returns angle of attack of the object
+
+        Returns:
+            NDArray[np.float64]: angle of attack of the object
+        """
         return self._angle_of_attack
 
     @angle_of_attack.setter
-    def angle_of_attack(self, angle_of_attack: NDArray[np.float64]):
+    def angle_of_attack(self, angle_of_attack: NDArray[np.float64]) -> None:
+        """
+        Sets angle of attack of the object
+
+        Args:
+            angle_of_attack (NDArray[np.float64]): angle of attack
+        """
         if angle_of_attack is None:
             angle_of_attack = [0, 0, 0]
 
         self._angle_of_attack = angle_of_attack
 
     @property
-    def relative_velocity(self):
+    def relative_velocity(self) -> NDArray[np.float64]:
+        """
+        Returns relative velocity of the object
+
+        Returns:
+            NDArray[np.float64]: relative velocity of the object
+        """
         return self._relative_velocity
 
     @relative_velocity.setter
-    def relative_velocity(self, relative_velocity: NDArray[np.float64]):
+    def relative_velocity(self, relative_velocity: NDArray[np.float64]) -> None:
+        """
+        Sets relative velocity of the object
+
+        Args:
+            relative_velocity (NDArray[np.float64]): relative velocity of the object
+        """
         if relative_velocity is None:
             relative_velocity = [0, 0, 0]
 
         self._relative_velocity = relative_velocity
 
     @property
-    def drag_coefficient(self):
+    def drag_coefficient(self) -> float:
+        """
+        Returns drag coefficient of the object
+
+        Returns:
+            float: drag coefficient of the object
+        """
         return self._drag_coefficient
 
     @drag_coefficient.setter
-    def drag_coefficient(self, drag_coefficient: float):
+    def drag_coefficient(self, drag_coefficient: float) -> None:
+        """
+        Sets drag coefficient of the object
+
+        Args:
+            drag_coefficient (float): drag coefficient of the object
+        """
 
         self._drag_coefficient = drag_coefficient
 
-    def calculate_reference_area(self: IObject):
+    def calculate_reference_area(self: IObject) -> float:
+        """
+        Function to calculate reference area
+
+        Returns:
+            float: reference area
+        """
+
         reference_area = 0
 
         for face in self.object_model.faces:

@@ -13,39 +13,85 @@ from ..Utils.EulerAngles import transform_to_local, transform_to_global
 
 
 class PhysicsEngine:
+    """
+    Class running the simulation. It computes forces and torques acting on the object and calculates its position,
+    velocity, rotation and angular velocity.
+
+    Attributes:
+        object (IObject): object to simulate
+        environment (IEnvironment): environment in which object is simulated
+        time_step (float): time step of simulation
+        force_pipeline (NDArray): pipeline of forces to apply
+        simulation_time (float): current simulation time
+        max_simulation_time (float): maximum simulation time
+        simulation_tick (int): current simulation tick
+        file_path (str): path to save simulation data
+        file_name (str): name of file to save simulation data
+    """
+
     def __init__(self, object: IObject, environment: IEnvironment, time_step: float, max_simulation_time: float = 100.0, file_name: str = "simulation"):
+        """
+        Constructor of PhysicsEngine class
+
+        Args:
+            object (IObject): object to simulate
+            environment (IEnvironment): environment in which object is simulated
+            time_step (float): time step of simulation
+            max_simulation_time (float): time limitation of the simulation
+            file_name (string): file name of the simulation data (date and time will be added to this name)
+        """
+
         self.config = Config()
 
         self.object: IObject = object
         self.environment: IEnvironment = environment
         self.time_step: float = time_step
-        self.pipeline: NDArray = np.array([])
+        self.force_pipeline: NDArray = np.array([])
         self.simulation_time: float = 0
         self.simulation_tick: int = 0
         self.file_path: str = self.config["SIMULATION"]["simulation_files_folder_path"]
         self.file_name: str = file_name
         self.max_simulation_time: float = max_simulation_time
 
-    def next_tick(self):
+    def next_tick(self) -> None:
+        """
+        Increments simulation time and simulation tick
+        """
+
         self.simulation_time += self.time_step
         self.simulation_tick += 1
 
-    def get_config_data(self):
+    def get_config_data(self) -> str:
+        """
+        Creates first line of simulation data file containing simulation configuration
+
+        Returns:
+            str: simulation config data
+        """
+
         return f"{self.time_step}"
 
-    def add_force(self, force):
-        self.pipeline = np.append(self.pipeline, force)
-
-    def compute_force(self):
+    def add_force(self, force: callable) -> None:
         """
-        Function to compute resulting force and torque
-        @param: None
-        @return: None
+        Appends force function to the force pipeline
+
+        Args:
+            force (function): force function to append to the pipeline
+        """
+
+        self.force_pipeline = np.append(self.force_pipeline, force)
+
+    def compute_force(self) -> (NDArray[np.float64], NDArray[np.float64]):
+        """
+        Computes resulting force and resulting torque from forces acting on an object
+
+        Returns:
+            (NDArray[np.float64], NDArray[np.float64]): tuple containing resulting force and resulting torque vectors
         """
         resulting_force = np.array([0, 0, 0], dtype=float)
         resulting_torque = np.array([0, 0, 0], dtype=float)
 
-        for force in self.pipeline:
+        for force in self.force_pipeline:
             resulting_force += force(self.object, self.environment, self.simulation_time)[0]
             resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
 
@@ -58,11 +104,12 @@ class PhysicsEngine:
 
         return relative_velocity, relative_acceleration
 
-    def calculate_angle_of_attack(self):
+    def calculate_angle_of_attack(self) -> float:
         """
-        Function to calculate angle of attack
-        @param: None
-        @return: angle of attack
+        Calculates angle of attack
+
+        Returns:
+            float: angle of attack
         """
         object_velocity = self.object.velocity
         wind_velocity = self.environment.get_wind()
@@ -77,13 +124,9 @@ class PhysicsEngine:
 
         return angle_of_attack
 
-    def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
+    def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]) -> None:
         """
-        Function to compute change in position, velocity, rotation and angular velocity
-        @param force: global force
-        @param torque: local torque
-
-        @return: None
+        Calculates and saves changes in object's position, velocity, rotation, angular acceleration and angular velocity
         """
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
@@ -115,7 +158,14 @@ class PhysicsEngine:
         self.object.rotation[2] += dot_psi * self.time_step
 
 
-    def save_data(self, data):
+    def save_data(self, data: str) -> None:
+        """
+        Saves given string to the simulation data file. Creates new line
+
+        Args:
+            data (str): data to save
+        """
+
         path = os.path.join(self.file_path, self.object.name, "Simulations")
 
         if not os.path.exists(path):
@@ -124,7 +174,11 @@ class PhysicsEngine:
         with open(f"{path}/{self.file_name}", "a") as file:
             file.write(f"{data}\n")
 
-    def start(self):
+    def start(self) -> None:
+        """
+        Starts simulation. Executes main loop of the simulation.
+        """
+
         print("Initializing simulation")
         self.file_name = f"{self.file_name}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
         print(f"Saving initial data to file {self.file_name}")

@@ -4,6 +4,9 @@ from ..Widgets.folder_picker import FolderPicker
 from ..Widgets.file_picker import FilePicker
 
 class VisualizationPickView(QWidget):
+    """
+    This view is used to pick simulation directory and file. It manages navigation between directory picker and file picker.
+    """
     def __init__(self, window: QMainWindow):
         super().__init__()
         self.current_simulation_directory: str | None = None
@@ -50,7 +53,12 @@ class VisualizationPickView(QWidget):
         self.layout.addLayout(self.navigation_layout)
         self.layout.addWidget(self.pick_stack)
 
-    def refresh_navigation(self):
+    def refresh_navigation(self) -> None:
+        """
+        Refreshes navigation buttons. Disables back button if current index is 0, disables forward button
+        if current index is 1 or current simulation directory is None.
+        """
+
         if self.pick_stack.currentIndex() == 0:
             self.navigation_button_back.setDisabled(True)
         else:
@@ -62,6 +70,14 @@ class VisualizationPickView(QWidget):
             self.navigation_button_forward.setDisabled(False)
 
     def navigate(self, forward: bool = True):
+        """
+        Navigates between widgets in the view. If forward is True, navigates to the next widget, otherwise navigates to
+        the previous one.
+
+        Args:
+            forward (bool): flag to navigate forward or backward
+        """
+
         current_index = self.pick_stack.currentIndex()
         if forward:
             self.pick_stack.setCurrentIndex(current_index + 1)

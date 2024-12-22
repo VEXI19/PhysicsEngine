@@ -6,6 +6,9 @@ from PhysicsEngine.Config.Config import Config
 
 
 class FolderPicker(QWidget):
+    """
+    QWidget class for folder picker. This widget is used to pick a folder containing simulation files.
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
@@ -27,7 +30,14 @@ class FolderPicker(QWidget):
         self.folder_path = self.config["SIMULATION"]["simulation_files_folder_path"]
         self.populate_view()
 
-    def populate_view(self):
+    def populate_view(self) -> None:
+        """
+        Populates the view with simulation folders.
+
+        If no folders are found, displays an error message.
+
+        If a button is clicked, sets the current simulation directory in the parent object and navigates to the next view.
+        """
         # Clear existing buttons
         while self.folder_buttons_layout.count():
             widget = self.folder_buttons_layout.takeAt(0).widget()
@@ -49,7 +59,13 @@ class FolderPicker(QWidget):
                     button.clicked.connect(lambda _, path=subfolder: self.folder_selected(path))
                     self.folder_buttons_layout.addWidget(button)
 
-    def folder_selected(self, path):
+    def folder_selected(self, path: str) -> None:
+        """
+        Sets the current simulation directory in the parent object and navigates to the next view.
+
+        Args:
+            path (str): path to the selected folder
+        """
         if self.parent:
             self.parent.current_simulation_directory = path
             self.parent.navigate()
