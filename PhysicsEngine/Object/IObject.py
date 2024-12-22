@@ -375,11 +375,20 @@ class IObject(ABC):
                          [0, Iy, 0],
                          [0, 0, Iz]])
 
-    def get_data(self) -> str:
+    def get_data_header(self):
+        headers = "sim_tick,sim_time,mass,pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,vel_x,vel_y,vel_z,acc_x,acc_y,acc_z,ang_vel_x,ang_vel_y,ang_vel_z,ang_acc_x,ang_acc_y,ang_acc_z"
+        next_headers = super().get_data_header() if hasattr(super(), "get_data_header") else ""
+        return f"{headers},{next_headers}"
+
+    def get_data(self):
         """
         Function to get data used to save during simulation
         
         Returns:
             str: data used to save during simulation
         """
-        return f"{self.position[0]},{self.position[1]},{self.position[2]},{self.rotation[0]},{self.rotation[1]},{self.rotation[2]},{self.velocity[0]},{self.velocity[1]},{self.velocity[2]},{self.acceleration[0]},{self.acceleration[1]},{self.acceleration[2]},12"
+        
+        data = f"{self.mass},{self.position[0]},{self.position[1]},{self.position[2]},{self.rotation[0]},{self.rotation[1]},{self.rotation[2]},{self.velocity[0]},{self.velocity[1]},{self.velocity[2]},{self.acceleration[0]},{self.acceleration[1]},{self.acceleration[2]}, {self.angular_velocity[0]},{self.angular_velocity[1]},{self.angular_velocity[2]},{self.angular_acceleration[0]},{self.angular_acceleration[1]},{self.angular_acceleration[2]}"
+        next_data = super().get_data() if hasattr(super(), "get_data") else ""
+        return f"{data},{next_data}"
+

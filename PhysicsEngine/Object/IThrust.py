@@ -87,3 +87,14 @@ class IThrust(ABC):
         """
 
         raise NotImplementedError
+    
+    def get_data_header(self):
+        headers = "engine_angle_x,engine_angle_y,engine_angle_z"
+        next_headers = super().get_data_header() if hasattr(super(), "get_data_header") else ""
+        return f"{headers},{next_headers}"
+
+    def get_data(self):
+        data = f"{self.engine_angle[0]},{self.engine_angle[1]},{self.engine_angle[2]}"
+        next_data = super().get_data() if hasattr(super(), "get_data") else ""
+        return f"{data},{next_data}"
+

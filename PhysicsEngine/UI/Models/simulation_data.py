@@ -27,11 +27,14 @@ class SimulationData:
 
             # reads simulation data
             data = pd.read_csv(file_path, skiprows=1)
-            self._position: NDArray = np.column_stack([data['pos_x'], data['pos_y'], data['pos_z']])
-            self._velocity: NDArray = np.array([data['vel_x'], data['vel_y'], data['vel_z']])
-            self._acceleration: NDArray = np.array([data['acc_x'], data['acc_y'], data['acc_z']])
-            self._data_points: int = len(self._position)
-            self._starting_position: NDArray = self._position[0]
+            self._positions: NDArray = np.column_stack([data['pos_x'], data['pos_y'], data['pos_z']])
+            self._velocities: NDArray = np.array([data['vel_x'], data['vel_y'], data['vel_z']])
+            self._accelerations: NDArray = np.array([data['acc_x'], data['acc_y'], data['acc_z']])
+            self._angular_accelerations: NDArray = np.array([data['ang_acc_x'], data['ang_acc_y'], data['ang_acc_z']])
+            self._angular_velocities: NDArray = np.array([data['ang_vel_x'], data['ang_vel_y'], data['ang_vel_z']])
+            self._rotations: NDArray = np.column_stack([data['rot_x'], data['rot_y'], data['rot_z']])
+            self._data_points: int = len(self._positions)
+            self._starting_position: NDArray = self._positions[0]
 
     @property
     def time_step(self) -> float:
@@ -75,6 +78,18 @@ class SimulationData:
         """
 
         return self._acceleration
+
+    @property
+    def rotation_data(self) -> NDArray:
+        return self._rotations
+
+    @property
+    def angular_acceleration_data(self) -> NDArray:
+        return self._angular_accelerations
+
+    @property
+    def angular_velocity_data(self) -> NDArray:
+        return self._angular_velocities
 
     @property
     def starting_position(self) -> NDArray[np.float64]:

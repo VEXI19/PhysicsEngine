@@ -17,6 +17,8 @@ class TextBox(QWidget):
         self.setContentsMargins(margin, margin, margin, margin)
         self.layout.setAlignment(QtCore.Qt.AlignTop)
 
+        self.setAttribute(QtCore.Qt.WA_TransparentForMouseEvents, True)
+
         self.text_widgets: dict = {}
 
     def add_text_widget(self, name: str, text: str):

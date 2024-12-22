@@ -48,7 +48,7 @@ class FilePicker(QWidget):
         if not files:
             self.no_directory_label.setText(f"No files found in: {folder_path}")
         else:
-            for file_path in files:
+            for file_path in reversed(files):
                 file_name = os.path.basename(file_path)
                 button = QPushButton(file_name)
                 button.setObjectName("big_button")
