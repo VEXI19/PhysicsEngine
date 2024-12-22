@@ -110,8 +110,8 @@ class SimulationWindow(QtWidgets.QWidget):
         graph_layout.addWidget(self.slider)
 
         # Timer for 3D animation and 2D plot sync
-        self._timeline = TimeLine(loopCount=0, interval=int(1000 * self.sim_data.time_step))
-        self._timeline.setFrameRange(0, self.sim_data.data_points - 1)
+        self._timeline = TimeLine(loop_count=0, interval=int(1000 * self.sim_data.time_step))
+        self._timeline.set_frame_range(0, self.sim_data.data_points - 1)
         self._timeline.frameChanged.connect(self.update_trajectory)
 
         self._timeline.start()

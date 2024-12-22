@@ -2,20 +2,46 @@ from PyQt5 import QtCore
 
 
 class TimeLine(QtCore.QObject):
+    """
+    TimeLine class is a custom class that emits a signal frameChanged(int) every interval.
+
+    Attributes:
+        frameChanged (pyqtSignal): signal emitted every interval
+        _startFrame (int): start frame of the timeline
+        _endFrame (int): end frame of the timeline
+        _loop_count (int): number of loops to repeat the timeline
+        _timer (QTimer): timer to emit signal
+        _counter (int): current frame number
+        _loop_counter (int): current loop number
+        interval (int): interval between frames
+        paused (bool): pause flag
+    """
     frameChanged = QtCore.pyqtSignal(int)
 
-    def __init__(self, interval=50, loopCount=1, parent=None):
+    def __init__(self, interval: int = 50, loop_count: int = 1, parent: QtCore.QObject = None):
+        """
+        Constructor of TimeLine class
+
+        Args:
+            interval (int): interval between frames
+            loop_count (int): number of loops to repeat the timeline
+            parent (QObject): parent object
+        """
         super(TimeLine, self).__init__(parent)
         self._startFrame = 0
         self._endFrame = 0
-        self._loopCount = loopCount
+        self._loop_count = loop_count
         self._timer = QtCore.QTimer(self, timeout=self.on_timeout)
         self._counter = 0
         self._loop_counter = 0
-        self.setInterval(interval)
+        self.interval = interval
         self.paused = False  # Pause flag
 
-    def on_timeout(self):
+    def on_timeout(self) -> None:
+        """
+        Slot function to emit frameChanged signal
+        """
+
         if not self.paused:
             if self._startFrame <= self._counter < self._endFrame:
                 self.frameChanged.emit(self._counter)
@@ -23,36 +49,87 @@ class TimeLine(QtCore.QObject):
             else:
                 self._counter = 0
                 self._loop_counter += 1
-                if self._loopCount > 0 and self._loop_counter >= self._loopCount:
+                if self._loop_count > 0 and self._loop_counter >= self._loop_count:
                     self._timer.stop()
 
-    def setLoopCount(self, loopCount):
-        self._loopCount = loopCount
+    @property
+    def loop_count(self) -> int:
+        """
+        Returns number of loops to repeat the timeline
 
-    def loopCount(self):
-        return self._loopCount
+        Returns:
+            int: number of loops to repeat the timeline
+        """
+        return self._loop_count
 
-    def setInterval(self, interval):
-        self._timer.setInterval(interval)
+    @loop_count.setter
+    def loop_count(self, value: int) -> None:
+        """
+        Sets number of loops to repeat the timeline
 
-    def interval(self):
+        Args:
+            value (int): number of loops to repeat the timeline
+        """
+
+        self._loop_count = value
+
+    @property
+    def interval(self) -> int:
+        """
+        Returns interval between frames
+
+        Returns:
+            int: interval between frames
+        """
+
         return self._timer.interval()
 
-    def setFrameRange(self, startFrame, endFrame):
-        self._startFrame = startFrame
-        self._endFrame = endFrame
+    @interval.setter
+    def interval(self, value: int) -> None:
+        """
+        Sets interval between frames
+
+        Args:
+            value (int): interval between frames
+        """
+
+        self._timer.setInterval(value)
+
+    def set_frame_range(self, start_frame: int, end_frame: int) -> None:
+        """
+        Sets start and end frame of the timeline
+
+        Args:
+            start_frame (int): start frame
+            end_frame (int): end frame
+        """
+
+        self._startFrame = start_frame
+        self._endFrame = end_frame
 
     @QtCore.pyqtSlot()
-    def start(self):
+    def start(self) -> None:
+        """
+        Starts the timeline
+        """
+
         self._counter = 0
         self._loop_counter = 0
         self._timer.start()
 
-    def pause(self):
+    def pause(self) -> None:
+        """
+        Pauses the timeline
+        """
+
         self.paused = True
         self._timer.stop()
 
-    def resume(self):
+    def resume(self) -> None:
+        """
+        Resumes the timeline
+        """
+
         self.paused = False
         self._timer.start()
 
