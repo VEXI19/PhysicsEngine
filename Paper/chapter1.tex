@@ -24,7 +24,7 @@ Są to:
     na znajomość tych narzędzi przez autorów pracy.
     \item \textbf{Python 3.13} - język programowania, w którym napisane
     zostały obydwa moduły projektu.\\ Python został wybrany jako język
-    programowania w projekcie ze względu na jego prostotę, oraz
+    programowania w projekcie ze względu na jego prostotę oraz
     znajomość tego języka przez autorów pracy. Ważnym czynnikiem wpływającym
     na wybór tego języka jest również popularność Pythona w dziedzinie
     uczenia maszynowego oraz sztucznej inteligencji. Dzięki wykorzystaniu
@@ -48,4 +48,62 @@ technologie umożliwiające stworzenie i edycję niniejszego dokumentu:
 \end{itemize}
 
 \section{Przegląd dostępnych rozwiązań. }
+
+\subsection{Silniki symulacji lotów rakietowych.}
+
+Na rynku dostępnych jest wiele modeli silników fizycznych umożliwiających
+symulację lotów rakietowych, jak i narzędzi umożliwiających tworzenie
+własnych symulacji. Poniżej zaprezentowane zostały najpopularniejsze z nich. \\
+
+Narzędzia służące do ogólnego modelowania symulacji fizycznych:
+\begin{itemize}
+    \item \textbf{Symulink.} \\Bardzo zaawansowane narzędzie do
+    modelowania i prowadzenia symulacji systemów dynamicznych. Symulink
+    wchodzi w skład pakietu Matlab. System ten umożliwia elastyczne i
+    dokładne modelowanie sił. Narzędzie to bazuje na krokowych modelach
+    składania sił, co pozwala na bardzo dokładne modelowanie sił
+    działających na obiekt. Symulink jest narzędziem płatnym oraz
+    wymagającym dużej wiedzy z zakresu modelowania systemów dynamicznych. \\
+    Symulink może zostać wykorzystany do stworzenia bardzo dokładnego modelu
+    symulacji lotu rakiety poprzez zamodelowanie sił działających na
+    obiekt i symulację ich działania w czasie.
+
+
+    \item \textbf{ANSYS Fluent.}
+    \\Zaawansowane narzędzie do symulacji dynamiki płynów (CFD – Computational Fluid Dynamics) wykorzystywane w inżynierii aerodynamicznej i mechanicznej. ANSYS Fluent umożliwia modelowanie przepływów płynów, wymiany ciepła, oraz oddziaływania sił aerodynamicznych na obiekty w różnych warunkach środowiskowych.
+    ANSYS Fluent bazuje na rozwiązaniach równań Naviera-Stokesa, co pozwala na dokładne odwzorowanie zjawisk takich jak opór aerodynamiczny, turbulencje oraz efekty cieplne. Dzięki zaawansowanym algorytmom i funkcjom, Fluent umożliwia analizę złożonych scenariuszy, takich jak przepływ wokół wieloelementowych konstrukcji czy interakcje z gazami spalinowymi.
+    Oprogramowanie to jest komercyjne, a jego obsługa wymaga wiedzy z zakresu CFD oraz doświadczenia w konfiguracji symulacji.
+    ANSYS Fluent może być wykorzystany do szczegółowego modelowania lotu rakiety poprzez analizę przepływu powietrza wokół korpusu rakiety, co pozwala na optymalizację jej konstrukcji i poprawę stabilności aerodynamicznej.
+
+
+    \item \textbf{OpenFOAM.}
+    \\Otwartoźródłowe oprogramowanie do symulacji CFD, które oferuje zaawansowane możliwości modelowania przepływów płynów, wymiany ciepła oraz innych procesów fizycznych. OpenFOAM opiera się na podejściu siatkowym (mesh-based), co pozwala na precyzyjne odwzorowanie geometrii i rozwiązywanie równań Naviera-Stokesa w ramach analiz aerodynamicznych.
+    Główną zaletą OpenFOAM jest jego elastyczność i dostępność – oprogramowanie jest darmowe i można je dostosować do indywidualnych potrzeb poprzez tworzenie własnych modułów i skryptów. Jednak jego obsługa wymaga zaawansowanej wiedzy technicznej oraz umiejętności pracy w środowisku tekstowym, co może być barierą dla początkujących użytkowników. \
+    OpenFOAM może zostać wykorzystany do symulacji lotu rakiety poprzez analizę sił aerodynamicznych oraz optymalizację kształtu i konstrukcji rakiety w celu minimalizacji oporu i poprawy wydajności lotu.
+
+\end{itemize}
+Dedykowane silniki fizyczne umożliwiające symulację lotów rakietowych:
+
+\begin{itemize}
+
+    \item \textbf{OpenRocket.}
+    \\Bezpłatne i otwartoźródłowe narzędzie stworzone specjalnie do symulacji lotów rakiet. OpenRocket jest łatwe w obsłudze, dzięki intuicyjnemu interfejsowi graficznemu, który umożliwia szybkie projektowanie rakiet oraz przeprowadzanie symulacji ich lotu. Program oferuje możliwość modelowania sił aerodynamicznych, takich jak opór powietrza, siła nośna oraz działanie silników rakietowych w różnych warunkach.
+    OpenRocket obsługuje różne typy silników, pozwala na analizę stabilności rakiety, trajektorii lotu oraz przewidywanie maksymalnej wysokości i zasięgu. Narzędzie to jest szczególnie popularne wśród hobbystów oraz studentów, dzięki swojej prostocie i dostępności, choć może mieć ograniczenia w przypadku bardziej zaawansowanych symulacji.
+    \\Narzędzie to było też w dużym stopniu inspiracją niniejszej pracy
+    inżynierskiej.
+
+
+    \item \textbf{RockSim.}
+    \\Komercyjne oprogramowanie do projektowania i symulacji lotów rakiet, dedykowane zarówno dla entuzjastów, jak i profesjonalistów. RockSim umożliwia projektowanie rakiet od podstaw, uwzględniając szczegółowe parametry takie jak geometria, masa komponentów czy rozmieszczenie środka ciężkości i ciśnienia.
+    Program oferuje zaawansowane funkcje symulacji aerodynamicznych, takich jak analiza stabilności, przewidywanie trajektorii lotu oraz obliczanie wpływu warunków atmosferycznych (wiatr, temperatura) na zachowanie rakiety. Dzięki swojej wszechstronności, RockSim jest używany zarówno w edukacji, jak i w projektach zaawansowanych konstrukcji rakietowych.
+
+
+    \item \textbf{RAS Aero.}
+    \\RAS Aero to zaawansowane narzędzie do symulacji lotów rakiet dedykowane użytkownikom, którzy potrzebują dużej dokładności w analizie aerodynamicznej. Program oferuje możliwość modelowania trajektorii z uwzględnieniem szczegółowych parametrów aerodynamicznych, takich jak współczynniki oporu czy siły nośnej, oraz wpływu zmiennych warunków atmosferycznych na rakietę.
+    RAS Aero jest szczególnie cenione za swoją zdolność do przewidywania zachowania rakiet przy dużych prędkościach oraz podczas przejścia przez bariery dźwiękowe. Oprogramowanie to jest płatne i wymaga większego doświadczenia w pracy z danymi aerodynamicznymi, ale oferuje bardzo dokładne wyniki symulacji.
+
+
+\end{itemize}
+
+\subsection{Algorytmy uczenia maszynowego.}
 
