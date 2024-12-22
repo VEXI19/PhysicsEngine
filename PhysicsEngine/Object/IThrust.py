@@ -88,13 +88,28 @@ class IThrust(ABC):
 
         raise NotImplementedError
     
-    def get_data_header(self):
+    def get_data_header(self) -> str:
+        """
+        Returns headers for the simulation data
+
+        Returns:
+            string: headers for the simulation data
+        """
+
         headers = "engine_angle_x,engine_angle_y,engine_angle_z"
         next_headers = super().get_data_header() if hasattr(super(), "get_data_header") else ""
+
         return f"{headers},{next_headers}"
 
-    def get_data(self):
+    def get_data(self) -> str:
+        """
+        Function to get data used to save during simulation
+
+        Returns:
+            str: data used to save during simulation
+        """
+
         data = f"{self.engine_angle[0]},{self.engine_angle[1]},{self.engine_angle[2]}"
         next_data = super().get_data() if hasattr(super(), "get_data") else ""
-        return f"{data},{next_data}"
 
+        return f"{data},{next_data}"
