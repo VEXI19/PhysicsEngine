@@ -1,0 +1,1061 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  22 DEC 2024 17:30
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(SGGW-thesis/SGGW-thesis.cls
+
+LaTeX Warning: You have requested document class `SGGW-thesis/SGGW-thesis',
+               but the document class provides `SGGW-thesis'.
+
+Document Class: SGGW-thesis 2024/10/12 LaTeX class for writing theses in WULS-S
+GGW
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+\caption@tempdima=\dimen141
+\captionmargin=\dimen142
+\caption@leftmargin=\dimen143
+\caption@rightmargin=\dimen144
+\caption@width=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count196
+\c@continuedfloat=\count197
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count198
+\Gm@cntv=\count199
+\c@Gm@tempcnt=\count266
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks20
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/polski\polski.sty
+Package: polski 2021/08/25 v1.3.6 Polish language package
+
+   Inputenc package detected. Catcodes not changed.
+) (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen159
+\ttl@minus=\dimen160
+\ttl@toksa=\toks21
+\titlewidth=\dimen161
+\titlewidthlast=\dimen162
+\titlewidthfirst=\dimen163
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip52
+\enit@outerparindent=\dimen164
+\enit@toks=\toks22
+\enit@inbox=\box52
+\enit@count@id=\count267
+\enitdp@description=\count268
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count269
+\calc@Bcount=\count270
+\calc@Adimen=\dimen165
+\calc@Bdimen=\dimen166
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count271
+\calc@Cskip=\skip55
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)))
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count272
+\U@D=\dimen167
+\l@unhyphenated=\language79
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count273
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+Package babel Info: You haven't specified a language as a class or package
+(babel)             option. I'll load 'nil'. Reported on input line 4342.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/generic/babel\nil.ldf
+Language: nil 2024/01/07 v24.1 Nil language
+\l@nil=\language80
+))
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 32
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count274
+\l__pdf_internal_box=\box53
+)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\main.aux
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter1.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter2.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter3.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter4.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter5.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter6.au
+x))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+\big@size=\dimen168
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(99.58464pt, 426.79135pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=702.78308pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count275
+\scratchdimen=\dimen169
+\scratchbox=\box54
+\nofMPsegments=\count276
+\nofMParguments=\count277
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count278
+\MPscratchDim=\dimen170
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
+\everyMPtoPDFconversion=\toks24
+)
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+<SGGW-thesis/naglowek_inz.png, id=1, 742.775pt x 182.6825pt>
+File: SGGW-thesis/naglowek_inz.png Graphic file (type png)
+<use SGGW-thesis/naglowek_inz.png>
+Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 33.
+(pdftex.def)             Requested size: 279.12146pt x 68.65071pt.
+<SGGW-thesis/stopka_WZIM.png, id=3, 483.30562pt x 82.80937pt>
+File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
+<use SGGW-thesis/stopka_WZIM.png>
+Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 33.
+(pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
+ [1
+
+{C:/Users/jkind/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/jkin
+d/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./SGGW-thesis/na
+glowek_inz.png> <./SGGW-thesis/stopka_WZIM.png>] [2]
+Overfull \hbox (25.55125pt too wide) in paragraph at lines 34--34
+\T1/lmr/m/n/12 O±wiadczam, »e niniejsza praca zostaªa przygotowana pod moim kie
+runkiem i stwierdzam,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+
+ []
+
+
+Overfull \hbox (3.51888pt too wide) in paragraph at lines 34--34
+\T1/lmr/m/n/12 faªszywego o±wiadczenia, o±wiadczam, »e niniejsza praca dyplomow
+a zostaªa napisana
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+
+ []
+
+
+Overfull \hbox (11.9044pt too wide) in paragraph at lines 34--34
+\T1/lmr/m/n/12 O±wiadczam, »e niniejsza wersja pracy jest identyczna z zaª¡czon
+¡ wersj¡ elektroniczn¡.
+ []
+
+
+Overfull \hbox (44.80621pt too wide) in paragraph at lines 34--34
+\T1/lmr/m/n/12 Przyjmuj¦ do wiadomo±ci, »e praca dyplomowa poddana zostanie pro
+cedurze antyplagiatowej. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+
+ []
+
+[3] [4] [5] [6]
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
+[7
+
+])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [8]
+\openout2 = `chapter1.aux'.
+
+ (chapter1.tex
+Rozdzia\PlPrIeC {\l } 1.
+
+Overfull \hbox (0.25313pt too wide) in paragraph at lines 4--6
+\T1/lmr/m/n/12 Celem niniejszej pracy in»ynierskiej jest stworzenie systemu ste
+ruj¡cego, który b¦dzie
+ []
+
+
+Overfull \hbox (1.42885pt too wide) in paragraph at lines 4--6
+\T1/lmr/m/n/12 konieczne jest stworzenie ±rodowiska, w którym algorytm steruj¡c
+y b¦dzie trenowany.
+ []
+
+
+Overfull \hbox (13.89653pt too wide) in paragraph at lines 12--18
+\T1/lmr/m/n/12 Poszczególne biblioteki i narz¦dzia wykorzystane podczas pracy n
+ad ka»dym z moduªów
+ []
+
+
+Overfull \hbox (23.55997pt too wide) in paragraph at lines 12--18
+\T1/lmr/m/n/12 technologie oraz narz¦dzia zostaªy wykorzystane podczas pracy na
+d obydwoma moduªami
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+0.
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (2.89537pt too wide) in paragraph at lines 20--25
+\T1/lmr/m/n/12 Umo»liwiªy one wspóln¡ prac¦ nad kodem projektu oraz dost¦p do a
+rchiwalnych
+ []
+
+
+Overfull \hbox (5.73526pt too wide) in paragraph at lines 20--25
+\T1/lmr/m/n/12 wersji projektu. Git oraz Github zostaªy wybrane ze wzgl¦du na i
+ch popularno±¢,
+ []
+
+
+Overfull \hbox (14.15756pt too wide) in paragraph at lines 25--32
+\T1/lmr/m/n/12 czynnikiem wpªywaj¡cym na wybór tego j¦zyka jest równie» popular
+no±¢ Pythona
+ []
+
+
+Overfull \hbox (22.02222pt too wide) in paragraph at lines 25--32
+\T1/lmr/m/n/12 w dziedzinie uczenia maszynowego oraz sztucznej inteligencji. Dz
+i¦ki wykorzystaniu
+ []
+
+[9
+
+
+{C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (22.69615pt too wide) in paragraph at lines 32--36
+[]\T1/lmr/bx/n/12 PyCharm Professional \T1/lmr/m/n/12 - ±rodowisko programistyc
+zne wykorzystane do tworzenia
+ []
+
+
+chapter1.tex:38: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 \\P
+        onadto, do tworzenia pracy inÅ¼ynierskiej wykorzystane zostaÅ‚y nast...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (13.459pt too wide) in paragraph at lines 42--46
+[]\T1/lmr/bx/n/12 LaTex \T1/lmr/m/n/12 - system skªadu tekstu wykorzystany do n
+apisania niniejszego dokumentu. 
+ []
+
+chapter1.tex:47: Undefined control sequence.
+l.47     w \latex
+                  zgodnie z wymaganiami formatowania pracy inÅ¼ynierskiej na...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (13.86462pt too wide) in paragraph at lines 56--74
+\T1/lmr/m/n/12 Dziedzina hobbitycznej symulacji lotów rakietowych jest niszow¡ 
+dziedzin¡ informatyki,
+ []
+
+
+Overfull \hbox (17.52257pt too wide) in paragraph at lines 56--74
+\T1/lmr/m/n/12 i wojsko do symulacji lotów rakietowych. Te systemy s¡ bardzo do
+kªadne, skomplikowane
+ []
+
+[10]
+Overfull \hbox (3.64662pt too wide) in paragraph at lines 77--80
+\T1/lmr/m/n/12 Na rynku dost¦pnych jest wiele modeli silników fizycznych umo»li
+wiaj¡cych symulacj¦
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
+
+Overfull \hbox (23.06778pt too wide) in paragraph at lines 83--93
+\T1/lmr/m/n/12 Bardzo zaawansowane narz¦dzie do modelowania i prowadzenia symul
+acji systemów
+ []
+
+
+Overfull \hbox (9.42621pt too wide) in paragraph at lines 83--93
+\T1/lmr/m/n/12 dynamicznych. Symulink wchodzi w skªad pakietu Matlab. System te
+n umo»liwia
+ []
+
+
+Overfull \hbox (27.57513pt too wide) in paragraph at lines 83--93
+\T1/lmr/m/n/12 modelach skªadania siª, co pozwala na bardzo dokªadne modelowani
+e siª dziaªaj¡cych
+ []
+
+
+Overfull \hbox (4.20122pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 Zaawansowane narz¦dzie do symulacji dynamiki pªynów (CFD ^^U Com
+putational
+ []
+
+
+Overfull \hbox (2.53703pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 Fluid Dynamics) wykorzystywane w in»ynierii aerodynamicznej i me
+chanicznej.
+ []
+
+
+Overfull \hbox (45.6561pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 Stokesa, co pozwala na dokªadne odwzorowanie zjawisk takich jak 
+opór aerodynamiczny,
+ []
+
+
+Overfull \hbox (2.96317pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 turbulencje oraz efekty cieplne. Dzi¦ki zaawansowanym algorytmom
+ i funkcjom,
+ []
+
+
+Overfull \hbox (35.83173pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 wieloelementowych konstrukcji czy interakcje z gazami spalinowym
+i. Oprogramowanie
+ []
+
+
+Overfull \hbox (29.13365pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 to jest komercyjne, a jego obsªuga wymaga wiedzy z zakresu CFD o
+raz do±wiadczenia
+ []
+
+
+Overfull \hbox (16.49246pt too wide) in paragraph at lines 95--100
+\T1/lmr/m/n/12 w konfiguracji symulacji. ANSYS Fluent mo»e by¢ wykorzystany do 
+szczegóªowego
+ []
+
+[11]
+Overfull \hbox (15.29646pt too wide) in paragraph at lines 102--106
+\T1/lmr/m/n/12 Otwarto¹ródªowe oprogramowanie do symulacji CFD, które oferuje z
+aawansowane
+ []
+
+
+Overfull \hbox (2.29828pt too wide) in paragraph at lines 102--106
+\T1/lmr/m/n/12 OpenFOAM jest jego elastyczno±¢ i dost¦pno±¢ ^^U oprogramowanie 
+jest darmowe
+ []
+
+
+Overfull \hbox (20.31604pt too wide) in paragraph at lines 102--106
+\T1/lmr/m/n/12 barier¡ dla pocz¡tkuj¡cych u»ytkowników.  OpenFOAM mo»e zosta¢ w
+ykorzystany
+ []
+
+
+Overfull \hbox (14.97552pt too wide) in paragraph at lines 102--106
+\T1/lmr/m/n/12 do symulacji lotu rakiety poprzez analiz¦ siª aerodynamicznych o
+raz optymalizacj¦
+ []
+
+
+Overfull \hbox (9.00182pt too wide) in paragraph at lines 112--117
+\T1/lmr/m/n/12 graficznemu, który umo»liwia szybkie projektowanie rakiet oraz p
+rzeprowadzanie
+ []
+
+
+Overfull \hbox (15.85591pt too wide) in paragraph at lines 112--117
+\T1/lmr/m/n/12 symulacji ich lotu. Program oferuje mo»liwo±¢ modelowania siª ae
+rodynamicznych,
+ []
+
+
+Overfull \hbox (14.15753pt too wide) in paragraph at lines 112--117
+\T1/lmr/m/n/12 oraz studentów, dzi¦ki swojej prostocie i dost¦pno±ci, cho¢ mo»e
+ mie¢ ograniczenia
+ []
+
+
+Overfull \hbox (26.2977pt too wide) in paragraph at lines 119--122
+\T1/lmr/m/n/12 Komercyjne oprogramowanie do projektowania i symulacji lotów rak
+iet, dedykowane
+ []
+
+
+Overfull \hbox (17.78024pt too wide) in paragraph at lines 119--122
+\T1/lmr/m/n/12 zarówno dla entuzjastów, jak i profesjonalistów. RockSim umo»liw
+ia projektowanie
+ []
+
+
+Overfull \hbox (4.46245pt too wide) in paragraph at lines 119--122
+\T1/lmr/m/n/12 wszechstronno±ci, RockSim jest u»ywany zarówno w edukacji, jak i
+ w projektach
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Overfull \hbox (9.0359pt too wide) in paragraph at lines 124--127
+\T1/lmr/m/n/12 u»ytkownikom, którzy potrzebuj¡ du»ej dokªadno±ci w analizie aer
+odynamicznej.
+ []
+
+
+Overfull \hbox (28.19064pt too wide) in paragraph at lines 124--127
+\T1/lmr/m/n/12 Program oferuje mo»liwo±¢ modelowania trajektorii z uwzgl¦dnieni
+em szczegóªowych
+ []
+
+
+Overfull \hbox (1.36589pt too wide) in paragraph at lines 124--127
+\T1/lmr/m/n/12 parametrów aerodynamicznych, takich jak wspóªczynniki oporu czy 
+siªy no±nej,
+ []
+
+
+chapter1.tex:139: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (17.08601pt too wide) in paragraph at lines 140--142
+[]\T1/lmr/m/n/12 Najpopularniejsze narz¦dzia stosowane do uczenia maszyno owego
+ RL w symulacjach
+ []
+
+
+Overfull \hbox (16.7364pt too wide) in paragraph at lines 145--147
+\T1/lmr/m/n/12 która znalazªa szerokie zastosowanie w symulacjach fizycznych, w
+ tym w dziedzinie
+ []
+
+
+Overfull \hbox (31.35329pt too wide) in paragraph at lines 145--147
+\T1/lmr/m/n/12 optymalizacji, TensorFlow umo»liwia trenowanie modeli RL na dany
+ch pochodz¡cych
+ []
+
+
+Overfull \hbox (14.12413pt too wide) in paragraph at lines 145--147
+\T1/lmr/m/n/12 z symulacji fizycznych. Framework ten oferuje bogat¡ funkcjonaln
+o±¢ do tworzenia
+ []
+
+
+Overfull \hbox (28.48618pt too wide) in paragraph at lines 145--147
+\T1/lmr/m/n/12 analizy danych i wizualizacji. TensorFlow wspiera ró»norodne tec
+hniki optymalizacji,
+ []
+
+[13]
+Overfull \hbox (6.68231pt too wide) in paragraph at lines 148--150
+\T1/lmr/m/n/12 PyTorch to kolejny popularny framework open-source'owy, który je
+st szczególnie
+ []
+
+
+Overfull \hbox (20.456pt too wide) in paragraph at lines 148--150
+\T1/lmr/m/n/12 Dzi¦ki swojej elastyczno±ci oraz wsparciu dla dynamicznych grafó
+w obliczeniowych,
+ []
+
+
+Overfull \hbox (16.57492pt too wide) in paragraph at lines 148--150
+\T1/lmr/m/n/12 w projektach zwi¡zanych z robotyk¡ oraz modelowaniem dynamicznyc
+h systemów,
+ []
+
+
+Overfull \hbox (14.58357pt too wide) in paragraph at lines 148--150
+\T1/lmr/m/n/12 takich jak rakiety, poniewa» pozwala na ªatw¡ integracj¦ z fizyc
+znymi symulacjami
+ []
+
+
+Overfull \hbox (14.61678pt too wide) in paragraph at lines 148--150
+\T1/lmr/m/n/12 atrakcyjnym wyborem dla osób rozpoczynaj¡cych prac¦ z uczeniem m
+aszynowym. 
+ []
+
+
+Overfull \hbox (16.06078pt too wide) in paragraph at lines 151--153
+\T1/lmr/m/n/12 Actor-Critic) czy DQN (Deep Q-Network). Jest to narz¦dzie szczeg
+ólnie przydatne
+ []
+
+
+Overfull \hbox (18.65802pt too wide) in paragraph at lines 151--153
+\T1/lmr/m/n/12 implementacja algorytmów RL do testowania i optymalizacji system
+ów sterowania.
+ []
+
+
+Overfull \hbox (41.96655pt too wide) in paragraph at lines 151--153
+\T1/lmr/m/n/12 Stable Baselines3 jest dobrze udokumentowan¡ platform¡, która uª
+atwia implementacj¦
+ []
+
+
+Overfull \hbox (43.95325pt too wide) in paragraph at lines 151--153
+\T1/lmr/m/n/12 i eksperymentowanie z ró»nymi metodami RL. Dzi¦ki swojej prostoc
+ie i kompatybilno±ci
+ []
+
+
+chapter1.tex:156: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.156 P
+       oniÅ¼ej przedstawione zostaÅ‚y jedne
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (30.01741pt too wide) in paragraph at lines 156--159
+[]\T1/lmr/m/n/12 Poni»ej przedstawione zostaªy jedne z popularniejszych oraz cz
+¦±ciej wykorzystywanych
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+
+Overfull \hbox (0.90747pt too wide) in paragraph at lines 161--163
+\T1/lmr/m/n/12 zaawansowane narz¦dzie umo»liwiaj¡ce symulacj¦ lotu rakiet. Opro
+gramowanie
+ []
+
+
+Overfull \hbox (24.99585pt too wide) in paragraph at lines 161--163
+\T1/lmr/m/n/12 to pozwala na elastyczne modelowanie dynamiki obiektów lataj¡cyc
+h, uwzgl¦dniaj¡c
+ []
+
+
+Overfull \hbox (7.6608pt too wide) in paragraph at lines 161--163
+\T1/lmr/m/n/12 Blockset oferuje gotowe bloki do analizy trajektorii oraz projek
+towania systemów
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Overfull \hbox (7.49281pt too wide) in paragraph at lines 164--166
+\T1/lmr/m/n/12 Microsoft AirSim to open-source'owy symulator lotu, pierwotnie z
+aprojektowany
+ []
+
+
+Overfull \hbox (27.01437pt too wide) in paragraph at lines 164--166
+\T1/lmr/m/n/12 uczenia maszynowego, takimi jak TensorFlow czy PyTorch, umo»liwi
+aj¡c trenowanie
+ []
+
+
+Overfull \hbox (38.8502pt too wide) in paragraph at lines 167--169
+\T1/lmr/m/n/12 sterowania obiektami dynamicznymi, takimi jak rakiety. Gazebo of
+eruje zaawansowan¡
+ []
+
+
+Overfull \hbox (11.38678pt too wide) in paragraph at lines 167--169
+\T1/lmr/m/n/12 symulacj¦ fizyczn¡, w tym modelowanie siª aerodynamicznych, koli
+zji i zmiennych
+ []
+
+
+Overfull \hbox (25.54233pt too wide) in paragraph at lines 167--169
+\T1/lmr/m/n/12 ±rodowiskowych. Integracja z ROS umo»liwia tworzenie i implement
+acj¦ algorytmów
+ []
+
+
+Overfull \hbox (6.13081pt too wide) in paragraph at lines 167--169
+\T1/lmr/m/n/12 sterowania opartych na uczeniu maszynowym, takich jak reinforcem
+ent learning.
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 172--57
+
+ []
+
+
+Overfull \hbox (14.38278pt too wide) in paragraph at lines 172--57
+\T1/lmr/m/n/12 tworzenia i testowania systemu steruj¡cego rakiet¡. Efektem tego
+ jest tak»e uproszczony
+ []
+
+
+Overfull \hbox (32.69478pt too wide) in paragraph at lines 172--57
+\T1/lmr/m/n/12 model fizyczny, o czym mowa jest w kolejnych rozdziaªach pracy. 
+Rozwi¡zanie prezentowane
+ []
+
+[15] [16]
+\openout2 = `chapter2.aux'.
+
+ (chapter2.tex
+Rozdzia\PlPrIeC {\l } 2.
+
+Overfull \hbox (6.38753pt too wide) in paragraph at lines 1--1
+|[]\T1/lmr/bx/n/20.74 Moduª I: Silnik fizyczny symulacji lotów
+ []
+
+) [17
+
+
+
+
+]
+\openout2 = `chapter3.aux'.
+
+ (chapter3.tex
+Rozdzia\PlPrIeC {\l } 3.
+
+Overfull \hbox (33.28195pt too wide) in paragraph at lines 6--7
+\T1/lmr/m/n/12 Do stworzenia algorytmu steruj¡cego rakiet¡ wykorzystane zostaªy
+ nast¦puj¡ce technologie: 
+ []
+
+
+Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
+|[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
+ []
+
+) [18
+
+
+
+
+]
+\openout2 = `chapter4.aux'.
+
+ (chapter4.tex
+Rozdzia\PlPrIeC {\l } 4.
+
+Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
+|[]\T1/lmr/bx/n/20.74 Integracja komponentów: Silnik fizyczny
+ []
+
+
+Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
+|[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
+ []
+
+) [19
+
+
+
+
+]
+\openout2 = `chapter5.aux'.
+
+ (chapter5.tex
+Rozdzia\PlPrIeC {\l } 5.
+
+Overfull \hbox (23.94484pt too wide) in paragraph at lines 3--3
+|[]\T1/lmr/bx/n/17.28 Ocena skuteczno±ci modelu sztucznej inteligencji| 
+ []
+
+
+Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
+|[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
+ []
+
+) [20
+
+
+
+
+]
+\openout2 = `chapter6.aux'.
+
+ (chapter6.tex
+Rozdzia\PlPrIeC {\l } 6.
+) [21
+
+
+
+
+]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 68.
+
+[22
+
+
+
+] [23] [24]
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\main.aux
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter1.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter2.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter3.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter4.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter5.au
+x)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\auxil\chapter6.au
+x))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6180 strings out of 474485
+ 110088 string characters out of 5743733
+ 1934542 words of memory out of 5000000
+ 28336 multiletter control sequences out of 15000+600000
+ 606778 words of font info for 66 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,5n,79p,882b,255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
+>
+Output written on C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Paper\
+out\main.pdf (24 pages, 138654 bytes).
+PDF statistics:
+ 99 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+
