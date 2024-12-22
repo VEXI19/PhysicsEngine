@@ -19,28 +19,25 @@ współtwórców, dlatego też podzielona jest ona na dwa główne moduły.
     \item Moduł II: Algorytm sterujący rakietą. Autor: Dominik Kubicki;
 \end{itemize}
 \\
-Każdy z modułów jest pełną pracą inżynierską samą w sobie, zawierając
-podstawy teoretyczne, przedstawienie wykorzystanych technologii, opis i
-dekonstrukcje stworzonego rozwiązania, wnioski, wyniki i opis procesu
-powstawania. \\
-
-Łącznie oba projekty-moduły tworzą kompletny system sterujący rakietą,
-wytrenowany na silniku fizycznym, co spełnia założony cel pracy.
-
-\\
-
-Pozostałe rozdziały pracy poświęcone są opisowi kwestii dotyczących obu
-modułów pracy inżynierskiej, takich jak między innymi wstęp, integracja obu
-części projektu, końcowe wnioski wyniki oraz podsumowanie całości rozwiązania
-pracy.
-\\
-
 Główne moduły pracy są ze sobą tak ściśle związane, że aby zachować spójność,
 prace inżynierskie dwóch autorów powstały jako jeden
 dokument.
 Dzięki temu możliwe jest utrzymanie ciągu logicznego, prowadzącego od
 powstania silnika fizycznego przez trenowanie na nim modelu sterującego aż
-do integracji obu systemów i wniosków końcowych.
+do integracji obu systemów i wniosków końcowych. \\
+Każdy z modułów jest pełną pracą inżynierską samą w sobie, zawierając
+podstawy teoretyczne, przedstawienie wykorzystanych technologii, opis i
+dekonstrukcje stworzonego rozwiązania, wnioski, wyniki i opis procesu
+powstawania. \\
+Łącznie oba projekty-moduły tworzą kompletny system sterujący rakietą,
+wytrenowany na silniku fizycznym, co spełnia założony cel pracy.
+\\
+Pozostałe rozdziały pracy poświęcone są opisowi kwestii dotyczących obu
+modułów pracy inżynierskiej, takich jak między innymi wstęp, integracja obu
+części projektu, końcowe wnioski wyniki oraz podsumowanie całości rozwiązania
+pracy.
+
+
 
 \section{Użyte technologie}
 Poszczególne biblioteki i narzędzia wykorzystane podczas pracy nad każdym z
@@ -91,6 +88,13 @@ Dziedzina hobbystycznej symulacji lotów rakietowych, choć niszowa w kontekści
 
 \\Znacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
 Reinforcement Learning (RL), oferuje liczne rozwiązania, które mogą zostać wykorzystane do trenowania modeli sztucznej inteligencji odpowiedzialnych za sterowanie lotem rakiety. W tym rozdziale przedstawione zostały najczęściej wykorzystywane z nich — zarówno biblioteki służące do trenowania modeli, jak i narzędzia umożliwiające przeprowadzanie treningów na symulacjach.
+
+Dobra znajomość dostępnych na rynku rozwiązań pozwala na wybór najlepszego
+narzędzia do konkretnego projektu, a także na zrozumienie specyfiki
+symulacji lotów rakietowych oraz algorytmów sterujących, co jest kluczowe
+dla skutecznego rozwoju systemów sterowania rakietami. Dzięki zapoznaniu się
+z obecnymi rozwiązaniami możeliwe było stworzenie własnego, dedykowanego
+narzędzia do symulacji lotów rakietowych oraz algorytmu sterującego.
 
 
 \subsection{Silniki symulacji lotów rakietowych.}
@@ -204,12 +208,9 @@ szczegółowości, dzięki zastosowaniu skomplikowanych rozwiązań takich jak C
 czy analiza trajektorii lotu. Na dokładnych symulacjach trenowane za pomocą
 dobrze dobranych algorytmów uczenia maszynowego modele mogą być w stanie
 osiągnąć bardzo dobre wyniki w sterowaniu lotem rakiety.\\
-\\ W niniejszej pracy inżynierskiej
-wykorzystane
-zostały własne implementacje silnika fizycznego oraz algorytmu sterującego,
-co pozwoliło na pełną kontrolę nad procesem tworzenia i testowania systemu
-sterującego rakietą. Efektem tego jest także uproszczony model fizyczny, o
-czym mowa jest w kolejnych rozdziałach pracy. Rozwiązanie prezentowane w tej
-pracy odbiega od profesjonalnych narzędzi, jednak pozwala na zrozumienie
-sposobu działania symulacji lotu rakiety oraz algorytmów sterujących i jest
-dobrą bazą pod rozwój bardziej zaawansowanych systemów w przyszłości.
+\\ W niniejszej pracy inżynierskiej wykorzystane zostały własne implementacje silnika fizycznego oraz algorytmu sterującego,
+co pozwoliło na pełną kontrolę nad procesem tworzenia i testowania systemu sterującego rakietą.
+Efektem tego jest także uproszczony model fizyczny, o czym mowa jest w kolejnych rozdziałach pracy.
+Rozwiązanie prezentowane w tej pracy odbiega od profesjonalnych narzędzi pod względem skomplikowania i dokładności,
+jednak pozwala na zrozumienie sposobu działania symulacji lotu rakiety oraz algorytmów sterujących i jest
+dobrą bazą do rozwoju bardziej zaawansowanych systemów w przyszłości.
