@@ -1,17 +1,21 @@
 from ..Object.IThrust import IThrust
 from ..Environment.IEnvironment import IEnvironment
 import numpy as np
+from numpy.typing import NDArray
 from ..Utils.EulerAngles import transform_to_global, transform_to_local
 
 
-def thrust(object: IThrust, environment: IEnvironment, time: float):
-
+def thrust(object: IThrust, environment: IEnvironment, time: float) -> (NDArray[np.float64], NDArray[np.float64]):
     """
     Function to compute thrust force and torque
-    @param object: object of the rocket with implemented IThrust interface
-    @param environment: object of the environment with implemented IEnvironment interface
-    @param time: current time of the simulation
-    @return: thrust force and torque
+
+    Args:
+        object (IThrust): object on which thrust is acting
+        environment (IEnvironment): simulation environment
+        time (float): current time of the simulation
+
+    Returns:
+        (NDArray[np.float64], NDArray[np.float64]): thrust force and torque
     """
 
     thrust_mag = object.mass_flow_rate(time) * object.exhaust_velocity(time)

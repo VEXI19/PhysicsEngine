@@ -4,6 +4,9 @@ import os
 from PhysicsEngine.UI.Windows.simulation_window import SimulationWindow
 
 class FilePicker(QWidget):
+    """
+    QWidget class for file picker. This widget is used to pick a file from simulation directory.
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
@@ -22,7 +25,15 @@ class FilePicker(QWidget):
         self.file_buttons_layout = QVBoxLayout()
         self.layout.addLayout(self.file_buttons_layout)
 
-    def populate_view(self):
+    def populate_view(self) -> None:
+        """
+        Populates the view with files from the current simulation directory.
+
+        If no files are found, displays an error message.
+
+        If a button is clicked, opens a new SimulationWindow with the file path.
+        """
+
         folder_path = os.path.join(self.parent.current_simulation_directory, "Simulations")
         self.no_directory_label.setText("")
 
@@ -44,8 +55,14 @@ class FilePicker(QWidget):
                 button.clicked.connect(lambda _, path=file_path: self.file_selected(path))
                 self.file_buttons_layout.addWidget(button)
 
-    def file_selected(self, path):
-        print(f"File selected: {path}")
+    def file_selected(self, path: str) -> None:
+        """
+        Opens a new SimulationWindow with the selected file path.
+
+        Args:
+            path (str): path to the simulation file
+        """
+
         sim_window = SimulationWindow(path)
         sim_window.show()
         self.simulation_windows.append(sim_window)

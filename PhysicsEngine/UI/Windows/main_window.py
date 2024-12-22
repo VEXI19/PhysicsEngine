@@ -9,6 +9,9 @@ from PhysicsEngine.UI.Views.picker import VisualizationPickView
 
 
 class MainWindow(QMainWindow):
+    """
+    Main window class for the application. Connects all the views and widgets.
+    """
     def __init__(self):
         super().__init__()
 
@@ -28,5 +31,12 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.visualization_view)
 
     def keyPressEvent(self, event: QKeyEvent) -> None:
+        """
+        Handles key press events.
+
+        Args:
+            event (QKeyEvent): Key press event
+        """
+
         if event.modifiers() == Qt.ControlModifier and event.key() == Qt.Key_Q:
             sys.exit(0)
