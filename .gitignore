@@ -11,3 +11,6 @@
 .idea
 config.ini
 /out/
+/Docs/Sphinx/build
+Docs/Sphinx/source/modules.rst
+Docs/Sphinx/source/PhysicsEngine*.rst
