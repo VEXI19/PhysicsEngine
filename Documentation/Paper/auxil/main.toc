@@ -10,29 +10,53 @@
 \contentsline {chapter}{\numberline {2}Moduł I: Silnik fizyczny symulacji lotów rakietowych.}{18}{}%
 \contentsline {section}{\numberline {2.1}Założenia projektowe.}{18}{}%
 \contentsline {section}{\numberline {2.2}Teoretyczne podstawy fizyczne.}{19}{}%
-\contentsline {section}{\numberline {2.3}Użyte technologie.}{19}{}%
-\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{20}{}%
-\contentsline {section}{\numberline {2.5}Model sił działających na rakietę.}{20}{}%
-\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{20}{}%
-\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{20}{}%
-\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{20}{}%
-\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{21}{}%
-\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{21}{}%
-\contentsline {section}{\numberline {3.2}Użyte technologie.}{21}{}%
-\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{21}{}%
-\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{21}{}%
-\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{21}{}%
-\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{21}{}%
-\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{22}{}%
-\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{22}{}%
-\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{22}{}%
-\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{22}{}%
-\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{23}{}%
-\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{23}{}%
-\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{23}{}%
-\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{23}{}%
-\contentsline {chapter}{\numberline {6}Podsumowanie}{24}{}%
-\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{24}{}%
-\contentsline {section}{\numberline {6.2}Wnioski końcowe}{24}{}%
-\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{24}{}%
-\contentsline {chapter}{Bibliografia}{25}{}%
+\contentsline {subsection}{\numberline {2.2.1}Opis sił działających na rakietę}{20}{}%
+\contentsline {subsection}{\numberline {2.2.2}Równania ruchu postępowego}{21}{}%
+\contentsline {subsection}{\numberline {2.2.3}Ruch obrotowy i momenty sił}{22}{}%
+\contentsline {subsubsection}{Równania ruchu obrotowego}{22}{}%
+\contentsline {subsubsection}{Stabilizacja lotu}{23}{}%
+\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{23}{}%
+\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{23}{}%
+\contentsline {subsubsection}{Definicja kąta natarcia}{23}{}%
+\contentsline {subsubsection}{Wpływ kąta natarcia na dynamikę rakiety}{24}{}%
+\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{24}{}%
+\contentsline {subsection}{\numberline {2.2.6}Geometria rakiety}{24}{}%
+\contentsline {subsubsection}{Opis geometrii rakiety jako cylindra}{24}{}%
+\contentsline {subsubsection}{Wzory geometryczne}{24}{}%
+\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako cylindra pod różnymi kątami}{25}{}%
+\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{25}{}%
+\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{25}{}%
+\contentsline {paragraph}{Granice powierzchni przekroju:}{25}{}%
+\contentsline {subsubsection}{Charakterystyka punktów charakterystycznych rakiety}{25}{}%
+\contentsline {paragraph}{Relacje między punktami}{26}{}%
+\contentsline {subsection}{\numberline {2.2.7}Obroty układów współrzędnych}{26}{}%
+\contentsline {subsubsection}{Układy współrzędnych w dynamice rakiety}{26}{}%
+\contentsline {subsubsection}{Kąty Eulera i transformacje układów współrzędnych}{26}{}%
+\contentsline {paragraph}{Macierze rotacji}{27}{}%
+\contentsline {subsection}{\numberline {2.2.8}Podsumowanie}{27}{}%
+\contentsline {section}{\numberline {2.3}Użyte technologie.}{27}{}%
+\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{28}{}%
+\contentsline {section}{\numberline {2.5}Model sił działających na rakietę.}{28}{}%
+\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{28}{}%
+\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{28}{}%
+\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{28}{}%
+\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{29}{}%
+\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{29}{}%
+\contentsline {section}{\numberline {3.2}Użyte technologie.}{29}{}%
+\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{29}{}%
+\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{29}{}%
+\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{29}{}%
+\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{29}{}%
+\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{30}{}%
+\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{30}{}%
+\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{30}{}%
+\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{30}{}%
+\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{31}{}%
+\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{31}{}%
+\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{31}{}%
+\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{31}{}%
+\contentsline {chapter}{\numberline {6}Podsumowanie}{32}{}%
+\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{32}{}%
+\contentsline {section}{\numberline {6.2}Wnioski końcowe}{32}{}%
+\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{32}{}%
+\contentsline {chapter}{Bibliografia}{33}{}%

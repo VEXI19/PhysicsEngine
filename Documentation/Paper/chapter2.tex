@@ -63,8 +63,316 @@ będąc na tyle prostym, aby nie obciążać zasobów komputera osobistego.
 
 \section{Teoretyczne podstawy fizyczne.}\label{sec:teoretyczne-podstawy.}
 
-Tworzenie silnika symulacji lotów rakietowych wymaga zrozumienia podstawowych
-zasad fizyki odnoszących się do ruchu rakiety w atmosferze.
+Tworzenie silnika symulacji lotów rakietowych wymaga zrozumienia
+zasad fizyki odnoszących się do ruchu rakiety w atmosferze, a także zjawisk
+towarzyszących temu ruchowi. Ponadto konieczne jest zrozumienie podstawowych
+zagadnień z zakresu matematyki, w tym geometrii przestrzennej oraz równań
+różniczkowych.\\
+W tym rozdziale po krótce omówione zostały zagadnienia, które stanowią
+podstawę implementacji silnika fizycznego symulacji lotów rakietowych.
+
+\subsection{Opis sił działających na rakietę}
+W trakcie lotu rakiety w atmosferze działają na nią różne siły, które determinują zarówno ruch postępowy, jak i obrotowy. Siły te można podzielić na:
+
+
+\begin{itemize}
+\item \textbf{Siła ciężkości (Gravity)} \newline
+Siła skierowana ku środkowi Ziemi, działająca na środek masy rakiety (\textit{Center of Gravity, CoG}). Jej wartość wyraża się jako:
+\[ \vec{F}_g = m \cdot \vec{g},\] gdzie:
+\begin{itemize}
+\item $m$ -- masa rakiety [kg],
+\item $\vec{g}$ -- wektor przyspieszenia grawitacyjnego [m/s$^2$], zazwyczaj o wartości około $9.81$ m/s$^2$ na poziomie morza.
+\end{itemize}
+
+
+\item \textbf{Siła nośna (Lift)} \newline
+Siła działająca na punkt środka parcia (\textit{Center of Pressure, CoP}) rakiety, prostopadła do kierunku przepływu powietrza. Jest istotna w stabilizacji lotu i zależy od kształtu rakiety oraz kąta natarcia. Wyraża się jako:
+\[ \vec{F}_l = \frac{1}{2} \rho v^2 C_l A, \]
+gdzie:
+\begin{itemize}
+    \item $\rho$ -- gęstość powietrza [kg/m$^3$],
+    \item $v$ -- prędkość rakiety względem powietrza [m/s],
+    \item $C_l$ -- współczynnik siły nośnej (zależy od kąta natarcia),
+    \item $A$ -- efektywna powierzchnia rakiety [m$^2$].
+\end{itemize}
+
+\item \textbf{Siła oporu aerodynamicznego (Drag)} \newline
+Siła działająca również na punkt \textit{Center of Pressure (CoP)}, przeciwna do kierunku ruchu. Zależy od właściwości powietrza i kształtu rakiety, a jej wartość wyraża się jako:
+\[ \vec{F}_d = \frac{1}{2} \rho v^2 C_d A, \]
+gdzie:
+\begin{itemize}
+    \item $C_d$ -- współczynnik oporu aerodynamicznego (zależy od kształtu rakiety).
+\end{itemize}
+
+\item \textbf{Siła ciągu (Thrust)} \newline
+Siła generowana przez silnik rakiety, działająca na punkt \textit{Center of Thrust (CoT)} wzdłuż osi rakiety. Wyrażenie opisujące siłę ciągu to:
+\[ \vec{F}_t = F_{max} \cdot u(t), \]
+gdzie:
+\begin{itemize}
+    \item $F_{max}$ -- maksymalna siła ciągu [N],
+    \item $u(t)$ -- funkcja sterująca (np. zależna od przepływu paliwa).
+\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Równania ruchu postępowego}
+Ruch postępowy rakiety w atmosferze opisuje druga zasada dynamiki Newtona, zgodnie z którą suma wszystkich sił działających na rakietę równa jest iloczynowi masy rakiety i przyspieszenia środka masy:
+\[.\vec{F}_{net} = \vec{F}_g + \vec{F}_l + \vec{F}_d + \vec{F}_t.\]
+
+
+Przyspieszenie rakiety można wyznaczyć jako:
+\[\vec{a} = \frac{\vec{F}_{net}}{m},\]
+
+natomiast prędkość w kolejnych momentach czasu oblicza się poprzez całkowanie przyspieszenia względem czasu:
+\[\vec{v}(t) = \vec{v}_0 + \int_0^t \vec{a}(\tau) d\tau,\]
+
+gdzie:
+\begin{itemize}
+\item $\vec{v}_0$ -- początkowa prędkość rakiety [m/s].
+\end{itemize}
+
+
+Pozycję rakiety można wyznaczyć poprzez kolejne całkowanie prędkości:
+\[\vec{x}(t) = \vec{x}_0 + \int_0^t \vec{v}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{x}_0$ -- początkowa pozycja rakiety [m].
+\end{itemize}
+
+
+
+\subsection{Ruch obrotowy i momenty sił}
+Ruch obrotowy rakiety jest determinowany momentami sił działającymi na rakietę. Kluczowe znaczenie ma tutaj punkt środka masy (CoG), wokół którego rakieta może rotować. Moment siły względem środka masy wyraża się jako:
+\[\vec{M} = \vec{r} \times \vec{F},\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{r}$ -- wektor od środka masy do punktu przyłożenia siły [m],
+\item $\vec{F}$ -- siła działająca na rakietę [N].
+\end{itemize}
+
+
+\subsubsection{Równania ruchu obrotowego}
+Moment obrotowy generuje przyspieszenie kątowe zgodnie z równaniem:
+\[\vec{\alpha} = \frac{\vec{M}}{I},\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\alpha}$ -- przyspieszenie kątowe [rad/s$^2$],
+\item $I$ -- moment bezwładności rakiety względem osi obrotu [kg\cdot m$^2$].
+\end{itemize}
+
+
+Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie według:
+\[\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\alpha}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\omega}_0$ -- początkowa prędkość kątowa [rad/s].
+\end{itemize}
+
+
+Kąt orientacji rakiety w przestrzeni zmienia się w czasie:
+\[\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\theta}_0$ -- początkowy kąt orientacji [rad].
+\end{itemize}
+
+
+\subsubsection{Stabilizacja lotu}
+Ruch obrotowy jest ściśle związany ze stabilnością rakiety w locie. Rakieta powinna być tak zaprojektowana, aby środek parcia (CoP) znajdował się poniżej środka masy (CoG). Dzięki temu moment siły aerodynamicznej działa stabilizująco, przeciwdziałając niekontrolowanym obrotom.
+
+
+\subsection{Modelowanie środowiska atmosferycznego}
+Środowisko atmosferyczne wpływa na dynamikę ruchu rakiety, szczególnie poprzez gęstość powietrza ($\rho$) oraz zmienne ciśnienie i temperaturę. Modelowanie środowiska wymaga uwzględnienia:
+\begin{itemize}
+\item Zmiennej gęstości powietrza w zależności od wysokości:
+\[\rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),\]
+gdzie:
+\begin{itemize}
+\item $\rho_0$ -- gęstość powietrza na poziomie morza [kg/m$^3$],
+\item $h$ -- wysokość [m],
+\item $H$ -- charakterystyczna wysokość skali atmosfery [m].
+\end{itemize}
+\item Opóźnień w przepływie powietrza w pobliżu rakiety (zjawiska lepkości).
+\item Efektów zmian temperatury i ciśnienia w różnych warstwach atmosfery.
+\end{itemize}
+
+\subsection{Kąt natarcia rakiety}
+
+Kąt natarcia ($\alpha$) jest kluczowym parametrem aerodynamicznym opisującym orientację rakiety względem przepływu powietrza. Określa on, pod jakim kątem oś symetrii rakiety jest nachylona do wektora prędkości względnej powietrza.
+
+\subsubsection{Definicja kąta natarcia}
+Kąt natarcia $\alpha$ definiuje się jako kąt pomiędzy wektorem prędkości powietrza $\vec{v}_{rel}$ a osią symetrii rakiety. Wyrażenie to zapisuje się jako:
+\[
+\alpha = \arccos\left(\frac{\vec{v}_{rel} \cdot \vec{a}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
+\]
+gdzie:
+\begin{itemize}
+    \item $\vec{v}_{rel}$ -- wektor prędkości względnej przepływu powietrza,
+    \item $\vec{a}$ -- wektor osi symetrii rakiety,
+    \item $\|\vec{v}_{rel}\|$ -- wartość prędkości względnej [m/s],
+    \item $\|\vec{a}\|$ -- wartość wektora osi symetrii (zwykle $1$ jako wektor jednostkowy).
+\end{itemize}
+
+\subsubsection{Wpływ kąta natarcia na dynamikę rakiety}
+Kąt natarcia ma istotny wpływ na siły aerodynamiczne, w szczególności:
+\begin{itemize}
+    \item \textbf{Siła nośna ($\vec{F}_l$):} Przy większych kątach natarcia wzrasta siła nośna, która stabilizuje rakietę, ale również zwiększa ryzyko niestabilności aerodynamicznej.
+    \item \textbf{Siła oporu ($\vec{F}_d$):} Przy większych kątach natarcia wzrasta siła oporu, co prowadzi do większych strat energetycznych w trakcie lotu.
+\end{itemize}
+
+\subsubsection{Zakres kąta natarcia w rakietach}
+Dla rakiet stabilnych aerodynamicznie kąt natarcia zazwyczaj jest mały (rzędu kilku stopni), aby zminimalizować siły destabilizujące. W czasie lotu kąt natarcia zmienia się dynamicznie w zależności od:
+\begin{itemize}
+    \item warunków atmosferycznych,
+    \item trajektorii lotu,
+    \item działania układów sterujących.
+\end{itemize}
+
+
+\subsection{Geometria rakiety}
+
+\subsubsection{Opis geometrii rakiety jako cylindra}
+Rakieta w analizach symulacyjnych jest często modelowana jako bryła o kształcie cylindra ze stożkową głowicą. Taka uproszczona geometria pozwala na efektywne obliczenia przy zachowaniu wystarczającej dokładności w kontekście modelowania sił aerodynamicznych i dynamiki ruchu.
+
+\subsubsection{Wzory geometryczne}
+Dla uproszczonego modelu rakiety jako cylindra o promieniu $r$ i wysokości $h$ podstawowe właściwości geometryczne wyznacza się następująco:
+
+\begin{itemize}
+    \item \textbf{Objętość cylindra}:
+    \[
+    V_{cyl} = \pi r^2 h,
+    \]
+    gdzie:
+    \begin{itemize}
+        \item $r$ -- promień podstawy cylindra [m],
+        \item $h$ -- wysokość cylindra [m].
+    \end{itemize}
+
+    \item \textbf{Powierzchnia boczna cylindra}:
+    \[
+    A_{cyl} = 2 \pi r h.
+    \]
+
+\end{itemize}
+
+\subsubsection{Powierzchnia przekroju rakiety jako cylindra pod różnymi kątami}
+
+Powierzchnia przekroju rakiety, modelowanej jako cylinder o promieniu $r$ i wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrza.
+
+\paragraph{Przekrój czołowy ($\alpha = 0^\circ$):}
+Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy jest równy powierzchni podstawy cylindra:
+\[
+A_{0} = \pi r^2.
+\]
+
+\paragraph{Przekrój pod kątem $\alpha$:}
+Jeżeli rakieta jest nachylona pod kątem $\alpha$ do kierunku przepływu, powierzchnia efektywna przekroju zmienia się zgodnie z rzutem cylindra na płaszczyznę prostopadłą do przepływu. Powierzchnię tę można wyznaczyć jako:
+\[
+A_\alpha = \pi r^2 \cos\alpha + 2rh \sin\alpha,
+\]
+gdzie:
+\begin{itemize}
+    \item $\cos\alpha$ odpowiada zmniejszeniu widocznej powierzchni podstawy wzdłuż osi symetrii,
+    \item $2rh \sin\alpha$ dodaje widoczną powierzchnię boczną w rzucie.
+\end{itemize}
+
+\paragraph{Granice powierzchni przekroju:}
+\begin{itemize}
+    \item Dla $\alpha = 0^\circ$: $A_\alpha = A_0 = \pi r^2$ (przekrój czołowy).
+    \item Dla $\alpha = 90^\circ$: $A_\alpha = 2rh$ (przekrój boczny).
+\end{itemize}
+
+
+Wartość $A_\alpha$ zależy więc silnie od kąta natarcia $\alpha$, co wpływa na siły aerodynamiczne działające na rakietę w locie.
+
+
+\subsubsection{Charakterystyka punktów charakterystycznych rakiety}
+W rakiecie wyróżnia się trzy kluczowe punkty geometryczne i dynamiczne:
+
+\begin{itemize}
+    \item \textbf{Środek masy (CoG)}: Punkt, w którym skupiona jest całkowita masa rakiety. Dla symetrii osiowej i jednorodnej gęstości materiałów jest zlokalizowany na osi rakiety. Położenie CoG zmienia się w trakcie lotu w zależności od spalania paliwa i zmiany masy.
+
+    \item \textbf{Środek parcia (CoP)}: Punkt, w którym można przyłożyć wypadkową siłę aerodynamiczną działającą na rakietę. Położenie CoP zależy od kształtu rakiety i rozkładu ciśnienia aerodynamicznego.
+
+    \item \textbf{Środek ciągu (CoT)}: Punkt, w którym działa wypadkowa siła ciągu generowana przez silniki rakiety. Położenie CoT zależy od konfiguracji silników i ich rozmieszczenia.
+\end{itemize}
+
+\paragraph{Relacje między punktami}
+Dla zapewnienia stabilności lotu rakiety:
+\begin{itemize}
+    \item CoP powinien znajdować się poniżej CoG, co gwarantuje stabilność aerodynamiczną.
+    \item CoT powinien być blisko osi rakiety, aby zminimalizować momenty obrotowe powodujące niestabilności.
+\end{itemize}
+
+
+\subsection{Obroty układów współrzędnych}
+
+\subsubsection{Układy współrzędnych w dynamice rakiety}
+W analizach ruchu rakiety wyróżnia się trzy podstawowe układy współrzędnych:
+\begin{itemize}
+    \item \textbf{Układ inercjalny (Ziemia)}: Stały układ odniesienia związany z Ziemią, w którym mierzone są położenie i orientacja rakiety. Oś $z$ jest skierowana w stronę przeciwną do środka Ziemi.
+
+    \item \textbf{Układ ciała (rakieta)}: Układ poruszający się wraz z rakietą. Oś $x$ wskazuje kierunek przodu rakiety, $y$ jest prostopadła do osi $x$ w płaszczyźnie skrzydeł (jeśli istnieją), a $z$ jest skierowana w dół.
+
+    \item \textbf{Układ lokalny (silnik)}: Układ związany z kierunkiem działania siły ciągu. Oś $x$ wskazuje wektor ciągu, a osie $y$ i $z$ są prostopadłe do $x$.
+\end{itemize}
+
+\subsubsection{Kąty Eulera i transformacje układów współrzędnych}
+Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera:
+\begin{itemize}
+    \item \textbf{Yaw ($\psi$)}: Obrót wokół osi $z$ w układzie Ziemi.
+    \item \textbf{Pitch ($\theta$)}: Obrót wokół osi $y$ w układzie ciała.
+    \item \textbf{Roll ($\phi$)}: Obrót wokół osi $x$ w układzie ciała.
+\end{itemize}
+
+\paragraph{Macierze rotacji}
+Transformacja między układami współrzędnych odbywa się za pomocą macierzy rotacji. Dla kątów Eulera macierz rotacji $R$ jest wynikiem trzech obrotów:
+\[
+R = R_z(\psi) R_y(\theta) R_x(\phi),
+\]
+gdzie:
+\[
+R_x(\phi) =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos\phi & -\sin\phi \\
+0 & \sin\phi & \cos\phi
+\end{bmatrix},
+\]
+\[
+R_y(\theta) =
+\begin{bmatrix}
+\cos\theta & 0 & \sin\theta \\
+0 & 1 & 0 \\
+-\sin\theta & 0 & \cos\theta
+\end{bmatrix},
+\]
+\[
+R_z(\psi) =
+\begin{bmatrix}
+\cos\psi & -\sin\psi & 0 \\
+\sin\psi & \cos\psi & 0 \\
+0 & 0 & 1
+\end{bmatrix}.
+\]
+
+Dzięki kątom Eulera i macierzom rotacji możliwa jest transformacja wektorów i równań między różnymi układami współrzędnych, co jest kluczowe dla analizy trajektorii lotu rakiety oraz sterowania jej orientacją w przestrzeni.
+
+
+
+\subsection{Podsumowanie}
+Przedstawione równania i modele opisują dynamikę ruchu rakiety w atmosferze, uwzględniając zarówno ruch postępowy, jak i obrotowy oraz wpływ środowiska atmosferycznego. Poprawne modelowanie i analiza tych elementów są kluczowe dla skutecznego projektowania trajektorii lotu oraz układów sterowania rakiety.
 
 
 \section{Użyte technologie.}\label{sec:uzyte-technologie.}
