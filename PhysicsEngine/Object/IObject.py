@@ -61,6 +61,9 @@ class IObject(ABC):
         self.angular_acceleration = angular_acceleration
         self.rotation = rotation
 
+        self.relative_velocity = np.array([0,0,0])
+        self.relative_acceleration = np.array([0,0,0])
+
         # NA
         self.mass = mass
         self._height = height
@@ -396,7 +399,7 @@ class IObject(ABC):
             str: data used to save during simulation
         """
         
-        data = f"{self.mass},{self.position[0]},{self.position[1]},{self.position[2]},{self.rotation[0]},{self.rotation[1]},{self.rotation[2]},{self.velocity[0]},{self.velocity[1]},{self.velocity[2]},{self.acceleration[0]},{self.acceleration[1]},{self.acceleration[2]}, {self.angular_velocity[0]},{self.angular_velocity[1]},{self.angular_velocity[2]},{self.angular_acceleration[0]},{self.angular_acceleration[1]},{self.angular_acceleration[2]}"
+        data = f"{self.mass},{self.position[0]},{self.position[1]},{self.position[2]},{self.rotation[0]},{self.rotation[1]},{self.rotation[2]},{self.relative_velocity[0]},{self.relative_velocity[1]},{self.relative_velocity[2]},{self.relative_acceleration[0]},{self.relative_acceleration[1]},{self.relative_acceleration[2]}, {self.angular_velocity[0]},{self.angular_velocity[1]},{self.angular_velocity[2]},{self.angular_acceleration[0]},{self.angular_acceleration[1]},{self.angular_acceleration[2]}"
         next_data = super().get_data() if hasattr(super(), "get_data") else ""
 
         return f"{data},{next_data}"
