@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  22 DEC 2024 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  23 DEC 2024 15:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -478,24 +478,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
  (chapter1.tex
 Rozdzia\PlPrIeC {\l } 1.
 
-Overfull \hbox (34.52577pt too wide) in paragraph at lines 4--11
-\T1/lmr/m/n/12 którym algorytm steruj¡cy b¦dzie trenowany. Stworzenie silnika f
-izycznego umo»liwiaj¡cego
+Overfull \hbox (11.74397pt too wide) in paragraph at lines 4--12
+\T1/lmr/m/n/12 symulacji lotu rakiety i trenowanie algorytmu steruj¡cego. Stwor
+zenie silnika fizycznego
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-7.
+8.
 (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-chapter1.tex:22: LaTeX Error: There's no line here to end.
+chapter1.tex:23: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 G
+l.23 G
       Å‚Ã³wne moduÅ‚y pracy sÄ… ze sobÄ… tak Å›ciÅ›le zwiÄ…zane, Å¼e aby zac...
 
 Your command was ignored.
@@ -503,25 +503,25 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (23.29651pt too wide) in paragraph at lines 22--39
+Overfull \hbox (23.29651pt too wide) in paragraph at lines 23--40
 \T1/lmr/m/n/12 teoretyczne, przedstawienie wykorzystanych technologii, opis i d
 ekonstrukcje stworzonego
  []
 
 
-Overfull \hbox (12.2642pt too wide) in paragraph at lines 22--39
+Overfull \hbox (12.2642pt too wide) in paragraph at lines 23--40
 \T1/lmr/m/n/12 Š¡cznie oba projekty-moduªy tworz¡ kompletny system steruj¡cy ra
 kiet¡, wytrenowany
  []
 
 
-Overfull \hbox (13.89653pt too wide) in paragraph at lines 43--49
+Overfull \hbox (13.89653pt too wide) in paragraph at lines 44--50
 \T1/lmr/m/n/12 Poszczególne biblioteki i narz¦dzia wykorzystane podczas pracy n
 ad ka»dym z moduªów
  []
 
 
-Overfull \hbox (23.55997pt too wide) in paragraph at lines 43--49
+Overfull \hbox (23.55997pt too wide) in paragraph at lines 44--50
 \T1/lmr/m/n/12 technologie oraz narz¦dzia zostaªy wykorzystane podczas pracy na
 d obydwoma moduªami
  []
@@ -533,43 +533,43 @@ Underfull \vbox (badness 1231) has occurred while \output is active []
 
 
 {C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (2.89537pt too wide) in paragraph at lines 51--56
+Overfull \hbox (2.89537pt too wide) in paragraph at lines 52--57
 \T1/lmr/m/n/12 Umo»liwiªy one wspóln¡ prac¦ nad kodem projektu oraz dost¦p do a
 rchiwalnych
  []
 
 
-Overfull \hbox (5.73526pt too wide) in paragraph at lines 51--56
+Overfull \hbox (5.73526pt too wide) in paragraph at lines 52--57
 \T1/lmr/m/n/12 wersji projektu. Git oraz Github zostaªy wybrane ze wzgl¦du na i
 ch popularno±¢,
  []
 
 
-Overfull \hbox (14.15756pt too wide) in paragraph at lines 56--63
+Overfull \hbox (14.15756pt too wide) in paragraph at lines 57--64
 \T1/lmr/m/n/12 czynnikiem wpªywaj¡cym na wybór tego j¦zyka jest równie» popular
 no±¢ Pythona
  []
 
 
-Overfull \hbox (22.02222pt too wide) in paragraph at lines 56--63
+Overfull \hbox (22.02222pt too wide) in paragraph at lines 57--64
 \T1/lmr/m/n/12 w dziedzinie uczenia maszynowego oraz sztucznej inteligencji. Dz
 i¦ki wykorzystaniu
  []
 
 
-Overfull \hbox (22.69615pt too wide) in paragraph at lines 63--67
+Overfull \hbox (22.69615pt too wide) in paragraph at lines 64--68
 []\T1/lmr/bx/n/12 PyCharm Professional \T1/lmr/m/n/12 - ±rodowisko programistyc
 zne wykorzystane do tworzenia
  []
 
 
-chapter1.tex:69: LaTeX Error: There's no line here to end.
+chapter1.tex:70: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.69 \\P
+l.70 \\P
         onadto, do tworzenia pracy inÅ¼ynierskiej wykorzystane zostaÅ‚y nast...
 
 Your command was ignored.
@@ -577,13 +577,13 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (13.459pt too wide) in paragraph at lines 73--77
+Overfull \hbox (13.459pt too wide) in paragraph at lines 74--78
 []\T1/lmr/bx/n/12 LaTex \T1/lmr/m/n/12 - system skªadu tekstu wykorzystany do n
 apisania niniejszego dokumentu. 
  []
 
-chapter1.tex:78: Undefined control sequence.
-l.78     w \latex
+chapter1.tex:79: Undefined control sequence.
+l.79     w \latex
                   zgodnie z wymaganiami formatowania pracy inÅ¼ynierskiej na...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -592,151 +592,151 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [10]
-Overfull \hbox (10.2372pt too wide) in paragraph at lines 87--88
+Overfull \hbox (10.2372pt too wide) in paragraph at lines 88--89
 \T1/lmr/m/n/12 Istnieje równie» du»y rynek komercyjnych narz¦dzi stosowanych pr
 zez przedsi¦biorstwa
  []
 
 
-Overfull \hbox (12.9189pt too wide) in paragraph at lines 87--88
+Overfull \hbox (12.9189pt too wide) in paragraph at lines 88--89
 \T1/lmr/m/n/12 dokªadno±ci¡, zªo»ono±ci¡ i s¡ zazwyczaj niedost¦pne dla hobbyst
 ów oraz u»ytkowników
  []
 
 
-Overfull \hbox (15.26877pt too wide) in paragraph at lines 87--88
+Overfull \hbox (15.26877pt too wide) in paragraph at lines 88--89
 \T1/lmr/m/n/12 umo»liwiaj¡ symulacj¦ lotów rakietowych, a tak»e gotowe silniki 
 fizyczne oraz algorytmy
  []
 
 
-chapter1.tex:89: LaTeX Error: There's no line here to end.
+chapter1.tex:90: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.89 \\Z
+l.90 \\Z
         nacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (26.78851pt too wide) in paragraph at lines 89--91
+Overfull \hbox (26.78851pt too wide) in paragraph at lines 90--92
 []\T1/lmr/m/n/12 Znacznie bardziej popularna dziedzina uczenia maszynowego, opa
 rta na Reinforcement
  []
 
 
-Overfull \hbox (22.60428pt too wide) in paragraph at lines 89--91
+Overfull \hbox (22.60428pt too wide) in paragraph at lines 90--92
 \T1/lmr/m/n/12 Learning (RL), oferuje liczne rozwi¡zania, które mog¡ zosta¢ wyk
 orzystane do trenowania
  []
 
 
-Overfull \hbox (15.7566pt too wide) in paragraph at lines 89--91
+Overfull \hbox (15.7566pt too wide) in paragraph at lines 90--92
 \T1/lmr/m/n/12 rozdziale przedstawione zostaªy najcz¦±ciej wykorzystywane z nic
 h ^^V zarówno biblioteki
  []
 
 
-Overfull \hbox (13.93042pt too wide) in paragraph at lines 89--91
+Overfull \hbox (13.93042pt too wide) in paragraph at lines 90--92
 \T1/lmr/m/n/12 sªu»¡ce do trenowania modeli, jak i narz¦dzia umo»liwiaj¡ce prze
 prowadzanie treningów
  []
 
 
-Overfull \hbox (3.64662pt too wide) in paragraph at lines 102--105
+Overfull \hbox (3.64662pt too wide) in paragraph at lines 103--106
 \T1/lmr/m/n/12 Na rynku dost¦pnych jest wiele modeli silników fizycznych umo»li
 wiaj¡cych symulacj¦
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
  []
 
 
-Overfull \hbox (23.06778pt too wide) in paragraph at lines 108--118
+Overfull \hbox (23.06778pt too wide) in paragraph at lines 109--119
 \T1/lmr/m/n/12 Bardzo zaawansowane narz¦dzie do modelowania i prowadzenia symul
 acji systemów
  []
 
 
-Overfull \hbox (9.42621pt too wide) in paragraph at lines 108--118
+Overfull \hbox (9.42621pt too wide) in paragraph at lines 109--119
 \T1/lmr/m/n/12 dynamicznych. Symulink wchodzi w skªad pakietu Matlab. System te
 n umo»liwia
  []
 
 
-Overfull \hbox (27.57513pt too wide) in paragraph at lines 108--118
+Overfull \hbox (27.57513pt too wide) in paragraph at lines 109--119
 \T1/lmr/m/n/12 modelach skªadania siª, co pozwala na bardzo dokªadne modelowani
 e siª dziaªaj¡cych
  []
 
 [11]
-Overfull \hbox (4.20122pt too wide) in paragraph at lines 120--125
+Overfull \hbox (4.20122pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 Zaawansowane narz¦dzie do symulacji dynamiki pªynów (CFD ^^U Com
 putational
  []
 
 
-Overfull \hbox (2.53703pt too wide) in paragraph at lines 120--125
+Overfull \hbox (2.53703pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 Fluid Dynamics) wykorzystywane w in»ynierii aerodynamicznej i me
 chanicznej.
  []
 
 
-Overfull \hbox (45.6561pt too wide) in paragraph at lines 120--125
+Overfull \hbox (45.6561pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 Stokesa, co pozwala na dokªadne odwzorowanie zjawisk takich jak 
 opór aerodynamiczny,
  []
 
 
-Overfull \hbox (2.96317pt too wide) in paragraph at lines 120--125
+Overfull \hbox (2.96317pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 turbulencje oraz efekty cieplne. Dzi¦ki zaawansowanym algorytmom
  i funkcjom,
  []
 
 
-Overfull \hbox (35.83173pt too wide) in paragraph at lines 120--125
+Overfull \hbox (35.83173pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 wieloelementowych konstrukcji czy interakcje z gazami spalinowym
 i. Oprogramowanie
  []
 
 
-Overfull \hbox (29.13365pt too wide) in paragraph at lines 120--125
+Overfull \hbox (29.13365pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 to jest komercyjne, a jego obsªuga wymaga wiedzy z zakresu CFD o
 raz do±wiadczenia
  []
 
 
-Overfull \hbox (16.49246pt too wide) in paragraph at lines 120--125
+Overfull \hbox (16.49246pt too wide) in paragraph at lines 121--126
 \T1/lmr/m/n/12 w konfiguracji symulacji. ANSYS Fluent mo»e by¢ wykorzystany do 
 szczegóªowego
  []
 
 
-Overfull \hbox (15.29646pt too wide) in paragraph at lines 127--131
+Overfull \hbox (15.29646pt too wide) in paragraph at lines 128--132
 \T1/lmr/m/n/12 Otwarto¹ródªowe oprogramowanie do symulacji CFD, które oferuje z
 aawansowane
  []
 
 
-Overfull \hbox (2.29828pt too wide) in paragraph at lines 127--131
+Overfull \hbox (2.29828pt too wide) in paragraph at lines 128--132
 \T1/lmr/m/n/12 OpenFOAM jest jego elastyczno±¢ i dost¦pno±¢ ^^U oprogramowanie 
 jest darmowe
  []
 
 
-Overfull \hbox (20.31604pt too wide) in paragraph at lines 127--131
+Overfull \hbox (20.31604pt too wide) in paragraph at lines 128--132
 \T1/lmr/m/n/12 barier¡ dla pocz¡tkuj¡cych u»ytkowników.  OpenFOAM mo»e zosta¢ w
 ykorzystany
  []
 
 
-Overfull \hbox (14.97552pt too wide) in paragraph at lines 127--131
+Overfull \hbox (14.97552pt too wide) in paragraph at lines 128--132
 \T1/lmr/m/n/12 do symulacji lotu rakiety poprzez analiz¦ siª aerodynamicznych o
 raz optymalizacj¦
  []
@@ -745,55 +745,55 @@ raz optymalizacj¦
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-Overfull \hbox (9.00182pt too wide) in paragraph at lines 137--142
+Overfull \hbox (9.00182pt too wide) in paragraph at lines 138--143
 \T1/lmr/m/n/12 graficznemu, który umo»liwia szybkie projektowanie rakiet oraz p
 rzeprowadzanie
  []
 
 
-Overfull \hbox (15.85591pt too wide) in paragraph at lines 137--142
+Overfull \hbox (15.85591pt too wide) in paragraph at lines 138--143
 \T1/lmr/m/n/12 symulacji ich lotu. Program oferuje mo»liwo±¢ modelowania siª ae
 rodynamicznych,
  []
 
 
-Overfull \hbox (14.15753pt too wide) in paragraph at lines 137--142
+Overfull \hbox (14.15753pt too wide) in paragraph at lines 138--143
 \T1/lmr/m/n/12 oraz studentów, dzi¦ki swojej prostocie i dost¦pno±ci, cho¢ mo»e
  mie¢ ograniczenia
  []
 
 
-Overfull \hbox (26.2977pt too wide) in paragraph at lines 144--147
+Overfull \hbox (26.2977pt too wide) in paragraph at lines 145--148
 \T1/lmr/m/n/12 Komercyjne oprogramowanie do projektowania i symulacji lotów rak
 iet, dedykowane
  []
 
 
-Overfull \hbox (17.78024pt too wide) in paragraph at lines 144--147
+Overfull \hbox (17.78024pt too wide) in paragraph at lines 145--148
 \T1/lmr/m/n/12 zarówno dla entuzjastów, jak i profesjonalistów. RockSim umo»liw
 ia projektowanie
  []
 
 
-Overfull \hbox (4.46245pt too wide) in paragraph at lines 144--147
+Overfull \hbox (4.46245pt too wide) in paragraph at lines 145--148
 \T1/lmr/m/n/12 wszechstronno±ci, RockSim jest u»ywany zarówno w edukacji, jak i
  w projektach
  []
 
 
-Overfull \hbox (9.0359pt too wide) in paragraph at lines 149--152
+Overfull \hbox (9.0359pt too wide) in paragraph at lines 150--153
 \T1/lmr/m/n/12 u»ytkownikom, którzy potrzebuj¡ du»ej dokªadno±ci w analizie aer
 odynamicznej.
  []
 
 
-Overfull \hbox (28.19064pt too wide) in paragraph at lines 149--152
+Overfull \hbox (28.19064pt too wide) in paragraph at lines 150--153
 \T1/lmr/m/n/12 Program oferuje mo»liwo±¢ modelowania trajektorii z uwzgl¦dnieni
 em szczegóªowych
  []
 
 
-Overfull \hbox (1.36589pt too wide) in paragraph at lines 149--152
+Overfull \hbox (1.36589pt too wide) in paragraph at lines 150--153
 \T1/lmr/m/n/12 parametrów aerodynamicznych, takich jak wspóªczynniki oporu czy 
 siªy no±nej,
  []
@@ -803,153 +803,159 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
 
-chapter1.tex:164: LaTeX Error: There's no line here to end.
+chapter1.tex:165: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.164 
+l.165 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (17.08601pt too wide) in paragraph at lines 165--167
+Overfull \hbox (17.08601pt too wide) in paragraph at lines 166--168
 []\T1/lmr/m/n/12 Najpopularniejsze narz¦dzia stosowane do uczenia maszyno owego
  RL w symulacjach
  []
 
 
-Overfull \hbox (16.7364pt too wide) in paragraph at lines 170--172
+Overfull \hbox (16.7364pt too wide) in paragraph at lines 171--173
 \T1/lmr/m/n/12 która znalazªa szerokie zastosowanie w symulacjach fizycznych, w
  tym w dziedzinie
  []
 
 
-Overfull \hbox (31.35329pt too wide) in paragraph at lines 170--172
+Overfull \hbox (31.35329pt too wide) in paragraph at lines 171--173
 \T1/lmr/m/n/12 optymalizacji, TensorFlow umo»liwia trenowanie modeli RL na dany
 ch pochodz¡cych
  []
 
 
-Overfull \hbox (14.12413pt too wide) in paragraph at lines 170--172
+Overfull \hbox (14.12413pt too wide) in paragraph at lines 171--173
 \T1/lmr/m/n/12 z symulacji fizycznych. Framework ten oferuje bogat¡ funkcjonaln
 o±¢ do tworzenia
  []
 
 
-Overfull \hbox (28.48618pt too wide) in paragraph at lines 170--172
+Overfull \hbox (28.48618pt too wide) in paragraph at lines 171--173
 \T1/lmr/m/n/12 analizy danych i wizualizacji. TensorFlow wspiera ró»norodne tec
 hniki optymalizacji,
  []
 
 
-Overfull \hbox (6.68231pt too wide) in paragraph at lines 173--175
+Overfull \hbox (6.68231pt too wide) in paragraph at lines 174--177
 \T1/lmr/m/n/12 PyTorch to kolejny popularny framework open-source'owy, który je
 st szczególnie
  []
 
 
-Overfull \hbox (20.456pt too wide) in paragraph at lines 173--175
+Overfull \hbox (20.456pt too wide) in paragraph at lines 174--177
 \T1/lmr/m/n/12 Dzi¦ki swojej elastyczno±ci oraz wsparciu dla dynamicznych grafó
 w obliczeniowych,
  []
 
 
-Overfull \hbox (16.57492pt too wide) in paragraph at lines 173--175
+Overfull \hbox (5.1804pt too wide) in paragraph at lines 174--177
+\T1/lmr/m/n/12 learning w kontek±cie symulacji fizycznych. PyTorch jest cz¦sto 
+wykorzystywany
+ []
+
+
+Overfull \hbox (16.57492pt too wide) in paragraph at lines 174--177
 \T1/lmr/m/n/12 w projektach zwi¡zanych z robotyk¡ oraz modelowaniem dynamicznyc
 h systemów,
  []
 
 
-Overfull \hbox (14.58357pt too wide) in paragraph at lines 173--175
+Overfull \hbox (14.58357pt too wide) in paragraph at lines 174--177
 \T1/lmr/m/n/12 takich jak rakiety, poniewa» pozwala na ªatw¡ integracj¦ z fizyc
 znymi symulacjami
  []
 
 
-Overfull \hbox (14.61678pt too wide) in paragraph at lines 173--175
+Overfull \hbox (14.61678pt too wide) in paragraph at lines 174--177
 \T1/lmr/m/n/12 atrakcyjnym wyborem dla osób rozpoczynaj¡cych prac¦ z uczeniem m
 aszynowym. 
  []
 
 
-Overfull \hbox (16.06078pt too wide) in paragraph at lines 176--178
+Overfull \hbox (16.06078pt too wide) in paragraph at lines 178--180
 \T1/lmr/m/n/12 Actor-Critic) czy DQN (Deep Q-Network). Jest to narz¦dzie szczeg
 ólnie przydatne
  []
 
 
-Overfull \hbox (18.65802pt too wide) in paragraph at lines 176--178
+Overfull \hbox (18.65802pt too wide) in paragraph at lines 178--180
 \T1/lmr/m/n/12 implementacja algorytmów RL do testowania i optymalizacji system
 ów sterowania.
  []
 
 
-Overfull \hbox (41.96655pt too wide) in paragraph at lines 176--178
+Overfull \hbox (41.96655pt too wide) in paragraph at lines 178--180
 \T1/lmr/m/n/12 Stable Baselines3 jest dobrze udokumentowan¡ platform¡, która uª
 atwia implementacj¦
  []
 
 
-Overfull \hbox (43.95325pt too wide) in paragraph at lines 176--178
+Overfull \hbox (43.95325pt too wide) in paragraph at lines 178--180
 \T1/lmr/m/n/12 i eksperymentowanie z ró»nymi metodami RL. Dzi¦ki swojej prostoc
 ie i kompatybilno±ci
  []
 
 [14]
 
-chapter1.tex:181: LaTeX Error: There's no line here to end.
+chapter1.tex:183: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 P
+l.183 P
        oniÅ¼ej przedstawione zostaÅ‚y jedne
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (30.01741pt too wide) in paragraph at lines 181--184
+Overfull \hbox (30.01741pt too wide) in paragraph at lines 183--186
 []\T1/lmr/m/n/12 Poni»ej przedstawione zostaªy jedne z popularniejszych oraz cz
 ¦±ciej wykorzystywanych
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--184
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
  []
 
 
-Overfull \hbox (0.90747pt too wide) in paragraph at lines 186--188
+Overfull \hbox (0.90747pt too wide) in paragraph at lines 188--190
 \T1/lmr/m/n/12 zaawansowane narz¦dzie umo»liwiaj¡ce symulacj¦ lotu rakiet. Opro
 gramowanie
  []
 
 
-Overfull \hbox (24.99585pt too wide) in paragraph at lines 186--188
+Overfull \hbox (24.99585pt too wide) in paragraph at lines 188--190
 \T1/lmr/m/n/12 to pozwala na elastyczne modelowanie dynamiki obiektów lataj¡cyc
 h, uwzgl¦dniaj¡c
  []
 
 
-Overfull \hbox (7.6608pt too wide) in paragraph at lines 186--188
+Overfull \hbox (7.6608pt too wide) in paragraph at lines 188--190
 \T1/lmr/m/n/12 Blockset oferuje gotowe bloki do analizy trajektorii oraz projek
 towania systemów
  []
 
 
-Overfull \hbox (7.49281pt too wide) in paragraph at lines 189--191
+Overfull \hbox (7.49281pt too wide) in paragraph at lines 191--193
 \T1/lmr/m/n/12 Microsoft AirSim to open-source'owy symulator lotu, pierwotnie z
 aprojektowany
  []
 
 
-Overfull \hbox (27.01437pt too wide) in paragraph at lines 189--191
+Overfull \hbox (27.01437pt too wide) in paragraph at lines 191--193
 \T1/lmr/m/n/12 uczenia maszynowego, takimi jak TensorFlow czy PyTorch, umo»liwi
 aj¡c trenowanie
  []
@@ -958,42 +964,42 @@ aj¡c trenowanie
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-Overfull \hbox (38.8502pt too wide) in paragraph at lines 192--194
+Overfull \hbox (38.8502pt too wide) in paragraph at lines 194--196
 \T1/lmr/m/n/12 sterowania obiektami dynamicznymi, takimi jak rakiety. Gazebo of
 eruje zaawansowan¡
  []
 
 
-Overfull \hbox (11.38678pt too wide) in paragraph at lines 192--194
+Overfull \hbox (11.38678pt too wide) in paragraph at lines 194--196
 \T1/lmr/m/n/12 symulacj¦ fizyczn¡, w tym modelowanie siª aerodynamicznych, koli
 zji i zmiennych
  []
 
 
-Overfull \hbox (25.54233pt too wide) in paragraph at lines 192--194
+Overfull \hbox (25.54233pt too wide) in paragraph at lines 194--196
 \T1/lmr/m/n/12 ±rodowiskowych. Integracja z ROS umo»liwia tworzenie i implement
 acj¦ algorytmów
  []
 
 
-Overfull \hbox (6.13081pt too wide) in paragraph at lines 192--194
+Overfull \hbox (6.13081pt too wide) in paragraph at lines 194--196
 \T1/lmr/m/n/12 sterowania opartych na uczeniu maszynowym, takich jak reinforcem
 ent learning.
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 197--56
+Underfull \hbox (badness 10000) in paragraph at lines 199--56
 
  []
 
 
-Overfull \hbox (14.38278pt too wide) in paragraph at lines 197--56
+Overfull \hbox (14.38278pt too wide) in paragraph at lines 199--56
 \T1/lmr/m/n/12 tworzenia i testowania systemu steruj¡cego rakiet¡. Efektem tego
  jest tak»e uproszczony
  []
 
 
-Overfull \hbox (32.69478pt too wide) in paragraph at lines 197--56
+Overfull \hbox (32.69478pt too wide) in paragraph at lines 199--56
 \T1/lmr/m/n/12 model fizyczny, o czym mowa jest w kolejnych rozdziaªach pracy. 
 Rozwi¡zanie prezentowane
  []
@@ -1008,12 +1014,53 @@ Overfull \hbox (6.38753pt too wide) in paragraph at lines 1--1
 |[]\T1/lmr/bx/n/20.74 Moduª I: Silnik fizyczny symulacji lotów
  []
 
-) [18
+
+Overfull \hbox (21.23398pt too wide) in paragraph at lines 4--14
+\T1/lmr/m/n/12 W tym rozdziale przedstawione zostaªy teoretyczne podstawy fizyc
+zne, u»yte technologie,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+
+ []
+
+
+Overfull \hbox (21.1724pt too wide) in paragraph at lines 25--26
+\T1/lmr/m/n/12 W trakcie pracy nad moduªem silnika fizycznego symulacji lotów r
+akietowych poczyniono
+ []
+
+
+Overfull \hbox (34.23135pt too wide) in paragraph at lines 25--26
+\T1/lmr/m/n/12 szereg zaªo»e«, które miaªy na celu uªatwienie implementacji ora
+z zapewnienie odpowiedniej
+ []
+
+[18
 
 
 
 
 ]
+Overfull \hbox (22.2217pt too wide) in paragraph at lines 42--47
+\T1/lmr/m/n/12 bezpo±rednio wpªynie na trajektori¦ lotu. Taki model jest prosty
+ do zamodelowania,
+ []
+
+
+Overfull \hbox (0.7737pt too wide) in paragraph at lines 48--53
+[]\T1/lmr/bx/n/12 Mo»liwo±¢ modyfikacji parametrów symulacji w czasie rzeczywis
+tym. 
+ []
+
+
+Overfull \hbox (4.33289pt too wide) in paragraph at lines 54--56
+\T1/lmr/m/n/12 analiz¦ trajektorii i zachowania rakiety w sposób intuicyjny. Je
+dnak wizualizacja
+ []
+
+[19]) [20]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -1029,7 +1076,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 |[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
  []
 
-) [19
+) [21
 
 
 
@@ -1049,7 +1096,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 |[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
  []
 
-) [20
+) [22
 
 
 
@@ -1069,7 +1116,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 |[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
  []
 
-) [21
+) [23
 
 
 
@@ -1079,7 +1126,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
  (chapter6.tex
 Rozdzia\PlPrIeC {\l } 6.
-) [22
+) [24
 
 
 
@@ -1088,11 +1135,11 @@ Rozdzia\PlPrIeC {\l } 6.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 67.
 
-[23
+[25
 
 
 
-] [24] [25] [26]
+] [26] [27] [28]
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
 il\main.aux
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
@@ -1117,20 +1164,20 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6179 strings out of 474485
- 110689 string characters out of 5743733
+ 6181 strings out of 474485
+ 110753 string characters out of 5743733
  1934542 words of memory out of 5000000
- 28335 multiletter control sequences out of 15000+600000
+ 28337 multiletter control sequences out of 15000+600000
  606778 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,5n,79p,906b,255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,79p,906b,255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 >
 Output written on C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Docume
-ntation\Paper\out\main.pdf (26 pages, 140847 bytes).
+ntation\Paper\out\main.pdf (28 pages, 144512 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

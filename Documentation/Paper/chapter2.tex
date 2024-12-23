@@ -1,8 +1,71 @@
 \chapter{Moduł I: Silnik fizyczny symulacji lotów rakietowych.}
 \label{ch:silnik-fizyczny-symulacji-lotow-rakietowych.}
 
+Silnik fizyczny do symulacji lotów rakietowych to pierwszy z modułów
+niniejszej pracy inżynierskiej.
+Za pomocą tego projektu osiągnięty zostaje
+cel pośredni pracy - stworzenie środowiska do uczenia algorytmów.
+Autorem
+tego modułu jest Jakub Kindlik.\\
+W tym rozdziale przedstawione zostały teoretyczne podstawy fizyczne, użyte
+technologie, oraz
+trzy główne komponenty
+tego modułu:
 
-\section{Teoretyczne podstawy.}\label{sec:teoretyczne-podstawy.}
+\begin{itemize}
+    \item Projekt silnika fizycznego.
+    \item Model sił działających na rakietę.
+    \item Moduł wizualizacyjny symulacji.
+\end{itemize}
+
+Omówione zostały także zagadnienia związane ze
+sprawdzeniem dokładności symulacji oraz ewolucją projektu.\\
+
+\section{Założenia projektowe.}\label{sec:zalozenia-projektowe.}
+W trakcie pracy nad modułem silnika fizycznego symulacji lotów rakietowych poczyniono szereg założeń, które miały na celu ułatwienie implementacji oraz zapewnienie odpowiedniej wydajności symulacji. Poniżej przedstawiono najważniejsze z nich:
+
+\begin{itemize}
+
+\item \textbf{Modelowanie uproszczonych sił działających na rakietę.} \\
+W celu zmniejszenia złożoności obliczeniowej model sił działających na rakietę zostanie odpowiednio uproszczony. Uwzględnione zostaną jedynie kluczowe siły, takie jak grawitacja, opór powietrza i siła ciągu silnika. Takie podejście umożliwia łatwiejsze zamodelowanie systemu i redukuje zapotrzebowanie na zasoby obliczeniowe.
+
+\item \textbf{Optymalizacja pod kątem pracy na komputerze osobistym.} \\
+Symulacje będą wykonywane na komputerze osobistym, dlatego silnik fizyczny
+musi być zoptymalizowany pod kątem wydajności, jak i okrojony w kwestii
+skomplikowanych obliczeń. Ograniczenie
+zasobożerności
+jest konieczne, aby zapewnić płynne działanie nawet na sprzęcie o przeciętnych parametrach.
+
+\item \textbf{Uproszczona geometria rakiety.} \\
+W celu ograniczenia złożoności modelu fizycznego rakieta będzie miała kształt walca i zostanie pozbawiona skrzydeł. Taka decyzja pozwala na skupienie się na kluczowych aspektach dynamiki lotu bez nadmiernego komplikowania obliczeń.
+
+\item \textbf{Sterowanie poprzez obracany silnik.} \\
+Układ sterujący rakietą będzie się opierał na możliwości obracania silnika,
+co bezpośrednio wpłynie na trajektorię lotu. Taki model jest prosty do
+zamodelowania, a jednocześnie pozwala na sterowanie rakietą przez algorytmy
+samouczące, poprzez zmianę jednego parametru.
+
+\item \textbf{Możliwość modyfikacji parametrów symulacji w czasie rzeczywistym.} \\
+Symulacja zostanie zaprojektowana w sposób umożliwiający ingerencję w jej
+parametry w trakcie trwania. W szczególności modyfikowanym parametrem
+powinien być kąt nachylenia silnika. Taka funkcjonalność pozwala na
+uczenie algorytmów sterujących w czasie rzeczywistym.
+
+\item \textbf{Możliwość wizualizacji symulacji.} \\
+Symulacja będzie wyposażona w opcjonalną funkcję wizualizacji, co umożliwi analizę trajektorii i zachowania rakiety w sposób intuicyjny. Jednak wizualizacja nie będzie wymagana, co pozwoli ograniczyć zużycie zasobów obliczeniowych w trakcie symulacji.
+
+\end{itemize}
+
+Założenia te konieczne są do stworzenia silnika fizycznego, który będzie w
+stanie współpracować z modułem algorytmu sterującego rakietą, jednocześnie
+będąc na tyle prostym, aby nie obciążać zasobów komputera osobistego.
+
+
+\section{Teoretyczne podstawy fizyczne.}\label{sec:teoretyczne-podstawy.}
+
+Tworzenie silnika symulacji lotów rakietowych wymaga zrozumienia podstawowych
+zasad fizyki odnoszących się do ruchu rakiety w atmosferze.
+
 
 \section{Użyte technologie.}\label{sec:uzyte-technologie.}
 
@@ -18,5 +81,6 @@ Do stworzenia silnika fizycznego symulacji lotów rakietowych wykorzystane zosta
 
 \section{Projekt silnika fizycznego.}\label{sec:projekt-silnika-fizycznego.}
 \section{Model sił działających na rakietę.}\label{sec:model-si-dziaajacych-na-rakiete.}
+\section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
 \section{Dokładność symulacji.}\label{sec:dokadnosc-symulacji}
 \section{Ewolucja projektu i wnioski.}\label{sec:ewolucja-projektu-i-wnioski}
