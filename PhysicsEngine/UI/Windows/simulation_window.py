@@ -1,21 +1,25 @@
 import math
 import os
 import pickle
+from collections.abc import Sequence
 
 import trimesh
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 import pyqtgraph as pg
 import pyqtgraph.opengl as gl
 import numpy as np
 from PyQt5.QtGui import QKeyEvent
+from PyQt5.QtWidgets import QPushButton, QComboBox, QLabel
+from numpy.lib.function_base import quantile
 from pyqtgraph.opengl import GLMeshItem
 
 from PhysicsEngine.UI.Services.Timer import TimeLine
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QItemSelection
 from PhysicsEngine.Utils import calculate_vector_magnitude
 from ..Models import SimulationData
 from ..Widgets.text_box import TextBox
 from ... import PhysicsEngine
+from ...Config import Config
 
 
 class SimulationWindow(QtWidgets.QWidget):
@@ -26,6 +30,7 @@ class SimulationWindow(QtWidgets.QWidget):
     def __init__(self, file_path: str, camera_distance: int = 10):
         super().__init__()
 
+        self.config = Config()
         self.base_path = os.path.dirname(__file__)
 
         self.object_path = os.path.join(os.path.relpath(os.path.join(file_path, "..", "..")), "physics_engine.pkl")
@@ -35,8 +40,9 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.object_model = self.object.object_model
 
-        # CONFIG
+        # CAMERA
         self.camera_distance = camera_distance
+        self.camera_mode = int(self.config["SIMULATION"]["camera_mode"])
 
         # WINDOW SETUP
         self.setWindowTitle("Simulation Window")
@@ -106,6 +112,20 @@ class SimulationWindow(QtWidgets.QWidget):
 
         self.setLayout(layout)
 
+        # Camera following picker
+        self.camera_mode_select = QComboBox()
+        self.camera_mode_select.addItems(['Follow', 'POV', 'Landscape', 'Free'])
+        self.camera_mode_select.setDisabled(True)
+        self.camera_mode_select.setCurrentIndex(self.camera_mode)
+
+        self.camera_mode_select.currentIndexChanged.connect(self.camera_mode_change)
+
+        self.camera_mode_layout = QtWidgets.QHBoxLayout()
+        self.camera_mode_layout.addWidget(QLabel("Camera Mode:"))
+        self.camera_mode_layout.addWidget(self.camera_mode_select)
+
+        graph_layout_right.addLayout(self.camera_mode_layout)
+
         # Data graphs
         self.velocity_curve_dict = self.add_plot(graph_layout_right, "Velocity", "Time [s]", "Velocity [m/s]", ["r", "g", "b"],
                                                  ["Velocity X", "Velocity Y", "Velocity Z"])
@@ -120,6 +140,9 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict = self.add_plot(graph_layout_left, "Angular velocity", "Time [s]", "Velocity [rad/s]",
                                                          ["r", "g", "b"],
                                                          ["Angular velocity X", "Angular velocity Y", "Angular velocity Z"])
+        self.rotation_curve_dict = self.add_plot(graph_layout_left, "Rotation", "Time [s]", "Rotation [rad]",
+                                                         ["r", "g", "b"],
+                                                         ["Rotation X", "Rotation Y", "Rotation Z"])
 
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
@@ -143,6 +166,10 @@ class SimulationWindow(QtWidgets.QWidget):
 
         # Sync slider with animation
         self._timeline.frameChanged.connect(self.sync_slider_with_animation)
+
+    def camera_mode_change(self, i: int):
+        self.camera_mode = i
+        self.config.set_value("SIMULATION", "camera_mode", str(i))
 
     def add_plot(self, parent: QtWidgets.QLayout, title: str, x_label: str, y_label: str, pen: str | list[str], name: str | list[str],
                  legend: bool = True) -> pg.PlotItem | dict:
@@ -214,9 +241,20 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict["Angular velocity Y"].setData(plot_time_axes, self.sim_data.angular_velocity_data[1][:i])
         self.angular_velocity_curve_dict["Angular velocity Z"].setData(plot_time_axes, self.sim_data.angular_velocity_data[2][:i])
 
+        self.rotation_curve_dict["Rotation X"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 0])
+        self.rotation_curve_dict["Rotation Y"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 1])
+        self.rotation_curve_dict["Rotation Z"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 2])
+
         self.altitude_curve.setData(plot_time_axes, self.sim_data.position_data[:i, 2])
 
         # self.update_camera_position(i)
+        match self.camera_mode:
+            case 0:
+                self.camera_follow(i)
+            case 1:
+                self.camera_pov(i)
+            case 2:
+                self.camera_landscape(i)
 
         # Update time text
         current_time = i * self.sim_data.time_step
@@ -236,6 +274,21 @@ class SimulationWindow(QtWidgets.QWidget):
         }
 
         self.data_box.update_multiple_widgets(text_dict)
+
+    def camera_follow(self, tick: int) -> None:
+        obj_position = np.array(self.sim_data.position_data[tick])
+        pos = pg.Vector(*obj_position)
+        distance = self.object.height * 5
+
+        self.view.setCameraPosition(pos=pos, distance=distance)
+
+    def camera_pov(self, tick: int) -> None:
+        # TODO
+        pass
+
+    def camera_landscape(self, tick: int) -> None:
+        # TODO
+        pass
 
     def update_camera_position(self, tick: int) -> None:
         """
@@ -286,7 +339,6 @@ class SimulationWindow(QtWidgets.QWidget):
             value (int): slider value
         """
 
-        self._timeline.pause()
         self._timeline._counter = value
         self.update_trajectory(value)
 
