@@ -75,6 +75,7 @@ class Config:
 
         config["SIMULATION"] = {
             "simulation_files_folder_path": "./Simulations/",
+            "camera_mode": 0
         }
 
         if not os.path.isdir(self.base_dir):
