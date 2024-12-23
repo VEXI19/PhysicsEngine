@@ -2,12 +2,13 @@
 
 \section{Cel pracy}
 Celem niniejszej pracy inżynierskiej jest stworzenie systemu sterującego,
-opartego na algorytmach samouczących, który będzie w stanie przeprowadzić
-stabilny, pionowy lot rakiety.
-Aby osiągnąć ten cel pracy, konieczne jest stworzenie środowiska, w którym
-algorytm sterujący będzie trenowany.
-Stworzenie silnika fizycznego umożliwiającego symulację lotu rakiety oraz
-ingerencję w jej lot poprzez zmianę parametrów układu sterującego rakiety jest pośrednim celem niniejszej pracy.
+opartego na algorytmach samouczących, zdolnego do przeprowadzenia
+stabilnego, pionowego lotu rakietą o naturalnie niestabilnej characterystyce.
+W celu spełnienia tych założeń konieczne było stworzenie środowiska,
+pozwalającego na wielokrotne prowadzenie symulacji lotu rakiety i trenowanie
+algorytmu sterującego.
+Stworzenie silnika fizycznego spełniającego te wymagania jest pośrednim celem
+niniejszej pracy.
 
 \section{Struktura pracy}
 
@@ -53,7 +54,7 @@ Są to:
     dostęp do archiwalnych wersji projektu. Git oraz Github zostały wybrane
     ze względu na ich popularność, oraz wsparcie dla wielu języków, a także
     na znajomość tych narzędzi przez autorów pracy.
-    \item \textbf{Python 3.13} - język programowania, w którym napisane
+    \item \textbf{Python 3} - język programowania, w którym napisane
     zostały obydwa moduły projektu.\\ Python został wybrany jako język
     programowania w projekcie ze względu na jego prostotę oraz
     znajomość tego języka przez autorów pracy. Ważnym czynnikiem wpływającym
@@ -171,7 +172,8 @@ symulacjach fizycznych to m.in.:
     TensorFlow to popularna platforma open-source'owa do uczenia maszynowego, która znalazła szerokie zastosowanie w symulacjach fizycznych, w tym w dziedzinie reinforcement learning (RL). Dzięki wsparciu dla zaawansowanych algorytmów optymalizacji, TensorFlow umożliwia trenowanie modeli RL na danych pochodzących z symulacji fizycznych. Framework ten oferuje bogatą funkcjonalność do tworzenia i trenowania sieci neuronowych, a także integrację z innymi narzędziami do analizy danych i wizualizacji. TensorFlow wspiera różnorodne techniki optymalizacji, w tym metody oparte na gradientach, co pozwala na skuteczne rozwiązywanie problemów związanych z dynamiką fizyczną. Jego rozbudowana dokumentacja oraz wsparcie dla rozwoju modeli na dużą skalę czynią go jednym z najczęściej wykorzystywanych narzędzi w branży.
 
     \item \textbf{PyTorch.} \\
-    PyTorch to kolejny popularny framework open-source'owy, który jest szczególnie ceniony wśród badaczy i inżynierów zajmujących się uczeniem maszynowym. Dzięki swojej elastyczności oraz wsparciu dla dynamicznych grafów obliczeniowych, PyTorch doskonale nadaje się do tworzenia i trenowania modeli reinforcement learning w kontekście symulacji fizycznyc. PyTorch jest często wykorzystywany w projektach związanych z robotyką oraz modelowaniem dynamicznych systemów, takich jak rakiety, ponieważ pozwala na łatwą integrację z fizycznymi symulacjami i oferuje szeroki zakres algorytmów RL. PyTorch charakteryzuje się także rozbudowaną społecznością oraz licznymi zasobami edukacyjnymi, co czyni go atrakcyjnym wyborem dla osób rozpoczynających pracę z uczeniem maszynowym.
+    PyTorch to kolejny popularny framework open-source'owy, który jest
+    szczególnie ceniony wśród badaczy i inżynierów zajmujących się uczeniem maszynowym. Dzięki swojej elastyczności oraz wsparciu dla dynamicznych grafów obliczeniowych, PyTorch doskonale nadaje się do tworzenia i trenowania modeli reinforcement learning w kontekście symulacji fizycznych. PyTorch jest często wykorzystywany w projektach związanych z robotyką oraz modelowaniem dynamicznych systemów, takich jak rakiety, ponieważ pozwala na łatwą integrację z fizycznymi symulacjami i oferuje szeroki zakres algorytmów RL. PyTorch charakteryzuje się także rozbudowaną społecznością oraz licznymi zasobami edukacyjnymi, co czyni go atrakcyjnym wyborem dla osób rozpoczynających pracę z uczeniem maszynowym.
 
     \item \textbf{Stable Baselines3.} \\
     Stable Baselines3 to biblioteka open-source'owa zbudowana na bazie PyTorch, która oferuje gotowe implementacje popularnych algorytmów reinforcement learning, takich jak PPO (Proximal Policy Optimization), A2C (Advantage Actor-Critic) czy DQN (Deep Q-Network). Jest to narzędzie szczególnie przydatne w kontekście symulacji fizycznych, gdzie wymagana jest szybka i efektywna implementacja algorytmów RL do testowania i optymalizacji systemów sterowania. Stable Baselines3 jest dobrze udokumentowaną platformą, która ułatwia implementację i eksperymentowanie z różnymi metodami RL. Dzięki swojej prostocie i kompatybilności z popularnymi symulatorami, jak Gazebo czy Unity, biblioteka ta stała się jednym z najczęściej wykorzystywanych narzędzi w projektach związanych z uczeniem maszynowym i symulacjami fizycznymi.
@@ -205,9 +207,9 @@ wymagają dużego doświadczenia oraz wiedzy w dziedzinie symulacji, fizyki, jak
 i uczenia maszynowego. Często są to także narzędzia płatne. Niewątpliwie
 jednak rozwiązania te oferują symulacje o dużej dokładności i
 szczegółowości, dzięki zastosowaniu skomplikowanych rozwiązań takich jak CFD
-czy analiza trajektorii lotu. Na dokładnych symulacjach trenowane za pomocą
-dobrze dobranych algorytmów uczenia maszynowego modele mogą być w stanie
-osiągnąć bardzo dobre wyniki w sterowaniu lotem rakiety.\\
+czy analiza trajektorii lotu. Użycie dokładnych symulacji i trenowanie
+modeli, za pomocą dobrze dobranych algorytmów umożliwia osiągnięcie bardzo
+dobrych wyników w sterowaniu lotem rakiety.\\
 \\ W niniejszej pracy inżynierskiej wykorzystane zostały własne implementacje silnika fizycznego oraz algorytmu sterującego,
 co pozwoliło na pełną kontrolę nad procesem tworzenia i testowania systemu sterującego rakietą.
 Efektem tego jest także uproszczony model fizyczny, o czym mowa jest w kolejnych rozdziałach pracy.
