@@ -115,7 +115,6 @@ class SimulationWindow(QtWidgets.QWidget):
         # Camera following picker
         self.camera_mode_select = QComboBox()
         self.camera_mode_select.addItems(['Follow', 'POV', 'Landscape', 'Free'])
-        self.camera_mode_select.setDisabled(True)
         self.camera_mode_select.setCurrentIndex(self.camera_mode)
 
         self.camera_mode_select.currentIndexChanged.connect(self.camera_mode_change)
