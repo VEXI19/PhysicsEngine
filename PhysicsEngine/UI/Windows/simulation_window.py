@@ -139,9 +139,6 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict = self.add_plot(graph_layout_left, "Angular velocity", "Time [s]", "Velocity [rad/s]",
                                                          ["r", "g", "b"],
                                                          ["Angular velocity X", "Angular velocity Y", "Angular velocity Z"])
-        self.rotation_curve_dict = self.add_plot(graph_layout_left, "Rotation", "Time [s]", "Rotation [rad]",
-                                                         ["r", "g", "b"],
-                                                         ["Rotation X", "Rotation Y", "Rotation Z"])
 
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
@@ -239,10 +236,6 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict["Angular velocity X"].setData(plot_time_axes, self.sim_data.angular_velocity_data[0][:i])
         self.angular_velocity_curve_dict["Angular velocity Y"].setData(plot_time_axes, self.sim_data.angular_velocity_data[1][:i])
         self.angular_velocity_curve_dict["Angular velocity Z"].setData(plot_time_axes, self.sim_data.angular_velocity_data[2][:i])
-
-        self.rotation_curve_dict["Rotation X"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 0])
-        self.rotation_curve_dict["Rotation Y"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 1])
-        self.rotation_curve_dict["Rotation Z"].setData(plot_time_axes, self.sim_data.rotation_data[:i, 2])
 
         self.altitude_curve.setData(plot_time_axes, self.sim_data.position_data[:i, 2])
 
