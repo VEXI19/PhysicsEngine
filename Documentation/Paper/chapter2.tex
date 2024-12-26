@@ -377,17 +377,74 @@ Przedstawione równania i modele opisują dynamikę ruchu rakiety w atmosferze, 
 
 \section{Użyte technologie.}\label{sec:uzyte-technologie.}
 
-Do stworzenia silnika fizycznego symulacji lotów rakietowych wykorzystane zostały następujące technologie:
+Do stworzenia silnika fizycznego symulacji lotów rakietowych wykorzystane
+zostały technologie, które nie zostały opisane w rozdziale
+\ref{sec:uzyte-technologie.}, gdzie opisano technologie zastosowane
+w obu modułach pracy inżynierskiej.\\
+Dodatkowo do stworzenia modułu I użyte zostały poniższe biblioteki:
 
 \begin{itemize}
-    \item \textbf{Python 3.13} - język programowania
-    \item zestaw bibliotek
+    \item \textbf{Biblioteki do analizy danych i obliczeń numerycznych:}
     \begin{itemize}
-        \item bibioteka1....
+        \item \textbf{numpy}, wersja: 1.26.4, \\
+        Podstawowa biblioteka do obliczeń numerycznych w Pythonie. Oferuje wsparcie dla wielowymiarowych tablic oraz operacji na nich.
+
+        \item \textbf{pandas}, wersja: 2.2.3, \\
+        Biblioteka do analizy danych, która ułatwia manipulowanie i przetwarzanie danych tabelarycznych. Znajduje szerokie zastosowanie w analizie danych i uczeniu maszynowym.
+
+        \item \textbf{trimesh}, wersja: 4.5.3, \\
+        Biblioteka do manipulacji i analizy danych 3D, zwłaszcza trójwymiarowych siatek. Używana w aplikacjach CAD i analizie przestrzennej.
     \end{itemize}
+
+    \item \textbf{Biblioteki do pracy z GUI (interfejsami graficznymi):}
+    \begin{itemize}
+        \item \textbf{PyQt5}, wersja: 5.15.11, \\
+        Biblioteka do tworzenia interfejsów graficznych opartych na Qt. Umożliwia tworzenie aplikacji z bogatym GUI, wspiera wiele platform.
+
+        \item \textbf{PyQt5-Qt5}, wersja: 5.15.2, \\
+        Zestaw narzędzi i komponentów Qt5 dla PyQt5, pozwalający na korzystanie z funkcji Qt5 w aplikacjach Python. Używana do tworzenia profesjonalnych aplikacji graficznych.
+
+        \item \textbf{QtPy}, wersja: 2.4.2, \\
+        Zestaw narzędzi do pracy z Qt w Pythonie, umożliwiający stosowanie różnych wersji Qt w jednym projekcie. Używany do tworzenia aplikacji graficznych.
+    \end{itemize}
+
+
+    \item \textbf{Biblioteki do grafiki i renderowania 3D:}
+    \begin{itemize}
+        \item \textbf{PyOpenGL}, wersja: 3.1.7, \\
+        Biblioteka umożliwiająca tworzenie grafiki 3D przy użyciu OpenGL w Pythonie. Wykorzystywana w aplikacjach, które wymagają renderowania grafiki komputerowej.
+
+        \item \textbf{PyOpenGL-accelerate}, wersja: 3.1.7, \\
+        Przyspieszenie obliczeń OpenGL w Pythonie poprzez implementację krytycznych operacji w C. Stosowana w aplikacjach wymagających wysokiej wydajności w grafice 3D.
+
+        \item \textbf{pyqtgraph}, wersja: 0.13.7, \\
+        Biblioteka do tworzenia dynamicznych wizualizacji danych i wykresów w czasie rzeczywistym. Znajduje zastosowanie w aplikacjach naukowych i inżynieryjnych.
+    \end{itemize}
+    \item \textbf{Biblioteki do testowania i rozwoju oprogramowania:}
+    \begin{itemize}
+        \item \textbf{pytest}, wersja: 8.3.3, \\
+        Popularne narzędzie do testowania w Pythonie, umożliwiające łatwe pisanie testów jednostkowych. Używane w procesie ciągłej integracji i weryfikacji kodu.
+
+        \item \textbf{pluggy}, wersja: 1.5.0, \\
+        Biblioteka do tworzenia i zarządzania punktami rozszerzeń w aplikacjach. Jest szeroko wykorzystywana w narzędziach testowych, takich jak pytest.
+
+        \item \textbf{python-utils}, wersja: 3.9.1, \\
+        Zbiór różnych narzędzi i funkcji pomocniczych dla Pythona. Zawiera funkcje do obsługi typów danych, plików i wyjątków.
+    \end{itemize}
+    \item \textbf{Wiele innych mniej istotnych bibliotek.}
 \end{itemize}
 
+Wymienione powyżej biblioteki są głównymi narzędziami, z których korzystano
+podczas tworzenia modułu I pracy inżynierskiej. Oprócz nich użyto także
+wielu innych bibliotek pomocniczych, które ułatwiły pracę nad projektem. Są
+to między innymi biblioteki do obsługi plików, pracy z pakietami czy
+zarządzania danymi czasowymi.
+
+
 \section{Projekt silnika fizycznego.}\label{sec:projekt-silnika-fizycznego.}
+
+
+
 \section{Model sił działających na rakietę.}\label{sec:model-si-dziaajacych-na-rakiete.}
 \section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
 \section{Dokładność symulacji.}\label{sec:dokadnosc-symulacji}

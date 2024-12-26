@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  23 DEC 2024 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  26 DEC 2024 15:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,7 +1247,65 @@ Overfull \hbox (27.65047pt too wide) in paragraph at lines 314--315
 ±¢ aerodynamiczn¡. 
  []
 
-[26]) [27] [28]
+[26]
+Overfull \hbox (3.35455pt too wide) in paragraph at lines 380--383
+\T1/lmr/m/n/12 technologie, nieopisane w rozdziale 2.3[]. S¡ to nastepuj¡ce bib
+lioteki do j¦zyka Python: 
+ []
+
+
+Overfull \hbox (5.2807pt too wide) in paragraph at lines 390--392
+\T1/lmr/m/n/12 Biblioteka do analizy danych, która uªatwia manipulowanie i prze
+twarzanie
+ []
+
+[27]
+Overfull \hbox (6.16pt too wide) in paragraph at lines 393--395
+\T1/lmr/m/n/12 Biblioteka do manipulacji i analizy danych 3D, zwªaszcza trójwym
+iarowych
+ []
+
+
+Overfull \hbox (3.02245pt too wide) in paragraph at lines 399--401
+\T1/lmr/m/n/12 Biblioteka do tworzenia interfejsów graficznych opartych na Qt. 
+Umo»liwia
+ []
+
+
+Overfull \hbox (8.96727pt too wide) in paragraph at lines 402--404
+\T1/lmr/m/n/12 Zestaw narz¦dzi i komponentów Qt5 dla PyQt5, pozwalaj¡cy na korz
+ystanie
+ []
+
+
+Overfull \hbox (5.3078pt too wide) in paragraph at lines 402--404
+\T1/lmr/m/n/12 z funkcji Qt5 w aplikacjach Python. U»ywana do tworzenia profesj
+onalnych
+ []
+
+
+Overfull \hbox (35.47891pt too wide) in paragraph at lines 415--417
+\T1/lmr/m/n/12 Przyspieszenie oblicze« OpenGL w Pythonie poprzez implementacj¦ 
+krytycznych
+ []
+
+
+Overfull \hbox (3.97539pt too wide) in paragraph at lines 415--417
+\T1/lmr/m/n/12 operacji w C. Stosowana w aplikacjach wymagaj¡cych wysokiej wyda
+jno±ci
+ []
+
+
+Overfull \hbox (8.18161pt too wide) in paragraph at lines 423--425
+\T1/lmr/m/n/12 Popularne narz¦dzie do testowania w Pythonie, umo»liwiaj¡ce ªatw
+e pisanie
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28])
+[29]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -1263,7 +1321,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 |[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
  []
 
-) [29
+) [30
 
 
 
@@ -1283,7 +1341,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 |[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
  []
 
-) [30
+) [31
 
 
 
@@ -1303,7 +1361,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 |[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
  []
 
-) [31
+) [32
 
 
 
@@ -1313,7 +1371,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
  (chapter6.tex
 Rozdzia\PlPrIeC {\l } 6.
-) [32
+) [33
 
 
 
@@ -1322,11 +1380,11 @@ Rozdzia\PlPrIeC {\l } 6.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 66.
 
-[33
+[34
 
 
 
-] [34] [35] [36]
+] [35] [36]
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
 il\main.aux
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
@@ -1357,7 +1415,7 @@ Here is how much of TeX's memory you used:
  29489 multiletter control sequences out of 15000+600000
  611040 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,79p,906b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,7n,79p,906b,352s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pf
 b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
@@ -1368,7 +1426,7 @@ b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb
 :/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C
 :/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb>
 Output written on C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Docume
-ntation\Paper\out\main.pdf (36 pages, 239784 bytes).
+ntation\Paper\out\main.pdf (36 pages, 242303 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

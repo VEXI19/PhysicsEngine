@@ -35,28 +35,28 @@
 \contentsline {paragraph}{Macierze rotacji}{27}{}%
 \contentsline {subsection}{\numberline {2.2.8}Podsumowanie}{27}{}%
 \contentsline {section}{\numberline {2.3}Użyte technologie.}{27}{}%
-\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{28}{}%
-\contentsline {section}{\numberline {2.5}Model sił działających na rakietę.}{28}{}%
-\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{28}{}%
-\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{28}{}%
-\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{28}{}%
-\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{29}{}%
-\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{29}{}%
-\contentsline {section}{\numberline {3.2}Użyte technologie.}{29}{}%
-\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{29}{}%
-\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{29}{}%
-\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{29}{}%
-\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{29}{}%
-\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{30}{}%
-\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{30}{}%
-\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{30}{}%
-\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{30}{}%
-\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{31}{}%
-\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{31}{}%
-\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{31}{}%
-\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{31}{}%
-\contentsline {chapter}{\numberline {6}Podsumowanie}{32}{}%
-\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{32}{}%
-\contentsline {section}{\numberline {6.2}Wnioski końcowe}{32}{}%
-\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{32}{}%
-\contentsline {chapter}{Bibliografia}{33}{}%
+\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{29}{}%
+\contentsline {section}{\numberline {2.5}Model sił działających na rakietę.}{29}{}%
+\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{29}{}%
+\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{29}{}%
+\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{29}{}%
+\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{30}{}%
+\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{30}{}%
+\contentsline {section}{\numberline {3.2}Użyte technologie.}{30}{}%
+\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{30}{}%
+\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{30}{}%
+\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{30}{}%
+\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{30}{}%
+\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{31}{}%
+\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{31}{}%
+\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{31}{}%
+\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{31}{}%
+\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{32}{}%
+\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{32}{}%
+\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{32}{}%
+\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{32}{}%
+\contentsline {chapter}{\numberline {6}Podsumowanie}{33}{}%
+\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{33}{}%
+\contentsline {section}{\numberline {6.2}Wnioski końcowe}{33}{}%
+\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{33}{}%
+\contentsline {chapter}{Bibliografia}{34}{}%
