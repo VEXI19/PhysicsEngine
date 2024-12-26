@@ -146,3 +146,29 @@ class IAerodependent(ABC):
         projected = self.object_model.projected(rotated_vector)
 
         return projected.area
+
+    def get_data_config_header(self) -> str:
+        """
+        Returns headers for the configuration data of an object
+
+        Returns:
+            string: headers for the configuration data of an object
+        """
+
+        headers = "obj_drac_cof,obj_cop"
+        next_headers = super().get_data_config_header() if hasattr(super(), "get_data_header") else ""
+
+        return f"{headers},{next_headers}"
+
+    def get_config_data(self):
+        """
+        Function to get configuration data of an object
+
+        Returns:
+            str: configuration data of an object
+        """
+
+        data = f"{self.drag_coefficient},{self._cop}"
+        next_data = super().get_config_data() if hasattr(super(), "get_config_data") else ""
+
+        return f"{data},{next_data}"
