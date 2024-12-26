@@ -72,7 +72,9 @@ W tym rozdziale po krótce omówione zostały zagadnienia, które stanowią
 podstawę implementacji silnika fizycznego symulacji lotów rakietowych.
 
 \subsection{Opis sił działających na rakietę}
-W trakcie lotu rakiety w atmosferze działają na nią różne siły, które determinują zarówno ruch postępowy, jak i obrotowy. Siły te można podzielić na:
+W trakcie lotu rakiety w atmosferze działają na nią różne siły, które
+determinują zarówno ruch postępowy, jak i obrotowy. \\Najważniejszymi z tych
+sił są:
 
 
 \begin{itemize}
@@ -121,7 +123,7 @@ Ruch postępowy rakiety w atmosferze opisuje druga zasada dynamiki Newtona, zgod
 \[.\vec{F}_{net} = \vec{F}_g + \vec{F}_l + \vec{F}_d + \vec{F}_t.\]
 
 
-Przyspieszenie rakiety można wyznaczyć jako:
+Przyspieszenie rakiety można więc wyznaczyć jako:
 \[\vec{a} = \frac{\vec{F}_{net}}{m},\]
 
 natomiast prędkość w kolejnych momentach czasu oblicza się poprzez całkowanie przyspieszenia względem czasu:
@@ -203,7 +205,6 @@ gdzie:
 \item $h$ -- wysokość [m],
 \item $H$ -- charakterystyczna wysokość skali atmosfery [m].
 \end{itemize}
-\item Opóźnień w przepływie powietrza w pobliżu rakiety (zjawiska lepkości).
 \item Efektów zmian temperatury i ciśnienia w różnych warstwach atmosfery.
 \end{itemize}
 
@@ -242,33 +243,37 @@ Dla rakiet stabilnych aerodynamicznie kąt natarcia zazwyczaj jest mały (rzędu
 
 \subsection{Geometria rakiety}
 
-\subsubsection{Opis geometrii rakiety jako cylindra}
-Rakieta w analizach symulacyjnych jest często modelowana jako bryła o kształcie cylindra ze stożkową głowicą. Taka uproszczona geometria pozwala na efektywne obliczenia przy zachowaniu wystarczającej dokładności w kontekście modelowania sił aerodynamicznych i dynamiki ruchu.
+\subsubsection{Opis geometrii rakiety jako walca}
+Rakieta w została zamodelowana jako bryła o
+kształcie walca ze stożkową głowicą. Taka uproszczona geometria pozwala na
+efektywne obliczenia przy zachowaniu wystarczającej dokładności w kontekście modelowania sił aerodynamicznych i dynamiki ruchu.
 
 \subsubsection{Wzory geometryczne}
-Dla uproszczonego modelu rakiety jako cylindra o promieniu $r$ i wysokości $h$ podstawowe właściwości geometryczne wyznacza się następująco:
+Dla uproszczonego modelu rakiety jako walca o promieniu $r$ i wysokości $h$
+podstawowe właściwości geometryczne wyznacza się następująco:
 
 \begin{itemize}
-    \item \textbf{Objętość cylindra}:
+    \item \textbf{Objętość walca}:
     \[
     V_{cyl} = \pi r^2 h,
     \]
     gdzie:
     \begin{itemize}
-        \item $r$ -- promień podstawy cylindra [m],
-        \item $h$ -- wysokość cylindra [m].
+        \item $r$ -- promień podstawy walca [m],
+        \item $h$ -- wysokość walca [m].
     \end{itemize}
 
-    \item \textbf{Powierzchnia boczna cylindra}:
+    \item \textbf{Powierzchnia boczna walca}:
     \[
     A_{cyl} = 2 \pi r h.
     \]
 
 \end{itemize}
 
-\subsubsection{Powierzchnia przekroju rakiety jako cylindra pod różnymi kątami}
+\subsubsection{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}
 
-Powierzchnia przekroju rakiety, modelowanej jako cylinder o promieniu $r$ i wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrza.
+Powierzchnia przekroju rakiety, modelowanej jako walec o promieniu $r$ i
+wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrza.
 
 \paragraph{Przekrój czołowy ($\alpha = 0^\circ$):}
 Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy jest równy powierzchni podstawy cylindra:
@@ -277,7 +282,9 @@ A_{0} = \pi r^2.
 \]
 
 \paragraph{Przekrój pod kątem $\alpha$:}
-Jeżeli rakieta jest nachylona pod kątem $\alpha$ do kierunku przepływu, powierzchnia efektywna przekroju zmienia się zgodnie z rzutem cylindra na płaszczyznę prostopadłą do przepływu. Powierzchnię tę można wyznaczyć jako:
+Jeżeli rakieta jest nachylona pod kątem $\alpha$ do kierunku przepływu,
+powierzchnia efektywna przekroju zmienia się zgodnie z rzutem walca na
+płaszczyznę prostopadłą do przepływu. Powierzchnię tę można wyznaczyć jako:
 \[
 A_\alpha = \pi r^2 \cos\alpha + 2rh \sin\alpha,
 \]
@@ -298,10 +305,15 @@ Wartość $A_\alpha$ zależy więc silnie od kąta natarcia $\alpha$, co wpływa
 
 
 \subsubsection{Charakterystyka punktów charakterystycznych rakiety}
-W rakiecie wyróżnia się trzy kluczowe punkty geometryczne i dynamiczne:
+W rakiecie wyróżnia się trzy kluczowe punkty geometryczne i dynamiczne, na
+które oddziaływają wszelkie siły działające na lecącą rakietę:
 
 \begin{itemize}
-    \item \textbf{Środek masy (CoG)}: Punkt, w którym skupiona jest całkowita masa rakiety. Dla symetrii osiowej i jednorodnej gęstości materiałów jest zlokalizowany na osi rakiety. Położenie CoG zmienia się w trakcie lotu w zależności od spalania paliwa i zmiany masy.
+    \item \textbf{Środek masy (CoG)}: Punkt, w którym skupiona jest
+    całkowita masa rakiety. Dla symetrii osiowej i jednorodnej gęstości
+    materiałów jest zlokalizowany na osi rakiety. Położenie CoG zmienia się
+    w trakcie lotu w zależności od spalania paliwa i zmiany masy, choć w
+    symulacji zakłada się zazwyczaj stałe położenie CoG.
 
     \item \textbf{Środek parcia (CoP)}: Punkt, w którym można przyłożyć wypadkową siłę aerodynamiczną działającą na rakietę. Położenie CoP zależy od kształtu rakiety i rozkładu ciśnienia aerodynamicznego.
 
@@ -319,21 +331,30 @@ Dla zapewnienia stabilności lotu rakiety:
 \subsection{Obroty układów współrzędnych}
 
 \subsubsection{Układy współrzędnych w dynamice rakiety}
-W analizach ruchu rakiety wyróżnia się trzy podstawowe układy współrzędnych:
+Aby w dokładny sposób określać pozycje i obrót rakiety w przestrzeni
+konieczne jest zamodelowanie układów współrzędnych związanych z ruchem rakiety. W analizach ruchu rakiety wyróżnia się trzy podstawowe układy współrzędnych:
 \begin{itemize}
     \item \textbf{Układ inercjalny (Ziemia)}: Stały układ odniesienia związany z Ziemią, w którym mierzone są położenie i orientacja rakiety. Oś $z$ jest skierowana w stronę przeciwną do środka Ziemi.
 
-    \item \textbf{Układ ciała (rakieta)}: Układ poruszający się wraz z rakietą. Oś $x$ wskazuje kierunek przodu rakiety, $y$ jest prostopadła do osi $x$ w płaszczyźnie skrzydeł (jeśli istnieją), a $z$ jest skierowana w dół.
+    \item \textbf{Układ ciała (rakieta)}: Układ poruszający się wraz z
+    rakietą. Oś $x$ wskazuje kierunek przodu rakiety, $y$ jest prostopadła
+    do osi $x$ w płaszczyźnie skrzydeł (jeśli istnieją), a $z$ jest
+    skierowana w górę, w kierunku czuba rakiety.
 
-    \item \textbf{Układ lokalny (silnik)}: Układ związany z kierunkiem działania siły ciągu. Oś $x$ wskazuje wektor ciągu, a osie $y$ i $z$ są prostopadłe do $x$.
+    \item \textbf{Układ lokalny (silnik)}: Układ związany z kierunkiem
+    działania siły ciągu. Oś $z$ wskazuje wektor ciągu, a osie $y$ i $x$ są
+    prostopadłe do $z$.
 \end{itemize}
 
 \subsubsection{Kąty Eulera i transformacje układów współrzędnych}
-Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera:
+Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera,
+umożliwiające transformacje układów współrzędnych za pomocą operacji
+macierzowych. Kąty Eulera to trzy kąty opisujące orientację rakiety wzgledem
+trzech osi układu inercjalnego:
 \begin{itemize}
     \item \textbf{Yaw ($\psi$)}: Obrót wokół osi $z$ w układzie Ziemi.
-    \item \textbf{Pitch ($\theta$)}: Obrót wokół osi $y$ w układzie ciała.
-    \item \textbf{Roll ($\phi$)}: Obrót wokół osi $x$ w układzie ciała.
+    \item \textbf{Pitch ($\theta$)}: Obrót wokół osi $y$ w układzie Ziemi.
+    \item \textbf{Roll ($\phi$)}: Obrót wokół osi $x$ w układzie Ziemi.
 \end{itemize}
 
 \paragraph{Macierze rotacji}
@@ -372,14 +393,20 @@ Dzięki kątom Eulera i macierzom rotacji możliwa jest transformacja wektorów 
 
 
 \subsection{Podsumowanie}
-Przedstawione równania i modele opisują dynamikę ruchu rakiety w atmosferze, uwzględniając zarówno ruch postępowy, jak i obrotowy oraz wpływ środowiska atmosferycznego. Poprawne modelowanie i analiza tych elementów są kluczowe dla skutecznego projektowania trajektorii lotu oraz układów sterowania rakiety.
+Przedstawione równania i modele opisują w ogólny sposób dynamikę ruchu
+rakiety w
+atmosferze,
+uwzględniając zarówno ruch postępowy, jak i obrotowy oraz wpływ środowiska
+atmosferycznego. Poprawne zrozumienie i modelowanie tych elementów jest
+kluczowe dla skutecznej implementacji silnika symulacji fizycznych lotów
+rakietowych.
 
 
 \section{Użyte technologie.}\label{sec:uzyte-technologie.}
 
 Do stworzenia silnika fizycznego symulacji lotów rakietowych wykorzystane
-zostały technologie, które nie zostały opisane w rozdziale
-\ref{sec:uzyte-technologie.}, gdzie opisano technologie zastosowane
+zostały technologie, które zostały opisane w rozdziale
+\ref{sec:uzyte-technologie.}, gdzie przedstawiono technologie zastosowane
 w obu modułach pracy inżynierskiej.\\
 Dodatkowo do stworzenia modułu I użyte zostały poniższe biblioteki:
 
@@ -446,7 +473,7 @@ zarządzania danymi czasowymi.
 Silnik fizyczny do symulacji lotów rakietowych będący głównym komponentem
 modułu I niniejszej pracy inżynierskiej został zaprojektowany zgodnie z
 założeniami
-opisanymi w rozdziale \ref{sec:zalozenia-projektowe.}. W tym rozdziale
+opisanymi w rozdziale \ref{sec:zalozenia-projektowe.}. W niniejszym rozdziale
 przedstawiono szczegóły architektury i implementacji silnika fizycznego.
 
 \subsection{Architektura systemu symulacji}
@@ -482,48 +509,7 @@ wesji symulacji.
 \\W stworzonym na
 potrzeby tej pracy silniku fizycznym wyróżniamy następujące interfejsy:
 
-\subsubsection{`IEnvironment`}
 
-Interfejs `IEnvironment` definiuje właściwości środowiska symulacji, takie jak gęstość powietrza, prędkość dźwięku, temperatura, ciśnienie, wiatr i gradient wiatru. Poniżej przedstawiamy kod tego interfejsu:
-
-\begin{lstlisting}[language=Python]
-from abc import ABC, abstractmethod
-
-class IEnvironment(ABC):
-    @abstractmethod
-    def get_air_density(self, position=None) -> float:
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_speed_of_sound(self, position=None) -> float:
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_temperature(self, position=None) -> float:
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_pressure(self, position=None) -> float:
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_wind(self, position=None) -> list:
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_wind_gradient(self, position=None) -> list:
-        raise NotImplementedError
-\end{lstlisting}
-
-\textbf{Opis metod:}
-\begin{itemize}
-    \item `get\_air\_density(position=None)`: Metoda, która zwraca gęstość powietrza w zadanej pozycji. Jeśli `position` nie zostanie podane, metoda użyje domyślnej wartości.
-    \item `get\_speed\_of\_sound(position=None)`: Metoda, która zwraca prędkość dźwięku w zadanej pozycji.
-    \item `get\_temperature(position=None)`: Metoda, która zwraca temperaturę w zadanej pozycji.
-    \item `get\_pressure(position=None)`: Metoda, która zwraca ciśnienie w zadanej pozycji.
-    \item `get\_wind(position=None)`: Metoda, która zwraca listę informacji o wietrze w danej pozycji.
-    \item `get\_wind\_gradient(position=None)`: Metoda, która zwraca gradient wiatru w danej pozycji.
-\end{itemize}
 
 \subsubsection{`IObject`}
 
@@ -533,8 +519,6 @@ podczas symulacji. Interfejs ten definiuje podstawowe właściwości rakiety,
 które powinna ona posiadać bez względu na to, jakie siły będa ostatecznie na
 nią oddziaływały. W obecnej implementacji rakieta traktowana jest jako walec
 o jednolitej dystrybucji masy.
-\\Poniżej
-przedstawiony został kod tego interfejsu:
 
 \begin{lstlisting}[language=Python]
 class IObject(ABC):
@@ -557,7 +541,7 @@ class IObject(ABC):
         self.object_model = self.load_model(object_model_path)
 \end{lstlisting}
 
-\textbf{W konstruktorze klasy implementującej ten interfejs zainicjalizowane powinny zostać następujące parametry:}
+\textbf{W konstruktorze klasy implementującej ten interfejs inicjalizowane są następujące parametry:}
 \begin{itemize}
     \item `name`: Nazwa obiektu.
     \item `object\_model\_path`: Ścieżka do modelu 3D obiektu.
@@ -578,7 +562,7 @@ Dodatkowo, konstruktor inicjalizuje:
     \item `self.object\_model`: Model obiektu 3D.
 \end{itemize}
 
-\textbf{Opis metod:}
+\textbf{Metody w intefejsie IObject:}
 \begin{itemize}
     \item `load\_model(object\_model\_path)`: Ładuje model 3D obiektu z podanej ścieżki. Model jest skalowany i translokowany do odpowiednich wymiarów.
     \item `calculate\_inertia\_tensor()`: Oblicza tensor bezwładności obiektu na podstawie jego masy i wymiarów.
@@ -593,7 +577,6 @@ Dodatkowo, konstruktor inicjalizuje:
 Interfejs `IThrust` rozszerza interfejs `IObject` o właściwości specyficzne
 dla obiektów posiadających silnik. Każdy obiekt, implemetujący ten interfej
 posiada wszystkie własności konieczne do obliczania sił ciągu, nań działającyh.
-\\Poniżej przedstawiony został kod implementacji tego interfejsu:
 
 \begin{lstlisting}[language=Python]
 class IThrust(ABC):
@@ -670,13 +653,61 @@ class IAerodependent(ABC):
     \item `calculate\_reference\_area()`: Oblicza powierzchnię czołową obiektu na podstawie modelu 3D.
 \end{itemize}
 
+\subsubsection{`IEnvironment`}
+
+Interfejs `IEnvironment` definiuje właściwości środowiska symulacji, takie
+jak gęstość powietrza, prędkość dźwięku, temperatura, ciśnienie, wiatr i
+gradient wiatru.
+
+\begin{lstlisting}[language=Python]
+from abc import ABC, abstractmethod
+
+class IEnvironment(ABC):
+    @abstractmethod
+    def get_air_density(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_speed_of_sound(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_temperature(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_pressure(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind(self, position=None) -> list:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind_gradient(self, position=None) -> list:
+        raise NotImplementedError
+\end{lstlisting}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `get\_air\_density(position=None)`: Metoda, która zwraca gęstość powietrza w zadanej pozycji. Jeśli `position` nie zostanie podane, metoda użyje domyślnej wartości.
+    \item `get\_speed\_of\_sound(position=None)`: Metoda, która zwraca prędkość dźwięku w zadanej pozycji.
+    \item `get\_temperature(position=None)`: Metoda, która zwraca temperaturę w zadanej pozycji.
+    \item `get\_pressure(position=None)`: Metoda, która zwraca ciśnienie w zadanej pozycji.
+    \item `get\_wind(position=None)`: Metoda, która zwraca listę informacji o wietrze w danej pozycji.
+    \item `get\_wind\_gradient(position=None)`: Metoda, która zwraca gradient wiatru w danej pozycji.
+\end{itemize}
 
 
 \section{Klasy}
 
-Klasy w silniku fizycznym odpowiadają za modelowanie suł oraz
+Klasy w silniku fizycznym odpowiadają za modelowanie sił oraz
 zapewniają
-działanie symulacji fizycznej. Główne klasy, które pełnią kluczowe role w systemie, to:
+działanie symulacji fizycznej.
+Główne klasy, które pełnią
+kluczowe
+role w
+systemie, to:
 
 \begin{itemize}
     \item \textbf{`PhysicsEngine`}: Jest to najważniejsza klasa silnika, odpowiedzialna za zarządzanie przebiegiem symulacji. Oblicza siły działające na obiekty, aktualizuje ich pozycje, prędkości oraz momenty obrotowe, a także zapisuje wyniki do plików.
@@ -685,18 +716,20 @@ działanie symulacji fizycznej. Główne klasy, które pełnią kluczowe role w 
     implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez silnik do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
 \end{itemize}
 
-
 \subsection{Proces symulacji.}\label{sec:proces-symulacji.}
 
-W tej sekcji opisujemy, jak konfigurowany jest obiekt rakiety, środowisko oraz silnik fizyczny, a następnie zapisywane są one do plików. Następnie pokazujemy, jak wczytać te dane i rozpocząć symulację.
+Proces symulacji fizycznej lotu rakiety jest wieloetapowy i składa się z
+dwóch głównych procesów: konfiguracji oraz przeprowadzenia symulacji.
+Poniżej opisane szczegółowo zostały oba te procesy.
 
 \subsection{Konfiguracja symulacji (Setup)}
 
-Zanim symulacja zostanie przeprowadzona tworzony jest plik zawierający
-konfigurację symulacji. W tym pliku zapisywane są informacje o tym jakie
+Zanim symulacja zostanie przeprowadzona, tworzony jest plik zawierający
+konfigurację symulacji. W tym pliku zapisywane są informacje o tym, jakie
 parametry powinna mieć symulacja.
 
-Pierwszym krokiem jest tworzenie obiektów rakiety, środowiska oraz silnika fizycznego:
+Pierwszym krokiem jest stworzenie obiektów rakiety, środowiska oraz silnika
+fizycznego:
 
 \begin{lstlisting}[language=Python]
 object = Rocket()
@@ -742,11 +775,13 @@ w trakcie trwania symulacji.
 
 \subsection{Symulacja}
 
-Po zapisaniu plików z konfiguracją, wczytujemy je i uruchamiamy symulację. W
+Po zapisaniu plików z konfiguracją, wczytujemy je do sryptu
+\texttt{symulation.py} i uruchamiamy
+symulację. W
 tym celu używamy poniższego kodu:
 
 \begin{lstlisting}[language=Python]
-simulation_name = "gravity_thrust"
+simulation_name = "name_of_simulation"
 
 config = Config()
 path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], simulation_name, "physics_engine.pkl")
@@ -761,7 +796,7 @@ physics_engine.start()
 W pierwszej kolejności określamy nazwę symulacji, a następnie wczytujemy obiekt \texttt{physics\_engine} z pliku. Wczytany silnik jest uruchamiany za pomocą metody \texttt{start()}, która inicjuje symulację. Funkcja ta:
 \begin{itemize}
     \item wczytuje wcześniej zapisany stan symulacji,
-    \item rozpoczyna obliczenia dotyczące ruchu obiektu w czasie,
+    \item rozpoczyna główną pętlę symulacyjną,
     \item zapisuje kolejne wyniki do pliku.
 \end{itemize}
 
@@ -787,7 +822,8 @@ Symulacja kończy się, gdy rakieta dotknie ziemi lub gdy upłynie maksymalny cz
 
 \section{Uzasadnienie przyjętego rozwiązania}
 
-W niniejszym projekcie zaimplementowano rozwiązanie, które zapewnia wysoką modułowość, elastyczność i łatwość w dodawaniu nowych sił oraz rozszerzeń, co czyni go idealnym fundamentem do dalszego rozwoju, w tym integracji z algorytmami sztucznej inteligencji (AI).
+Implementacja wyżej przedstawionego rozwiązania pozwala na uzyskanie wielu
+benefitów, pomagających osiągnąć poczynione założenia. Są to między innymi:
 
 \subsection{Modułowość}
 
