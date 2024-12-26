@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  26 DEC 2024 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  26 DEC 2024 22:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,10 +370,12 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\hypbmsec.sty
+Package: hypbmsec 2016/05/16 v2.5 Bookmarks in sectioning commands (HO)
 ) (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 47
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
 .
  (C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -389,23 +391,31 @@ il\main.aux
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
 il\chapter1.aux)
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
-il\chapter2.aux))
+il\chapter2.aux)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
+il\chapter3.aux)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
+il\chapter4.aux)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
+il\chapter5.aux)
+(C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
+il\chapter6.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -471,68 +481,114 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count301
+Package hypbmsec Info: Package hyperref not loaded,
+(hypbmsec)             bookmark parameters will be ignored on input line 48.
 <SGGW-thesis/naglowek_inz.png, id=1, 742.775pt x 182.6825pt>
 File: SGGW-thesis/naglowek_inz.png Graphic file (type png)
 <use SGGW-thesis/naglowek_inz.png>
-Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 48.
+Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 49.
 (pdftex.def)             Requested size: 279.12146pt x 68.65071pt.
 <SGGW-thesis/stopka_WZIM.png, id=3, 483.30562pt x 82.80937pt>
 File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
 <use SGGW-thesis/stopka_WZIM.png>
-Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 48.
+Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 49.
 (pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
  [1
 
 {C:/Users/jkind/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/jkin
 d/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./SGGW-thesis/na
 glowek_inz.png> <./SGGW-thesis/stopka_WZIM.png>] [2]
-Overfull \hbox (25.55125pt too wide) in paragraph at lines 49--49
+Overfull \hbox (25.55125pt too wide) in paragraph at lines 50--50
 \T1/lmr/m/n/12 O±wiadczam, »e niniejsza praca zostaªa przygotowana pod moim kie
 runkiem i stwierdzam,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
 
-Overfull \hbox (3.51888pt too wide) in paragraph at lines 49--49
+Overfull \hbox (3.51888pt too wide) in paragraph at lines 50--50
 \T1/lmr/m/n/12 faªszywego o±wiadczenia, o±wiadczam, »e niniejsza praca dyplomow
 a zostaªa napisana
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
 
-Overfull \hbox (11.9044pt too wide) in paragraph at lines 49--49
+Overfull \hbox (11.9044pt too wide) in paragraph at lines 50--50
 \T1/lmr/m/n/12 O±wiadczam, »e niniejsza wersja pracy jest identyczna z zaª¡czon
 ¡ wersj¡ elektroniczn¡.
  []
 
 
-Overfull \hbox (44.80621pt too wide) in paragraph at lines 49--49
+Overfull \hbox (44.80621pt too wide) in paragraph at lines 50--50
 \T1/lmr/m/n/12 Przyjmuj¦ do wiadomo±ci, »e praca dyplomowa poddana zostanie pro
 cedurze antyplagiatowej. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
 [3] [4] [5] [6]
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
-il\main.toc)
+il\main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+.
+
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
+[7
+
+])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [7
-
-] [8]
+ [8]
 \openout2 = `chapter1.aux'.
 
  (chapter1.tex
@@ -1048,18 +1104,18 @@ ent learning.
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--72
+Underfull \hbox (badness 10000) in paragraph at lines 199--73
 
  []
 
 
-Overfull \hbox (14.38278pt too wide) in paragraph at lines 199--72
+Overfull \hbox (14.38278pt too wide) in paragraph at lines 199--73
 \T1/lmr/m/n/12 tworzenia i testowania systemu steruj¡cego rakiet¡. Efektem tego
  jest tak»e uproszczony
  []
 
 
-Overfull \hbox (32.69478pt too wide) in paragraph at lines 199--72
+Overfull \hbox (32.69478pt too wide) in paragraph at lines 199--73
 \T1/lmr/m/n/12 model fizyczny, o czym mowa jest w kolejnych rozdziaªach pracy. 
 Rozwi¡zanie prezentowane
  []
@@ -1124,83 +1180,40 @@ dnak wizualizacja
 Underfull \vbox (badness 3942) has occurred while \output is active []
 
  [19]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
-1.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-1.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-81.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-81.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 81.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 81.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 81.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 8
-1.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
-
-Overfull \hbox (2.08122pt too wide) in paragraph at lines 99--101
+Overfull \hbox (2.08122pt too wide) in paragraph at lines 101--103
 \T1/lmr/m/n/12 kierunku ruchu. Zale»y od wªa±ciwo±ci powietrza i ksztaªtu rakie
 ty, a jej warto±¢
  []
 
 
-Underfull \vbox (badness 4378) has occurred while \output is active []
+Underfull \vbox (badness 7326) has occurred while \output is active []
 
  [20{C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
 enc}{C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
 {C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 ]
-Underfull \vbox (badness 4556) has occurred while \output is active []
+Underfull \vbox (badness 1117) has occurred while \output is active []
 
  [21{C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.
 enc}]
-chapter2.tex:167: Missing $ inserted.
+chapter2.tex:169: Missing $ inserted.
 <inserted text> 
                 $
-l.167 ...›ci rakiety wzglÄ™dem osi obrotu [kg\cdot
+l.169 ...›ci rakiety wzglÄ™dem osi obrotu [kg\cdot
                                                    m$^2$].
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-chapter2.tex:167: Missing $ inserted.
+chapter2.tex:169: Missing $ inserted.
 <inserted text> 
                 $
-l.167 ...rakiety wzglÄ™dem osi obrotu [kg\cdot m$^
+l.169 ...rakiety wzglÄ™dem osi obrotu [kg\cdot m$^
                                                   2$].
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (15.28215pt too wide) in paragraph at lines 192--193
+Overfull \hbox (15.28215pt too wide) in paragraph at lines 194--195
 \T1/lmr/m/n/12 (CoG). Dzi¦ki temu moment siªy aerodynamicznej dziaªa stabilizuj
 ¡co, przeciwdziaªaj¡c
  []
@@ -1209,87 +1222,105 @@ Overfull \hbox (15.28215pt too wide) in paragraph at lines 192--193
 Underfull \vbox (badness 5189) has occurred while \output is active []
 
  [22]
-Overfull \hbox (8.45438pt too wide) in paragraph at lines 212--213
+Overfull \hbox (8.45438pt too wide) in paragraph at lines 213--214
 \T1/lmr/m/n/12 K¡t natarcia ($\OML/lmm/m/it/12 $\T1/lmr/m/n/12 ) jest kluczowy
 m parametrem aerodynamicznym opisuj¡cym orientacj¦
  []
 
 [23]
-Overfull \hbox (16.1974pt too wide) in paragraph at lines 249--250
-\T1/lmr/m/n/12 Dla uproszczonego modelu rakiety jako cylindra o promieniu $\OML
-/lmm/m/it/12 r$ \T1/lmr/m/n/12 i wysoko±ci $\OML/lmm/m/it/12 h$ \T1/lmr/m/n/12 
-podstawowe
+Overfull \hbox (44.6419pt too wide) in paragraph at lines 247--250
+\T1/lmr/m/n/12 Taka uproszczona geometria pozwala na efektywne obliczenia przy 
+zachowaniu wystarczaj¡cej
+ []
+
+
+Overfull \hbox (3.14116pt too wide) in paragraph at lines 252--254
+\T1/lmr/m/n/12 Dla uproszczonego modelu rakiety jako walca o promieniu $\OML/lm
+m/m/it/12 r$ \T1/lmr/m/n/12 i wysoko±ci $\OML/lmm/m/it/12 h$ \T1/lmr/m/n/12 pod
+stawowe
  []
 
 [24]
-Overfull \hbox (12.07617pt too wide) in paragraph at lines 297--298
+Overfull \hbox (12.07617pt too wide) in paragraph at lines 304--305
 []\T1/lmr/m/n/12 Warto±¢ $\OML/lmm/m/it/12 A[]$ \T1/lmr/m/n/12 zale»y wi¦c siln
 ie od k¡ta natarcia $\OML/lmm/m/it/12 $\T1/lmr/m/n/12 , co wpªywa na siªy aero
 dynamiczne
  []
 
 [25]
-Overfull \hbox (3.21841pt too wide) in paragraph at lines 306--307
+Overfull \hbox (3.21841pt too wide) in paragraph at lines 318--319
 \T1/lmr/m/n/12 aerodynamiczn¡ dziaªaj¡c¡ na rakiet¦. Poªo»enie CoP zale»y od ks
 ztaªtu rakiety
  []
 
 
-Overfull \hbox (15.77182pt too wide) in paragraph at lines 308--309
+Overfull \hbox (15.77182pt too wide) in paragraph at lines 320--321
 []\T1/lmr/bx/n/12 ‘rodek ci¡gu (CoT)\T1/lmr/m/n/12 : Punkt, w którym dziaªa wyp
 adkowa siªa ci¡gu generowana
  []
 
 
-Overfull \hbox (38.69957pt too wide) in paragraph at lines 308--309
+Overfull \hbox (38.69957pt too wide) in paragraph at lines 320--321
 \T1/lmr/m/n/12 przez silniki rakiety. Poªo»enie CoT zale»y od konfiguracji siln
 ików i ich rozmieszczenia. 
  []
 
 
-Overfull \hbox (27.65047pt too wide) in paragraph at lines 314--315
+Overfull \hbox (27.65047pt too wide) in paragraph at lines 326--327
 []\T1/lmr/m/n/12 CoP powinien znajdowa¢ si¦ poni»ej CoG, co gwarantuje stabilno
 ±¢ aerodynamiczn¡. 
  []
 
-[26] [27]
-Overfull \hbox (5.2807pt too wide) in paragraph at lines 392--394
+
+Overfull \hbox (6.67842pt too wide) in paragraph at lines 350--355
+\T1/lmr/m/n/12 transformacje ukªadów wspóªrz¦dnych za pomoc¡ operacji macierzow
+ych. K¡ty Eulera
+ []
+
+[26]
+Overfull \hbox (26.17065pt too wide) in paragraph at lines 396--403
+\T1/lmr/m/n/12 jest kluczowe dla skutecznej implementacji silnika symulacji fiz
+ycznych lotów rakietowych. 
+ []
+
+[27]
+Overfull \hbox (5.2807pt too wide) in paragraph at lines 419--421
 \T1/lmr/m/n/12 Biblioteka do analizy danych, która uªatwia manipulowanie i prze
 twarzanie
  []
 
 
-Overfull \hbox (6.16pt too wide) in paragraph at lines 395--397
+Overfull \hbox (6.16pt too wide) in paragraph at lines 422--424
 \T1/lmr/m/n/12 Biblioteka do manipulacji i analizy danych 3D, zwªaszcza trójwym
 iarowych
  []
 
 
-Overfull \hbox (3.02245pt too wide) in paragraph at lines 401--403
+Overfull \hbox (3.02245pt too wide) in paragraph at lines 428--430
 \T1/lmr/m/n/12 Biblioteka do tworzenia interfejsów graficznych opartych na Qt. 
 Umo»liwia
  []
 
 
-Overfull \hbox (8.96727pt too wide) in paragraph at lines 404--406
+Overfull \hbox (8.96727pt too wide) in paragraph at lines 431--433
 \T1/lmr/m/n/12 Zestaw narz¦dzi i komponentów Qt5 dla PyQt5, pozwalaj¡cy na korz
 ystanie
  []
 
 
-Overfull \hbox (5.3078pt too wide) in paragraph at lines 404--406
+Overfull \hbox (5.3078pt too wide) in paragraph at lines 431--433
 \T1/lmr/m/n/12 z funkcji Qt5 w aplikacjach Python. U»ywana do tworzenia profesj
 onalnych
  []
 
 
-Overfull \hbox (35.47891pt too wide) in paragraph at lines 417--419
+Overfull \hbox (35.47891pt too wide) in paragraph at lines 444--446
 \T1/lmr/m/n/12 Przyspieszenie oblicze« OpenGL w Pythonie poprzez implementacj¦ 
 krytycznych
  []
 
 
-Overfull \hbox (3.97539pt too wide) in paragraph at lines 417--419
+Overfull \hbox (3.97539pt too wide) in paragraph at lines 444--446
 \T1/lmr/m/n/12 operacji w C. Stosowana w aplikacjach wymagaj¡cych wysokiej wyda
 jno±ci
  []
@@ -1298,283 +1329,444 @@ jno±ci
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-Overfull \hbox (8.18161pt too wide) in paragraph at lines 425--427
+Overfull \hbox (8.18161pt too wide) in paragraph at lines 452--454
 \T1/lmr/m/n/12 Popularne narz¦dzie do testowania w Pythonie, umo»liwiaj¡ce ªatw
 e pisanie
  []
 
 
-Overfull \hbox (9.39748pt too wide) in paragraph at lines 446--451
+Overfull \hbox (9.39748pt too wide) in paragraph at lines 473--478
 \T1/lmr/m/n/12 Silnik fizyczny do symulacji lotów rakietowych b¦d¡cy gªównym ko
 mponentem moduªu
  []
 
 
-Overfull \hbox (5.99428pt too wide) in paragraph at lines 446--451
+Overfull \hbox (5.99428pt too wide) in paragraph at lines 473--478
 \T1/lmr/m/n/12 I niniejszej pracy in»ynierskiej zostaª zaprojektowany zgodnie z
  zaªo»eniami opisanymi
  []
 
 
-Overfull \hbox (6.80896pt too wide) in paragraph at lines 446--451
-\T1/lmr/m/n/12 w rozdziale 2.1[]. W tym rozdziale przedstawiono szczegóªy archi
-tektury i implementacji
- []
-
-
-Overfull \hbox (20.65593pt too wide) in paragraph at lines 454--459
+Overfull \hbox (20.65593pt too wide) in paragraph at lines 481--486
 \T1/lmr/m/n/12 System symulacji zostaª zaprojektowany z wykorzystaniem paradygm
 atu programowania
  []
 
+[29]
 
-chapter2.tex:460: LaTeX Error: Unknown float option `H'.
+chapter2.tex:487: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.460 \begin{figure}[H]
+l.487 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
-<architektura.jpg, id=106, 905.3825pt x 1205.50375pt>
+<architektura.jpg, id=109, 905.3825pt x 1205.50375pt>
 File: architektura.jpg Graphic file (type jpg)
 <use architektura.jpg>
-Package pdftex.def Info: architektura.jpg  used on input line 462.
+Package pdftex.def Info: architektura.jpg  used on input line 489.
 (pdftex.def)             Requested size: 341.43437pt x 454.60124pt.
 
-Overfull \hbox (3.54219pt too wide) in paragraph at lines 467--469
+Overfull \hbox (3.54219pt too wide) in paragraph at lines 494--496
 []\T1/lmr/m/n/12 W dalszej cz¦±ci tego rozdziaªu szczegóªowo opisane zostaªy po
 szczególne elementy
  []
 
 
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
- [29]
-[30 <./architektura.jpg>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-89.
-
-(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 490.
- [31]
-Overfull \hbox (11.78726pt too wide) in paragraph at lines 521--522
-[]\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Metoda, która zwraca pr¦d
-ko±¢ d¹wi¦ku
- []
-
-
-Overfull \hbox (16.16846pt too wide) in paragraph at lines 522--523
-[]\T1/lmr/m/n/12 `get_temperature(position=None)`: Metoda, która zwraca tempera
-tur¦ w zadanej
- []
-
-
-Overfull \hbox (17.34383pt too wide) in paragraph at lines 523--524
-[]\T1/lmr/m/n/12 `get_pressure(position=None)`: Metoda, która zwraca ci±nienie 
-w zadanej pozycji. 
- []
-
-
-Overfull \hbox (6.12157pt too wide) in paragraph at lines 530--538
+Overfull \hbox (6.12157pt too wide) in paragraph at lines 516--522
 \T1/lmr/m/n/12 Interfejs `IObject` jest podstawowym interfejsem dla wszystkich 
 obiektów w symulacji.
  []
 
-[32]
-Overfull \hbox (6.04779pt too wide) in paragraph at lines 583--584
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+23.
+(C:\Users\jkind\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 524.
+ [30]
+[31 <./architektura.jpg>]
+Overfull \hbox (6.04779pt too wide) in paragraph at lines 567--568
 []\T1/lmr/m/n/12 `load_model(object_model_path)`: Šaduje model 3D obiektu z pod
 anej ±cie»ki.
  []
 
 
-Overfull \hbox (3.99895pt too wide) in paragraph at lines 584--585
+Overfull \hbox (3.99895pt too wide) in paragraph at lines 568--569
 []\T1/lmr/m/n/12 `calculate_inertia_tensor()`: Oblicza tensor bezwªadno±ci obie
 ktu na podstawie
  []
 
-[33]
-Overfull \hbox (12.25012pt too wide) in paragraph at lines 585--586
+
+Overfull \hbox (12.25012pt too wide) in paragraph at lines 569--570
 []\T1/lmr/m/n/12 `update(position=None, rotation=None, velocity=None)`: Uaktual
 nia parametry
  []
 
-
-Overfull \hbox (8.0671pt too wide) in paragraph at lines 588--589
+[32]
+Overfull \hbox (8.0671pt too wide) in paragraph at lines 572--573
 []\T1/lmr/m/n/12 `__str__()`: Zwraca reprezentacj¦ obiektu w formie tekstowej (
 pozycja, rotacja,
  []
 
 
-Overfull \hbox (13.69588pt too wide) in paragraph at lines 611--612
+Overfull \hbox (13.69588pt too wide) in paragraph at lines 594--595
 []\T1/lmr/m/n/12 `engine_angle`: K¡t nachylenia silnika wzgl¦dem lokalnego ukªa
 du wspóªrz¦dnych
  []
 
 
-Overfull \hbox (8.56555pt too wide) in paragraph at lines 618--619
+Overfull \hbox (8.56555pt too wide) in paragraph at lines 601--602
 []\T1/lmr/m/n/12 `mass_flow_rate(time: float)`: Metoda abstrakcyjna, która obli
 cza wspóªczynnik
  []
 
 
-Overfull \hbox (0.71101pt too wide) in paragraph at lines 624--630
+Overfull \hbox (0.71101pt too wide) in paragraph at lines 607--613
 \T1/lmr/m/n/12 oporu i inne. Dzi¦ki implementacji tego interfejsu, obiekt posia
 da wszystkie wªasno±ci
  []
 
-[34] [35]
-Overfull \hbox (14.17856pt too wide) in paragraph at lines 663--664
+[33]
+Overfull \hbox (14.17856pt too wide) in paragraph at lines 646--647
 []\T1/lmr/m/n/12 `angle_of_attack`: K¡t natarcia rakiety wzgl¦dem kierunku prze
 pªywu powietrza. 
  []
 
 
-Overfull \hbox (30.56595pt too wide) in paragraph at lines 664--665
+Overfull \hbox (30.56595pt too wide) in paragraph at lines 647--648
 []\T1/lmr/m/n/12 `relative_velocity`: Wzgl¦dna pr¦dko±¢ rakiety wzgl¦dem przepª
 ywaj¡cego powietrza. 
  []
 
-
-Overfull \hbox (12.6138pt too wide) in paragraph at lines 670--671
+[34]
+Overfull \hbox (12.6138pt too wide) in paragraph at lines 653--654
 []\T1/lmr/m/n/12 `calculate_reference_area()`: Oblicza powierzchni¦ czoªow¡ obi
 ektu na podstawie
  []
 
-
-Overfull \hbox (2.34161pt too wide) in paragraph at lines 677--680
-\T1/lmr/m/n/12 Klasy w silniku fizycznym odpowiadaj¡ za modelowanie suª oraz za
-pewniaj¡ dziaªanie
+[35]
+Overfull \hbox (11.78726pt too wide) in paragraph at lines 694--695
+[]\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Metoda, która zwraca pr¦d
+ko±¢ d¹wi¦ku
  []
 
 
-Overfull \hbox (30.7517pt too wide) in paragraph at lines 682--683
+Overfull \hbox (16.16846pt too wide) in paragraph at lines 695--696
+[]\T1/lmr/m/n/12 `get_temperature(position=None)`: Metoda, która zwraca tempera
+tur¦ w zadanej
+ []
+
+
+Overfull \hbox (17.34383pt too wide) in paragraph at lines 696--697
+[]\T1/lmr/m/n/12 `get_pressure(position=None)`: Metoda, która zwraca ci±nienie 
+w zadanej pozycji. 
+ []
+
+
+Overfull \hbox (30.7517pt too wide) in paragraph at lines 713--714
 []\T1/lmr/bx/n/12 `PhysicsEngine`\T1/lmr/m/n/12 : Jest to najwa»niejsza klasa s
 ilnika, odpowiedzialna za zarz¡dzanie
  []
 
 
-Overfull \hbox (10.11255pt too wide) in paragraph at lines 682--683
+Overfull \hbox (10.11255pt too wide) in paragraph at lines 713--714
 \T1/lmr/m/n/12 przebiegiem symulacji. Oblicza siªy dziaªaj¡ce na obiekty, aktua
 lizuje ich pozycje,
  []
 
 
-LaTeX Warning: Reference `sec:model-si-dziaajacych-na-rakiete.' on page 36 unde
-fined on input line 685.
-
-
-Overfull \hbox (3.64555pt too wide) in paragraph at lines 691--692
-\T1/lmr/m/n/12 fizyczny, a nast¦pnie zapisywane s¡ one do plików. Nast¦pnie pok
-azujemy, jak wczyta¢
+Overfull \hbox (7.85677pt too wide) in paragraph at lines 721--724
+\T1/lmr/m/n/12 Proces symulacji fizycznej lotu rakiety jest wieloetapowy i skªa
+da si¦ z dwóch gªównych
  []
 
 
-Overfull \hbox (5.54233pt too wide) in paragraph at lines 695--698
-\T1/lmr/m/n/12 Zanim symulacja zostanie przeprowadzona tworzony jest plik zawie
-raj¡cy konfiguracj¦
- []
-
-
-Overfull \hbox (26.39569pt too wide) in paragraph at lines 699--700
-[]\T1/lmr/m/n/12 Pierwszym krokiem jest tworzenie obiektów rakiety, ±rodowiska 
-oraz silnika fizycznego: 
+Overfull \hbox (8.80632pt too wide) in paragraph at lines 727--730
+\T1/lmr/m/n/12 Zanim symulacja zostanie przeprowadzona, tworzony jest plik zawi
+eraj¡cy konfiguracj¦
  []
 
 [36]
-Overfull \hbox (15.64638pt too wide) in paragraph at lines 711--712
+Overfull \hbox (15.64638pt too wide) in paragraph at lines 744--745
 []\T1/lmtt/m/n/12 environment \T1/lmr/m/n/12 - instancj¦ klasy \T1/lmtt/m/n/12 
 Environment\T1/lmr/m/n/12 , która definiuje ±rodowisko symulacji, 
  []
 
 
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 735--736
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 768--769
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 752--754
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 787--789
 [][][][][][][][][][][][][][][][][][] 
  []
 
 [37]
 
-chapter2.tex:772: LaTeX Error: There's no line here to end.
+chapter2.tex:807: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.772 \\ G
+l.807 \\ G
           Å‚Ã³wna pÄ™tla symulacyjna dziaÅ‚a w nastÄ™pujÄ…cy sposÃ³b:
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (43.5867pt too wide) in paragraph at lines 775--776
+Overfull \hbox (43.5867pt too wide) in paragraph at lines 810--811
 []\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»dym kroku, zmieniane
  s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
  []
 
 
-Overfull \hbox (9.5875pt too wide) in paragraph at lines 777--778
+Overfull \hbox (9.5875pt too wide) in paragraph at lines 812--813
 \T1/lmr/m/n/12 jest stan obiektu: jego pozycja, pr¦dko±¢, przyspieszenie oraz o
 rientacja (rotacja).
  []
 
 [38]
-Overfull \hbox (4.85684pt too wide) in paragraph at lines 794--796
+Overfull \hbox (24.40349pt too wide) in paragraph at lines 825--827
+\T1/lmr/m/n/12 Implementacja wy»ej przedstawionego rozwi¡zania pozwala na uzysk
+anie wielu benefitów,
+ []
+
+
+Overfull \hbox (0.57973pt too wide) in paragraph at lines 830--832
+[]\T1/lmr/m/n/12 Jednym z kluczowych zaªo»e« przy projektowaniu systemu byªa je
+go moduªowo±¢.
+ []
+
+
+Overfull \hbox (4.85684pt too wide) in paragraph at lines 830--832
 \T1/lmr/m/n/12 komponenty. Pozwala to na wspóªprac¦ mi¦dzy wspóªautorami, jasno
 ±¢ implementacji
  []
 
 
-Overfull \hbox (6.88232pt too wide) in paragraph at lines 799--807
-\T1/lmr/m/n/12 pozwala na ªatwe dodanie nowych siª, np. oporu magnetycznego, si
-ª aerodynamicznych
+Underfull \hbox (badness 10000) in paragraph at lines 830--832
+
  []
 
 
-Overfull \hbox (24.43947pt too wide) in paragraph at lines 799--807
+Overfull \hbox (2.379pt too wide) in paragraph at lines 835--843
+\T1/lmr/m/n/12 Obecno±¢ klasy \T1/lmtt/m/n/12 Forces \T1/lmr/m/n/12 z ró»nymi z
+definiowanymi siªami, takimi jak \T1/lmtt/m/n/12 gravity\T1/lmr/m/n/12 , \T1/lm
+tt/m/n/12 thrust
+ []
+
+
+Overfull \hbox (43.33246pt too wide) in paragraph at lines 835--843
+\T1/lmr/m/n/12 i \T1/lmtt/m/n/12 drag\T1/lmr/m/n/12 , pozwala na ªatwe dodanie 
+nowych siª, np. oporu magnetycznego, siª aerodynamicznych
+ []
+
+
+Overfull \hbox (24.43947pt too wide) in paragraph at lines 835--843
 \T1/lmr/m/n/12 rakiety i ±rodowisko jako argumenty, co zapewnia spójno±¢ interf
 ejsu. Ponadto mechanizm
  []
 
 
-Overfull \hbox (11.58388pt too wide) in paragraph at lines 799--807
+Overfull \hbox (11.58388pt too wide) in paragraph at lines 835--843
 \T1/lmr/m/n/12 dodawania siª za pomoc¡ metody \T1/lmtt/m/n/12 add_force \T1/lmr
 /m/n/12 pozwala na ich dynamiczne przypisywanie
  []
 
 
-Overfull \hbox (6.87666pt too wide) in paragraph at lines 810--819
-\T1/lmr/m/n/12 Kolejnym istotnym atutem tego rozwi¡zania jest mo»liwo±¢ ªatwej 
-zmiany parametrów
+Underfull \hbox (badness 10000) in paragraph at lines 835--843
+
+ []
+
+
+Overfull \hbox (24.50148pt too wide) in paragraph at lines 846--855
+[]\T1/lmr/m/n/12 Kolejnym istotnym atutem tego rozwi¡zania jest mo»liwo±¢ ªatwe
+j zmiany parametrów
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 846--855
+
  []
 
 [39]
-Overfull \hbox (6.58687pt too wide) in paragraph at lines 824--832
+Overfull \hbox (6.58687pt too wide) in paragraph at lines 860--861
 \T1/lmr/m/n/12 (np. pr¦dko±ci, przyspieszenia, pozycji), które mog¡ by¢ wykorzy
 stywane przez modele
  []
 
 
-Overfull \hbox (16.96928pt too wide) in paragraph at lines 824--832
-\T1/lmr/m/n/12 ka»dym kroku (tick'u), model ma mo»liwo±¢ analizy stanu obiektów
- i zmiany dost¦pnych
+Overfull \hbox (7.52863pt too wide) in paragraph at lines 873--878
+\T1/lmr/m/n/12 ruch obiektu. W niniejszym podrozdziale opisane zostaªy te dwa k
+luczowe zagadnienia. 
  []
 
-)
+
+chapter2.tex:882: LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.882 \begin{figure}[H]
+                       
+Option `H' ignored and `p' used.
+
+<physics_map.png, id=146, 482.80376pt x 623.32875pt>
+File: physics_map.png Graphic file (type png)
+<use physics_map.png>
+Package pdftex.def Info: physics_map.png  used on input line 884.
+(pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-[41]
+[41 <./physics_map.png>]
+
+chapter2.tex:894: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.894 \\S
+         Ä… to funkcje zwiÄ…zane z przeksztaÅ‚ceniami ukÅ‚adÃ³w wspÃ³Å‚rzÄ™d...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+chapter2.tex:897: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.897 \\ \textbf
+                {Funkcja tworzÄ…ca macierz obrotu na podstawie kÄ…tÃ³w euler...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+chapter2.tex:925: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.925 \\ \textbf
+                {Funckja zamieniajÄ…ca ukÅ‚ad wspÃ³Å‚rzÄ™dnych z lokalnego n...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+chapter2.tex:933: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.933 \\ \textbf
+                {Funckja zamieniajÄ…ca ukÅ‚ad wspÃ³Å‚rzÄ™dnych z globalnego ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[42]
+Overfull \hbox (5.89673pt too wide) in paragraph at lines 943--947
+\T1/lmr/m/n/12 W zaimplementowanej symulacji lotu wyró»niono trzy gªówne siªy, 
+które oddziaªywaj¡
+ []
+
+
+Overfull \hbox (32.43355pt too wide) in paragraph at lines 959--963
+\T1/lmr/m/n/12 przeciwnym do osi Z. Nast¦pnie wektor ten jest zamieniany na lok
+alny ukªad wspóªrz¦dnych
+ []
+
+
+Overfull \hbox (5.15002pt too wide) in paragraph at lines 959--963
+\T1/lmr/m/n/12 rakiety. Obliczany jest tak»e moment obrotowy, który jest równy 
+zeru, gdy» grawitacja
+ []
+
+[43]
+Overfull \hbox (6.51802pt too wide) in paragraph at lines 1003--1004
+\T1/lmr/m/n/12 ukªad wspóªrz¦dnych rakiety. Moment obrotowy obliczany jest jako
+ iloczyn wektorowy
+ []
+
+[44]
+Overfull \hbox (1.10405pt too wide) in paragraph at lines 1023--1030
+\T1/lmr/m/n/12 Nast¦pnie wywoªywana jest funkcja \T1/lmtt/m/n/12 compute_change
+\T1/lmr/m/n/12 , której zadaniem jest obliczenie
+ []
+
+[45]
+Overfull \hbox (8.28288pt too wide) in paragraph at lines 1061--1070
+\T1/lmr/m/n/12 Co istotne, wszystkie obliczenia i warto±ci zwi¡zane z ruchem po
+st¦powym prowadzone
+ []
+
+
+chapter2.tex:1071: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1071 \\ W
+            trakcie obliczania zmian w powyÅ¼ej funkcji wywoÅ‚ywana jest takÅ¼e
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (25.64275pt too wide) in paragraph at lines 1071--1074
+\T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 , obliczaj¡ca k¡t natar
+cia rakiety w danym kroku symulacji. 
+ []
+
+
+Overfull \hbox (1.06664pt too wide) in paragraph at lines 1091--1095
+[]\T1/lmr/m/n/12 Funkcja ta, oblicza k¡t natarcia korzystaj¡c ze wzoru przedsta
+wionego w rozdziale
+ []
+
+[46]
+Overfull \hbox (29.30579pt too wide) in paragraph at lines 1097--1105
+\T1/lmr/m/n/12 lotu, jest modelem uproszczonym, nie bior¡cym pod uwag¦ wielu cz
+ynników. Spowodowane
+ []
+
+
+Overfull \hbox (20.29613pt too wide) in paragraph at lines 1097--1105
+\T1/lmr/m/n/12 ten jednak dzi¦ki moduªowej architekturze silnika mo»e by¢ w ªat
+wy sposób rozbudowany
+ []
+
+
+Overfull \hbox (51.88434pt too wide) in paragraph at lines 1097--1105
+\T1/lmr/m/n/12 rzeczywistych lotów rakietowych. Na potrzeby ninijeszej pracy in
+»ynierskiej zaimplementowana
+ []
+
+) [47]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -1590,7 +1782,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 |[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
  []
 
-) [42
+) [48
 
 
 
@@ -1610,7 +1802,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 |[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
  []
 
-) [43
+) [49
 
 
 
@@ -1630,7 +1822,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 |[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
  []
 
-) [44
+) [50
 
 
 
@@ -1640,20 +1832,20 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
  (chapter6.tex
 Rozdzia\PlPrIeC {\l } 6.
-) [45
+) [51
 
 
 
 
 ]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 83.
+LaTeX Warning: Empty `thebibliography' environment on input line 84.
 
-[46
+[52
 
 
 
-] [47] [48]
+] [53] [54]
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
 il\main.aux
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
@@ -1672,22 +1864,15 @@ il\chapter6.aux))
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 9300 strings out of 474485
- 152411 string characters out of 5743733
- 2003542 words of memory out of 5000000
- 31414 multiletter control sequences out of 15000+600000
+ 9431 strings out of 474485
+ 155281 string characters out of 5743733
+ 2014542 words of memory out of 5000000
+ 31533 multiletter control sequences out of 15000+600000
  617973 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,79p,906b,1836s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,7n,79p,906b,1842s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pf
 b><C:/Users/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
@@ -1702,9 +1887,9 @@ sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/U
 sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/U
 sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Docume
-ntation\Paper\out\main.pdf (48 pages, 443945 bytes).
+ntation\Paper\out\main.pdf (54 pages, 484395 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
+ 261 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

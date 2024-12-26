@@ -14,13 +14,14 @@
 \@writefile{toc}{\contentsline {subsubsection}{Stabilizacja lotu}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{23}{}\protected@file@percent }
+\newlabel{sec:kąt-natarcia-rakiety.}{{2.2.5}{23}{Kąt natarcia rakiety}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Definicja kąta natarcia}{23}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Wpływ kąta natarcia na dynamikę rakiety}{24}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{24}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Geometria rakiety}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Opis geometrii rakiety jako cylindra}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Opis geometrii rakiety jako walca}{24}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Wzory geometryczne}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako cylindra pod różnymi kątami}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Granice powierzchni przekroju:}{25}{}\protected@file@percent }
@@ -36,35 +37,40 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{29}{}\protected@file@percent }
 \newlabel{sec:projekt-silnika-fizycznego.}{{2.4}{29}{Projekt silnika fizycznego.}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Architektura systemu symulacji}{29}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Architektura systemu symulacji}}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{`IObject`}{30}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Architektura systemu symulacji}}{31}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:architektura}{{2.1}{30}{Architektura systemu symulacji}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{`IEnvironment`}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{`IObject`}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{`IThrust`}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{`IAerodependent`}{35}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Klasy}{36}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Proces symulacji.}{36}{}\protected@file@percent }
-\newlabel{sec:proces-symulacji.}{{2.5.1}{36}{Proces symulacji.}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Konfiguracja symulacji (Setup)}{36}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Symulacja}{37}{}\protected@file@percent }
+\newlabel{fig:architektura}{{2.1}{31}{Architektura systemu symulacji}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{`IThrust`}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{`IAerodependent`}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{`IEnvironment`}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Klasy}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Proces symulacji.}{36}{}\protected@file@percent }
+\newlabel{sec:proces-symulacji.}{{2.4.4}{36}{Proces symulacji.}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Konfiguracja symulacji (Setup)}{36}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.6}Symulacja}{37}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Działanie pętli symulacyjnej silnika fizycznego}{38}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Uzasadnienie przyjętego rozwiązania}{39}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Modułowość}{39}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Łatwość dodawania nowych sił}{39}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}Łatwość zmiany parametrów}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.4}Integracja z algorytmami sztucznej inteligencji}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Model sił działających na rakietę.}{41}{}\protected@file@percent }
-\newlabel{sec:model-si-dziaajacych-na-rakiete.}{{2.7}{41}{Model sił działających na rakietę.}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Moduł wizualizacyjny symulacji.}{41}{}\protected@file@percent }
-\newlabel{sec:modul-wizualizacyjny-symulacji.}{{2.8}{41}{Moduł wizualizacyjny symulacji.}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.9}Dokładność symulacji.}{41}{}\protected@file@percent }
-\newlabel{sec:dokadnosc-symulacji}{{2.9}{41}{Dokładność symulacji.}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.10}Ewolucja projektu i wnioski.}{41}{}\protected@file@percent }
-\newlabel{sec:ewolucja-projektu-i-wnioski}{{2.10}{41}{Ewolucja projektu i wnioski.}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.7}Uzasadnienie przyjętego rozwiązania}{39}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Model sił działających na rakietę.}{40}{}\protected@file@percent }
+\newlabel{sec:model-si-dziaajacych-na-rakiete.}{{2.5}{40}{Model sił działających na rakietę.}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Schemat działania sił w symulacji}}{41}{}\protected@file@percent }
+\newlabel{fig:sily}{{2.2}{41}{Model sił działających na rakietę.}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Funkcje pomocnicze}{42}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Siły działające na rakietę}{43}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Siła Grawitacji}{43}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Siła Oporu Powietrza}{43}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Siła Ciągu Silnika}{44}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Składanie sił i obliczanie ruchu obiektu}{44}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.4}Podsumowanie}{47}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{47}{}\protected@file@percent }
+\newlabel{sec:modul-wizualizacyjny-symulacji.}{{2.6}{47}{Moduł wizualizacyjny symulacji.}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{47}{}\protected@file@percent }
+\newlabel{sec:dokadnosc-symulacji}{{2.7}{47}{Dokładność symulacji.}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{47}{}\protected@file@percent }
+\newlabel{sec:ewolucja-projektu-i-wnioski}{{2.8}{47}{Ewolucja projektu i wnioski.}{}{}}
 \@setckpt{chapter2}{
-\setcounter{page}{42}
+\setcounter{page}{48}
 \setcounter{equation}{0}
 \setcounter{enumi}{5}
 \setcounter{enumii}{0}
@@ -74,16 +80,16 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{2}
-\setcounter{section}{10}
+\setcounter{section}{8}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{1}
+\setcounter{figure}{2}
 \setcounter{table}{0}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{parentequation}{0}
-\setcounter{lstnumber}{10}
+\setcounter{lstnumber}{14}
 \setcounter{lstlisting}{0}
 }
