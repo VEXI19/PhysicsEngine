@@ -1,8 +1,13 @@
 from abc import ABC, abstractmethod
 import numpy as np
+from matplotlib.patches import Polygon
 from numpy.typing import NDArray
 from .IObject import IObject
 from ..Utils.Constants import Constants as C
+import matplotlib.pyplot as plt
+from shapely.geometry import Polygon
+import trimesh
+from ..Utils.EulerAngles import euler_to_rotation_matrix
 
 
 class IAerodependent(ABC):
@@ -30,7 +35,7 @@ class IAerodependent(ABC):
         self._cop = cop
         self.angle_of_attack = angle_of_attack
         self.relative_velocity = relative_velocity
-        self._reference_area = self.calculate_reference_area()
+        self._reference_area = 0
         self.drag_coefficient = drag_coefficient
 
         if not isinstance(self, IObject):
@@ -44,6 +49,8 @@ class IAerodependent(ABC):
         Returns:
             float: reference area of the object
         """
+
+        self._reference_area = self.calculate_reference_area(self.rotation[0:2])
 
         return self._reference_area
             
@@ -97,7 +104,7 @@ class IAerodependent(ABC):
         Sets relative velocity of the object
 
         Args:
-            relative_velocity (NDArray[np.float64]): relative velocity of the object
+            (NDArray[np.float64]): relative velocity of the object
         """
         if relative_velocity is None:
             relative_velocity = [0, 0, 0]
@@ -125,26 +132,39 @@ class IAerodependent(ABC):
 
         self._drag_coefficient = drag_coefficient
 
-    def calculate_reference_area(self: IObject) -> float:
+    def calculate_reference_area(self: IObject, angles: NDArray[np.float64]) -> float:
         """
         Function to calculate reference area
 
         Returns:
             float: reference area
         """
+        theta_x_deg = angles[0]  # Rotation around X-axis (pitch)
+        theta_y_deg = angles[1]  # Rotation around Y-axis (yaw)
+        theta_z_deg = 0  # Rotation around Z-axis (roll)
 
-        reference_area = 0
+        R = euler_to_rotation_matrix(np.array([theta_x_deg, theta_y_deg, theta_z_deg]))
 
-        for face in self.object_model.faces:
-            vertices = self.object_model.vertices[face]
+        # Original vector along Z-axis
+        vector = np.array([0, 0, 1])
 
-            projected_vertices = vertices[:, :2]
+        # Apply the rotation to the vector
+        rotated_vector = R @ vector
 
-            x = projected_vertices[:, 0]
-            y = projected_vertices[:, 1]
 
-            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
 
-            reference_area += area
+        projected = (self.object_model.projected(rotated_vector))
 
-        return reference_area
+        # plt.figure(1)
+        # plt.plot(projected.vertices[:, 0], projected.vertices[:, 1])
+        # plt.show()
+        #
+        # plt.figure(2)
+        # plt.subplot(121)
+        # plt.plot([0, rotated_vector[0]], [0, rotated_vector[2]])
+        # plt.subplot(122)
+        # plt.plot([0, rotated_vector[1]], [0, rotated_vector[2]])
+        #
+        # plt.show()
+
+        return projected.area
