@@ -89,6 +89,19 @@ class IObject(ABC):
 
             mesh = trimesh.util.concatenate(meshes)
 
+        if not mesh.is_watertight:
+            mesh = mesh.convex_hull
+
+        mesh.merge_vertices()
+
+        # Remove degenerate (zero-area) faces
+        mesh.remove_degenerate_faces()
+
+        # Fill holes and fix non-manifold edges
+        mesh.fill_holes()
+        mesh.remove_unreferenced_vertices()
+        mesh.remove_duplicate_faces()
+
         min_bound, max_bound = mesh.bounds
 
         # centers model and puts the bottom part on the ground

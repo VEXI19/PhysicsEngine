@@ -1,12 +1,8 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import numpy as np
-from matplotlib.patches import Polygon
 from numpy.typing import NDArray
 from .IObject import IObject
 from ..Utils.Constants import Constants as C
-import matplotlib.pyplot as plt
-from shapely.geometry import Polygon
-import trimesh
 from ..Utils.EulerAngles import euler_to_rotation_matrix
 
 
@@ -139,32 +135,14 @@ class IAerodependent(ABC):
         Returns:
             float: reference area
         """
-        theta_x_deg = angles[0]  # Rotation around X-axis (pitch)
-        theta_y_deg = angles[1]  # Rotation around Y-axis (yaw)
-        theta_z_deg = 0  # Rotation around Z-axis (roll)
+        theta_x_deg = angles[0]
+        theta_y_deg = angles[1]
+        theta_z_deg = 0
 
         R = euler_to_rotation_matrix(np.array([theta_x_deg, theta_y_deg, theta_z_deg]))
 
-        # Original vector along Z-axis
         vector = np.array([0, 0, 1])
-
-        # Apply the rotation to the vector
         rotated_vector = R @ vector
-
-
-
-        projected = (self.object_model.projected(rotated_vector))
-
-        # plt.figure(1)
-        # plt.plot(projected.vertices[:, 0], projected.vertices[:, 1])
-        # plt.show()
-        #
-        # plt.figure(2)
-        # plt.subplot(121)
-        # plt.plot([0, rotated_vector[0]], [0, rotated_vector[2]])
-        # plt.subplot(122)
-        # plt.plot([0, rotated_vector[1]], [0, rotated_vector[2]])
-        #
-        # plt.show()
+        projected = self.object_model.projected(rotated_vector)
 
         return projected.area
