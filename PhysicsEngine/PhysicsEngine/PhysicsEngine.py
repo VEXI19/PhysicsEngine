@@ -69,7 +69,7 @@ class PhysicsEngine:
             str: simulation config data
         """
 
-        return f"{self.time_step}"
+        return f"{self.time_step},{self.max_simulation_time},{self.object.get_config_data()}"
 
     def add_force(self, force: callable) -> None:
         """

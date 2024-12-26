@@ -83,3 +83,27 @@ class IEnvironment(ABC):
         """
 
         raise NotImplementedError
+
+    def get_data_header(self) -> str:
+        """
+        Returns headers for the simulation data
+
+        Returns:
+            string: headers for the simulation data
+        """
+
+        headers = ""
+
+        return headers
+
+    def get_data(self):
+        """
+        Function to get data used to save during simulation
+
+        Returns:
+            str: data used to save during simulation
+        """
+
+        data = f""
+
+        return data

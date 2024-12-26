@@ -1,8 +1,9 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import numpy as np
 from numpy.typing import NDArray
 from .IObject import IObject
 from ..Utils.Constants import Constants as C
+from ..Utils.EulerAngles import euler_to_rotation_matrix
 
 
 class IAerodependent(ABC):
@@ -30,7 +31,7 @@ class IAerodependent(ABC):
         self._cop = cop
         self.angle_of_attack = angle_of_attack
         self.relative_velocity = relative_velocity
-        self._reference_area = self.calculate_reference_area()
+        self._reference_area = 0
         self.drag_coefficient = drag_coefficient
 
         if not isinstance(self, IObject):
@@ -44,6 +45,8 @@ class IAerodependent(ABC):
         Returns:
             float: reference area of the object
         """
+
+        self._reference_area = self.calculate_reference_area(self.rotation[0:2])
 
         return self._reference_area
             
@@ -97,7 +100,7 @@ class IAerodependent(ABC):
         Sets relative velocity of the object
 
         Args:
-            relative_velocity (NDArray[np.float64]): relative velocity of the object
+            (NDArray[np.float64]): relative velocity of the object
         """
         if relative_velocity is None:
             relative_velocity = [0, 0, 0]
@@ -125,26 +128,47 @@ class IAerodependent(ABC):
 
         self._drag_coefficient = drag_coefficient
 
-    def calculate_reference_area(self: IObject) -> float:
+    def calculate_reference_area(self: IObject, angles: NDArray[np.float64]) -> float:
         """
         Function to calculate reference area
 
         Returns:
             float: reference area
         """
+        theta_x_deg = angles[0]
+        theta_y_deg = angles[1]
+        theta_z_deg = 0
 
-        reference_area = 0
+        R = euler_to_rotation_matrix(np.array([theta_x_deg, theta_y_deg, theta_z_deg]))
 
-        for face in self.object_model.faces:
-            vertices = self.object_model.vertices[face]
+        vector = np.array([0, 0, 1])
+        rotated_vector = R @ vector
+        projected = self.object_model.projected(rotated_vector)
 
-            projected_vertices = vertices[:, :2]
+        return projected.area
 
-            x = projected_vertices[:, 0]
-            y = projected_vertices[:, 1]
+    def get_data_config_header(self) -> str:
+        """
+        Returns headers for the configuration data of an object
 
-            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+        Returns:
+            string: headers for the configuration data of an object
+        """
 
-            reference_area += area
+        headers = "obj_drac_cof,obj_cop"
+        next_headers = super().get_data_config_header() if hasattr(super(), "get_data_header") else ""
 
-        return reference_area
+        return f"{headers},{next_headers}"
+
+    def get_config_data(self):
+        """
+        Function to get configuration data of an object
+
+        Returns:
+            str: configuration data of an object
+        """
+
+        data = f"{self.drag_coefficient},{self._cop}"
+        next_data = super().get_config_data() if hasattr(super(), "get_config_data") else ""
+
+        return f"{data},{next_data}"
