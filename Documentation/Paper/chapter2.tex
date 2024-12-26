@@ -443,7 +443,392 @@ zarządzania danymi czasowymi.
 
 \section{Projekt silnika fizycznego.}\label{sec:projekt-silnika-fizycznego.}
 
+Silnik fizyczny do symulacji lotów rakietowych będący głównym komponentem
+modułu I niniejszej pracy inżynierskiej został zaprojektowany zgodnie z
+założeniami
+opisanymi w rozdziale \ref{sec:zalozenia-projektowe.}. W tym rozdziale
+przedstawiono szczegóły architektury i implementacji silnika fizycznego.
 
+\subsection{Architektura systemu symulacji}
+
+System symulacji został zaprojektowany z wykorzystaniem paradygmatu
+programowania obiektowego, co pozwala na modularność i łatwą rozbudowę
+silnika o wykorzystanie nowych sił. Architektura systemu oparta jest na dobrze
+zdefiniowanych
+interfejsach i klasach, co przedstawiono na rysunku \ref{fig:architektura}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{architektura.jpg}
+    \caption{Architektura systemu symulacji}
+    \label{fig:architektura}
+\end{figure}
+
+W dalszej części tego rozdziału szczegółowo opisane zostały poszczególne
+elementy architektury systemu symulacji.
+
+
+\subsection{Interfejsy}
+
+Interfejsy definiują zbiór metod i atrybutów, które muszą być
+zaimplementowane przez klasy, które je dziedziczą. Dzięki nim obiekty, które
+powinny posiadać określone właściwości, mogą być traktowane jednolicie, co
+ułatwia zarządzanie nimi i zapewnia spójność w systemie. Aby obiekt mógł
+korzystać z konkretnego rodzaju sił, musi implementować odpowiednie
+interfejsy, które to umożliwiają. Dzięki temu, w łatwy sposób można
+rozszerzyć dany obiekt o parametry konieczne do symulacji nowych sił.
+Pozwala to na elastyczność silnika i jego łatwe dostosowanie do różnych
+wesji symulacji.
+\\W stworzonym na
+potrzeby tej pracy silniku fizycznym wyróżniamy następujące interfejsy:
+
+\subsubsection{`IEnvironment`}
+
+Interfejs `IEnvironment` definiuje właściwości środowiska symulacji, takie jak gęstość powietrza, prędkość dźwięku, temperatura, ciśnienie, wiatr i gradient wiatru. Poniżej przedstawiamy kod tego interfejsu:
+
+\begin{lstlisting}[language=Python]
+from abc import ABC, abstractmethod
+
+class IEnvironment(ABC):
+    @abstractmethod
+    def get_air_density(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_speed_of_sound(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_temperature(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_pressure(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind(self, position=None) -> list:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind_gradient(self, position=None) -> list:
+        raise NotImplementedError
+\end{lstlisting}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `get\_air\_density(position=None)`: Metoda, która zwraca gęstość powietrza w zadanej pozycji. Jeśli `position` nie zostanie podane, metoda użyje domyślnej wartości.
+    \item `get\_speed\_of\_sound(position=None)`: Metoda, która zwraca prędkość dźwięku w zadanej pozycji.
+    \item `get\_temperature(position=None)`: Metoda, która zwraca temperaturę w zadanej pozycji.
+    \item `get\_pressure(position=None)`: Metoda, która zwraca ciśnienie w zadanej pozycji.
+    \item `get\_wind(position=None)`: Metoda, która zwraca listę informacji o wietrze w danej pozycji.
+    \item `get\_wind\_gradient(position=None)`: Metoda, która zwraca gradient wiatru w danej pozycji.
+\end{itemize}
+
+\subsubsection{`IObject`}
+
+Interfejs `IObject` jest podstawowym interfejsem dla wszystkich obiektów w
+symulacji. Przez obiekty rozumie się rakiety, na które oddziaływują siły
+podczas symulacji. Interfejs ten definiuje podstawowe właściwości rakiety,
+które powinna ona posiadać bez względu na to, jakie siły będa ostatecznie na
+nią oddziaływały. W obecnej implementacji rakieta traktowana jest jako walec
+o jednolitej dystrybucji masy.
+\\Poniżej
+przedstawiony został kod tego interfejsu:
+
+\begin{lstlisting}[language=Python]
+class IObject(ABC):
+    def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
+                 radius: float = 0.1, position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity: NDArray[np.float64] = None,
+                 acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        self.config = Config()
+        self.name = name
+        self.position = position
+        self.velocity = velocity
+        self.acceleration = acceleration
+        self.angular_velocity = angular_velocity
+        self.angular_acceleration = angular_acceleration
+        self.rotation = rotation
+        self.mass = mass
+        self._height = height
+        self._radius = radius
+        self._inertia_tensor = self.calculate_inertia_tensor()
+        self.object_model = self.load_model(object_model_path)
+\end{lstlisting}
+
+\textbf{W konstruktorze klasy implementującej ten interfejs zainicjalizowane powinny zostać następujące parametry:}
+\begin{itemize}
+    \item `name`: Nazwa obiektu.
+    \item `object\_model\_path`: Ścieżka do modelu 3D obiektu.
+    \item `height`: Wysokość obiektu.
+    \item `mass`: Masa obiektu (domyślnie 1 kg).
+    \item `radius`: Promień obiektu (domyślnie 0.1 m).
+    \item `position`: Pozycja obiektu w przestrzeni (domyślnie `None`).
+    \item `velocity`: Prędkość obiektu (domyślnie `None`).
+    \item `acceleration`: Przyspieszenie obiektu (domyślnie `None`).
+    \item `angular\_velocity`: Kątowa prędkość obrotu obiektu (domyślnie `None`).
+    \item `angular\_acceleration`: Przyspieszenie kątowe obiektu (domyślnie `None`).
+\end{itemize}
+
+Dodatkowo, konstruktor inicjalizuje:
+\begin{itemize}
+    \item `self.config`: Konfiguracja obiektu.
+    \item `self.\_inertia\_tensor`: Tensor bezwładności obiektu.
+    \item `self.object\_model`: Model obiektu 3D.
+\end{itemize}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `load\_model(object\_model\_path)`: Ładuje model 3D obiektu z podanej ścieżki. Model jest skalowany i translokowany do odpowiednich wymiarów.
+    \item `calculate\_inertia\_tensor()`: Oblicza tensor bezwładności obiektu na podstawie jego masy i wymiarów.
+    \item `update(position=None, rotation=None, velocity=None)`: Uaktualnia parametry obiektu: pozycję, rotację i prędkość.
+    \item `get\_data()`: Zwraca dane obiektu w formie tekstowej, zawierającą
+    informacje o pozycji, rotacji, prędkości, przyspieszeniu.
+    \item `\_\_str\_\_()`: Zwraca reprezentację obiektu w formie tekstowej (pozycja, rotacja, prędkość, przyspieszenie).
+\end{itemize}
+
+\subsubsection{`IThrust`}
+
+Interfejs `IThrust` rozszerza interfejs `IObject` o właściwości specyficzne
+dla obiektów posiadających silnik. Każdy obiekt, implemetujący ten interfej
+posiada wszystkie własności konieczne do obliczania sił ciągu, nań działającyh.
+\\Poniżej przedstawiony został kod implementacji tego interfejsu:
+
+\begin{lstlisting}[language=Python]
+class IThrust(ABC):
+    def __init__(self, cot, engine_angle: NDArray[np.float64] = None):
+        self._cot = cot
+        self.engine_angle = engine_angle
+
+        if not isinstance(self, IObject):
+            raise RuntimeError("Object needs to extend IObject to be IThrust")
+\end{lstlisting}
+
+\textbf{W konstruktorze deklarowane sa następujące parametry:}
+\begin{itemize}
+    \item `cot`: Odległość środka ciągu (Center of Thrust) w osi Z od środka masy rakiety.
+    \item `engine\_angle`: Kąt nachylenia silnika względem lokalnego układu współrzędnych rakiety.
+\end{itemize}
+
+Jeśli obiekt nie rozszerza klasy `IObject`, zgłaszany jest błąd.
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `mass\_flow\_rate(time: float)`: Metoda abstrakcyjna, która oblicza współczynnik przepływu masy w danym czasie.
+    \item `exhaust\_velocity(time: float)`: Metoda abstrakcyjna, która oblicza prędkość wylotową spalin w danym czasie.
+\end{itemize}
+
+\subsubsection{`IAerodependent`}
+
+Interfejs `IAerodependent` rozszerza interfejs `IObject` o właściwości
+związane z oddziaływaniem aerodynamicznym, takie jak powierzchnia czołowa,
+współczynnik oporu i inne. Dzięki implementacji tego interfejsu, obiekt
+posiada wszystkie własności i parametry pozwalające na obliczanie sił
+aerodynamicznych działających na ten obiekt.
+\\Poniżej przedstawiamy kod tego interfejsu:
+
+\begin{lstlisting}[language=Python]
+class IAerodependent(ABC):
+    def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] = None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value):
+        self._cop = cop
+        self.angle_of_attack = angle_of_attack
+        self.relative_velocity = relative_velocity
+        self._reference_area = self.calculate_reference_area()
+        self.drag_coefficient = drag_coefficient
+
+        if not isinstance(self, IObject):
+            raise RuntimeError("Object needs to extend IObject to be IAerodependent")
+
+    def calculate_reference_area(self: IObject):
+        reference_area = 0
+
+        for face in self.object_model.faces:
+            vertices = self.object_model.vertices[face]
+            projected_vertices = vertices[:, :2]
+
+            x = projected_vertices[:, 0]
+            y = projected_vertices[:, 1]
+
+            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+
+            reference_area += area
+
+        return reference_area
+\end{lstlisting}
+
+\textbf{W konstruktorze deklarowane są następujące wartości parametrów:}
+\begin{itemize}
+    \item `cop`: Odległość środka ciśnienia (Center of Pressure) w osi Z od środka masy rakiety.
+    \item `angle\_of\_attack`: Kąt natarcia rakiety względem kierunku przepływu powietrza.
+    \item `relative\_velocity`: Względna prędkość rakiety względem przepływającego powietrza.
+    \item `drag\_coefficient`: Współczynnik oporu (domyślnie wartość zdefiniowana w konfiguracji).
+\end{itemize}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `calculate\_reference\_area()`: Oblicza powierzchnię czołową obiektu na podstawie modelu 3D.
+\end{itemize}
+
+
+
+\section{Klasy}
+
+Klasy w silniku fizycznym odpowiadają za modelowanie suł oraz
+zapewniają
+działanie symulacji fizycznej. Główne klasy, które pełnią kluczowe role w systemie, to:
+
+\begin{itemize}
+    \item \textbf{`PhysicsEngine`}: Jest to najważniejsza klasa silnika, odpowiedzialna za zarządzanie przebiegiem symulacji. Oblicza siły działające na obiekty, aktualizuje ich pozycje, prędkości oraz momenty obrotowe, a także zapisuje wyniki do plików.
+    \item \textbf{`Forces`}: Klasa ta zawiera różne typy sił działających na
+    obiekty w symulacji. W ramach tej klasy znajdują się konkretne
+    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez silnik do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
+\end{itemize}
+
+
+\subsection{Proces symulacji.}\label{sec:proces-symulacji.}
+
+W tej sekcji opisujemy, jak konfigurowany jest obiekt rakiety, środowisko oraz silnik fizyczny, a następnie zapisywane są one do plików. Następnie pokazujemy, jak wczytać te dane i rozpocząć symulację.
+
+\subsection{Konfiguracja symulacji (Setup)}
+
+Zanim symulacja zostanie przeprowadzona tworzony jest plik zawierający
+konfigurację symulacji. W tym pliku zapisywane są informacje o tym jakie
+parametry powinna mieć symulacja.
+
+Pierwszym krokiem jest tworzenie obiektów rakiety, środowiska oraz silnika fizycznego:
+
+\begin{lstlisting}[language=Python]
+object = Rocket()
+environment = Environment()
+physics_engine = PhysicsEngine(object, environment, 0.1)
+\end{lstlisting}
+
+\noindent
+W tej części kodu tworzymy:
+\begin{itemize}
+    \item \texttt{object} - instancję klasy \texttt{Rocket}, która reprezentuje rakietę,
+    \item \texttt{environment} - instancję klasy \texttt{Environment}, która definiuje środowisko symulacji,
+    \item \texttt{physics\_engine} - instancję klasy \texttt{PhysicsEngine}, która będzie zarządzać całą symulacją fizyczną.
+\end{itemize}
+
+Po utworzeniu silnika fizycznego, dodajemy do niego różne siły, które będą działać na rakietę:
+
+\begin{lstlisting}[language=Python]
+physics_engine.add_force(Forces.gravity)
+physics_engine.add_force(Forces.thrust)
+physics_engine.add_force(Forces.drag)
+\end{lstlisting}
+
+\noindent
+W tej części kodu dodajemy trzy siły:
+\begin{itemize}
+    \item \texttt{Forces.gravity} - siła grawitacji,
+    \item \texttt{Forces.thrust} - siła ciągu,
+    \item \texttt{Forces.drag} - siła oporu powietrza.
+\end{itemize}
+
+Na końcu zapisujemy stan silnika fizycznego do pliku przy użyciu \texttt{pickle}:
+
+\begin{lstlisting}[language=Python]
+config = Config()
+path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], object.name)
+save(physics_engine, path, "physics_engine.pkl")
+\end{lstlisting}
+
+W efekcie działania tego skryptu powstaje konfiguracja symulacji zawierająca
+informacje o rakiecie, środowisku i siłach, które powinny działać na rakietę
+w trakcie trwania symulacji.
+
+\subsection{Symulacja}
+
+Po zapisaniu plików z konfiguracją, wczytujemy je i uruchamiamy symulację. W
+tym celu używamy poniższego kodu:
+
+\begin{lstlisting}[language=Python]
+simulation_name = "gravity_thrust"
+
+config = Config()
+path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], simulation_name, "physics_engine.pkl")
+
+with open(path, "rb") as file:
+    physics_engine = pickle.load(file)
+
+physics_engine.start()
+\end{lstlisting}
+
+\noindent
+W pierwszej kolejności określamy nazwę symulacji, a następnie wczytujemy obiekt \texttt{physics\_engine} z pliku. Wczytany silnik jest uruchamiany za pomocą metody \texttt{start()}, która inicjuje symulację. Funkcja ta:
+\begin{itemize}
+    \item wczytuje wcześniej zapisany stan symulacji,
+    \item rozpoczyna obliczenia dotyczące ruchu obiektu w czasie,
+    \item zapisuje kolejne wyniki do pliku.
+\end{itemize}
+
+\subsubsection{Działanie pętli symulacyjnej silnika fizycznego}
+
+Pętla symulacyjna silnika \texttt{PhysicsEngine} jest odpowiedzialna za zarządzanie całym przebiegiem symulacji. Działa w sposób iteracyjny, krok po kroku, aktualizując stan obiektów w symulacji w czasie rzeczywistym. Kluczowym elementem tego procesu jest kontrolowanie czasu symulacji oraz zarządzanie siłami działającymi na obiekty.
+
+\\ Główna pętla symulacyjna działa w następujący sposób:
+
+\begin{enumerate}
+    \item \textbf{Aktualizacja czasu:} Po każdym kroku, zmieniane są dwie zmienne: \texttt{simulation\_time} (całkowity czas symulacji) oraz \texttt{simulation\_tick} (liczba iteracji).
+    \item \textbf{Obliczanie sił:} Silnik oblicza siły działające na obiekt poprzez wywołanie metod obliczających wynikową siłę i moment obrotowy. Zgodnie z wcześniej dodanymi siłami, dla każdego obiektu w symulacji obliczane są siły, które wpływają na jego ruch.
+    \item \textbf{Aktualizacja stanu obiektu:} Na podstawie obliczonych sił, aktualizowany jest stan obiektu: jego pozycja, prędkość, przyspieszenie oraz orientacja (rotacja). W tym kroku uwzględniane są zmiany zarówno w ruchu translacyjnym, jak i obrotowym.
+    \item \textbf{Sprawdzanie warunków zakończenia:} Pętla symulacyjna sprawdza, czy rakieta nie osiągnęła powierzchni ziemi (czyli gdy jej wysokość jest mniejsza od zera), lub czy nie osiągnięto maksymalnego czasu symulacji. Jeśli jeden z tych warunków jest spełniony, symulacja zostaje zakończona.
+    \item \textbf{Zapis danych:} Po każdej iteracji pętli, dane o stanie obiektu są zapisywane do pliku, aby umożliwić późniejszą analizę wyników symulacji.
+\end{enumerate}
+
+\textbf{Zakończenie symulacji}
+
+Symulacja kończy się, gdy rakieta dotknie ziemi lub gdy upłynie maksymalny czas symulacji. Wówczas silnik informuje użytkownika o zakończeniu symulacji. Wszystkie dane są zapisane, a wyniki są gotowe do analizy.
+
+
+
+\section{Uzasadnienie przyjętego rozwiązania}
+
+W niniejszym projekcie zaimplementowano rozwiązanie, które zapewnia wysoką modułowość, elastyczność i łatwość w dodawaniu nowych sił oraz rozszerzeń, co czyni go idealnym fundamentem do dalszego rozwoju, w tym integracji z algorytmami sztucznej inteligencji (AI).
+
+\subsection{Modułowość}
+
+Jednym z kluczowych założeń przy projektowaniu systemu była jego modułowość.
+Każda z głównych klas, takich jak \texttt{PhysicsEngine}, \texttt{Forces} czy \texttt{Rocket}, pełni dobrze zdefiniowaną rolę, co umożliwia łatwe modyfikowanie i rozwijanie projektu. Dzięki temu każdą część systemu można rozwijać niezależnie, bez wpływu na pozostałe komponenty. Pozwala to na współpracę między współautorami, jasność implementacji oraz łatwe testowanie i debugowanie.
+
+\subsection{Łatwość dodawania nowych sił}
+
+Projekt został zaprojektowany z myślą o prostocie rozszerzania o nowe siły. Obecność klasy \texttt{Forces} z różnymi zdefiniowanymi siłami, takimi jak \texttt{gravity}, \texttt{thrust} i \texttt{drag}, pozwala na łatwe dodanie nowych sił, np. oporu magnetycznego, sił aerodynamicznych specyficznych dla różnych kształtów rakiet, czy nawet sił wynikających z interakcji z innymi obiektami w symulacji.
+\\Nowe siły mogą być łatwo zaimplementowane jako funkcje, które przyjmują
+obiekt rakiety i środowisko jako argumenty, co zapewnia spójność interfejsu.
+Ponadto mechanizm dodawania sił za pomocą metody \texttt{add\_force}
+pozwala na ich dynamiczne przypisywanie i usuwanie w trakcie symulacji.
+Jeżeli nowe siły wymagają dodania do obiektu rakiety nowych parametrów, w
+łatwy sposób można rozwinąć jeden z istniejących interfejsów lub dodać
+zupełnie nowy interfejs umożliwiający tworzenie nowej klasy sił.
+
+\subsection{Łatwość zmiany parametrów}
+
+Kolejnym istotnym atutem tego rozwiązania jest możliwość łatwej zmiany
+parametrów fizycznych oraz konfiguracji symulacji. Wartości takie jak krok
+czasowy, maksymalny czas symulacji, czy parametry sił (np. współczynniki
+oporu powietrza) mogą być modyfikowane w prosty sposób, bez konieczności
+ingerencji w kod samego silnika. Dzięki temu użytkownicy mogą łatwo
+dostosować symulację do swoich potrzeb, na przykład zmieniając warunki
+środowiskowe lub zachowanie rakiety. Przydatne jest to do wielokrotnego
+symulowania lotów rakiety w zmiennych warunkach. Sprzyja temu także
+możliwość tworzenia konfiguracji symulacyjnych.
+
+\subsection{Integracja z algorytmami sztucznej inteligencji}
+
+System jest przystosowany do wykorzystania w kontekście algorytmów sztucznej inteligencji. Dzięki temu, że cała symulacja jest oparta na obiektach i metodach z jasno zdefiniowanymi interfejsami, łatwo jest połączyć ją z systemami uczącymi się.
+
+\texttt{PhysicsEngine} oraz \texttt{Rocket} dostarczają niezbędnych danych o ruchu obiektów (np. prędkości, przyspieszenia, pozycji), które mogą być wykorzystywane przez modele AI do dalszego uczenia się i optymalizacji działań.
+\\Ponadto, zapis i odczyt danych symulacji za pomocą plików \texttt{pickle}
+umożliwia łatwą wymianę danych między różnymi komponentami systemu, co jest istotne w kontekście przechowywania wyników symulacji i wykorzystywania ich w dalszych analizach.
+\\ Inną własnością ułatwiającą integrację z modelami ML jest krokowość
+silnika. Po każdym kroku (tick'u), model ma możliwość analizy stanu obiektów
+i zmiany dostępnych dla niego parametrów, co wpływa na stan obiektów w
+symulacji. W ten sposób silnik przystosowany jest do pracy w trybie uczenia
+nadzorowanego.
 
 \section{Model sił działających na rakietę.}\label{sec:model-si-dziaajacych-na-rakiete.}
 \section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
