@@ -33,8 +33,19 @@ class SimulationData:
             self._angular_acceleration: NDArray = np.array([data['ang_acc_x'], data['ang_acc_y'], data['ang_acc_z']])
             self._angular_velocity: NDArray = np.array([data['ang_vel_x'], data['ang_vel_y'], data['ang_vel_z']])
             self._rotation: NDArray = np.column_stack([data['rot_x'], data['rot_y'], data['rot_z']])
+            self._engine_angle: NDArray = np.array([data['engine_angle_x'], data['engine_angle_y']])
             self._data_points: int = len(self._position)
             self._starting_position: NDArray = self._position[0]
+
+    @property
+    def engine_angle(self):
+        """
+        Returns engine angle of the object
+
+        Returns:
+            NDArray[np.float64]: engine angle of the object
+        """
+        return self._engine_angle
 
     @property
     def time_step(self) -> float:

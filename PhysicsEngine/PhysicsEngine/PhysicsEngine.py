@@ -161,6 +161,8 @@ class PhysicsEngine:
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
 
+        self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05, 0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
+
 
     def save_data(self, data: str) -> None:
         """
