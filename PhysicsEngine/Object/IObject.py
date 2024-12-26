@@ -404,3 +404,28 @@ class IObject(ABC):
 
         return f"{data},{next_data}"
 
+    def get_data_config_header(self) -> str:
+        """
+        Returns headers for the configuration data of an object
+
+        Returns:
+            string: headers for the configuration data of an object
+        """
+
+        headers = "obj_name,obj_radius,obj_height"
+        next_headers = super().get_data_config_header() if hasattr(super(), "get_data_header") else ""
+
+        return f"{headers},{next_headers}"
+
+    def get_config_data(self):
+        """
+        Function to get configuration data of an object
+
+        Returns:
+            str: configuration data of an object
+        """
+
+        data = f"{self.name},{self.radius},{self.height}"
+        next_data = super().get_config_data() if hasattr(super(), "get_config_data") else ""
+
+        return f"{data},{next_data}"
