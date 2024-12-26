@@ -5,6 +5,7 @@ import trimesh
 
 import numpy as np
 from numpy.typing import NDArray
+from scipy.optimize import leastsq
 
 from PhysicsEngine.Config import Config
 
@@ -28,8 +29,8 @@ class IObject(ABC):
         _inertia_tensor (NDArray[np.float64]): inertia tensor of the object
     """
     def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
-                 radius: float = 0.1,  position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
-    NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+                 position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity:
+            NDArray[np.float64] = None, acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
         """
         Constructor for IObject class
         
@@ -67,12 +68,13 @@ class IObject(ABC):
         # NA
         self.mass = mass
         self._height = height
-        self._radius = radius
-        self._inertia_tensor = self.calculate_inertia_tensor()
 
         self.object_model = self.load_model(object_model_path)
+        self._radius = self.calculate_radius()
+        self._inertia_tensor = self.calculate_inertia_tensor()
 
-    def load_model(self, object_model_path: str) -> None:
+
+    def load_model(self, object_model_path: str) -> trimesh.Trimesh:
         """
         Loads a 3D model, scales it to height given in constructor and centers it in the scene.
         
@@ -80,52 +82,93 @@ class IObject(ABC):
             object_model_path (str): path to the 3D model of the object
         """
 
-        try:
-            mesh = trimesh.load(object_model_path)
+        mesh = trimesh.load(object_model_path)
 
-            if isinstance(mesh, trimesh.Scene):
-                meshes = list(mesh.geometry.values())
+        if isinstance(mesh, trimesh.Scene):
+            meshes = list(mesh.geometry.values())
 
-                mesh = trimesh.util.concatenate(meshes)
+            mesh = trimesh.util.concatenate(meshes)
 
-            min_bound, max_bound = mesh.bounds
+        if not mesh.is_watertight:
+            mesh = mesh.convex_hull
 
-            # centers model and puts the bottom part on the ground
-            bottom_center_translation = -min_bound  # Align bottom face to z=0
-            bottom_center_translation[0] -= (max_bound[0] - min_bound[0]) / 2  # Center x-axis
-            bottom_center_translation[1] -= (max_bound[1] - min_bound[1]) / 2  # Center y-axis
-            mesh.apply_translation(bottom_center_translation)
+        mesh.merge_vertices()
 
-            # scales model
-            current_height = max_bound[2] - min_bound[2]
-            scale_factor = self.height / current_height
-            mesh.apply_scale(scale_factor)
+        # Remove degenerate (zero-area) faces
+        mesh.remove_degenerate_faces()
 
-            return mesh
+        # Fill holes and fix non-manifold edges
+        mesh.fill_holes()
+        mesh.remove_unreferenced_vertices()
+        mesh.remove_duplicate_faces()
 
-        except Exception as e:
-            print(f"Error loading model: {e}")
+        min_bound, max_bound = mesh.bounds
 
-    # def calculate_diameter(self):
-    #     # Define a plane equation for slicing along the z-axis
-    #     # This plane will be of the form z = z_value
-    #
-    #     # Create a slicing plane (normal to the z-axis)
-    #     plane_normal = np.array([0, 0, 1])
-    #     plane_origin = np.array([0, 0, 0.2])  # The slicing plane at z = z_value
-    #
-    #     # Slice the 3D object using the plane
-    #     section = self.object_model.section(plane_origin=plane_origin, plane_normal=plane_normal)
-    #
-    #     # Check if the object has an intersection with the slicing plane
-    #     if section:
-    #         # Create a 2D mesh or path from the section
-    #         # section_mesh = trimesh.Trimesh(vertices=section.vertices)
-    #         slice_2d: trimesh.path.Path2D = section.to_planar()[0]
-    #         return slice_2d.length
-    #     else:
-    #         print(f"No intersection found with the plane at z =")
-    #         return None
+        # centers model and puts the bottom part on the ground
+        bottom_center_translation = -min_bound  # Align bottom face to z=0
+        bottom_center_translation[0] -= (max_bound[0] - min_bound[0]) / 2  # Center x-axis
+        bottom_center_translation[1] -= (max_bound[1] - min_bound[1]) / 2  # Center y-axis
+        mesh.apply_translation(bottom_center_translation)
+
+        # scales model
+        current_height = max_bound[2] - min_bound[2]
+        scale_factor = self.height / current_height
+        mesh.apply_scale(scale_factor)
+
+        if isinstance(mesh, trimesh.Trimesh):
+            # mesh.simplify_quadric_decimation(1000)
+            mesh.remove_duplicate_faces()
+            mesh.remove_degenerate_faces()
+
+        return mesh
+
+
+    def calculate_radius(self) -> float:
+        """
+        Calculates radius of the object based on 3d model and height
+
+        Returns:
+            float: radius of the object
+        """
+
+        z_extents = np.array(self.object_model.bounds[:, 2])
+        diff = (z_extents[1] - z_extents[0]) * .25
+        z_extents[0] = z_extents[0] + diff
+        z_extents[1] = z_extents[1] - diff
+        step = diff / 12
+        z_levels = np.arange(*z_extents, step=step)
+
+        # find a bunch of parallel cross sections
+        sections = self.object_model.section_multiplane(
+            plane_origin=self.object_model.bounds[0], plane_normal=[0, 0, 1], heights=z_levels
+        )
+
+        def fit_circle(points):
+            def calc_radius(xc, yc):
+                return np.sqrt((points[:, 0] - xc) ** 2 + (points[:, 1] - yc) ** 2)
+
+            def residuals(center, points):
+                radii = calc_radius(*center)
+                return radii - radii.mean()
+
+            # Initial guess for center
+            x_m, y_m = points[:, 0].mean(), points[:, 1].mean()
+            center_estimate = x_m, y_m
+
+            # Fit circle
+            center, _ = leastsq(residuals, center_estimate, args=(points,))
+            radius = calc_radius(*center).mean()
+
+            return center, radius
+
+        radiuses = []
+
+        for section in sections:
+            if section is not None:
+                center, radius = fit_circle(section.vertices)
+                radiuses.append(radius)
+
+        return float(np.median(radiuses))
 
     @property
     def name(self) -> str:
@@ -189,7 +232,7 @@ class IObject(ABC):
         Returns:
             NDArray[np.float64]: rotation vector of the object
         """
-        
+
         return self._rotation
 
     @rotation.setter
@@ -201,7 +244,7 @@ class IObject(ABC):
             rotation (NDArray[np.float64]): rotation vector
 
         """
-        
+
         if rotation is None:
             rotation = np.array([0, 0, 0], dtype=np.float64)
 
@@ -215,7 +258,7 @@ class IObject(ABC):
         Returns:
             NDArray[np.float64]: acceleration vector of the object
         """
-        
+
         return self._acceleration
 
     @acceleration.setter
@@ -227,7 +270,7 @@ class IObject(ABC):
             acceleration (NDArray[np.float64]): acceleration vector
 
         """
-        
+
         if acceleration is None:
             acceleration = np.array([0, 0, 0], dtype=np.float64)
 
@@ -241,7 +284,7 @@ class IObject(ABC):
         Returns:
             NDArray[np.float64]: angular velocity vector of the object
         """
-        
+
         return self._angular_velocity
 
     @angular_velocity.setter
@@ -252,7 +295,7 @@ class IObject(ABC):
         Args:
             angular_velocity (NDArray[np.float64]): angular velocity vector
         """
-        
+
         if angular_velocity is None:
             angular_velocity = np.array([0, 0, 0], dtype=np.float64)
 
@@ -266,7 +309,7 @@ class IObject(ABC):
         Returns:
             NDArray[np.float64]: angular acceleration vector of the object
         """
-        
+
         return self._angular_acceleration
 
     @angular_acceleration.setter
@@ -277,7 +320,7 @@ class IObject(ABC):
         Args:
             angular_acceleration (NDArray[np.float64]): angular acceleration vector
         """
-        
+
         if angular_acceleration is None:
             angular_acceleration = np.array([0, 0, 0], dtype=np.float64)
 
@@ -291,7 +334,7 @@ class IObject(ABC):
         Returns:
             NDArray[np.float64]: velocity vector of the object
         """
-        
+
         return self._velocity
 
     @velocity.setter
@@ -303,7 +346,7 @@ class IObject(ABC):
             velocity (NDArray[np.float64]): velocity vector
 
         """
-        
+
         if velocity is None:
             velocity = np.array([0, 0, 0], dtype=np.float64)
 
@@ -317,7 +360,7 @@ class IObject(ABC):
         Returns:
             float: mass of the object
         """
-        
+
         return self._mass
 
     @mass.setter
@@ -329,7 +372,7 @@ class IObject(ABC):
             mass (float): mass
 
         """
-        
+
         self._mass = mass
 
     @property
@@ -340,7 +383,7 @@ class IObject(ABC):
         Returns:
             float: height of the object
         """
-        
+
         return self._height
 
     @property
@@ -351,7 +394,7 @@ class IObject(ABC):
         Returns:
             float: radius of the object
         """
-        
+
         return self._radius
 
     @property
@@ -398,7 +441,7 @@ class IObject(ABC):
         Returns:
             str: data used to save during simulation
         """
-        
+
         data = f"{self.mass},{self.position[0]},{self.position[1]},{self.position[2]},{self.rotation[0]},{self.rotation[1]},{self.rotation[2]},{self.relative_velocity[0]},{self.relative_velocity[1]},{self.relative_velocity[2]},{self.relative_acceleration[0]},{self.relative_acceleration[1]},{self.relative_acceleration[2]}, {self.angular_velocity[0]},{self.angular_velocity[1]},{self.angular_velocity[2]},{self.angular_acceleration[0]},{self.angular_acceleration[1]},{self.angular_acceleration[2]}"
         next_data = super().get_data() if hasattr(super(), "get_data") else ""
 
