@@ -23,7 +23,7 @@ class SimulationData:
         """
         with open(file_path, 'r') as file:
             # reads first line with configuration information
-            self._time_step: float = float(file.readline().strip())
+            self._time_step: float = float(file.readline().strip().split(",")[0])
 
             # reads simulation data
             data = pd.read_csv(file_path, skiprows=1)
