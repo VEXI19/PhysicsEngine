@@ -327,9 +327,9 @@ class SimulationWindow(QtWidgets.QWidget):
     def camera_follow(self, tick: int) -> None:
         obj_position = np.array(self.sim_data.position_data[tick])
         pos = pg.Vector(*obj_position)
-        distance = self.object.height * 5
+        # distance = self.object.height * 5
 
-        self.view.setCameraPosition(pos=pos, distance=distance)
+        self.view.setCameraPosition(pos=pos)
 
     def camera_pov(self, tick: int) -> None:
         # TODO
