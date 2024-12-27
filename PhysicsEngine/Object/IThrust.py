@@ -96,7 +96,7 @@ class IThrust(ABC):
             string: headers for the simulation data
         """
 
-        headers = "engine_angle_x,engine_angle_y,engine_angle_z"
+        headers = "engine_angle_x,engine_angle_y"
         next_headers = super().get_data_header() if hasattr(super(), "get_data_header") else ""
 
         return f"{headers},{next_headers}"
@@ -109,7 +109,7 @@ class IThrust(ABC):
             str: data used to save during simulation
         """
 
-        data = f"{self.engine_angle[0]},{self.engine_angle[1]},{self.engine_angle[2]}"
+        data = f"{self.engine_angle[0]},{self.engine_angle[1]}"
         next_data = super().get_data() if hasattr(super(), "get_data") else ""
 
         return f"{data},{next_data}"

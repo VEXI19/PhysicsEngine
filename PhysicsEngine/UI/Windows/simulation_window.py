@@ -139,6 +139,12 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict = self.add_plot(graph_layout_left, "Angular velocity", "Time [s]", "Velocity [rad/s]",
                                                          ["r", "g", "b"],
                                                          ["Angular velocity X", "Angular velocity Y", "Angular velocity Z"])
+        self.engine_angle_point = self.add_scatter_plot(graph_layout_left, "Engine angle", "Angle X [rad]",
+                                                         "Angle Y [rad]",
+                                                        "o",
+                                                         "r",
+                                                            10,
+                                                         "Engine angle", (-.5, .5), (-.5, .5))
 
         # Add Pause Button
         self.pause_button = QtWidgets.QPushButton('Pause')
@@ -189,8 +195,11 @@ class SimulationWindow(QtWidgets.QWidget):
         parent.addWidget(plot)
         plot.setLabel('bottom', x_label)
         plot.setLabel('left', y_label)
+        plot.showGrid(x=True, y=False)
+
         if legend:
-            plot.addLegend()
+            legend = plot.addLegend()
+            legend.anchor((0, 0), (0, 0))
 
         if isinstance(pen, list) and isinstance(name, list):
             dictionary = {}
@@ -199,6 +208,52 @@ class SimulationWindow(QtWidgets.QWidget):
             return dictionary
 
         return plot.plot(pen=pen, name=name)
+
+    def add_scatter_plot(self, parent: QtWidgets.QLayout, title: str, x_label: str, y_label: str,
+                         symbol: str | list[str], color: str | list[str], size: int | list[int],
+                         name: str | list[str], x_range: tuple[float, float] = None, y_range: tuple[float, float] = None,
+                         legend: bool = True) -> pg.PlotItem | dict:
+        """
+        Adds a scatter plot to the layout with fixed axis limits.
+
+        Args:
+            parent (QtWidgets.QLayout): parent layout
+            title (str): title of the plot
+            x_label (str): x-axis label
+            y_label (str): y-axis label
+            symbol (str | list[str]): symbol(s) for the scatter plot
+            color (str | list[str]): color(s) of the points
+            size (int | list[int]): size(s) of the points
+            name (str | list[str]): name of the plot
+            x_range (tuple): fixed x-axis range (min, max)
+            y_range (tuple): fixed y-axis range (min, max)
+            legend (bool): show legend
+
+        Returns:
+            pg.PlotItem | dict: scatter plot item or dictionary of scatter plot items
+        """
+
+        plot = pg.PlotWidget(title=title)
+        parent.addWidget(plot)
+        plot.setLabel('bottom', x_label)
+        plot.setLabel('left', y_label)
+        plot.showGrid(x=True, y=True)
+
+        # Set fixed axis limits
+        if x_range is not None and y_range is not None:
+            plot.setXRange(*x_range, padding=0)
+            plot.setYRange(*y_range, padding=0)
+            plot.setMouseEnabled(x=False, y=False)  # Disable panning and zooming
+
+        if legend:
+            plot.addLegend()
+
+        scatter = pg.ScatterPlotItem(size=size, pen=pg.mkPen(None), brush=pg.mkBrush(color), symbol=symbol)
+
+        plot.addItem(scatter)
+        scatter.setData([], [])  # Initialize empty scatter plot
+
+        return scatter
 
     @QtCore.pyqtSlot(int)
     def update_trajectory(self, i: int) -> None:
@@ -238,6 +293,8 @@ class SimulationWindow(QtWidgets.QWidget):
         self.angular_velocity_curve_dict["Angular velocity Z"].setData(plot_time_axes, self.sim_data.angular_velocity_data[2][:i])
 
         self.altitude_curve.setData(plot_time_axes, self.sim_data.position_data[:i, 2])
+
+        self.engine_angle_point.setData([self.sim_data.engine_angle[0][i]], [self.sim_data.engine_angle[1][i]])
 
         # self.update_camera_position(i)
         match self.camera_mode:

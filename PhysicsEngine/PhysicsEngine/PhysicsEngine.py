@@ -129,8 +129,8 @@ class PhysicsEngine:
         Calculates and saves changes in object's position, velocity, rotation, angular acceleration and angular velocity
         """
         relative_velocity, relative_acceleration = self.compute_relative_values(force, torque)
-        self.object.relative_velocity = relative_velocity
-        self.object.relative_acceleration = relative_acceleration
+        self.object.local_velocity = relative_velocity
+        self.object.local_velocity = relative_acceleration
 
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
@@ -160,6 +160,8 @@ class PhysicsEngine:
         self.object.rotation[0] += dot_phi * self.time_step
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
+
+        self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05, 0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
 
 
     def save_data(self, data: str) -> None:
