@@ -130,7 +130,7 @@ class PhysicsEngine:
         """
         relative_velocity, relative_acceleration = self.compute_relative_values(force, torque)
         self.object.local_velocity = relative_velocity
-        self.object.local_velocity = relative_acceleration
+        self.object.local_acceleration = relative_acceleration
 
         global_force = transform_to_global(force, self.object.rotation)
         self.object.acceleration = global_force / self.object.mass
