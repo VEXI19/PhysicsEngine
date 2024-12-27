@@ -1,20 +1,36 @@
 %-------- PREAMBLE ----------
-
 \documentclass{SGGW-thesis/SGGW-thesis}
 \INZYNIERSKAtrue
 \WZIMtrue
 %\usepackage{graphicx} % Required for inserting images
 \usepackage{babel}[utf8]
 \usepackage{url}
-
-
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hypbmsec}
 
 
 %-------- PACKAGES SETUP ---------------
 
-
-
-
+\lstset{
+    language=Python,                % Określenie języka
+    backgroundcolor=\color{white},   % Kolor tła
+    basicstyle=\ttfamily\footnotesize, % Czcionka i rozmiar
+    numbers=left,                   % Numery wierszy z lewej strony
+    numberstyle=\tiny\color{gray},   % Styl numerów
+    stepnumber=1,                   % Co ile wierszy numeracja
+    numbersep=5pt,                  % Odstęp numerów od kodu
+    showspaces=false,                % Nie wyświetlaj spacji
+    showstringspaces=false,         % Nie wyświetlaj przestrzeni w ciągach
+    showtabs=false,                 % Nie wyświetlaj tabulatorów
+    frame=single,                   % Ramka wokół kodu
+    tabsize=4,                      % Rozmiar tabulacji
+    captionpos=b,                   % Pozycja podpisu (b = na dole)
+    breaklines=true,                % Łamanie długich linii
+    breakatwhitespace=true,         % Łamanie linii przy spacji
+    % escapeinside={\%*}{*)}          % Jeśli chcesz używać LaTeX w kodzie
+}
 
 %-------- FIRST PAGE SETUP -----------
 
@@ -55,7 +71,6 @@
 %----- ROZDZIAŁY ----
 
 \include{chapter1}
-\include{chapter2}
 \include{chapter2}
 \include{chapter3}
 \include{chapter4}

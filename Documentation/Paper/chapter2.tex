@@ -1,0 +1,1113 @@
+\chapter{Moduł I: Silnik fizyczny symulacji lotów rakietowych.}
+\label{ch:silnik-fizyczny-symulacji-lotow-rakietowych.}
+
+Silnik fizyczny do symulacji lotów rakietowych to pierwszy z modułów
+niniejszej pracy inżynierskiej.
+Za pomocą tego projektu osiągnięty zostaje
+cel pośredni pracy - stworzenie środowiska do uczenia algorytmów.
+Autorem
+tego modułu jest Jakub Kindlik.\\
+W tym rozdziale przedstawione zostały teoretyczne podstawy fizyczne, użyte
+technologie, oraz
+trzy główne komponenty
+tego modułu:
+
+\begin{itemize}
+    \item Projekt silnika fizycznego.
+    \item Model sił działających na rakietę.
+    \item Moduł wizualizacyjny symulacji.
+\end{itemize}
+
+Omówione zostały także zagadnienia związane ze
+sprawdzeniem dokładności symulacji oraz ewolucją projektu.\\
+
+\section{Założenia projektowe.}\label{sec:zalozenia-projektowe.}
+W trakcie pracy nad modułem silnika fizycznego symulacji lotów rakietowych poczyniono szereg założeń, które miały na celu ułatwienie implementacji oraz zapewnienie odpowiedniej wydajności symulacji. Poniżej przedstawiono najważniejsze z nich:
+
+\begin{itemize}
+
+\item \textbf{Modelowanie uproszczonych sił działających na rakietę.} \\
+W celu zmniejszenia złożoności obliczeniowej model sił działających na rakietę zostanie odpowiednio uproszczony. Uwzględnione zostaną jedynie kluczowe siły, takie jak grawitacja, opór powietrza i siła ciągu silnika. Takie podejście umożliwia łatwiejsze zamodelowanie systemu i redukuje zapotrzebowanie na zasoby obliczeniowe.
+
+\item \textbf{Optymalizacja pod kątem pracy na komputerze osobistym.} \\
+Symulacje będą wykonywane na komputerze osobistym, dlatego silnik fizyczny
+musi być zoptymalizowany pod kątem wydajności, jak i okrojony w kwestii
+skomplikowanych obliczeń. Ograniczenie
+zasobożerności
+jest konieczne, aby zapewnić płynne działanie nawet na sprzęcie o przeciętnych parametrach.
+
+\item \textbf{Uproszczona geometria rakiety.} \\
+W celu ograniczenia złożoności modelu fizycznego rakieta będzie miała kształt walca i zostanie pozbawiona skrzydeł. Taka decyzja pozwala na skupienie się na kluczowych aspektach dynamiki lotu bez nadmiernego komplikowania obliczeń.
+
+\item \textbf{Sterowanie poprzez obracany silnik.} \\
+Układ sterujący rakietą będzie się opierał na możliwości obracania silnika,
+co bezpośrednio wpłynie na trajektorię lotu. Taki model jest prosty do
+zamodelowania, a jednocześnie pozwala na sterowanie rakietą przez algorytmy
+samouczące, poprzez zmianę jednego parametru.
+
+\item \textbf{Możliwość modyfikacji parametrów symulacji w czasie rzeczywistym.} \\
+Symulacja zostanie zaprojektowana w sposób umożliwiający ingerencję w jej
+parametry w trakcie trwania. W szczególności modyfikowanym parametrem
+powinien być kąt nachylenia silnika. Taka funkcjonalność pozwala na
+uczenie algorytmów sterujących w czasie rzeczywistym.
+
+\item \textbf{Możliwość wizualizacji symulacji.} \\
+Symulacja będzie wyposażona w opcjonalną funkcję wizualizacji, co umożliwi analizę trajektorii i zachowania rakiety w sposób intuicyjny. Jednak wizualizacja nie będzie wymagana, co pozwoli ograniczyć zużycie zasobów obliczeniowych w trakcie symulacji.
+
+\end{itemize}
+
+Założenia te konieczne są do stworzenia silnika fizycznego, który będzie w
+stanie współpracować z modułem algorytmu sterującego rakietą, jednocześnie
+będąc na tyle prostym, aby nie obciążać zasobów komputera osobistego.
+
+
+\section{Teoretyczne podstawy fizyczne.}\label{sec:teoretyczne-podstawy.}
+
+Tworzenie silnika symulacji lotów rakietowych wymaga zrozumienia
+zasad fizyki odnoszących się do ruchu rakiety w atmosferze, a także zjawisk
+towarzyszących temu ruchowi. Ponadto konieczne jest zrozumienie podstawowych
+zagadnień z zakresu matematyki, w tym geometrii przestrzennej oraz równań
+różniczkowych.\\
+W tym rozdziale po krótce omówione zostały zagadnienia, które stanowią
+podstawę implementacji silnika fizycznego symulacji lotów rakietowych.
+
+\subsection{Opis sił działających na rakietę}
+W trakcie lotu rakiety w atmosferze działają na nią różne siły, które
+determinują zarówno ruch postępowy, jak i obrotowy. \\Najważniejszymi z tych
+sił są:
+
+
+\begin{itemize}
+\item \textbf{Siła ciężkości (Gravity)} \newline
+Siła skierowana ku środkowi Ziemi, działająca na środek masy rakiety (\textit{Center of Gravity, CoG}). Jej wartość wyraża się jako:
+\[ \vec{F}_g = m \cdot \vec{g},\] gdzie:
+\begin{itemize}
+\item $m$ -- masa rakiety [kg],
+\item $\vec{g}$ -- wektor przyspieszenia grawitacyjnego [m/s$^2$], zazwyczaj o wartości około $9.81$ m/s$^2$ na poziomie morza.
+\end{itemize}
+
+
+\item \textbf{Siła nośna (Lift)} \newline
+Siła działająca na punkt środka parcia (\textit{Center of Pressure, CoP}) rakiety, prostopadła do kierunku przepływu powietrza. Jest istotna w stabilizacji lotu i zależy od kształtu rakiety oraz kąta natarcia. Wyraża się jako:
+\[ \vec{F}_l = \frac{1}{2} \rho v^2 C_l A, \]
+gdzie:
+\begin{itemize}
+    \item $\rho$ -- gęstość powietrza [kg/m$^3$],
+    \item $v$ -- prędkość rakiety względem powietrza [m/s],
+    \item $C_l$ -- współczynnik siły nośnej (zależy od kąta natarcia),
+    \item $A$ -- efektywna powierzchnia rakiety [m$^2$].
+\end{itemize}
+
+\item \textbf{Siła oporu aerodynamicznego (Drag)} \newline
+Siła działająca również na punkt \textit{Center of Pressure (CoP)}, przeciwna do kierunku ruchu. Zależy od właściwości powietrza i kształtu rakiety, a jej wartość wyraża się jako:
+\[ \vec{F}_d = \frac{1}{2} \rho v^2 C_d A, \]
+gdzie:
+\begin{itemize}
+    \item $C_d$ -- współczynnik oporu aerodynamicznego (zależy od kształtu rakiety).
+\end{itemize}
+
+\item \textbf{Siła ciągu (Thrust)} \newline
+Siła generowana przez silnik rakiety, działająca na punkt \textit{Center of Thrust (CoT)} wzdłuż osi rakiety. Wyrażenie opisujące siłę ciągu to:
+\[ \vec{F}_t = F_{max} \cdot u(t), \]
+gdzie:
+\begin{itemize}
+    \item $F_{max}$ -- maksymalna siła ciągu [N],
+    \item $u(t)$ -- funkcja sterująca (np. zależna od przepływu paliwa).
+\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Równania ruchu postępowego}
+Ruch postępowy rakiety w atmosferze opisuje druga zasada dynamiki Newtona, zgodnie z którą suma wszystkich sił działających na rakietę równa jest iloczynowi masy rakiety i przyspieszenia środka masy:
+\[.\vec{F}_{net} = \vec{F}_g + \vec{F}_l + \vec{F}_d + \vec{F}_t.\]
+
+
+Przyspieszenie rakiety można więc wyznaczyć jako:
+\[\vec{a} = \frac{\vec{F}_{net}}{m},\]
+
+natomiast prędkość w kolejnych momentach czasu oblicza się poprzez całkowanie przyspieszenia względem czasu:
+\[\vec{v}(t) = \vec{v}_0 + \int_0^t \vec{a}(\tau) d\tau,\]
+
+gdzie:
+\begin{itemize}
+\item $\vec{v}_0$ -- początkowa prędkość rakiety [m/s].
+\end{itemize}
+
+
+Pozycję rakiety można wyznaczyć poprzez kolejne całkowanie prędkości:
+\[\vec{x}(t) = \vec{x}_0 + \int_0^t \vec{v}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{x}_0$ -- początkowa pozycja rakiety [m].
+\end{itemize}
+
+
+
+\subsection{Ruch obrotowy i momenty sił}
+Ruch obrotowy rakiety jest determinowany momentami sił działającymi na rakietę. Kluczowe znaczenie ma tutaj punkt środka masy (CoG), wokół którego rakieta może rotować. Moment siły względem środka masy wyraża się jako:
+\[\vec{M} = \vec{r} \times \vec{F},\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{r}$ -- wektor od środka masy do punktu przyłożenia siły [m],
+\item $\vec{F}$ -- siła działająca na rakietę [N].
+\end{itemize}
+
+
+\subsubsection{Równania ruchu obrotowego}
+Moment obrotowy generuje przyspieszenie kątowe zgodnie z równaniem:
+\[\vec{\alpha} = \frac{\vec{M}}{I},\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\alpha}$ -- przyspieszenie kątowe [rad/s$^2$],
+\item $I$ -- moment bezwładności rakiety względem osi obrotu [kg\cdot m$^2$].
+\end{itemize}
+
+
+Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie według:
+\[\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\alpha}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\omega}_0$ -- początkowa prędkość kątowa [rad/s].
+\end{itemize}
+
+
+Kąt orientacji rakiety w przestrzeni zmienia się w czasie:
+\[\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) d\tau,\]
+
+
+gdzie:
+\begin{itemize}
+\item $\vec{\theta}_0$ -- początkowy kąt orientacji [rad].
+\end{itemize}
+
+
+\subsubsection{Stabilizacja lotu}
+Ruch obrotowy jest ściśle związany ze stabilnością rakiety w locie. Rakieta powinna być tak zaprojektowana, aby środek parcia (CoP) znajdował się poniżej środka masy (CoG). Dzięki temu moment siły aerodynamicznej działa stabilizująco, przeciwdziałając niekontrolowanym obrotom.
+
+
+\subsection{Modelowanie środowiska atmosferycznego}
+Środowisko atmosferyczne wpływa na dynamikę ruchu rakiety, szczególnie poprzez gęstość powietrza ($\rho$) oraz zmienne ciśnienie i temperaturę. Modelowanie środowiska wymaga uwzględnienia:
+\begin{itemize}
+\item Zmiennej gęstości powietrza w zależności od wysokości:
+\[\rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),\]
+gdzie:
+\begin{itemize}
+\item $\rho_0$ -- gęstość powietrza na poziomie morza [kg/m$^3$],
+\item $h$ -- wysokość [m],
+\item $H$ -- charakterystyczna wysokość skali atmosfery [m].
+\end{itemize}
+\item Efektów zmian temperatury i ciśnienia w różnych warstwach atmosfery.
+\end{itemize}
+
+\subsection{Kąt natarcia rakiety} \label{sec:kąt-natarcia-rakiety.}
+
+Kąt natarcia ($\alpha$) jest kluczowym parametrem aerodynamicznym opisującym orientację rakiety względem przepływu powietrza. Określa on, pod jakim kątem oś symetrii rakiety jest nachylona do wektora prędkości względnej powietrza.
+
+\subsubsection{Definicja kąta natarcia}
+Kąt natarcia $\alpha$ definiuje się jako kąt pomiędzy wektorem prędkości powietrza $\vec{v}_{rel}$ a osią symetrii rakiety. Wyrażenie to zapisuje się jako:
+\[
+\alpha = \arccos\left(\frac{\vec{v}_{rel} \cdot \vec{a}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
+\]
+gdzie:
+\begin{itemize}
+    \item $\vec{v}_{rel}$ -- wektor prędkości względnej przepływu powietrza,
+    \item $\vec{a}$ -- wektor osi symetrii rakiety,
+    \item $\|\vec{v}_{rel}\|$ -- wartość prędkości względnej [m/s],
+    \item $\|\vec{a}\|$ -- wartość wektora osi symetrii (zwykle $1$ jako wektor jednostkowy).
+\end{itemize}
+
+\subsubsection{Wpływ kąta natarcia na dynamikę rakiety}
+Kąt natarcia ma istotny wpływ na siły aerodynamiczne, w szczególności:
+\begin{itemize}
+    \item \textbf{Siła nośna ($\vec{F}_l$):} Przy większych kątach natarcia wzrasta siła nośna, która stabilizuje rakietę, ale również zwiększa ryzyko niestabilności aerodynamicznej.
+    \item \textbf{Siła oporu ($\vec{F}_d$):} Przy większych kątach natarcia wzrasta siła oporu, co prowadzi do większych strat energetycznych w trakcie lotu.
+\end{itemize}
+
+\subsubsection{Zakres kąta natarcia w rakietach}
+Dla rakiet stabilnych aerodynamicznie kąt natarcia zazwyczaj jest mały (rzędu kilku stopni), aby zminimalizować siły destabilizujące. W czasie lotu kąt natarcia zmienia się dynamicznie w zależności od:
+\begin{itemize}
+    \item warunków atmosferycznych,
+    \item trajektorii lotu,
+    \item działania układów sterujących.
+\end{itemize}
+
+
+\subsection{Geometria rakiety}
+
+\subsubsection{Opis geometrii rakiety jako walca}
+Rakieta w została zamodelowana jako bryła o
+kształcie walca ze stożkową głowicą. Taka uproszczona geometria pozwala na
+efektywne obliczenia przy zachowaniu wystarczającej dokładności w kontekście modelowania sił aerodynamicznych i dynamiki ruchu.
+
+\subsubsection{Wzory geometryczne}
+Dla uproszczonego modelu rakiety jako walca o promieniu $r$ i wysokości $h$
+podstawowe właściwości geometryczne wyznacza się następująco:
+
+\begin{itemize}
+    \item \textbf{Objętość walca}:
+    \[
+    V_{cyl} = \pi r^2 h,
+    \]
+    gdzie:
+    \begin{itemize}
+        \item $r$ -- promień podstawy walca [m],
+        \item $h$ -- wysokość walca [m].
+    \end{itemize}
+
+    \item \textbf{Powierzchnia boczna walca}:
+    \[
+    A_{cyl} = 2 \pi r h.
+    \]
+
+\end{itemize}
+
+\subsubsection{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}
+
+Powierzchnia przekroju rakiety, modelowanej jako walec o promieniu $r$ i
+wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrza.
+
+\paragraph{Przekrój czołowy ($\alpha = 0^\circ$):}
+Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy jest równy powierzchni podstawy cylindra:
+\[
+A_{0} = \pi r^2.
+\]
+
+\paragraph{Przekrój pod kątem $\alpha$:}
+Jeżeli rakieta jest nachylona pod kątem $\alpha$ do kierunku przepływu,
+powierzchnia efektywna przekroju zmienia się zgodnie z rzutem walca na
+płaszczyznę prostopadłą do przepływu. Powierzchnię tę można wyznaczyć jako:
+\[
+A_\alpha = \pi r^2 \cos\alpha + 2rh \sin\alpha,
+\]
+gdzie:
+\begin{itemize}
+    \item $\cos\alpha$ odpowiada zmniejszeniu widocznej powierzchni podstawy wzdłuż osi symetrii,
+    \item $2rh \sin\alpha$ dodaje widoczną powierzchnię boczną w rzucie.
+\end{itemize}
+
+\paragraph{Granice powierzchni przekroju:}
+\begin{itemize}
+    \item Dla $\alpha = 0^\circ$: $A_\alpha = A_0 = \pi r^2$ (przekrój czołowy).
+    \item Dla $\alpha = 90^\circ$: $A_\alpha = 2rh$ (przekrój boczny).
+\end{itemize}
+
+
+Wartość $A_\alpha$ zależy więc silnie od kąta natarcia $\alpha$, co wpływa na siły aerodynamiczne działające na rakietę w locie.
+
+
+\subsubsection{Charakterystyka punktów charakterystycznych rakiety}
+W rakiecie wyróżnia się trzy kluczowe punkty geometryczne i dynamiczne, na
+które oddziaływają wszelkie siły działające na lecącą rakietę:
+
+\begin{itemize}
+    \item \textbf{Środek masy (CoG)}: Punkt, w którym skupiona jest
+    całkowita masa rakiety. Dla symetrii osiowej i jednorodnej gęstości
+    materiałów jest zlokalizowany na osi rakiety. Położenie CoG zmienia się
+    w trakcie lotu w zależności od spalania paliwa i zmiany masy, choć w
+    symulacji zakłada się zazwyczaj stałe położenie CoG.
+
+    \item \textbf{Środek parcia (CoP)}: Punkt, w którym można przyłożyć wypadkową siłę aerodynamiczną działającą na rakietę. Położenie CoP zależy od kształtu rakiety i rozkładu ciśnienia aerodynamicznego.
+
+    \item \textbf{Środek ciągu (CoT)}: Punkt, w którym działa wypadkowa siła ciągu generowana przez silniki rakiety. Położenie CoT zależy od konfiguracji silników i ich rozmieszczenia.
+\end{itemize}
+
+\paragraph{Relacje między punktami}
+Dla zapewnienia stabilności lotu rakiety:
+\begin{itemize}
+    \item CoP powinien znajdować się poniżej CoG, co gwarantuje stabilność aerodynamiczną.
+    \item CoT powinien być blisko osi rakiety, aby zminimalizować momenty obrotowe powodujące niestabilności.
+\end{itemize}
+
+
+\subsection{Obroty układów współrzędnych}
+
+\subsubsection{Układy współrzędnych w dynamice rakiety}
+Aby w dokładny sposób określać pozycje i obrót rakiety w przestrzeni
+konieczne jest zamodelowanie układów współrzędnych związanych z ruchem rakiety. W analizach ruchu rakiety wyróżnia się trzy podstawowe układy współrzędnych:
+\begin{itemize}
+    \item \textbf{Układ inercjalny (Ziemia)}: Stały układ odniesienia związany z Ziemią, w którym mierzone są położenie i orientacja rakiety. Oś $z$ jest skierowana w stronę przeciwną do środka Ziemi.
+
+    \item \textbf{Układ ciała (rakieta)}: Układ poruszający się wraz z
+    rakietą. Oś $x$ wskazuje kierunek przodu rakiety, $y$ jest prostopadła
+    do osi $x$ w płaszczyźnie skrzydeł (jeśli istnieją), a $z$ jest
+    skierowana w górę, w kierunku czuba rakiety.
+
+    \item \textbf{Układ lokalny (silnik)}: Układ związany z kierunkiem
+    działania siły ciągu. Oś $z$ wskazuje wektor ciągu, a osie $y$ i $x$ są
+    prostopadłe do $z$.
+\end{itemize}
+
+\subsubsection{Kąty Eulera i transformacje układów współrzędnych}
+Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera,
+umożliwiające transformacje układów współrzędnych za pomocą operacji
+macierzowych. Kąty Eulera to trzy kąty opisujące orientację rakiety wzgledem
+trzech osi układu inercjalnego:
+\begin{itemize}
+    \item \textbf{Yaw ($\psi$)}: Obrót wokół osi $z$ w układzie Ziemi.
+    \item \textbf{Pitch ($\theta$)}: Obrót wokół osi $y$ w układzie Ziemi.
+    \item \textbf{Roll ($\phi$)}: Obrót wokół osi $x$ w układzie Ziemi.
+\end{itemize}
+
+\paragraph{Macierze rotacji}
+Transformacja między układami współrzędnych odbywa się za pomocą macierzy rotacji. Dla kątów Eulera macierz rotacji $R$ jest wynikiem trzech obrotów:
+\[
+R = R_z(\psi) R_y(\theta) R_x(\phi),
+\]
+gdzie:
+\[
+R_x(\phi) =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos\phi & -\sin\phi \\
+0 & \sin\phi & \cos\phi
+\end{bmatrix},
+\]
+\[
+R_y(\theta) =
+\begin{bmatrix}
+\cos\theta & 0 & \sin\theta \\
+0 & 1 & 0 \\
+-\sin\theta & 0 & \cos\theta
+\end{bmatrix},
+\]
+\[
+R_z(\psi) =
+\begin{bmatrix}
+\cos\psi & -\sin\psi & 0 \\
+\sin\psi & \cos\psi & 0 \\
+0 & 0 & 1
+\end{bmatrix}.
+\]
+
+Dzięki kątom Eulera i macierzom rotacji możliwa jest transformacja wektorów i równań między różnymi układami współrzędnych, co jest kluczowe dla analizy trajektorii lotu rakiety oraz sterowania jej orientacją w przestrzeni.
+
+
+
+\subsection{Podsumowanie}
+Przedstawione równania i modele opisują w ogólny sposób dynamikę ruchu
+rakiety w
+atmosferze,
+uwzględniając zarówno ruch postępowy, jak i obrotowy oraz wpływ środowiska
+atmosferycznego. Poprawne zrozumienie i modelowanie tych elementów jest
+kluczowe dla skutecznej implementacji silnika symulacji fizycznych lotów
+rakietowych.
+
+
+\section{Użyte technologie.}\label{sec:uzyte-technologie.}
+
+Do stworzenia silnika fizycznego symulacji lotów rakietowych wykorzystane
+zostały technologie, które zostały opisane w rozdziale
+\ref{sec:uzyte-technologie.}, gdzie przedstawiono technologie zastosowane
+w obu modułach pracy inżynierskiej.\\
+Dodatkowo do stworzenia modułu I użyte zostały poniższe biblioteki:
+
+\begin{itemize}
+    \item \textbf{Biblioteki do analizy danych i obliczeń numerycznych:}
+    \begin{itemize}
+        \item \textbf{numpy}, wersja: 1.26.4, \\
+        Podstawowa biblioteka do obliczeń numerycznych w Pythonie. Oferuje wsparcie dla wielowymiarowych tablic oraz operacji na nich.
+
+        \item \textbf{pandas}, wersja: 2.2.3, \\
+        Biblioteka do analizy danych, która ułatwia manipulowanie i przetwarzanie danych tabelarycznych. Znajduje szerokie zastosowanie w analizie danych i uczeniu maszynowym.
+
+        \item \textbf{trimesh}, wersja: 4.5.3, \\
+        Biblioteka do manipulacji i analizy danych 3D, zwłaszcza trójwymiarowych siatek. Używana w aplikacjach CAD i analizie przestrzennej.
+    \end{itemize}
+
+    \item \textbf{Biblioteki do pracy z GUI (interfejsami graficznymi):}
+    \begin{itemize}
+        \item \textbf{PyQt5}, wersja: 5.15.11, \\
+        Biblioteka do tworzenia interfejsów graficznych opartych na Qt. Umożliwia tworzenie aplikacji z bogatym GUI, wspiera wiele platform.
+
+        \item \textbf{PyQt5-Qt5}, wersja: 5.15.2, \\
+        Zestaw narzędzi i komponentów Qt5 dla PyQt5, pozwalający na korzystanie z funkcji Qt5 w aplikacjach Python. Używana do tworzenia profesjonalnych aplikacji graficznych.
+
+        \item \textbf{QtPy}, wersja: 2.4.2, \\
+        Zestaw narzędzi do pracy z Qt w Pythonie, umożliwiający stosowanie różnych wersji Qt w jednym projekcie. Używany do tworzenia aplikacji graficznych.
+    \end{itemize}
+
+
+    \item \textbf{Biblioteki do grafiki i renderowania 3D:}
+    \begin{itemize}
+        \item \textbf{PyOpenGL}, wersja: 3.1.7, \\
+        Biblioteka umożliwiająca tworzenie grafiki 3D przy użyciu OpenGL w Pythonie. Wykorzystywana w aplikacjach, które wymagają renderowania grafiki komputerowej.
+
+        \item \textbf{PyOpenGL-accelerate}, wersja: 3.1.7, \\
+        Przyspieszenie obliczeń OpenGL w Pythonie poprzez implementację krytycznych operacji w C. Stosowana w aplikacjach wymagających wysokiej wydajności w grafice 3D.
+
+        \item \textbf{pyqtgraph}, wersja: 0.13.7, \\
+        Biblioteka do tworzenia dynamicznych wizualizacji danych i wykresów w czasie rzeczywistym. Znajduje zastosowanie w aplikacjach naukowych i inżynieryjnych.
+    \end{itemize}
+    \item \textbf{Biblioteki do testowania i rozwoju oprogramowania:}
+    \begin{itemize}
+        \item \textbf{pytest}, wersja: 8.3.3, \\
+        Popularne narzędzie do testowania w Pythonie, umożliwiające łatwe pisanie testów jednostkowych. Używane w procesie ciągłej integracji i weryfikacji kodu.
+
+        \item \textbf{pluggy}, wersja: 1.5.0, \\
+        Biblioteka do tworzenia i zarządzania punktami rozszerzeń w aplikacjach. Jest szeroko wykorzystywana w narzędziach testowych, takich jak pytest.
+
+        \item \textbf{python-utils}, wersja: 3.9.1, \\
+        Zbiór różnych narzędzi i funkcji pomocniczych dla Pythona. Zawiera funkcje do obsługi typów danych, plików i wyjątków.
+    \end{itemize}
+    \item \textbf{Wiele innych mniej istotnych bibliotek.}
+\end{itemize}
+
+Wymienione powyżej biblioteki są głównymi narzędziami, z których korzystano
+podczas tworzenia modułu I pracy inżynierskiej. Oprócz nich użyto także
+wielu innych bibliotek pomocniczych, które ułatwiły pracę nad projektem. Są
+to między innymi biblioteki do obsługi plików, pracy z pakietami czy
+zarządzania danymi czasowymi.
+
+
+\section{Projekt silnika fizycznego.}\label{sec:projekt-silnika-fizycznego.}
+
+Silnik fizyczny do symulacji lotów rakietowych będący głównym komponentem
+modułu I niniejszej pracy inżynierskiej został zaprojektowany zgodnie z
+założeniami
+opisanymi w rozdziale \ref{sec:zalozenia-projektowe.}. W niniejszym rozdziale
+przedstawiono szczegóły architektury i implementacji silnika fizycznego.
+
+\subsection{Architektura systemu symulacji}
+
+System symulacji został zaprojektowany z wykorzystaniem paradygmatu
+programowania obiektowego, co pozwala na modularność i łatwą rozbudowę
+silnika o wykorzystanie nowych sił. Architektura systemu oparta jest na dobrze
+zdefiniowanych
+interfejsach i klasach, co przedstawiono na rysunku \ref{fig:architektura}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{architektura.jpg}
+    \caption{Architektura systemu symulacji}
+    \label{fig:architektura}
+\end{figure}
+
+W dalszej części tego rozdziału szczegółowo opisane zostały poszczególne
+elementy architektury systemu symulacji.
+
+
+\subsection{Interfejsy}
+
+Interfejsy definiują zbiór metod i atrybutów, które muszą być
+zaimplementowane przez klasy, które je dziedziczą. Dzięki nim obiekty, które
+powinny posiadać określone właściwości, mogą być traktowane jednolicie, co
+ułatwia zarządzanie nimi i zapewnia spójność w systemie. Aby obiekt mógł
+korzystać z konkretnego rodzaju sił, musi implementować odpowiednie
+interfejsy, które to umożliwiają. Dzięki temu, w łatwy sposób można
+rozszerzyć dany obiekt o parametry konieczne do symulacji nowych sił.
+Pozwala to na elastyczność silnika i jego łatwe dostosowanie do różnych
+wesji symulacji.
+\\W stworzonym na
+potrzeby tej pracy silniku fizycznym wyróżniamy następujące interfejsy:
+
+
+
+\subsubsection{`IObject`}
+
+Interfejs `IObject` jest podstawowym interfejsem dla wszystkich obiektów w
+symulacji. Przez obiekty rozumie się rakiety, na które oddziaływują siły
+podczas symulacji. Interfejs ten definiuje podstawowe właściwości rakiety,
+które powinna ona posiadać bez względu na to, jakie siły będa ostatecznie na
+nią oddziaływały. W obecnej implementacji rakieta traktowana jest jako walec
+o jednolitej dystrybucji masy.
+
+\begin{lstlisting}[language=Python]
+class IObject(ABC):
+    def __init__(self, name: str, object_model_path: str, height: float, mass: float = 1,
+                 radius: float = 0.1, position: NDArray[np.float64] = None, rotation: NDArray[np.float64] = None, velocity: NDArray[np.float64] = None,
+                 acceleration: NDArray[np.float64] = None, angular_velocity: NDArray[np.float64] = None, angular_acceleration: NDArray[np.float64] = None):
+
+        self.config = Config()
+        self.name = name
+        self.position = position
+        self.velocity = velocity
+        self.acceleration = acceleration
+        self.angular_velocity = angular_velocity
+        self.angular_acceleration = angular_acceleration
+        self.rotation = rotation
+        self.mass = mass
+        self._height = height
+        self._radius = radius
+        self._inertia_tensor = self.calculate_inertia_tensor()
+        self.object_model = self.load_model(object_model_path)
+\end{lstlisting}
+
+\textbf{W konstruktorze klasy implementującej ten interfejs inicjalizowane są następujące parametry:}
+\begin{itemize}
+    \item `name`: Nazwa obiektu.
+    \item `object\_model\_path`: Ścieżka do modelu 3D obiektu.
+    \item `height`: Wysokość obiektu.
+    \item `mass`: Masa obiektu (domyślnie 1 kg).
+    \item `radius`: Promień obiektu (domyślnie 0.1 m).
+    \item `position`: Pozycja obiektu w przestrzeni (domyślnie `None`).
+    \item `velocity`: Prędkość obiektu (domyślnie `None`).
+    \item `acceleration`: Przyspieszenie obiektu (domyślnie `None`).
+    \item `angular\_velocity`: Kątowa prędkość obrotu obiektu (domyślnie `None`).
+    \item `angular\_acceleration`: Przyspieszenie kątowe obiektu (domyślnie `None`).
+\end{itemize}
+
+Dodatkowo, konstruktor inicjalizuje:
+\begin{itemize}
+    \item `self.config`: Konfiguracja obiektu.
+    \item `self.\_inertia\_tensor`: Tensor bezwładności obiektu.
+    \item `self.object\_model`: Model obiektu 3D.
+\end{itemize}
+
+\textbf{Metody w intefejsie IObject:}
+\begin{itemize}
+    \item `load\_model(object\_model\_path)`: Ładuje model 3D obiektu z podanej ścieżki. Model jest skalowany i translokowany do odpowiednich wymiarów.
+    \item `calculate\_inertia\_tensor()`: Oblicza tensor bezwładności obiektu na podstawie jego masy i wymiarów.
+    \item `update(position=None, rotation=None, velocity=None)`: Uaktualnia parametry obiektu: pozycję, rotację i prędkość.
+    \item `get\_data()`: Zwraca dane obiektu w formie tekstowej, zawierającą
+    informacje o pozycji, rotacji, prędkości, przyspieszeniu.
+    \item `\_\_str\_\_()`: Zwraca reprezentację obiektu w formie tekstowej (pozycja, rotacja, prędkość, przyspieszenie).
+\end{itemize}
+
+\subsubsection{`IThrust`}
+
+Interfejs `IThrust` rozszerza interfejs `IObject` o właściwości specyficzne
+dla obiektów posiadających silnik. Każdy obiekt, implemetujący ten interfej
+posiada wszystkie własności konieczne do obliczania sił ciągu, nań działającyh.
+
+\begin{lstlisting}[language=Python]
+class IThrust(ABC):
+    def __init__(self, cot, engine_angle: NDArray[np.float64] = None):
+        self._cot = cot
+        self.engine_angle = engine_angle
+
+        if not isinstance(self, IObject):
+            raise RuntimeError("Object needs to extend IObject to be IThrust")
+\end{lstlisting}
+
+\textbf{W konstruktorze deklarowane sa następujące parametry:}
+\begin{itemize}
+    \item `cot`: Odległość środka ciągu (Center of Thrust) w osi Z od środka masy rakiety.
+    \item `engine\_angle`: Kąt nachylenia silnika względem lokalnego układu współrzędnych rakiety.
+\end{itemize}
+
+Jeśli obiekt nie rozszerza klasy `IObject`, zgłaszany jest błąd.
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `mass\_flow\_rate(time: float)`: Metoda abstrakcyjna, która oblicza współczynnik przepływu masy w danym czasie.
+    \item `exhaust\_velocity(time: float)`: Metoda abstrakcyjna, która oblicza prędkość wylotową spalin w danym czasie.
+\end{itemize}
+
+\subsubsection{`IAerodependent`}
+
+Interfejs `IAerodependent` rozszerza interfejs `IObject` o właściwości
+związane z oddziaływaniem aerodynamicznym, takie jak powierzchnia czołowa,
+współczynnik oporu i inne. Dzięki implementacji tego interfejsu, obiekt
+posiada wszystkie własności i parametry pozwalające na obliczanie sił
+aerodynamicznych działających na ten obiekt.
+\\Poniżej przedstawiamy kod tego interfejsu:
+
+\begin{lstlisting}[language=Python]
+class IAerodependent(ABC):
+    def __init__(self, cop, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] = None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value):
+        self._cop = cop
+        self.angle_of_attack = angle_of_attack
+        self.relative_velocity = relative_velocity
+        self._reference_area = self.calculate_reference_area()
+        self.drag_coefficient = drag_coefficient
+
+        if not isinstance(self, IObject):
+            raise RuntimeError("Object needs to extend IObject to be IAerodependent")
+
+    def calculate_reference_area(self: IObject):
+        reference_area = 0
+
+        for face in self.object_model.faces:
+            vertices = self.object_model.vertices[face]
+            projected_vertices = vertices[:, :2]
+
+            x = projected_vertices[:, 0]
+            y = projected_vertices[:, 1]
+
+            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+
+            reference_area += area
+
+        return reference_area
+\end{lstlisting}
+
+\textbf{W konstruktorze deklarowane są następujące wartości parametrów:}
+\begin{itemize}
+    \item `cop`: Odległość środka ciśnienia (Center of Pressure) w osi Z od środka masy rakiety.
+    \item `angle\_of\_attack`: Kąt natarcia rakiety względem kierunku przepływu powietrza.
+    \item `relative\_velocity`: Względna prędkość rakiety względem przepływającego powietrza.
+    \item `drag\_coefficient`: Współczynnik oporu (domyślnie wartość zdefiniowana w konfiguracji).
+\end{itemize}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `calculate\_reference\_area()`: Oblicza powierzchnię czołową obiektu na podstawie modelu 3D.
+\end{itemize}
+
+\subsubsection{`IEnvironment`}
+
+Interfejs `IEnvironment` definiuje właściwości środowiska symulacji, takie
+jak gęstość powietrza, prędkość dźwięku, temperatura, ciśnienie, wiatr i
+gradient wiatru.
+
+\begin{lstlisting}[language=Python]
+from abc import ABC, abstractmethod
+
+class IEnvironment(ABC):
+    @abstractmethod
+    def get_air_density(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_speed_of_sound(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_temperature(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_pressure(self, position=None) -> float:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind(self, position=None) -> list:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_wind_gradient(self, position=None) -> list:
+        raise NotImplementedError
+\end{lstlisting}
+
+\textbf{Opis metod:}
+\begin{itemize}
+    \item `get\_air\_density(position=None)`: Metoda, która zwraca gęstość powietrza w zadanej pozycji. Jeśli `position` nie zostanie podane, metoda użyje domyślnej wartości.
+    \item `get\_speed\_of\_sound(position=None)`: Metoda, która zwraca prędkość dźwięku w zadanej pozycji.
+    \item `get\_temperature(position=None)`: Metoda, która zwraca temperaturę w zadanej pozycji.
+    \item `get\_pressure(position=None)`: Metoda, która zwraca ciśnienie w zadanej pozycji.
+    \item `get\_wind(position=None)`: Metoda, która zwraca listę informacji o wietrze w danej pozycji.
+    \item `get\_wind\_gradient(position=None)`: Metoda, która zwraca gradient wiatru w danej pozycji.
+\end{itemize}
+
+
+\subsection{Klasy}
+
+Klasy w silniku fizycznym odpowiadają za modelowanie sił oraz
+zapewniają
+działanie symulacji fizycznej.
+Główne klasy, które pełnią
+kluczowe
+role w
+systemie, to:
+
+\begin{itemize}
+    \item \textbf{`PhysicsEngine`}: Jest to najważniejsza klasa silnika, odpowiedzialna za zarządzanie przebiegiem symulacji. Oblicza siły działające na obiekty, aktualizuje ich pozycje, prędkości oraz momenty obrotowe, a także zapisuje wyniki do plików.
+    \item \textbf{`Forces`}: Klasa ta zawiera różne typy sił działających na
+    obiekty w symulacji. W ramach tej klasy znajdują się konkretne
+    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez silnik do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
+\end{itemize}
+
+\subsection{Proces symulacji.}\label{sec:proces-symulacji.}
+
+Proces symulacji fizycznej lotu rakiety jest wieloetapowy i składa się z
+dwóch głównych procesów: konfiguracji oraz przeprowadzenia symulacji.
+Poniżej opisane szczegółowo zostały oba te procesy.
+
+\subsection{Konfiguracja symulacji (Setup)}
+
+Zanim symulacja zostanie przeprowadzona, tworzony jest plik zawierający
+konfigurację symulacji. W tym pliku zapisywane są informacje o tym, jakie
+parametry powinna mieć symulacja.
+
+Pierwszym krokiem jest stworzenie obiektów rakiety, środowiska oraz silnika
+fizycznego:
+
+\begin{lstlisting}[language=Python]
+object = Rocket()
+environment = Environment()
+physics_engine = PhysicsEngine(object, environment, 0.1)
+\end{lstlisting}
+
+\noindent
+W tej części kodu tworzymy:
+\begin{itemize}
+    \item \texttt{object} - instancję klasy \texttt{Rocket}, która reprezentuje rakietę,
+    \item \texttt{environment} - instancję klasy \texttt{Environment}, która definiuje środowisko symulacji,
+    \item \texttt{physics\_engine} - instancję klasy \texttt{PhysicsEngine}, która będzie zarządzać całą symulacją fizyczną.
+\end{itemize}
+
+Po utworzeniu silnika fizycznego, dodajemy do niego różne siły, które będą działać na rakietę:
+
+\begin{lstlisting}[language=Python]
+physics_engine.add_force(Forces.gravity)
+physics_engine.add_force(Forces.thrust)
+physics_engine.add_force(Forces.drag)
+\end{lstlisting}
+
+\noindent
+W tej części kodu dodajemy trzy siły:
+\begin{itemize}
+    \item \texttt{Forces.gravity} - siła grawitacji,
+    \item \texttt{Forces.thrust} - siła ciągu,
+    \item \texttt{Forces.drag} - siła oporu powietrza.
+\end{itemize}
+
+Na końcu zapisujemy stan silnika fizycznego do pliku przy użyciu \texttt{pickle}:
+
+\begin{lstlisting}[language=Python]
+config = Config()
+path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], object.name)
+save(physics_engine, path, "physics_engine.pkl")
+\end{lstlisting}
+
+W efekcie działania tego skryptu powstaje konfiguracja symulacji zawierająca
+informacje o rakiecie, środowisku i siłach, które powinny działać na rakietę
+w trakcie trwania symulacji.
+
+\subsection{Symulacja}
+
+Po zapisaniu plików z konfiguracją, wczytujemy je do sryptu
+\texttt{symulation.py} i uruchamiamy
+symulację. W
+tym celu używamy poniższego kodu:
+
+\begin{lstlisting}[language=Python]
+simulation_name = "name_of_simulation"
+
+config = Config()
+path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], simulation_name, "physics_engine.pkl")
+
+with open(path, "rb") as file:
+    physics_engine = pickle.load(file)
+
+physics_engine.start()
+\end{lstlisting}
+
+\noindent
+W pierwszej kolejności określamy nazwę symulacji, a następnie wczytujemy obiekt \texttt{physics\_engine} z pliku. Wczytany silnik jest uruchamiany za pomocą metody \texttt{start()}, która inicjuje symulację. Funkcja ta:
+\begin{itemize}
+    \item wczytuje wcześniej zapisany stan symulacji,
+    \item rozpoczyna główną pętlę symulacyjną,
+    \item zapisuje kolejne wyniki do pliku.
+\end{itemize}
+
+\subsubsection{Działanie pętli symulacyjnej silnika fizycznego}
+
+Pętla symulacyjna silnika \texttt{PhysicsEngine} jest odpowiedzialna za zarządzanie całym przebiegiem symulacji. Działa w sposób iteracyjny, krok po kroku, aktualizując stan obiektów w symulacji w czasie rzeczywistym. Kluczowym elementem tego procesu jest kontrolowanie czasu symulacji oraz zarządzanie siłami działającymi na obiekty.
+
+\\ Główna pętla symulacyjna działa w następujący sposób:
+
+\begin{enumerate}
+    \item \textbf{Aktualizacja czasu:} Po każdym kroku, zmieniane są dwie zmienne: \texttt{simulation\_time} (całkowity czas symulacji) oraz \texttt{simulation\_tick} (liczba iteracji).
+    \item \textbf{Obliczanie sił:} Silnik oblicza siły działające na obiekt poprzez wywołanie metod obliczających wynikową siłę i moment obrotowy. Zgodnie z wcześniej dodanymi siłami, dla każdego obiektu w symulacji obliczane są siły, które wpływają na jego ruch.
+    \item \textbf{Aktualizacja stanu obiektu:} Na podstawie obliczonych sił, aktualizowany jest stan obiektu: jego pozycja, prędkość, przyspieszenie oraz orientacja (rotacja). W tym kroku uwzględniane są zmiany zarówno w ruchu translacyjnym, jak i obrotowym.
+    \item \textbf{Sprawdzanie warunków zakończenia:} Pętla symulacyjna sprawdza, czy rakieta nie osiągnęła powierzchni ziemi (czyli gdy jej wysokość jest mniejsza od zera), lub czy nie osiągnięto maksymalnego czasu symulacji. Jeśli jeden z tych warunków jest spełniony, symulacja zostaje zakończona.
+    \item \textbf{Zapis danych:} Po każdej iteracji pętli, dane o stanie obiektu są zapisywane do pliku, aby umożliwić późniejszą analizę wyników symulacji.
+\end{enumerate}
+
+\textbf{Zakończenie symulacji}
+
+Symulacja kończy się, gdy rakieta dotknie ziemi lub gdy upłynie maksymalny czas symulacji. Wówczas silnik informuje użytkownika o zakończeniu symulacji. Wszystkie dane są zapisane, a wyniki są gotowe do analizy.
+
+
+
+\subsection{Uzasadnienie przyjętego rozwiązania}
+
+Implementacja wyżej przedstawionego rozwiązania pozwala na uzyskanie wielu
+benefitów, pomagających osiągnąć poczynione założenia. Są to między innymi:
+
+\textbf{Modułowość}
+
+Jednym z kluczowych założeń przy projektowaniu systemu była jego modułowość.
+Każda z głównych klas, takich jak \texttt{PhysicsEngine}, \texttt{Forces} czy \texttt{Rocket}, pełni dobrze zdefiniowaną rolę, co umożliwia łatwe modyfikowanie i rozwijanie projektu. Dzięki temu każdą część systemu można rozwijać niezależnie, bez wpływu na pozostałe komponenty. Pozwala to na współpracę między współautorami, jasność implementacji oraz łatwe testowanie i debugowanie.\\
+
+\textbf{Łatwość dodawania nowych sił}
+
+Projekt został zaprojektowany z myślą o prostocie rozszerzania o nowe siły. Obecność klasy \texttt{Forces} z różnymi zdefiniowanymi siłami, takimi jak \texttt{gravity}, \texttt{thrust} i \texttt{drag}, pozwala na łatwe dodanie nowych sił, np. oporu magnetycznego, sił aerodynamicznych specyficznych dla różnych kształtów rakiet, czy nawet sił wynikających z interakcji z innymi obiektami w symulacji.
+\\Nowe siły mogą być łatwo zaimplementowane jako funkcje, które przyjmują
+obiekt rakiety i środowisko jako argumenty, co zapewnia spójność interfejsu.
+Ponadto mechanizm dodawania sił za pomocą metody \texttt{add\_force}
+pozwala na ich dynamiczne przypisywanie i usuwanie w trakcie symulacji.
+Jeżeli nowe siły wymagają dodania do obiektu rakiety nowych parametrów, w
+łatwy sposób można rozwinąć jeden z istniejących interfejsów lub dodać
+zupełnie nowy interfejs umożliwiający tworzenie nowej klasy sił.\\
+
+\textbf{Łatwość zmiany parametrów}
+
+Kolejnym istotnym atutem tego rozwiązania jest możliwość łatwej zmiany
+parametrów fizycznych oraz konfiguracji symulacji. Wartości takie jak krok
+czasowy, maksymalny czas symulacji, czy parametry sił (np. współczynniki
+oporu powietrza) mogą być modyfikowane w prosty sposób, bez konieczności
+ingerencji w kod samego silnika. Dzięki temu użytkownicy mogą łatwo
+dostosować symulację do swoich potrzeb, na przykład zmieniając warunki
+środowiskowe lub zachowanie rakiety. Przydatne jest to do wielokrotnego
+symulowania lotów rakiety w zmiennych warunkach. Sprzyja temu także
+możliwość tworzenia konfiguracji symulacyjnych.\\
+
+\textbf{Integracja z algorytmami sztucznej inteligencji}
+
+System jest przystosowany do wykorzystania w kontekście algorytmów sztucznej inteligencji. Dzięki temu, że cała symulacja jest oparta na obiektach i metodach z jasno zdefiniowanymi interfejsami, łatwo jest połączyć ją z systemami uczącymi się.
+
+\texttt{PhysicsEngine} oraz \texttt{Rocket} dostarczają niezbędnych danych o ruchu obiektów (np. prędkości, przyspieszenia, pozycji), które mogą być wykorzystywane przez modele AI do dalszego uczenia się i optymalizacji działań.
+
+Ponadto, zapis i odczyt danych symulacji za pomocą plików \texttt{pickle}
+umożliwia łatwą wymianę danych między różnymi komponentami systemu, co jest istotne w kontekście przechowywania wyników symulacji i wykorzystywania ich w dalszych analizach.
+
+Inną własnością ułatwiającą integrację z modelami ML jest krokowość
+silnika. Po każdym kroku (tick'u), model ma możliwość analizy stanu obiektów
+i zmiany dostępnych dla niego parametrów, co wpływa na stan obiektów w
+symulacji. W ten sposób silnik przystosowany jest do pracy w trybie uczenia
+nadzorowanego.
+
+\section{Model sił działających na rakietę.}\label{sec:model-si-dziaajacych-na-rakiete.}
+
+Ważną częścią działanie silnika fizycznego jest implementacja sił
+fizycznych. W przypadku symulacji lotu rakiety, kluczowym elementem są siły,
+które oddziaływają na rakietę oraz sposób, w jaki owe siły są składane i jak
+wyliczany jest ich wpływ na ruch obiektu. W niniejszym podrozdziale opisane
+zostały te dwa kluczowe zagadnienia.
+
+Na rysunku \ref{fig:sily} przedstawiona
+została wysokopoziomowa architektura obliczania sił w symulacji.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{physics_map.png}
+    \caption{Schemat działania sił w symulacji}
+    \label{fig:sily}
+\end{figure}
+
+\subsection{Funkcje pomocnicze}
+Zanim opisane zostanie działanie silnika fizycznego, istotnym jest
+przedstawienie kluczowych funkcji pomocniczych, które wykorzystywane są w
+trakcie obliczeń sił działających na rakietę.
+
+\\Są to funkcje związane z przekształceniami układów współrzędnych na
+podstawie kątów eulerowskich:
+
+\\ \textbf{Funkcja tworząca macierz obrotu na podstawie kątów eulerowskich}
+
+\begin{lstlisting}[language=Python]
+def euler_to_rotation_matrix(angles):
+    fi1, fi2, fi3 = angles
+
+    Rx = np.array([
+        [1, 0, 0],
+        [0, np.cos(fi1), -np.sin(fi1)],
+        [0, np.sin(fi1), np.cos(fi1)]
+    ])
+
+    Ry = np.array([
+        [np.cos(fi2), 0, np.sin(fi2)],
+        [0, 1, 0],
+        [-np.sin(fi2), 0, np.cos(fi2)]
+    ])
+
+    Rz = np.array([
+        [np.cos(fi3), -np.sin(fi3), 0],
+        [np.sin(fi3), np.cos(fi3), 0],
+        [0, 0, 1]
+    ])
+
+    R = Rz @ Ry @ Rx
+    return R
+\end{lstlisting}
+
+\\ \textbf{Funckja zamieniająca układ współrzędnych z lokalnego na globalny}
+
+\begin{lstlisting}[language=Python]
+def transform_to_global(local_vector, angles):
+    euler_to_rotation_matrix(angles)
+    return R @ local_vector
+\end{lstlisting}
+
+\\ \textbf{Funckja zamieniająca układ współrzędnych z globalnego na lokalny}
+
+\begin{lstlisting}[language=Python]
+def transform_to_local(global_vector, angles):
+    R = euler_to_rotation_matrix(angles)
+    return R.T @ global_vector
+\end{lstlisting}
+
+\subsection{Siły działające na rakietę}
+
+W zaimplementowanej symulacji lotu wyróżniono trzy główne siły, które
+oddziaływają na rakietę. Opierają się one na stanie aktualnym rakiety, jej
+położeniu, prędkości, przyspieszeniu, a także na parametrach środowiska, w
+którym rakieta się porusza.
+
+\subsubsection{Siła Grawitacji}
+Siła grawitacji obliczana jest w następujący sposób:
+
+\begin{lstlisting}[language=Python]
+    def gravity(object: IObject, environment: IEnvironment, time: float):
+    global_gravity = np.array([0, 0, -object.mass * Constants.GRAVITATIONAL_ACCELERATION.value], dtype=float)
+    local_gravity = transform_to_local(global_gravity, object.rotation)
+    torque = np.array([0, 0, 0], dtype=float)
+    return local_gravity, torque
+\end{lstlisting}
+
+Grawitacja obliczana jest więc jako wektor działający na CoG rakiety w
+kierunku przeciwnym do osi Z. Następnie wektor ten jest zamieniany na
+lokalny układ współrzędnych rakiety. Obliczany jest także moment obrotowy,
+który jest równy zeru, gdyż grawitacja nie generuje momentu obrotowego obietów.
+
+\subsubsection{Siła Oporu Powietrza}
+
+\begin{lstlisting}[language=Python]
+    def drag(object: IAerodependent, environment: IEnvironment, time: float):
+    if (object.velocity == np.array([0, 0, 0], dtype=float)).all():
+        return np.array([0, 0, 0], dtype=float), np.array([0, 0, 0], dtype=float)
+
+    Cd = object.drag_coefficient
+    relative_velocity = object.relative_velocity
+    reference_area = object.reference_area
+    drag_mag = 0.5 * environment.get_air_density() * np.linalg.norm(relative_velocity) ** 2 * Cd * reference_area
+    drag_v = -drag_mag * (relative_velocity / np.linalg.norm(relative_velocity))
+    drag_l = transform_to_local(drag_v, object.rotation)
+    torque = np.cross(drag_l, np.array([0, 0, -object.cop], dtype=float))
+    return drag_v, torque
+\end{lstlisting}
+
+Siła oporu powietrza obliczana jest na podstawie wzoru:
+
+\[
+F_{D} = \frac{1}{2} \cdot \rho \cdot v^{2} \cdot C_{D} \cdot A
+\]
+Następnie siła ta jest zamieniana na lokalny układ współrzędnych rakiety.
+Moment obrotowy obliczany jest jako iloczyn wektorowy siły oporu powietrza
+oraz odległości CoP od CoG rakiety. Istotnym jest obliczenie współczynnika
+oporu oraz względnej prędkości, gdyż siła oporu zależy od prędkości rakiety
+względem powietrza.
+
+\subsubsection{Siła Ciągu Silnika}
+
+\begin{lstlisting}[language=Python]
+    def thrust(object: IThrust, environment: IEnvironment, time: float):
+    thrust_mag = object.mass_flow_rate(time) * object.exhaust_velocity(time)
+    thrust_v = np.array([0, 0, thrust_mag], dtype=float)
+    thrust_g = transform_to_global(thrust_v, object.engine_angle)
+    torque_l = np.cross(thrust_g, np.array([0, 0, -object.cot], dtype=float))
+    return thrust_g, torque_l
+\end{lstlisting}
+
+Siła ciągu silnika obliczana jest na podstawie iloczynu masy wypływających spalin oraz prędkości wylotowej spalin. Następnie siła ta jest zamieniana na globalny układ współrzędnych rakiety. Moment obrotowy obliczany jest jako iloczyn wektorowy siły ciągu oraz odległości CoT od CoG rakiety.
+
+\subsection{Składanie sił i obliczanie ruchu obiektu}
+
+Po obliczeniu sił działających na rakiety, następuje ich składanie w siły
+wypadkowe. Proces ten zachodzi w głównej pętli symulacyjnej silnika
+fizycznego. Wywyływana jest tam funkcja \texttt{compute\_force}:
+
+\begin{lstlisting}[language=Python]
+        def compute_force(self):
+        resulting_force = np.array([0, 0, 0], dtype=float)
+        resulting_torque = np.array([0, 0, 0], dtype=float)
+
+        for force in self.pipeline:
+            resulting_force += force(self.object, self.environment, self.simulation_time)[0]
+            resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
+
+        return resulting_force, resulting_torque
+\end{lstlisting}
+
+W wyniku działania tej funkcji obliczane są, poprzez sumowanie wektorów, siły
+wypadkowe oraz
+momenty
+obrotowe dla danego kroku symulacji.
+\\ Następnie wywoływana jest funkcja \texttt{compute\_change}, której
+zadaniem jest obliczenie zmiany prędkości, przyspieszenia, pozycji oraz
+zaktualizowanie tych wartości dla obiektu rakiety.
+
+\begin{lstlisting}[language=Python]
+    def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
+    global_force = transform_to_global(force, self.object.rotation)
+    self.object.acceleration = global_force / self.object.mass
+    velocity_change = self.object.acceleration * self.time_step
+    self.object.velocity += velocity_change
+
+    position_change = self.object.velocity * self.time_step
+    self.object.position += position_change
+
+    if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
+        self.object.angle_of_attack = self.calculate_angle_of_attack()
+        self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
+        self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) **  2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
+
+    self.object.angular_acceleration = np.linalg.inv(self.object.inertia_tensor) @ torque
+    self.object.angular_velocity += self.object.angular_acceleration * self.time_step
+
+    wx, wy, wz = self.object.angular_velocity
+    phi, theta, psi = self.object.rotation
+
+    dot_phi = wx + (np.tan(theta) * np.sin(phi) * wy + np.cos(phi) * wz)
+    dot_theta = np.cos(phi) * wy - np.sin(phi) * wz
+    dot_psi = np.sin(phi) / np.cos(theta) * wy + np.cos(phi) * wz
+
+    self.object.rotation[0] += dot_phi * self.time_step
+    self.object.rotation[1] += dot_theta * self.time_step
+    self.object.rotation[2] += dot_psi * self.time_step
+\end{lstlisting}
+
+W tej funkcji na podstawie wypadkowych sił i momentów pędu obliczane są kolejno:
+zmiana prędkości, przyspieszenia, pozycji oraz orientacji rakiety. Wartości
+te są przypisywane obiektowy, a następnie program przechodzi do obliczeń
+związanych z ruchem obrotowym. Obliczane są tam wartości przyśpieszenia
+kątoweg, prędkości
+kątowej oraz zmiany kątów eulerowskich. \\ Co istotne, wszystkie obliczenia
+i wartości związane z  ruchem postępowym prowadzone są w układzie
+nieinercjalnym, związanym z ziemia. Natomiast obliczenia dotyczące ruvhu
+obrotowego prowadzone sa w układzie związanym z rakietą.
+
+\\ W trakcie obliczania zmian w powyżej funkcji wywoływana jest także
+funkcja \texttt{calculate\_angle\_of\_attack}, obliczająca kąt natarcia
+rakiety w danym kroku symulacji.
+
+\begin{lstlisting}[language=Python]
+     def calculate_angle_of_attack(self):
+        object_velocity = self.object.velocity
+        wind_velocity = self.environment.get_wind()
+        relative_velocity = object_velocity - wind_velocity
+        relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
+
+        reference_axis_local = np.array([0, 0, 1], dtype=float)
+        reference_axis_global = transform_to_global(reference_axis_local, self.object.rotation)
+
+        cos_theta = np.dot(relative_velocity_unit, reference_axis_global)
+        angle_of_attack = np.arccos(np.clip(cos_theta, -1.0, 1.0))
+
+        return angle_of_attack
+\end{lstlisting}
+
+Funkcja ta, oblicza kąt natarcia korzystając ze wzoru przedstawionego w
+rozdziale \ref{sec:kąt-natarcia-rakiety.}. Obliczany kąt natarcia jest
+kątem pomiędzy wektorem prędkości rakiety a wektorem osi Z w układzie
+inercjalnym rakiety.
+
+\subsection{Podsumowanie}
+Przedstawiony powyżej model zaimplementowanej fizyki ruchu rakiety w
+symulacji lotu, jest modelem uproszczonym, nie biorącym pod uwagę wielu
+czynników. Spowodowane jest to niewystarczającymi zasobami (czasem, więdzą,
+mocą obliczeniową). Model ten jednak dzięki modułowej architekturze silnika
+może być w łatwy sposób rozbudowany i skomplikowany, tak aby bardziej
+realnie odzwierciedlał warunki panujące podczas rzeczywistych lotów
+rakietowych. Na potrzeby ninijeszej pracy inżynierskiej
+zaimplementowana  fizyka wydaje sie byc wystarczającą.
+
+
+
+
+
+
+\section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
+\section{Dokładność symulacji.}\label{sec:dokadnosc-symulacji}
+\section{Ewolucja projektu i wnioski.}\label{sec:ewolucja-projektu-i-wnioski}
