@@ -143,7 +143,8 @@ class PhysicsEngine:
         if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
             self.object.angle_of_attack = self.calculate_angle_of_attack()
             self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
-            self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) **  2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
+            self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) ** 2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
+            self.object.lift_coefficient = (C.LIFT_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) ** 2 + C.LIFT_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
 
         # obliczanie przyspieszenia katowego
 
@@ -161,7 +162,8 @@ class PhysicsEngine:
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
 
-        self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05, 0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
+        #self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
+        #0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
 
 
     def save_data(self, data: str) -> None:

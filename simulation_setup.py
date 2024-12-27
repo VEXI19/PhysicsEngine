@@ -27,6 +27,8 @@ physics_engine = PhysicsEngine(object, environment, 0.1)
 physics_engine.add_force(Forces.gravity)
 physics_engine.add_force(Forces.thrust)
 physics_engine.add_force(Forces.drag)
+physics_engine.add_force(Forces.wind)
+physics_engine.add_force(Forces.lift)
 
 config = Config()
 path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], object.name)

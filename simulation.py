@@ -2,7 +2,7 @@ import os
 import pickle
 from PhysicsEngine.Config import Config
 
-simulation_name = "StarShip"
+simulation_name = "test_rocket"
 
 config = Config()
 path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], simulation_name, "physics_engine.pkl")
