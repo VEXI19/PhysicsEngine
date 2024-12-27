@@ -18,7 +18,7 @@ class IAerodependent(ABC):
         _drag_coefficient: drag coefficient
     """
     def __init__(self, cop: float, angle_of_attack: NDArray[np.float64] = None, relative_velocity: NDArray[np.float64] =
-    None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value):
+    None, drag_coefficient: float = C.DRAG_COEFFICIENT_PARALLEL.value, lift_coefficient: float = C.LIFT_COEFFICIENT_PARALLEL.value):
         """
         Constructor for IAerodependent class
 
@@ -33,6 +33,7 @@ class IAerodependent(ABC):
         self.relative_velocity = relative_velocity
         self._reference_area = 0
         self.drag_coefficient = drag_coefficient
+        self.lift_coefficient = lift_coefficient
 
         if not isinstance(self, IObject):
             raise RuntimeError("Object needs to extend IObject to be IAerodependent")
@@ -127,6 +128,27 @@ class IAerodependent(ABC):
         """
 
         self._drag_coefficient = drag_coefficient
+
+    @property
+    def lift_coefficient(self) -> float:
+        """
+        Returns lift coefficient of the object
+
+        Returns:
+            float: lift coefficient of the object
+        """
+        return self._lift_coefficient
+
+    @lift_coefficient.setter
+    def lift_coefficient(self, lift_coefficient: float) -> None:
+        """
+        Sets lift coefficient of the object
+
+        Args:
+            lift_coefficient (float): lift coefficient of the object
+        """
+
+        self._lift_coefficient = lift_coefficient
 
     def calculate_reference_area(self: IObject, angles: NDArray[np.float64]) -> float:
         """

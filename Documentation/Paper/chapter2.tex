@@ -868,7 +868,8 @@ i zmiany dostępnych dla niego parametrów, co wpływa na stan obiektów w
 symulacji. W ten sposób silnik przystosowany jest do pracy w trybie uczenia
 nadzorowanego.
 
-\section{Model sił działających na rakietę.}\label{sec:model-si-dziaajacych-na-rakiete.}
+
+\section{Model sił działających na rakietę}\label{sec:model-si-dziaajacych-na-rakiete.}
 
 Ważną częścią działanie silnika fizycznego jest implementacja sił
 fizycznych. W przypadku symulacji lotu rakiety, kluczowym elementem są siły,
@@ -877,7 +878,7 @@ wyliczany jest ich wpływ na ruch obiektu. W niniejszym podrozdziale opisane
 zostały te dwa kluczowe zagadnienia.
 
 Na rysunku \ref{fig:sily} przedstawiona
-została wysokopoziomowa architektura obliczania sił w symulacji.
+została wysokopoziomowa architektura obliczeń sił w silniku fizycznym.
 
 \begin{figure}[H]
     \centering
@@ -886,15 +887,14 @@ została wysokopoziomowa architektura obliczania sił w symulacji.
     \label{fig:sily}
 \end{figure}
 
+
 \subsection{Funkcje pomocnicze}
-Zanim opisane zostanie działanie silnika fizycznego, istotnym jest
-przedstawienie kluczowych funkcji pomocniczych, które wykorzystywane są w
-trakcie obliczeń sił działających na rakietę.
 
-\\Są to funkcje związane z przekształceniami układów współrzędnych na
-podstawie kątów eulerowskich:
+Funkcje pomocnicze stanowią podstawę obliczeń, umożliwiając między innymi transformację wektorów między lokalnym i globalnym układem współrzędnych. Transformacje te są kluczowe, ponieważ wiele sił, takich jak opór powietrza czy ciąg silnika, jest obliczanych w lokalnym układzie rakiety, a następnie przeliczanych do globalnego układu inercjalnego, w którym odbywają się końcowe obliczenia ruchu.
 
-\\ \textbf{Funkcja tworząca macierz obrotu na podstawie kątów eulerowskich}
+\subsubsection{Funkcja tworząca macierz obrotu}
+
+Funkcja \texttt{euler\_to\_rotation\_matrix} generuje macierz obrotu na podstawie kątów Eulera (fi1, fi2, fi3), odpowiadających rotacjom wokół kolejno osi X, Y oraz Z.
 
 \begin{lstlisting}[language=Python]
 def euler_to_rotation_matrix(angles):
@@ -922,15 +922,19 @@ def euler_to_rotation_matrix(angles):
     return R
 \end{lstlisting}
 
-\\ \textbf{Funckja zamieniająca układ współrzędnych z lokalnego na globalny}
+Macierz obrotu jest wynikiem sekwencyjnego mnożenia macierzy rotacji \texttt{Rx}, \texttt{Ry} oraz \texttt{Rz}. Dzięki temu możliwe jest precyzyjne odwzorowanie orientacji rakiety w przestrzeni trójwymiarowej, co jest niezbędne do transformacji sił i prędkości.
+
+\subsubsection{Transformacja układów współrzędnych}
+
+Funkcje \texttt{transform\_to\_global} i \texttt{transform\_to\_local} służą do konwersji wektorów między lokalnym układem współrzędnych rakiety a globalnym układem inercjalnym.
 
 \begin{lstlisting}[language=Python]
 def transform_to_global(local_vector, angles):
-    euler_to_rotation_matrix(angles)
+    R = euler_to_rotation_matrix(angles)
     return R @ local_vector
 \end{lstlisting}
 
-\\ \textbf{Funckja zamieniająca układ współrzędnych z globalnego na lokalny}
+Funkcja \texttt{transform\_to\_global} używa macierzy rotacji \texttt{R}, aby przekształcić wektor z układu lokalnego do globalnego. Wektory lokalne, takie jak ciąg silnika, są orientowane zgodnie z orientacją rakiety w przestrzeni.
 
 \begin{lstlisting}[language=Python]
 def transform_to_local(global_vector, angles):
@@ -938,33 +942,38 @@ def transform_to_local(global_vector, angles):
     return R.T @ global_vector
 \end{lstlisting}
 
+Analogicznie, funkcja \texttt{transform\_to\_local} wykorzystuje transponowaną macierz rotacji, aby przekształcić wektor globalny na układ lokalny rakiety. Przykładem zastosowania jest obliczenie siły grawitacji w układzie lokalnym.
+
 \subsection{Siły działające na rakietę}
 
-W zaimplementowanej symulacji lotu wyróżniono trzy główne siły, które
-oddziaływają na rakietę. Opierają się one na stanie aktualnym rakiety, jej
-położeniu, prędkości, przyspieszeniu, a także na parametrach środowiska, w
-którym rakieta się porusza.
+W symulacji uwzględniono pięć głównych sił: grawitację, opór powietrza, ciąg silnika, siłę nośną oraz siłę wiatru. Każda z tych sił jest obliczana na podstawie aktualnego stanu rakiety i środowiska, a ich wypadkowa wpływa na dynamikę ruchu rakiety.
 
-\subsubsection{Siła Grawitacji}
-Siła grawitacji obliczana jest w następujący sposób:
+\subsubsection{Siła grawitacji}
+
+Siła grawitacji działa pionowo w dół, zgodnie z osią \(Z\) globalnego układu współrzędnych, i wynika z masy rakiety oraz przyspieszenia grawitacyjnego. Funkcja \texttt{gravity} oblicza wartość siły w układzie lokalnym rakiety, przekształcając ją z układu globalnego:
 
 \begin{lstlisting}[language=Python]
-    def gravity(object: IObject, environment: IEnvironment, time: float):
+def gravity(object: IObject, environment: IEnvironment, time: float):
     global_gravity = np.array([0, 0, -object.mass * Constants.GRAVITATIONAL_ACCELERATION.value], dtype=float)
     local_gravity = transform_to_local(global_gravity, object.rotation)
     torque = np.array([0, 0, 0], dtype=float)
     return local_gravity, torque
 \end{lstlisting}
 
-Grawitacja obliczana jest więc jako wektor działający na CoG rakiety w
-kierunku przeciwnym do osi Z. Następnie wektor ten jest zamieniany na
-lokalny układ współrzędnych rakiety. Obliczany jest także moment obrotowy,
-który jest równy zeru, gdyż grawitacja nie generuje momentu obrotowego obietów.
+\noindent
+\textbf{Opis działania funkcji:}
+\begin{itemize}
+    \item Obliczana jest wartość siły grawitacji w układzie globalnym jako iloczyn masy rakiety i przyspieszenia grawitacyjnego.
+    \item Wektor siły grawitacji jest przekształcany na układ lokalny, aby uwzględnić aktualną orientację rakiety.
+    \item Ponieważ siła grawitacji działa na środek masy, moment obrotowy wynosi zero.
+\end{itemize}
 
-\subsubsection{Siła Oporu Powietrza}
+\subsubsection{Siła oporu powietrza}
+
+Siła oporu powietrza jest przeciwnie skierowana do prędkości rakiety względem otaczającego ją powietrza. Wartość siły jest proporcjonalna do kwadratu tej prędkości. Funkcja \texttt{drag} oblicza zarówno wartość siły, jak i moment obrotowy wynikający z jej działania:
 
 \begin{lstlisting}[language=Python]
-    def drag(object: IAerodependent, environment: IEnvironment, time: float):
+def drag(object: IAerodependent, environment: IEnvironment, time: float):
     if (object.velocity == np.array([0, 0, 0], dtype=float)).all():
         return np.array([0, 0, 0], dtype=float), np.array([0, 0, 0], dtype=float)
 
@@ -978,21 +987,24 @@ który jest równy zeru, gdyż grawitacja nie generuje momentu obrotowego obiet�
     return drag_v, torque
 \end{lstlisting}
 
-Siła oporu powietrza obliczana jest na podstawie wzoru:
+\noindent
+\textbf{Opis działania funkcji:}
+\begin{itemize}
+    \item Wartość siły oporu jest obliczana na podstawie równania
+    \[
+    F_d = \frac{1}{2} \rho v^2 C_d A,
+    \]
+    gdzie \(\rho\) to gęstość powietrza, \(v\) to prędkość względna, \(C_d\) to współczynnik oporu, a \(A\) to powierzchnia przekroju poprzecznego.
+    \item Kierunek siły oporu jest przeciwny do kierunku prędkości względnej rakiety względem powietrza.
+    \item Siła i moment obrotowy są przeliczane na układ lokalny rakiety.
+\end{itemize}
 
-\[
-F_{D} = \frac{1}{2} \cdot \rho \cdot v^{2} \cdot C_{D} \cdot A
-\]
-Następnie siła ta jest zamieniana na lokalny układ współrzędnych rakiety.
-Moment obrotowy obliczany jest jako iloczyn wektorowy siły oporu powietrza
-oraz odległości CoP od CoG rakiety. Istotnym jest obliczenie współczynnika
-oporu oraz względnej prędkości, gdyż siła oporu zależy od prędkości rakiety
-względem powietrza.
+\subsubsection{Siła ciągu silnika}
 
-\subsubsection{Siła Ciągu Silnika}
+Siła ciągu jest generowana przez spaliny wydostające się z silnika rakiety. Jej wartość zależy od masowego natężenia przepływu gazów oraz prędkości wylotowej. Funkcja \texttt{thrust} oblicza siłę ciągu i moment obrotowy:
 
 \begin{lstlisting}[language=Python]
-    def thrust(object: IThrust, environment: IEnvironment, time: float):
+def thrust(object: IThrust, environment: IEnvironment, time: float):
     thrust_mag = object.mass_flow_rate(time) * object.exhaust_velocity(time)
     thrust_v = np.array([0, 0, thrust_mag], dtype=float)
     thrust_g = transform_to_global(thrust_v, object.engine_angle)
@@ -1000,36 +1012,89 @@ względem powietrza.
     return thrust_g, torque_l
 \end{lstlisting}
 
-Siła ciągu silnika obliczana jest na podstawie iloczynu masy wypływających spalin oraz prędkości wylotowej spalin. Następnie siła ta jest zamieniana na globalny układ współrzędnych rakiety. Moment obrotowy obliczany jest jako iloczyn wektorowy siły ciągu oraz odległości CoT od CoG rakiety.
+\noindent
+\textbf{Opis działania funkcji:}
+\begin{itemize}
+    \item Wielkość siły ciągu jest obliczana jako iloczyn natężenia przepływu masy gazów i ich prędkości wylotowej.
+    \item Wektor siły ciągu jest przekształcany z układu lokalnego (
+    związanego z silnikiem) na układ
+    globalny, uwzględniający aktualny kąt nachylenia silnika wzgledem rakiety.
+    \item Moment obrotowy wynika z przesunięcia środka ciągu (\textit{Center of Thrust, CoT}) względem środka masy rakiety.
+\end{itemize}
 
-\subsection{Składanie sił i obliczanie ruchu obiektu}
+\subsubsection{Siła nośna}
 
-Po obliczeniu sił działających na rakiety, następuje ich składanie w siły
-wypadkowe. Proces ten zachodzi w głównej pętli symulacyjnej silnika
-fizycznego. Wywyływana jest tam funkcja \texttt{compute\_force}:
+Siła nośna powstaje w wyniku oddziaływania powietrza na powierzchnię rakiety, której kształt oraz orientacja wpływają na wartość tej siły. Jest obliczana na podstawie prędkości rakiety względem powietrza, współczynnika nośności oraz powierzchni, na którą działa ta siła. Funkcja \texttt{lift} oblicza siłę nośną oraz moment obrotowy:
 
 \begin{lstlisting}[language=Python]
-        def compute_force(self):
-        resulting_force = np.array([0, 0, 0], dtype=float)
-        resulting_torque = np.array([0, 0, 0], dtype=float)
+def lift(object: IAerodependent, environment: IEnvironment, time: float) -> (
+        NDArray[np.float64], NDArray[np.float64]):
+    if (object.velocity == np.array([0, 0, 0], dtype=float)).all():
+        return np.array([0, 0, 0], dtype=float), np.array([0, 0, 0], dtype=float)
 
-        for force in self.pipeline:
-            resulting_force += force(self.object, self.environment, self.simulation_time)[0]
-            resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
+    Cl = object.lift_coefficient
+    relative_velocity = object.relative_velocity
+    reference_area = object.reference_area
+    air_density = environment.get_air_density()
+    lift_mag = 0.5 * air_density * np.linalg.norm(
+        relative_velocity) ** 2 * Cl * reference_area
+    velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
+    lift_direction = np.cross(velocity_unit, np.array([0, 0, 1]))
+    if np.linalg.norm(lift_direction) == 0:
+        lift_direction = np.array([0, 1, 0])
+    lift_v = lift_mag * lift_direction / np.linalg.norm(lift_direction)
+    lift_l = transform_to_local(lift_v, object.rotation)
+    torque = np.cross(lift_l, np.array([0, 0, -object.cop], dtype=float))
 
-        return resulting_force, resulting_torque
+    return lift_l, torque
 \end{lstlisting}
 
-W wyniku działania tej funkcji obliczane są, poprzez sumowanie wektorów, siły
-wypadkowe oraz
-momenty
-obrotowe dla danego kroku symulacji.
-\\ Następnie wywoływana jest funkcja \texttt{compute\_change}, której
-zadaniem jest obliczenie zmiany prędkości, przyspieszenia, pozycji oraz
-zaktualizowanie tych wartości dla obiektu rakiety.
+\noindent
+\textbf{Opis działania funkcji:}
+\begin{itemize}
+    \item Siła nośna jest obliczana na podstawie wzoru:
+    \[
+    L = 0.5 \cdot \rho \cdot v^2 \cdot A \cdot C_L,
+    \]
+    gdzie \(\rho\) to gęstość powietrza, \(v\) to norma prędkości względnej rakiety, \(A\) to powierzchnia referencyjna rakiety, a \(C_L\) to współczynnik nośności.
+    \item Wektor prędkości względnej rakiety jest normalizowany, aby uzyskać jednostkowy wektor prędkości (\texttt{velocity\_unit}).
+    \item Kierunek siły nośnej jest wyznaczany jako wektor prostopadły do prędkości rakiety, który jest obliczany za pomocą iloczynu wektorowego (\texttt{lift\_direction}).
+    \item Jeśli wektor siły nośnej ma zerową normę (co może się zdarzyć, gdy prędkość rakiety wynosi zero), przypisujemy domyślny kierunek wzdłuż osi \(Y\) (\([0, 1, 0]\)).
+    \item Siła nośna \texttt{lift\_v} jest obliczana jako iloczyn wielkości siły nośnej (\texttt{lift\_mag}) i znormalizowanego kierunku (\texttt{lift\_direction}).
+    \item Siła nośna i moment obrotowy są przekształcane na układ lokalny rakiety.
+\end{itemize}
+
+
+\subsubsection{Siła wiatru}
+
+Siła wiatru działa na powierzchnię rakiety, zmieniając jej trajektorię oraz stabilność. Funkcja \texttt{wind} oblicza wartość siły wiatru oraz moment obrotowy:
 
 \begin{lstlisting}[language=Python]
-    def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
+def wind(object: IAerodependent, environment: IEnvironment, time: float):
+    if (object.velocity == np.array([0, 0, 0], dtype=float)).all():
+        return np.array([0, 0, 0], dtype=float), np.array([0, 0, 0], dtype=float)
+
+    wind_v_global = environment.get_wind()
+    wind_v_local = transform_to_local(wind_v_global, object.rotation)
+    torque = np.cross(wind_v_local, np.array([0, 0, -object.cop], dtype=float))
+    return wind_v_local, torque
+\end{lstlisting}
+
+\noindent
+\textbf{Opis działania funkcji:}
+\begin{itemize}
+    \item Siła wiatru w układzie globalnym jest pobierana z parametrów środowiska za pomocą metody \texttt{environment.get\_wind()}.
+    \item Siła ta jest następnie przekształcana na układ lokalny rakiety, uwzględniając jej aktualną orientację.
+    \item Moment obrotowy jest obliczany na podstawie wektora siły wiatru oraz odległości od środka masy rakiety.
+\end{itemize}
+
+
+\subsection{Obliczanie zmian w ruchu rakiety}
+
+Funkcja \texttt{compute\_change} odpowiada za aktualizację parametrów dynamicznych rakiety, bazując na wypadkowych siłach i momentach pędu. Zawiera obliczenia zarówno dla ruchu postępowego, jak i obrotowego:
+
+\begin{lstlisting}[language=Python]
+def compute_change(self, force: NDArray[np.float64], torque: NDArray[np.float64]):
     global_force = transform_to_global(force, self.object.rotation)
     self.object.acceleration = global_force / self.object.mass
     velocity_change = self.object.acceleration * self.time_step
@@ -1041,7 +1106,10 @@ zaktualizowanie tych wartości dla obiektu rakiety.
     if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
         self.object.angle_of_attack = self.calculate_angle_of_attack()
         self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
-        self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) **  2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
+        self.object.drag_coefficient = (
+            C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) ** 2
+            + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2
+        )
 
     self.object.angular_acceleration = np.linalg.inv(self.object.inertia_tensor) @ torque
     self.object.angular_velocity += self.object.angular_acceleration * self.time_step
@@ -1058,42 +1126,42 @@ zaktualizowanie tych wartości dla obiektu rakiety.
     self.object.rotation[2] += dot_psi * self.time_step
 \end{lstlisting}
 
-W tej funkcji na podstawie wypadkowych sił i momentów pędu obliczane są kolejno:
-zmiana prędkości, przyspieszenia, pozycji oraz orientacji rakiety. Wartości
-te są przypisywane obiektowy, a następnie program przechodzi do obliczeń
-związanych z ruchem obrotowym. Obliczane są tam wartości przyśpieszenia
-kątoweg, prędkości
-kątowej oraz zmiany kątów eulerowskich. \\ Co istotne, wszystkie obliczenia
-i wartości związane z  ruchem postępowym prowadzone są w układzie
-nieinercjalnym, związanym z ziemia. Natomiast obliczenia dotyczące ruvhu
-obrotowego prowadzone sa w układzie związanym z rakietą.
+W ramach tej funkcji wykonywane są następujące operacje:
+\begin{itemize}
+    \item \textbf{Obliczenia ruchu postępowego}: Na podstawie siły wypadkowej obliczane są przyspieszenie, zmiana prędkości oraz przesunięcie pozycji rakiety.
+    \item \textbf{Obliczenia ruchu obrotowego}: Bazując na momencie pędu, wyznaczane są przyspieszenie kątowe, prędkość kątowa i zmiana orientacji rakiety w przestrzeni.
+    \item \textbf{Korekcje aerodynamiczne}: Jeśli obiekt implementuje interfejs \texttt{IAerodependent}, wyliczane są dodatkowe parametry, takie jak kąt natarcia, względna prędkość wiatru czy współczynnik oporu aerodynamicznego.
+\end{itemize}
 
-\\ W trakcie obliczania zmian w powyżej funkcji wywoływana jest także
-funkcja \texttt{calculate\_angle\_of\_attack}, obliczająca kąt natarcia
-rakiety w danym kroku symulacji.
+\subsubsection{Kąt natarcia rakiety}
+
+W trakcie aktualizacji stanu rakiety wywoływana jest funkcja \texttt{calculate\_angle\_of\_attack}, która oblicza kąt natarcia, czyli kąt między wektorem prędkości rakiety a osią Z w układzie inercjalnym. Implementacja tej funkcji wygląda następująco:
 
 \begin{lstlisting}[language=Python]
-     def calculate_angle_of_attack(self):
-        object_velocity = self.object.velocity
-        wind_velocity = self.environment.get_wind()
-        relative_velocity = object_velocity - wind_velocity
-        relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
+def calculate_angle_of_attack(self):
+    object_velocity = self.object.velocity
+    wind_velocity = self.environment.get_wind()
+    relative_velocity = object_velocity - wind_velocity
+    relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
 
-        reference_axis_local = np.array([0, 0, 1], dtype=float)
-        reference_axis_global = transform_to_global(reference_axis_local, self.object.rotation)
+    reference_axis_local = np.array([0, 0, 1], dtype=float)
+    reference_axis_global = transform_to_global(reference_axis_local, self.object.rotation)
 
-        cos_theta = np.dot(relative_velocity_unit, reference_axis_global)
-        angle_of_attack = np.arccos(np.clip(cos_theta, -1.0, 1.0))
+    cos_theta = np.dot(relative_velocity_unit, reference_axis_global)
+    angle_of_attack = np.arccos(np.clip(cos_theta, -1.0, 1.0))
 
-        return angle_of_attack
+    return angle_of_attack
 \end{lstlisting}
 
-Funkcja ta, oblicza kąt natarcia korzystając ze wzoru przedstawionego w
-rozdziale \ref{sec:kąt-natarcia-rakiety.}. Obliczany kąt natarcia jest
-kątem pomiędzy wektorem prędkości rakiety a wektorem osi Z w układzie
-inercjalnym rakiety.
+Obliczanie kąta natarcia ma kluczowe znaczenie dla poprawnego modelowania sił aerodynamicznych, ponieważ wpływa bezpośrednio na wyznaczenie współczynnika oporu oraz siły nośnej działającej na rakietę.
+
+\subsubsection{Uwagi dotyczące układów współrzędnych}
+
+Warto zauważyć, że wszystkie obliczenia dotyczące ruchu postępowego są prowadzone w układzie nieinercjalnym związanym z Ziemią, podczas gdy obliczenia ruchu obrotowego wykonywane są w układzie współrzędnych związanym z rakietą. Dzięki temu symulacja uwzględnia złożoność dynamiki obiektów ruchomych w przestrzeni trójwymiarowej.
+
 
 \subsection{Podsumowanie}
+
 Przedstawiony powyżej model zaimplementowanej fizyki ruchu rakiety w
 symulacji lotu, jest modelem uproszczonym, nie biorącym pod uwagę wielu
 czynników. Spowodowane jest to niewystarczającymi zasobami (czasem, więdzą,
@@ -1102,7 +1170,6 @@ może być w łatwy sposób rozbudowany i skomplikowany, tak aby bardziej
 realnie odzwierciedlał warunki panujące podczas rzeczywistych lotów
 rakietowych. Na potrzeby ninijeszej pracy inżynierskiej
 zaimplementowana  fizyka wydaje sie byc wystarczającą.
-
 
 
 

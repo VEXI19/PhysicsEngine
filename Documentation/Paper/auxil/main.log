@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  26 DEC 2024 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.12.21)  27 DEC 2024 17:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1604,169 +1604,164 @@ stywane przez modele
  []
 
 
-Overfull \hbox (7.52863pt too wide) in paragraph at lines 873--878
+Overfull \hbox (7.52863pt too wide) in paragraph at lines 874--879
 \T1/lmr/m/n/12 ruch obiektu. W niniejszym podrozdziale opisane zostaªy te dwa k
 luczowe zagadnienia. 
  []
 
 
-chapter2.tex:882: LaTeX Error: Unknown float option `H'.
+chapter2.tex:883: LaTeX Error: Unknown float option `H'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.882 \begin{figure}[H]
+l.883 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
 <physics_map.png, id=146, 482.80376pt x 623.32875pt>
 File: physics_map.png Graphic file (type png)
 <use physics_map.png>
-Package pdftex.def Info: physics_map.png  used on input line 884.
+Package pdftex.def Info: physics_map.png  used on input line 885.
 (pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
+
+Overfull \hbox (38.01736pt too wide) in paragraph at lines 893--894
+\T1/lmr/m/n/12 Funkcje pomocnicze stanowi¡ podstaw¦ oblicze«, umo»liwiaj¡c mi¦d
+zy innymi transformacj¦
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-[41 <./physics_map.png>]
-
-chapter2.tex:894: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.894 \\S
-         Ä… to funkcje zwiÄ…zane z przeksztaÅ‚ceniami ukÅ‚adÃ³w wspÃ³Å‚rzÄ™d...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-chapter2.tex:897: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.897 \\ \textbf
-                {Funkcja tworzÄ…ca macierz obrotu na podstawie kÄ…tÃ³w euler...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-chapter2.tex:925: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.925 \\ \textbf
-                {Funckja zamieniajÄ…ca ukÅ‚ad wspÃ³Å‚rzÄ™dnych z lokalnego n...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-chapter2.tex:933: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.933 \\ \textbf
-                {Funckja zamieniajÄ…ca ukÅ‚ad wspÃ³Å‚rzÄ™dnych z globalnego ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[42]
-Overfull \hbox (5.89673pt too wide) in paragraph at lines 943--947
-\T1/lmr/m/n/12 W zaimplementowanej symulacji lotu wyró»niono trzy gªówne siªy, 
-które oddziaªywaj¡
+[41 <./physics_map.png>] [42]
+Overfull \hbox (7.83406pt too wide) in paragraph at lines 937--938
+[]\T1/lmr/m/n/12 Funkcja \T1/lmtt/m/n/12 transform_to_global \T1/lmr/m/n/12 u»y
+wa macierzy rotacji \T1/lmtt/m/n/12 R\T1/lmr/m/n/12 , aby przeksztaªci¢ wektor
  []
 
 
-Overfull \hbox (32.43355pt too wide) in paragraph at lines 959--963
-\T1/lmr/m/n/12 przeciwnym do osi Z. Nast¦pnie wektor ten jest zamieniany na lok
-alny ukªad wspóªrz¦dnych
+Overfull \hbox (15.62529pt too wide) in paragraph at lines 937--938
+\T1/lmr/m/n/12 z ukªadu lokalnego do globalnego. Wektory lokalne, takie jak ci¡
+g silnika, s¡ orientowane
  []
 
 
-Overfull \hbox (5.15002pt too wide) in paragraph at lines 959--963
-\T1/lmr/m/n/12 rakiety. Obliczany jest tak»e moment obrotowy, który jest równy 
-zeru, gdy» grawitacja
+Overfull \hbox (4.1653pt too wide) in paragraph at lines 945--946
+[]\T1/lmr/m/n/12 Analogicznie, funkcja \T1/lmtt/m/n/12 transform_to_local \T1/l
+mr/m/n/12 wykorzystuje transponowan¡ macierz
+ []
+
+
+Overfull \hbox (15.8513pt too wide) in paragraph at lines 953--954
+\T1/lmr/m/n/12 Siªa grawitacji dziaªa pionowo w dóª, zgodnie z osi¡ $\OML/lmm/m
+/it/12 Z$ \T1/lmr/m/n/12 globalnego ukªadu wspóªrz¦dnych,
  []
 
 [43]
-Overfull \hbox (6.51802pt too wide) in paragraph at lines 1003--1004
-\T1/lmr/m/n/12 ukªad wspóªrz¦dnych rakiety. Moment obrotowy obliczany jest jako
- iloczyn wektorowy
+Overfull \hbox (6.28711pt too wide) in paragraph at lines 973--974
+\T1/lmr/m/n/12 otaczaj¡cego j¡ powietrza. Warto±¢ siªy jest proporcjonalna do k
+wadratu tej pr¦dko±ci.
  []
 
 [44]
-Overfull \hbox (1.10405pt too wide) in paragraph at lines 1023--1030
-\T1/lmr/m/n/12 Nast¦pnie wywoªywana jest funkcja \T1/lmtt/m/n/12 compute_change
-\T1/lmr/m/n/12 , której zadaniem jest obliczenie
+Overfull \hbox (13.53387pt too wide) in paragraph at lines 1019--1022
+[]\T1/lmr/m/n/12 Wektor siªy ci¡gu jest przeksztaªcany z ukªadu lokalnego ( zwi
+¡zanego z silnikiem)
+ []
+
+
+Overfull \hbox (7.23529pt too wide) in paragraph at lines 1027--1028
+\T1/lmr/m/n/12 której ksztaªt oraz orientacja wpªywaj¡ na warto±¢ tej siªy. Jes
+t obliczana na podstawie
  []
 
 [45]
-Overfull \hbox (8.28288pt too wide) in paragraph at lines 1061--1070
-\T1/lmr/m/n/12 Co istotne, wszystkie obliczenia i warto±ci zwi¡zane z ruchem po
-st¦powym prowadzone
+Overfull \hbox (12.13094pt too wide) in paragraph at lines 1060--1061
+[]\T1/lmr/m/n/12 Wektor pr¦dko±ci wzgl¦dnej rakiety jest normalizowany, aby uzy
+ska¢ jednostkowy
  []
 
 
-chapter2.tex:1071: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1071 \\ W
-            trakcie obliczania zmian w powyÅ¼ej funkcji wywoÅ‚ywana jest takÅ¼e
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (25.64275pt too wide) in paragraph at lines 1071--1074
-\T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 , obliczaj¡ca k¡t natar
-cia rakiety w danym kroku symulacji. 
+Overfull \hbox (11.5695pt too wide) in paragraph at lines 1061--1062
+\T1/lmr/m/n/12 rakiety, który jest obliczany za pomoc¡ iloczynu wektorowego (\T
+1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
  []
 
 
-Overfull \hbox (1.06664pt too wide) in paragraph at lines 1091--1095
-[]\T1/lmr/m/n/12 Funkcja ta, oblicza k¡t natarcia korzystaj¡c ze wzoru przedsta
-wionego w rozdziale
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+Overfull \hbox (11.54333pt too wide) in paragraph at lines 1088--1089
+[]\T1/lmr/m/n/12 Moment obrotowy jest obliczany na podstawie wektora siªy wiatr
+u oraz odlegªo±ci
  []
 
-[46]
-Overfull \hbox (29.30579pt too wide) in paragraph at lines 1097--1105
+
+Overfull \hbox (16.70955pt too wide) in paragraph at lines 1094--1095
+\T1/lmr/m/n/12 Funkcja \T1/lmtt/m/n/12 compute_change \T1/lmr/m/n/12 odpowiada 
+za aktualizacj¦ parametrów dynamicznych rakiety,
+ []
+
+[47]
+Overfull \hbox (8.21715pt too wide) in paragraph at lines 1132--1133
+\T1/lmr/m/n/12 przyspieszenie k¡towe, pr¦dko±¢ k¡towa i zmiana orientacji rakie
+ty w przestrzeni. 
+ []
+
+
+Overfull \hbox (22.11751pt too wide) in paragraph at lines 1133--1134
+[]\T1/lmr/bx/n/12 Korekcje aerodynamiczne\T1/lmr/m/n/12 : Je±li obiekt implemen
+tuje interfejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (41.21997pt too wide) in paragraph at lines 1138--1139
+\T1/lmr/m/n/12 W trakcie aktualizacji stanu rakiety wywoªywana jest funkcja \T1
+/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Overfull \hbox (2.66351pt too wide) in paragraph at lines 1160--1161
+\T1/lmr/m/n/12 Warto zauwa»y¢, »e wszystkie obliczenia dotycz¡ce ruchu post¦pow
+ego s¡ prowadzone
+ []
+
+
+Overfull \hbox (20.78589pt too wide) in paragraph at lines 1160--1161
+\T1/lmr/m/n/12 w ukªadzie nieinercjalnym zwi¡zanym z Ziemi¡, podczas gdy oblicz
+enia ruchu obrotowego
+ []
+
+
+Overfull \hbox (9.6865pt too wide) in paragraph at lines 1160--1161
+\T1/lmr/m/n/12 wykonywane s¡ w ukªadzie wspóªrz¦dnych zwi¡zanym z rakiet¡. Dzi¦
+ki temu symulacja
+ []
+
+
+Overfull \hbox (29.30579pt too wide) in paragraph at lines 1165--1173
 \T1/lmr/m/n/12 lotu, jest modelem uproszczonym, nie bior¡cym pod uwag¦ wielu cz
 ynników. Spowodowane
  []
 
 
-Overfull \hbox (20.29613pt too wide) in paragraph at lines 1097--1105
+Overfull \hbox (20.29613pt too wide) in paragraph at lines 1165--1173
 \T1/lmr/m/n/12 ten jednak dzi¦ki moduªowej architekturze silnika mo»e by¢ w ªat
 wy sposób rozbudowany
  []
 
 
-Overfull \hbox (51.88434pt too wide) in paragraph at lines 1097--1105
+Overfull \hbox (51.88434pt too wide) in paragraph at lines 1165--1173
 \T1/lmr/m/n/12 rzeczywistych lotów rakietowych. Na potrzeby ninijeszej pracy in
 »ynierskiej zaimplementowana
  []
 
-) [47]
+[49]) [50]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -1782,7 +1777,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 |[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
  []
 
-) [48
+) [51
 
 
 
@@ -1802,7 +1797,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 |[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
  []
 
-) [49
+) [52
 
 
 
@@ -1822,7 +1817,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 |[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
  []
 
-) [50
+) [53
 
 
 
@@ -1832,7 +1827,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
  (chapter6.tex
 Rozdzia\PlPrIeC {\l } 6.
-) [51
+) [54
 
 
 
@@ -1841,11 +1836,11 @@ Rozdzia\PlPrIeC {\l } 6.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 84.
 
-[52
+[55
 
 
 
-] [53] [54]
+] [56] [57] [58]
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
 il\main.aux
 (C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Documentation\Paper\aux
@@ -1866,10 +1861,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9431 strings out of 474485
- 155281 string characters out of 5743733
- 2014542 words of memory out of 5000000
- 31533 multiletter control sequences out of 15000+600000
+ 9438 strings out of 474485
+ 155358 string characters out of 5743733
+ 2013542 words of memory out of 5000000
+ 31540 multiletter control sequences out of 15000+600000
  617973 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,7n,79p,906b,1842s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1887,9 +1882,9 @@ sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/U
 sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/U
 sers/jkind/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\jkind\OneDrive\Documents\GitHub\PhysicsEngine\Docume
-ntation\Paper\out\main.pdf (54 pages, 484395 bytes).
+ntation\Paper\out\main.pdf (58 pages, 496180 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
