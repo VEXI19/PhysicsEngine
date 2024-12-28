@@ -104,6 +104,22 @@ class PhysicsEngine:
 
         return relative_velocity, relative_acceleration
 
+    def calculate_wind_speed(self) -> float:
+        """
+        Calculates wind speed
+
+        Returns:
+            float: wind speed
+        """
+        wind_force = self.environment.get_wind()
+        wind_force_mag = np.linalg.norm(wind_force)
+        wind_speed_magnitude = np.sqrt(
+            (2 * wind_force_mag) / (self.environment.get_air_density() *
+                                    self.object.reference_area))
+        wind_velocity = wind_speed_magnitude * (
+                    wind_force / wind_force_mag)
+        return wind_velocity
+
     def calculate_angle_of_attack(self) -> float:
         """
         Calculates angle of attack
@@ -112,7 +128,7 @@ class PhysicsEngine:
             float: angle of attack
         """
         object_velocity = self.object.velocity
-        wind_velocity = self.environment.get_wind()
+        wind_velocity = self.calculate_wind_speed()
         relative_velocity = object_velocity - wind_velocity
         relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
 
@@ -162,8 +178,8 @@ class PhysicsEngine:
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
 
-        #self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
-        #0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
+        self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
+        0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
 
 
     def save_data(self, data: str) -> None:
