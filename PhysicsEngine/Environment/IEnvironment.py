@@ -59,7 +59,7 @@ class IEnvironment(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_wind(self, position: NDArray[np.float64] = None) -> NDArray[np.float64]:
+    def get_wind(self, time: float, position: NDArray[np.float64] = None) -> NDArray[np.float64]:
         """
         Function to get wind at given position
         Args:
@@ -67,6 +67,8 @@ class IEnvironment(ABC):
 
         Returns:
             NDArray[np.float64]: wind at given position
+            @param position:
+            @param time:
         """
 
         raise NotImplementedError

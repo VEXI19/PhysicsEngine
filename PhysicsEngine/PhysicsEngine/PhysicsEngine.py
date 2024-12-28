@@ -2,13 +2,13 @@ import numpy as np
 from numpy.typing import NDArray
 import os
 import datetime
+import progressbar
 
 from ..Utils.Constants import Constants as C
 from ..Config import Config
 from ..Object import IAerodependent
 from ..Object.IObject import IObject
 from ..Environment.IEnvironment import IEnvironment
-import progressbar
 from ..Utils.EulerAngles import transform_to_local, transform_to_global
 
 
@@ -104,22 +104,6 @@ class PhysicsEngine:
 
         return relative_velocity, relative_acceleration
 
-    def calculate_wind_speed(self) -> float:
-        """
-        Calculates wind speed
-
-        Returns:
-            float: wind speed
-        """
-        wind_force = self.environment.get_wind()
-        wind_force_mag = np.linalg.norm(wind_force)
-        wind_speed_magnitude = np.sqrt(
-            (2 * wind_force_mag) / (self.environment.get_air_density() *
-                                    self.object.reference_area))
-        wind_velocity = wind_speed_magnitude * (
-                    wind_force / wind_force_mag)
-        return wind_velocity
-
     def calculate_angle_of_attack(self) -> float:
         """
         Calculates angle of attack
@@ -128,7 +112,7 @@ class PhysicsEngine:
             float: angle of attack
         """
         object_velocity = self.object.velocity
-        wind_velocity = self.calculate_wind_speed()
+        wind_velocity = self.environment.get_wind(self.simulation_time)
         relative_velocity = object_velocity - wind_velocity
         relative_velocity_unit = relative_velocity / np.linalg.norm(relative_velocity)
 
@@ -158,7 +142,7 @@ class PhysicsEngine:
 
         if isinstance(self.object, IAerodependent) and isinstance(self.object, IObject):
             self.object.angle_of_attack = self.calculate_angle_of_attack()
-            self.object.relative_velocity = self.object.velocity - self.environment.get_wind()
+            self.object.relative_velocity = self.object.velocity - self.environment.get_wind(self.simulation_time)
             self.object.drag_coefficient = (C.DRAG_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) ** 2 + C.DRAG_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
             self.object.lift_coefficient = (C.LIFT_COEFFICIENT_PARALLEL.value * np.cos(self.object.angle_of_attack) ** 2 + C.LIFT_COEFFICIENT_PERPENDICULAR.value * np.sin(self.object.angle_of_attack) ** 2)
 
@@ -178,8 +162,8 @@ class PhysicsEngine:
         self.object.rotation[1] += dot_theta * self.time_step
         self.object.rotation[2] += dot_psi * self.time_step
 
-        self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
-        0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
+        #self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
+        #0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
 
 
     def save_data(self, data: str) -> None:
