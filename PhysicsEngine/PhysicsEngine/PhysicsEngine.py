@@ -165,7 +165,6 @@ class PhysicsEngine:
         #self.object.engine_angle = np.array([[0.05, 0.05, 0], [0.05, -0.05,
         #0], [-0.05, -0.05, 0], [-0.05, 0.05, 0]])[self.simulation_tick % 4]
 
-
     def save_data(self, data: str) -> None:
         """
         Saves given string to the simulation data file. Creates new line
