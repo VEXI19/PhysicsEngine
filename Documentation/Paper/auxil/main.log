@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 20:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -378,10 +378,18 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\hypbmsec.sty
 Package: hypbmsec 2016/05/16 v2.5 Bookmarks in sectioning commands (HO)
 )
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count303
+\float@exts=\toks29
+\float@box=\box58
+\@float@everytoks=\toks30
+\@floatcapt=\box59
+)
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 49
 .
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -390,8 +398,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count303
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count304
+\l__pdf_internal_box=\box60
 )
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
@@ -409,21 +417,22 @@ x
 6.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
@@ -465,17 +474,17 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
+\scratchcounter=\count305
 \scratchdimen=\dimen182
-\scratchbox=\box59
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count307
+\scratchbox=\box61
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count308
 \MPscratchDim=\dimen183
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks30
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -487,18 +496,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count310
+\c@lstlisting=\count311
 Package hypbmsec Info: Package hyperref not loaded,
-(hypbmsec)             bookmark parameters will be ignored on input line 48.
+(hypbmsec)             bookmark parameters will be ignored on input line 49.
 <SGGW-thesis/naglowek_inz.png, id=1, 742.775pt x 182.6825pt>
 File: SGGW-thesis/naglowek_inz.png Graphic file (type png)
 <use SGGW-thesis/naglowek_inz.png>
-Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 49.
+Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 50.
 (pdftex.def)             Requested size: 279.12146pt x 68.65071pt.
 <SGGW-thesis/stopka_WZIM.png, id=3, 483.30562pt x 82.80937pt>
 File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
 <use SGGW-thesis/stopka_WZIM.png>
-Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 49.
+Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 50.
 (pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
 
 
@@ -509,41 +518,41 @@ AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./SGGW-thesis/nagl
 owek_inz.png> <./SGGW-thesis/stopka_WZIM.png>]
 
 [2]
-Overfull \hbox (25.55125pt too wide) in paragraph at lines 50--50
+Overfull \hbox (25.55125pt too wide) in paragraph at lines 51--51
 \T1/lmr/m/n/12 O±wiadczam, »e niniejsza praca zostaªa przygotowana pod moim kie
 runkiem i stwierdzam,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
 
-Overfull \hbox (3.51888pt too wide) in paragraph at lines 50--50
+Overfull \hbox (3.51888pt too wide) in paragraph at lines 51--51
 \T1/lmr/m/n/12 faªszywego o±wiadczenia, o±wiadczam, »e niniejsza praca dyplomow
 a zostaªa napisana
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
 
-Overfull \hbox (11.9044pt too wide) in paragraph at lines 50--50
+Overfull \hbox (11.9044pt too wide) in paragraph at lines 51--51
 \T1/lmr/m/n/12 O±wiadczam, »e niniejsza wersja pracy jest identyczna z zaª¡czon
 ¡ wersj¡ elektroniczn¡.
  []
 
 
-Overfull \hbox (44.80621pt too wide) in paragraph at lines 50--50
+Overfull \hbox (44.80621pt too wide) in paragraph at lines 51--51
 \T1/lmr/m/n/12 Przyjmuj¦ do wiadomo±ci, »e praca dyplomowa poddana zostanie pro
 cedurze antyplagiatowej. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
@@ -1143,18 +1152,18 @@ ent learning.
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--73
+Underfull \hbox (badness 10000) in paragraph at lines 199--74
 
  []
 
 
-Overfull \hbox (14.38278pt too wide) in paragraph at lines 199--73
+Overfull \hbox (14.38278pt too wide) in paragraph at lines 199--74
 \T1/lmr/m/n/12 tworzenia i testowania systemu steruj¡cego rakiet¡. Efektem tego
  jest tak»e uproszczony
  []
 
 
-Overfull \hbox (32.69478pt too wide) in paragraph at lines 199--73
+Overfull \hbox (32.69478pt too wide) in paragraph at lines 199--74
 \T1/lmr/m/n/12 model fizyczny, o czym mowa jest w kolejnych rozdziaªach pracy. 
 Rozwi¡zanie prezentowane
  []
@@ -1434,17 +1443,6 @@ atu programowania
 
 
 [31]
-
-chapter2.tex:493: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.493 \begin{figure}[H]
-                       
-Option `H' ignored and `p' used.
-
 <architektura.jpg, id=117, 905.3825pt x 1205.50375pt>
 File: architektura.jpg Graphic file (type jpg)
 <use architektura.jpg>
@@ -1457,6 +1455,8 @@ szczególne elementy
  []
 
 
+
+[32 <./architektura.jpg>]
 Overfull \hbox (6.12157pt too wide) in paragraph at lines 522--528
 \T1/lmr/m/n/12 Interfejs `IObject` jest podstawowym interfejsem dla wszystkich 
 obiektów w symulacji.
@@ -1471,9 +1471,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 530.
 
 
-[32]
-
-[33 <./architektura.jpg>]
+[33]
 Overfull \hbox (6.04779pt too wide) in paragraph at lines 573--574
 []\T1/lmr/m/n/12 `load_model(object_model_path)`: Šaduje model 3D obiektu z pod
 anej ±cie»ki.
@@ -1492,14 +1490,14 @@ nia parametry
  []
 
 
-
-[34]
 Overfull \hbox (8.0671pt too wide) in paragraph at lines 578--579
 []\T1/lmr/m/n/12 `__str__()`: Zwraca reprezentacj¦ obiektu w formie tekstowej (
 pozycja, rotacja,
  []
 
 
+
+[34]
 Overfull \hbox (13.69588pt too wide) in paragraph at lines 600--601
 []\T1/lmr/m/n/12 `engine_angle`: K¡t nachylenia silnika wzgl¦dem lokalnego ukªa
 du wspóªrz¦dnych
@@ -1532,16 +1530,17 @@ ywaj¡cego powietrza.
  []
 
 
-
-[36]
 Overfull \hbox (12.6138pt too wide) in paragraph at lines 659--660
 []\T1/lmr/m/n/12 `calculate_reference_area()`: Oblicza powierzchni¦ czoªow¡ obi
 ektu na podstawie
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[37]
+
+
+[36]
 Overfull \hbox (11.78726pt too wide) in paragraph at lines 700--701
 []\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Metoda, która zwraca pr¦d
 ko±¢ d¹wi¦ku
@@ -1560,6 +1559,8 @@ w zadanej pozycji.
  []
 
 
+
+[37]
 Overfull \hbox (30.7517pt too wide) in paragraph at lines 719--720
 []\T1/lmr/bx/n/12 `PhysicsEngine`\T1/lmr/m/n/12 : Jest to najwa»niejsza klasa s
 ilnika, odpowiedzialna za zarz¡dzanie
@@ -1584,14 +1585,14 @@ eraj¡cy konfiguracj¦
  []
 
 
-
-[38]
 Overfull \hbox (15.64638pt too wide) in paragraph at lines 750--751
 []\T1/lmtt/m/n/12 environment \T1/lmr/m/n/12 - instancj¦ klasy \T1/lmtt/m/n/12 
 Environment\T1/lmr/m/n/12 , która definiuje ±rodowisko symulacji, 
  []
 
 
+
+[38]
 Overfull \hbox (15.31294pt too wide) in paragraph at lines 774--775
 [][][][][][][][][][][][][][][][][][] 
  []
@@ -1632,8 +1633,6 @@ rientacja (rotacja).
 
 
 [40]
-
-[41]
 Overfull \hbox (4.23813pt too wide) in paragraph at lines 856--857
 []\T1/lmr/m/n/12 Zapisywanie tych danych, jest kluczowym elementem symulacji, p
 oniewa» pozwala
@@ -1646,6 +1645,11 @@ anie wielu benefitów,
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[41]
 Overfull \hbox (0.57973pt too wide) in paragraph at lines 865--867
 []\T1/lmr/m/n/12 Jednym z kluczowych zaªo»e« przy projektowaniu systemu byªa je
 go moduªowo±¢.
@@ -1717,23 +1721,17 @@ Overfull \hbox (7.52863pt too wide) in paragraph at lines 909--914
 luczowe zagadnienia. 
  []
 
-
-chapter2.tex:918: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.918 \begin{figure}[H]
-                       
-Option `H' ignored and `p' used.
-
 <physics_map.png, id=156, 482.80376pt x 623.32875pt>
 File: physics_map.png Graphic file (type png)
 <use physics_map.png>
 Package pdftex.def Info: physics_map.png  used on input line 920.
 (pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[43]
 Overfull \hbox (38.01736pt too wide) in paragraph at lines 928--929
 \T1/lmr/m/n/12 Funkcje pomocnicze stanowi¡ podstaw¦ oblicze«, umo»liwiaj¡c mi¦d
 zy innymi transformacj¦
@@ -1741,11 +1739,7 @@ zy innymi transformacj¦
 
 
 
-[43]
-
 [44 <./physics_map.png>]
-
-[45]
 Overfull \hbox (7.83406pt too wide) in paragraph at lines 972--973
 []\T1/lmr/m/n/12 Funkcja \T1/lmtt/m/n/12 transform_to_global \T1/lmr/m/n/12 u»y
 wa macierzy rotacji \T1/lmtt/m/n/12 R\T1/lmr/m/n/12 , aby przeksztaªci¢ wektor
@@ -1758,6 +1752,8 @@ g silnika, s¡ orientowane
  []
 
 
+
+[45]
 Overfull \hbox (4.1653pt too wide) in paragraph at lines 980--981
 []\T1/lmr/m/n/12 Analogicznie, funkcja \T1/lmtt/m/n/12 transform_to_local \T1/l
 mr/m/n/12 wykorzystuje transponowan¡ macierz
@@ -1776,8 +1772,6 @@ Overfull \hbox (15.8513pt too wide) in paragraph at lines 991--992
  []
 
 
-
-[46]
 Overfull \hbox (11.44867pt too wide) in paragraph at lines 1011--1013
 \T1/lmr/m/n/12 Siªa oporu powietrza jest przeciwnie skierowana do wektora pr¦dk
 o±ci rakiety wzgl¦dem
@@ -1790,9 +1784,8 @@ wadratu tej pr¦dko±ci.
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+[46]
 
 [47]
 Overfull \hbox (13.53387pt too wide) in paragraph at lines 1059--1062
@@ -1829,8 +1822,6 @@ za aktualizacj¦ parametrów dynamicznych rakiety,
 
 
 [49]
-
-[50]
 Overfull \hbox (8.21715pt too wide) in paragraph at lines 1149--1150
 \T1/lmr/m/n/12 przyspieszenie k¡towe, pr¦dko±¢ k¡towa i zmiana orientacji rakie
 ty w przestrzeni. 
@@ -1843,6 +1834,11 @@ tuje interfejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
  []
 
 
+Underfull \vbox (badness 1990) has occurred while \output is active []
+
+
+
+[50]
 Overfull \hbox (41.21997pt too wide) in paragraph at lines 1155--1156
 \T1/lmr/m/n/12 W trakcie aktualizacji stanu rakiety wywoªywana jest funkcja \T1
 /lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
@@ -1867,8 +1863,6 @@ ki temu symulacja
  []
 
 
-
-[51]
 Overfull \hbox (29.30579pt too wide) in paragraph at lines 1182--1190
 \T1/lmr/m/n/12 lotu, jest modelem uproszczonym, nie bior¡cym pod uwag¦ wielu cz
 ynników. Spowodowane
@@ -1881,6 +1875,8 @@ wy sposób rozbudowany,
  []
 
 
+
+[51]
 Overfull \hbox (34.33147pt too wide) in paragraph at lines 1193--1199
 \T1/lmr/m/n/12 lotów rakiety na podstawie danych zapisanych w trakcie symulacji
  . Struktura zapisywanych
@@ -1919,54 +1915,40 @@ Overfull \hbox (20.09702pt too wide) in paragraph at lines 1209--1217
 ¦puj¡ce komponenty: 
  []
 
-
-chapter2.tex:1223: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1223     \begin{figure}[H]
-                            
-Option `H' ignored and `p' used.
-
 <main_window.png, id=187, 255.95625pt x 242.40562pt>
 File: main_window.png Graphic file (type png)
 <use main_window.png>
 Package pdftex.def Info: main_window.png  used on input line 1225.
 (pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
 
-Overfull \hbox (53.88268pt too wide) in paragraph at lines 1217--1229
+Overfull \hbox (53.88268pt too wide) in paragraph at lines 1217--1228
 \T1/lmr/m/n/12 dost¦pnych konfiguracji symulacji, które zostaªy zdefiniowane w 
 plikach konfiguracyjnych.
  []
 
 
-Overfull \hbox (51.29904pt too wide) in paragraph at lines 1217--1229
+Overfull \hbox (51.29904pt too wide) in paragraph at lines 1217--1228
 \T1/lmr/m/n/12 Wybór konfiguracji powoduje wy ±wietlenie listy dost¦pnych symul
 acji przeprowadzonych
  []
 
 
+Underfull \vbox (badness 5681) has occurred while \output is active []
+
+
 
 [52]
-
-chapter2.tex:1234: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1234 \begin{figure}[H]
-                        
-Option `H' ignored and `p' used.
-
 <file_picker.png, id=191, 258.21469pt x 267.24844pt>
 File: file_picker.png Graphic file (type png)
 <use file_picker.png>
 Package pdftex.def Info: file_picker.png  used on input line 1236.
 (pdftex.def)             Requested size: 341.43437pt x 353.41333pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[53 <./main_window.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1244--1247
 
  []
@@ -1991,19 +1973,8 @@ Overfull \hbox (17.27791pt too wide) in paragraph at lines 1255--1259
 
 
 
-[53]
-
-chapter2.tex:1280: LaTeX Error: Unknown float option `H'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1280 \begin{figure}[H]
-                        
-Option `H' ignored and `p' used.
-
-<simulation_window.png, id=195, 1442.38875pt x 796.47563pt>
+[54 <./file_picker.png>]
+<simulation_window.png, id=200, 1442.38875pt x 796.47563pt>
 File: simulation_window.png Graphic file (type png)
 <use simulation_window.png>
 Package pdftex.def Info: simulation_window.png  used on input line 1282.
@@ -2027,6 +1998,8 @@ Overfull \hbox (26.85674pt too wide) in paragraph at lines 1289--1297
  []
 
 
+
+[55 <./simulation_window.png>]
 Overfull \hbox (14.31793pt too wide) in paragraph at lines 1300--1301
 \T1/lmr/m/n/12 jest dokªadna i odzwierciedla rzeczywiste zjawiska fizyczne. Pon
 i»ej omówiono szczegóªy
@@ -2051,14 +2024,14 @@ aj¡ przewidywaniom
  []
 
 
-
-[54]
 Overfull \hbox (31.23018pt too wide) in paragraph at lines 1317--1318
 \T1/lmr/m/n/12 lotu. Symulacja poprawnie uwzgl¦dnia t¦ zale»no±¢, co pozwala na
  dokªadne przewidywanie
  []
 
 
+
+[56]
 Overfull \hbox (31.81627pt too wide) in paragraph at lines 1320--1321
 \T1/lmr/m/n/12 silnika jest kompensowany przez siª¦ no±n¡ generowan¡ przez powi
 erzchnie aerodynamiczne
@@ -2095,8 +2068,6 @@ e. Uzyskanie takich
  []
 
 
-
-[55]
 Overfull \hbox (9.68752pt too wide) in paragraph at lines 1345--1361
 \T1/lmr/m/n/12 Jednym z kierunków dalszych bada« jest porównanie wyników symula
 cji w stworzonym
@@ -2128,6 +2099,8 @@ nych w obu silnikach.
  []
 
 
+
+[57]
 Overfull \hbox (18.85905pt too wide) in paragraph at lines 1364--1378
 \T1/lmr/m/n/12 Kolejnym kierunkiem bada« jest porównanie wyników symulacji z da
 nymi pochodz¡cymi
@@ -2176,11 +2149,6 @@ mo»liwe jest porównanie
  []
 
 
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-
-
-[56]
 Overfull \hbox (3.31726pt too wide) in paragraph at lines 1394--1402
 \T1/lmr/m/n/12 fizycznego oraz identyfikacj¦ ewentualnych bª¦dów i rozbie»no±ci
 . Niestety, nie zostaªy
@@ -2192,13 +2160,113 @@ Overfull \hbox (23.52527pt too wide) in paragraph at lines 1394--1402
  w celach treningowych
  []
 
-)
 
-[57]
+Underfull \vbox (badness 1137) has occurred while \output is active []
 
-[58 <./main_window.png>]
 
-[59 <./file_picker.png> <./simulation_window.png>]
+
+[58]
+
+LaTeX Warning: Citation `alma991019564819703276' on page 59 undefined on input 
+line 1415.
+
+
+Overfull \hbox (7.99007pt too wide) in paragraph at lines 1411--1418
+\T1/lmr/m/n/12 analiz¦ literatury oraz materiaªów online dotycz¡cych lotów raki
+etowych, modelowania
+ []
+
+
+Overfull \hbox (34.1957pt too wide) in paragraph at lines 1411--1418
+\T1/lmr/m/n/12 dynamiki i symulacji fizycznych. W du»ej mierze do zgl¦bienia ty
+ch zagadnie« wykorzystano
+ []
+
+
+Overfull \hbox (46.41728pt too wide) in paragraph at lines 1411--1418
+\T1/lmr/m/n/12 podr¦cznik [[]] Zgromadzona wiedza umo»liwiªa lepsze zrozumienie
+ koncepcji matematycznych
+ []
+
+
+Overfull \hbox (14.74039pt too wide) in paragraph at lines 1419--1420
+[]\T1/lmr/m/n/12 Na tym etapie zdecydowano o wykorzystaniu j¦zyka Python jako g
+ªównej technologii
+ []
+
+
+Overfull \hbox (0.2856pt too wide) in paragraph at lines 1419--1420
+\T1/lmr/m/n/12 implementacji, ze wzgl¦du na jego znajomo±¢ przez autorów oraz ª
+atwo±¢ w tworzeniu
+ []
+
+
+Overfull \hbox (8.57289pt too wide) in paragraph at lines 1423--1424
+\T1/lmr/m/n/12 Kolejnym etapem byªo zaprojektowanie i stworzenie pierwszej wers
+ji silnika fizycznego.
+ []
+
+
+
+[59]
+Overfull \hbox (7.82098pt too wide) in paragraph at lines 1425--1426
+[]\T1/lmr/m/n/12 W odpowiedzi na te wyzwania zdecydowano si¦ przebudowa¢ archit
+ektur¦ systemu.
+ []
+
+
+Overfull \hbox (19.24602pt too wide) in paragraph at lines 1425--1426
+\T1/lmr/m/n/12 Wprowadzono rozwi¡zania oparte na interfejsach, co uªatwiªo rozw
+ijanie funkcjonalno±ci.
+ []
+
+
+Overfull \hbox (28.71288pt too wide) in paragraph at lines 1425--1426
+\T1/lmr/m/n/12 zamiast generowanych w czasie rzeczywistym. Podej±cie to umo»liw
+iªo szybk¡ identyfikacj¦
+ []
+
+
+Overfull \hbox (35.14569pt too wide) in paragraph at lines 1429--1430
+\T1/lmr/m/n/12 Trzeci etap obejmowaª implementacj¦ nowej architektury oraz doda
+tkowych funkcjonalno±ci
+ []
+
+
+Overfull \hbox (28.7788pt too wide) in paragraph at lines 1429--1430
+\T1/lmr/m/n/12 silnika. Pocz¡tkowo stworzono szkielet systemu, który pozwoliª n
+a weryfikacj¦ poprawno±ci
+ []
+
+
+Overfull \hbox (5.2161pt too wide) in paragraph at lines 1433--1434
+\T1/lmr/m/n/12 oraz optymalizacj¦ dziaªania systemu. Przykªadem istotnych uspra
+wnie« byªo dodanie
+ []
+
+
+Overfull \hbox (16.05014pt too wide) in paragraph at lines 1437--1438
+\T1/lmr/m/n/12 Praca nad projektem pozwoliªa na zdobycie cennego do±wiadczenia 
+w takich dziedzinach
+ []
+
+
+Overfull \hbox (21.89322pt too wide) in paragraph at lines 1439--1440
+[]\T1/lmr/m/n/12 Podczas realizacji projektu napotkano wiele problemów, zarówno
+ implementacyjnych,
+ []
+
+
+
+[60])
+Overfull \hbox (4.85446pt too wide) in paragraph at lines 1443--75
+[]\T1/lmr/m/n/12 Finalny projekt speªnia wszystkie zaªo»enia okre±lone w rozdzi
+ale 2.1[], a dodatkowo
+ []
+
+
+
+[61]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -2216,7 +2284,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 
 )
 
-[60
+[62
 
 
 
@@ -2238,7 +2306,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 
 )
 
-[61
+[63
 
 
 
@@ -2260,7 +2328,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
 )
 
-[62
+[64
 
 
 
@@ -2272,26 +2340,26 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 Rozdzia\PlPrIeC {\l } 6.
 )
 
-[63
+[65
 
 
 
 
 ]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 84.
+LaTeX Warning: Empty `thebibliography' environment on input line 85.
 
 
 
-[64
+[66
 
 
 
 ]
 
-[65]
+[67]
 
-[66]
+[68]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -2312,17 +2380,17 @@ L3 programming layer <2024-12-09>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9479 strings out of 473573
- 155765 string characters out of 5716588
- 847246 words of memory out of 5000000
- 32475 multiletter control sequences out of 15000+600000
+ 9536 strings out of 473573
+ 156715 string characters out of 5716588
+ 827304 words of memory out of 5000000
+ 32528 multiletter control sequences out of 15000+600000
  622244 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,79p,906b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,7n,79p,906b,1702s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb
 ><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb
 ><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb>
@@ -2338,9 +2406,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kuba/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (66 pages, 622316 bytes).
+per\out\main.pdf (68 pages, 627835 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 317 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

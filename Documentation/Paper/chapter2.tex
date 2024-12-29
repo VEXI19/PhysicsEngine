@@ -1400,4 +1400,44 @@ Na potrzeby niniejszej pracy inżynierskiej, zaimplementowany silnik fizyczny
 uznaje się za wystarczająco dokładny, aby przeprowadzać symulacje lotów w
 celach treningowych modelu AI.
 
-\section{Ewolucja projektu i wnioski.}\label{sec:ewolucja-projektu-i-wnioski}
+\section{Ewolucja projektu i wnioski}\label{sec:ewolucja-projektu-i-wnioski}
+
+W trakcie pracy nad projektem opracowano kompletny system symulacji fizycznej lotów rakiet. Składa się on z dwóch głównych podsystemów: silnika fizycznego oraz modułu wizualizacyjnego. Projekt realizowano przez około cztery miesiące, a jego rezultatem jest w pełni funkcjonalny system. Proces realizacji można podzielić na kilka kluczowych etapów.
+
+\subsection{Historia powstania projektu}
+
+\subsubsection{Etap badawczy}
+
+Pierwszym etapem pracy było zgłębianie zagadnień związanych z fizyką lotu
+rakiet oraz zasadami działania silników rakietowych. W ramach tego etapu
+przeprowadzono analizę literatury oraz materiałów online dotyczących lotów
+rakietowych, modelowania dynamiki i symulacji fizycznych. W dużej mierze do
+zglębienia tych zagadnień wykorzystano podręcznik
+Zgromadzona
+wiedza umożliwiła lepsze zrozumienie koncepcji matematycznych potrzebnych do zaimplementowania fizyki w silniku.
+
+Na tym etapie zdecydowano o wykorzystaniu języka Python jako głównej technologii implementacji, ze względu na jego znajomość przez autorów oraz łatwość w tworzeniu prototypów. Rozważano także alternatywne rozwiązania, takie jak C++ (ze względu na wydajność) czy środowisko Unity (z wykorzystaniem języka C\#). Ostatecznie wybrano Pythona jako najbardziej odpowiedni kompromis między wydajnością a łatwością implementacji.
+
+\subsubsection{Etap projektowania}
+
+Kolejnym etapem było zaprojektowanie i stworzenie pierwszej wersji silnika fizycznego. Początkowa implementacja pozwalała na symulację lotu rakiety w dwóch wymiarach, co umożliwiło identyfikację podstawowych problemów, takich jak niewystarczająca wydajność biblioteki \texttt{Pygame} oraz ograniczenia związane z użyciem \texttt{Matplotlib} do wizualizacji danych.
+
+W odpowiedzi na te wyzwania zdecydowano się przebudować architekturę systemu. Wprowadzono rozwiązania oparte na interfejsach, co ułatwiło rozwijanie funkcjonalności. Zastosowano bibliotekę \texttt{PyQt} do wizualizacji danych odczytywanych z plików CSV, zamiast generowanych w czasie rzeczywistym. Podejście to umożliwiło szybką identyfikację błędów i znacząco obniżyło koszt czasowy ich naprawy.
+
+\subsubsection{Etap implementacji}
+
+Trzeci etap obejmował implementację nowej architektury oraz dodatkowych funkcjonalności silnika. Początkowo stworzono szkielet systemu, który pozwolił na weryfikację poprawności architektury. Następnie wdrożono model fizyki lotu rakiety, uwzględniający siły i momenty działające na rakietę. Kluczowym elementem tego etapu było zastosowanie odpowiednich wzorów matematycznych do precyzyjnego opisu dynamiki lotu.
+
+\subsubsection{Etap testowania}
+
+Ostatnim etapem był proces testowania, w którym przeprowadzono liczne symulacje lotów rakiet w różnych warunkach. Testy te pozwoliły na wykrycie i naprawę błędów oraz optymalizację działania systemu. Przykładem istotnych usprawnień było dodanie siły nośnej, która początkowo nie była uwzględniana. System zyskał także nowe funkcjonalności, które zwiększyły jego użyteczność.
+
+\subsection{Wnioski}
+
+Praca nad projektem pozwoliła na zdobycie cennego doświadczenia w takich dziedzinach jak modelowanie fizyki, implementacja systemów symulacyjnych oraz wizualizacja danych. Stanowiła także doskonałą okazję do zgłębienia tajników lotów rakietowych oraz lepszego zrozumienia ich zasad działania.
+
+Podczas realizacji projektu napotkano wiele problemów, zarówno implementacyjnych, jak i teoretycznych, związanych z fizyką lotu. Większość z nich udało się rozwiązać, co znacząco podniosło jakość finalnego rozwiązania.
+
+Jak wskazano w podrozdziale \ref{sec:dokadnosc-symulacji}, nie można jednoznacznie stwierdzić, czy system w pełni odzwierciedla rzeczywistość fizyczną. Wymaga to dalszych badań i testów, co wykracza poza zakres niniejszej pracy.
+
+Finalny projekt spełnia wszystkie założenia określone w rozdziale \ref{sec:zalozenia-projektowe.}, a dodatkowo umożliwia trenowanie modeli AI w symulacjach lotów rakietowych. Dzięki swojej modułowej architekturze system stanowi solidną bazę do dalszego rozwoju, w tym dodawania nowych sił lub usprawniania istniejących komponentów.
