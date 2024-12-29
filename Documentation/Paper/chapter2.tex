@@ -820,7 +820,7 @@ Pętla symulacyjna silnika \texttt{PhysicsEngine} jest odpowiedzialna za zarząd
     \item \textbf{Zapis danych:} Po każdej iteracji pętli, dane o stanie obiektu są zapisywane do pliku, aby umożliwić późniejszą analizę wyników symulacji.
 \end{enumerate}
 
-\subsection{Zapisywanie danych symulacji}
+\subsection{Zapisywanie danych symulacji}\label{sec:zapisywanie-danych-symulacji.}
 
 W trakcie symulacji, po każdym kroku, zapisywane są dane o stanie obiektów w
 symulacji. Dane te zawierają informacje o pozycji, prędkości, przyspieszeniu
@@ -1189,5 +1189,102 @@ rakietowych. Na potrzeby niniejszej pracy inżynierskiej
 zaimplementowana fizyka wydaje się byc wystarczającą.
 
 \section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
+
+Moduł wizualizacyjny symulacji jest odpowiedzialny za generowanie
+wizualizacji lotów rakiety na podstawie danych zapisanych w trakcie symulacji
+. Struktura zapisywanych danych opisana została z w sekcji
+\ref{sec:zapisywanie-danych-symulacji.}. Wizualizacja jest generowana w formie
+animacji, która przedstawia trajektorię lotu rakiety w przestrzeni tr
+ójwymiarowej oraz zmiany kluczowych parametrów w czasie.
+
+Moduł wizualizacyjny stworzony został za pomocą
+biblioteki \texttt{PyQt}, która umożliwia generowanie dynamicznie zmieniaj
+ących się interfejsów graficznych. Składa się on z dwóch
+głównych okien aplikacji: okna głównego oraz okna wizualizacji.\\
+Uruchomienie modułu wizualizacyjnego polega na uruchomieniu skryptu \texttt{
+    visualisation.py}.
+
+\subsection{Okno główne}
+
+Okno główne aplikacji zawiera interfejs użytkownika, który umożliwia wybranie
+konfiguracji symulacji, a następnie wybranie konkretnej symulacji
+przeprowadzonej w ramach tej konfiguracji. Interfejs użytkownika pozwala na
+przełączanie się pomiędzy oknami wizualizacji oraz wybór symulacji do
+przeprowadzenia. \\
+Widoki okna głównego aplikacji zarządzane są przez komponent nazwany \texzttt{picker}, który przełącza widoki w zależności od wybranych przez użytkownika opcji.\\
+Przedstawiając więc strukturę okna głównego, można wyróżnić następujące komponenty:
+\begin{enumerate}
+    \item \textbf{Wybór konfiguracji symulacji:} Użytkownik ma możliwość
+    wyboru jednej z dostępnych konfiguracji symulacji, które zostały
+    zdefiniowane w plikach konfiguracyjnych. Wybór konfiguracji powoduje wy
+    świetlenie listy dostępnych symulacji przeprowadzonych w ramach tej
+    konfiguracji. Funkcjonalnośc ta obsługiwana jest przez widget
+    \texttt{folder\_picker}. Wygląd tego widoku przedstawiony jest na rysunku \ref{fig:main_window}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{main_window.png}
+    \caption{Okno główne aplikacji - wybór konfiguracji}
+    \label{fig:main_window}
+\end{figure}
+    \item \textbf{Wybór symulacji:} Po wybraniu konfiguracji, użytkownik
+    dostaje dostęp do plików zapisanych w ramach tej konfiguracji. Może
+    dokonać wyboru jednej z symulacji, której wyniki chce zobaczyć. Tą
+    funkcjonalność umożliwia widget \texttt{file\_picker}. Wygląd tego widoku
+    przedstawiony jest na rysunku \ref{fig:picker}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{file_picker.png}
+    \caption{Okno wyboru symulacji}
+    \label{fig:picker}
+\end{figure}
+\end{enumerate}
+
+\subsection{Okno wizualizacji}
+
+Okno wizualizacji jest odpowiedzialne za generowanie animacji trajektorii
+lotu oraz zmian parametrów rakiety w czasie. Wizualizacja jest generowana na
+podstawie danych pobranych z pliku CSV zapisanego w trakcie symulacji.\\
+
+Na okno wizualizacji składa się kilka głównych komponentów:
+
+\begin{enumerate}
+    \item \textbf{Wizualizacja trajektorii lotu:} Głównym elementem wizualizacji
+    jest animacja trajektorii lotu rakiety w przestrzeni trójwymiarowej.
+    Na wizualizacji przedstawione są kolejne klatki animacji, które pokazują
+    poruszający się model rakiety w przestrzeni oraz trajektorię lotu.
+    \item \textbf{Wykresy zmian parametrów ruchu obrotowego:} Pod wizualizacją
+    trajektorii lotu znajdują się dwa wykresy zmian parametrów ruchu
+    obrotowego - prędkości oraz przyśpieszenia kątowego wokół osi X, Y i Z.
+    Pozwalają one na analizę zmian orientacji rakiety w czasie.
+    \item \textbf{Wykresy zmian parametrów ruchu postępowego:} Po prawej
+    stronie wizualizacji znajdują się wykresy zmian parametrów ruchu
+    postępowego - prędkości oraz przyspieszenia rakiety na osiach X, Y i Z.
+    Dzięki nim użytkownik może analizować zmiany tych parametrów w czasie.
+    \item \textbf{Wykres zmian wysokości:} W dolnym prawym rogu wizualizacji
+    znajduje się wykres zmian wysokości rakiety w czasie. Pozwala on na
+    analizę wysokości rakiety w trakcie lotu.
+    \item \textbf{Wykres kąta nachylenia silnika rakiety} Poniżej okna
+    wizualizacji znajduje się wykres zmian kąta nachylenia silnika rakiety w
+    danym kroku symulacji. Wizualizacja tego parametru jest istotna,
+    ponieważ to właśnie kąt nachylenia silnika wpływa na kierunek ciągu i
+    jest sterowany przez model AI.
+    \item\textbf{Przycisk zatrzymujący animację oraz suwak z czasem animacji} W
+    prawym dolnym rogu wizualizacji znajduje się przycisk, który pozwala na
+    zatrzymanie symulacji w dowolnym momencie. Tam też znajduje się suwak,
+    umożliwiający przewijanie animacji w czasie. Jest to przydatne narzędzie
+    do analizy lotu rakiety w wybranym momencie.
+\end{enumerate}
+
+Wszystkie opisane powyżej komponenty wizualizacji przedstawione są na rysunku \ref{fig:simulation_window}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{simulation_window}
+    \caption{Okno wizualizacji symulacji}
+    \label{fig:simulation_window}
+\end{figure}
+
 \section{Dokładność symulacji.}\label{sec:dokadnosc-symulacji}
+
+
 \section{Ewolucja projektu i wnioski.}\label{sec:ewolucja-projektu-i-wnioski}
