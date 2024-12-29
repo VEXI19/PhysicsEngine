@@ -33,6 +33,6 @@ def lift(object: IAerodependent, environment: IEnvironment, time: float) -> (
         lift_direction = np.array([0, 1, 0])
     lift_v = lift_mag * lift_direction / np.linalg.norm(lift_direction)
     lift_l = transform_to_local(lift_v, object.rotation)
-    torque = np.cross(lift_l, np.array([0, 0, -object.cop], dtype=float))
+    torque = np.cross(lift_l, np.array([0, 0, object.cop], dtype=float))
 
     return lift_l, torque
