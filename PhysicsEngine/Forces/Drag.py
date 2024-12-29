@@ -26,6 +26,7 @@ def drag(object: IAerodependent, environment: IEnvironment, time: float) -> (NDA
     drag_mag = 0.5 * environment.get_air_density() * np.linalg.norm(relative_velocity) ** 2 * Cd * reference_area
     drag_v = -drag_mag * (relative_velocity / np.linalg.norm(relative_velocity))
     drag_l = transform_to_local(drag_v, object.rotation) # to jest git
-    torque = np.cross(drag_l, np.array([0, 0, -object.cop], dtype=float))
+    torque = np.cross(drag_l, np.array([0, 0, object.cop], dtype=float))
+
     return drag_v, torque
 
