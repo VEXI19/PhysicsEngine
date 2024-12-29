@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 20:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1877,25 +1877,25 @@ wy sposób rozbudowany,
 
 
 [51]
-Overfull \hbox (34.33147pt too wide) in paragraph at lines 1193--1199
+Overfull \hbox (34.33147pt too wide) in paragraph at lines 1193--1197
 \T1/lmr/m/n/12 lotów rakiety na podstawie danych zapisanych w trakcie symulacji
  . Struktura zapisywanych
  []
 
 
-Overfull \hbox (9.35063pt too wide) in paragraph at lines 1200--1206
+Overfull \hbox (9.35063pt too wide) in paragraph at lines 1198--1203
 []\T1/lmr/m/n/12 Moduª wizualizacyjny stworzony zostaª za pomoc¡ biblioteki \T1
 /lmtt/m/n/12 PyQt\T1/lmr/m/n/12 , która umo»liwia
  []
 
 
-Overfull \hbox (49.44084pt too wide) in paragraph at lines 1200--1206
+Overfull \hbox (49.44084pt too wide) in paragraph at lines 1198--1203
 \T1/lmr/m/n/12 Uruchomienie moduªu wizualizacyjnego polega na uruchomieniu skry
 ptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
  []
 
-chapter2.tex:1214: Undefined control sequence.
-l.1214 ...ane sÄ… przez komponent nazwany \texzttt
+chapter2.tex:1211: Undefined control sequence.
+l.1211 ...ane sÄ… przez komponent nazwany \texzttt
                                                   {picker}, ktÃ³ry przeÅ‚Ä…c...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1904,13 +1904,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (6.15839pt too wide) in paragraph at lines 1209--1217
+Overfull \hbox (6.15839pt too wide) in paragraph at lines 1206--1214
 \T1/lmr/m/n/12 w ramach tej konfiguracji. Interfejs u»ytkownika pozwala na prze
 ª¡czanie si¦ pomi¦dzy
  []
 
 
-Overfull \hbox (20.09702pt too wide) in paragraph at lines 1209--1217
+Overfull \hbox (20.09702pt too wide) in paragraph at lines 1206--1214
 \T1/lmr/m/n/12 Przedstawiaj¡c wi¦c struktur¦ okna gªównego, mo»na wyró»ni¢ nast
 ¦puj¡ce komponenty: 
  []
@@ -1918,18 +1918,18 @@ Overfull \hbox (20.09702pt too wide) in paragraph at lines 1209--1217
 <main_window.png, id=187, 255.95625pt x 242.40562pt>
 File: main_window.png Graphic file (type png)
 <use main_window.png>
-Package pdftex.def Info: main_window.png  used on input line 1225.
+Package pdftex.def Info: main_window.png  used on input line 1221.
 (pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
 
-Overfull \hbox (53.88268pt too wide) in paragraph at lines 1217--1228
+Overfull \hbox (53.88268pt too wide) in paragraph at lines 1214--1224
 \T1/lmr/m/n/12 dost¦pnych konfiguracji symulacji, które zostaªy zdefiniowane w 
 plikach konfiguracyjnych.
  []
 
 
-Overfull \hbox (51.29904pt too wide) in paragraph at lines 1217--1228
-\T1/lmr/m/n/12 Wybór konfiguracji powoduje wy ±wietlenie listy dost¦pnych symul
-acji przeprowadzonych
+Overfull \hbox (48.68797pt too wide) in paragraph at lines 1214--1224
+\T1/lmr/m/n/12 Wybór konfiguracji powoduje wy±wietlenie listy dost¦pnych symula
+cji przeprowadzonych
  []
 
 
@@ -1941,7 +1941,7 @@ Underfull \vbox (badness 5681) has occurred while \output is active []
 <file_picker.png, id=191, 258.21469pt x 267.24844pt>
 File: file_picker.png Graphic file (type png)
 <use file_picker.png>
-Package pdftex.def Info: file_picker.png  used on input line 1236.
+Package pdftex.def Info: file_picker.png  used on input line 1232.
 (pdftex.def)             Requested size: 341.43437pt x 353.41333pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1949,24 +1949,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [53 <./main_window.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1244--1247
+Underfull \hbox (badness 10000) in paragraph at lines 1240--1243
 
  []
 
 
-Overfull \hbox (10.28891pt too wide) in paragraph at lines 1251--1255
+Overfull \hbox (10.28891pt too wide) in paragraph at lines 1247--1251
 []\T1/lmr/bx/n/12 Wizualizacja trajektorii lotu: \T1/lmr/m/n/12 Gªównym element
 em wizualizacji jest animacja
  []
 
 
-Overfull \hbox (24.07475pt too wide) in paragraph at lines 1251--1255
+Overfull \hbox (24.07475pt too wide) in paragraph at lines 1247--1251
 \T1/lmr/m/n/12 trajektorii lotu rakiety w przestrzeni trójwymiarowej. Na wizual
 izacji przedstawione
  []
 
 
-Overfull \hbox (17.27791pt too wide) in paragraph at lines 1255--1259
+Overfull \hbox (17.27791pt too wide) in paragraph at lines 1251--1255
 []\T1/lmr/bx/n/12 Wykresy zmian parametrów ruchu obrotowego: \T1/lmr/m/n/12 Pod
  wizualizacj¡ trajektorii
  []
@@ -1974,27 +1974,32 @@ Overfull \hbox (17.27791pt too wide) in paragraph at lines 1255--1259
 
 
 [54 <./file_picker.png>]
+Overfull \hbox (3.21413pt too wide) in paragraph at lines 1262--1267
+[]\T1/lmr/bx/n/12 Wykres k¡ta nachylenia silnika rakiety: \T1/lmr/m/n/12 Poni»e
+j okna wizualizacji znajduje
+ []
+
 <simulation_window.png, id=200, 1442.38875pt x 796.47563pt>
 File: simulation_window.png Graphic file (type png)
 <use simulation_window.png>
-Package pdftex.def Info: simulation_window.png  used on input line 1282.
+Package pdftex.def Info: simulation_window.png  used on input line 1278.
 (pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
 
-Overfull \hbox (3.67972pt too wide) in paragraph at lines 1289--1297
+Overfull \hbox (5.24529pt too wide) in paragraph at lines 1285--1297
 \T1/lmr/m/n/12 zakresem niniejszej pracy in»ynierskiej. Jest to bowiem proces w
-ysoce skomplikowany,
+ymagaj¡cy stworzenia
  []
 
 
-Overfull \hbox (12.13312pt too wide) in paragraph at lines 1289--1297
-\T1/lmr/m/n/12 peªnej analizy dokªadno±ci symulacji. Niemniej jednak, mo»na wsk
-aza¢ kilka elementów
+Overfull \hbox (6.26176pt too wide) in paragraph at lines 1285--1297
+\T1/lmr/m/n/12 powodu, w ramach tej sekcji nie przeprowadzono peªnej analizy do
+kªadno±ci symulacji.
  []
 
 
-Overfull \hbox (26.85674pt too wide) in paragraph at lines 1289--1297
-\T1/lmr/m/n/12 symulacji sugeruj¡cych jej dokªadno±¢ oraz zaproponowa¢ kierunki
- dalszych potencjalnych
+Overfull \hbox (16.08159pt too wide) in paragraph at lines 1285--1297
+\T1/lmr/m/n/12 Niemniej jednak, mo»na wskaza¢ kilka elementów symulacji sugeruj
+¡cych jej dokªadno±¢
  []
 
 
@@ -2166,92 +2171,81 @@ Underfull \vbox (badness 1137) has occurred while \output is active []
 
 
 [58]
-
-LaTeX Warning: Citation `alma991019564819703276' on page 59 undefined on input 
-line 1415.
-
-
-Overfull \hbox (7.99007pt too wide) in paragraph at lines 1411--1418
+Overfull \hbox (7.99007pt too wide) in paragraph at lines 1411--1420
 \T1/lmr/m/n/12 analiz¦ literatury oraz materiaªów online dotycz¡cych lotów raki
 etowych, modelowania
  []
 
 
-Overfull \hbox (34.1957pt too wide) in paragraph at lines 1411--1418
+Overfull \hbox (34.1957pt too wide) in paragraph at lines 1411--1420
 \T1/lmr/m/n/12 dynamiki i symulacji fizycznych. W du»ej mierze do zgl¦bienia ty
 ch zagadnie« wykorzystano
  []
 
 
-Overfull \hbox (46.41728pt too wide) in paragraph at lines 1411--1418
-\T1/lmr/m/n/12 podr¦cznik [[]] Zgromadzona wiedza umo»liwiªa lepsze zrozumienie
- koncepcji matematycznych
- []
-
-
-Overfull \hbox (14.74039pt too wide) in paragraph at lines 1419--1420
+Overfull \hbox (14.74039pt too wide) in paragraph at lines 1421--1422
 []\T1/lmr/m/n/12 Na tym etapie zdecydowano o wykorzystaniu j¦zyka Python jako g
 ªównej technologii
  []
 
 
-Overfull \hbox (0.2856pt too wide) in paragraph at lines 1419--1420
+Overfull \hbox (0.2856pt too wide) in paragraph at lines 1421--1422
 \T1/lmr/m/n/12 implementacji, ze wzgl¦du na jego znajomo±¢ przez autorów oraz ª
 atwo±¢ w tworzeniu
  []
 
 
-Overfull \hbox (8.57289pt too wide) in paragraph at lines 1423--1424
+
+[59]
+Overfull \hbox (8.57289pt too wide) in paragraph at lines 1425--1426
 \T1/lmr/m/n/12 Kolejnym etapem byªo zaprojektowanie i stworzenie pierwszej wers
 ji silnika fizycznego.
  []
 
 
-
-[59]
-Overfull \hbox (7.82098pt too wide) in paragraph at lines 1425--1426
+Overfull \hbox (7.82098pt too wide) in paragraph at lines 1427--1428
 []\T1/lmr/m/n/12 W odpowiedzi na te wyzwania zdecydowano si¦ przebudowa¢ archit
 ektur¦ systemu.
  []
 
 
-Overfull \hbox (19.24602pt too wide) in paragraph at lines 1425--1426
+Overfull \hbox (19.24602pt too wide) in paragraph at lines 1427--1428
 \T1/lmr/m/n/12 Wprowadzono rozwi¡zania oparte na interfejsach, co uªatwiªo rozw
 ijanie funkcjonalno±ci.
  []
 
 
-Overfull \hbox (28.71288pt too wide) in paragraph at lines 1425--1426
+Overfull \hbox (28.71288pt too wide) in paragraph at lines 1427--1428
 \T1/lmr/m/n/12 zamiast generowanych w czasie rzeczywistym. Podej±cie to umo»liw
 iªo szybk¡ identyfikacj¦
  []
 
 
-Overfull \hbox (35.14569pt too wide) in paragraph at lines 1429--1430
+Overfull \hbox (35.14569pt too wide) in paragraph at lines 1431--1432
 \T1/lmr/m/n/12 Trzeci etap obejmowaª implementacj¦ nowej architektury oraz doda
 tkowych funkcjonalno±ci
  []
 
 
-Overfull \hbox (28.7788pt too wide) in paragraph at lines 1429--1430
+Overfull \hbox (28.7788pt too wide) in paragraph at lines 1431--1432
 \T1/lmr/m/n/12 silnika. Pocz¡tkowo stworzono szkielet systemu, który pozwoliª n
 a weryfikacj¦ poprawno±ci
  []
 
 
-Overfull \hbox (5.2161pt too wide) in paragraph at lines 1433--1434
+Overfull \hbox (5.2161pt too wide) in paragraph at lines 1435--1436
 \T1/lmr/m/n/12 oraz optymalizacj¦ dziaªania systemu. Przykªadem istotnych uspra
 wnie« byªo dodanie
  []
 
 
-Overfull \hbox (16.05014pt too wide) in paragraph at lines 1437--1438
+Overfull \hbox (16.05014pt too wide) in paragraph at lines 1439--1440
 \T1/lmr/m/n/12 Praca nad projektem pozwoliªa na zdobycie cennego do±wiadczenia 
 w takich dziedzinach
  []
 
 
-Overfull \hbox (21.89322pt too wide) in paragraph at lines 1439--1440
+Overfull \hbox (21.89322pt too wide) in paragraph at lines 1441--1442
 []\T1/lmr/m/n/12 Podczas realizacji projektu napotkano wiele problemów, zarówno
  implementacyjnych,
  []
@@ -2259,7 +2253,7 @@ Overfull \hbox (21.89322pt too wide) in paragraph at lines 1439--1440
 
 
 [60])
-Overfull \hbox (4.85446pt too wide) in paragraph at lines 1443--75
+Overfull \hbox (4.85446pt too wide) in paragraph at lines 1445--75
 []\T1/lmr/m/n/12 Finalny projekt speªnia wszystkie zaªo»enia okre±lone w rozdzi
 ale 2.1[], a dodatkowo
  []
@@ -2378,10 +2372,6 @@ x
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
  9536 strings out of 473573
@@ -2406,7 +2396,7 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kuba/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (68 pages, 627835 bytes).
+per\out\main.pdf (68 pages, 627915 bytes).
 PDF statistics:
  317 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
