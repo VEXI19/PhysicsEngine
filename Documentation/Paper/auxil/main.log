@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  29 DEC 2024 19:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1999,8 +1999,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1280 \begin{figure}[Hbp]
-                          
+l.1280 \begin{figure}[H]
+                        
 Option `H' ignored and `p' used.
 
 <simulation_window.png, id=195, 1442.38875pt x 796.47563pt>
@@ -2008,13 +2008,197 @@ File: simulation_window.png Graphic file (type png)
 <use simulation_window.png>
 Package pdftex.def Info: simulation_window.png  used on input line 1282.
 (pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
-)
+
+Overfull \hbox (3.67972pt too wide) in paragraph at lines 1289--1297
+\T1/lmr/m/n/12 zakresem niniejszej pracy in»ynierskiej. Jest to bowiem proces w
+ysoce skomplikowany,
+ []
+
+
+Overfull \hbox (12.13312pt too wide) in paragraph at lines 1289--1297
+\T1/lmr/m/n/12 peªnej analizy dokªadno±ci symulacji. Niemniej jednak, mo»na wsk
+aza¢ kilka elementów
+ []
+
+
+Overfull \hbox (26.85674pt too wide) in paragraph at lines 1289--1297
+\T1/lmr/m/n/12 symulacji sugeruj¡cych jej dokªadno±¢ oraz zaproponowa¢ kierunki
+ dalszych potencjalnych
+ []
+
+
+Overfull \hbox (14.31793pt too wide) in paragraph at lines 1300--1301
+\T1/lmr/m/n/12 jest dokªadna i odzwierciedla rzeczywiste zjawiska fizyczne. Pon
+i»ej omówiono szczegóªy
+ []
+
+
+Overfull \hbox (20.16263pt too wide) in paragraph at lines 1303--1304
+\T1/lmr/m/n/12 Jednym z kluczowych elementów potwierdzaj¡cych dokªadno±¢ symula
+cji jest stabilizacja
+ []
+
+
+Overfull \hbox (51.36893pt too wide) in paragraph at lines 1303--1304
+\T1/lmr/m/n/12 aerodynamiczna rakiety w locie. Symulacja poprawnie odzwierciedl
+a momenty aerodynamiczne
+ []
+
+
+Overfull \hbox (22.41429pt too wide) in paragraph at lines 1311--1315
+\T1/lmr/m/n/12 wpªywem bocznego wiatru. Kierunek i wielko±¢ odchylenia odpowiad
+aj¡ przewidywaniom
+ []
+
+
 
 [54]
+Overfull \hbox (31.23018pt too wide) in paragraph at lines 1317--1318
+\T1/lmr/m/n/12 lotu. Symulacja poprawnie uwzgl¦dnia t¦ zale»no±¢, co pozwala na
+ dokªadne przewidywanie
+ []
 
-[55 <./main_window.png>]
 
-[56 <./file_picker.png> <./simulation_window.png>]
+Overfull \hbox (31.81627pt too wide) in paragraph at lines 1320--1321
+\T1/lmr/m/n/12 silnika jest kompensowany przez siª¦ no±n¡ generowan¡ przez powi
+erzchnie aerodynamiczne
+ []
+
+
+Overfull \hbox (5.83623pt too wide) in paragraph at lines 1320--1321
+\T1/lmr/m/n/12 rakiety. To dynamiczne równowa»enie siª wskazuje na poprawne mod
+elowanie zarówno
+ []
+
+
+Overfull \hbox (10.17567pt too wide) in paragraph at lines 1323--1335
+\T1/lmr/m/n/12 Powy»sze obserwacje stanowi¡ mocne dowody na dokªadno±¢ i wiaryg
+odno±¢ symulacji,
+ []
+
+
+Overfull \hbox (10.01463pt too wide) in paragraph at lines 1323--1335
+\T1/lmr/m/n/12 Trudnym do ustalenia jest tak»e jako±c i dokªadno±¢ opisanych wy
+»ej zjawisk, poniewa»
+ []
+
+
+Overfull \hbox (11.71042pt too wide) in paragraph at lines 1323--1335
+\T1/lmr/m/n/12 bardziej szczegóªowych, praktycznych bada« oraz porównanie wynik
+ów z rzeczywistymi
+ []
+
+
+Overfull \hbox (3.5139pt too wide) in paragraph at lines 1338--1342
+\T1/lmr/m/n/12 fizycznym z danymi odzwierciedlaj¡cymi rzeczywiste loty rakietow
+e. Uzyskanie takich
+ []
+
+
+
+[55]
+Overfull \hbox (9.68752pt too wide) in paragraph at lines 1345--1361
+\T1/lmr/m/n/12 Jednym z kierunków dalszych bada« jest porównanie wyników symula
+cji w stworzonym
+ []
+
+
+Overfull \hbox (10.26355pt too wide) in paragraph at lines 1345--1361
+\T1/lmr/m/n/12 na rynku, takich jak \T1/lmtt/m/n/12 OpenRocket \T1/lmr/m/n/12 c
+zy \T1/lmtt/m/n/12 RockSim\T1/lmr/m/n/12 . Porównanie wyników z innymi silnikam
+i
+ []
+
+
+Overfull \hbox (15.04152pt too wide) in paragraph at lines 1345--1361
+\T1/lmr/m/n/12 pozwoli na ocen¦ dokªadno±ci i wiarygodno±ci symulacji oraz iden
+tyfikacj¦ ewentualnych
+ []
+
+
+Overfull \hbox (22.02396pt too wide) in paragraph at lines 1345--1361
+\T1/lmr/m/n/12 z silników, co oznaczaªoby konieczno±¢ stworzenia rakiety, oraz 
+±rodowiska o identycznych
+ []
+
+
+Overfull \hbox (1.72362pt too wide) in paragraph at lines 1345--1361
+\T1/lmr/m/n/12 mo»liwo±ci stworzenia rakiety o ksztaªcie i parametrach identycz
+nych w obu silnikach. 
+ []
+
+
+Overfull \hbox (18.85905pt too wide) in paragraph at lines 1364--1378
+\T1/lmr/m/n/12 Kolejnym kierunkiem bada« jest porównanie wyników symulacji z da
+nymi pochodz¡cymi
+ []
+
+
+Overfull \hbox (28.09496pt too wide) in paragraph at lines 1364--1378
+\T1/lmr/m/n/12 z rzeczywistych lotów rakietowych. Tego typu badania mog¡ by¢ ko
+sztowne i czasochªonne,
+ []
+
+
+Overfull \hbox (36.44891pt too wide) in paragraph at lines 1364--1378
+\T1/lmr/m/n/12 ale pozwalaj¡ na uzyskanie najbardziej dokªadnych danych. Wymaga
+j¡ one przeprowadzenia
+ []
+
+
+Overfull \hbox (5.93329pt too wide) in paragraph at lines 1364--1378
+\T1/lmr/m/n/12 rzeczywistych lotów modeli rakiet wyposa»onych w systemy pomiaro
+we, które zbieraj¡
+ []
+
+
+Overfull \hbox (28.42058pt too wide) in paragraph at lines 1364--1378
+\T1/lmr/m/n/12 Prowadzenie lotów rakiety w labolarium, gdzie mo»na kontrolowa¢ 
+warunki atmosferyczne,
+ []
+
+
+Overfull \hbox (2.93056pt too wide) in paragraph at lines 1381--1391
+\T1/lmr/m/n/12 przeprowadzenie testów nierakietowych, które mog¡ posªu»y¢ do we
+ryfikacji dziaªania
+ []
+
+
+Overfull \hbox (2.01715pt too wide) in paragraph at lines 1381--1391
+\T1/lmr/m/n/12 polegaj¡ce na nagraniu i zmierzeniu parametrów upuszczanego z ok
+re±lonej wysoko±ci
+ []
+
+
+Overfull \hbox (30.11948pt too wide) in paragraph at lines 1381--1391
+\T1/lmr/m/n/12 przedmiotu, o okre±lonych parametrach. Dzi¦ki takiemu nagraniu, 
+mo»liwe jest porównanie
+ []
+
+
+Underfull \vbox (badness 1137) has occurred while \output is active []
+
+
+
+[56]
+Overfull \hbox (3.31726pt too wide) in paragraph at lines 1394--1402
+\T1/lmr/m/n/12 fizycznego oraz identyfikacj¦ ewentualnych bª¦dów i rozbie»no±ci
+. Niestety, nie zostaªy
+ []
+
+
+Overfull \hbox (23.52527pt too wide) in paragraph at lines 1394--1402
+\T1/lmr/m/n/12 si¦ za wystarczaj¡co dokªadny, aby przeprowadza¢ symulacje lotów
+ w celach treningowych
+ []
+
+)
+
+[57]
+
+[58 <./main_window.png>]
+
+[59 <./file_picker.png> <./simulation_window.png>]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -2032,7 +2216,7 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 
 )
 
-[57
+[60
 
 
 
@@ -2054,7 +2238,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 
 )
 
-[58
+[61
 
 
 
@@ -2076,7 +2260,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 
 )
 
-[59
+[62
 
 
 
@@ -2088,7 +2272,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 Rozdzia\PlPrIeC {\l } 6.
 )
 
-[60
+[63
 
 
 
@@ -2099,17 +2283,15 @@ LaTeX Warning: Empty `thebibliography' environment on input line 84.
 
 
 
-[61
+[64
 
 
 
 ]
 
-[62]
+[65]
 
-[63]
-
-[64]
+[66]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -2128,6 +2310,10 @@ x
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  9479 strings out of 473573
@@ -2152,9 +2338,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kuba/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (64 pages, 615018 bytes).
+per\out\main.pdf (66 pages, 622316 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
+ 310 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

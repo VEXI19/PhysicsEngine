@@ -1286,5 +1286,118 @@ Wszystkie opisane powyżej komponenty wizualizacji przedstawione są na rysunku 
 
 \section{Dokładność symulacji.}\label{sec:dokadnosc-symulacji}
 
+Badanie dokładności symulacji jest skomplikowanym zagadnieniem, które wymaga
+przeprowadzenia wielu praktycznych testów oraz analizy wyników, co leży poza
+zakresem niniejszej pracy inżynierskiej. Jest to bowiem proces wysoce skomplikowany,
+zasobo- oraz czasochłonny. Z tego powodu, w
+ramach tej sekcji nie przeprowadzono pełnej analizy dokładności symulacji.
+Niemniej jednak, można wskazać kilka
+elementów symulacji sugerujących jej dokładność oraz zaproponować kierunki
+dalszych potencjalnych badań.
+
+\subsection{Elementy sugerujące dokładność symulacji}
+
+Podczas testowania symulacji zaobserwowano zjawiska, które sugerują, że symulacja jest dokładna i odzwierciedla rzeczywiste zjawiska fizyczne. Poniżej omówiono szczegóły każdego z tych zjawisk:
+
+\subsubsection{Stabilizacja aerodynamiczna lotu rakiety}
+Jednym z kluczowych elementów potwierdzających dokładność symulacji jest stabilizacja aerodynamiczna rakiety w locie. Symulacja poprawnie odzwierciedla momenty aerodynamiczne i działanie sił przywracających, które stabilizują rakietę wzdłuż jej osi. Stabilizacja ta jest szczególnie widoczna w trakcie lotu na dużych prędkościach, gdzie efekty aerodynamiczne są dominujące.
+
+\subsubsection{Osiąganie prędkości granicznych}
+W symulacji rakieta osiąga prędkości graniczne, które wynikają z równowagi
+między siłą ciągu a oporem aerodynamicznym. Występowanie tego zjawiska
+wskazuje na poprawne uwzględnienie oporu powietrza i jego zależności od prędkości.
+
+\subsubsection{Odchylanie się rakiety od osi pod wpływem wiatru}
+Symulacja dokładnie odwzorowuje zjawisko odchylania się rakiety od osi lotu
+pod wpływem bocznego wiatru. Kierunek i wielkość odchylenia odpowiadają
+przewidywaniom teoretycznym, co wskazuje na poprawne modelowanie sił
+aerodynamicznych oraz momentów przechyłowych generowanych przez wiatr.
+
+\subsubsection{Wpływ kąta nachylenia silnika na kierunek lotu rakiety}
+Zgodnie z wynikami symulacji, zmiana kąta nachylenia silnika wpływa bezpośrednio na kierunek lotu rakiety. Zjawisko to jest zgodne z rzeczywistością, gdzie siła ciągu generowana pod kątem w stosunku do osi rakiety prowadzi do zmiany trajektorii lotu. Symulacja poprawnie uwzględnia tę zależność, co pozwala na dokładne przewidywanie kierunku lotu w różnych scenariuszach.
+
+\subsubsection{Równoważenie wpływu kąta nachylenia silnika przez siłę nośną}
+W pewnych przypadkach symulacja pokazuje, że niewielki stały kąt nachylenia silnika jest kompensowany przez siłę nośną generowaną przez powierzchnie aerodynamiczne rakiety. To dynamiczne równoważenie sił wskazuje na poprawne modelowanie zarówno sił ciągu, jak i sił aerodynamicznych, które wspólnie determinują trajektorię lotu.
+
+\subsubsection{Podsumowanie}
+Powyższe obserwacje stanowią mocne dowody na dokładność i wiarygodność
+symulacji, pozwalając na jej wykorzystanie w analizach trajektorii lotu
+rakiety i jej zachowania w różnych warunkach.
+\\Trudnym do ustalenia jest także jakośc i dokładność
+opisanych wyżej zjawisk, ponieważ nie ma możliwości porównania wyników do
+rzeczywistych danych. Istnieje wysokie prawdopodobieństwo, że zjawiska te
+mimo iż występują w symulacji lotów odbiegają znacząco od odpowiadających im
+zjawisk w rzeczywistości.\\
+Jednakże, aby potwierdzić
+dokładność symulacji, konieczne jest przeprowadzenie bardziej szczegółowych,
+praktycznych badań oraz porównanie wyników z rzeczywistymi danymi z lotów
+symulowanych rakiet.
+
+\subsection{Kierunki dalszych badań}
+
+W celu dalszej analizy dokładności symulacji oraz poprawy jej jakości
+konieczne jest porównanie danych otrzymanych podczas symulacji lotów w
+stworzonym silniku fizycznym z danymi odzwierciedlającymi rzeczywiste loty
+rakietowe. Uzyskanie takich danych może zostać osiągnięte w następujące sposoby:
+
+\subsubsection{Symulacje w innych silnikach fizycznych}
+
+Jednym z kierunków dalszych badań jest porównanie wyników symulacji w
+stworzonym silniku fizycznym z wynikami uzyskanymi w innych silnikach
+fizycznych dostępnych na rynku, takich jak \texttt{OpenRocket} czy
+\texttt{RockSim}. Porównanie wyników z innymi silnikami pozwoli na ocenę
+dokładności i wiarygodności symulacji oraz identyfikację ewentualnych
+rozbieżności. \\W takiej sytuacji, konieczne będzie przeprowadzenie
+identycznych testów w każdym z silników, co oznaczałoby konieczność
+stworzenia rakiety, oraz środowiska o identycznych parametrach w każdym z
+silników. \\Istotnym problemem w takim podejściu są możliwe różnice w
+implementacji modeli rakiety czy duży poziom
+skomplikowania symulacji w innych silnikach. Przykładem może być brak
+możliwości
+odtworzenia
+w silniku stworzonym na potrzeby niniejszej pracy funkcji wyrzutu spalin
+silnika rakietowego, obecnej w \texttt{OpenRocket} czy brak możliwości stworzenia rakiety o
+kształcie i parametrach identycznych w obu silnikach.
+
+\subsubsection{Porównanie z rzeczywistymi danymi lotów rakiet}
+
+Kolejnym kierunkiem badań jest porównanie wyników symulacji z
+danymi pochodzącymi z rzeczywistych lotów rakietowych. Tego typu badania
+mogą być kosztowne i czasochłonne, ale pozwalają na uzyskanie najbardziej
+dokładnych danych. Wymagają one przeprowadzenia rzeczywistych lotów modeli
+rakiet wyposażonych w systemy pomiarowe, które zbierają dane o locie rakiety.\\
+Problemem w takim podejściu jest konieczność przeprowadzenia wielu lotów, a
+także konieczność posiadania odpowiednich środków finansowych na budowę
+modeli rakiet. \\Ponadto, trudnym do odtworzenia może być środowisko i
+warunki atmosferyczne, które mogą wpływać na zachowanie rakiety w locie.
+Symulowanie takich warunków w symulacji komputerowej jest trudne, gdyż
+chociażby podmuchy wiatru działające na rakietę mogą być trudne do zbadania,
+mają one ogromny wpływ na trajektorię lotu rakiety.\\ Prowadzenie lotów
+rakiety w labolarium, gdzie można kontrolować warunki atmosferyczne, może
+być jeszcze bardziej kosztowne i czasochłonne.
+
+\subsubsection{Porównanie z danymi testów nierakietowych}
+
+Alternatywnym podejściem do porównania wyników symulacji z rzeczywistymi
+jest przeprowadzenie testów nierakietowych, które mogą posłużyć do
+weryfikacji działania podstawowych mechanizmów symulacji. Przykładem takich
+testów mogą być testy polegające na nagraniu i zmierzeniu parametrów
+upuszczanego z określonej wysokości przedmiotu, o określonych parametrach.
+Dzięki takiemu nagraniu, możliwe jest porównanie wyników symulacji
+zamodelowanego ciała z rzeczywistymi danymi.\\
+Tego typu testy mogą być łatwiejsze, jednak dostarczają one mniej informacji
+o silniku symulacyjnym, oraz nie pozwalają na weryfikację bardziej złożonych
+zjawisk.
+
+\subsubsection{Podsumowanie}
+
+Wszystkie powyższe kierunki badań pozwoliłyby na weryfikację dokładności
+silnika fizycznego oraz identyfikację ewentualnych błędów i rozbieżności.
+Niestety, nie zostały one przeprowadzone w ramach niniejszej pracy, gdyż
+wybiegają poza jej zakres. W celu dalszego rozwoju silnika fizycznego
+zalecane jest przeprowadzenie takich badań oraz weryfikacja działania silnika.\\
+Na potrzeby niniejszej pracy inżynierskiej, zaimplementowany silnik fizyczny
+uznaje się za wystarczająco dokładny, aby przeprowadzać symulacje lotów w
+celach treningowych modelu AI.
 
 \section{Ewolucja projektu i wnioski.}\label{sec:ewolucja-projektu-i-wnioski}

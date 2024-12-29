@@ -66,24 +66,36 @@
 \contentsline {subsection}{\numberline {2.6.1}Okno główne}{52}{}%
 \contentsline {subsection}{\numberline {2.6.2}Okno wizualizacji}{53}{}%
 \contentsline {section}{\numberline {2.7}Dokładność symulacji.}{54}{}%
-\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{54}{}%
-\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{57}{}%
-\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{57}{}%
-\contentsline {section}{\numberline {3.2}Użyte technologie.}{57}{}%
-\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{57}{}%
-\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{57}{}%
-\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{57}{}%
-\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{57}{}%
-\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{58}{}%
-\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{58}{}%
-\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{58}{}%
-\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{58}{}%
-\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{59}{}%
-\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{59}{}%
-\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{59}{}%
-\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{59}{}%
-\contentsline {chapter}{\numberline {6}Podsumowanie}{60}{}%
-\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{60}{}%
-\contentsline {section}{\numberline {6.2}Wnioski końcowe}{60}{}%
-\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{60}{}%
-\contentsline {chapter}{Bibliografia}{61}{}%
+\contentsline {subsection}{\numberline {2.7.1}Elementy sugerujące dokładność symulacji}{54}{}%
+\contentsline {subsubsection}{Stabilizacja aerodynamiczna lotu rakiety}{54}{}%
+\contentsline {subsubsection}{Osiąganie prędkości granicznych}{54}{}%
+\contentsline {subsubsection}{Odchylanie się rakiety od osi pod wpływem wiatru}{55}{}%
+\contentsline {subsubsection}{Wpływ kąta nachylenia silnika na kierunek lotu rakiety}{55}{}%
+\contentsline {subsubsection}{Równoważenie wpływu kąta nachylenia silnika przez siłę nośną}{55}{}%
+\contentsline {subsubsection}{Podsumowanie}{55}{}%
+\contentsline {subsection}{\numberline {2.7.2}Kierunki dalszych badań}{55}{}%
+\contentsline {subsubsection}{Symulacje w innych silnikach fizycznych}{56}{}%
+\contentsline {subsubsection}{Porównanie z rzeczywistymi danymi lotów rakiet}{56}{}%
+\contentsline {subsubsection}{Porównanie z danymi testów nierakietowych}{57}{}%
+\contentsline {subsubsection}{Podsumowanie}{57}{}%
+\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski.}{57}{}%
+\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{60}{}%
+\contentsline {section}{\numberline {3.1}Teoretyczne podstawy.}{60}{}%
+\contentsline {section}{\numberline {3.2}Użyte technologie.}{60}{}%
+\contentsline {section}{\numberline {3.3}Wybór odpowiedniego algorytmu uczenia maszynowego.}{60}{}%
+\contentsline {section}{\numberline {3.4}Zbieranie danych treningowych.}{60}{}%
+\contentsline {section}{\numberline {3.5}Proces uczenia i optymalizacja.}{60}{}%
+\contentsline {section}{\numberline {3.6}Ewolucja projektu i wnioski.}{60}{}%
+\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{61}{}%
+\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{61}{}%
+\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{61}{}%
+\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{61}{}%
+\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{62}{}%
+\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{62}{}%
+\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{62}{}%
+\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{62}{}%
+\contentsline {chapter}{\numberline {6}Podsumowanie}{63}{}%
+\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{63}{}%
+\contentsline {section}{\numberline {6.2}Wnioski końcowe}{63}{}%
+\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{63}{}%
+\contentsline {chapter}{Bibliografia}{64}{}%
