@@ -10,7 +10,8 @@
 \usepackage{xcolor}
 \usepackage{hypbmsec}
 \usepackage{float}
-
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{bibliography.bib} % Plik .bib z bibliografią
 
 %-------- PACKAGES SETUP ---------------
 
@@ -62,8 +63,6 @@
 
 %%----SPIS TREŚCI ----
 {
-  % Spis treści może być złożony z pojedynczą interlinią, np. jeśli jedna linia wychodzi na następną stronę.
-  % W przeciwnym razie spis treści wstawić bez powyższego rozkazu i klamry.
   \doublespacing
   \tableofcontents
 }
@@ -80,9 +79,7 @@
 
 
 %---- BIBLIOGRAFIA ----
-\begin{thebibliography}{9}
-
-\end{thebibliography}
+\printbibliography
 
 \beforelastpage
 

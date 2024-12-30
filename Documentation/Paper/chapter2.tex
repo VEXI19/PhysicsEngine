@@ -493,7 +493,7 @@ interfejsach i klasach, co przedstawiono na rysunku \ref{fig:architektura}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{architektura.jpg}
-    \caption{Architektura systemu symulacji}
+    \caption{Architektura systemu symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:architektura}
 \end{figure}
 
@@ -918,7 +918,7 @@ została wysokopoziomowa architektura obliczeń sił w silniku fizycznym.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{physics_map.png}
-    \caption{Schemat działania sił w symulacji}
+    \caption{Schemat działania sił w symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:sily}
 \end{figure}
 
@@ -1191,15 +1191,12 @@ zaimplementowana fizyka wydaje się byc wystarczającą.
 \section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
 
 Moduł wizualizacyjny symulacji jest odpowiedzialny za generowanie
-wizualizacji lotów rakiety na podstawie danych zapisanych w trakcie symulacji
-. Struktura zapisywanych danych opisana została z w sekcji
+wizualizacji lotów rakiety na podstawie danych zapisanych w trakcie symulacji . Struktura zapisywanych danych opisana została z w sekcji
 \ref{sec:zapisywanie-danych-symulacji.}. Wizualizacja jest generowana w formie
-animacji, która przedstawia trajektorię lotu rakiety w przestrzeni tr
-ójwymiarowej oraz zmiany kluczowych parametrów w czasie.
+animacji, która przedstawia trajektorię lotu rakiety w przestrzeni trójwymiarowej oraz zmiany kluczowych parametrów w czasie.
 
 Moduł wizualizacyjny stworzony został za pomocą
-biblioteki \texttt{PyQt}, która umożliwia generowanie dynamicznie zmieniaj
-ących się interfejsów graficznych. Składa się on z dwóch
+biblioteki \texttt{PyQt}, która umożliwia generowanie dynamicznie zmieniających się interfejsów graficznych. Składa się on z dwóch
 głównych okien aplikacji: okna głównego oraz okna wizualizacji.\\
 Uruchomienie modułu wizualizacyjnego polega na uruchomieniu skryptu \texttt{
     visualisation.py}.
@@ -1216,14 +1213,13 @@ Przedstawiając więc strukturę okna głównego, można wyróżnić następują
 \begin{enumerate}
     \item \textbf{Wybór konfiguracji symulacji:} Użytkownik ma możliwość
     wyboru jednej z dostępnych konfiguracji symulacji, które zostały
-    zdefiniowane w plikach konfiguracyjnych. Wybór konfiguracji powoduje wy
-    świetlenie listy dostępnych symulacji przeprowadzonych w ramach tej
+    zdefiniowane w plikach konfiguracyjnych. Wybór konfiguracji powoduje wyświetlenie listy dostępnych symulacji przeprowadzonych w ramach tej
     konfiguracji. Funkcjonalnośc ta obsługiwana jest przez widget
     \texttt{folder\_picker}. Wygląd tego widoku przedstawiony jest na rysunku \ref{fig:main_window}
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{main_window.png}
-    \caption{Okno główne aplikacji - wybór konfiguracji}
+    \caption{Okno główne aplikacji - wybór konfiguracji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:main_window}
 \end{figure}
     \item \textbf{Wybór symulacji:} Po wybraniu konfiguracji, użytkownik
@@ -1234,7 +1230,7 @@ Przedstawiając więc strukturę okna głównego, można wyróżnić następują
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{file_picker.png}
-    \caption{Okno wyboru symulacji}
+    \caption{Okno wyboru symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:picker}
 \end{figure}
 \end{enumerate}
@@ -1263,12 +1259,12 @@ Na okno wizualizacji składa się kilka głównych komponentów:
     \item \textbf{Wykres zmian wysokości:} W dolnym prawym rogu wizualizacji
     znajduje się wykres zmian wysokości rakiety w czasie. Pozwala on na
     analizę wysokości rakiety w trakcie lotu.
-    \item \textbf{Wykres kąta nachylenia silnika rakiety} Poniżej okna
+    \item \textbf{Wykres kąta nachylenia silnika rakiety:} Poniżej okna
     wizualizacji znajduje się wykres zmian kąta nachylenia silnika rakiety w
     danym kroku symulacji. Wizualizacja tego parametru jest istotna,
     ponieważ to właśnie kąt nachylenia silnika wpływa na kierunek ciągu i
     jest sterowany przez model AI.
-    \item\textbf{Przycisk zatrzymujący animację oraz suwak z czasem animacji} W
+    \item\textbf{Przycisk zatrzymujący animację oraz suwak z czasem animacji:} W
     prawym dolnym rogu wizualizacji znajduje się przycisk, który pozwala na
     zatrzymanie symulacji w dowolnym momencie. Tam też znajduje się suwak,
     umożliwiający przewijanie animacji w czasie. Jest to przydatne narzędzie
@@ -1280,7 +1276,7 @@ Wszystkie opisane powyżej komponenty wizualizacji przedstawione są na rysunku 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{simulation_window}
-    \caption{Okno wizualizacji symulacji}
+    \caption{Okno wizualizacji symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:simulation_window}
 \end{figure}
 
@@ -1288,8 +1284,12 @@ Wszystkie opisane powyżej komponenty wizualizacji przedstawione są na rysunku 
 
 Badanie dokładności symulacji jest skomplikowanym zagadnieniem, które wymaga
 przeprowadzenia wielu praktycznych testów oraz analizy wyników, co leży poza
-zakresem niniejszej pracy inżynierskiej. Jest to bowiem proces wysoce skomplikowany,
-zasobo- oraz czasochłonny. Z tego powodu, w
+zakresem niniejszej pracy inżynierskiej. Jest to bowiem proces wymagający
+stworzenia fizycznego modelu rakiety, co wychodzi poza obszar nauki jaką
+jest informatyka, ponadto przeprowadzenie takich testów jest wysoce zasobo- i
+czasochłonne. Z
+tego
+powodu, w
 ramach tej sekcji nie przeprowadzono pełnej analizy dokładności symulacji.
 Niemniej jednak, można wskazać kilka
 elementów symulacji sugerujących jej dokładność oraz zaproponować kierunki
@@ -1412,7 +1412,9 @@ Pierwszym etapem pracy było zgłębianie zagadnień związanych z fizyką lotu
 rakiet oraz zasadami działania silników rakietowych. W ramach tego etapu
 przeprowadzono analizę literatury oraz materiałów online dotyczących lotów
 rakietowych, modelowania dynamiki i symulacji fizycznych. W dużej mierze do
-zglębienia tych zagadnień wykorzystano podręcznik
+zglębienia tych zagadnień wykorzystano podręcznik "Topics in Advanced Model
+Rocketry" autorstwa Gordona K. Mandella\cite{alma991019564819703276}, który stanowił cenne źródło wiedzy
+o modelowaniu lotów rakietowych.
 Zgromadzona
 wiedza umożliwiła lepsze zrozumienie koncepcji matematycznych potrzebnych do zaimplementowania fizyki w silniku.
 
