@@ -104,4 +104,3 @@
 \contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{65}{}%
 \contentsline {section}{\numberline {6.2}Wnioski końcowe}{65}{}%
 \contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{65}{}%
-\contentsline {chapter}{Bibliografia}{66}{}%
