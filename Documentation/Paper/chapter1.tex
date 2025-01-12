@@ -1,21 +1,38 @@
 \chapter{Wstęp}
 
-\section{Cel pracy}
+\section{Cel, założenia i zakres pracy}
 Celem niniejszej pracy inżynierskiej jest stworzenie systemu sterującego,
 opartego na algorytmach samouczących, zdolnego do przeprowadzenia
 stabilnego, pionowego lotu rakietą o naturalnie niestabilnej charakterystyce.
 W celu spełnienia tych założeń konieczne było stworzenie środowiska,
 pozwalającego na wielokrotne prowadzenie symulacji lotu rakiety i trenowanie
 algorytmu sterującego.
-Stworzenie silnika fizycznego spełniającego te wymagania jest pośrednim celem
-niniejszej pracy.
-
+Stworzenie silnika fizycznego spełniającego te wymagania było pośrednim celem
+niniejszej pracy.\\
+W celu osiągnięcia założonego celu, poczynione zostały pewne założenia,
+które precyzują zakres pracy. Są to założenia szczegółowo opisane w
+rodziałach \ref{sec:zalozenia-projektowe.} oraz
+\ref{sec:założenia-projektowe-2.}.\\
+Zakres pracy obejmuje stworzenie silnika fizycznego symulacji lotów
+rakietowych jako pierwszego modułu projektu, a także stworzenie i
+wytrenowanie modelu sterującego rakietą jako drugiego modułu projektu. Oba
+te moduły są ze sobą ściśle związane, a ich integracja jest kluczowa dla
+powodzenia projektu i stanowi, kolejny z elementów zakresu pracy.\\
+Praca ta skupia się wyłącznie na stworzeniu symulacji
+lotów,a  jej
+projektowa część jest związana z informatyczną i programistyczną
+sferą zagadnienia.
+Do zakresu niniejszej pracy inżynierskiej nie należą więc tematy
+związane z konstrukcją fizycznych rakiet ani z budową sprzętu do pomiarów
+lotów rakietowych czy testowanie skuteczności algorytmów sterujących w lotach
+fizycznych rakiet.
 \section{Struktura pracy}
 
 Niniejsza praca inżynierska powstała w wyniku kolaboracji dwóch
-współtwórców, dlatego też podzielona jest ona na dwa główne moduły.
+współtwórców, dlatego też główna jej część została podzielona na dwa odrębne
+moduły:
 \begin{itemize}
-    \item Moduł I: Silnik fizyczny symulacji lotów rakietowych. Autor: Jakub
+    \item Moduł I: System symulacji lotów rakietowych. Autor: Jakub
     Kindlik;
     \item Moduł II: Algorytm sterujący rakietą. Autor: Dominik Kubicki;
 \end{itemize}
@@ -36,33 +53,36 @@ wytrenowany na silniku fizycznym, co spełnia założony cel pracy.
 Pozostałe rozdziały pracy poświęcone są opisowi kwestii dotyczących obu
 modułów pracy inżynierskiej, takich jak między innymi wstęp, integracja obu
 części projektu, końcowe wnioski wyniki oraz podsumowanie całości rozwiązania
-pracy.
-
-
+pracy. Te części niniejszej pracy inżynierskiej są wspólne dla obu modułów i
+zostały napisane wspólnie przez obu autorów.
 
 \section{Użyte technologie}
-Poszczególne biblioteki i narzędzia wykorzystane podczas pracy nad każdym z
-modułów zostały opisane dedykowanych tym modułom rozdziałach pracy.
-Jednakże niektóre technologie oraz narzędzia zostały wykorzystane podczas
-pracy nad
-obydwoma modułami projektu, tworzonymi w ramach niniejszej pracy inżynierskiej.
-Są to:
+Poszczególne biblioteki i narzędzia wykorzystane przy tworzeniu każdego z
+modułów pracy zostały przedstawione i opisane odpowiednich
+rozdziałach pracy, to jest odpowiednio w rozdziale
+\ref{sec:uzyte-technologie.} w module I, oraz w rozdziale
+\ref{sec:użyte-technologie-2.} w module II. Jednakże niektóre technologie
+oraz narzędzia zostały wykorzystane przy tworzeniu obu modułów projektu,
+wchodzących w skład niniejszej pracy inżynierskiej.
 
 \begin{itemize}
-    \item \textbf{Git\cite{chacon2014pro} oraz Github\cite{GitHub}} - narzędzia
+    \item \textbf{Git \cite{chacon2014pro} oraz Github \cite{GitHub}} -
+    narzędzia
     wykorzystane do kontroli
     wersji projektu.\\ Umożliwiły one wspólną pracę nad kodem projektu oraz
     dostęp do archiwalnych wersji projektu. Git oraz Github zostały wybrane
     ze względu na ich popularność, oraz wsparcie dla wielu języków, a także
     na znajomość tych narzędzi przez autorów pracy.
-    \item \textbf{Python 3\cite{python3docs}} - język programowania, w którym napisane
+    \item \textbf{Python 3 \cite{python3docs}} - język programowania, w
+    którym napisane
     zostały obydwa moduły projektu.\\ Python został wybrany jako język
     programowania w projekcie ze względu na jego prostotę oraz
     znajomość tego języka przez autorów pracy. Ważnym czynnikiem wpływającym
     na wybór tego języka jest również popularność Pythona w dziedzinie
     uczenia maszynowego oraz sztucznej inteligencji. Dzięki wykorzystaniu
     tego języka do obu modułów projektu ich integracja była znacznie prostsza.
-    \item \textbf{PyCharm Professional\cite{pycharm}}  - środowisko programistyczne
+    \item \textbf{PyCharm Professional \cite{pycharm}}  - środowisko
+    programistyczne
     wykorzystane do tworzenia kodu projektu.\\PyCharm został wybrany ze
     względu na dedykowane wsparcie dla języka Python, w którym napisany
     został projekt, oraz na znajomość tego narzędzia przez autorów pracy.
@@ -72,11 +92,13 @@ Są to:
 technologie umożliwiające stworzenie i edycję niniejszego dokumentu:
 
 \begin{itemize}
-    \item \textbf{LaTex\cite{mittelbach2004latex}} - system składu tekstu wykorzystany do napisania
+    \item \textbf{LaTex \cite{mittelbach2004latex}} - system składu tekstu
+    wykorzystany do napisania
     niniejszego dokumentu.\\ LaTex został wybrany ze względu na jego
     popularność wśród naukowców oraz inżynierów, prostotę tworzenia pracy
     inżynierskiej w tym narzędziu oraz znajomość tego narzędzia przez autorów pracy.
-    \item \textbf{SGGW-thesis\cite{chmiel2024sggwthesislatex}} - biblioteka do tworzenia pracy
+    \item \textbf{SGGW-thesis \cite{chmiel2024sggwthesislatex}} - biblioteka
+    do tworzenia pracy
     inżynierskiej
     w \latex zgodnie z wymaganiami formatowania pracy inżynierskiej na SGGW.\\ Biblioteka ta została wybrana ze względu na jej prostotę użycia oraz zgodność z wymaganiami formatowania pracy inżynierskiej na SGGW.
 \end{itemize}
@@ -87,7 +109,9 @@ większości darmowe, co pozwoliło na ich wykorzystanie w ramach pracy inżynie
 
 \section{Przegląd dostępnych rozwiązań. }
 
-Dziedzina hobbystycznej symulacji lotów rakietowych, choć niszowa w kontekście informatyki, inżynierii i fizyki, posiada grono entuzjastów oraz specjalistów, którzy przez lata rozwijali narzędzia i algorytmy umożliwiające symulację takich lotów. Istnieje również duży rynek komercyjnych narzędzi stosowanych przez przedsiębiorstwa oraz wojsko do symulacji lotów rakietowych. Systemy te charakteryzują się wysoką dokładnością, złożonością i są zazwyczaj niedostępne dla hobbystów oraz użytkowników prywatnych. W związku z tym, w niniejszym rozdziale opisane zostały jedynie rozwiązania ogólnodostępne. Poniżej przedstawiono narzędzia i technologie, które umożliwiają symulację lotów rakietowych, a także gotowe silniki fizyczne oraz algorytmy uczenia maszynowego, mogące zostać zastosowane w tym kontekście.
+Dziedzina hobbystycznej symulacji lotów rakietowych, choć jest niszowa w
+kontekście informatyki, inżynierii i fizyki to posiada spore grono entuzjastów
+oraz specjalistów, którzy przez lata rozwijali narzędzia i algorytmy umożliwiające symulację takich lotów. Istnieje również duży rynek komercyjnych narzędzi stosowanych przez przedsiębiorstwa oraz wojsko do symulacji lotów rakietowych. Systemy te charakteryzują się wysoką dokładnością, złożonością i są zazwyczaj niedostępne dla hobbystów oraz użytkowników prywatnych. W związku z tym, w niniejszym rozdziale opisane zostały jedynie rozwiązania ogólnodostępne. Poniżej przedstawiono narzędzia i technologie, które umożliwiają symulację lotów rakietowych, a także gotowe silniki fizyczne oraz algorytmy uczenia maszynowego, mogące zostać zastosowane w tym kontekście.
 
 \\Znacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
 Reinforcement Learning (RL), oferuje liczne rozwiązania, które mogą zostać wykorzystane do trenowania modeli sztucznej inteligencji odpowiedzialnych za sterowanie lotem rakiety. W tym rozdziale przedstawione zostały najczęściej wykorzystywane z nich — zarówno biblioteki służące do trenowania modeli, jak i narzędzia umożliwiające przeprowadzanie treningów na symulacjach.
@@ -100,7 +124,7 @@ z obecnymi rozwiązaniami możeliwe było stworzenie własnego, dedykowanego
 narzędzia do symulacji lotów rakietowych oraz algorytmu sterującego.
 
 
-\subsection{Silniki symulacji lotów rakietowych.}
+\subsection{System symulacji lotów rakietowych.}
 
 Na rynku dostępnych jest wiele modeli silników fizycznych umożliwiających
 symulację lotów rakietowych, jak i narzędzi umożliwiających tworzenie
@@ -108,7 +132,8 @@ własnych symulacji. Poniżej zaprezentowane zostały najpopularniejsze z nich. 
 
 Narzędzia służące do ogólnego modelowania symulacji fizycznych:
 \begin{itemize}
-    \item \textbf{Symulink\cite{matlab2019simulink}.} \\Bardzo zaawansowane narzędzie do
+    \item \textbf{Symulink \cite{matlab2019simulink}.} \\Bardzo zaawansowane
+    narzędzie do
     modelowania i prowadzenia symulacji systemów dynamicznych. Symulink
     wchodzi w skład pakietu Matlab. System ten umożliwia elastyczne i
     dokładne modelowanie sił. Narzędzie to bazuje na krokowych modelach
@@ -120,41 +145,42 @@ Narzędzia służące do ogólnego modelowania symulacji fizycznych:
     obiekt i symulację ich działania w czasie.
 
 
-    \item \textbf{ANSYS Fluent\cite{ansys2020fluent}.}
+    \item \textbf{ANSYS Fluent \cite{ansys2020fluent}.}
     \\Zaawansowane narzędzie do symulacji dynamiki płynów (CFD – Computational Fluid Dynamics) wykorzystywane w inżynierii aerodynamicznej i mechanicznej. ANSYS Fluent umożliwia modelowanie przepływów płynów, wymiany ciepła, oraz oddziaływania sił aerodynamicznych na obiekty w różnych warunkach środowiskowych.
     ANSYS Fluent bazuje na rozwiązaniach równań Naviera-Stokesa, co pozwala na dokładne odwzorowanie zjawisk takich jak opór aerodynamiczny, turbulencje oraz efekty cieplne. Dzięki zaawansowanym algorytmom i funkcjom, Fluent umożliwia analizę złożonych scenariuszy, takich jak przepływ wokół wieloelementowych konstrukcji czy interakcje z gazami spalinowymi.
     Oprogramowanie to jest komercyjne, a jego obsługa wymaga wiedzy z zakresu CFD oraz doświadczenia w konfiguracji symulacji.
     ANSYS Fluent może być wykorzystany do szczegółowego modelowania lotu rakiety poprzez analizę przepływu powietrza wokół korpusu rakiety, co pozwala na optymalizację jej konstrukcji i poprawę stabilności aerodynamicznej.
 
 
-    \item \textbf{OpenFOAM\cite{openfoam2020}.}
+    \item \textbf{OpenFOAM \cite{openfoam2020}.}
     \\Otwartoźródłowe oprogramowanie do symulacji CFD, które oferuje zaawansowane możliwości modelowania przepływów płynów, wymiany ciepła oraz innych procesów fizycznych. OpenFOAM opiera się na podejściu siatkowym (mesh-based), co pozwala na precyzyjne odwzorowanie geometrii i rozwiązywanie równań Naviera-Stokesa w ramach analiz aerodynamicznych.
     Główną zaletą OpenFOAM jest jego elastyczność i dostępność –
     oprogramowanie jest darmowe i można je dostosować do indywidualnych
     potrzeb poprzez tworzenie własnych modułów i skryptów. Jednak jego
     obsługa wymaga zaawansowanej wiedzy technicznej oraz umiejętności pracy
     w środowisku tekstowym, co może być barierą dla początkujących
-    użytkowników.\cite{openfoam2023} \
+    użytkowników\cite{openfoam2023}. \\
     OpenFOAM może zostać wykorzystany do symulacji lotu rakiety poprzez analizę sił aerodynamicznych oraz optymalizację kształtu i konstrukcji rakiety w celu minimalizacji oporu i poprawy wydajności lotu.
 
 \end{itemize}
-Dedykowane silniki fizyczne umożliwiające symulację lotów rakietowych:
+Dedykowane środowiska i systemy, służące do symulowania lotów
+rakietowych:
 
 \begin{itemize}
 
-    \item \textbf{OpenRocket\cite{openrocket}.}
+    \item \textbf{OpenRocket \cite{openrocket}.}
     \\Bezpłatne i otwartoźródłowe narzędzie stworzone specjalnie do symulacji lotów rakiet. OpenRocket jest łatwe w obsłudze, dzięki intuicyjnemu interfejsowi graficznemu, który umożliwia szybkie projektowanie rakiet oraz przeprowadzanie symulacji ich lotu. Program oferuje możliwość modelowania sił aerodynamicznych, takich jak opór powietrza, siła nośna oraz działanie silników rakietowych w różnych warunkach.
     OpenRocket obsługuje różne typy silników, pozwala na analizę stabilności rakiety, trajektorii lotu oraz przewidywanie maksymalnej wysokości i zasięgu. Narzędzie to jest szczególnie popularne wśród hobbystów oraz studentów, dzięki swojej prostocie i dostępności, choć może mieć ograniczenia w przypadku bardziej zaawansowanych symulacji.
     \\Narzędzie to było też w dużym stopniu inspiracją niniejszej pracy
     inżynierskiej\cite{niskanen2013openrocket}.
 
 
-    \item \textbf{RockSim\cite{rocksim}.}
+    \item \textbf{RockSim \cite{rocksim}.}
     \\Komercyjne oprogramowanie do projektowania i symulacji lotów rakiet, dedykowane zarówno dla entuzjastów, jak i profesjonalistów. RockSim umożliwia projektowanie rakiet od podstaw, uwzględniając szczegółowe parametry takie jak geometria, masa komponentów czy rozmieszczenie środka ciężkości i ciśnienia.
     Program oferuje zaawansowane funkcje symulacji aerodynamicznych, takich jak analiza stabilności, przewidywanie trajektorii lotu oraz obliczanie wpływu warunków atmosferycznych (wiatr, temperatura) na zachowanie rakiety. Dzięki swojej wszechstronności, RockSim jest używany zarówno w edukacji, jak i w projektach zaawansowanych konstrukcji rakietowych.
 
 
-    \item \textbf{RAS Aero\cite{rasaero}.}
+    \item \textbf{RAS Aero \cite{rasaero}.}
     \\RAS Aero to zaawansowane narzędzie do symulacji lotów rakiet dedykowane użytkownikom, którzy potrzebują dużej dokładności w analizie aerodynamicznej. Program oferuje możliwość modelowania trajektorii z uwzględnieniem szczegółowych parametrów aerodynamicznych, takich jak współczynniki oporu czy siły nośnej, oraz wpływu zmiennych warunków atmosferycznych na rakietę.
     RAS Aero jest szczególnie cenione za swoją zdolność do przewidywania zachowania rakiet przy dużych prędkościach oraz podczas przejścia przez bariery dźwiękowe. Oprogramowanie to jest płatne i wymaga większego doświadczenia w pracy z danymi aerodynamicznymi, ale oferuje bardzo dokładne wyniki symulacji.
 
@@ -175,14 +201,14 @@ symulacjach fizycznych to m.in.:
 
 
 \begin{itemize}
-    \item \textbf{TensorFlow\cite{DBLP:journals/corr/AbadiBCCDDDGIIK16}.} \\
+    \item \textbf{TensorFlow \cite{DBLP:journals/corr/AbadiBCCDDDGIIK16}.} \\
     TensorFlow to popularna platforma open-source'owa do uczenia maszynowego, która znalazła szerokie zastosowanie w symulacjach fizycznych, w tym w dziedzinie reinforcement learning (RL). Dzięki wsparciu dla zaawansowanych algorytmów optymalizacji, TensorFlow umożliwia trenowanie modeli RL na danych pochodzących z symulacji fizycznych. Framework ten oferuje bogatą funkcjonalność do tworzenia i trenowania sieci neuronowych, a także integrację z innymi narzędziami do analizy danych i wizualizacji. TensorFlow wspiera różnorodne techniki optymalizacji, w tym metody oparte na gradientach, co pozwala na skuteczne rozwiązywanie problemów związanych z dynamiką fizyczną. Jego rozbudowana dokumentacja oraz wsparcie dla rozwoju modeli na dużą skalę czynią go jednym z najczęściej wykorzystywanych narzędzi w branży.
 
-    \item \textbf{PyTorch\cite{DBLP:journals/corr/abs-1912-01703}.} \\
+    \item \textbf{PyTorch \cite{DBLP:journals/corr/abs-1912-01703}.} \\
     PyTorch to kolejny popularny framework open-source'owy, który jest
     szczególnie ceniony wśród badaczy i inżynierów zajmujących się uczeniem maszynowym. Dzięki swojej elastyczności oraz wsparciu dla dynamicznych grafów obliczeniowych, PyTorch doskonale nadaje się do tworzenia i trenowania modeli reinforcement learning w kontekście symulacji fizycznych. PyTorch jest często wykorzystywany w projektach związanych z robotyką oraz modelowaniem dynamicznych systemów, takich jak rakiety, ponieważ pozwala na łatwą integrację z fizycznymi symulacjami i oferuje szeroki zakres algorytmów RL. PyTorch charakteryzuje się także rozbudowaną społecznością oraz licznymi zasobami edukacyjnymi, co czyni go atrakcyjnym wyborem dla osób rozpoczynających pracę z uczeniem maszynowym.
 
-    \item \textbf{Stable Baselines3\cite{stable-baselines3}.} \\
+    \item \textbf{Stable Baselines3 \cite{stable-baselines3}.} \\
     Stable Baselines3 to biblioteka open-source'owa zbudowana na bazie PyTorch, która oferuje gotowe implementacje popularnych algorytmów reinforcement learning, takich jak PPO (Proximal Policy Optimization), A2C (Advantage Actor-Critic) czy DQN (Deep Q-Network). Jest to narzędzie szczególnie przydatne w kontekście symulacji fizycznych, gdzie wymagana jest szybka i efektywna implementacja algorytmów RL do testowania i optymalizacji systemów sterowania. Stable Baselines3 jest dobrze udokumentowaną platformą, która ułatwia implementację i eksperymentowanie z różnymi metodami RL. Dzięki swojej prostocie i kompatybilności z popularnymi symulatorami, jak Gazebo czy Unity, biblioteka ta stała się jednym z najczęściej wykorzystywanych narzędzi w projektach związanych z uczeniem maszynowym i symulacjami fizycznymi.
 \end{itemize}
 
@@ -192,13 +218,14 @@ z popularniejszych oraz częściej wykorzystywanych narzędzi służących do
 trenowania modeli sztucznej inteligencji sterujących lotami rakiet.\\
 
 \begin{itemize}
-    \item \textbf{Simulink z Aerospace Blockset\cite{mathworks_aerospace_blockset}.} \\
+    \item \textbf{Simulink z Aerospace Blockset
+    \cite{mathworks_aerospace_blockset}.} \\
     MATLAB w połączeniu z Simulinkiem oraz dodatkiem Aerospace Blockset to zaawansowane narzędzie umożliwiające symulację lotu rakiet. Oprogramowanie to pozwala na elastyczne modelowanie dynamiki obiektów latających, uwzględniając siły aerodynamiczne, grawitację i inne istotne parametry fizyczne. Aerospace Blockset oferuje gotowe bloki do analizy trajektorii oraz projektowania systemów sterowania. Dodatkowo, MATLAB umożliwia integrację z algorytmami uczenia maszynowego, co pozwala na trenowanie modeli sterowania w oparciu o dane z symulacji. System ten jest płatny i wymaga zaawansowanej wiedzy z zakresu modelowania dynamicznego, jednak oferuje bardzo wysoką precyzję i wsparcie dla projektów naukowych i inżynierskich.
 
-    \item \textbf{Microsoft AirSim\cite{airsim}.} \\
+    \item \textbf{Microsoft AirSim \cite{airsim}.} \\
     Microsoft AirSim to open-source'owy symulator lotu, pierwotnie zaprojektowany dla dronów, ale możliwy do dostosowania do symulacji rakiet. Oprogramowanie to obsługuje realistyczne warunki fizyczne, takie jak zmienne aerodynamiczne i różne środowiska lotu. AirSim integruje się z popularnymi frameworkami uczenia maszynowego, takimi jak TensorFlow czy PyTorch, umożliwiając trenowanie modeli sterowania w oparciu o reinforcement learning. Dzięki elastyczności i wsparciu dla programowania API, użytkownik może tworzyć niestandardowe środowiska do symulacji. AirSim jest darmowy, ale jego zastosowanie wymaga dostosowania środowiska do specyficznych potrzeb użytkownika, co może być czasochłonne.
 
-    \item \textbf{Gazebo\cite{gazebo_ros} + ROS\cite{ros_gazebo}.} \\
+    \item \textbf{Gazebo \cite{gazebo_ros} + ROS \cite{ros_gazebo}.} \\
     Gazebo to open-source'owy symulator fizyki, który w połączeniu z systemem ROS (Robot Operating System) stanowi potężne narzędzie do modelowania i sterowania obiektami dynamicznymi, takimi jak rakiety. Gazebo oferuje zaawansowaną symulację fizyczną, w tym modelowanie sił aerodynamicznych, kolizji i zmiennych środowiskowych. Integracja z ROS umożliwia tworzenie i implementację algorytmów sterowania opartych na uczeniu maszynowym, takich jak reinforcement learning. Platforma wspiera również analizę danych w czasie rzeczywistym, co czyni ją idealnym narzędziem do testowania i optymalizacji systemów sterowania. Gazebo + ROS jest darmowe, ale wymaga zaawansowanej konfiguracji oraz wiedzy z zakresu programowania i modelowania fizycznego.
 \end{itemize}
 

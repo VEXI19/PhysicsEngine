@@ -1,7 +1,7 @@
-\chapter{Moduł I: Silnik fizyczny symulacji lotów rakietowych.}
+\chapter{Moduł I: System symulacji lotów rakietowych.}
 \label{ch:silnik-fizyczny-symulacji-lotow-rakietowych.}
 
-Silnik fizyczny do symulacji lotów rakietowych to pierwszy z modułów
+System do symulacji lotów rakietowych to pierwszy z modułów
 niniejszej pracy inżynierskiej.
 Za pomocą tego projektu osiągnięty zostaje
 cel pośredni pracy - stworzenie środowiska do uczenia algorytmów.
@@ -33,7 +33,7 @@ jak grawitacja, opór powietrza i siła ciągu silnika czy siła nośna, ale
 zostaną one zamodelowane w uproszczony sposób. Takie podejście umożliwia łatwiejsze zamodelowanie systemu i redukuje zapotrzebowanie na zasoby obliczeniowe.
 
 \item \textbf{Optymalizacja pod kątem pracy na komputerze osobistym.} \\
-Symulacje będą wykonywane na komputerze osobistym, dlatego silnik fizyczny
+Symulacje będą wykonywane na komputerze osobistym, dlatego system symulacji lotów rakietowych
 musi być zoptymalizowany pod kątem wydajności, jak i okrojony w kwestii
 skomplikowanych obliczeń. Ograniczenie
 zasobożerności
@@ -476,7 +476,7 @@ zarządzania danymi czasowymi.
 
 \section{Projekt silnika fizycznego.}\label{sec:projekt-silnika-fizycznego.}
 
-Silnik fizyczny do symulacji lotów rakietowych będący głównym komponentem
+System do symulacji lotów rakietowych będący głównym komponentem
 modułu I niniejszej pracy inżynierskiej został zaprojektowany zgodnie z
 założeniami
 opisanymi w rozdziale \ref{sec:zalozenia-projektowe.}. W niniejszym rozdziale
@@ -719,7 +719,7 @@ systemie, to:
     \item \textbf{`PhysicsEngine`}: Jest to najważniejsza klasa silnika, odpowiedzialna za zarządzanie przebiegiem symulacji. Oblicza siły działające na obiekty, aktualizuje ich pozycje, prędkości oraz momenty obrotowe, a także zapisuje wyniki do plików.
     \item \textbf{`Forces`}: Klasa ta zawiera różne typy sił działających na
     obiekty w symulacji. W ramach tej klasy znajdują się konkretne
-    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez silnik do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
+    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez system do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
 \end{itemize}
 
 \subsection{Proces symulacji.}\label{sec:proces-symulacji.}
@@ -799,7 +799,10 @@ physics_engine.start()
 \end{lstlisting}
 
 \noindent
-W pierwszej kolejności określamy nazwę symulacji, a następnie wczytujemy obiekt \texttt{physics\_engine} z pliku. Wczytany silnik jest uruchamiany za pomocą metody \texttt{start()}, która inicjuje symulację. Funkcja ta:
+W pierwszej kolejności określamy nazwę symulacji, a następnie wczytujemy
+obiekt \texttt{physics\_engine} z pliku. Wczytany obiekt silnika symulacji
+fizycznej jest uruchamiany za pomocą metody \texttt{start()}, która inicjuje
+symulację. Funkcja ta:
 \begin{itemize}
     \item wczytuje wcześniej zapisany stan symulacji,
     \item rozpoczyna główną pętlę symulacyjną,
@@ -814,7 +817,7 @@ Pętla symulacyjna silnika \texttt{PhysicsEngine} jest odpowiedzialna za zarząd
 
 \begin{enumerate}
     \item \textbf{Aktualizacja czasu:} Po każdym kroku, zmieniane są dwie zmienne: \texttt{simulation\_time} (całkowity czas symulacji) oraz \texttt{simulation\_tick} (liczba iteracji).
-    \item \textbf{Obliczanie sił:} Silnik oblicza siły działające na obiekt poprzez wywołanie metod obliczających wynikową siłę i moment obrotowy. Zgodnie z wcześniej dodanymi siłami, dla każdego obiektu w symulacji obliczane są siły, które wpływają na jego ruch.
+    \item \textbf{Obliczanie sił:} system oblicza siły działające na obiekt poprzez wywołanie metod obliczających wynikową siłę i moment obrotowy. Zgodnie z wcześniej dodanymi siłami, dla każdego obiektu w symulacji obliczane są siły, które wpływają na jego ruch.
     \item \textbf{Aktualizacja stanu obiektu:} Na podstawie obliczonych sił, aktualizowany jest stan obiektu: jego pozycja, prędkość, przyspieszenie oraz orientacja (rotacja). W tym kroku uwzględniane są zmiany zarówno w ruchu translacyjnym, jak i obrotowym.
     \item \textbf{Sprawdzanie warunków zakończenia:} Pętla symulacyjna sprawdza, czy rakieta nie osiągnęła powierzchni ziemi (czyli gdy jej wysokość jest mniejsza od zera), lub czy nie osiągnięto maksymalnego czasu symulacji. Jeśli jeden z tych warunków jest spełniony, symulacja zostaje zakończona.
     \item \textbf{Zapis danych:} Po każdej iteracji pętli, dane o stanie obiektu są zapisywane do pliku, aby umożliwić późniejszą analizę wyników symulacji.
@@ -900,7 +903,7 @@ System jest przystosowany do wykorzystania w kontekście algorytmów sztucznej i
 Inną własnością ułatwiającą integrację z modelami ML jest krokowość
 silnika. Po każdym kroku (tick'u), model ma możliwość analizy stanu obiektów
 i zmiany dostępnych dla niego parametrów, co wpływa na stan obiektów w
-symulacji. W ten sposób silnik przystosowany jest do pracy w trybie uczenia
+symulacji. W ten sposób system przystosowany jest do pracy w trybie uczenia
 modelu sztucznej inteligencji.
 
 
@@ -1396,8 +1399,8 @@ silnika fizycznego oraz identyfikację ewentualnych błędów i rozbieżności.
 Niestety, nie zostały one przeprowadzone w ramach niniejszej pracy, gdyż
 wybiegają poza jej zakres. W celu dalszego rozwoju silnika fizycznego
 zalecane jest przeprowadzenie takich badań oraz weryfikacja działania silnika.\\
-Na potrzeby niniejszej pracy inżynierskiej, zaimplementowany silnik fizyczny
-uznaje się za wystarczająco dokładny, aby przeprowadzać symulacje lotów w
+Na potrzeby niniejszej pracy inżynierskiej, zaimplementowany system
+symulacji lotów rakietowych uznaje się za wystarczająco dokładny, aby przeprowadzać symulacje lotów w
 celach treningowych modelu AI.
 
 \section{Ewolucja projektu i wnioski}\label{sec:ewolucja-projektu-i-wnioski}

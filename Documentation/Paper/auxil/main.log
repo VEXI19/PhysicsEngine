@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  30 DEC 2024 11:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  12 JAN 2025 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -232,31 +232,400 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )))
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2024/12/21 v24.15 The multilingual framework for pdfLaTeX, LuaLa
-TeX and XeLaTeX
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\polish.sty
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\polish.sty:34: Pa
+ckage babel Error: You are loading directly a language style.
+(babel)                This syntax is deprecated and you must use
+(babel)                \usepackage[language]{babel}.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34     \bblstyerror
+                     
+You could proceed but don't complain if you run into errors
+
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2024/12/21 v24.15 Babel common definitions
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:411: Un
+defined control sequence.
+l.411 \bbl@trace
+                {Basic macros}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:411: La
+TeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.411 \bbl@trace{B
+                  asic macros}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1048: U
+ndefined control sequence.
+l.1048 \bbl@trace
+                 {Defining babelensure}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1112: U
+ndefined control sequence.
+l.1112 \bbl@trace
+                 {Short tags}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1127: U
+ndefined control sequence.
+l.1127 \bbl@trace
+                 {Compatibility with language.def}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1165: U
+ndefined control sequence.
+l.1165 \bbl@trace
+                 {Hooks}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1200: U
+ndefined control sequence.
+l.1200 \bbl@trace
+                 {Macros for setting language files up}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1282: U
+ndefined control sequence.
+l.1282 \bbl@trace
+                 {Shorhands}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1609: U
+ndefined control sequence.
+\initiate@active@char #1->\bbl@ifshorthand 
+                                           {#1}{\bbl@s@initiate@active@char ...
+l.1609 \initiate@active@char{~}
+                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1611: U
+ndefined control sequence.
+\bbl@activate #1->\bbl@ifshorthand 
+                                   {#1}{\bbl@s@activate {#1}}{}
+l.1611 \bbl@activate{~}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1617: U
+ndefined control sequence.
+l.1617 \bbl@trace
+                 {Language attributes}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1679: U
+ndefined control sequence.
+l.1679 \bbl@trace
+                 {Macros for saving definitions}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \babel@savecnt=\count281
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1753: U
+ndefined control sequence.
+l.1753 \bbl@trace
+                 {Hyphens}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1834: U
+ndefined control sequence.
+l.1834 \bbl@trace
+                 {Multiencoding strings}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2082: U
+ndefined control sequence.
+l.2082 \bbl@trace
+                 {Macros related to glyphs}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \U@D=\dimen168
 \l@unhyphenated=\language79
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2259: U
+ndefined control sequence.
+l.2259 \bbl@trace
+                 {Bidi layout}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count282
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2261: U
+ndefined control sequence.
+l.2261 \bbl@trace
+                 {Input engine specific macros}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4184.
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:36: 
+Undefined control sequence.
+l.36 \bbl@trace
+               {Redefinitions for bidi layout}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\nil.ldf
-Language: nil 2024/12/21 v24.15 Nil language
-\l@nil=\language80
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:42: 
+Undefined control sequence.
+l.42 \ifnum\bbl@bidimode
+                        >\z@  % TODO: always?
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:42: 
+Missing number, treated as zero.
+<to be read again> 
+                   >
+l.42 \ifnum\bbl@bidimode>
+                         \z@  % TODO: always?
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:96: 
+Undefined control sequence.
+l.96 \bbl@trace
+               {Bidi footnotes}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:97: 
+Undefined control sequence.
+l.97 \ifnum\bbl@bidimode
+                        >\z@ % Any bidi=
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:97: 
+Missing number, treated as zero.
+<to be read again> 
+                   >
+l.97 \ifnum\bbl@bidimode>
+                         \z@ % Any bidi=
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ))
+Language: polish 2022/03/12 1.3 Babel support for Polish
+
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:3
+8: Package polish.ldf Error: Babel too old, at least version 2021/08/30 require
+d.
+
+See the polish.ldf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 }
+      
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:4
+3: Undefined control sequence.
+<argument> ,\bbl@opt@strings 
+                             ,
+l.43   [unicode, charset=utf8, fontenc=TU EU1 EU2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (29.39998pt too wide) in paragraph at lines 411--65
+\T1/cmr/m/n/12 tien-co-ding strings                   Ma-cros re-la-ted to gly-
+phs                                                      Bi-
+ []
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:6
+7: Undefined control sequence.
+<argument> ,\bbl@opt@strings 
+                             ,
+l.67   [unicode, charset=utf8, fontenc=TU EU1 EU2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+01: Undefined control sequence.
+\initiate@active@char #1->\bbl@ifshorthand 
+                                           {#1}{\bbl@s@initiate@active@char ...
+l.101 \initiate@active@char{"}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+01: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \initiate@active@char{"}
+                              
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+01: Undefined control sequence.
+\@initiate@active@char ...sname #3\else \bbl@info 
+                                                  {Making #2 an active chara...
+l.101 \initiate@active@char{"}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+01: Undefined control sequence.
+\bbl@exp@aux ->\endgroup \AfterBabelLanguage 
+                                             \CurrentOption {\catcode `"=12\...
+l.101 \initiate@active@char{"}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+16: Undefined control sequence.
+\ldf@finish #1->\loadlocalcfg 
+                              {#1}\bbl@afterldf {#1}\expandafter \main@langu...
+l.116 \ldf@finish{polish}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
+16: Undefined control sequence.
+\bbl@afterldf #1->\bbl@afterlang 
+                                 \let \bbl@afterlang \relax \let \BabelModif...
+l.116 \ldf@finish{polish}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+))
+main.tex:6: Undefined control sequence.
+<argument> \bbl@language@opts 
+                              
+l.6 \usepackage{polish}{
+                        babel}[utf8]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -281,14 +650,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count283
+\inf@bad=\count282
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count284
-\leftroot@=\count285
+\uproot@=\count283
+\leftroot@=\count284
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count286
-\DOTSCASE@=\count287
+\classnum@=\count285
+\DOTSCASE@=\count286
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -301,20 +670,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen171
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count288
+\macc@depth=\count287
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count289
+\c@MaxMatrixCols=\count288
 \dotsspace@=\muskip18
-\c@parentequation=\count290
-\dspbrk@lvl=\count291
+\c@parentequation=\count289
+\dspbrk@lvl=\count290
 \tag@help=\toks24
-\row@=\count292
-\column@=\count293
-\maxfields@=\count294
+\row@=\count291
+\column@=\count292
+\maxfields@=\count293
 \andhelp@=\toks25
 \eqnshift@=\dimen172
 \alignsep@=\dimen173
@@ -330,17 +699,17 @@ LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count295
+\lst@mode=\count294
 \lst@gtempboxa=\box56
 \lst@token=\toks28
-\lst@length=\count296
+\lst@length=\count295
 \lst@currlwidth=\dimen178
-\lst@column=\count297
-\lst@pos=\count298
+\lst@column=\count296
+\lst@pos=\count297
 \lst@lostspace=\dimen179
 \lst@width=\dimen180
-\lst@newlines=\count299
-\lst@lineno=\count300
+\lst@newlines=\count298
+\lst@lineno=\count299
 \lst@maxwidth=\dimen181
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -348,8 +717,8 @@ File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count301
-\lst@skipnumbers=\count302
+\c@lstnumber=\count300
+\lst@skipnumbers=\count301
 \lst@framebox=\box57
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -380,7 +749,7 @@ Package: hypbmsec 2016/05/16 v2.5 Bookmarks in sectioning commands (HO)
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count303
+\c@float@type=\count302
 \float@exts=\toks29
 \float@box=\box58
 \@float@everytoks=\toks30
@@ -405,7 +774,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count304
+\etb@tempcnta=\count303
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -414,54 +783,54 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count305
+\lrq@indent=\count304
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count306
-\c@listtotal=\count307
-\c@listcount=\count308
-\c@liststart=\count309
-\c@liststop=\count310
-\c@citecount=\count311
-\c@citetotal=\count312
-\c@multicitecount=\count313
-\c@multicitetotal=\count314
-\c@instcount=\count315
-\c@maxnames=\count316
-\c@minnames=\count317
-\c@maxitems=\count318
-\c@minitems=\count319
-\c@citecounter=\count320
-\c@maxcitecounter=\count321
-\c@savedcitecounter=\count322
-\c@uniquelist=\count323
-\c@uniquename=\count324
-\c@refsection=\count325
-\c@refsegment=\count326
-\c@maxextratitle=\count327
-\c@maxextratitleyear=\count328
-\c@maxextraname=\count329
-\c@maxextradate=\count330
-\c@maxextraalpha=\count331
-\c@abbrvpenalty=\count332
-\c@highnamepenalty=\count333
-\c@lownamepenalty=\count334
-\c@maxparens=\count335
-\c@parenlevel=\count336
-\blx@tempcnta=\count337
-\blx@tempcntb=\count338
-\blx@tempcntc=\count339
-\c@blx@maxsection=\count340
-\blx@maxsegment@0=\count341
-\blx@notetype=\count342
-\blx@parenlevel@text=\count343
-\blx@parenlevel@foot=\count344
-\blx@sectionciteorder@0=\count345
-\blx@sectionciteorderinternal@0=\count346
-\blx@entrysetcounter=\count347
-\blx@biblioinstance=\count348
+\c@tabx@nest=\count305
+\c@listtotal=\count306
+\c@listcount=\count307
+\c@liststart=\count308
+\c@liststop=\count309
+\c@citecount=\count310
+\c@citetotal=\count311
+\c@multicitecount=\count312
+\c@multicitetotal=\count313
+\c@instcount=\count314
+\c@maxnames=\count315
+\c@minnames=\count316
+\c@maxitems=\count317
+\c@minitems=\count318
+\c@citecounter=\count319
+\c@maxcitecounter=\count320
+\c@savedcitecounter=\count321
+\c@uniquelist=\count322
+\c@uniquename=\count323
+\c@refsection=\count324
+\c@refsegment=\count325
+\c@maxextratitle=\count326
+\c@maxextratitleyear=\count327
+\c@maxextraname=\count328
+\c@maxextradate=\count329
+\c@maxextraalpha=\count330
+\c@abbrvpenalty=\count331
+\c@highnamepenalty=\count332
+\c@lownamepenalty=\count333
+\c@maxparens=\count334
+\c@parenlevel=\count335
+\blx@tempcnta=\count336
+\blx@tempcntb=\count337
+\blx@tempcntc=\count338
+\c@blx@maxsection=\count339
+\blx@maxsegment@0=\count340
+\blx@notetype=\count341
+\blx@parenlevel@text=\count342
+\blx@parenlevel@foot=\count343
+\blx@sectionciteorder@0=\count344
+\blx@sectionciteorderinternal@0=\count345
+\blx@entrysetcounter=\count346
+\blx@biblioinstance=\count347
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -470,12 +839,12 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \bibinitsep=\skip65
 \bibparsep=\skip66
 \bibhang=\skip67
-\blx@bcfin=\read3
+\blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language81
-\c@mincomprange=\count349
-\c@maxcomprange=\count350
-\c@mincompwidth=\count351
+\blx@langwohyphens=\language80
+\c@mincomprange=\count348
+\c@maxcomprange=\count349
+\c@mincompwidth=\count350
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -486,74 +855,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count352
-\c@savedafterword=\count353
-\c@annotator=\count354
-\c@savedannotator=\count355
-\c@author=\count356
-\c@savedauthor=\count357
-\c@bookauthor=\count358
-\c@savedbookauthor=\count359
-\c@commentator=\count360
-\c@savedcommentator=\count361
-\c@editor=\count362
-\c@savededitor=\count363
-\c@editora=\count364
-\c@savededitora=\count365
-\c@editorb=\count366
-\c@savededitorb=\count367
-\c@editorc=\count368
-\c@savededitorc=\count369
-\c@foreword=\count370
-\c@savedforeword=\count371
-\c@holder=\count372
-\c@savedholder=\count373
-\c@introduction=\count374
-\c@savedintroduction=\count375
-\c@namea=\count376
-\c@savednamea=\count377
-\c@nameb=\count378
-\c@savednameb=\count379
-\c@namec=\count380
-\c@savednamec=\count381
-\c@translator=\count382
-\c@savedtranslator=\count383
-\c@shortauthor=\count384
-\c@savedshortauthor=\count385
-\c@shorteditor=\count386
-\c@savedshorteditor=\count387
-\c@labelname=\count388
-\c@savedlabelname=\count389
-\c@institution=\count390
-\c@savedinstitution=\count391
-\c@lista=\count392
-\c@savedlista=\count393
-\c@listb=\count394
-\c@savedlistb=\count395
-\c@listc=\count396
-\c@savedlistc=\count397
-\c@listd=\count398
-\c@savedlistd=\count399
-\c@liste=\count400
-\c@savedliste=\count401
-\c@listf=\count402
-\c@savedlistf=\count403
-\c@location=\count404
-\c@savedlocation=\count405
-\c@organization=\count406
-\c@savedorganization=\count407
-\c@origlocation=\count408
-\c@savedoriglocation=\count409
-\c@origpublisher=\count410
-\c@savedorigpublisher=\count411
-\c@publisher=\count412
-\c@savedpublisher=\count413
-\c@language=\count414
-\c@savedlanguage=\count415
-\c@origlanguage=\count416
-\c@savedoriglanguage=\count417
-\c@pageref=\count418
-\c@savedpageref=\count419
+\c@afterword=\count351
+\c@savedafterword=\count352
+\c@annotator=\count353
+\c@savedannotator=\count354
+\c@author=\count355
+\c@savedauthor=\count356
+\c@bookauthor=\count357
+\c@savedbookauthor=\count358
+\c@commentator=\count359
+\c@savedcommentator=\count360
+\c@editor=\count361
+\c@savededitor=\count362
+\c@editora=\count363
+\c@savededitora=\count364
+\c@editorb=\count365
+\c@savededitorb=\count366
+\c@editorc=\count367
+\c@savededitorc=\count368
+\c@foreword=\count369
+\c@savedforeword=\count370
+\c@holder=\count371
+\c@savedholder=\count372
+\c@introduction=\count373
+\c@savedintroduction=\count374
+\c@namea=\count375
+\c@savednamea=\count376
+\c@nameb=\count377
+\c@savednameb=\count378
+\c@namec=\count379
+\c@savednamec=\count380
+\c@translator=\count381
+\c@savedtranslator=\count382
+\c@shortauthor=\count383
+\c@savedshortauthor=\count384
+\c@shorteditor=\count385
+\c@savedshorteditor=\count386
+\c@labelname=\count387
+\c@savedlabelname=\count388
+\c@institution=\count389
+\c@savedinstitution=\count390
+\c@lista=\count391
+\c@savedlista=\count392
+\c@listb=\count393
+\c@savedlistb=\count394
+\c@listc=\count395
+\c@savedlistc=\count396
+\c@listd=\count397
+\c@savedlistd=\count398
+\c@liste=\count399
+\c@savedliste=\count400
+\c@listf=\count401
+\c@savedlistf=\count402
+\c@location=\count403
+\c@savedlocation=\count404
+\c@organization=\count405
+\c@savedorganization=\count406
+\c@origlocation=\count407
+\c@savedoriglocation=\count408
+\c@origpublisher=\count409
+\c@savedorigpublisher=\count410
+\c@publisher=\count411
+\c@savedpublisher=\count412
+\c@language=\count413
+\c@savedlanguage=\count414
+\c@origlanguage=\count415
+\c@savedoriglanguage=\count416
+\c@pageref=\count417
+\c@savedpageref=\count418
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -578,19 +947,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count420
-\c@textcitetotal=\count421
-\c@textcitemaxnames=\count422
-\c@biburlbigbreakpenalty=\count423
-\c@biburlbreakpenalty=\count424
-\c@biburlnumpenalty=\count425
-\c@biburlucpenalty=\count426
-\c@biburllcpenalty=\count427
+\c@textcitecount=\count419
+\c@textcitetotal=\count420
+\c@textcitemaxnames=\count421
+\c@biburlbigbreakpenalty=\count422
+\c@biburlbreakpenalty=\count423
+\c@biburlnumpenalty=\count424
+\c@biburlucpenalty=\count425
+\c@biburllcpenalty=\count426
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count428
+\c@smartand=\count427
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -603,8 +972,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bb
 x
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count429
-\c@bbx:relatedtotal=\count430
+\c@bbx:relatedcount=\count428
+\c@bbx:relatedtotal=\count429
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -636,7 +1005,7 @@ Package: expl3 2024-12-09 L3 programming layer (loader)
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count431
+\l__color_backend_stack_int=\count430
 \l__pdf_internal_box=\box60
 ))
 Package biblatex Info: ... and expl3
@@ -655,19 +1024,54 @@ Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count432
-\@quotereset=\count433
+\@quotelevel=\count431
+\@quotereset=\count432
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 50
 .
+
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
+C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
+:5: Undefined control sequence.
+\select@language ...elax }\fi \bbl@provide@locale 
+                                                  \bbl@iflanguage \languagen...
+l.5 \babel@aux{nil}{}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
+:5: Undefined control sequence.
+\@nolanerr ...arg \chardef {l@#1}\z@ \bbl@warning 
+                                                  {Undefined language '#1' i...
+l.5 \babel@aux{nil}{}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
+:5: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \babel@aux{nil}{}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
 1.aux)
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -696,11 +1100,18 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
+
+Overfull \hbox (213.40823pt too wide) in paragraph at lines 5--50
+\T1/lmr/m/n/12 Reported                                                        
+                                                                               
+                                                                               
+              
+ []
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -739,16 +1150,16 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count434
+\scratchcounter=\count433
 \scratchdimen=\dimen182
 \scratchbox=\box61
-\nofMPsegments=\count435
-\nofMParguments=\count436
+\nofMPsegments=\count434
+\nofMParguments=\count435
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count437
+\MPscratchCnt=\count436
 \MPscratchDim=\dimen183
-\MPnumerator=\count438
-\makeMPintoPDFobject=\count439
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
 \everyMPtoPDFconversion=\toks32
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
@@ -761,16 +1172,77 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count440
+main.tex:50: Undefined control sequence.
+\select@language ...elax }\fi \bbl@provide@locale 
+                                                  \bbl@iflanguage \languagen...
+l.50 \begin{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+main.tex:50: Undefined control sequence.
+\bbl@switch #1->\bbl@ensureinfo 
+                                {#1}\originalTeX \expandafter \def \expandaf...
+l.50 \begin{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+main.tex:50: Undefined control sequence.
+\bbl@activate #1->\bbl@ifshorthand 
+                                   {#1}{\bbl@s@activate {#1}}{}
+l.50 \begin{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+main.tex:50: Undefined control sequence.
+<argument> \string \babel@aux {\bbl@auxname 
+                                            }{}
+l.50 \begin{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+main.tex:50: Undefined control sequence.
+\__hook begindocument ...@language }\ifbbl@single 
+                                                  \renewcommand \selectlangu...
+l.50 \begin{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+main.tex:50: Extra \fi.
+\__hook begindocument ...abel@aux \@gobbletwo \fi 
+                                                  \bbl@clear@ttribs \Declare...
+l.50 \begin{document}
+                     
+I'm ignoring this; it doesn't match any \if.
+
+\c@lstlisting=\count439
 Package hypbmsec Info: Package hyperref not loaded,
 (hypbmsec)             bookmark parameters will be ignored on input line 50.
-Package biblatex Info: Trying to load language 'nil'...
-Package biblatex Info: ... file 'nil.lbx' not found.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
 
-
-Package biblatex Warning: Language 'nil' not supported.
-(biblatex)                Using dummy definitions on input line 50.
-
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -794,6 +1266,9 @@ File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
 Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 51.
 (pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
 
+Overfull \vbox (31.36075pt too high) has occurred while \output is active []
+
+
 
 [1
 
@@ -802,37 +1277,13 @@ AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./SGGW-thesis/nagl
 owek_inz.png> <./SGGW-thesis/stopka_WZIM.png>]
 
 [2]
-Overfull \hbox (25.55125pt too wide) in paragraph at lines 52--52
-\T1/lmr/m/n/12 O±wiadczam, »e niniejsza praca zostaªa przygotowana pod moim kie
-runkiem i stwierdzam,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 
  []
 
 
-Overfull \hbox (3.51888pt too wide) in paragraph at lines 52--52
-\T1/lmr/m/n/12 faªszywego o±wiadczenia, o±wiadczam, »e niniejsza praca dyplomow
-a zostaªa napisana
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 
- []
-
-
-Overfull \hbox (11.9044pt too wide) in paragraph at lines 52--52
-\T1/lmr/m/n/12 O±wiadczam, »e niniejsza wersja pracy jest identyczna z zaª¡czon
-¡ wersj¡ elektroniczn¡.
- []
-
-
-Overfull \hbox (44.80621pt too wide) in paragraph at lines 52--52
-\T1/lmr/m/n/12 Przyjmuj¦ do wiadomo±ci, »e praca dyplomowa poddana zostanie pro
-cedurze antyplagiatowej. 
  []
 
 
@@ -851,9 +1302,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
 [6]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.to
 c
+C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.toc
+:1: Undefined control sequence.
+\select@language ...elax }\fi \bbl@provide@locale 
+                                                  \bbl@iflanguage \languagen...
+l.1 \babel@toc {nil}{}
+                      \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.toc
+:1: Undefined control sequence.
+\@nolanerr #1->\bbl@error 
+                          {undefined-language}{#1}{}{}
+l.1 \babel@toc {nil}{}
+                      \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
 .
- (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
@@ -910,26 +1385,20 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \openout2 = `chapter1.aux'.
 
  (chapter1.tex
-Rozdzia\PlPrIeC {\l } 1.
-
-Overfull \hbox (11.74397pt too wide) in paragraph at lines 4--12
-\T1/lmr/m/n/12 symulacji lotu rakiety i trenowanie algorytmu steruj¡cego. Stwor
-zenie silnika fizycznego
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-8.
+Rozdzia\l  1.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+5.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-chapter1.tex:23: LaTeX Error: There's no line here to end.
+chapter1.tex:40: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 G
+l.40 G
       Å‚Ã³wne moduÅ‚y pracy sÄ… ze sobÄ… tak Å›ciÅ›le zwiÄ…zane, Å¼e aby zac...
 
 Your command was ignored.
@@ -937,78 +1406,30 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (23.29651pt too wide) in paragraph at lines 23--40
-\T1/lmr/m/n/12 teoretyczne, przedstawienie wykorzystanych technologii, opis i d
-ekonstrukcje stworzonego
- []
-
-
-Overfull \hbox (12.2642pt too wide) in paragraph at lines 23--40
-\T1/lmr/m/n/12 Š¡cznie oba projekty-moduªy tworz¡ kompletny system steruj¡cy ra
-kiet¡, wytrenowany
- []
-
-
-Overfull \hbox (13.89653pt too wide) in paragraph at lines 44--50
-\T1/lmr/m/n/12 Poszczególne biblioteki i narz¦dzia wykorzystane podczas pracy n
-ad ka»dym z moduªów
- []
-
-
-Overfull \hbox (23.55997pt too wide) in paragraph at lines 44--50
-\T1/lmr/m/n/12 technologie oraz narz¦dzia zostaªy wykorzystane podczas pracy na
-d obydwoma moduªami
- []
-
-
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
-
 
 [11
 
 
 {C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (2.89537pt too wide) in paragraph at lines 52--58
-\T1/lmr/m/n/12 Umo»liwiªy one wspóln¡ prac¦ nad kodem projektu oraz dost¦p do a
-rchiwalnych
- []
 
+[12]
 
-Overfull \hbox (5.73526pt too wide) in paragraph at lines 52--58
-\T1/lmr/m/n/12 wersji projektu. Git oraz Github zostaªy wybrane ze wzgl¦du na i
-ch popularno±¢,
- []
-
-
-Overfull \hbox (14.15756pt too wide) in paragraph at lines 58--65
-\T1/lmr/m/n/12 czynnikiem wpªywaj¡cym na wybór tego j¦zyka jest równie» popular
-no±¢ Pythona
- []
-
-
-Overfull \hbox (22.02222pt too wide) in paragraph at lines 58--65
-\T1/lmr/m/n/12 w dziedzinie uczenia maszynowego oraz sztucznej inteligencji. Dz
-i¦ki wykorzystaniu
- []
-
-
-chapter1.tex:71: LaTeX Error: There's no line here to end.
+chapter1.tex:91: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \\P
+l.91 \\P
         onadto, do tworzenia pracy inÅ¼ynierskiej wykorzystane zostaÅ‚y nast...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-chapter1.tex:81: Undefined control sequence.
-l.81     w \latex
-                  zgodnie z wymaganiami formatowania pracy inÅ¼ynierskiej na...
+chapter1.tex:103: Undefined control sequence.
+l.103     w \latex
+                   zgodnie z wymaganiami formatowania pracy inÅ¼ynierskiej n...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1016,387 +1437,65 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-
-[12]
-Overfull \hbox (10.2372pt too wide) in paragraph at lines 90--91
-\T1/lmr/m/n/12 Istnieje równie» du»y rynek komercyjnych narz¦dzi stosowanych pr
-zez przedsi¦biorstwa
- []
-
-
-Overfull \hbox (12.9189pt too wide) in paragraph at lines 90--91
-\T1/lmr/m/n/12 dokªadno±ci¡, zªo»ono±ci¡ i s¡ zazwyczaj niedost¦pne dla hobbyst
-ów oraz u»ytkowników
- []
-
-
-Overfull \hbox (15.26877pt too wide) in paragraph at lines 90--91
-\T1/lmr/m/n/12 umo»liwiaj¡ symulacj¦ lotów rakietowych, a tak»e gotowe silniki 
-fizyczne oraz algorytmy
- []
-
-
-chapter1.tex:92: LaTeX Error: There's no line here to end.
+chapter1.tex:116: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 \\Z
-        nacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
+l.116 \\Z
+         nacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (26.78851pt too wide) in paragraph at lines 92--94
-[]\T1/lmr/m/n/12 Znacznie bardziej popularna dziedzina uczenia maszynowego, opa
-rta na Reinforcement
- []
-
-
-Overfull \hbox (22.60428pt too wide) in paragraph at lines 92--94
-\T1/lmr/m/n/12 Learning (RL), oferuje liczne rozwi¡zania, które mog¡ zosta¢ wyk
-orzystane do trenowania
- []
-
-
-Overfull \hbox (15.7566pt too wide) in paragraph at lines 92--94
-\T1/lmr/m/n/12 rozdziale przedstawione zostaªy najcz¦±ciej wykorzystywane z nic
-h ^^V zarówno biblioteki
- []
-
-
-Overfull \hbox (13.93042pt too wide) in paragraph at lines 92--94
-\T1/lmr/m/n/12 sªu»¡ce do trenowania modeli, jak i narz¦dzia umo»liwiaj¡ce prze
-prowadzanie treningów
- []
-
-
-Overfull \hbox (3.64662pt too wide) in paragraph at lines 105--108
-\T1/lmr/m/n/12 Na rynku dost¦pnych jest wiele modeli silników fizycznych umo»li
-wiaj¡cych symulacj¦
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
-
- []
-
-
 
 [13]
-Overfull \hbox (23.06778pt too wide) in paragraph at lines 111--121
-\T1/lmr/m/n/12 Bardzo zaawansowane narz¦dzie do modelowania i prowadzenia symul
-acji systemów
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+
  []
-
-
-Overfull \hbox (9.42621pt too wide) in paragraph at lines 111--121
-\T1/lmr/m/n/12 dynamicznych. Symulink wchodzi w skªad pakietu Matlab. System te
-n umo»liwia
- []
-
-
-Overfull \hbox (27.57513pt too wide) in paragraph at lines 111--121
-\T1/lmr/m/n/12 modelach skªadania siª, co pozwala na bardzo dokªadne modelowani
-e siª dziaªaj¡cych
- []
-
-
-Overfull \hbox (4.20122pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 Zaawansowane narz¦dzie do symulacji dynamiki pªynów (CFD ^^U Com
-putational
- []
-
-
-Overfull \hbox (2.53703pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 Fluid Dynamics) wykorzystywane w in»ynierii aerodynamicznej i me
-chanicznej.
- []
-
-
-Overfull \hbox (45.6561pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 Stokesa, co pozwala na dokªadne odwzorowanie zjawisk takich jak 
-opór aerodynamiczny,
- []
-
-
-Overfull \hbox (2.96317pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 turbulencje oraz efekty cieplne. Dzi¦ki zaawansowanym algorytmom
- i funkcjom,
- []
-
-
-Overfull \hbox (35.83173pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 wieloelementowych konstrukcji czy interakcje z gazami spalinowym
-i. Oprogramowanie
- []
-
-
-Overfull \hbox (29.13365pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 to jest komercyjne, a jego obsªuga wymaga wiedzy z zakresu CFD o
-raz do±wiadczenia
- []
-
-
-Overfull \hbox (16.49246pt too wide) in paragraph at lines 123--128
-\T1/lmr/m/n/12 w konfiguracji symulacji. ANSYS Fluent mo»e by¢ wykorzystany do 
-szczegóªowego
- []
-
-
-Overfull \hbox (15.29646pt too wide) in paragraph at lines 130--139
-\T1/lmr/m/n/12 Otwarto¹ródªowe oprogramowanie do symulacji CFD, które oferuje z
-aawansowane
- []
-
-
-Overfull \hbox (2.29828pt too wide) in paragraph at lines 130--139
-\T1/lmr/m/n/12 OpenFOAM jest jego elastyczno±¢ i dost¦pno±¢ ^^U oprogramowanie 
-jest darmowe
- []
-
-
-Overfull \hbox (32.71901pt too wide) in paragraph at lines 130--139
-\T1/lmr/m/n/12 barier¡ dla pocz¡tkuj¡cych u»ytkowników.[9]  OpenFOAM mo»e zosta
-¢ wykorzystany
- []
-
-
-Overfull \hbox (14.97552pt too wide) in paragraph at lines 130--139
-\T1/lmr/m/n/12 do symulacji lotu rakiety poprzez analiz¦ siª aerodynamicznych o
-raz optymalizacj¦
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [14]
-Overfull \hbox (9.00182pt too wide) in paragraph at lines 145--150
-\T1/lmr/m/n/12 graficznemu, który umo»liwia szybkie projektowanie rakiet oraz p
-rzeprowadzanie
- []
-
-
-Overfull \hbox (15.85591pt too wide) in paragraph at lines 145--150
-\T1/lmr/m/n/12 symulacji ich lotu. Program oferuje mo»liwo±¢ modelowania siª ae
-rodynamicznych,
- []
-
-
-Overfull \hbox (14.15753pt too wide) in paragraph at lines 145--150
-\T1/lmr/m/n/12 oraz studentów, dzi¦ki swojej prostocie i dost¦pno±ci, cho¢ mo»e
- mie¢ ograniczenia
- []
-
-
-Overfull \hbox (17.05974pt too wide) in paragraph at lines 145--150
-\T1/lmr/m/n/12 Narz¦dzie to byªo te» w du»ym stopniu inspiracj¡ niniejszej prac
-y in»ynierskiej[17]. 
- []
-
-
-Overfull \hbox (26.2977pt too wide) in paragraph at lines 152--155
-\T1/lmr/m/n/12 Komercyjne oprogramowanie do projektowania i symulacji lotów rak
-iet, dedykowane
- []
-
-
-Overfull \hbox (17.78024pt too wide) in paragraph at lines 152--155
-\T1/lmr/m/n/12 zarówno dla entuzjastów, jak i profesjonalistów. RockSim umo»liw
-ia projektowanie
- []
-
-
-Overfull \hbox (4.46245pt too wide) in paragraph at lines 152--155
-\T1/lmr/m/n/12 wszechstronno±ci, RockSim jest u»ywany zarówno w edukacji, jak i
- w projektach
- []
-
-
-Overfull \hbox (9.0359pt too wide) in paragraph at lines 157--160
-\T1/lmr/m/n/12 u»ytkownikom, którzy potrzebuj¡ du»ej dokªadno±ci w analizie aer
-odynamicznej.
- []
-
-
-Overfull \hbox (28.19064pt too wide) in paragraph at lines 157--160
-\T1/lmr/m/n/12 Program oferuje mo»liwo±¢ modelowania trajektorii z uwzgl¦dnieni
-em szczegóªowych
- []
-
-
-Overfull \hbox (1.36589pt too wide) in paragraph at lines 157--160
-\T1/lmr/m/n/12 parametrów aerodynamicznych, takich jak wspóªczynniki oporu czy 
-siªy no±nej,
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [15]
 
-chapter1.tex:172: LaTeX Error: There's no line here to end.
+chapter1.tex:198: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172 
+l.198 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (17.08601pt too wide) in paragraph at lines 173--175
-[]\T1/lmr/m/n/12 Najpopularniejsze narz¦dzia stosowane do uczenia maszyno owego
- RL w symulacjach
- []
-
-
-Overfull \hbox (16.7364pt too wide) in paragraph at lines 178--180
-\T1/lmr/m/n/12 która znalazªa szerokie zastosowanie w symulacjach fizycznych, w
- tym w dziedzinie
- []
-
-
-Overfull \hbox (31.35329pt too wide) in paragraph at lines 178--180
-\T1/lmr/m/n/12 optymalizacji, TensorFlow umo»liwia trenowanie modeli RL na dany
-ch pochodz¡cych
- []
-
-
-Overfull \hbox (14.12413pt too wide) in paragraph at lines 178--180
-\T1/lmr/m/n/12 z symulacji fizycznych. Framework ten oferuje bogat¡ funkcjonaln
-o±¢ do tworzenia
- []
-
-
-Overfull \hbox (28.48618pt too wide) in paragraph at lines 178--180
-\T1/lmr/m/n/12 analizy danych i wizualizacji. TensorFlow wspiera ró»norodne tec
-hniki optymalizacji,
- []
-
-
-Overfull \hbox (6.68231pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 PyTorch to kolejny popularny framework open-source'owy, który je
-st szczególnie
- []
-
-
-Overfull \hbox (20.456pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 Dzi¦ki swojej elastyczno±ci oraz wsparciu dla dynamicznych grafó
-w obliczeniowych,
- []
-
-
-Overfull \hbox (5.1804pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 learning w kontek±cie symulacji fizycznych. PyTorch jest cz¦sto 
-wykorzystywany
- []
-
-
-Overfull \hbox (16.57492pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 w projektach zwi¡zanych z robotyk¡ oraz modelowaniem dynamicznyc
-h systemów,
- []
-
-
-Overfull \hbox (14.58357pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 takich jak rakiety, poniewa» pozwala na ªatw¡ integracj¦ z fizyc
-znymi symulacjami
- []
-
-
-Overfull \hbox (14.61678pt too wide) in paragraph at lines 181--184
-\T1/lmr/m/n/12 atrakcyjnym wyborem dla osób rozpoczynaj¡cych prac¦ z uczeniem m
-aszynowym. 
- []
-
-
 
 [16]
-Overfull \hbox (16.06078pt too wide) in paragraph at lines 185--187
-\T1/lmr/m/n/12 Actor-Critic) czy DQN (Deep Q-Network). Jest to narz¦dzie szczeg
-ólnie przydatne
- []
 
-
-Overfull \hbox (18.65802pt too wide) in paragraph at lines 185--187
-\T1/lmr/m/n/12 implementacja algorytmów RL do testowania i optymalizacji system
-ów sterowania.
- []
-
-
-Overfull \hbox (41.96655pt too wide) in paragraph at lines 185--187
-\T1/lmr/m/n/12 Stable Baselines3 jest dobrze udokumentowan¡ platform¡, która uª
-atwia implementacj¦
- []
-
-
-Overfull \hbox (43.95325pt too wide) in paragraph at lines 185--187
-\T1/lmr/m/n/12 i eksperymentowanie z ró»nymi metodami RL. Dzi¦ki swojej prostoc
-ie i kompatybilno±ci
- []
-
-
-chapter1.tex:190: LaTeX Error: There's no line here to end.
+chapter1.tex:216: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.190 P
+l.216 P
        oniÅ¼ej przedstawione zostaÅ‚y jedne
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (30.01741pt too wide) in paragraph at lines 190--193
-[]\T1/lmr/m/n/12 Poni»ej przedstawione zostaªy jedne z popularniejszych oraz cz
-¦±ciej wykorzystywanych
- []
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--193
-
- []
-
-
-Overfull \hbox (0.90747pt too wide) in paragraph at lines 195--197
-\T1/lmr/m/n/12 zaawansowane narz¦dzie umo»liwiaj¡ce symulacj¦ lotu rakiet. Opro
-gramowanie
- []
-
-
-Overfull \hbox (24.99585pt too wide) in paragraph at lines 195--197
-\T1/lmr/m/n/12 to pozwala na elastyczne modelowanie dynamiki obiektów lataj¡cyc
-h, uwzgl¦dniaj¡c
- []
-
-
-Overfull \hbox (7.6608pt too wide) in paragraph at lines 195--197
-\T1/lmr/m/n/12 Blockset oferuje gotowe bloki do analizy trajektorii oraz projek
-towania systemów
- []
-
-
-Overfull \hbox (7.49281pt too wide) in paragraph at lines 198--200
-\T1/lmr/m/n/12 Microsoft AirSim to open-source'owy symulator lotu, pierwotnie z
-aprojektowany
- []
-
-
-Overfull \hbox (27.01437pt too wide) in paragraph at lines 198--200
-\T1/lmr/m/n/12 uczenia maszynowego, takimi jak TensorFlow czy PyTorch, umo»liwi
-aj¡c trenowanie
  []
 
 
@@ -1405,81 +1504,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [17]
-Overfull \hbox (38.8502pt too wide) in paragraph at lines 201--203
-\T1/lmr/m/n/12 sterowania obiektami dynamicznymi, takimi jak rakiety. Gazebo of
-eruje zaawansowan¡
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (11.38678pt too wide) in paragraph at lines 201--203
-\T1/lmr/m/n/12 symulacj¦ fizyczn¡, w tym modelowanie siª aerodynamicznych, koli
-zji i zmiennych
- []
 
-
-Overfull \hbox (25.54233pt too wide) in paragraph at lines 201--203
-\T1/lmr/m/n/12 ±rodowiskowych. Integracja z ROS umo»liwia tworzenie i implement
-acj¦ algorytmów
- []
-
-
-Overfull \hbox (6.13081pt too wide) in paragraph at lines 201--203
-\T1/lmr/m/n/12 sterowania opartych na uczeniu maszynowym, takich jak reinforcem
-ent learning.
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 206--73
+[18])
+Underfull \hbox (badness 10000) in paragraph at lines 233--73
 
  []
 
 
-Overfull \hbox (14.38278pt too wide) in paragraph at lines 206--73
-\T1/lmr/m/n/12 tworzenia i testowania systemu steruj¡cego rakiet¡. Efektem tego
- jest tak»e uproszczony
- []
-
-
-Overfull \hbox (32.69478pt too wide) in paragraph at lines 206--73
-\T1/lmr/m/n/12 model fizyczny, o czym mowa jest w kolejnych rozdziaªach pracy. 
-Rozwi¡zanie prezentowane
- []
-
-
-
-[18]
 
 [19]
 \openout2 = `chapter2.aux'.
 
  (chapter2.tex
-Rozdzia\PlPrIeC {\l } 2.
-
-Overfull \hbox (6.38753pt too wide) in paragraph at lines 1--1
-|[]\T1/lmr/bx/n/20.74 Moduª I: Silnik fizyczny symulacji lotów
- []
-
-
-Overfull \hbox (21.23398pt too wide) in paragraph at lines 4--14
-\T1/lmr/m/n/12 W tym rozdziale przedstawione zostaªy teoretyczne podstawy fizyc
-zne, u»yte technologie,
- []
-
+Rozdzia\l  2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
- []
-
-
-Overfull \hbox (21.1724pt too wide) in paragraph at lines 25--26
-\T1/lmr/m/n/12 W trakcie pracy nad moduªem silnika fizycznego symulacji lotów r
-akietowych poczyniono
- []
-
-
-Overfull \hbox (34.23135pt too wide) in paragraph at lines 25--26
-\T1/lmr/m/n/12 szereg zaªo»e«, które miaªy na celu uªatwienie implementacji ora
-z zapewnienie odpowiedniej
  []
 
 
@@ -1490,27 +1533,9 @@ z zapewnienie odpowiedniej
 
 
 ]
-Overfull \hbox (33.94127pt too wide) in paragraph at lines 42--47
-\T1/lmr/m/n/12 skupienie si¦ na kluczowych aspektach dynamiki lotu bez nadmiern
-ego komplikowania
- []
-
-
-Overfull \hbox (22.2217pt too wide) in paragraph at lines 48--53
-\T1/lmr/m/n/12 bezpo±rednio wpªynie na trajektori¦ lotu. Taki model jest prosty
- do zamodelowania,
- []
-
-
 Overfull \hbox (0.7737pt too wide) in paragraph at lines 54--59
-[]\T1/lmr/bx/n/12 Mo»liwo±¢ modyfikacji parametrów symulacji w czasie rzeczywis
-tym. 
- []
-
-
-Overfull \hbox (4.33289pt too wide) in paragraph at lines 60--62
-\T1/lmr/m/n/12 analiz¦ trajektorii i zachowania rakiety w sposób intuicyjny. Je
-dnak wizualizacja
+[]\T1/lmr/bx/n/12 Mo»liwo±¢ mo-dy-fi-ka-cji pa-ra-me-trów sy-mu-la-cji w cza-si
+e rze-czy-wi-stym. 
  []
 
 
@@ -1519,12 +1544,6 @@ Underfull \vbox (badness 3942) has occurred while \output is active []
 
 
 [21]
-Overfull \hbox (2.08122pt too wide) in paragraph at lines 107--109
-\T1/lmr/m/n/12 kierunku ruchu. Zale»y od wªa±ciwo±ci powietrza i ksztaªtu rakie
-ty, a jej warto±¢
- []
-
-
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
 
@@ -1555,192 +1574,42 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (15.28215pt too wide) in paragraph at lines 200--201
-\T1/lmr/m/n/12 (CoG). Dzi¦ki temu moment siªy aerodynamicznej dziaªa stabilizuj
-¡co, przeciwdziaªaj¡c
- []
-
-
 Underfull \vbox (badness 5189) has occurred while \output is active []
 
 
 
 [24]
-Overfull \hbox (8.45438pt too wide) in paragraph at lines 219--220
-\T1/lmr/m/n/12 K¡t natarcia ($\OML/lmm/m/it/12 $\T1/lmr/m/n/12 ) jest kluczowy
-m parametrem aerodynamicznym opisuj¡cym orientacj¦
- []
-
-
 
 [25]
-Overfull \hbox (44.6419pt too wide) in paragraph at lines 253--256
-\T1/lmr/m/n/12 Taka uproszczona geometria pozwala na efektywne obliczenia przy 
-zachowaniu wystarczaj¡cej
- []
-
-
-Overfull \hbox (3.14116pt too wide) in paragraph at lines 258--260
-\T1/lmr/m/n/12 Dla uproszczonego modelu rakiety jako walca o promieniu $\OML/lm
-m/m/it/12 r$ \T1/lmr/m/n/12 i wysoko±ci $\OML/lmm/m/it/12 h$ \T1/lmr/m/n/12 pod
-stawowe
- []
-
-
 
 [26]
-Overfull \hbox (12.07617pt too wide) in paragraph at lines 310--311
-[]\T1/lmr/m/n/12 Warto±¢ $\OML/lmm/m/it/12 A[]$ \T1/lmr/m/n/12 zale»y wi¦c siln
-ie od k¡ta natarcia $\OML/lmm/m/it/12 $\T1/lmr/m/n/12 , co wpªywa na siªy aero
-dynamiczne
- []
-
-
-Overfull \hbox (8.15091pt too wide) in paragraph at lines 318--325
-\T1/lmr/m/n/12 rakiety. Dla symetrii osiowej i jednorodnej g¦sto±ci materiaªów 
-jest zlokalizowany
- []
+Underfull \vbox (badness 5036) has occurred while \output is active []
 
 
 
 [27]
-Overfull \hbox (3.21841pt too wide) in paragraph at lines 326--327
-\T1/lmr/m/n/12 aerodynamiczn¡ dziaªaj¡c¡ na rakiet¦. Poªo»enie CoP zale»y od ks
-ztaªtu rakiety
- []
-
-
-Overfull \hbox (15.77182pt too wide) in paragraph at lines 328--329
-[]\T1/lmr/bx/n/12 ‘rodek ci¡gu (CoT)\T1/lmr/m/n/12 : Punkt, w którym dziaªa wyp
-adkowa siªa ci¡gu generowana
- []
-
-
-Overfull \hbox (38.69957pt too wide) in paragraph at lines 328--329
-\T1/lmr/m/n/12 przez silniki rakiety. Poªo»enie CoT zale»y od konfiguracji siln
-ików i ich rozmieszczenia. 
- []
-
-
-Overfull \hbox (4.05461pt too wide) in paragraph at lines 348--352
-[]\T1/lmr/bx/n/12 Ukªad lokalny (rakieta)\T1/lmr/m/n/12 : Ukªad poruszaj¡cy si¦
- wraz z rakiet¡. O± $\OML/lmm/m/it/12 z$ \T1/lmr/m/n/12 wskazuje
- []
-
-
-Overfull \hbox (6.67842pt too wide) in paragraph at lines 359--364
-\T1/lmr/m/n/12 transformacje ukªadów wspóªrz¦dnych za pomoc¡ operacji macierzow
-ych. K¡ty Eulera
- []
-
-
-Underfull \vbox (badness 2443) has occurred while \output is active []
-
-
 
 [28]
-Overfull \hbox (26.17065pt too wide) in paragraph at lines 405--412
-\T1/lmr/m/n/12 jest kluczowe dla skutecznej implementacji silnika symulacji fiz
-ycznych lotów rakietowych. 
- []
-
-
-
-[29]
-Overfull \hbox (5.2807pt too wide) in paragraph at lines 428--430
-\T1/lmr/m/n/12 Biblioteka do analizy danych, która uªatwia manipulowanie i prze
-twarzanie
- []
-
-
-Overfull \hbox (6.16pt too wide) in paragraph at lines 431--433
-\T1/lmr/m/n/12 Biblioteka do manipulacji i analizy danych 3D, zwªaszcza trójwym
-iarowych
- []
-
-
-Overfull \hbox (3.02245pt too wide) in paragraph at lines 437--439
-\T1/lmr/m/n/12 Biblioteka do tworzenia interfejsów graficznych opartych na Qt. 
-Umo»liwia
- []
-
-
-Overfull \hbox (8.96727pt too wide) in paragraph at lines 440--442
-\T1/lmr/m/n/12 Zestaw narz¦dzi i komponentów Qt5 dla PyQt5, pozwalaj¡cy na korz
-ystanie
- []
-
-
-Overfull \hbox (5.3078pt too wide) in paragraph at lines 440--442
-\T1/lmr/m/n/12 z funkcji Qt5 w aplikacjach Python. U»ywana do tworzenia profesj
-onalnych
- []
-
-
-Overfull \hbox (35.47891pt too wide) in paragraph at lines 450--452
-\T1/lmr/m/n/12 Przyspieszenie oblicze« OpenGL w Pythonie poprzez implementacj¦ 
-krytycznych
- []
-
-
-Overfull \hbox (3.97539pt too wide) in paragraph at lines 450--452
-\T1/lmr/m/n/12 operacji w C. Stosowana w aplikacjach wymagaj¡cych wysokiej wyda
-jno±ci
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+[29]
+
 [30]
-Overfull \hbox (8.18161pt too wide) in paragraph at lines 458--460
-\T1/lmr/m/n/12 Popularne narz¦dzie do testowania w Pythonie, umo»liwiaj¡ce ªatw
-e pisanie
- []
-
-
-Overfull \hbox (9.39748pt too wide) in paragraph at lines 479--484
-\T1/lmr/m/n/12 Silnik fizyczny do symulacji lotów rakietowych b¦d¡cy gªównym ko
-mponentem moduªu
- []
-
-
-Overfull \hbox (5.99428pt too wide) in paragraph at lines 479--484
-\T1/lmr/m/n/12 I niniejszej pracy in»ynierskiej zostaª zaprojektowany zgodnie z
- zaªo»eniami opisanymi
- []
-
-
-Overfull \hbox (20.65593pt too wide) in paragraph at lines 487--492
-\T1/lmr/m/n/12 System symulacji zostaª zaprojektowany z wykorzystaniem paradygm
-atu programowania
- []
-
-
 
 [31]
-<architektura.jpg, id=117, 905.3825pt x 1205.50375pt>
+<architektura.jpg, id=118, 905.3825pt x 1205.50375pt>
 File: architektura.jpg Graphic file (type jpg)
 <use architektura.jpg>
 Package pdftex.def Info: architektura.jpg  used on input line 495.
 (pdftex.def)             Requested size: 341.43437pt x 454.60124pt.
 
-Overfull \hbox (3.54219pt too wide) in paragraph at lines 500--502
-[]\T1/lmr/m/n/12 W dalszej cz¦±ci tego rozdziaªu szczegóªowo opisane zostaªy po
-szczególne elementy
- []
-
-
 
 [32 <./architektura.jpg>]
-Overfull \hbox (6.12157pt too wide) in paragraph at lines 522--528
-\T1/lmr/m/n/12 Interfejs `IObject` jest podstawowym interfejsem dla wszystkich 
-obiektów w symulacji.
- []
-
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
 29.
+
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1750,121 +1619,25 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 
 [33]
 Overfull \hbox (6.04779pt too wide) in paragraph at lines 573--574
-[]\T1/lmr/m/n/12 `load_model(object_model_path)`: Šaduje model 3D obiektu z pod
-anej ±cie»ki.
- []
-
-
-Overfull \hbox (3.99895pt too wide) in paragraph at lines 574--575
-[]\T1/lmr/m/n/12 `calculate_inertia_tensor()`: Oblicza tensor bezwªadno±ci obie
-ktu na podstawie
- []
-
-
-Overfull \hbox (12.25012pt too wide) in paragraph at lines 575--576
-[]\T1/lmr/m/n/12 `update(position=None, rotation=None, velocity=None)`: Uaktual
-nia parametry
- []
-
-
-Overfull \hbox (8.0671pt too wide) in paragraph at lines 578--579
-[]\T1/lmr/m/n/12 `__str__()`: Zwraca reprezentacj¦ obiektu w formie tekstowej (
-pozycja, rotacja,
+[]\T1/lmr/m/n/12 `load_model(object_model_path)`: Ša-duje mo-del 3D obiektu z p
+o-da-nej ±cie»ki.
  []
 
 
 
 [34]
-Overfull \hbox (13.69588pt too wide) in paragraph at lines 600--601
-[]\T1/lmr/m/n/12 `engine_angle`: K¡t nachylenia silnika wzgl¦dem lokalnego ukªa
-du wspóªrz¦dnych
- []
-
-
-Overfull \hbox (8.56555pt too wide) in paragraph at lines 607--608
-[]\T1/lmr/m/n/12 `mass_flow_rate(time: float)`: Metoda abstrakcyjna, która obli
-cza wspóªczynnik
- []
-
-
-Overfull \hbox (0.71101pt too wide) in paragraph at lines 613--619
-\T1/lmr/m/n/12 oporu i inne. Dzi¦ki implementacji tego interfejsu, obiekt posia
-da wszystkie wªasno±ci
- []
-
-
 
 [35]
-Overfull \hbox (14.17856pt too wide) in paragraph at lines 652--653
-[]\T1/lmr/m/n/12 `angle_of_attack`: K¡t natarcia rakiety wzgl¦dem kierunku prze
-pªywu powietrza. 
- []
-
-
-Overfull \hbox (30.56595pt too wide) in paragraph at lines 653--654
-[]\T1/lmr/m/n/12 `relative_velocity`: Wzgl¦dna pr¦dko±¢ rakiety wzgl¦dem przepª
-ywaj¡cego powietrza. 
- []
-
-
-Overfull \hbox (12.6138pt too wide) in paragraph at lines 659--660
-[]\T1/lmr/m/n/12 `calculate_reference_area()`: Oblicza powierzchni¦ czoªow¡ obi
-ektu na podstawie
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6252) has occurred while \output is active []
 
 
 
 [36]
-Overfull \hbox (11.78726pt too wide) in paragraph at lines 700--701
-[]\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Metoda, która zwraca pr¦d
-ko±¢ d¹wi¦ku
- []
-
-
-Overfull \hbox (16.16846pt too wide) in paragraph at lines 701--702
-[]\T1/lmr/m/n/12 `get_temperature(position=None)`: Metoda, która zwraca tempera
-tur¦ w zadanej
- []
-
-
-Overfull \hbox (17.34383pt too wide) in paragraph at lines 702--703
-[]\T1/lmr/m/n/12 `get_pressure(position=None)`: Metoda, która zwraca ci±nienie 
-w zadanej pozycji. 
- []
-
-
 
 [37]
-Overfull \hbox (30.7517pt too wide) in paragraph at lines 719--720
-[]\T1/lmr/bx/n/12 `PhysicsEngine`\T1/lmr/m/n/12 : Jest to najwa»niejsza klasa s
-ilnika, odpowiedzialna za zarz¡dzanie
- []
-
-
-Overfull \hbox (10.11255pt too wide) in paragraph at lines 719--720
-\T1/lmr/m/n/12 przebiegiem symulacji. Oblicza siªy dziaªaj¡ce na obiekty, aktua
-lizuje ich pozycje,
- []
-
-
-Overfull \hbox (7.85677pt too wide) in paragraph at lines 727--730
-\T1/lmr/m/n/12 Proces symulacji fizycznej lotu rakiety jest wieloetapowy i skªa
-da si¦ z dwóch gªównych
- []
-
-
-Overfull \hbox (8.80632pt too wide) in paragraph at lines 733--736
-\T1/lmr/m/n/12 Zanim symulacja zostanie przeprowadzona, tworzony jest plik zawi
-eraj¡cy konfiguracj¦
- []
-
-
-Overfull \hbox (15.64638pt too wide) in paragraph at lines 750--751
-[]\T1/lmtt/m/n/12 environment \T1/lmr/m/n/12 - instancj¦ klasy \T1/lmtt/m/n/12 
-Environment\T1/lmr/m/n/12 , która definiuje ±rodowisko symulacji, 
+Overfull \hbox (11.78726pt too wide) in paragraph at lines 700--701
+[]\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Me-toda, która zwraca pr¦
+d-ko±¢ d¹wi¦ku
  []
 
 
@@ -1875,13 +1648,12 @@ Overfull \hbox (15.31294pt too wide) in paragraph at lines 774--775
  []
 
 
+
+[39]
 Overfull \hbox (15.31294pt too wide) in paragraph at lines 793--795
 [][][][][][][][][][][][][][][][][][] 
  []
 
-
-
-[39]
 
 chapter2.tex:813: LaTeX Error: There's no line here to end.
 
@@ -1897,75 +1669,17 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (43.5867pt too wide) in paragraph at lines 816--817
-[]\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»dym kroku, zmieniane
- s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
- []
-
-
-Overfull \hbox (9.5875pt too wide) in paragraph at lines 818--819
-\T1/lmr/m/n/12 jest stan obiektu: jego pozycja, pr¦dko±¢, przyspieszenie oraz o
-rientacja (rotacja).
+[]\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»-dym kroku, zmie-nia
+ne s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
  []
 
 
 
 [40]
-Overfull \hbox (4.23813pt too wide) in paragraph at lines 856--857
-[]\T1/lmr/m/n/12 Zapisywanie tych danych, jest kluczowym elementem symulacji, p
-oniewa» pozwala
- []
-
-
-Overfull \hbox (24.40349pt too wide) in paragraph at lines 860--862
-\T1/lmr/m/n/12 Implementacja wy»ej przedstawionego rozwi¡zania pozwala na uzysk
-anie wielu benefitów,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [41]
-Overfull \hbox (0.57973pt too wide) in paragraph at lines 865--867
-[]\T1/lmr/m/n/12 Jednym z kluczowych zaªo»e« przy projektowaniu systemu byªa je
-go moduªowo±¢.
- []
-
-
-Overfull \hbox (4.85684pt too wide) in paragraph at lines 865--867
-\T1/lmr/m/n/12 komponenty. Pozwala to na wspóªprac¦ mi¦dzy wspóªautorami, jasno
-±¢ implementacji
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 865--867
 
- []
-
-
-Overfull \hbox (2.379pt too wide) in paragraph at lines 870--881
-\T1/lmr/m/n/12 Obecno±¢ klasy \T1/lmtt/m/n/12 Forces \T1/lmr/m/n/12 z ró»nymi z
-definiowanymi siªami, takimi jak \T1/lmtt/m/n/12 gravity\T1/lmr/m/n/12 , \T1/lm
-tt/m/n/12 thrust
- []
-
-
-Overfull \hbox (43.33246pt too wide) in paragraph at lines 870--881
-\T1/lmr/m/n/12 i \T1/lmtt/m/n/12 drag\T1/lmr/m/n/12 , pozwala na ªatwe dodanie 
-nowych siª, np. oporu magnetycznego, siª aerodynamicznych
- []
-
-
-Overfull \hbox (24.43947pt too wide) in paragraph at lines 870--881
-\T1/lmr/m/n/12 rakiety i ±rodowisko jako argumenty, co zapewnia spójno±¢ interf
-ejsu. Ponadto mechanizm
- []
-
-
-Overfull \hbox (11.58388pt too wide) in paragraph at lines 870--881
-\T1/lmr/m/n/12 dodawania siª za pomoc¡ metody \T1/lmtt/m/n/12 add_force \T1/lmr
-/m/n/12 pozwala na ich dynamiczne przypisywanie
  []
 
 
@@ -1974,201 +1688,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 870--881
  []
 
 
-Overfull \hbox (24.50148pt too wide) in paragraph at lines 884--893
-[]\T1/lmr/m/n/12 Kolejnym istotnym atutem tego rozwi¡zania jest mo»liwo±¢ ªatwe
-j zmiany parametrów
- []
 
-
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 884--893
 
  []
 
 
 
-[42]
-Overfull \hbox (6.58687pt too wide) in paragraph at lines 898--899
-\T1/lmr/m/n/12 (np. pr¦dko±ci, przyspieszenia, pozycji), które mog¡ by¢ wykorzy
-stywane przez modele
- []
-
-
-Overfull \hbox (7.52863pt too wide) in paragraph at lines 909--914
-\T1/lmr/m/n/12 ruch obiektu. W niniejszym podrozdziale opisane zostaªy te dwa k
-luczowe zagadnienia. 
- []
-
-<physics_map.png, id=156, 482.80376pt x 623.32875pt>
+[43]
+<physics_map.png, id=161, 482.80376pt x 623.32875pt>
 File: physics_map.png Graphic file (type png)
 <use physics_map.png>
 Package pdftex.def Info: physics_map.png  used on input line 920.
 (pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[43]
-Overfull \hbox (38.01736pt too wide) in paragraph at lines 928--929
-\T1/lmr/m/n/12 Funkcje pomocnicze stanowi¡ podstaw¦ oblicze«, umo»liwiaj¡c mi¦d
-zy innymi transformacj¦
- []
+Underfull \vbox (badness 2644) has occurred while \output is active []
 
 
 
 [44 <./physics_map.png>]
-Overfull \hbox (7.83406pt too wide) in paragraph at lines 972--973
-[]\T1/lmr/m/n/12 Funkcja \T1/lmtt/m/n/12 transform_to_global \T1/lmr/m/n/12 u»y
-wa macierzy rotacji \T1/lmtt/m/n/12 R\T1/lmr/m/n/12 , aby przeksztaªci¢ wektor
- []
-
-
-Overfull \hbox (15.62529pt too wide) in paragraph at lines 972--973
-\T1/lmr/m/n/12 z ukªadu lokalnego do globalnego. Wektory lokalne, takie jak ci¡
-g silnika, s¡ orientowane
- []
-
-
 
 [45]
-Overfull \hbox (4.1653pt too wide) in paragraph at lines 980--981
-[]\T1/lmr/m/n/12 Analogicznie, funkcja \T1/lmtt/m/n/12 transform_to_local \T1/l
-mr/m/n/12 wykorzystuje transponowan¡ macierz
- []
-
-
-Overfull \hbox (1.35883pt too wide) in paragraph at lines 984--988
-\T1/lmr/m/n/12 W symulacji uwzgl¦dniono cztery gªówne siªy: grawitacj¦, opór po
-wietrza, ci¡g silnika
- []
-
-
-Overfull \hbox (15.8513pt too wide) in paragraph at lines 991--992
-\T1/lmr/m/n/12 Siªa grawitacji dziaªa pionowo w dóª, zgodnie z osi¡ $\OML/lmm/m
-/it/12 Z$ \T1/lmr/m/n/12 globalnego ukªadu wspóªrz¦dnych,
- []
-
-
-Overfull \hbox (11.44867pt too wide) in paragraph at lines 1011--1013
-\T1/lmr/m/n/12 Siªa oporu powietrza jest przeciwnie skierowana do wektora pr¦dk
-o±ci rakiety wzgl¦dem
- []
-
-
-Overfull \hbox (6.28711pt too wide) in paragraph at lines 1011--1013
-\T1/lmr/m/n/12 otaczaj¡cego j¡ powietrza. Warto±¢ siªy jest proporcjonalna do k
-wadratu tej pr¦dko±ci.
- []
-
-
 
 [46]
 
 [47]
-Overfull \hbox (13.53387pt too wide) in paragraph at lines 1059--1062
-[]\T1/lmr/m/n/12 Wektor siªy ci¡gu jest przeksztaªcany z ukªadu lokalnego ( zwi
-¡zanego z silnikiem)
- []
-
-
-Overfull \hbox (7.23529pt too wide) in paragraph at lines 1067--1068
-\T1/lmr/m/n/12 której ksztaªt oraz orientacja wpªywaj¡ na warto±¢ tej siªy. Jes
-t obliczana na podstawie
- []
-
-
 
 [48]
-Overfull \hbox (12.13094pt too wide) in paragraph at lines 1100--1101
-[]\T1/lmr/m/n/12 Wektor pr¦dko±ci wzgl¦dnej rakiety jest normalizowany, aby uzy
-ska¢ jednostkowy
- []
-
-
-Overfull \hbox (11.5695pt too wide) in paragraph at lines 1101--1102
-\T1/lmr/m/n/12 rakiety, który jest obliczany za pomoc¡ iloczynu wektorowego (\T
-1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
- []
-
-
-Overfull \hbox (16.70955pt too wide) in paragraph at lines 1111--1112
-\T1/lmr/m/n/12 Funkcja \T1/lmtt/m/n/12 compute_change \T1/lmr/m/n/12 odpowiada 
-za aktualizacj¦ parametrów dynamicznych rakiety,
+Overfull \hbox (1.12518pt too wide) in paragraph at lines 1101--1102
+\T1/lmr/m/n/12 kiety, który jest ob-li-czany za po-moc¡ ilo-czynu wek-to-ro-weg
+o (\T1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
  []
 
 
 
 [49]
-Overfull \hbox (8.21715pt too wide) in paragraph at lines 1149--1150
-\T1/lmr/m/n/12 przyspieszenie k¡towe, pr¦dko±¢ k¡towa i zmiana orientacji rakie
-ty w przestrzeni. 
- []
-
-
-Overfull \hbox (22.11751pt too wide) in paragraph at lines 1150--1151
-[]\T1/lmr/bx/n/12 Korekcje aerodynamiczne\T1/lmr/m/n/12 : Je±li obiekt implemen
-tuje interfejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
- []
-
-
-Underfull \vbox (badness 1990) has occurred while \output is active []
-
-
 
 [50]
+Overfull \hbox (22.11751pt too wide) in paragraph at lines 1150--1151
+[]\T1/lmr/bx/n/12 Korekcje ae-ro-dy-na-miczne\T1/lmr/m/n/12 : Je-±li obiekt im-
+ple-men-tuje in-ter-fejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
+ []
+
+
 Overfull \hbox (41.21997pt too wide) in paragraph at lines 1155--1156
-\T1/lmr/m/n/12 W trakcie aktualizacji stanu rakiety wywoªywana jest funkcja \T1
-/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
- []
-
-
-Overfull \hbox (2.66351pt too wide) in paragraph at lines 1177--1178
-\T1/lmr/m/n/12 Warto zauwa»y¢, »e wszystkie obliczenia dotycz¡ce ruchu post¦pow
-ego s¡ prowadzone
- []
-
-
-Overfull \hbox (20.78589pt too wide) in paragraph at lines 1177--1178
-\T1/lmr/m/n/12 w ukªadzie nieinercjalnym zwi¡zanym z Ziemi¡, podczas gdy oblicz
-enia ruchu obrotowego
- []
-
-
-Overfull \hbox (9.6865pt too wide) in paragraph at lines 1177--1178
-\T1/lmr/m/n/12 wykonywane s¡ w ukªadzie wspóªrz¦dnych zwi¡zanym z rakiet¡. Dzi¦
-ki temu symulacja
- []
-
-
-Overfull \hbox (29.30579pt too wide) in paragraph at lines 1182--1190
-\T1/lmr/m/n/12 lotu, jest modelem uproszczonym, nie bior¡cym pod uwag¦ wielu cz
-ynników. Spowodowane
- []
-
-
-Overfull \hbox (22.58096pt too wide) in paragraph at lines 1182--1190
-\T1/lmr/m/n/12 ten jednak dzi¦ki moduªowej architekturze silnika mo»e by¢ w ªat
-wy sposób rozbudowany,
+\T1/lmr/m/n/12 W trak-cie ak-tu-ali-za-cji stanu ra-kiety wy-wo-ªy-wana jest fu
+nk-cja \T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
  []
 
 
 
 [51]
-Overfull \hbox (34.33147pt too wide) in paragraph at lines 1193--1197
-\T1/lmr/m/n/12 lotów rakiety na podstawie danych zapisanych w trakcie symulacji
- . Struktura zapisywanych
- []
-
-
-Overfull \hbox (9.35063pt too wide) in paragraph at lines 1198--1203
-[]\T1/lmr/m/n/12 Moduª wizualizacyjny stworzony zostaª za pomoc¡ biblioteki \T1
-/lmtt/m/n/12 PyQt\T1/lmr/m/n/12 , która umo»liwia
- []
-
-
 Overfull \hbox (49.44084pt too wide) in paragraph at lines 1198--1203
-\T1/lmr/m/n/12 Uruchomienie moduªu wizualizacyjnego polega na uruchomieniu skry
-ptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
+\T1/lmr/m/n/12 Uruchomienie mo-duªu wi-zu-ali-za-cyj-nego po-lega na uru-cho-mi
+e-niu skryptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
  []
 
 chapter2.tex:1211: Undefined control sequence.
@@ -2180,42 +1754,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (6.15839pt too wide) in paragraph at lines 1206--1214
-\T1/lmr/m/n/12 w ramach tej konfiguracji. Interfejs u»ytkownika pozwala na prze
-ª¡czanie si¦ pomi¦dzy
- []
-
-
-Overfull \hbox (20.09702pt too wide) in paragraph at lines 1206--1214
-\T1/lmr/m/n/12 Przedstawiaj¡c wi¦c struktur¦ okna gªównego, mo»na wyró»ni¢ nast
-¦puj¡ce komponenty: 
- []
-
-<main_window.png, id=187, 255.95625pt x 242.40562pt>
+<main_window.png, id=188, 255.95625pt x 242.40562pt>
 File: main_window.png Graphic file (type png)
 <use main_window.png>
 Package pdftex.def Info: main_window.png  used on input line 1221.
 (pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
 
-Overfull \hbox (53.88268pt too wide) in paragraph at lines 1214--1224
-\T1/lmr/m/n/12 dost¦pnych konfiguracji symulacji, które zostaªy zdefiniowane w 
-plikach konfiguracyjnych.
- []
-
-
-Overfull \hbox (48.68797pt too wide) in paragraph at lines 1214--1224
-\T1/lmr/m/n/12 Wybór konfiguracji powoduje wy±wietlenie listy dost¦pnych symula
-cji przeprowadzonych
- []
-
-
-Underfull \vbox (badness 5681) has occurred while \output is active []
-
-
 
 [52]
-<file_picker.png, id=191, 258.21469pt x 267.24844pt>
+<file_picker.png, id=192, 258.21469pt x 267.24844pt>
 File: file_picker.png Graphic file (type png)
 <use file_picker.png>
 Package pdftex.def Info: file_picker.png  used on input line 1232.
@@ -2231,334 +1778,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 1240--1243
  []
 
 
-Overfull \hbox (10.28891pt too wide) in paragraph at lines 1247--1251
-[]\T1/lmr/bx/n/12 Wizualizacja trajektorii lotu: \T1/lmr/m/n/12 Gªównym element
-em wizualizacji jest animacja
- []
-
-
-Overfull \hbox (24.07475pt too wide) in paragraph at lines 1247--1251
-\T1/lmr/m/n/12 trajektorii lotu rakiety w przestrzeni trójwymiarowej. Na wizual
-izacji przedstawione
- []
-
-
-Overfull \hbox (17.27791pt too wide) in paragraph at lines 1251--1255
-[]\T1/lmr/bx/n/12 Wykresy zmian parametrów ruchu obrotowego: \T1/lmr/m/n/12 Pod
- wizualizacj¡ trajektorii
- []
-
-
 
 [54 <./file_picker.png>]
-Overfull \hbox (3.21413pt too wide) in paragraph at lines 1262--1267
-[]\T1/lmr/bx/n/12 Wykres k¡ta nachylenia silnika rakiety: \T1/lmr/m/n/12 Poni»e
-j okna wizualizacji znajduje
- []
-
-<simulation_window.png, id=200, 1442.38875pt x 796.47563pt>
+<simulation_window.png, id=201, 1442.38875pt x 796.47563pt>
 File: simulation_window.png Graphic file (type png)
 <use simulation_window.png>
 Package pdftex.def Info: simulation_window.png  used on input line 1278.
 (pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
 
-Overfull \hbox (5.24529pt too wide) in paragraph at lines 1285--1297
-\T1/lmr/m/n/12 zakresem niniejszej pracy in»ynierskiej. Jest to bowiem proces w
-ymagaj¡cy stworzenia
- []
-
-
-Overfull \hbox (6.26176pt too wide) in paragraph at lines 1285--1297
-\T1/lmr/m/n/12 powodu, w ramach tej sekcji nie przeprowadzono peªnej analizy do
-kªadno±ci symulacji.
- []
-
-
-Overfull \hbox (16.08159pt too wide) in paragraph at lines 1285--1297
-\T1/lmr/m/n/12 Niemniej jednak, mo»na wskaza¢ kilka elementów symulacji sugeruj
-¡cych jej dokªadno±¢
- []
-
-
 
 [55 <./simulation_window.png>]
-Overfull \hbox (14.31793pt too wide) in paragraph at lines 1300--1301
-\T1/lmr/m/n/12 jest dokªadna i odzwierciedla rzeczywiste zjawiska fizyczne. Pon
-i»ej omówiono szczegóªy
- []
-
-
-Overfull \hbox (20.16263pt too wide) in paragraph at lines 1303--1304
-\T1/lmr/m/n/12 Jednym z kluczowych elementów potwierdzaj¡cych dokªadno±¢ symula
-cji jest stabilizacja
- []
-
-
-Overfull \hbox (51.36893pt too wide) in paragraph at lines 1303--1304
-\T1/lmr/m/n/12 aerodynamiczna rakiety w locie. Symulacja poprawnie odzwierciedl
-a momenty aerodynamiczne
- []
-
-
-Overfull \hbox (22.41429pt too wide) in paragraph at lines 1311--1315
-\T1/lmr/m/n/12 wpªywem bocznego wiatru. Kierunek i wielko±¢ odchylenia odpowiad
-aj¡ przewidywaniom
- []
-
-
-Overfull \hbox (31.23018pt too wide) in paragraph at lines 1317--1318
-\T1/lmr/m/n/12 lotu. Symulacja poprawnie uwzgl¦dnia t¦ zale»no±¢, co pozwala na
- dokªadne przewidywanie
- []
-
-
 
 [56]
-Overfull \hbox (31.81627pt too wide) in paragraph at lines 1320--1321
-\T1/lmr/m/n/12 silnika jest kompensowany przez siª¦ no±n¡ generowan¡ przez powi
-erzchnie aerodynamiczne
- []
-
-
-Overfull \hbox (5.83623pt too wide) in paragraph at lines 1320--1321
-\T1/lmr/m/n/12 rakiety. To dynamiczne równowa»enie siª wskazuje na poprawne mod
-elowanie zarówno
- []
-
-
-Overfull \hbox (10.17567pt too wide) in paragraph at lines 1323--1335
-\T1/lmr/m/n/12 Powy»sze obserwacje stanowi¡ mocne dowody na dokªadno±¢ i wiaryg
-odno±¢ symulacji,
- []
-
-
-Overfull \hbox (10.01463pt too wide) in paragraph at lines 1323--1335
-\T1/lmr/m/n/12 Trudnym do ustalenia jest tak»e jako±c i dokªadno±¢ opisanych wy
-»ej zjawisk, poniewa»
- []
-
-
-Overfull \hbox (11.71042pt too wide) in paragraph at lines 1323--1335
-\T1/lmr/m/n/12 bardziej szczegóªowych, praktycznych bada« oraz porównanie wynik
-ów z rzeczywistymi
- []
-
-
-Overfull \hbox (3.5139pt too wide) in paragraph at lines 1338--1342
-\T1/lmr/m/n/12 fizycznym z danymi odzwierciedlaj¡cymi rzeczywiste loty rakietow
-e. Uzyskanie takich
- []
-
-
-Overfull \hbox (9.68752pt too wide) in paragraph at lines 1345--1361
-\T1/lmr/m/n/12 Jednym z kierunków dalszych bada« jest porównanie wyników symula
-cji w stworzonym
- []
-
-
-Overfull \hbox (10.26355pt too wide) in paragraph at lines 1345--1361
-\T1/lmr/m/n/12 na rynku, takich jak \T1/lmtt/m/n/12 OpenRocket \T1/lmr/m/n/12 c
-zy \T1/lmtt/m/n/12 RockSim\T1/lmr/m/n/12 . Porównanie wyników z innymi silnikam
-i
- []
-
-
-Overfull \hbox (15.04152pt too wide) in paragraph at lines 1345--1361
-\T1/lmr/m/n/12 pozwoli na ocen¦ dokªadno±ci i wiarygodno±ci symulacji oraz iden
-tyfikacj¦ ewentualnych
- []
-
-
-Overfull \hbox (22.02396pt too wide) in paragraph at lines 1345--1361
-\T1/lmr/m/n/12 z silników, co oznaczaªoby konieczno±¢ stworzenia rakiety, oraz 
-±rodowiska o identycznych
- []
-
-
-Overfull \hbox (1.72362pt too wide) in paragraph at lines 1345--1361
-\T1/lmr/m/n/12 mo»liwo±ci stworzenia rakiety o ksztaªcie i parametrach identycz
-nych w obu silnikach. 
- []
-
-
 
 [57]
-Overfull \hbox (18.85905pt too wide) in paragraph at lines 1364--1378
-\T1/lmr/m/n/12 Kolejnym kierunkiem bada« jest porównanie wyników symulacji z da
-nymi pochodz¡cymi
- []
-
-
-Overfull \hbox (28.09496pt too wide) in paragraph at lines 1364--1378
-\T1/lmr/m/n/12 z rzeczywistych lotów rakietowych. Tego typu badania mog¡ by¢ ko
-sztowne i czasochªonne,
- []
-
-
-Overfull \hbox (36.44891pt too wide) in paragraph at lines 1364--1378
-\T1/lmr/m/n/12 ale pozwalaj¡ na uzyskanie najbardziej dokªadnych danych. Wymaga
-j¡ one przeprowadzenia
- []
-
-
-Overfull \hbox (5.93329pt too wide) in paragraph at lines 1364--1378
-\T1/lmr/m/n/12 rzeczywistych lotów modeli rakiet wyposa»onych w systemy pomiaro
-we, które zbieraj¡
- []
-
-
-Overfull \hbox (28.42058pt too wide) in paragraph at lines 1364--1378
-\T1/lmr/m/n/12 Prowadzenie lotów rakiety w labolarium, gdzie mo»na kontrolowa¢ 
-warunki atmosferyczne,
- []
-
-
-Overfull \hbox (2.93056pt too wide) in paragraph at lines 1381--1391
-\T1/lmr/m/n/12 przeprowadzenie testów nierakietowych, które mog¡ posªu»y¢ do we
-ryfikacji dziaªania
- []
-
-
-Overfull \hbox (2.01715pt too wide) in paragraph at lines 1381--1391
-\T1/lmr/m/n/12 polegaj¡ce na nagraniu i zmierzeniu parametrów upuszczanego z ok
-re±lonej wysoko±ci
- []
-
-
-Overfull \hbox (30.11948pt too wide) in paragraph at lines 1381--1391
-\T1/lmr/m/n/12 przedmiotu, o okre±lonych parametrach. Dzi¦ki takiemu nagraniu, 
-mo»liwe jest porównanie
- []
-
-
-Overfull \hbox (3.31726pt too wide) in paragraph at lines 1394--1402
-\T1/lmr/m/n/12 fizycznego oraz identyfikacj¦ ewentualnych bª¦dów i rozbie»no±ci
-. Niestety, nie zostaªy
- []
-
-
-Overfull \hbox (23.52527pt too wide) in paragraph at lines 1394--1402
-\T1/lmr/m/n/12 si¦ za wystarczaj¡co dokªadny, aby przeprowadza¢ symulacje lotów
- w celach treningowych
- []
-
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-
 
 [58]
-Overfull \hbox (7.99007pt too wide) in paragraph at lines 1411--1420
-\T1/lmr/m/n/12 analiz¦ literatury oraz materiaªów online dotycz¡cych lotów raki
-etowych, modelowania
- []
+chapter2.tex:1415: Undefined control sequence.
+l.1415 ...ch zagadnieÅ„ wykorzystano podrÄ™cznik "
+                                                  Topics in Advanced Model
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (34.1957pt too wide) in paragraph at lines 1411--1420
-\T1/lmr/m/n/12 dynamiki i symulacji fizycznych. W du»ej mierze do zgl¦bienia ty
-ch zagadnie« wykorzystano
- []
-
-
-Overfull \hbox (8.09384pt too wide) in paragraph at lines 1411--1420
-\T1/lmr/m/n/12 podr¦cznik "Topics in Advanced Model Rocketry" autorstwa Gordona
- K. Mandella[13],
- []
-
-
-Overfull \hbox (14.74039pt too wide) in paragraph at lines 1421--1422
-[]\T1/lmr/m/n/12 Na tym etapie zdecydowano o wykorzystaniu j¦zyka Python jako g
-ªównej technologii
- []
-
-
-Overfull \hbox (0.2856pt too wide) in paragraph at lines 1421--1422
-\T1/lmr/m/n/12 implementacji, ze wzgl¦du na jego znajomo±¢ przez autorów oraz ª
-atwo±¢ w tworzeniu
- []
+chapter2.tex:1416: Undefined control sequence.
+l.1416 Rocketry"
+                 autorstwa Gordona K. Mandella\cite{alma991019564819703276},...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 
 [59]
-Overfull \hbox (8.57289pt too wide) in paragraph at lines 1425--1426
-\T1/lmr/m/n/12 Kolejnym etapem byªo zaprojektowanie i stworzenie pierwszej wers
-ji silnika fizycznego.
- []
-
-
-Overfull \hbox (7.82098pt too wide) in paragraph at lines 1427--1428
-[]\T1/lmr/m/n/12 W odpowiedzi na te wyzwania zdecydowano si¦ przebudowa¢ archit
-ektur¦ systemu.
- []
-
-
-Overfull \hbox (19.24602pt too wide) in paragraph at lines 1427--1428
-\T1/lmr/m/n/12 Wprowadzono rozwi¡zania oparte na interfejsach, co uªatwiªo rozw
-ijanie funkcjonalno±ci.
- []
-
-
-Overfull \hbox (28.71288pt too wide) in paragraph at lines 1427--1428
-\T1/lmr/m/n/12 zamiast generowanych w czasie rzeczywistym. Podej±cie to umo»liw
-iªo szybk¡ identyfikacj¦
- []
-
-
-Overfull \hbox (35.14569pt too wide) in paragraph at lines 1431--1432
-\T1/lmr/m/n/12 Trzeci etap obejmowaª implementacj¦ nowej architektury oraz doda
-tkowych funkcjonalno±ci
- []
-
-
-Overfull \hbox (28.7788pt too wide) in paragraph at lines 1431--1432
-\T1/lmr/m/n/12 silnika. Pocz¡tkowo stworzono szkielet systemu, który pozwoliª n
-a weryfikacj¦ poprawno±ci
- []
-
-
-Overfull \hbox (5.2161pt too wide) in paragraph at lines 1435--1436
-\T1/lmr/m/n/12 oraz optymalizacj¦ dziaªania systemu. Przykªadem istotnych uspra
-wnie« byªo dodanie
- []
-
-
-Overfull \hbox (16.05014pt too wide) in paragraph at lines 1439--1440
-\T1/lmr/m/n/12 Praca nad projektem pozwoliªa na zdobycie cennego do±wiadczenia 
-w takich dziedzinach
- []
-
-
-Overfull \hbox (21.89322pt too wide) in paragraph at lines 1441--1442
-[]\T1/lmr/m/n/12 Podczas realizacji projektu napotkano wiele problemów, zarówno
- implementacyjnych,
- []
+Underfull \vbox (badness 2547) has occurred while \output is active []
 
 
 
 [60])
-Overfull \hbox (4.85446pt too wide) in paragraph at lines 1445--74
-[]\T1/lmr/m/n/12 Finalny projekt speªnia wszystkie zaªo»enia okre±lone w rozdzi
-ale 2.1[], a dodatkowo
- []
-
-
 
 [61]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
-Rozdzia\PlPrIeC {\l } 3.
-
-Overfull \hbox (33.28195pt too wide) in paragraph at lines 6--7
-\T1/lmr/m/n/12 Do stworzenia algorytmu steruj¡cego rakiet¡ wykorzystane zostaªy
- nast¦puj¡ce technologie: 
- []
-
-
-Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
-|[]\T1/lmr/bx/n/17.28 Wybór odpowiedniego algorytmu uczenia maszynowego.| 
- []
-
+Rozdzia\l  3.
 )
 
 [62
@@ -2570,15 +1837,10 @@ Overfull \hbox (86.20744pt too wide) in paragraph at lines 14--14
 \openout2 = `chapter4.aux'.
 
  (chapter4.tex
-Rozdzia\PlPrIeC {\l } 4.
+Rozdzia\l  4.
 
 Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
-|[]\T1/lmr/bx/n/20.74 Integracja komponentów: Silnik fizyczny
- []
-
-
-Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
-|[]\T1/lmr/bx/n/17.28 Interakcja mi¦dzy silnikiem fizycznym a modelem
+|[]\T1/lmr/bx/n/20.74 Integracja kom-po-nen-tów: Sil-nik fi-zyczny
  []
 
 )
@@ -2592,17 +1854,7 @@ Overfull \hbox (29.47882pt too wide) in paragraph at lines 2--2
 \openout2 = `chapter5.aux'.
 
  (chapter5.tex
-Rozdzia\PlPrIeC {\l } 5.
-
-Overfull \hbox (23.94484pt too wide) in paragraph at lines 3--3
-|[]\T1/lmr/bx/n/17.28 Ocena skuteczno±ci modelu sztucznej inteligencji| 
- []
-
-
-Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
-|[]\T1/lmr/bx/n/17.28 Analiza osi¡gni¦tych rezultatów i ich implikacje| 
- []
-
+Rozdzia\l  5.
 )
 
 [64
@@ -2614,7 +1866,7 @@ Overfull \hbox (12.15703pt too wide) in paragraph at lines 4--4
 \openout2 = `chapter6.aux'.
 
  (chapter6.tex
-Rozdzia\PlPrIeC {\l } 6.
+Rozdzia\l  6.
 )
 
 [65
@@ -2623,129 +1875,16 @@ Rozdzia\PlPrIeC {\l } 6.
 
 
 ]
-
-Package biblatex Warning: Bibliography string 'andothers' untranslated
-(biblatex)                at entry 'DBLP:journals/corr/AbadiBCCDDDGIIK16' on in
-put line 82.
-
-
-Package biblatex Warning: Bibliography string 'in' untranslated
-(biblatex)                at entry 'DBLP:journals/corr/AbadiBCCDDDGIIK16' on in
-put line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'and' untranslated
-(biblatex)                at entry 'rocksim' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'and' untranslated
-(biblatex)                at entry 'chacon2014pro' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Overfull \hbox (24.47514pt too wide) in paragraph at lines 83--83
-[]\T1/lmr/m/n/12 ROS Consortium. \T1/lmr/m/it/12 Gazebo ROS Packages\T1/lmr/m/n
-/12 . $\T1/lmtt/m/n/12 https : / / github . com / ros -[] simulation /
+Overfull \hbox (44.21571pt too wide) in paragraph at lines 83--83
+[]\T1/lmr/m/n/12 AeroTech []and []Mad-cow Roc-ke-try. \T1/lmr/m/it/12 Rock-Sim\
+T1/lmr/m/n/12 . Ava-ila-ble at $\T1/lmtt/m/n/12 https : / / www . rocketryforum
+ .
  []
 
 
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'and' untranslated
-(biblatex)                at entry 'alma991019564819703276' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Overfull \hbox (2.8541pt too wide) in paragraph at lines 83--83
-\T1/lmr/m/it/12 William P. Bengen. \T1/lmr/m/n/12 eng. Cambridge, Mass: MIT Pre
-ss, 1973. \T1/lmr/m/sc/12 isbn\T1/lmr/m/n/12 : 0262020963. 
+Overfull \hbox (24.47514pt too wide) in paragraph at lines 83--83
+[]\T1/lmr/m/n/12 ROS Con-sor-tium. \T1/lmr/m/it/12 Ga-zebo ROS Pac-ka-ges\T1/lm
+r/m/n/12 . $\T1/lmtt/m/n/12 https : / / github . com / ros -[] simulation /
  []
 
 
@@ -2755,102 +1894,6 @@ ss, 1973. \T1/lmr/m/sc/12 isbn\T1/lmr/m/n/12 : 0262020963.
 
 
 ]
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'andothers' untranslated
-(biblatex)                at entry 'mittelbach2004latex' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'in' untranslated
-(biblatex)                at entry 'niskanen2013openrocket' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'pages' untranslated
-(biblatex)                at entry 'niskanen2013openrocket' on input line 82.
-
-
-Package biblatex Warning: Bibliography string 'andothers' untranslated
-(biblatex)                at entry 'DBLP:journals/corr/abs-1912-01703' on input
- line 82.
-
-
-Package biblatex Warning: Bibliography string 'in' untranslated
-(biblatex)                at entry 'DBLP:journals/corr/abs-1912-01703' on input
- line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Bibliography string 'andothers' untranslated
-(biblatex)                at entry 'stable-baselines3' on input line 82.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Overfull \hbox (10.03464pt too wide) in paragraph at lines 83--83
-[]\T1/lmr/m/n/12 Dhariwal Rafael []. \T1/lmr/m/it/12 Stable-Baselines3: Reliabl
-e Reinforcement Learning
- []
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
-Package biblatex Warning: Using fallback definition for \mkbibdatelong.
-(biblatex)                The command should be defined in the .lbx file.
-(biblatex)                If you see this message, the .lbx file could not be
-(biblatex)                loaded, is faulty or does not contain a definition
-(biblatex)                for \mkbibdatelong.
-
-
 
 [67]
 
@@ -2879,42 +1922,40 @@ L3 programming layer <2024-12-09>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16835 strings out of 473573
- 304831 string characters out of 5716588
- 1215407 words of memory out of 5000000
- 39755 multiletter control sequences out of 15000+600000
+ 17347 strings out of 473573
+ 315495 string characters out of 5716588
+ 1240591 words of memory out of 5000000
+ 40265 multiletter control sequences out of 15000+600000
  625039 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,81p,906b,1702s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb
-><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb
-><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb
-><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb>
-<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><
-C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:
-/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/U
-sers/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/User
-s/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/K
-uba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Ku
-ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Kub
-a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Kuba/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kuba/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+ 72i,7n,81p,882b,1816s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Kuba\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+200.pk><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
+2.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi1
+0.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc1
+0.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
+.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.
+pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pf
+b><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
+<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:
+/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Us
+ers/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Use
+rs/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
+s/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/
+Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/K
+uba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Ku
+ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (70 pages, 668510 bytes).
+per\out\main.pdf (70 pages, 684903 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
+ 370 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
