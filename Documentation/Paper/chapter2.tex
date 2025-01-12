@@ -4,63 +4,55 @@
 System do symulacji lotów rakietowych to pierwszy z modułów
 niniejszej pracy inżynierskiej.
 Za pomocą tego projektu osiągnięty zostaje
-cel pośredni pracy - stworzenie środowiska do uczenia algorytmów.
+cel pośredni pracy - stworzenie środowiska, w którym możliwe jest testowanie algorytmów sterujących rakietą.\\
 Autorem
 tego modułu jest Jakub Kindlik.\\
-W tym rozdziale przedstawione zostały teoretyczne podstawy fizyczne, użyte
-technologie, oraz
-trzy główne komponenty
-tego modułu:
+W tym rozdziale przedstawione zostały teoretyczne podstawy fizyczne, użyte technologie, oraz trzy główne podrozdziały tego modułu:
 
 \begin{itemize}
-    \item Projekt silnika fizycznego.
-    \item Model sił działających na rakietę.
+    \item Projekt architektury systemu.
+    \item Model sił fizycznych w systemie.
     \item Moduł wizualizacyjny symulacji.
 \end{itemize}
 
 Omówione zostały także zagadnienia związane ze
-sprawdzeniem dokładności symulacji oraz ewolucją projektu.\\
+sprawdzeniem dokładności symulacji, opisem wyników oraz z ewolucją projektu.\\
 
 \section{Założenia projektowe.}\label{sec:zalozenia-projektowe.}
 W trakcie pracy nad modułem silnika fizycznego symulacji lotów rakietowych poczyniono szereg założeń, które miały na celu ułatwienie implementacji oraz zapewnienie odpowiedniej wydajności symulacji. Poniżej przedstawiono najważniejsze z nich:
 
 \begin{itemize}
 
-\item \textbf{Modelowanie uproszczonych sił działających na rakietę.} \\
-W celu zmniejszenia złożoności obliczeniowej model sił działających na rakiet
-ę zostanie odpowiednio uproszczony. Uwzględnione zostaną kluczowe siły, takie
-jak grawitacja, opór powietrza i siła ciągu silnika czy siła nośna, ale
-zostaną one zamodelowane w uproszczony sposób. Takie podejście umożliwia łatwiejsze zamodelowanie systemu i redukuje zapotrzebowanie na zasoby obliczeniowe.
+\item \textbf{Uproszczone modelowanie sił działających na rakietę.} \\
+W celu zmniejszenia złożoności obliczeniowej model sił działających na rakietę został odpowiednio uproszczony. Uwzględnione zostały kluczowe siły, takie jak grawitacja, siła oporu powietrza i siła ciągu silnika czy siła nośna, ale zostały one zamodelowane w uproszczony sposób. Takie podejście umożliwiło łatwiejsze zamodelowanie systemu i zredukowało zapotrzebowanie na zasoby obliczeniowe.
 
 \item \textbf{Optymalizacja pod kątem pracy na komputerze osobistym.} \\
-Symulacje będą wykonywane na komputerze osobistym, dlatego system symulacji lotów rakietowych
-musi być zoptymalizowany pod kątem wydajności, jak i okrojony w kwestii
-skomplikowanych obliczeń. Ograniczenie
-zasobożerności
-jest konieczne, aby zapewnić płynne działanie nawet na sprzęcie o przeciętnych parametrach.
+Symulacje były wykonywane na komputerze osobistym, dlatego system symulacji lotów rakietowych został zoptymalizowany pod kątem wydajności, jak i okrojony w kwestii skomplikowanych obliczeń. Ograniczenie zasobożerności było konieczne, aby zapewnić płynne działanie nawet na sprzęcie o przeciętnych parametrach.
 
 \item \textbf{Uproszczona geometria rakiety.} \\
-W celu ograniczenia złożoności modelu fizycznego rakieta będzie miała kszta
-łt walca. Rakieta nie będzie posiadała skrzydeł. Taka decyzja
-pozwala
-na skupienie się na kluczowych aspektach dynamiki lotu bez nadmiernego komplikowania obliczeń.
+W celu ograniczenia złożoności modelu fizycznego rakieta ma kształt walca i
+nie posiada skrzydeł. Taka decyzja pozwoliła na skupienie się na kluczowych aspektach dynamiki lotu bez nadmiernego komplikowania obliczeń.
 
 \item \textbf{Sterowanie poprzez obracany silnik.} \\
-Układ sterujący rakietą będzie się opierał na możliwości obracania silnika,
-co bezpośrednio wpłynie na trajektorię lotu. Taki model jest prosty do
-zamodelowania, a jednocześnie pozwala na sterowanie rakietą przez algorytmy
-samouczące, poprzez zmianę jednego parametru.
+Układ sterujący rakietą opiera się na możliwości obracania silnika, co
+bezpośrednio wpływa na trajektorię lotu. Taki model umożliwia sterowanie
+rakietą przez algorytmy samouczące, poprzez zmianę jednego parametru -
+wektora kątów nachylenia silnika.
 
 \item \textbf{Możliwość modyfikacji parametrów symulacji w czasie rzeczywistym.} \\
-Symulacja zostanie zaprojektowana w sposób umożliwiający ingerencję w jej
-parametry w trakcie trwania. W szczególności modyfikowanym parametrem
-powinien być kąt nachylenia silnika. Taka funkcjonalność pozwala na
-uczenie algorytmów sterujących w czasie rzeczywistym.
+Symulacja została zaprojektowana w sposób umożliwiający ingerencję w jej
+parametry w trakcie trwania. Modyfikowanym parametrem jest kąt
+nachylenia silnika. Taka funkcjonalność pozwalał na uczenie algorytmów
+sterujących w trakcie trwania symulacji.
 
 \item \textbf{Możliwość wizualizacji symulacji.} \\
-Symulacja będzie wyposażona w opcjonalną funkcję wizualizacji, co umożliwi analizę trajektorii i zachowania rakiety w sposób intuicyjny. Jednak wizualizacja nie będzie wymagana, co pozwoli ograniczyć zużycie zasobów obliczeniowych w trakcie symulacji.
+System został wyposażony w opcjonalną funkcję wizualizacji, co umożliwiło
+analizę trajektorii i zachowania rakiety w sposób intuicyjny. Aby ograniczyć
+zużycie zasobów komputera, wizualizacja nie jest tworzona w czasie trwania
+symulacji, a jedynie po jej zakończeniu, na bazie pliku z zapisanymi danymi.
 
 \end{itemize}
+
 
 Założenia te konieczne są do stworzenia silnika fizycznego, który będzie w
 stanie współpracować z modułem algorytmu sterującego rakietą, jednocześnie
@@ -75,66 +67,124 @@ towarzyszących temu ruchowi. Ponadto konieczne jest zrozumienie podstawowych
 zagadnień z zakresu matematyki, w tym geometrii przestrzennej oraz równań
 różniczkowych.\\
 W tym rozdziale po krótce omówione zostały zagadnienia, które stanowią
-podstawę implementacji silnika fizycznego symulacji lotów rakietowych.
+podstawę implementacji systemu symulacji lotów rakietowych.
 
 \subsection{Opis sił działających na rakietę}
 W trakcie lotu rakiety w atmosferze działają na nią różne siły, które
-determinują zarówno ruch postępowy, jak i obrotowy. \\Najważniejszymi z tych
-sił są:
+determinują zarówno ruch postępowy, jak i obrotowy. \\Najważniejsze z nich
+zostały przedstawione na rysunku \ref{fig:rocket_forces}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/all-forces}
+    \caption{Siły działające na rakietę w locie, \textit{źródło: Opracowanie własne.}}
+    \label{fig:rocket_forces}
+\end{figure}
 
-\begin{itemize}
-\item \textbf{Siła ciężkości (\textit{Gravity})} \newline
+\textbf{Siła ciężkości (\textit{Gravity})} \newline
 Siła skierowana ku środkowi Ziemi, działająca na środek ciężkości rakiety (\textit{Center of Gravity, CoG}). Jej wartość wyraża się jako:
-\[ \vec{F}_g = m \cdot \vec{g},\] gdzie:
+\begin{equation}
+    \vec{F}_g = m \cdot \vec{g},
+    \label{eq:gravity_force}
+\end{equation}, gdzie:
 \begin{itemize}
 \item $m$ -- masa rakiety [kg],
-\item $\vec{g}$ -- wektor przyspieszenia grawitacyjnego [m/s$^2$], zazwyczaj o wartości około $9.81$ m/s$^2$ na poziomie morza.
+\item $\vec{g}$ -- wektor przyspieszenia grawitacyjnego [m/s$^2$],
+zazwyczaj do symulacji przyjmuje się wartości około $9.81$ m/s$^2$,
+odpowiadające przyśpieszeniu grawitacyjnemu na
+poziomie
+morza.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/gravity-force}
+    \caption{Siła ciężkości działająca na rakietę, \textit{źródło: Opracowanie własne.}}
+    \label{fig:gravity_force}
+\end{figure}
 
-
-\item \textbf{Siła nośna (\textit{Lift})} \newline
-Siła działająca na punkt środka parcia (\textit{Center of Pressure, CoP}) rakiety, prostopadła do kierunku przepływu powietrza. Jest istotna w stabilizacji lotu i zależy od kształtu rakiety oraz kąta natarcia. Wyraża się jako:
-\[ \vec{F}_l = \frac{1}{2} \rho v^2 C_l A, \]
-gdzie:
+\textbf{Siła oporu aerodynamicznego (\textit{Drag})} \newline
+Siła działająca również na punkt \textit{Center of Pressure (CoP)},
+przeciwna do kierunku ruchu. Zależy od właściwości powietrza i kształtu
+rakiety oraz jej prędkości, a także od współczynnika oporu aerodynamicznego
+i efektywnej powierzchni rakiety, a jej wartość wyraża się jako:
+\begin{equation}
+    \vec{F}_d = \frac{1}{2} \rho v^2 C_d A,
+    \label{eq:drag_force}
+\end{equation} , gdzie:
 \begin{itemize}
     \item $\rho$ -- gęstość powietrza [kg/m$^3$],
     \item $v$ -- prędkość rakiety względem powietrza [m/s],
-    \item $C_l$ -- współczynnik siły nośnej (zależy od kąta natarcia),
+    \item $C_l$ -- współczynnik oporu aerodynamicznego rakiety (zależy od kąta
+    natarcia oraz kształtu rakiety),
     \item $A$ -- efektywna powierzchnia rakiety [m$^2$].
 \end{itemize}
-
-\item \textbf{Siła oporu aerodynamicznego (\textit{Drag})} \newline
-Siła działająca również na punkt \textit{Center of Pressure (CoP)}, przeciwna do kierunku ruchu. Zależy od właściwości powietrza i kształtu rakiety, a jej wartość wyraża się jako:
-\[ \vec{F}_d = \frac{1}{2} \rho v^2 C_d A, \]
-gdzie:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drag-force}
+    \caption{Siła oporu aerodynamicznego działająca na rakietę, \textit{źródło: Opracowanie własne.}}
+    \label{fig:drag_force}
+\end{figure}
+\textbf{Siła nośna (\textit{Lift})} \newline
+Siła działająca na punkt środka parcia (\textit{Center of Pressure, CoP})
+rakiety, prostopadła do kierunku przepływu powietrza. Jest istotna w
+stabilizacji lotu i zależy od kształtu rakiety, gęstości powietrza,
+prędkości rakiety, współczynnika siły nośnej
+oraz kąta natarcia. Wyraża się jako:
+\begin{equation}
+    \vec{F}_l = \frac{1}{2} \rho v^2 C_l A,
+    \label{eq:lift_force}
+\end{equation}, gdzie:
 \begin{itemize}
-    \item $C_d$ -- współczynnik oporu aerodynamicznego (zależy od kształtu rakiety).
+    \item $\rho$ -- gęstość powietrza [kg/m$^3$],
+    \item $v$ -- prędkość rakiety względem powietrza [m/s],
+    \item $C_l$ -- współczynnik siły nośnej (zależy od kąta natarcia oraz kształtu rakiety),
+    \item $A$ -- efektywna powierzchnia rakiety [m$^2$].
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/lift-force}
+    \caption{Siła nośna działająca na rakietę, \textit{źródło: Opracowanie własne.}}
+    \label{fig:lift_force}
+\end{figure}
 
-\item \textbf{Siła ciągu (\textit{Thrust})} \newline
+
+\textbf{Siła ciągu (\textit{Thrust})} \newline
 Siła generowana przez silnik rakiety, działająca na punkt mocowania silnika \textit{Center
 of Thrust (CoT)} wzdłuż osi rakiety. Wyrażenie opisujące siłę ciągu to:
-\[ \vec{F}_t = m_{e} \cdot v_{e}, \]
-gdzie:
+\begin{equation}
+    \vec{F}_t = \mu_{e} \cdot \vec{v}_{e},
+    \label{eq:thrust_force}
+\end{equation}, gdzie:
 \begin{itemize}
-    \item $m_{e}$ -- wyrzucona masa spalin [kg],
+    \item $\mu_{e}$ -- wyrzucona masa spalin w jednostce czasu [kg/s],
     \item $v_{e}$ -- prędkość wyrzutu spalin [m/s].
 \end{itemize}
-
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/thrust-force}
+    \caption{Siła ciągu działająca na rakietę, \textit{źródło: Opracowanie własne.}}
+    \label{fig:thrust_force}
+\end{figure}
 
 \subsection{Równania ruchu postępowego}
 Ruch postępowy rakiety w atmosferze opisuje druga zasada dynamiki Newtona, zgodnie z którą suma wszystkich sił działających na rakietę równa jest iloczynowi masy rakiety i przyspieszenia środka masy:
-\[.\vec{F}_{net} = \vec{F}_g + \vec{F}_l + \vec{F}_d + \vec{F}_t.\]
+\begin{equation}
+\vec{F}_{net} = \vec{F}_g + \vec{F}_l + \vec{F}_d + \vec{F}_t.
+\label{eq:net_force}
+\end{equation}
 
 
 Przyspieszenie rakiety można więc wyznaczyć jako:
-\[\vec{a} = \frac{\vec{F}_{net}}{m},\]
+\begin{equation}
+\vec{a} = \frac{\vec{F}_{net}}{m}
+\label{eq:acceleration}
+\end{equation}
 
 natomiast prędkość w kolejnych momentach czasu oblicza się poprzez całkowanie przyspieszenia względem czasu:
-\[\vec{v}(t) = \vec{v}_0 + \int_0^t \vec{a}(\tau) d\tau,\]
-
+\begin{equation}
+\vec{v}(t) = \vec{v}_0 + \int_0^t \vec{a}(\tau) d\tau,
+\label{eq:velocity}
+\end{equation}
 gdzie:
 \begin{itemize}
 \item $\vec{v}_0$ -- początkowa prędkość rakiety [m/s].
@@ -142,8 +192,10 @@ gdzie:
 
 
 Pozycję rakiety można wyznaczyć poprzez kolejne całkowanie prędkości:
-\[\vec{x}(t) = \vec{x}_0 + \int_0^t \vec{v}(\tau) d\tau,\]
-
+\begin{equation}
+\vec{x}(t) = \vec{x}_0 + \int_0^t \vec{v}(\tau) d\tau
+\label{eq:position}
+\end{equation}
 
 gdzie:
 \begin{itemize}
@@ -154,8 +206,10 @@ gdzie:
 
 \subsection{Ruch obrotowy i momenty sił}
 Ruch obrotowy rakiety jest determinowany momentami sił działającymi na rakietę. Kluczowe znaczenie ma tutaj punkt środka masy (CoG), wokół którego rakieta może rotować. Moment siły względem środka masy wyraża się jako:
-\[\vec{M} = \vec{r} \times \vec{F},\]
-
+\begin{equation}
+\vec{M} = \vec{r} \times \vec{F},
+\label{eq:moment_force}
+\end{equation}
 
 gdzie:
 \begin{itemize}
@@ -166,7 +220,10 @@ gdzie:
 
 \subsubsection{Równania ruchu obrotowego}
 Moment obrotowy generuje przyspieszenie kątowe zgodnie z równaniem:
-\[\vec{\alpha} = \frac{\vec{M}}{I},\]
+\begin{equation}
+\vec{\alpha} = \frac{\vec{M}}{I},
+\label{eq:angular_acceleration}
+\end{equation}
 
 
 gdzie:
@@ -177,8 +234,10 @@ gdzie:
 
 
 Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie według:
-\[\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\alpha}(\tau) d\tau,\]
-
+\begin{equation}
+\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\alpha}(\tau) d\tau,
+\label{eq:angular_velocity}
+\end{equation}
 
 gdzie:
 \begin{itemize}
@@ -187,7 +246,10 @@ gdzie:
 
 
 Kąt orientacji rakiety w przestrzeni zmienia się w czasie:
-\[\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) d\tau,\]
+\begin{equation}
+\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) d\tau,
+\label{eq:orientation}
+\end{equation}
 
 
 gdzie:
@@ -204,7 +266,10 @@ Ruch obrotowy jest ściśle związany ze stabilnością rakiety w locie. Rakieta
 Środowisko atmosferyczne wpływa na dynamikę ruchu rakiety, szczególnie poprzez gęstość powietrza ($\rho$) oraz zmienne ciśnienie i temperaturę. Modelowanie środowiska wymaga uwzględnienia:
 \begin{itemize}
 \item Zmiennej gęstości powietrza w zależności od wysokości:
-\[\rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),\]
+\begin{equation}
+\rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),
+\label{eq:density}
+\end{equation}
 gdzie:
 \begin{itemize}
 \item $\rho_0$ -- gęstość powietrza na poziomie morza [kg/m$^3$],
@@ -220,9 +285,11 @@ Kąt natarcia ($\alpha$) jest kluczowym parametrem aerodynamicznym opisującym o
 
 \subsubsection{Definicja kąta natarcia}
 Kąt natarcia $\alpha$ definiuje się jako kąt pomiędzy wektorem prędkości powietrza $\vec{v}_{rel}$ a osią symetrii rakiety. Wyrażenie to zapisuje się jako:
-\[
-\alpha = \arccos\left(\frac{\vec{v}_{rel} \cdot \vec{a}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
-\]
+\begin{equation}
+    \alpha = \arccos\left(\frac{\vec{v}_{rel} \cdot \vec{a}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
+    \label{eq:angle_of_attack}
+\end{equation}
+
 gdzie:
 \begin{itemize}
     \item $\vec{v}_{rel}$ -- wektor prędkości względnej przepływu powietrza,
@@ -246,6 +313,16 @@ Dla rakiet stabilnych aerodynamicznie kąt natarcia zazwyczaj jest mały (rzędu
     \item działania układów sterujących.
 \end{itemize}
 
+\subsubsection{Zależność sił aerodynamicznych od kąta natarcia}
+
+Siły aerodynamiczne działające na rakiety zależą silnie od kąta natarcia $\alpha$. W szczególności od kąta natarcia zależą współczynniki sił nośnej $C_l$ i oporu $C_d$. Wartości tych współczynników zazwyczaj są wyznaczane eksperymentalnie za pomocą tunelu aerodynamicznego. \\
+Od kąta natarcia zależy także powierzchnia efektywna rakiety $A_\alpha$,
+która wpływa na siły aerodynamiczne. \\
+Na podstawie tych zależnych od kąta natarcia parametrów wyznaczane są siły
+aerodynamiczne działające na rakietę w locie. Oznacza to, że są one
+bezpośrednio związane z orientacją rakiety względem przepływu powietrza, a
+co za tym idzie, z kątem natarcia.
+
 
 \subsection{Geometria rakiety}
 
@@ -260,9 +337,10 @@ podstawowe właściwości geometryczne wyznacza się następująco:
 
 \begin{itemize}
     \item \textbf{Objętość walca}:
-    \[
-    V_{cyl} = \pi r^2 h,
-    \]
+    \begin{equation}
+        V_{cyl} = \pi r^2 h,
+        \label{eq:cylinder_volume}
+    \end{equation}
     gdzie:
     \begin{itemize}
         \item $r$ -- promień podstawy walca [m],
@@ -270,10 +348,10 @@ podstawowe właściwości geometryczne wyznacza się następująco:
     \end{itemize}
 
     \item \textbf{Powierzchnia boczna walca}:
-    \[
-    A_{cyl} = 2 \pi r h.
-    \]
-
+\begin{equation}
+    A_{cyl} = 2\pi r h,
+    \label{eq:cylinder_surface}
+\end{equation}
 \end{itemize}
 
 \subsubsection{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}
@@ -283,17 +361,19 @@ wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrz
 
 \paragraph{Przekrój czołowy ($\alpha = 0^\circ$):}
 Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy jest równy powierzchni podstawy cylindra:
-\[
+\begin{equation}
 A_{0} = \pi r^2.
-\]
+\label{eq:frontal_area}
+\end{equation}
 
 \paragraph{Przekrój pod kątem $\alpha$:}
 Jeżeli rakieta jest nachylona pod kątem $\alpha$ do kierunku przepływu,
 powierzchnia efektywna przekroju zmienia się zgodnie z rzutem walca na
 płaszczyznę prostopadłą do przepływu. Powierzchnię tę można wyznaczyć jako:
-\[
+\begin{equation}
 A_\alpha = \pi r^2 \cos\alpha + 2rh \sin\alpha,
-\]
+\label{eq:inclined_area}
+\end{equation}
 gdzie:
 \begin{itemize}
     \item $\cos\alpha$ odpowiada zmniejszeniu widocznej powierzchni podstawy wzdłuż osi symetrii,
@@ -368,34 +448,38 @@ trzech osi układu inercjalnego:
 
 \paragraph{Macierze rotacji}
 Transformacja między układami współrzędnych odbywa się za pomocą macierzy rotacji. Dla kątów Eulera macierz rotacji $R$ jest wynikiem trzech obrotów:
-\[
+\begin{equation}
 R = R_z(\psi) R_y(\theta) R_x(\phi),
-\]
+\label{eq:rotation_matrix}
+\end{equation}
 gdzie:
-\[
-R_x(\phi) =
+\begin{equation}
+    R_x(\phi) =
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos\phi & -\sin\phi \\
 0 & \sin\phi & \cos\phi
 \end{bmatrix},
-\]
-\[
-R_y(\theta) =
+    \label{eq:rotation_x}
+\end{equation}
+\begin{equation}
+    R_y(\theta) =
 \begin{bmatrix}
 \cos\theta & 0 & \sin\theta \\
 0 & 1 & 0 \\
 -\sin\theta & 0 & \cos\theta
 \end{bmatrix},
-\]
-\[
-R_z(\psi) =
+    \label{eq:rotation_y}
+\end{equation}
+\begin{equation}
+    R_z(\psi) =
 \begin{bmatrix}
 \cos\psi & -\sin\psi & 0 \\
 \sin\psi & \cos\psi & 0 \\
 0 & 0 & 1
 \end{bmatrix}.
-\]
+    \label{eq:rotation_z}
+\end{equation}
 
 Dzięki kątom Eulera i macierzom rotacji możliwa jest transformacja wektorów i równań między różnymi układami współrzędnych, co jest kluczowe dla analizy trajektorii lotu rakiety oraz sterowania jej orientacją w przestrzeni.
 
@@ -492,7 +576,7 @@ interfejsach i klasach, co przedstawiono na rysunku \ref{fig:architektura}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{architektura.jpg}
+    \includegraphics[width=0.8\textwidth]{images/architektura}
     \caption{Architektura systemu symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:architektura}
 \end{figure}
@@ -920,7 +1004,7 @@ została wysokopoziomowa architektura obliczeń sił w silniku fizycznym.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{physics_map.png}
+    \includegraphics[width=0.8\textwidth]{images/physics_map}
     \caption{Schemat działania sił w symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:sily}
 \end{figure}
@@ -1221,7 +1305,7 @@ Przedstawiając więc strukturę okna głównego, można wyróżnić następują
     \texttt{folder\_picker}. Wygląd tego widoku przedstawiony jest na rysunku \ref{fig:main_window}
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{main_window.png}
+    \includegraphics[width=0.8\textwidth]{images/main_window}
     \caption{Okno główne aplikacji - wybór konfiguracji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:main_window}
 \end{figure}
@@ -1232,7 +1316,7 @@ Przedstawiając więc strukturę okna głównego, można wyróżnić następują
     przedstawiony jest na rysunku \ref{fig:picker}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{file_picker.png}
+    \includegraphics[width=0.8\textwidth]{images/file_picker}
     \caption{Okno wyboru symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:picker}
 \end{figure}
@@ -1278,7 +1362,7 @@ Wszystkie opisane powyżej komponenty wizualizacji przedstawione są na rysunku 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{simulation_window}
+    \includegraphics[width=0.8\textwidth]{images/simulation_window}
     \caption{Okno wizualizacji symulacji, \textit{Źródło: Opracowanie własne}.}
     \label{fig:simulation_window}
 \end{figure}

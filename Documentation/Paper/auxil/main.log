@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  12 JAN 2025 15:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  12 JAN 2025 18:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1035,11 +1035,11 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
 C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:5: Undefined control sequence.
+:6: Undefined control sequence.
 \select@language ...elax }\fi \bbl@provide@locale 
                                                   \bbl@iflanguage \languagen...
-l.5 \babel@aux{nil}{}
-                     
+l.6 \babel@aux{}{}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1047,11 +1047,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:5: Undefined control sequence.
+:6: Undefined control sequence.
 \@nolanerr ...arg \chardef {l@#1}\z@ \bbl@warning 
                                                   {Undefined language '#1' i...
-l.5 \babel@aux{nil}{}
-                     
+l.6 \babel@aux{}{}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1060,14 +1060,14 @@ and I'll forget about whatever was undefined.
 
 
 C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:5: LaTeX Error: Missing \begin{document}.
+:6: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 \babel@aux{nil}{}
-                     
+l.6 \babel@aux{}{}
+                  
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1101,11 +1101,11 @@ LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 
-Overfull \hbox (213.40823pt too wide) in paragraph at lines 5--50
+Overfull \hbox (239.51892pt too wide) in paragraph at lines 6--50
 \T1/lmr/m/n/12 Reported                                                        
                                                                                
                                                                                
-              
+                        
  []
 
 Package caption Info: Begin \AtBeginDocument code.
@@ -1302,71 +1302,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
 [6]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.to
 c
-C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.toc
-:1: Undefined control sequence.
-\select@language ...elax }\fi \bbl@provide@locale 
-                                                  \bbl@iflanguage \languagen...
-l.1 \babel@toc {nil}{}
-                      \relax
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.toc
-:1: Undefined control sequence.
-\@nolanerr #1->\bbl@error 
-                          {undefined-language}{#1}{}{}
-l.1 \babel@toc {nil}{}
-                      \relax
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 .
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+ (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
 .
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-3.
+2.
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-3.
+2.
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 3.
+(Font)              <9> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+(Font)              <7> on input line 2.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
 .
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 
 
 [7
@@ -1521,7 +1497,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--73
  (chapter2.tex
 Rozdzia\l  2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
@@ -1533,220 +1509,268 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
 
 ]
-Overfull \hbox (0.7737pt too wide) in paragraph at lines 54--59
+Overfull \hbox (0.7737pt too wide) in paragraph at lines 42--47
 []\T1/lmr/bx/n/12 Mo»liwo±¢ mo-dy-fi-ka-cji pa-ra-me-trów sy-mu-la-cji w cza-si
 e rze-czy-wi-stym. 
  []
 
 
-Underfull \vbox (badness 3942) has occurred while \output is active []
-
-
 
 [21]
-Underfull \vbox (badness 7326) has occurred while \output is active []
+<images/all-forces.png, id=77, 412.54124pt x 411.78844pt>
+File: images/all-forces.png Graphic file (type png)
+<use images/all-forces.png>
+Package pdftex.def Info: images/all-forces.png  used on input line 79.
+(pdftex.def)             Requested size: 298.75264pt x 298.20908pt.
+<images/gravity-force.png, id=78, 467.49657pt x 386.94562pt>
+File: images/gravity-force.png Graphic file (type png)
+<use images/gravity-force.png>
+Package pdftex.def Info: images/gravity-force.png  used on input line 100.
+(pdftex.def)             Requested size: 298.75264pt x 247.29008pt.
+
+Underfull \vbox (badness 4765) has occurred while \output is active []
 
 
 
 [22{C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
 c}{C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:
-/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Underfull \vbox (badness 1117) has occurred while \output is active []
+/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./
+images/all-forces.png>]
+<images/drag-force.png, id=90, 411.78844pt x 389.95688pt>
+File: images/drag-force.png Graphic file (type png)
+<use images/drag-force.png>
+Package pdftex.def Info: images/drag-force.png  used on input line 123.
+(pdftex.def)             Requested size: 298.75264pt x 282.91678pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[23{C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
-c}]
-chapter2.tex:175: Missing $ inserted.
+[23 <./images/gravity-force.png>]
+<images/lift-force.png, id=95, 417.81094pt x 347.04657pt>
+File: images/lift-force.png Graphic file (type png)
+<use images/lift-force.png>
+Package pdftex.def Info: images/lift-force.png  used on input line 145.
+(pdftex.def)             Requested size: 298.75264pt x 248.16818pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[24 <./images/drag-force.png>]
+<images/thrust-force.png, id=100, 378.66469pt x 314.67563pt>
+File: images/thrust-force.png Graphic file (type png)
+<use images/thrust-force.png>
+Package pdftex.def Info: images/thrust-force.png  used on input line 164.
+(pdftex.def)             Requested size: 298.75264pt x 248.2693pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[25 <./images/lift-force.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[26{C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
+c} <./images/thrust-force.png>]
+chapter2.tex:232: Missing $ inserted.
 <inserted text> 
                 $
-l.175 ...›ci rakiety wzglÄ™dem osi obrotu [kg\cdot
+l.232 ...›ci rakiety wzglÄ™dem osi obrotu [kg\cdot
                                                    m$^2$].
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-chapter2.tex:175: Missing $ inserted.
+chapter2.tex:232: Missing $ inserted.
 <inserted text> 
                 $
-l.175 ...rakiety wzglÄ™dem osi obrotu [kg\cdot m$^
+l.232 ...rakiety wzglÄ™dem osi obrotu [kg\cdot m$^
                                                   2$].
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
-
-
-Underfull \vbox (badness 5189) has occurred while \output is active []
-
-
-
-[24]
-
-[25]
-
-[26]
-Underfull \vbox (badness 5036) has occurred while \output is active []
 
 
 
 [27]
 
 [28]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [29]
 
 [30]
 
 [31]
-<architektura.jpg, id=118, 905.3825pt x 1205.50375pt>
-File: architektura.jpg Graphic file (type jpg)
-<use architektura.jpg>
-Package pdftex.def Info: architektura.jpg  used on input line 495.
+
+[32]
+
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[34]
+<images/architektura.jpg, id=137, 905.3825pt x 1205.50375pt>
+File: images/architektura.jpg Graphic file (type jpg)
+<use images/architektura.jpg>
+Package pdftex.def Info: images/architektura.jpg  used on input line 579.
 (pdftex.def)             Requested size: 341.43437pt x 454.60124pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[32 <./architektura.jpg>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-29.
+
+
+[35]
+
+[36 <./images/architektura.jpg>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+13.
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 530.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 614.
 
 
-[33]
-Overfull \hbox (6.04779pt too wide) in paragraph at lines 573--574
+[37]
+Overfull \hbox (6.04779pt too wide) in paragraph at lines 657--658
 []\T1/lmr/m/n/12 `load_model(object_model_path)`: Ša-duje mo-del 3D obiektu z p
 o-da-nej ±cie»ki.
  []
 
 
 
-[34]
+[38]
 
-[35]
-Underfull \vbox (badness 6252) has occurred while \output is active []
+[39]
 
-
-
-[36]
-
-[37]
-Overfull \hbox (11.78726pt too wide) in paragraph at lines 700--701
+[40]
+Overfull \hbox (11.78726pt too wide) in paragraph at lines 784--785
 []\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Me-toda, która zwraca pr¦
 d-ko±¢ d¹wi¦ku
  []
 
 
 
-[38]
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 774--775
+[41]
+
+[42]
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 858--859
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 877--879
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
 
-[39]
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 793--795
-[][][][][][][][][][][][][][][][][][] 
- []
+[43]
 
-
-chapter2.tex:813: LaTeX Error: There's no line here to end.
+chapter2.tex:900: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 \\ G
+l.900 \\ G
           Å‚Ã³wna pÄ™tla symulacyjna dziaÅ‚a w nastÄ™pujÄ…cy sposÃ³b:
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (43.5867pt too wide) in paragraph at lines 816--817
+Overfull \hbox (43.5867pt too wide) in paragraph at lines 903--904
 []\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»-dym kroku, zmie-nia
 ne s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
  []
 
 
 
-[40]
-
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 865--867
-
- []
+[44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 870--881
-
- []
-
-
-
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 884--893
-
- []
-
-
-
-[43]
-<physics_map.png, id=161, 482.80376pt x 623.32875pt>
-File: physics_map.png Graphic file (type png)
-<use physics_map.png>
-Package pdftex.def Info: physics_map.png  used on input line 920.
-(pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
-
-Underfull \vbox (badness 2644) has occurred while \output is active []
-
-
-
-[44 <./physics_map.png>]
 
 [45]
+Underfull \hbox (badness 10000) in paragraph at lines 952--954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--968
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 971--980
+
+ []
+
+
 
 [46]
+<images/physics_map.png, id=180, 482.80376pt x 623.32875pt>
+File: images/physics_map.png Graphic file (type png)
+<use images/physics_map.png>
+Package pdftex.def Info: images/physics_map.png  used on input line 1007.
+(pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [47]
 
-[48]
-Overfull \hbox (1.12518pt too wide) in paragraph at lines 1101--1102
+[48 <./images/physics_map.png>]
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+Overfull \hbox (1.12518pt too wide) in paragraph at lines 1188--1189
 \T1/lmr/m/n/12 kiety, który jest ob-li-czany za po-moc¡ ilo-czynu wek-to-ro-weg
 o (\T1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
  []
 
 
 
-[49]
-
-[50]
-Overfull \hbox (22.11751pt too wide) in paragraph at lines 1150--1151
+[53]
+Overfull \hbox (22.11751pt too wide) in paragraph at lines 1237--1238
 []\T1/lmr/bx/n/12 Korekcje ae-ro-dy-na-miczne\T1/lmr/m/n/12 : Je-±li obiekt im-
 ple-men-tuje in-ter-fejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
  []
 
 
-Overfull \hbox (41.21997pt too wide) in paragraph at lines 1155--1156
+Underfull \vbox (badness 1990) has occurred while \output is active []
+
+
+
+[54]
+Overfull \hbox (41.21997pt too wide) in paragraph at lines 1242--1243
 \T1/lmr/m/n/12 W trak-cie ak-tu-ali-za-cji stanu ra-kiety wy-wo-ªy-wana jest fu
 nk-cja \T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
  []
 
 
+Underfull \vbox (badness 2165) has occurred while \output is active []
 
-[51]
-Overfull \hbox (49.44084pt too wide) in paragraph at lines 1198--1203
+
+
+[55]
+Overfull \hbox (49.44084pt too wide) in paragraph at lines 1285--1290
 \T1/lmr/m/n/12 Uruchomienie mo-duªu wi-zu-ali-za-cyj-nego po-lega na uru-cho-mi
 e-niu skryptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
  []
 
-chapter2.tex:1211: Undefined control sequence.
-l.1211 ...ane sÄ… przez komponent nazwany \texzttt
+chapter2.tex:1298: Undefined control sequence.
+l.1298 ...ane sÄ… przez komponent nazwany \texzttt
                                                   {picker}, ktÃ³ry przeÅ‚Ä…c...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1754,48 +1778,49 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<main_window.png, id=188, 255.95625pt x 242.40562pt>
-File: main_window.png Graphic file (type png)
-<use main_window.png>
-Package pdftex.def Info: main_window.png  used on input line 1221.
+<images/main_window.png, id=211, 255.95625pt x 242.40562pt>
+File: images/main_window.png Graphic file (type png)
+<use images/main_window.png>
+Package pdftex.def Info: images/main_window.png  used on input line 1308.
 (pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
 
 
-[52]
-<file_picker.png, id=192, 258.21469pt x 267.24844pt>
-File: file_picker.png Graphic file (type png)
-<use file_picker.png>
-Package pdftex.def Info: file_picker.png  used on input line 1232.
+[56]
+<images/file_picker.png, id=215, 258.21469pt x 267.24844pt>
+File: images/file_picker.png Graphic file (type png)
+<use images/file_picker.png>
+Package pdftex.def Info: images/file_picker.png  used on input line 1319.
 (pdftex.def)             Requested size: 341.43437pt x 353.41333pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[53 <./main_window.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1240--1243
+[57 <./images/main_window.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1330
 
  []
 
 
 
-[54 <./file_picker.png>]
-<simulation_window.png, id=201, 1442.38875pt x 796.47563pt>
-File: simulation_window.png Graphic file (type png)
-<use simulation_window.png>
-Package pdftex.def Info: simulation_window.png  used on input line 1278.
+[58 <./images/file_picker.png>]
+<images/simulation_window.png, id=224, 1442.38875pt x 796.47563pt>
+File: images/simulation_window.png Graphic file (type png)
+<use images/simulation_window.png>
+Package pdftex.def Info: images/simulation_window.png  used on input line 1365.
+
 (pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
 
 
-[55 <./simulation_window.png>]
+[59 <./images/simulation_window.png>]
 
-[56]
+[60]
 
-[57]
+[61]
 
-[58]
-chapter2.tex:1415: Undefined control sequence.
-l.1415 ...ch zagadnieÅ„ wykorzystano podrÄ™cznik "
+[62]
+chapter2.tex:1502: Undefined control sequence.
+l.1502 ...ch zagadnieÅ„ wykorzystano podrÄ™cznik "
                                                   Topics in Advanced Model
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1803,8 +1828,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-chapter2.tex:1416: Undefined control sequence.
-l.1416 Rocketry"
+chapter2.tex:1503: Undefined control sequence.
+l.1503 Rocketry"
                  autorstwa Gordona K. Mandella\cite{alma991019564819703276},...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1814,21 +1839,21 @@ and I'll forget about whatever was undefined.
 
 
 
-[59]
+[63]
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
 
 
-[60])
+[64])
 
-[61]
+[65]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
 Rozdzia\l  3.
 )
 
-[62
+[66
 
 
 
@@ -1845,7 +1870,7 @@ Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
 
 )
 
-[63
+[67
 
 
 
@@ -1857,7 +1882,7 @@ Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
 Rozdzia\l  5.
 )
 
-[64
+[68
 
 
 
@@ -1869,7 +1894,7 @@ Rozdzia\l  5.
 Rozdzia\l  6.
 )
 
-[65
+[69
 
 
 
@@ -1889,19 +1914,19 @@ r/m/n/12 . $\T1/lmtt/m/n/12 https : / / github . com / ros -[] simulation /
 
 
 
-[66
+[70
 
 
 
 ]
 
-[67]
+[71]
 
-[68]
+[72]
 
-[69]
+[73]
 
-[70]
+[74]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -1929,13 +1954,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17347 strings out of 473573
- 315495 string characters out of 5716588
- 1240591 words of memory out of 5000000
- 40265 multiletter control sequences out of 15000+600000
+ 17447 strings out of 473573
+ 318270 string characters out of 5716588
+ 1229906 words of memory out of 5000000
+ 40365 multiletter control sequences out of 15000+600000
  625039 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,81p,882b,1816s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,7n,81p,882b,1700s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Kuba\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
 200.pk><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 2.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi1
@@ -1953,9 +1978,9 @@ Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/K
 uba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Ku
 ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (70 pages, 684903 bytes).
+per\out\main.pdf (74 pages, 746985 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
+ 394 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
