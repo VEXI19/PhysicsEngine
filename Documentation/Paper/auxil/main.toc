@@ -14,48 +14,48 @@
 \contentsline {subsection}{\numberline {2.2.3}Ruch obrotowy i momenty sił}{27}{}%
 \contentsline {subsubsection}{Równania ruchu obrotowego}{27}{}%
 \contentsline {subsubsection}{Stabilizacja lotu}{28}{}%
-\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{28}{}%
-\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{28}{}%
-\contentsline {subsubsection}{Definicja kąta natarcia}{28}{}%
+\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{29}{}%
+\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{29}{}%
+\contentsline {subsubsection}{Definicja kąta natarcia}{29}{}%
 \contentsline {subsubsection}{Wpływ kąta natarcia na dynamikę rakiety}{29}{}%
-\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{29}{}%
-\contentsline {subsubsection}{Zależność sił aerodynamicznych od kąta natarcia}{29}{}%
+\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{30}{}%
+\contentsline {subsubsection}{Zależność sił aerodynamicznych od kąta natarcia}{30}{}%
 \contentsline {subsection}{\numberline {2.2.6}Geometria rakiety}{30}{}%
 \contentsline {subsubsection}{Opis geometrii rakiety jako walca}{30}{}%
-\contentsline {subsubsection}{Wzory geometryczne}{30}{}%
-\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}{30}{}%
-\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{30}{}%
-\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{30}{}%
+\contentsline {subsubsection}{Wzory geometryczne}{31}{}%
+\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}{31}{}%
+\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{31}{}%
+\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{31}{}%
 \contentsline {paragraph}{Granice powierzchni przekroju:}{31}{}%
-\contentsline {subsubsection}{Charakterystyka punktów charakterystycznych rakiety}{31}{}%
-\contentsline {paragraph}{Relacje między punktami}{31}{}%
+\contentsline {subsubsection}{Charakterystyka punktów charakterystycznych rakiety}{32}{}%
+\contentsline {paragraph}{Relacje między punktami}{32}{}%
 \contentsline {subsection}{\numberline {2.2.7}Obroty układów współrzędnych}{32}{}%
 \contentsline {subsubsection}{Układy współrzędnych w dynamice rakiety}{32}{}%
-\contentsline {subsubsection}{Kąty Eulera i transformacje układów współrzędnych}{32}{}%
-\contentsline {paragraph}{Macierze rotacji}{32}{}%
-\contentsline {subsection}{\numberline {2.2.8}Podsumowanie}{33}{}%
-\contentsline {section}{\numberline {2.3}Użyte technologie.}{33}{}%
+\contentsline {subsubsection}{Kąty Eulera i transformacje układów współrzędnych}{33}{}%
+\contentsline {paragraph}{Macierze rotacji}{33}{}%
+\contentsline {subsection}{\numberline {2.2.8}Podsumowanie}{34}{}%
+\contentsline {section}{\numberline {2.3}Użyte technologie.}{34}{}%
 \contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{35}{}%
-\contentsline {subsection}{\numberline {2.4.1}Architektura systemu symulacji}{35}{}%
-\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{36}{}%
+\contentsline {subsection}{\numberline {2.4.1}Architektura systemu symulacji}{36}{}%
+\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{37}{}%
 \contentsline {subsubsection}{`IObject`}{37}{}%
-\contentsline {subsubsection}{`IThrust`}{38}{}%
+\contentsline {subsubsection}{`IThrust`}{39}{}%
 \contentsline {subsubsection}{`IAerodependent`}{39}{}%
-\contentsline {subsubsection}{`IEnvironment`}{40}{}%
+\contentsline {subsubsection}{`IEnvironment`}{41}{}%
 \contentsline {subsection}{\numberline {2.4.3}Klasy}{42}{}%
 \contentsline {subsection}{\numberline {2.4.4}Proces symulacji.}{42}{}%
 \contentsline {subsection}{\numberline {2.4.5}Konfiguracja symulacji (Setup)}{42}{}%
 \contentsline {subsection}{\numberline {2.4.6}Symulacja}{43}{}%
 \contentsline {subsubsection}{Działanie pętli symulacyjnej silnika fizycznego}{44}{}%
-\contentsline {subsection}{\numberline {2.4.7}Zapisywanie danych symulacji}{44}{}%
+\contentsline {subsection}{\numberline {2.4.7}Zapisywanie danych symulacji}{45}{}%
 \contentsline {subsection}{\numberline {2.4.8}Uzasadnienie przyjętego rozwiązania}{46}{}%
 \contentsline {section}{\numberline {2.5}Model sił działających na rakietę}{47}{}%
 \contentsline {subsection}{\numberline {2.5.1}Funkcje pomocnicze}{48}{}%
-\contentsline {subsubsection}{Funkcja tworząca macierz obrotu}{48}{}%
+\contentsline {subsubsection}{Funkcja tworząca macierz obrotu}{49}{}%
 \contentsline {subsubsection}{Transformacja układów współrzędnych}{49}{}%
 \contentsline {subsection}{\numberline {2.5.2}Siły działające na rakietę}{50}{}%
 \contentsline {subsubsection}{Siła grawitacji}{50}{}%
-\contentsline {subsubsection}{Siła oporu powietrza}{50}{}%
+\contentsline {subsubsection}{Siła oporu powietrza}{51}{}%
 \contentsline {subsubsection}{Siła ciągu silnika}{51}{}%
 \contentsline {subsubsection}{Siła nośna}{52}{}%
 \contentsline {subsection}{\numberline {2.5.3}Obliczanie zmian w ruchu rakiety}{53}{}%

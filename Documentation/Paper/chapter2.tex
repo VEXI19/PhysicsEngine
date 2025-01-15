@@ -205,7 +205,9 @@ gdzie:
 
 
 \subsection{Ruch obrotowy i momenty sił}
-Ruch obrotowy rakiety jest determinowany momentami sił działającymi na rakietę. Kluczowe znaczenie ma tutaj punkt środka masy (CoG), wokół którego rakieta może rotować. Moment siły względem środka masy wyraża się jako:
+Ruch obrotowy rakiety jest determinowany momentami sił działającymi na
+rakietę. Kluczowe znaczenie ma tutaj punkt centralny, często z powodu wygody
+obliczeniowej przyjmowany jako środek masy (CoG), wokół którego rakieta może rotować. Moment siły względem środka masy wyraża się jako:
 \begin{equation}
 \vec{M} = \vec{r} \times \vec{F},
 \label{eq:moment_force}
@@ -213,7 +215,8 @@ Ruch obrotowy rakiety jest determinowany momentami sił działającymi na rakiet
 
 gdzie:
 \begin{itemize}
-\item $\vec{r}$ -- wektor od środka masy do punktu przyłożenia siły [m],
+\item $\vec{r}$ -- wektor od punktu centralnego do punktu przyłożenia
+siły (często za punkt centralny przyjmuje się środek masy obiektu) [m],
 \item $\vec{F}$ -- siła działająca na rakietę [N].
 \end{itemize}
 
@@ -221,41 +224,66 @@ gdzie:
 \subsubsection{Równania ruchu obrotowego}
 Moment obrotowy generuje przyspieszenie kątowe zgodnie z równaniem:
 \begin{equation}
-\vec{\alpha} = \frac{\vec{M}}{I},
-\label{eq:angular_acceleration}
+\vec{\varepsilon} = \mathbf{\hat{I}}^{-1} \vec{M},
+\label{eq:angular_acceleration_tensor}
 \end{equation}
-
 
 gdzie:
 \begin{itemize}
-\item $\vec{\alpha}$ -- przyspieszenie kątowe [rad/s$^2$],
-\item $I$ -- moment bezwładności rakiety względem osi obrotu [kg\cdot m$^2$].
+\item $\vec{\varepsilon}$ -- wektor przyspieszenia kątowego [rad/s$^2$],
+\item $\mathbf{\hat{I}}$ -- tensor bezwładności rakiety (macierz momentów i iloczynów
+bezwładności) [kg·m$^2$],
+\item $\vec{M}$ -- wektor momentu sił (moment obrotowy) [N·m].
 \end{itemize}
 
-
-Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie według:
+Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie zgodnie z wyrażeniem wektorowym:
 \begin{equation}
-\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\alpha}(\tau) d\tau,
-\label{eq:angular_velocity}
+\frac{d\vec{\omega}}{dt} = \vec{\varepsilon},
+\label{eq:angular_velocity_vector}
 \end{equation}
+gdzie:
+\begin{itemize}
+\item $\vec{\varepsilon}$ -- wektor przyspieszenia kątowego [rad/s$^2$].
+\end{itemize}
 
+Rozwiązując powyższe równanie przez całkowanie, otrzymujemy:
+\begin{equation}
+\vec{\omega}(t) = \vec{\omega}_0 + \int_0^t \vec{\varepsilon}(\tau) \, d\tau,
+\label{eq:angular_velocity_integral}
+\end{equation}
 gdzie:
 \begin{itemize}
 \item $\vec{\omega}_0$ -- początkowa prędkość kątowa [rad/s].
 \end{itemize}
 
-
-Kąt orientacji rakiety w przestrzeni zmienia się w czasie:
+Jeśli przyspieszenie kątowe $\vec{\varepsilon}$ jest wyrażone w zależności od momentu sił $\vec{M}$ i tensora bezwładności $\mathbf{\hat{I}}$ zgodnie z równaniem:
 \begin{equation}
-\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) d\tau,
-\label{eq:orientation}
+\vec{\varepsilon} = \mathbf{\hat{I}}^{-1} \vec{M},
 \end{equation}
+możemy uwzględnić tę zależność w powyższej formule, aby obliczyć $\vec{\omega}(t)$ przy znanym momencie sił $\vec{M}$ w funkcji czasu.
 
-
+Kąt orientacji rakiety w przestrzeni zmienia się w czasie zgodnie z wyrażeniem:
+\begin{equation}
+\frac{d\vec{\theta}}{dt} = \vec{\omega},
+\label{eq:orientation_vector}
+\end{equation}
 gdzie:
 \begin{itemize}
-\item $\vec{\theta}_0$ -- początkowy kąt orientacji [rad].
+\item $\vec{\omega}$ -- wektor prędkości kątowej [rad/s].
 \end{itemize}
+
+Rozwiązując powyższe równanie przez całkowanie, otrzymujemy:
+\begin{equation}
+\vec{\theta}(t) = \vec{\theta}_0 + \int_0^t \vec{\omega}(\tau) \, d\tau,
+\label{eq:orientation_integral}
+\end{equation}
+gdzie:
+\begin{itemize}
+\item $\vec{\theta}_0$ -- początkowy kąt orientacji rakiety [rad].
+\end{itemize}
+
+W przypadku, gdy prędkość kątowa $\vec{\omega}$ jest związana z momentem sił $\vec{M}$ i tensorem bezwładności $\mathbf{\hat{I}}$, zależność ta może być użyta do obliczenia kąta orientacji w funkcji momentu sił w czasie.
+
 
 
 \subsubsection{Stabilizacja lotu}
