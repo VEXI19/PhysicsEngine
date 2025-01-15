@@ -286,51 +286,146 @@ W przypadku, gdy prędkość kątowa $\vec{\omega}$ jest związana z momentem si
 
 
 
-\subsubsection{Stabilizacja lotu}
-Ruch obrotowy jest ściśle związany ze stabilnością rakiety w locie. Rakieta powinna być tak zaprojektowana, aby środek parcia (CoP) znajdował się poniżej środka masy (CoG). Dzięki temu moment siły aerodynamicznej działa stabilizująco, przeciwdziałając niekontrolowanym obrotom.
+\subsubsection{Równoważenie sił i momentów – warunki stabilności}
+
+Podczas lotu rakieta doświadcza działania sił aerodynamicznych oraz grawitacyjnych. Stabilność lotu zależy od odpowiedniego rozmieszczenia środka masy (CoG, ang. \textit{Center of Gravity}) oraz środka parcia (CoP, ang. \textit{Center of Pressure}). Aby rakieta pozostawała stabilna w locie, konieczne jest, aby środek masy znajdował się przed środkiem parcia, patrząc w kierunku lotu.
+
+Gdy CoG znajduje się bliżej nosa rakiety niż CoP, moment siły generowany przez siły aerodynamiczne ma charakter stabilizujący. W przypadku chwilowego odchylenia rakiety od osi lotu, na przykład pod wpływem podmuchu wiatru, siła aerodynamiczna działająca w CoP wytwarza moment względem CoG. Ten moment skierowany jest tak, aby przywrócić rakietę do pierwotnej trajektorii lotu. Natomiast gdyby CoG znajdował się za CoP, moment aerodynamiczny działałby w odwrotnym kierunku, zwiększając odchylenie i prowadząc do destabilizacji.
+
+Rozważmy przypadek, w którym na rakietę oddziałuje podmuch wiatru,
+przykładając chwilową siłę boczną, patrz rysunek \ref{fig:stabilisation} (1).
+Siła ta powoduje odchylenie rakiety od
+osi lotu, co zmienia kierunek działania sił aerodynamicznych. Siła aerodynamiczna $\vec{F}_\text{aero}$, która działa w punkcie CoP, generuje moment względem CoG, zgodnie z wyrażeniem:
+\begin{equation}
+\vec{M}_\text{aero} = \vec{r}_\text{CoP-CoG} \times \vec{F}_\text{aero},
+\end{equation}
+gdzie $\vec{r}_\text{CoP-CoG}$ to wektor łączący położenie CoG i CoP. Patrz
+rysunek \ref{fig:stabilisation} (2).
+
+W sytuacji, gdy CoG znajduje się przed CoP, moment $\vec{M}_\text{aero}$ działa stabilizująco, kierując rakietę z powrotem na pierwotną trajektorię. Stabilizacja odbywa się dzięki temu, że odległość między CoG a CoP ($d = |\vec{r}_\text{CoP} - \vec{r}_\text{CoG}|$) w połączeniu z siłą aerodynamiczną generuje wystarczający moment przywracający. Proces ten jest naturalnym efektem rozmieszczenia masy rakiety i nie wymaga dodatkowych mechanizmów sterujących.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/stabilisation}
+    \caption{Przykład działania sił stabilizujących rakietę w locie,
+        \textit{źródło:
+    Opracowanie własne.}}
+    \label{fig:stabilisation}
+\end{figure}
+
+Gdyby jednak środek masy znajdował się za środkiem parcia, moment siły $\vec{M}_\text{aero}$ działałby w przeciwnym kierunku, zwiększając odchylenie rakiety od osi lotu. W takim przypadku każdy podmuch wiatru mógłby prowadzić do narastającej niestabilności i ostatecznej utraty kontroli nad rakietą.
+
+Podsumowując, stabilność rakiety w locie zależy od odpowiedniego rozmieszczenia CoG i CoP, które decyduje o kierunku działania momentów siły aerodynamicznej. W przypadku chwilowych zakłóceń, takich jak podmuch wiatru, stabilizujący moment aerodynamiczny może skutecznie przywrócić rakietę na właściwą trajektorię, pod warunkiem spełnienia wspomnianego warunku stabilności.
+
 
 
 \subsection{Modelowanie środowiska atmosferycznego}
-Środowisko atmosferyczne wpływa na dynamikę ruchu rakiety, szczególnie poprzez gęstość powietrza ($\rho$) oraz zmienne ciśnienie i temperaturę. Modelowanie środowiska wymaga uwzględnienia:
+
+Środowisko atmosferyczne wpływa na dynamikę ruchu rakiety poprzez zmienne fizyczne, takie jak gęstość powietrza ($\rho$), ciśnienie atmosferyczne ($p$) oraz temperatura ($T$). Zmiany tych parametrów w funkcji wysokości nad powierzchnią ziemi mają istotny wpływ na opór aerodynamiczny, przyspieszenie rakiety oraz jej trajektorię. W związku z tym modelowanie tych zjawisk jest kluczowe dla przewidywania ruchu rakiety. Poniżej przedstawiono główne parametry atmosferyczne oraz ich modelowanie:
+
 \begin{itemize}
-\item Zmiennej gęstości powietrza w zależności od wysokości:
-\begin{equation}
-\rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),
-\label{eq:density}
-\end{equation}
-gdzie:
-\begin{itemize}
-\item $\rho_0$ -- gęstość powietrza na poziomie morza [kg/m$^3$],
-\item $h$ -- wysokość [m],
-\item $H$ -- charakterystyczna wysokość skali atmosfery [m].
+    \item \textbf{Zmiana gęstości powietrza w zależności od wysokości:}
+    \begin{equation}
+    \rho(h) = \rho_0 \cdot \exp\left(-\frac{h}{H}\right),
+    \label{eq:density}
+    \end{equation}
+    gdzie:
+    \begin{itemize}
+        \item $\rho_0$ -- gęstość powietrza na poziomie morza [kg/m$^3$],
+        \item $h$ -- wysokość [m],
+        \item $H$ -- charakterystyczna wysokość skali atmosfery, zazwyczaj przyjmowana na poziomie 8 500 m [m].
+    \end{itemize}
+    Gęstość powietrza maleje wykładniczo wraz z wysokością, co wpływa na opór aerodynamiczny działający na rakietę. Niższa gęstość powietrza oznacza mniejszy opór w wyższych partiach atmosfery.
+
+    \item \textbf{Ciśnienie atmosferyczne w funkcji wysokości:}
+    Ciśnienie atmosferyczne w funkcji wysokości nad poziomem morza można przybliżyć za pomocą wzoru barometrycznego. Dla warstw troposferycznych, gdzie temperatura spada z wysokością, ciśnienie atmosferyczne $p$ wyraża się równaniem:
+    \begin{equation}
+    p(h) = p_0 \left(1 - \frac{L h}{T_0}\right)^{\frac{g M}{R L}},
+    \label{eq:pressure}
+    \end{equation}
+    gdzie:
+    \begin{itemize}
+        \item $p_0$ -- ciśnienie na poziomie morza [Pa],
+        \item $L$ -- gradient temperatury (spadek temperatury na jednostkę wysokości) [K/m],
+        \item $h$ -- wysokość [m],
+        \item $T_0$ -- temperatura na poziomie morza [K],
+        \item $g$ -- przyspieszenie ziemskie [m/s$^2$],
+        \item $M$ -- masa molowa powietrza [kg/mol],
+        \item $R$ -- stała gazowa [J/(mol·K)].
+    \end{itemize}
+    To równanie pozwala obliczyć zmiany ciśnienia atmosferycznego w zależności od wysokości.
+
+    \item \textbf{Temperatura w funkcji wysokości:}
+    Temperaturę w atmosferze modeluje się zazwyczaj poprzez gradient temperatury w troposferze, który wynosi około 6.5°C na każdy kilometr wysokości. Można to zapisać jako:
+    \begin{equation}
+    T(h) = T_0 - L h,
+    \label{eq:temperature}
+    \end{equation}
+    gdzie:
+    \begin{itemize}
+        \item $T_0$ -- temperatura na poziomie morza [K],
+        \item $L$ -- gradient temperatury [K/m],
+        \item $h$ -- wysokość [m].
+    \end{itemize}
+    Ta zależność jest stosowana w troposferze, czyli do wysokości około 10 km. Powyżej tej wysokości temperatura przestaje spadać i stabilizuje się lub wzrasta w stratosferze.
+
+    \item \textbf{Zmiany parametrów powietrza w różnych warstwach atmosfery:}
+    Zjawiska takie jak turbulencje, zmiany w prędkości wiatru, gradienty temperatury oraz zmieniające się ciśnienie atmosferyczne mają również wpływ na trajektorię rakiety. Wiatr, na przykład, może wpłynąć na odchylenie rakiety od pierwotnej trajektorii, wprowadzając dodatkowe momenty aerodynamiczne. W przypadku wiatru o dużej prędkości, rakieta może zostać odchylona od osi lotu, co skutkuje zmianą sił działających na nią. Równanie opisujące wpływ wiatru na trajektorię rakiety można przedstawić jako:
+    \begin{equation}
+    \vec{F}_\text{wind} = C_w \cdot A \cdot \rho \cdot v_w^2,
+    \end{equation}
+    gdzie:
+    \begin{itemize}
+        \item $C_w$ -- współczynnik oporu wiatru,
+        \item $A$ -- powierzchnia rakiety,
+        \item $\rho$ -- gęstość powietrza,
+        \item $v_w$ -- prędkość wiatru.
+    \end{itemize}
+    W takiej sytuacji moment aerodynamiczny wytwarzany przez wiatr może wywołać chwilowe odchylenie rakiety, które będzie zrównoważone przez momenty stabilizujące, jeśli CoG znajduje się przed CoP.
+
 \end{itemize}
-\item Efektów zmian temperatury i ciśnienia w różnych warstwach atmosfery.
-\end{itemize}
+\subsubsection{Złożoność modelu atmosferycznego}
+
+W praktyce modelowanie środowiska atmosferycznego może być znacznie bardziej złożone. Istnieje możliwość uwzględnienia wielu dodatkowych czynników, takich jak zmienność parametrów atmosferycznych w różnych warstwach troposfery i stratosfery, wpływ turbulencji, lokalne różnice ciśnienia i temperatury, a także bardziej szczegółowe modele oporu aerodynamicznego uwzględniające zmiany kształtu rakiety w trakcie lotu. Możliwe jest także zastosowanie zaawansowanych metod numerycznych do dokładniejszego modelowania tych zależności, w tym modelowanie nieliniowych efektów oporu czy dynamicznych zmian parametrów atmosferycznych w czasie rzeczywistym.
+
+Jednakże, w kontekście obliczeń inżynierskich, dla uproszczenia i osiągnięcia wystarczającej dokładności w prognozowaniu trajektorii rakiety, przyjęte wyżej wzory są wystarczające. Pozwalają one na obliczenie kluczowych parametrów, takich jak gęstość powietrza, ciśnienie i temperatura w różnych warstwach atmosfery, przy zachowaniu odpowiedniej efektywności obliczeniowej. Dalsze zgłębianie tych zależności w celu uzyskania bardziej precyzyjnych wyników może być rozważane w przypadkach wymagających szczegółowej analizy, jednak w standardowych obliczeniach rakietowych, przyjęte uproszczenia są wystarczające do uzyskania akceptowalnych wyników.
+
 
 \subsection{Kąt natarcia rakiety} \label{sec:kąt-natarcia-rakiety.}
 
 Kąt natarcia ($\alpha$) jest kluczowym parametrem aerodynamicznym opisującym orientację rakiety względem przepływu powietrza. Określa on, pod jakim kątem oś symetrii rakiety jest nachylona do wektora prędkości względnej powietrza.
 
 \subsubsection{Definicja kąta natarcia}
-Kąt natarcia $\alpha$ definiuje się jako kąt pomiędzy wektorem prędkości powietrza $\vec{v}_{rel}$ a osią symetrii rakiety. Wyrażenie to zapisuje się jako:
+Kąt natarcia $\alpha$ definiuje się jako kąt pomiędzy kierunkiem wektora
+prędkości powietrza względem punktu środkowego rakiety $\vec{v}_{rel}$, a osią
+symetrii rakiety.
+Wyrażenie to zapisuje się jako:
 \begin{equation}
-    \alpha = \arccos\left(\frac{\vec{v}_{rel} \cdot \vec{a}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
+    \alpha = \arccos\left(
+    \frac{\vec{v}_{rel} \cdot \vec{z}}{\|\vec{v}_{rel}\| \|\vec{a}\|}\right),
     \label{eq:angle_of_attack}
 \end{equation}
 
 gdzie:
 \begin{itemize}
     \item $\vec{v}_{rel}$ -- wektor prędkości względnej przepływu powietrza,
-    \item $\vec{a}$ -- wektor osi symetrii rakiety,
+    \item $\vec{z}$ -- wektor osi symetrii rakiety,
     \item $\|\vec{v}_{rel}\|$ -- wartość prędkości względnej [m/s],
     \item $\|\vec{a}\|$ -- wartość wektora osi symetrii (zwykle $1$ jako wektor jednostkowy).
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/angle-of-attack}
+    \caption{Kąt natarcia rakiety, \textit{źródło: Opracowanie własne.}}
+    \label{fig:angle_of_attack}
+\end{figure}
+
 \subsubsection{Wpływ kąta natarcia na dynamikę rakiety}
 Kąt natarcia ma istotny wpływ na siły aerodynamiczne, w szczególności:
 \begin{itemize}
-    \item \textbf{Siła nośna ($\vec{F}_l$):} Przy większych kątach natarcia wzrasta siła nośna, która stabilizuje rakietę, ale również zwiększa ryzyko niestabilności aerodynamicznej.
     \item \textbf{Siła oporu ($\vec{F}_d$):} Przy większych kątach natarcia wzrasta siła oporu, co prowadzi do większych strat energetycznych w trakcie lotu.
+    \item \textbf{Siła nośna ($\vec{F}_l$):} Przy większych kątach natarcia wzrasta siła nośna, która stabilizuje rakietę, ale również zwiększa ryzyko niestabilności aerodynamicznej.
 \end{itemize}
 
 \subsubsection{Zakres kąta natarcia w rakietach}
@@ -354,12 +449,11 @@ co za tym idzie, z kątem natarcia.
 
 \subsection{Geometria rakiety}
 
-\subsubsection{Opis geometrii rakiety jako walca}
-Rakieta w została zamodelowana jako bryła o
-kształcie walca ze stożkową głowicą. Taka uproszczona geometria pozwala na
-efektywne obliczenia przy zachowaniu wystarczającej dokładności w kontekście modelowania sił aerodynamicznych i dynamiki ruchu.
+Wedle założeń modelu rakiety, jej geometria jest uproszczona do kształtu
+walca. Taki model pozwala na efektywne obliczenia sił aerodynamicznych i dynamiki ruchu, zachowując wystarczającą dokładność w kontekście modelowania lotu rakiety.
 
-\subsubsection{Wzory geometryczne}
+\subsubsection{Geometria walca}
+
 Dla uproszczonego modelu rakiety jako walca o promieniu $r$ i wysokości $h$
 podstawowe właściwości geometryczne wyznacza się następująco:
 
@@ -381,6 +475,13 @@ podstawowe właściwości geometryczne wyznacza się następująco:
     \label{eq:cylinder_surface}
 \end{equation}
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/cylinder}
+    \caption{Geometria walca, \textit{źródło: Opracowanie własne.}}
+    \label{fig:cylinder}
+\end{figure}
 
 \subsubsection{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}
 
