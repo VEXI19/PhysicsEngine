@@ -66,6 +66,7 @@ class IObject(ABC):
         self.local_acceleration = np.array([0, 0, 0])
 
         # NA
+        # self.imperfection_torque = np.random.normal(0, 0.007, 3)
         self.mass = mass
         self._height = height
 
@@ -95,12 +96,12 @@ class IObject(ABC):
         mesh.merge_vertices()
 
         # Remove degenerate (zero-area) faces
-        mesh.remove_degenerate_faces()
-
-        # Fill holes and fix non-manifold edges
-        mesh.fill_holes()
-        mesh.remove_unreferenced_vertices()
-        mesh.remove_duplicate_faces()
+        # mesh.remove_degenerate_faces()
+        #
+        # # Fill holes and fix non-manifold edges
+        # mesh.fill_holes()
+        # mesh.remove_unreferenced_vertices()
+        # mesh.remove_duplicate_faces()
 
         min_bound, max_bound = mesh.bounds
 
@@ -189,14 +190,14 @@ class IObject(ABC):
             value (str): name of the object
 
         """
-        simulations_path = self._config["SIMULATION"]["simulation_files_folder_path"]
-        approved: str = ""
-        if os.path.exists(simulations_path) and value in os.listdir(simulations_path):
-            while approved.lower() != "y" and approved.lower() != "n":
-                approved: str = input("Simulation with that name already exists, do you want to overwrite it? (y/n)")
-
-            if approved.lower() == "n":
-                exit(0)
+        # simulations_path = self._config["SIMULATION"]["simulation_files_folder_path"]
+        # approved: str = ""
+        # if os.path.exists(simulations_path) and value in os.listdir(simulations_path):
+        #     while approved.lower() != "y" and approved.lower() != "n":
+        #         approved: str = input("Simulation with that name already exists, do you want to overwrite it? (y/n)")
+        #
+        #     if approved.lower() == "n":
+        #         exit(0)
 
         self._name = value
 
@@ -420,6 +421,19 @@ class IObject(ABC):
         return np.array([[Ix, 0, 0],
                          [0, Iy, 0],
                          [0, 0, Iz]])
+
+    def reset(self):
+        """
+        Function to reset object to initial state
+        """
+        self.position = np.array([0, 0, 0], dtype=np.float64)
+        self.rotation = np.array([0, 0, 0], dtype=np.float64)
+        self.velocity = np.array([0, 0, 0], dtype=np.float64)
+        self.acceleration = np.array([0, 0, 0], dtype=np.float64)
+        self.angular_velocity = np.array([0, 0, 0], dtype=np.float64)
+        self.angular_acceleration = np.array([0, 0, 0], dtype=np.float64)
+        self.local_velocity = np.array([0, 0, 0], dtype=np.float64)
+        self.local_acceleration = np.array([0, 0, 0], dtype=np.float64)
 
     def get_data_header(self) -> str:
         """

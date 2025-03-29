@@ -165,9 +165,14 @@ class IAerodependent(ABC):
 
         vector = np.array([0, 0, 1])
         rotated_vector = R @ vector
-        projected = self.object_model.projected(rotated_vector)
+        try:
+            projected = self.object_model.projected(rotated_vector)
+            area = projected.polygons_full[0].area
+        except Exception as e:
+            print("Error in calculating reference area")
+            area = 0.3
 
-        return projected.area
+        return area
 
     def get_data_config_header(self) -> str:
         """
