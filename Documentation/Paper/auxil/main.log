@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  15 JAN 2025 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.29)  2 MAR 2025 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -232,405 +232,36 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )))
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\polish.sty
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\polish.sty:34: Pa
-ckage babel Error: You are loading directly a language style.
-(babel)                This syntax is deprecated and you must use
-(babel)                \usepackage[language]{babel}.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.34     \bblstyerror
-                     
-You could proceed but don't complain if you run into errors
-
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2024/12/21 v24.15 Babel common definitions
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:411: Un
-defined control sequence.
-l.411 \bbl@trace
-                {Basic macros}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:411: La
-TeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.411 \bbl@trace{B
-                  asic macros}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1048: U
-ndefined control sequence.
-l.1048 \bbl@trace
-                 {Defining babelensure}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1112: U
-ndefined control sequence.
-l.1112 \bbl@trace
-                 {Short tags}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1127: U
-ndefined control sequence.
-l.1127 \bbl@trace
-                 {Compatibility with language.def}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1165: U
-ndefined control sequence.
-l.1165 \bbl@trace
-                 {Hooks}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1200: U
-ndefined control sequence.
-l.1200 \bbl@trace
-                 {Macros for setting language files up}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1282: U
-ndefined control sequence.
-l.1282 \bbl@trace
-                 {Shorhands}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1609: U
-ndefined control sequence.
-\initiate@active@char #1->\bbl@ifshorthand 
-                                           {#1}{\bbl@s@initiate@active@char ...
-l.1609 \initiate@active@char{~}
-                               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1611: U
-ndefined control sequence.
-\bbl@activate #1->\bbl@ifshorthand 
-                                   {#1}{\bbl@s@activate {#1}}{}
-l.1611 \bbl@activate{~}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1617: U
-ndefined control sequence.
-l.1617 \bbl@trace
-                 {Language attributes}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1679: U
-ndefined control sequence.
-l.1679 \bbl@trace
-                 {Macros for saving definitions}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/12/21 v24.15 The multilingual framework for pdfLaTeX, LuaLa
+TeX and XeLaTeX
 \babel@savecnt=\count281
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1753: U
-ndefined control sequence.
-l.1753 \bbl@trace
-                 {Hyphens}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:1834: U
-ndefined control sequence.
-l.1834 \bbl@trace
-                 {Multiencoding strings}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2082: U
-ndefined control sequence.
-l.2082 \bbl@trace
-                 {Macros related to glyphs}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 \U@D=\dimen168
 \l@unhyphenated=\language79
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2259: U
-ndefined control sequence.
-l.2259 \bbl@trace
-                 {Bidi layout}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def:2261: U
-ndefined control sequence.
-l.2261 \bbl@trace
-                 {Input engine specific macros}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count282
 
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:36: 
-Undefined control sequence.
-l.36 \bbl@trace
-               {Redefinitions for bidi layout}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:42: 
-Undefined control sequence.
-l.42 \ifnum\bbl@bidimode
-                        >\z@  % TODO: always?
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:42: 
-Missing number, treated as zero.
-<to be read again> 
-                   >
-l.42 \ifnum\bbl@bidimode>
-                         \z@  % TODO: always?
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:96: 
-Undefined control sequence.
-l.96 \bbl@trace
-               {Bidi footnotes}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:97: 
-Undefined control sequence.
-l.97 \ifnum\bbl@bidimode
-                        >\z@ % Any bidi=
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def:97: 
-Missing number, treated as zero.
-<to be read again> 
-                   >
-l.97 \ifnum\bbl@bidimode>
-                         \z@ % Any bidi=
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-))
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf
 Language: polish 2022/03/12 1.3 Babel support for Polish
-
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:3
-8: Package polish.ldf Error: Babel too old, at least version 2021/08/30 require
-d.
-
-See the polish.ldf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 }
-      
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:4
-3: Undefined control sequence.
-<argument> ,\bbl@opt@strings 
-                             ,
-l.43   [unicode, charset=utf8, fontenc=TU EU1 EU2]
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (29.39998pt too wide) in paragraph at lines 411--65
-\T1/cmr/m/n/12 tien-co-ding strings                   Ma-cros re-la-ted to gly-
-phs                                                      Bi-
- []
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:6
-7: Undefined control sequence.
-<argument> ,\bbl@opt@strings 
-                             ,
-l.67   [unicode, charset=utf8, fontenc=TU EU1 EU2]
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-01: Undefined control sequence.
-\initiate@active@char #1->\bbl@ifshorthand 
-                                           {#1}{\bbl@s@initiate@active@char ...
-l.101 \initiate@active@char{"}
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-01: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 \initiate@active@char{"}
-                              
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-01: Undefined control sequence.
-\@initiate@active@char ...sname #3\else \bbl@info 
-                                                  {Making #2 an active chara...
-l.101 \initiate@active@char{"}
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-01: Undefined control sequence.
-\bbl@exp@aux ->\endgroup \AfterBabelLanguage 
-                                             \CurrentOption {\catcode `"=12\...
-l.101 \initiate@active@char{"}
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-16: Undefined control sequence.
-\ldf@finish #1->\loadlocalcfg 
-                              {#1}\bbl@afterldf {#1}\expandafter \main@langu...
-l.116 \ldf@finish{polish}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf:1
-16: Undefined control sequence.
-\bbl@afterldf #1->\bbl@afterlang 
-                                 \let \bbl@afterlang \relax \let \BabelModif...
-l.116 \ldf@finish{polish}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+Package babel Info: Making " an active character on input line 101.
 ))
-main.tex:6: Undefined control sequence.
-<argument> \bbl@language@opts 
-                              
-l.6 \usepackage{polish}{
-                        babel}[utf8]
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pl\babel-
+polish.tex
+Package babel Info: Importing font and identification data for polish
+(babel)             from babel-pl.ini. Reported on input line 11.
+) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip57
 
@@ -650,14 +281,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count282
+\inf@bad=\count283
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count283
-\leftroot@=\count284
+\uproot@=\count284
+\leftroot@=\count285
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count285
-\DOTSCASE@=\count286
+\classnum@=\count286
+\DOTSCASE@=\count287
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -670,20 +301,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen171
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count287
+\macc@depth=\count288
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count288
+\c@MaxMatrixCols=\count289
 \dotsspace@=\muskip18
-\c@parentequation=\count289
-\dspbrk@lvl=\count290
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
 \tag@help=\toks24
-\row@=\count291
-\column@=\count292
-\maxfields@=\count293
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
 \andhelp@=\toks25
 \eqnshift@=\dimen172
 \alignsep@=\dimen173
@@ -699,17 +330,17 @@ LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count294
+\lst@mode=\count295
 \lst@gtempboxa=\box56
 \lst@token=\toks28
-\lst@length=\count295
+\lst@length=\count296
 \lst@currlwidth=\dimen178
-\lst@column=\count296
-\lst@pos=\count297
+\lst@column=\count297
+\lst@pos=\count298
 \lst@lostspace=\dimen179
 \lst@width=\dimen180
-\lst@newlines=\count298
-\lst@lineno=\count299
+\lst@newlines=\count299
+\lst@lineno=\count300
 \lst@maxwidth=\dimen181
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -717,8 +348,8 @@ File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count300
-\lst@skipnumbers=\count301
+\c@lstnumber=\count301
+\lst@skipnumbers=\count302
 \lst@framebox=\box57
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -749,7 +380,7 @@ Package: hypbmsec 2016/05/16 v2.5 Bookmarks in sectioning commands (HO)
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count302
+\c@float@type=\count303
 \float@exts=\toks29
 \float@box=\box58
 \@float@everytoks=\toks30
@@ -774,7 +405,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count303
+\etb@tempcnta=\count304
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -783,54 +414,54 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count304
+\lrq@indent=\count305
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count305
-\c@listtotal=\count306
-\c@listcount=\count307
-\c@liststart=\count308
-\c@liststop=\count309
-\c@citecount=\count310
-\c@citetotal=\count311
-\c@multicitecount=\count312
-\c@multicitetotal=\count313
-\c@instcount=\count314
-\c@maxnames=\count315
-\c@minnames=\count316
-\c@maxitems=\count317
-\c@minitems=\count318
-\c@citecounter=\count319
-\c@maxcitecounter=\count320
-\c@savedcitecounter=\count321
-\c@uniquelist=\count322
-\c@uniquename=\count323
-\c@refsection=\count324
-\c@refsegment=\count325
-\c@maxextratitle=\count326
-\c@maxextratitleyear=\count327
-\c@maxextraname=\count328
-\c@maxextradate=\count329
-\c@maxextraalpha=\count330
-\c@abbrvpenalty=\count331
-\c@highnamepenalty=\count332
-\c@lownamepenalty=\count333
-\c@maxparens=\count334
-\c@parenlevel=\count335
-\blx@tempcnta=\count336
-\blx@tempcntb=\count337
-\blx@tempcntc=\count338
-\c@blx@maxsection=\count339
-\blx@maxsegment@0=\count340
-\blx@notetype=\count341
-\blx@parenlevel@text=\count342
-\blx@parenlevel@foot=\count343
-\blx@sectionciteorder@0=\count344
-\blx@sectionciteorderinternal@0=\count345
-\blx@entrysetcounter=\count346
-\blx@biblioinstance=\count347
+\c@tabx@nest=\count306
+\c@listtotal=\count307
+\c@listcount=\count308
+\c@liststart=\count309
+\c@liststop=\count310
+\c@citecount=\count311
+\c@citetotal=\count312
+\c@multicitecount=\count313
+\c@multicitetotal=\count314
+\c@instcount=\count315
+\c@maxnames=\count316
+\c@minnames=\count317
+\c@maxitems=\count318
+\c@minitems=\count319
+\c@citecounter=\count320
+\c@maxcitecounter=\count321
+\c@savedcitecounter=\count322
+\c@uniquelist=\count323
+\c@uniquename=\count324
+\c@refsection=\count325
+\c@refsegment=\count326
+\c@maxextratitle=\count327
+\c@maxextratitleyear=\count328
+\c@maxextraname=\count329
+\c@maxextradate=\count330
+\c@maxextraalpha=\count331
+\c@abbrvpenalty=\count332
+\c@highnamepenalty=\count333
+\c@lownamepenalty=\count334
+\c@maxparens=\count335
+\c@parenlevel=\count336
+\blx@tempcnta=\count337
+\blx@tempcntb=\count338
+\blx@tempcntc=\count339
+\c@blx@maxsection=\count340
+\blx@maxsegment@0=\count341
+\blx@notetype=\count342
+\blx@parenlevel@text=\count343
+\blx@parenlevel@foot=\count344
+\blx@sectionciteorder@0=\count345
+\blx@sectionciteorderinternal@0=\count346
+\blx@entrysetcounter=\count347
+\blx@biblioinstance=\count348
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -839,12 +470,12 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \bibinitsep=\skip65
 \bibparsep=\skip66
 \bibhang=\skip67
-\blx@bcfin=\read2
+\blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count348
-\c@maxcomprange=\count349
-\c@mincompwidth=\count350
+\c@mincomprange=\count349
+\c@maxcomprange=\count350
+\c@mincompwidth=\count351
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -855,74 +486,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count351
-\c@savedafterword=\count352
-\c@annotator=\count353
-\c@savedannotator=\count354
-\c@author=\count355
-\c@savedauthor=\count356
-\c@bookauthor=\count357
-\c@savedbookauthor=\count358
-\c@commentator=\count359
-\c@savedcommentator=\count360
-\c@editor=\count361
-\c@savededitor=\count362
-\c@editora=\count363
-\c@savededitora=\count364
-\c@editorb=\count365
-\c@savededitorb=\count366
-\c@editorc=\count367
-\c@savededitorc=\count368
-\c@foreword=\count369
-\c@savedforeword=\count370
-\c@holder=\count371
-\c@savedholder=\count372
-\c@introduction=\count373
-\c@savedintroduction=\count374
-\c@namea=\count375
-\c@savednamea=\count376
-\c@nameb=\count377
-\c@savednameb=\count378
-\c@namec=\count379
-\c@savednamec=\count380
-\c@translator=\count381
-\c@savedtranslator=\count382
-\c@shortauthor=\count383
-\c@savedshortauthor=\count384
-\c@shorteditor=\count385
-\c@savedshorteditor=\count386
-\c@labelname=\count387
-\c@savedlabelname=\count388
-\c@institution=\count389
-\c@savedinstitution=\count390
-\c@lista=\count391
-\c@savedlista=\count392
-\c@listb=\count393
-\c@savedlistb=\count394
-\c@listc=\count395
-\c@savedlistc=\count396
-\c@listd=\count397
-\c@savedlistd=\count398
-\c@liste=\count399
-\c@savedliste=\count400
-\c@listf=\count401
-\c@savedlistf=\count402
-\c@location=\count403
-\c@savedlocation=\count404
-\c@organization=\count405
-\c@savedorganization=\count406
-\c@origlocation=\count407
-\c@savedoriglocation=\count408
-\c@origpublisher=\count409
-\c@savedorigpublisher=\count410
-\c@publisher=\count411
-\c@savedpublisher=\count412
-\c@language=\count413
-\c@savedlanguage=\count414
-\c@origlanguage=\count415
-\c@savedoriglanguage=\count416
-\c@pageref=\count417
-\c@savedpageref=\count418
+\c@afterword=\count352
+\c@savedafterword=\count353
+\c@annotator=\count354
+\c@savedannotator=\count355
+\c@author=\count356
+\c@savedauthor=\count357
+\c@bookauthor=\count358
+\c@savedbookauthor=\count359
+\c@commentator=\count360
+\c@savedcommentator=\count361
+\c@editor=\count362
+\c@savededitor=\count363
+\c@editora=\count364
+\c@savededitora=\count365
+\c@editorb=\count366
+\c@savededitorb=\count367
+\c@editorc=\count368
+\c@savededitorc=\count369
+\c@foreword=\count370
+\c@savedforeword=\count371
+\c@holder=\count372
+\c@savedholder=\count373
+\c@introduction=\count374
+\c@savedintroduction=\count375
+\c@namea=\count376
+\c@savednamea=\count377
+\c@nameb=\count378
+\c@savednameb=\count379
+\c@namec=\count380
+\c@savednamec=\count381
+\c@translator=\count382
+\c@savedtranslator=\count383
+\c@shortauthor=\count384
+\c@savedshortauthor=\count385
+\c@shorteditor=\count386
+\c@savedshorteditor=\count387
+\c@labelname=\count388
+\c@savedlabelname=\count389
+\c@institution=\count390
+\c@savedinstitution=\count391
+\c@lista=\count392
+\c@savedlista=\count393
+\c@listb=\count394
+\c@savedlistb=\count395
+\c@listc=\count396
+\c@savedlistc=\count397
+\c@listd=\count398
+\c@savedlistd=\count399
+\c@liste=\count400
+\c@savedliste=\count401
+\c@listf=\count402
+\c@savedlistf=\count403
+\c@location=\count404
+\c@savedlocation=\count405
+\c@organization=\count406
+\c@savedorganization=\count407
+\c@origlocation=\count408
+\c@savedoriglocation=\count409
+\c@origpublisher=\count410
+\c@savedorigpublisher=\count411
+\c@publisher=\count412
+\c@savedpublisher=\count413
+\c@language=\count414
+\c@savedlanguage=\count415
+\c@origlanguage=\count416
+\c@savedoriglanguage=\count417
+\c@pageref=\count418
+\c@savedpageref=\count419
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -947,19 +578,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count419
-\c@textcitetotal=\count420
-\c@textcitemaxnames=\count421
-\c@biburlbigbreakpenalty=\count422
-\c@biburlbreakpenalty=\count423
-\c@biburlnumpenalty=\count424
-\c@biburlucpenalty=\count425
-\c@biburllcpenalty=\count426
+\c@textcitecount=\count420
+\c@textcitetotal=\count421
+\c@textcitemaxnames=\count422
+\c@biburlbigbreakpenalty=\count423
+\c@biburlbreakpenalty=\count424
+\c@biburlnumpenalty=\count425
+\c@biburlucpenalty=\count426
+\c@biburllcpenalty=\count427
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count427
+\c@smartand=\count428
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -972,8 +603,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bb
 x
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count428
-\c@bbx:relatedtotal=\count429
+\c@bbx:relatedcount=\count429
+\c@bbx:relatedtotal=\count430
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1005,7 +636,7 @@ Package: expl3 2024-12-09 L3 programming layer (loader)
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count430
+\l__color_backend_stack_int=\count431
 \l__pdf_internal_box=\box60
 ))
 Package biblatex Info: ... and expl3
@@ -1024,52 +655,22 @@ Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-\@quotelevel=\count431
-\@quotereset=\count432
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 50
-.
 
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count432
+\@quotereset=\count433
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 51
+.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
-C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:6: Undefined control sequence.
-\select@language ...elax }\fi \bbl@provide@locale 
-                                                  \bbl@iflanguage \languagen...
-l.6 \babel@aux{}{}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:6: Undefined control sequence.
-\@nolanerr ...arg \chardef {l@#1}\z@ \bbl@warning 
-                                                  {Undefined language '#1' i...
-l.6 \babel@aux{}{}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.aux
-:6: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \babel@aux{}{}
-                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Package babel Warning: Undefined language '' in aux.
+(babel)                Reported on input line 6.
 
 
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -1086,32 +687,25 @@ If that doesn't work, type  X <return>  to quit.
 6.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-
-Overfull \hbox (323.07312pt too wide) in paragraph at lines 6--50
-\T1/lmr/m/n/12 Reported                                                        
-                                                                               
-                                                                               
-                                                        
- []
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1150,16 +744,16 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count433
+\scratchcounter=\count434
 \scratchdimen=\dimen182
 \scratchbox=\box61
-\nofMPsegments=\count434
-\nofMParguments=\count435
+\nofMPsegments=\count435
+\nofMParguments=\count436
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count436
+\MPscratchCnt=\count437
 \MPscratchDim=\dimen183
-\MPnumerator=\count437
-\makeMPintoPDFobject=\count438
+\MPnumerator=\count438
+\makeMPintoPDFobject=\count439
 \everyMPtoPDFconversion=\toks32
 )
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
@@ -1172,76 +766,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-main.tex:50: Undefined control sequence.
-\select@language ...elax }\fi \bbl@provide@locale 
-                                                  \bbl@iflanguage \languagen...
-l.50 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:50: Undefined control sequence.
-\bbl@switch #1->\bbl@ensureinfo 
-                                {#1}\originalTeX \expandafter \def \expandaf...
-l.50 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:50: Undefined control sequence.
-\bbl@activate #1->\bbl@ifshorthand 
-                                   {#1}{\bbl@s@activate {#1}}{}
-l.50 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:50: Undefined control sequence.
-<argument> \string \babel@aux {\bbl@auxname 
-                                            }{}
-l.50 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:50: Undefined control sequence.
-\__hook begindocument ...@language }\ifbbl@single 
-                                                  \renewcommand \selectlangu...
-l.50 \begin{document}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:50: Extra \fi.
-\__hook begindocument ...abel@aux \@gobbletwo \fi 
-                                                  \bbl@clear@ttribs \Declare...
-l.50 \begin{document}
-                     
-I'm ignoring this; it doesn't match any \if.
-
-\c@lstlisting=\count439
+\c@lstlisting=\count440
 Package hypbmsec Info: Package hyperref not loaded,
-(hypbmsec)             bookmark parameters will be ignored on input line 50.
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
+(hypbmsec)             bookmark parameters will be ignored on input line 51.
+Package biblatex Info: Trying to load language 'polish'...
+Package biblatex Info: ... file 'polish.lbx' found.
 
-(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
-File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+(C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\polish.lbx
+File: polish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1253,21 +785,18 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.bb
 l)
-Package biblatex Info: Reference section=0 on input line 50.
-Package biblatex Info: Reference segment=0 on input line 50.
+Package biblatex Info: Reference section=0 on input line 51.
+Package biblatex Info: Reference segment=0 on input line 51.
 <SGGW-thesis/naglowek_inz.png, id=1, 742.775pt x 182.6825pt>
 File: SGGW-thesis/naglowek_inz.png Graphic file (type png)
 <use SGGW-thesis/naglowek_inz.png>
-Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 51.
+Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 52.
 (pdftex.def)             Requested size: 279.12146pt x 68.65071pt.
 <SGGW-thesis/stopka_WZIM.png, id=3, 483.30562pt x 82.80937pt>
 File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
 <use SGGW-thesis/stopka_WZIM.png>
-Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 51.
+Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 52.
 (pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
-
-Overfull \vbox (31.36075pt too high) has occurred while \output is active []
-
 
 
 [1
@@ -1277,17 +806,17 @@ AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./SGGW-thesis/nagl
 owek_inz.png> <./SGGW-thesis/stopka_WZIM.png>]
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
  []
 
@@ -1485,7 +1014,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [18])
-Underfull \hbox (badness 10000) in paragraph at lines 233--73
+Underfull \hbox (badness 10000) in paragraph at lines 233--74
 
  []
 
@@ -1517,12 +1046,12 @@ e rze-czy-wi-stym.
 
 
 [21]
-<images/all-forces.png, id=77, 412.54124pt x 411.78844pt>
+<images/all-forces.png, id=76, 412.54124pt x 411.78844pt>
 File: images/all-forces.png Graphic file (type png)
 <use images/all-forces.png>
 Package pdftex.def Info: images/all-forces.png  used on input line 79.
 (pdftex.def)             Requested size: 298.75264pt x 298.20908pt.
-<images/gravity-force.png, id=78, 467.49657pt x 386.94562pt>
+<images/gravity-force.png, id=77, 467.49657pt x 386.94562pt>
 File: images/gravity-force.png Graphic file (type png)
 <use images/gravity-force.png>
 Package pdftex.def Info: images/gravity-force.png  used on input line 100.
@@ -1536,7 +1065,7 @@ Underfull \vbox (badness 4765) has occurred while \output is active []
 c}{C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:
 /Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./
 images/all-forces.png>]
-<images/drag-force.png, id=90, 411.78844pt x 389.95688pt>
+<images/drag-force.png, id=89, 411.78844pt x 389.95688pt>
 File: images/drag-force.png Graphic file (type png)
 <use images/drag-force.png>
 Package pdftex.def Info: images/drag-force.png  used on input line 123.
@@ -1547,7 +1076,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [23 <./images/gravity-force.png>]
-<images/lift-force.png, id=95, 417.81094pt x 347.04657pt>
+<images/lift-force.png, id=94, 417.81094pt x 347.04657pt>
 File: images/lift-force.png Graphic file (type png)
 <use images/lift-force.png>
 Package pdftex.def Info: images/lift-force.png  used on input line 145.
@@ -1558,7 +1087,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [24 <./images/drag-force.png>]
-<images/thrust-force.png, id=100, 378.66469pt x 314.67563pt>
+<images/thrust-force.png, id=99, 378.66469pt x 314.67563pt>
 File: images/thrust-force.png Graphic file (type png)
 <use images/thrust-force.png>
 Package pdftex.def Info: images/thrust-force.png  used on input line 164.
@@ -1579,7 +1108,7 @@ c} <./images/thrust-force.png>]
 [27]
 
 [28]
-<images/stabilisation.png, id=119, 668.4975pt x 452.4403pt>
+<images/stabilisation.png, id=118, 668.4975pt x 452.4403pt>
 File: images/stabilisation.png Graphic file (type png)
 <use images/stabilisation.png>
 Package pdftex.def Info: images/stabilisation.png  used on input line 309.
@@ -1605,7 +1134,7 @@ Underfull \vbox (badness 6001) has occurred while \output is active []
 
 
 [32]
-<images/angle-of-attack.png, id=136, 411.03563pt x 370.38374pt>
+<images/angle-of-attack.png, id=135, 411.03563pt x 370.38374pt>
 File: images/angle-of-attack.png Graphic file (type png)
 <use images/angle-of-attack.png>
 Package pdftex.def Info: images/angle-of-attack.png  used on input line 419.
@@ -1615,7 +1144,7 @@ Package pdftex.def Info: images/angle-of-attack.png  used on input line 419.
 [33 <./images/angle-of-attack.png>]
 
 [34]
-<images/cylinder.png, id=144, 261.22594pt x 342.5297pt>
+<images/cylinder.png, id=143, 261.22594pt x 342.5297pt>
 File: images/cylinder.png Graphic file (type png)
 <use images/cylinder.png>
 Package pdftex.def Info: images/cylinder.png  used on input line 481.
@@ -1625,147 +1154,173 @@ Package pdftex.def Info: images/cylinder.png  used on input line 481.
 [35 <./images/cylinder.png>]
 
 [36]
+<images/uklady.png, id=151, 817.55438pt x 475.7775pt>
+File: images/uklady.png Graphic file (type png)
+<use images/uklady.png>
+Package pdftex.def Info: images/uklady.png  used on input line 575.
+(pdftex.def)             Requested size: 298.75264pt x 173.85698pt.
 
-[37]
-
-[38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[39]
-<images/architektura.jpg, id=162, 905.3825pt x 1205.50375pt>
+[37]
+<images/roll_pitch_yaw.png, id=156, 258.9675pt x 451.6875pt>
+File: images/roll_pitch_yaw.png Graphic file (type png)
+<use images/roll_pitch_yaw.png>
+Package pdftex.def Info: images/roll_pitch_yaw.png  used on input line 602.
+(pdftex.def)             Requested size: 298.75264pt x 521.13895pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[38 <./images/uklady.png>]
+
+[39 <./images/roll_pitch_yaw.png>]
+
+[40]
+
+[41]
+
+[42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[43]
+<images/architektura.jpg, id=177, 905.3825pt x 1205.50375pt>
 File: images/architektura.jpg Graphic file (type jpg)
 <use images/architektura.jpg>
-Package pdftex.def Info: images/architektura.jpg  used on input line 708.
+Package pdftex.def Info: images/architektura.jpg  used on input line 864.
 (pdftex.def)             Requested size: 341.43437pt x 454.60124pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[40]
+[44]
 
-[41 <./images/architektura.jpg>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-42.
+[45 <./images/architektura.jpg>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+98.
 
 (C:\Users\Kuba\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 743.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 899.
 
 
-[42]
-Overfull \hbox (6.04779pt too wide) in paragraph at lines 786--787
+[46]
+Overfull \hbox (6.04779pt too wide) in paragraph at lines 942--943
 []\T1/lmr/m/n/12 `load_model(object_model_path)`: Ša-duje mo-del 3D obiektu z p
 o-da-nej ±cie»ki.
  []
 
 
 
-[43]
+[47]
 
-[44]
+[48]
 
-[45]
-Overfull \hbox (11.78726pt too wide) in paragraph at lines 913--914
+[49]
+Overfull \hbox (11.78726pt too wide) in paragraph at lines 1069--1070
 []\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Me-toda, która zwraca pr¦
 d-ko±¢ d¹wi¦ku
  []
 
 
 
-[46]
+[50]
 
-[47]
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 987--988
+[51]
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 1143--1144
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.31294pt too wide) in paragraph at lines 1006--1008
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 1162--1164
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
 
-[48]
+[52]
 
-chapter2.tex:1029: LaTeX Error: There's no line here to end.
+chapter2.tex:1185: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1029 \\ G
+l.1185 \\ G
            Å‚Ã³wna pÄ™tla symulacyjna dziaÅ‚a w nastÄ™pujÄ…cy sposÃ³b:
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (43.5867pt too wide) in paragraph at lines 1032--1033
+Overfull \hbox (43.5867pt too wide) in paragraph at lines 1188--1189
 []\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»-dym kroku, zmie-nia
 ne s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
  []
 
 
 
-[49]
+[53]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1083
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 1237--1239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1097
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1100--1109
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1265
 
  []
 
 
 
-[51]
-<images/physics_map.png, id=205, 482.80376pt x 623.32875pt>
+[55]
+<images/physics_map.png, id=220, 482.80376pt x 623.32875pt>
 File: images/physics_map.png Graphic file (type png)
 <use images/physics_map.png>
-Package pdftex.def Info: images/physics_map.png  used on input line 1136.
+Package pdftex.def Info: images/physics_map.png  used on input line 1292.
 (pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[52]
-
-[53 <./images/physics_map.png>]
-
-[54]
-
-[55]
-
 [56]
 
-[57]
-Overfull \hbox (1.12518pt too wide) in paragraph at lines 1317--1318
+[57 <./images/physics_map.png>]
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+Overfull \hbox (1.12518pt too wide) in paragraph at lines 1473--1474
 \T1/lmr/m/n/12 kiety, który jest ob-li-czany za po-moc¡ ilo-czynu wek-to-ro-weg
 o (\T1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
  []
 
 
 
-[58]
-Overfull \hbox (22.11751pt too wide) in paragraph at lines 1366--1367
+[62]
+Overfull \hbox (22.11751pt too wide) in paragraph at lines 1522--1523
 []\T1/lmr/bx/n/12 Korekcje ae-ro-dy-na-miczne\T1/lmr/m/n/12 : Je-±li obiekt im-
 ple-men-tuje in-ter-fejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
  []
@@ -1775,8 +1330,8 @@ Underfull \vbox (badness 1990) has occurred while \output is active []
 
 
 
-[59]
-Overfull \hbox (41.21997pt too wide) in paragraph at lines 1371--1372
+[63]
+Overfull \hbox (41.21997pt too wide) in paragraph at lines 1527--1528
 \T1/lmr/m/n/12 W trak-cie ak-tu-ali-za-cji stanu ra-kiety wy-wo-ªy-wana jest fu
 nk-cja \T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
  []
@@ -1786,14 +1341,14 @@ Underfull \vbox (badness 2165) has occurred while \output is active []
 
 
 
-[60]
-Overfull \hbox (49.44084pt too wide) in paragraph at lines 1414--1419
+[64]
+Overfull \hbox (49.44084pt too wide) in paragraph at lines 1570--1575
 \T1/lmr/m/n/12 Uruchomienie mo-duªu wi-zu-ali-za-cyj-nego po-lega na uru-cho-mi
 e-niu skryptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
  []
 
-chapter2.tex:1427: Undefined control sequence.
-l.1427 ...ane sÄ… przez komponent nazwany \texzttt
+chapter2.tex:1583: Undefined control sequence.
+l.1583 ...ane sÄ… przez komponent nazwany \texzttt
                                                   {picker}, ktÃ³ry przeÅ‚Ä…c...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1801,82 +1356,63 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<images/main_window.png, id=235, 255.95625pt x 242.40562pt>
+<images/main_window.png, id=250, 255.95625pt x 242.40562pt>
 File: images/main_window.png Graphic file (type png)
 <use images/main_window.png>
-Package pdftex.def Info: images/main_window.png  used on input line 1437.
+Package pdftex.def Info: images/main_window.png  used on input line 1593.
 (pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
 
 
-[61]
-<images/file_picker.png, id=240, 258.21469pt x 267.24844pt>
+[65]
+<images/file_picker.png, id=254, 258.21469pt x 267.24844pt>
 File: images/file_picker.png Graphic file (type png)
 <use images/file_picker.png>
-Package pdftex.def Info: images/file_picker.png  used on input line 1448.
+Package pdftex.def Info: images/file_picker.png  used on input line 1604.
 (pdftex.def)             Requested size: 341.43437pt x 353.41333pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[62 <./images/main_window.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1456--1459
+[66 <./images/main_window.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1615
 
  []
 
 
 
-[63 <./images/file_picker.png>]
-<images/simulation_window.png, id=249, 1442.38875pt x 796.47563pt>
+[67 <./images/file_picker.png>]
+<images/simulation_window.png, id=264, 1442.38875pt x 796.47563pt>
 File: images/simulation_window.png Graphic file (type png)
 <use images/simulation_window.png>
-Package pdftex.def Info: images/simulation_window.png  used on input line 1494.
+Package pdftex.def Info: images/simulation_window.png  used on input line 1650.
 
 (pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
 
 
-[64 <./images/simulation_window.png>]
+[68 <./images/simulation_window.png>]
 
-[65]
+[69]
 
-[66]
+[70]
 
-[67]
-chapter2.tex:1631: Undefined control sequence.
-l.1631 ...ch zagadnieÅ„ wykorzystano podrÄ™cznik "
-                                                  Topics in Advanced Model
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[71]
 
-chapter2.tex:1632: Undefined control sequence.
-l.1632 Rocketry"
-                 autorstwa Gordona K. Mandella\cite{alma991019564819703276},...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-
-[68]
+[72]
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
 
 
-[69])
+[73])
 
-[70]
+[74]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
 Rozdzia\l  3.
 )
 
-[71
+[75
 
 
 
@@ -1893,7 +1429,7 @@ Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
 
 )
 
-[72
+[76
 
 
 
@@ -1905,7 +1441,7 @@ Overfull \hbox (11.96658pt too wide) in paragraph at lines 1--1
 Rozdzia\l  5.
 )
 
-[73
+[77
 
 
 
@@ -1917,37 +1453,36 @@ Rozdzia\l  5.
 Rozdzia\l  6.
 )
 
-[74
+[78
 
 
 
 
 ]
-Overfull \hbox (44.21571pt too wide) in paragraph at lines 83--83
-[]\T1/lmr/m/n/12 AeroTech []and []Mad-cow Roc-ke-try. \T1/lmr/m/it/12 Rock-Sim\
-T1/lmr/m/n/12 . Ava-ila-ble at $\T1/lmtt/m/n/12 https : / / www . rocketryforum
- .
+Overfull \hbox (28.54875pt too wide) in paragraph at lines 84--84
+[]\T1/lmr/m/n/12 AeroTech i Mad-cow Roc-ke-try. \T1/lmr/m/it/12 Rock-Sim\T1/lmr
+/m/n/12 . Ava-ila-ble at $\T1/lmtt/m/n/12 https : / / www . rocketryforum .
  []
 
 
-Overfull \hbox (24.47514pt too wide) in paragraph at lines 83--83
+Overfull \hbox (24.47514pt too wide) in paragraph at lines 84--84
 []\T1/lmr/m/n/12 ROS Con-sor-tium. \T1/lmr/m/it/12 Ga-zebo ROS Pac-ka-ges\T1/lm
 r/m/n/12 . $\T1/lmtt/m/n/12 https : / / github . com / ros -[] simulation /
  []
 
 
 
-[75
+[79
 
 
 
 ]
 
-[76]
+[80]
 
-[77]
+[81]
 
-[78]
+[82]
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\main.au
 x
 (C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\auxil\chapter
@@ -1975,34 +1510,33 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17499 strings out of 473573
- 319520 string characters out of 5716588
- 1231543 words of memory out of 5000000
- 40412 multiletter control sequences out of 15000+600000
+ 17948 strings out of 473573
+ 327629 string characters out of 5716588
+ 1243781 words of memory out of 5000000
+ 40854 multiletter control sequences out of 15000+600000
  639860 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,81p,882b,1700s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Kuba\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-200.pk><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
-2.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi1
-0.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc1
-0.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
-.pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.
-pfb><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pf
-b><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb>
-<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C
-:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/U
-sers/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/User
-s/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users
-/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/
-Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Ku
-ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kub
-a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+ 72i,7n,81p,882b,1701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb
+><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb
+><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb
+><C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb>
+<C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><
+C:/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:
+/Users/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/U
+sers/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Use
+rs/Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/
+Kuba/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Kub
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Kuba
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Kuba/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Kuba/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Kuba/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Kuba/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
 Output written on C:/Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Pa
-per\out\main.pdf (78 pages, 814158 bytes).
+per\out\main.pdf (82 pages, 838813 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
+ 397 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

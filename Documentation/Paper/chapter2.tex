@@ -489,7 +489,9 @@ Powierzchnia przekroju rakiety, modelowanej jako walec o promieniu $r$ i
 wysokości $h$, zależy od kąta natarcia $\alpha$ względem przepływu powietrza.
 
 \paragraph{Przekrój czołowy ($\alpha = 0^\circ$):}
-Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy jest równy powierzchni podstawy cylindra:
+Jest to pole rzutu bryły rakiety na płaszczyznę prostopadłą do kierunku
+lotu. Jeżeli rakieta porusza się wzdłuż swojej osi symetrii, przekrój czołowy
+jest równy powierzchni podstawy cylindra:
 \begin{equation}
 A_{0} = \pi r^2.
 \label{eq:frontal_area}
@@ -516,7 +518,11 @@ gdzie:
 \end{itemize}
 
 
-Wartość $A_\alpha$ zależy więc silnie od kąta natarcia $\alpha$, co wpływa na siły aerodynamiczne działające na rakietę w locie.
+Wartość $A_\alpha$ zależy więc silnie od kąta natarcia $\alpha$, co wpływa
+na siły aerodynamiczne działające na rakietę w locie. Wartość $A_\alpha$
+wykorzystywana jest do obliczeń oporu aerodynamicznego oraz sił nośnych
+rakiety - jest to bezpośrednie powiązanie między geometrią rakiety, a siłami
+na nią oddziaływującymi.
 
 
 \subsubsection{Charakterystyka punktów charakterystycznych rakiety}
@@ -532,9 +538,21 @@ które oddziaływają wszelkie siły działające na lecącą rakietę:
     amatorskich rakietach wpływ masy paliwa na położenie CoG jest znikomy i
     pomijalny.
 
-    \item \textbf{Środek parcia (CoP)}: Punkt, w którym można przyłożyć wypadkową siłę aerodynamiczną działającą na rakietę. Położenie CoP zależy od kształtu rakiety i rozkładu ciśnienia aerodynamicznego.
+    \item \textbf{Środek parcia (CoP)}: Punkt, w którym można przyłożyć
+    wypadkową siłę aerodynamiczną działającą na rakietę. Położenie CoP
+    zależy od kształtu rakiety, konta natarcia i rozkładu ciśnienia
+    aerodynamicznego. W modelu fizyki przyjętym na potrzeby niniejszej pracy
+    inżynierskiej zakłada się, że CoP znajduje się na osi rakiety, oraz jest
+    to jeden punkt zarówno dla sił nośnych, jak i oporu aerodynamicznego.
+    Podejściem bliższym rzeczywistości jest modelowanie CoP jako punktu
+    oddzielnie dla sił nośnych i oporu, co pozwala na bardziej precyzyjne
+    obliczenia sił aerodynamicznych, jest to jednak bardziej skomplikowane i
+    kłopotliwe obliczeniowo, dlatego też w modelu uproszczonym przyjmuje się
+    wspólny punkt CoP dla obu sił.
 
-    \item \textbf{Środek ciągu (CoT)}: Punkt, w którym działa wypadkowa siła ciągu generowana przez silniki rakiety. Położenie CoT zależy od konfiguracji silników i ich rozmieszczenia.
+    \item \textbf{Środek ciągu (CoT)}: Punkt, w którym działa wypadkowa siła
+    ciągu generowana przez silniki rakiety. Położenie CoT zależy od
+    konfiguracji silników i ich rozmieszczenia.
 \end{itemize}
 
 \paragraph{Relacje między punktami}
@@ -551,6 +569,15 @@ Dla zapewnienia stabilności lotu rakiety:
 \subsubsection{Układy współrzędnych w dynamice rakiety}
 Aby w dokładny sposób określać pozycje i obrót rakiety w przestrzeni
 konieczne jest zamodelowanie układów współrzędnych związanych z ruchem rakiety. W analizach ruchu rakiety wyróżnia się trzy podstawowe układy współrzędnych:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/uklady}
+    \caption{Układy współrzędnych w dynamice rakiety,
+        \textit{źródło: Opracowanie własne.}}
+    \label{fig:rocket_coordinates}
+\end{figure}
+
 \begin{itemize}
     \item \textbf{Układ inercjalny (Ziemia)}: Stały układ odniesienia związany z Ziemią, w którym mierzone są położenie i orientacja rakiety. Oś $z$ jest skierowana w stronę przeciwną do środka Ziemi.
 
@@ -569,6 +596,15 @@ Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera,
 umożliwiające transformacje układów współrzędnych za pomocą operacji
 macierzowych. Kąty Eulera to trzy kąty opisujące orientację rakiety wzgledem
 trzech osi układu inercjalnego:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/roll_pitch_yaw}
+    \caption{Obroty erakiety w trzech osiach (Roll, Pitch, Yaw),
+        \textit{źródło: Science Learning Hub, https://www.sciencelearn.org.nz/resources/387-rocket-control}}
+    \label{fig:roll_pitch_yaw}
+\end{figure}
+
 \begin{itemize}
     \item \textbf{Yaw ($\psi$)}: Obrót wokół osi $z$ w układzie Ziemi.
     \item \textbf{Pitch ($\theta$)}: Obrót wokół osi $y$ w układzie Ziemi.
@@ -610,9 +646,129 @@ gdzie:
     \label{eq:rotation_z}
 \end{equation}
 
+Złożenie tych macierzy pozwala na obliczenie orientacji rakiety w
+przestrzeni za pomocą jednej macierzy rotacji $R$. Obrót wektora
+jednostkowego w trójwymiarowej przestrzeni możemy obliczyć za pomocą
+następującego równania macierzowego:
+
+\begin{equation}
+\vec{v'} = R \vec{v},
+\label{eq:rotation_vector}
+\end{equation}
+
+Co zapisać można jako pełne równanie macierzowe:
+
+\begin{equation}
+\begin{bmatrix}
+v'_x \\
+v'_y \\
+v'_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos\theta \cos\psi & \cos\theta \sin\psi & -\sin\theta \\
+\sin\phi \sin\theta \cos\psi - \cos\phi \sin\psi & \sin\phi \sin\theta \sin\psi + \cos\phi \cos\psi & \sin\phi \cos\theta \\
+\cos\phi \sin\theta \cos\psi + \sin\phi \sin\psi & \cos\phi \sin\theta \sin\psi - \sin\phi \cos\psi & \cos\phi \cos\theta
+\end{bmatrix}
+\begin{bmatrix}
+v_x \\
+v_y \\
+v_z
+\end{bmatrix},
+\label{eq:full_rotation_matrix}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\vec{v}$ -- wektor jednostkowy w układzie lokalnym,
+    \item $\vec{v}'$ -- wektor jednostkowy po obrocie o kąty Eulera.
+    \item $R$ -- macierz rotacji opisująca obroty wokół osi $x$, $y$ i $z$.
+    \item $\phi$, $\theta$, $\psi$ -- kąty Eulera.
+\end{itemize}
+
 Dzięki kątom Eulera i macierzom rotacji możliwa jest transformacja wektorów i równań między różnymi układami współrzędnych, co jest kluczowe dla analizy trajektorii lotu rakiety oraz sterowania jej orientacją w przestrzeni.
 
+W modelu przyjętym na potrzeby niniejszej pracy inżynierskiej zakłada się,
+że rakieta nie rotuje wokół osi $z$ (Yaw), co oznacza, że kąt $\psi$ jest
+stały. Pozwala to na uproszczenie modelu dynamiki ruchu rakiety, zachowując
+realistyczne warunki lotu. Pozwala to na uproszczenie modelu dynamiki ruchu,
+zwłaszcza przy założeniu sterowania obracanym silnikiem rakietowym, który
+koryguje orientację rakiety w locie.
 
+\subsection{Model symulacji ruchu rakiety}
+
+Na podstawie przedstawionych równań i zależności można zbudować model, który
+wykorzystany zostanie do stworzenia programu do symulacji ruchu rakiety w
+atmosferze. Model ten uwzględnia zarówno dynamikę ruchu postępowego, jak i
+obrotowego, opierając się na równaniach dynamiki Newtona i kinematyki ruchu
+postępowego oraz obrotowego. Model ten uwzględnia jednocześnie pewne
+uproszczenia, które pozwalają na efektywne obliczenia trajektorii lotu
+rakiety i zmniejszenie złożoności modelu.
+
+Model składa się z następujących, zmiennych zależnych:
+
+\begin{itemize}
+    \item \textbf{$\vec{r}$} - pozycja środka masy rakiety w układzie
+    inercjalnym (związanym z Ziemią),
+    \item \textbf{$\vec{v}$} - prędkość środka masy rakiety w układzie
+    liczona jako pierwsza pochodna po czasie wektora pozycji,
+    $\vec{v} = \frac{d\vec{r}}{dt}$,
+    \item \textbf{$\vec{a}$} - przyspieszenie środka masy rakiety w układzie
+    liczone jako pierwsza pochodna po czasie wektora prędkości, $\vec{a} = \frac{d\vec{v}}{dt}$,
+    \item \textbf{$\vec{u}$} - kierunek osi symetrii rakiety w układzie
+    inercjalnym (związanym z Ziemią), wyznaczany na podstawie kątów Eulera i
+    macierzy rotacji, $\vec{u} = R \vec{a}$,
+\end{itemize}
+
+Zmienne zależne liczone są na podstawie równań dynamiki Newtona i
+kinematyki, gdzie siły działające na rakiety są sumowane do siły wypadkowej za
+pomocą
+następującego równania:
+
+\begin{equation}
+    \vec{F} = \vec{F}_\text{thrust} + \vec{F}_\text{drag} + \vec{F}_\text{lift} + \vec{F}_\text{gravity},
+    \label{eq:forces_sum}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\vec{F}_\text{thrust}$ -- siła ciągu generowana przez silniki rakiety,
+    \item $\vec{F}_\text{drag}$ -- siła oporu aerodynamicznego,
+    \item $\vec{F}_\text{lift}$ -- siła nośna generowana przez rakiety,
+    \item $\vec{F}_\text{gravity}$ -- siła grawitacji działająca na rakiety.
+\end{itemize}
+
+Wypadkowy moment obrotowy $\vec{M}$ generowany przez zsumowanie momentów sił
+działających na rakietę, przy użyciu równania:
+
+\begin{equation}
+    \vec{M} = (\vec{r}_{CoT}) \times \vec{F}_\text{thrust} + (\vec{r}_{CoP}) \times \vec{F}_\text{drag} + (\vec{r}_{CoP}) \times \vec{F}_\text{lift} + (\vec{r}_{CoG}) \times \vec{F}_\text{gravity},
+    \label{eq:moments_sum}
+\end{equation}
+
+gdzie:
+
+\begin{itemize}
+    \item $\vec{r}_{CoT}$ -- wektor od CoG do CoT,
+    \item $\vec{r}_{CoP}$ -- wektor od CoG do CoP,
+\end{itemize}
+
+Za pomocą momentów sił obliczane są kąty Eulera $\phi$, $\theta$ i $\psi$,
+które następnie pozwalają na wyliczenie macierzy rotacji $R$ oraz obrotu
+rakiety w przestrzeni. Ten komponent pozwala na obliczenie ruchu obrotowego
+rakiety.
+Ruch postępowy rakiety jest obliczany na podstawie siły wypadkowej rakiety i
+jej przyspieszenia, które są sumowane do pozycji i prędkości rakiety.
+Przyśpieszenie obliczane jest na podstawie drugiej zasady dynamiki Newtona:
+\begin{equation}
+    \vec{a} = \frac{\vec{F}}{m},
+    \label{eq:acc}
+\end{equation}
+Na podstawie przyspieszenia obliczana jest prędkość rakiety, a następnie zmiana pozycji rakiety w przestrzeni.
+
+Złożenie tych dwóch rodzajów ruchu rakiety pozwala na uzyskanie pełnego modelu
+symulacji ruchu rakiety w atmosferze, uwzględniającego zarówno ruch
+postępowy jak i obrotowy.
 
 \subsection{Podsumowanie}
 Przedstawione równania i modele opisują w ogólny sposób dynamikę ruchu
