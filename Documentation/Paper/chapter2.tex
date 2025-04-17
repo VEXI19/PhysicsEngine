@@ -213,11 +213,28 @@ obliczeniowej przyjmowany jako środek masy (CoG), wokół którego rakieta moż
 \label{eq:moment_force}
 \end{equation}
 
+Iloczyn wektorowy $\vec{M} = \vec{r} \times \vec{F}$ można rozwinąć współrzędnie jako:
+
+\begin{equation}
+\vec{M} =
+\begin{bmatrix}
+M_x \\
+M_y \\
+M_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+r_y F_z - r_z F_y \\
+r_z F_x - r_x F_z \\
+r_x F_y - r_y F_x
+\end{bmatrix}.
+\label{eq:moment_force_matrix}
+\end{equation}
+
 gdzie:
 \begin{itemize}
-\item $\vec{r}$ -- wektor od punktu centralnego do punktu przyłożenia
-siły (często za punkt centralny przyjmuje się środek masy obiektu) [m],
-\item $\vec{F}$ -- siła działająca na rakietę [N].
+\item $\vec{r} = [r_x, r_y, r_z]^T$ -- wektor od punktu centralnego do punktu przyłożenia siły (często za punkt centralny przyjmuje się środek masy obiektu) [m],
+\item $\vec{F} = [F_x, F_y, F_z]^T$ -- siła działająca na rakietę [N].
 \end{itemize}
 
 
@@ -228,13 +245,67 @@ Moment obrotowy generuje przyspieszenie kątowe zgodnie z równaniem:
 \label{eq:angular_acceleration_tensor}
 \end{equation}
 
+lub w postaci macierzowo-wektorowej:
+\begin{equation}
+\begin{bmatrix}
+\varepsilon_x \\
+\varepsilon_y \\
+\varepsilon_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{xx} & I_{xy} & I_{xz} \\
+I_{yx} & I_{yy} & I_{yz} \\
+I_{zx} & I_{zy} & I_{zz}
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+M_x \\
+M_y \\
+M_z
+\end{bmatrix},
+\label{eq:angular_acceleration_matrix}
+\end{equation}
+
 gdzie:
 \begin{itemize}
-\item $\vec{\varepsilon}$ -- wektor przyspieszenia kątowego [rad/s$^2$],
-\item $\mathbf{\hat{I}}$ -- tensor bezwładności rakiety (macierz momentów i iloczynów
-bezwładności) [kg·m$^2$],
-\item $\vec{M}$ -- wektor momentu sił (moment obrotowy) [N·m].
+\item $\vec{\varepsilon} = [\varepsilon_x, \varepsilon_y, \varepsilon_z]^T$ -- wektor przyspieszenia kątowego [rad/s$^2$],
+\item $\mathbf{\hat{I}}$ -- tensor bezwładności rakiety (symetryczna macierz momentów i iloczynów bezwładności) [kg·m$^2$],
+\item $\vec{M} = [M_x, M_y, M_z]^T$ -- wektor momentu sił (moment obrotowy) [N·m].
 \end{itemize}
+
+\paragraph{Definicja tensora bezwładności}
+
+Tensor bezwładności $\mathbf{\hat{I}}$ opisuje rozkład masy względem osi obrotu i wyraża się całkowo jako:
+\begin{equation}
+I_{ij} = \int_V \rho(\vec{r}) \left( \delta_{ij} \|\vec{r}\|^2 - r_i r_j \right) dV,
+\label{eq:inertia_tensor_integral}
+\end{equation}
+gdzie:
+\begin{itemize}
+\item $I_{ij}$ -- element tensora bezwładności,
+\item $\rho(\vec{r})$ -- gęstość masy w punkcie $\vec{r}$,
+\item $\delta_{ij}$ -- delta Kroneckera,
+\item $r_i$, $r_j$ -- współrzędne wektora $\vec{r}$.
+\end{itemize}
+
+W przypadku obiektu dyskretnego (np. modelowanego jako zbiór punktów masy), tensor przyjmuje postać sumacyjną:
+\begin{equation}
+I_{ij} = \sum_{k=1}^n m_k \left( \delta_{ij} \|\vec{r}_k\|^2 - (r_k)_i (r_k)_j \right),
+\label{eq:inertia_tensor_sum}
+\end{equation}
+gdzie $m_k$ i $\vec{r}_k$ to masa i położenie $k$-tego punktu.
+
+Tensor bezwładności dla układów o symetrii osiowej często upraszcza się do postaci diagonalnej:
+\begin{equation}
+\mathbf{\hat{I}} =
+\begin{bmatrix}
+I_{xx} & 0 & 0 \\
+0 & I_{yy} & 0 \\
+0 & 0 & I_{zz}
+\end{bmatrix},
+\end{equation}
+co znacznie upraszcza analizę dynamiki rakiety.
+
 
 Następnie prędkość kątowa rakiety $\vec{\omega}$ zmienia się w czasie zgodnie z wyrażeniem wektorowym:
 \begin{equation}

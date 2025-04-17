@@ -1,8 +1,228 @@
 \chapter{Moduł II: Algorytm sterujący rakietą.}\
 
-\section{Założenia projektowe.}\label{sec:założenia-projektowe-2.}
+Algorytm sterujący rakietą jest drugim modułem projektu.
+Jego celem jest stworzenie algorytmu, który będzie w stanie samodzielnie sterować rakietą w
+symulacji. Zadaniem algorytmu będzie pionizacja trajektorii lotu rakiety.
+Algorytm będzie uczony na silniku symulacyjnym będącym efektem pracy nad
+modułem I.\\
+Autorem tego modułu jest Dominik Kubicki.\\
+Niniejszy rozdział opisuje założenia projektowe, teoretyczne podstawy, użyte
+technologie oraz wybór odpowiedniego algorytmu uczenia maszynowego, a także
+sposoby i efekty uczenia algorytmu.\\
 
-\section{Teoretyczne podstawy.}
+
+\section{Założenia i cele projektowe.}\label{sec:założenia-projektowe-2.}
+
+W trakcie pracy nad algorytmem sterującym rakietą poczynione zostały następujące założenia:
+
+\begin{itemize}
+    \item Algorytm sterujący rakietą będzie miał za zadanie pionizację
+    trajektorii lotu rakiety, czyli doprowadzenie rakiety do pionu w rożnych
+    warunkach atmosferycznych. Bardziej skomplikowane trajektorie lotu nie
+    są obiektem badań w tej pracy.
+    \item Algorytm będzie uczony na silniku symulacyjnym będącym efektem pracy nad modułem I.
+    \item Algorytm będzie wykorzystywał algorytmy sztucznej inteligencji do
+    nauki, która będzie przebiegała w sposób dynamiczny w trakcie lotu rakiety.
+    \item Konieczne jest stworzenie komponentu umożliwiającego komunikację
+    pomiędzy silnikiem symulacyjnym a algorytmem sterującym rakietą.
+\end{itemize}
+
+Założenia te pozwalają na usystematyzowanie pracy nad algorytmem oraz
+ubranie go w ramy teoretyczne, upraszczając skomplikowanie problemu.\\
+
+
+\section{Teoretyczne podstawy uczenia modeli sztucznej inteligencji.}
+\label{ch:teoretyczne-podstawy-uczenia-modeli-sztucznej-inteligencji.}
+
+
+W niniejszym rozdziale przedstawione zostały kompleksowe podstawy teoretyczne
+dotyczące uczenia modeli sztucznej inteligencji, ze szczególnym
+uwzględnieniem metod stosowanych w sterowaniu lotami rakietowymi. Omówione
+zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. Rozdział stanowi teoretyczną podbudowę dla przedstawionych w dalszej części pracy rozwiązań praktycznych.
+
+
+\subsection{Podejścia do uczenia maszynowego.}
+\label{sec:rodzaje-uczenia-maszynowego.}
+
+Współczesne systemy sztucznej inteligencji wykorzystują różne paradygmaty
+uczenia maszynowego, z których każdy znajduje zastosowanie w innych
+scenariuszach sterowania rakietą. Poniżej przedstawiono charakterystykę i
+obszary zastosowań trzech przewodnich podejść do uczenia maszynowego.\\
+
+\begin{itemize}
+\item \textbf{Uczenie nadzorowane (Supervised Learning)} \\
+W uczeniu nadzorowanym model jest trenowany na podstawie zestawu danych wejściowych i odpowiadających im poprawnych wyników (etykiet). W przypadku sterowania rakietą, dane wejściowe mogą obejmować parametry lotu (np. prędkość, wysokość, kąt nachylenia), a etykiety to optymalne działania sterujące (np. pożądany kąt nachylenia silnika). Algorytm uczy się mapować dane wejściowe na odpowiednie działania, minimalizując błąd pomiędzy przewidywaniami a rzeczywistymi etykietami. Przykłady modeli stosowanych w uczeniu nadzorowanym to sieci neuronowe, drzewa decyzyjne czy modele regresji.
+
+\item \textbf{Uczenie przez wzmacnianie (Reinforcement Learning)} \\
+W podejściu tym model uczy się poprzez interakcję ze środowiskiem (w tym przypadku symulatorem lotu), otrzymując w każdym kroku sygnał nagrody za dobre działania. W prezentowanym rozwiązaniu, w każdym kroku symulacji model otrzymuje aktualny stan rakiety i zwraca decyzję o kącie wychylenia silnika, a następnie otrzymuje ocenę tej decyzji w postaci funkcji nagrody. Takie podejście pozwala na uczenie się optymalnej strategii sterowania bez potrzeby posiadania gotowych przykładów "poprawnych" decyzji.
+
+\item \textbf{Uczenie nienadzorowane (Unsupervised Learning)} \\
+W uczeniu nienadzorowanym model analizuje dane bez dostępu do etykiet, skupiając się na odkrywaniu ukrytych wzorców lub struktur w danych. Choć mniej bezpośrednio przydatne w sterowaniu rakietą, metody te mogą być wykorzystane np. do grupowania podobnych stanów lotu lub redukcji wymiarowości danych. Przykłady algorytmów to k-means czy autoenkodery.
+\end{itemize}
+
+
+W niniejszej pracy zastosowano podejście z zakresu uczenia przez wzmacnianie, które szczególnie dobrze sprawdza się w problemach sterowania dynamicznego, gdzie pełna znajomość modelu fizycznego jest trudna do uzyskania, a tradycyjne metody kontrolne mogą być niewystarczająco elastyczne.
+
+\subsection{Algorytmy uczenia przez wzmacnianie}
+W kontekście sterowania rakietą szczególnie istotne są następujące klasy algorytmów uczenia przez wzmacnianie, każda oferująca unikalne podejście do problemu optymalizacji strategii sterowania:
+
+\paragraph{Metody gradientu polityki (Policy Gradient Methods)}\\
+Stanowią podstawową rodzinę algorytmów bezpośrednio optymalizujących funkcję nagrody poprzez aktualizację parametrów polityki. Ich matematyczną podstawę opisuje równanie:
+
+\begin{equation}
+    \nabla_\theta J(\theta) = \mathbb{E}_\pi\left[\nabla_\theta \log \pi_\theta(a|s) Q^\pi(s,a)\right]
+    \label{eq:policy_gradient}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\theta$ reprezentuje parametry polityki sterowania
+    \item $\pi_\theta(a|s)$ to prawdopodobieństwo podjęcia akcji $a$ w stanie $s$
+    \item $Q^\pi(s,a)$ oznacza oczekiwaną nagrodę dla danej pary stan-akcja
+\end{itemize}
+
+W praktyce rakietowej, metody te pozwalają na bezpośrednie uczenie się
+strategii sterowania bez konieczności modelowania pełnej funkcji wartości.
+Ich główną zaletą jest zdolność do obsługi ciągłych przestrzeni akcji, co jest kluczowe dla precyzyjnego sterowania rakietą. Wyzwaniem pozostaje jednak wysoka wariancja estymatorów gradientu, co może prowadzić do niestabilności procesu uczenia.\\
+
+\paragraph{Architektura Aktor-Krytyk (Actor-Critic)}\\
+Stanowi hybrydowe podejście łączące zalety metod opartych na funkcji wartości i metod gradientu polityki. Składa się z dwóch współpracujących komponentów:
+
+\begin{itemize}
+    \item \textbf{Aktor (policy network)} - odpowiedzialny za generowanie akcji sterujących na podstawie aktualnego stanu rakiety. Działa jako "pilot", podejmujący decyzje w czasie rzeczywistym.
+
+    \item \textbf{Krytyk (value network)} - pełni rolę "instruktora", oceniającego jakość podjętych decyzji poprzez estymację oczekiwanej nagrody. Jego wyjście służy do redukcji wariancji aktualizacji polityki.
+\end{itemize}
+
+W systemach sterowania rakietą, architektura ta szczególnie dobrze sprawdza się dzięki równowadze między eksploracją nowych strategii (aktor) a efektywnym wykorzystaniem zebranych doświadczeń (krytyk). Implementacje takie jak A2C (Advantage Actor-Critic) czy A3C (Asynchronous Advantage Actor-Critic) dodatkowo poprawiają efektywność poprzez wykorzystanie równoległych środowisk.
+
+\paragraph{Projektowanie funkcji nagrody}\\
+Kluczowym aspektem skutecznego zastosowania RL w sterowaniu rakietą jest odpowiednie sformułowanie funkcji nagrody, która musi precyzyjnie odzwierciedlać cele misji. Typowa funkcja nagrody dla problemu stabilizacji rakiety może uwzględniać następujące komponenty:
+
+\begin{itemize}
+    \item \textbf{Śledzenie trajektorii}: Nagroda za zmniejszanie odległości od zadanej ścieżki lotu, często wyrażana jako ujemna norma różnicy między aktualną a docelową pozycją ($\|p_t-p_{target}\|$)
+
+    \item \textbf{Stabilność orientacji}: Kara za odchylenia od pożądanej orientacji, mierzona poprzez kąty Eulera (roll, pitch, yaw)
+
+    \item \textbf{Efektywność energetyczna}: Nagroda za oszczędne zużycie paliwa, często proporcjonalna do kwadratu zastosowanego sterowania ($a_t^2$)
+
+    \item \textbf{Bezpieczeństwo}: Ostre kary za przekroczenie dopuszczalnych parametrów lotu (np. zbyt duże przyspieszenia, kąty natarcia)
+\end{itemize}
+
+Przykładowa funkcja nagrody łącząca te elementy:
+
+\begin{equation}
+    r_t = -w_1\|p_t-p_{target}\| - w_2\|\theta_t\| - w_3 a_t^2 - w_4 \mathbb{I}_{\text{awaria}}
+    \label{eq:reward_function}
+\end{equation}
+
+gdzie wagi $w_i$ determinują względne znaczenie każdego komponentu, a $\mathbb{I}_{\text{awaria}}$ to funkcja indykatora sytuacji awaryjnej. Odpowiednie zbalansowanie tych składowych jest kluczowe - zbyt mocny nacisk na stabilizację może prowadzić do zachowań zbyt konserwatywnych, podczas gdy nadmierna nagroda za śledzenie trajektorii może powodować niebezpieczne oscylacje.
+
+\paragraph{Wyzwania w zastosowaniu do sterowania rakietą}
+Implementacja systemów RL dla sterowania rakietą wiąże się z szeregiem istotnych wyzwań technicznych:
+
+\begin{itemize}
+    \item \textbf{Wysoka wymiarowość przestrzeni stanów}: Pełny stan dynamiczny rakiety może obejmować kilkanaście zmiennych (pozycja, prędkość, orientacja, prędkość kątowa, parametry silnika), co wymaga zaawansowanych technik aproksymacji funkcji wartości.
+
+    \item \textbf{Niestacjonarność dynamiki}: Zmieniająca się masa rakiety (w wyniku spalania paliwa) oraz zmienne warunki atmosferyczne prowadzą do ciągłych zmian parametrów systemu, wymagając algorytmów zdolnych do adaptacji.
+
+    \item \textbf{Ryzyko katastrofalnych awarii}: Błędy w fazie uczenia mogą prowadzić do niestabilności i utraty kontroli, co w rzeczywistych systemach jest niedopuszczalne. Konieczne są mechanizmy bezpieczeństwa i symulacje w pętli sprzężenia zwrotnego (hardware-in-the-loop).
+
+    \item \textbf{Wymagania wierności symulacji}: Niedokładności w modelu fizycznym mogą prowadzić do uczenia się strategii nieprzenoszących się na rzeczywisty system. Rozwiązaniem jest wykorzystanie technik randomizacji domeny (domain randomization) lub uczenia meta-RL.
+\end{itemize}
+
+Pomimo tych wyzwań, ostatnie postępy w dziedzinie głębokiego RL pokazują, że odpowiednio zaprojektowane systemy są w stanie osiągać nadludzką precyzję w sterowaniu złożonymi systemami dynamicznymi, włączając w to problematykę lotów rakietowych. Kluczem jest staranne połączenie solidnych podstaw teoretycznych z praktycznymi technikami stabilizacji uczenia i walidacji bezpieczeństwa.
+
+\subsection{Modele stosowane w sterowaniu rakietą.}
+\label{sec:modele-stosowane-w-sterowaniu-rakieta.}
+
+Wybór odpowiedniej architektury modelu ma kluczowe znaczenie dla skuteczności systemu sterowania. Poniżej przedstawiono analizę najważniejszych podejść.
+
+\subsubsection{Modele dla uczenia nadzorowanego}
+\begin{itemize}
+\item \textbf{Sieci neuronowe MLP (Multi-Layer Perceptron)} \
+Architektura MLP sprawdza się w zadaniach regresji parametrów sterowania. Wielowarstwowa struktura z nieliniowymi funkcjami aktywacji pozwala na modelowanie złożonych zależności między stanem rakiety a optymalnymi komendami sterującymi. Typowa implementacja zawiera 3-5 warstw ukrytych o rozmiarze 64-256 neuronów.
+
+\item \textbf{Regresja Gaussa (Gaussian Process Regression)} \
+Metoda bayesowska szczególnie przydatna gdy dostępna jest ograniczona liczba danych treningowych. Pozwala na estymację niepewności predykcji, co może być cenne w krytycznych fazach lotu. Wadą jest wyższa złożoność obliczeniowa.
+\end{itemize}
+
+\subsubsection{Modele dla uczenia nienadzorowanego}
+\begin{itemize}
+\item \textbf{Autoenkodery wariacyjne (VAE)} \
+Pozwalają na kompresję wysokowymiarowych danych sensorycznych do reprezentacji latentnej, zachowując kluczowe informacje o stanie rakiety. Mogą służyć jako wstępny etap przetwarzania przed właściwym algorytmem sterującym.
+
+\item \textbf{GMM (Gaussian Mixture Models)} \
+Użyteczne do klasteryzacji stanów rakiety i identyfikacji typowych konfiguracji. Mogą wspomagać system sterowania poprzez szybką klasyfikację sytuacji awaryjnych.
+\end{itemize}
+
+\subsubsection{Modele dla uczenia przez wzmacnianie}
+\begin{itemize}
+\item \textbf{DDPG (Deep Deterministic Policy Gradient)} \
+Algorytm łączący podejście policy gradient z Q-learningiem, szczególnie skuteczny dla ciągłych przestrzeni akcji. Wymaga jednak starannego dostrojenia hiperparametrów i może być niestabilny.
+
+\item \textbf{SAC (Soft Actor-Critic)} \
+Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki, co prowadzi do bardziej eksploracyjnych zachowań. Dobrze radzi sobie z zadaniami o ciągłej przestrzeni akcji.
+\end{itemize}
+
+
+\subsection{Wybrany model - PPO (Proximal Policy Optimization)}
+Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
+
+\paragraph{Charakterystyka teoretyczna}\\
+Podstawą teoretyczną PPO jest zmodyfikowana funkcja kosztu, która wprowadza inteligentne ograniczenie aktualizacji polityki. Matematycznie wyraża się to wzorem:
+
+\begin{equation}
+L^{CLIP}(\theta) = \mathbb{E}_t[\min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t)]
+\end{equation}
+
+gdzie poszczególne składniki mają kluczowe znaczenie:
+\begin{itemize}
+    \item $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}$ - stosunek prawdopodobieństw wskazujący, jak bardzo nowa polityka różni się od starej
+    \item $\hat{A}_t$ - estymata funkcji przewagi, mierząca względną jakość podjętej akcji
+    \item $\epsilon$ - parametr ograniczający (zwykle 0.1-0.3), który determinuje maksymalny dopuszczalny krok aktualizacji
+\end{itemize}
+
+Mechanizm ten zapewnia, że aktualizacje polityki są wystarczająco duże, by efektywnie się uczyć, ale na tyle małe, by zachować stabilność procesu treningowego - kluczowa właściwość w bezpieczeństwie krytycznych aplikacjach rakietowych.
+
+\paragraph{Zalety w kontekście sterowania rakietą}\\
+PPO oferuje szereg unikalnych korzyści w zastosowaniach aerokosmicznych:
+
+\begin{itemize}
+    \item \textbf{Bezpieczeństwo i stabilność uczenia}: Mechanizm clip
+    skutecznie zapobiega zbyt radykalnym zmianom polityki, które w przypadku
+    rakiet mogłyby prowadzić do katastrofalnych awarii. \
+    \item \textbf{Efektywność obliczeniowa}: W przeciwieństwie do swojego poprzednika TRPO, PPO nie wymaga kosztownych obliczeń macierzy Hessego, co pozwala na szybsze iteracje treningowe. W praktyce oznacza to możliwość przeprowadzenia pełnego treningu w rozsądnym czasie nawet na pojedynczym GPU.
+
+    \item \textbf{Elastyczność architektoniczna}: PPO doskonale radzi sobie
+    zarówno z prostymi układami sterowania (np. stabilizacja jednej osi),
+    jak i złożonymi manewrami 3D. \
+
+    \item \textbf{Scalalność}: Algorytm łatwo zrównoleglić na wiele
+    instancji środowiska, co znacząco przyspiesza zbieranie doświadczeń.\
+\end{itemize}
+
+\paragraph{Ograniczenia i wyzwania}\\
+Mimo licznych zalet, PPO nie jest pozbawiony wad, które należy uwzględnić w projektowaniu systemu:
+
+\begin{itemize}
+    \item \textbf{Eksploracja przestrzeni stanów}: W porównaniu do algorytmów jak SAC (Soft Actor-Critic), PPO może mieć trudności z wyjściem z lokalnych minimów w szczególnie złożonych scenariuszach. W praktyce rakietowej często wymaga to wprowadzenia dodatkowych mechanizmów eksploracji.
+
+    \item \textbf{Wrażliwość na funkcję nagrody}: Podobnie jak wszystkie metody RL, PPO jest bardzo czuły na projekt funkcji nagrody. Niewłaściwie zbalansowane wagi poszczególnych składowych mogą prowadzić do nieoczekiwanych strategii sterowania.
+
+    \item \textbf{Precyzja kontroli}: Choć PPO generalizuje lepiej niż wiele innych metod, w niektórych zastosowaniach może ustępować specjalistycznym kontrolerom (np. PID z adaptacyjnymi parametrami) w zadaniach wymagających ekstremalnej precyzji.
+\end{itemize}
+
+
+Podsumowując, PPO stanowi doskonały kompromis między stabilnością, efektywnością i praktyczną użytecznością w problemach sterowania rakietą. Jego unikalne właściwości, szczególnie mechanizm ograniczonej aktualizacji polityki, czynią go preferowanym wyborem dla zastosowań wymagających zarówno bezpieczeństwa, jak i adaptacyjności. Mimo pewnych ograniczeń, odpowiednio zaimplementowany i dostrojony algorytm PPO jest w stanie osiągać wyniki porównywalne z zaawansowanymi kontrolerami specjalistycznymi, oferując przy tym znaczną elastyczność.
+
+
+\subsection{Podsumowanie}
+
+Przedstawione w rozdziale teoretyczne podstawy uczenia maszynowego stanowią fundament dla opracowanego systemu sterowania rakietą. Wybór metody uczenia przez wzmacnianie, a w szczególności algorytmu PPO, podyktowany został jego unikalnymi właściwościami w kontekście problemów sterowania dynamicznego. Zaprezentowane modele i algorytmy, poparte solidnymi podstawami matematycznymi, tworzą kompleksową teoretyczną podbudowę dla praktycznych rozwiązań przedstawionych w kolejnych rozdziałach pracy.
+
+W szczególności, analiza zalet i ograniczeń poszczególnych podejść pozwoliła na świadomy wybór architektury systemu, który łączy w sobie stabilność uczenia, efektywność obliczeniową i praktyczną przydatność w rzeczywistych zastosowaniach aerokosmicznych.
+
 
 \section{Użyte technologie.}\label{sec:użyte-technologie-2.}
 Do stworzenia algorytmu sterującego rakietą wykorzystane zostały następujące technologie:
@@ -13,7 +233,5 @@ Do stworzenia algorytmu sterującego rakietą wykorzystane zostały następując
 \end{itemize}
 
 
-\section{Wybór odpowiedniego algorytmu uczenia maszynowego.}
-\section{Zbieranie danych treningowych.}
 \section{Proces uczenia i optymalizacja.}
 \section{Ewolucja projektu i wnioski.}

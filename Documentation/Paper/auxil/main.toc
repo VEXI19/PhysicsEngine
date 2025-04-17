@@ -14,96 +14,110 @@
 \contentsline {subsection}{\numberline {2.2.2}Równania ruchu postępowego}{26}{}%
 \contentsline {subsection}{\numberline {2.2.3}Ruch obrotowy i momenty sił}{27}{}%
 \contentsline {subsubsection}{Równania ruchu obrotowego}{27}{}%
-\contentsline {subsubsection}{Równoważenie sił i momentów – warunki stabilności}{28}{}%
-\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{30}{}%
-\contentsline {subsubsection}{Złożoność modelu atmosferycznego}{32}{}%
-\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{33}{}%
-\contentsline {subsubsection}{Definicja kąta natarcia}{33}{}%
-\contentsline {subsubsection}{Wpływ kąta natarcia na dynamikę rakiety}{33}{}%
-\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{34}{}%
-\contentsline {subsubsection}{Zależność sił aerodynamicznych od kąta natarcia}{34}{}%
-\contentsline {subsection}{\numberline {2.2.6}Geometria rakiety}{34}{}%
-\contentsline {subsubsection}{Geometria walca}{34}{}%
-\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}{35}{}%
-\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{36}{}%
-\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{36}{}%
-\contentsline {paragraph}{Granice powierzchni przekroju:}{36}{}%
-\contentsline {subsubsection}{Charakterystyka punktów charakterystycznych rakiety}{36}{}%
-\contentsline {paragraph}{Relacje między punktami}{37}{}%
-\contentsline {subsection}{\numberline {2.2.7}Obroty układów współrzędnych}{37}{}%
-\contentsline {subsubsection}{Układy współrzędnych w dynamice rakiety}{37}{}%
-\contentsline {subsubsection}{Kąty Eulera i transformacje układów współrzędnych}{38}{}%
-\contentsline {paragraph}{Macierze rotacji}{39}{}%
-\contentsline {subsection}{\numberline {2.2.8}Model symulacji ruchu rakiety}{41}{}%
-\contentsline {subsection}{\numberline {2.2.9}Podsumowanie}{42}{}%
-\contentsline {section}{\numberline {2.3}Użyte technologie.}{42}{}%
-\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{44}{}%
-\contentsline {subsection}{\numberline {2.4.1}Architektura systemu symulacji}{44}{}%
-\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{45}{}%
-\contentsline {subsubsection}{`IObject`}{46}{}%
-\contentsline {subsubsection}{`IThrust`}{47}{}%
-\contentsline {subsubsection}{`IAerodependent`}{48}{}%
-\contentsline {subsubsection}{`IEnvironment`}{49}{}%
-\contentsline {subsection}{\numberline {2.4.3}Klasy}{51}{}%
-\contentsline {subsection}{\numberline {2.4.4}Proces symulacji.}{51}{}%
-\contentsline {subsection}{\numberline {2.4.5}Konfiguracja symulacji (Setup)}{51}{}%
-\contentsline {subsection}{\numberline {2.4.6}Symulacja}{52}{}%
-\contentsline {subsubsection}{Działanie pętli symulacyjnej silnika fizycznego}{53}{}%
-\contentsline {subsection}{\numberline {2.4.7}Zapisywanie danych symulacji}{53}{}%
-\contentsline {subsection}{\numberline {2.4.8}Uzasadnienie przyjętego rozwiązania}{55}{}%
-\contentsline {section}{\numberline {2.5}Model sił działających na rakietę}{56}{}%
-\contentsline {subsection}{\numberline {2.5.1}Funkcje pomocnicze}{57}{}%
-\contentsline {subsubsection}{Funkcja tworząca macierz obrotu}{57}{}%
-\contentsline {subsubsection}{Transformacja układów współrzędnych}{58}{}%
-\contentsline {subsection}{\numberline {2.5.2}Siły działające na rakietę}{59}{}%
-\contentsline {subsubsection}{Siła grawitacji}{59}{}%
-\contentsline {subsubsection}{Siła oporu powietrza}{59}{}%
-\contentsline {subsubsection}{Siła ciągu silnika}{60}{}%
-\contentsline {subsubsection}{Siła nośna}{61}{}%
-\contentsline {subsection}{\numberline {2.5.3}Obliczanie zmian w ruchu rakiety}{62}{}%
-\contentsline {subsubsection}{Kąt natarcia rakiety}{64}{}%
-\contentsline {subsubsection}{Uwagi dotyczące układów współrzędnych}{64}{}%
-\contentsline {subsection}{\numberline {2.5.4}Podsumowanie}{65}{}%
-\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{65}{}%
-\contentsline {subsection}{\numberline {2.6.1}Okno główne}{65}{}%
-\contentsline {subsection}{\numberline {2.6.2}Okno wizualizacji}{67}{}%
-\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{68}{}%
-\contentsline {subsection}{\numberline {2.7.1}Elementy sugerujące dokładność symulacji}{69}{}%
-\contentsline {subsubsection}{Stabilizacja aerodynamiczna lotu rakiety}{69}{}%
-\contentsline {subsubsection}{Osiąganie prędkości granicznych}{69}{}%
-\contentsline {subsubsection}{Odchylanie się rakiety od osi pod wpływem wiatru}{69}{}%
-\contentsline {subsubsection}{Wpływ kąta nachylenia silnika na kierunek lotu rakiety}{69}{}%
-\contentsline {subsubsection}{Równoważenie wpływu kąta nachylenia silnika przez siłę nośną}{70}{}%
-\contentsline {subsubsection}{Podsumowanie}{70}{}%
-\contentsline {subsection}{\numberline {2.7.2}Kierunki dalszych badań}{70}{}%
-\contentsline {subsubsection}{Symulacje w innych silnikach fizycznych}{70}{}%
-\contentsline {subsubsection}{Porównanie z rzeczywistymi danymi lotów rakiet}{71}{}%
-\contentsline {subsubsection}{Porównanie z danymi testów nierakietowych}{71}{}%
-\contentsline {subsubsection}{Podsumowanie}{72}{}%
-\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski}{72}{}%
-\contentsline {subsection}{\numberline {2.8.1}Historia powstania projektu}{72}{}%
-\contentsline {subsubsection}{Etap badawczy}{72}{}%
-\contentsline {subsubsection}{Etap projektowania}{73}{}%
-\contentsline {subsubsection}{Etap implementacji}{73}{}%
-\contentsline {subsubsection}{Etap testowania}{73}{}%
-\contentsline {subsection}{\numberline {2.8.2}Wnioski}{74}{}%
-\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{75}{}%
-\contentsline {section}{\numberline {3.1}Założenia projektowe.}{75}{}%
-\contentsline {section}{\numberline {3.2}Teoretyczne podstawy.}{75}{}%
-\contentsline {section}{\numberline {3.3}Użyte technologie.}{75}{}%
-\contentsline {section}{\numberline {3.4}Wybór odpowiedniego algorytmu uczenia maszynowego.}{75}{}%
-\contentsline {section}{\numberline {3.5}Zbieranie danych treningowych.}{75}{}%
-\contentsline {section}{\numberline {3.6}Proces uczenia i optymalizacja.}{75}{}%
-\contentsline {section}{\numberline {3.7}Ewolucja projektu i wnioski.}{75}{}%
-\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{76}{}%
-\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{76}{}%
-\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{76}{}%
-\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{76}{}%
-\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{77}{}%
-\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{77}{}%
-\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{77}{}%
-\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{77}{}%
-\contentsline {chapter}{\numberline {6}Podsumowanie}{78}{}%
-\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{78}{}%
-\contentsline {section}{\numberline {6.2}Wnioski końcowe}{78}{}%
-\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{78}{}%
+\contentsline {paragraph}{Definicja tensora bezwładności}{28}{}%
+\contentsline {subsubsection}{Równoważenie sił i momentów – warunki stabilności}{29}{}%
+\contentsline {subsection}{\numberline {2.2.4}Modelowanie środowiska atmosferycznego}{31}{}%
+\contentsline {subsubsection}{Złożoność modelu atmosferycznego}{33}{}%
+\contentsline {subsection}{\numberline {2.2.5}Kąt natarcia rakiety}{34}{}%
+\contentsline {subsubsection}{Definicja kąta natarcia}{34}{}%
+\contentsline {subsubsection}{Wpływ kąta natarcia na dynamikę rakiety}{34}{}%
+\contentsline {subsubsection}{Zakres kąta natarcia w rakietach}{35}{}%
+\contentsline {subsubsection}{Zależność sił aerodynamicznych od kąta natarcia}{35}{}%
+\contentsline {subsection}{\numberline {2.2.6}Geometria rakiety}{35}{}%
+\contentsline {subsubsection}{Geometria walca}{35}{}%
+\contentsline {subsubsection}{Powierzchnia przekroju rakiety jako walca pod różnymi kątami}{36}{}%
+\contentsline {paragraph}{Przekrój czołowy ($\alpha = 0^\circ $):}{37}{}%
+\contentsline {paragraph}{Przekrój pod kątem $\alpha $:}{37}{}%
+\contentsline {paragraph}{Granice powierzchni przekroju:}{37}{}%
+\contentsline {subsubsection}{Charakterystyka punktów charakterystycznych rakiety}{37}{}%
+\contentsline {paragraph}{Relacje między punktami}{38}{}%
+\contentsline {subsection}{\numberline {2.2.7}Obroty układów współrzędnych}{38}{}%
+\contentsline {subsubsection}{Układy współrzędnych w dynamice rakiety}{38}{}%
+\contentsline {subsubsection}{Kąty Eulera i transformacje układów współrzędnych}{39}{}%
+\contentsline {paragraph}{Macierze rotacji}{40}{}%
+\contentsline {subsection}{\numberline {2.2.8}Model symulacji ruchu rakiety}{42}{}%
+\contentsline {subsection}{\numberline {2.2.9}Podsumowanie}{43}{}%
+\contentsline {section}{\numberline {2.3}Użyte technologie.}{43}{}%
+\contentsline {section}{\numberline {2.4}Projekt silnika fizycznego.}{45}{}%
+\contentsline {subsection}{\numberline {2.4.1}Architektura systemu symulacji}{45}{}%
+\contentsline {subsection}{\numberline {2.4.2}Interfejsy}{46}{}%
+\contentsline {subsubsection}{`IObject`}{47}{}%
+\contentsline {subsubsection}{`IThrust`}{48}{}%
+\contentsline {subsubsection}{`IAerodependent`}{49}{}%
+\contentsline {subsubsection}{`IEnvironment`}{50}{}%
+\contentsline {subsection}{\numberline {2.4.3}Klasy}{52}{}%
+\contentsline {subsection}{\numberline {2.4.4}Proces symulacji.}{52}{}%
+\contentsline {subsection}{\numberline {2.4.5}Konfiguracja symulacji (Setup)}{52}{}%
+\contentsline {subsection}{\numberline {2.4.6}Symulacja}{53}{}%
+\contentsline {subsubsection}{Działanie pętli symulacyjnej silnika fizycznego}{54}{}%
+\contentsline {subsection}{\numberline {2.4.7}Zapisywanie danych symulacji}{54}{}%
+\contentsline {subsection}{\numberline {2.4.8}Uzasadnienie przyjętego rozwiązania}{56}{}%
+\contentsline {section}{\numberline {2.5}Model sił działających na rakietę}{57}{}%
+\contentsline {subsection}{\numberline {2.5.1}Funkcje pomocnicze}{58}{}%
+\contentsline {subsubsection}{Funkcja tworząca macierz obrotu}{58}{}%
+\contentsline {subsubsection}{Transformacja układów współrzędnych}{59}{}%
+\contentsline {subsection}{\numberline {2.5.2}Siły działające na rakietę}{60}{}%
+\contentsline {subsubsection}{Siła grawitacji}{60}{}%
+\contentsline {subsubsection}{Siła oporu powietrza}{60}{}%
+\contentsline {subsubsection}{Siła ciągu silnika}{61}{}%
+\contentsline {subsubsection}{Siła nośna}{62}{}%
+\contentsline {subsection}{\numberline {2.5.3}Obliczanie zmian w ruchu rakiety}{63}{}%
+\contentsline {subsubsection}{Kąt natarcia rakiety}{65}{}%
+\contentsline {subsubsection}{Uwagi dotyczące układów współrzędnych}{65}{}%
+\contentsline {subsection}{\numberline {2.5.4}Podsumowanie}{66}{}%
+\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{66}{}%
+\contentsline {subsection}{\numberline {2.6.1}Okno główne}{66}{}%
+\contentsline {subsection}{\numberline {2.6.2}Okno wizualizacji}{68}{}%
+\contentsline {section}{\numberline {2.7}Dokładność symulacji.}{69}{}%
+\contentsline {subsection}{\numberline {2.7.1}Elementy sugerujące dokładność symulacji}{70}{}%
+\contentsline {subsubsection}{Stabilizacja aerodynamiczna lotu rakiety}{70}{}%
+\contentsline {subsubsection}{Osiąganie prędkości granicznych}{70}{}%
+\contentsline {subsubsection}{Odchylanie się rakiety od osi pod wpływem wiatru}{70}{}%
+\contentsline {subsubsection}{Wpływ kąta nachylenia silnika na kierunek lotu rakiety}{70}{}%
+\contentsline {subsubsection}{Równoważenie wpływu kąta nachylenia silnika przez siłę nośną}{71}{}%
+\contentsline {subsubsection}{Podsumowanie}{71}{}%
+\contentsline {subsection}{\numberline {2.7.2}Kierunki dalszych badań}{71}{}%
+\contentsline {subsubsection}{Symulacje w innych silnikach fizycznych}{71}{}%
+\contentsline {subsubsection}{Porównanie z rzeczywistymi danymi lotów rakiet}{72}{}%
+\contentsline {subsubsection}{Porównanie z danymi testów nierakietowych}{72}{}%
+\contentsline {subsubsection}{Podsumowanie}{73}{}%
+\contentsline {section}{\numberline {2.8}Ewolucja projektu i wnioski}{73}{}%
+\contentsline {subsection}{\numberline {2.8.1}Historia powstania projektu}{73}{}%
+\contentsline {subsubsection}{Etap badawczy}{73}{}%
+\contentsline {subsubsection}{Etap projektowania}{74}{}%
+\contentsline {subsubsection}{Etap implementacji}{74}{}%
+\contentsline {subsubsection}{Etap testowania}{74}{}%
+\contentsline {subsection}{\numberline {2.8.2}Wnioski}{75}{}%
+\contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{76}{}%
+\contentsline {section}{\numberline {3.1}Założenia i cele projektowe.}{76}{}%
+\contentsline {section}{\numberline {3.2}Teoretyczne podstawy uczenia modeli sztucznej inteligencji.}{77}{}%
+\contentsline {subsection}{\numberline {3.2.1}Podejścia do uczenia maszynowego.}{77}{}%
+\contentsline {subsection}{\numberline {3.2.2}Algorytmy uczenia przez wzmacnianie}{78}{}%
+\contentsline {paragraph}{Metody gradientu polityki (Policy Gradient Methods)}{78}{}%
+\contentsline {paragraph}{Architektura Aktor-Krytyk (Actor-Critic)}{79}{}%
+\contentsline {paragraph}{Projektowanie funkcji nagrody}{79}{}%
+\contentsline {paragraph}{Wyzwania w zastosowaniu do sterowania rakietą}{80}{}%
+\contentsline {subsection}{\numberline {3.2.3}Modele stosowane w sterowaniu rakietą.}{80}{}%
+\contentsline {subsubsection}{Modele dla uczenia nadzorowanego}{80}{}%
+\contentsline {subsubsection}{Modele dla uczenia nienadzorowanego}{81}{}%
+\contentsline {subsubsection}{Modele dla uczenia przez wzmacnianie}{81}{}%
+\contentsline {subsection}{\numberline {3.2.4}Wybrany model - PPO (Proximal Policy Optimization)}{81}{}%
+\contentsline {paragraph}{Charakterystyka teoretyczna}{82}{}%
+\contentsline {paragraph}{Zalety w kontekście sterowania rakietą}{82}{}%
+\contentsline {paragraph}{Ograniczenia i wyzwania}{83}{}%
+\contentsline {subsection}{\numberline {3.2.5}Podsumowanie}{83}{}%
+\contentsline {section}{\numberline {3.3}Użyte technologie.}{84}{}%
+\contentsline {section}{\numberline {3.4}Proces uczenia i optymalizacja.}{84}{}%
+\contentsline {section}{\numberline {3.5}Ewolucja projektu i wnioski.}{84}{}%
+\contentsline {chapter}{\numberline {4}Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}{85}{}%
+\contentsline {section}{\numberline {4.1}Interakcja między silnikiem fizycznym a modelem AI}{85}{}%
+\contentsline {section}{\numberline {4.2}Synchronizacja działania obu modułów}{85}{}%
+\contentsline {section}{\numberline {4.3}Rozwój interfejsu użytkownika}{85}{}%
+\contentsline {chapter}{\numberline {5}Wyniki działania i wnioski}{86}{}%
+\contentsline {section}{\numberline {5.1}Ewaluacja działania silnika fizycznego}{86}{}%
+\contentsline {section}{\numberline {5.2}Ocena skuteczności modelu sztucznej inteligencji}{86}{}%
+\contentsline {section}{\numberline {5.3}Analiza osiągniętych rezultatów i ich implikacje}{86}{}%
+\contentsline {chapter}{\numberline {6}Podsumowanie}{87}{}%
+\contentsline {section}{\numberline {6.1}Podsumowanie osiągnięć}{87}{}%
+\contentsline {section}{\numberline {6.2}Wnioski końcowe}{87}{}%
+\contentsline {section}{\numberline {6.3}Perspektywy rozwoju i dalsze badania}{87}{}%
