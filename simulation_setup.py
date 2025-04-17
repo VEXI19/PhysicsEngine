@@ -1,8 +1,9 @@
 import os
 
 
-from Configs.Rockets.test_rocket import Rocket
-from Configs.Environments.test_env import Environment1 as Environment
+from Configs.Rockets.training_1 import Rocket
+from Configs.Environments.no_wind import Environment1 as EnvironmentNoWind
+from Configs.Environments.small_wind import Environment1 as EnvironmentSmallWind
 from PhysicsEngine import PhysicsEngine, Forces
 import pickle
 
@@ -21,7 +22,7 @@ def save(instance, path, file_name):
 
 object = Rocket()
 
-environment = Environment()
+environment = EnvironmentNoWind()
 physics_engine = PhysicsEngine(object, environment, 0.1)
 
 physics_engine.add_force(Forces.gravity)

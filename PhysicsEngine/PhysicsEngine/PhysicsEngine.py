@@ -57,7 +57,6 @@ class PhysicsEngine:
         """
         Increments simulation time and simulation tick
         """
-
         self.simulation_time += self.time_step
         self.simulation_tick += 1
 
@@ -94,6 +93,9 @@ class PhysicsEngine:
         for force in self.force_pipeline:
             resulting_force += force(self.object, self.environment, self.simulation_time)[0]
             resulting_torque += force(self.object, self.environment, self.simulation_time)[1]
+
+        # adding randomness
+        # resulting_torque += self.object.imperfection_torque
 
         return resulting_force, resulting_torque
 
