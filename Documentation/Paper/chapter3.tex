@@ -167,6 +167,7 @@ Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki,
 
 
 \subsection{Wybrany model - PPO (Proximal Policy Optimization)}
+\label{sec:wybrany-model}
 Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
 
 \paragraph{Charakterystyka teoretyczna}\\
@@ -225,13 +226,195 @@ W szczególności, analiza zalet i ograniczeń poszczególnych podejść pozwoli
 
 
 \section{Użyte technologie.}\label{sec:użyte-technologie-2.}
-Do stworzenia algorytmu sterującego rakietą wykorzystane zostały następujące technologie:
+Do implementacji modułu sterowania rakietą wykorzystano następujące technologie i biblioteki:
+
+\paragraph{Gymnasium} \\
+
+to biblioteka służąca do tworzenia i zarządzania środowiskami dla algorytmów uczenia przez wzmacnianie. Stanowi rozwinięcie popularnej biblioteki OpenAI Gym, oferując:
 
 \begin{itemize}
-    \item 1
-    \item 2
+    \item Standardowy interfejs do definiowania środowisk RL
+    \item Narzędzia do tworzenia wrapperów modyfikujących zachowanie środowisk
+    \item Implementacje popularnych środowisk testowych
+    \item Mechanizmy do obsługi przestrzeni obserwacji i akcji
 \end{itemize}
 
+\paragraph{Stable Baselines3} \\
 
-\section{Proces uczenia i optymalizacja.}
-\section{Ewolucja projektu i wnioski.}
+to biblioteka implementująca współczesne algorytmy uczenia przez wzmacnianie. Zawiera:
+
+\begin{itemize}
+    \item Gotowe implementacje popularnych algorytmów RL (PPO, SAC, TD3 itp.)
+    \item Narzędzia do trenowania i ewaluacji modeli
+    \item Wsparcie dla środowisk wektorowych
+    \item Mechanizmy callbacków i logowania
+\end{itemize}
+
+\subsection{Biblioteki pomocnicze}
+
+\begin{itemize}
+    \item \textbf{numpy} biblioteka do obliczeń numerycznych i operacji na
+    tablicach wielowymiarowych
+    \item \textbf{pandas} narzędzia do analizy i przetwarzania danych
+    tabelarycznych
+    \item \textbf{matplotlib} tworzenie wizualizacji i wykresów
+    \item \textbf{pyyaml} obsługa plików konfiguracyjnych w formacie YAML
+\end{itemize}
+
+Wszystkie wymienione technologie zostały zintegrowane z istniejącym
+silnikiem fizycznym opisanym w rozdziale II.
+
+
+\section{Architektura i implementacja modelu uczącego}
+\label{sec:architektura-modelu}
+
+W niniejszym rozdziale szczegółowo opisano architekturę oraz implementację systemu umożliwiającego trenowanie modelu sterowania rakietą metodą uczenia przez wzmacnianie. Przedstawiona struktura łączy w sobie zarówno komponent symulacyjny opisany wcześniej, jak i nowe elementy specyficzne dla procesu uczenia maszynowego.
+
+\subsection{Architektura systemu uczącego}
+\label{subsec:architektura-systemu}
+
+Na Rysunku \ref{fig:arhci_infr} przedstawiono ogólną architekturę rozwiązania, które składa się z dwóch głównych komponentów:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/wrapper_archi}
+    \caption{Schemat architektury systemu uczącego. \textit{Opracowanie własne.}}
+    \label{fig:arhci_infr}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Wrapper środowiska symulacyjnego} - interfejs łączący silnik fizyczny z modelem uczącym
+    \item \textbf{Model uczący} - implementacja algorytmu RL odpowiedzialna za podejmowanie decyzji
+\end{itemize}
+
+\subsubsection{Wrapper środowiska symulacyjnego}
+\label{subsubsec:wrapper}
+
+Wrapper pełni kluczową rolę w integracji silnika fizycznego z frameworkiem do uczenia maszynowego. Jego główne zadania to:
+
+\begin{itemize}
+    \item Standaryzacja interfejsu komunikacji zgodnie z wymaganiami Gymnasium
+    \item Transformacja danych między formatami używanymi przez silnik fizyczny i model RL
+    \item Zarządzanie cyklem życia symulacji (inicjalizacja, kroki symulacyjne, reset)
+    \item Obliczanie i dostarczanie funkcji nagrody
+\end{itemize}
+
+Wrapper implementuje dwa kluczowe metody:
+
+\begin{itemize}
+    \item \texttt{step(action)} - wykonuje krok symulacji z podaną akcją sterującą
+    \item \texttt{reset()} - inicjalizuje nową symulację, zwracając początkowy stan
+\end{itemize}
+
+\subsubsection{Funkcja nagrody}
+\label{subsubsec:funkcja-nagrody}
+
+Funkcja nagrody została zaprojektowana tak, aby promować stabilny lot pionowy. Jej implementacja w języku Python przedstawia się następująco:
+
+\begin{pycode}
+def reward_function(obj):
+    # Ekstrakcja podstawowych parametrów
+    pitch, yaw, _ = obj.rotation
+    x, y, z = obj.position
+
+    # Obliczenie odchylenia od osi Z
+    distance_from_z = math.sqrt(x ** 2 + y ** 2)
+
+    # Transformacja do współrzędnych globalnych
+    rot_matrix = euler_to_rotation_matrix(obj.rotation)
+    local_z = np.array([z, 0, 1])
+    rotated_z = rot_matrix @ local_z
+
+    # Obliczenie kąta odchylenia od pionu
+    world_z = np.array([0, 0, 1])
+    cos_theta = np.dot(rotated_z, world_z) / \
+               (np.linalg.norm(rotated_z) * np.linalg.norm(world_z))
+    angle = np.degrees(np.arccos(np.clip(cos_theta, -1.0, 1.0)))
+
+    # Korekta znaku kąta
+    rotated_z_xy = np.array([rotated_z[0], rotated_z[1], 0])
+    position_xy = np.array([x, y, 0])
+    dot_product = np.dot(rotated_z_xy, position_xy)
+
+    if dot_product < 0:
+        angle = -angle
+
+    return angle
+\end{pycode}
+
+Funkcja ta oblicza kąt odchylenia rakiety od idealnej osi pionowej, uwzględniając zarówno orientację, jak i pozycję obiektu. Im mniejsze odchylenie, tym wyższa nagroda, co skutecznie promuje stabilny lot pionowy. Jest to kluczowy element systemu, bezpośrednio wpływający na skuteczność uczenia.
+
+\subsection{Model uczący}
+\label{subsec:model-uczacy}
+
+Jak szczegółowo opisano w rozdziale \ref{sec:wybrany-model}, wykorzystany został algorytm PPO (Proximal Policy Optimization). Model otrzymuje od wrappera następujący wektor obserwacji:
+
+\begin{itemize}
+    \item Położenie
+    \item Prędkość liniowa
+    \item Przyspieszenie liniowe
+    \item Orientacja
+    \item Prędkość kątowa
+    \item Przyspieszenie kątowe
+    \item Aktualny kąt wychylenia silnika
+\end{itemize}
+
+Model wykonuje dwie kluczowe operacje:
+
+\begin{itemize}
+    \item \textbf{Aktualizacja parametrów} - modyfikacja wag sieci neuronowych na podstawie otrzymywanych nagród
+    \item \textbf{Generowanie akcji} - obliczenie optymalnego kąta wychylenia silnika na podstawie aktualnego stanu
+\end{itemize}
+
+Ta architektura pozwala na stopniowe doskonalenie strategii sterowania poprzez ciągłą interakcję ze środowiskiem symulacyjnym.
+
+\subsection{Proces uczenia}
+\label{subsec:proces-uczenia}
+
+Proces uczenia modelu sterowania rakietą stanowi iteracyjny cykl interakcji pomiędzy modelem uczącym a środowiskiem symulacyjnym. Poniżej szczegółowo opisano poszczególne etapy tego procesu:
+
+\subsubsection{Inicjalizacja środowiska}
+Proces rozpoczyna się od inicjalizacji środowiska symulacyjnego. W tym kroku rakieta jest ustawiana w pozycji startowej, zwykle na powierzchni lub na niewielkiej wysokości. Losowe niewielkie odchylenie od pionu wprowadza różnorodność do procesu uczenia. Silnik fizyczny jest resetowany, a wszystkie parametry symulacji przywracane są do wartości początkowych.
+
+\subsubsection{Główna pętla uczenia}
+Dla każdego kroku epizodu ($t = 1$ do $T$):
+
+\begin{enumerate}
+    \item \textbf{Pobranie stanu bieżącego}
+    Model otrzymuje aktualny stan rakiety w postaci znormalizowanego wektora obserwacji. Dane te obejmują pełną informację o pozycji, prędkości, orientacji i ustawieniach sterowania. Normalizacja wartości do zakresu [-1, 1] poprawia stabilność procesu uczenia.
+
+    \item \textbf{Generacja akcji sterującej}
+    Na podstawie bieżącego stanu, sieć polityki generuje akcję sterującą. Proces ten uwzględnia zarówno wyuczone strategie, jak i komponent losowy umożliwiający eksplorację nowych rozwiązań. Wygenerowana akcja jest następnie transformowana do odpowiedniego zakresu kątów wychylenia silnika.
+
+    \item \textbf{Wykonanie kroku symulacji}
+    Wyliczona akcja jest przekazywana do silnika fizycznego, który aktualizuje stan symulacji na jeden krok czasowy. W tym etapie obliczane są wszystkie siły działające na rakietę i aktualizowane jej parametry ruchu. Sprawdzane są również warunki zakończenia epizodu.
+
+    \item \textbf{Obliczenie nagrody}
+    System oblicza nagrodę na podstawie aktualnego zachowania rakiety. Nagroda uwzględnia zarówno stabilność lotu, jak i postęp w osiąganiu celów misji. Wartość ta jest kluczowym sygnałem uczącym dla modelu.
+
+    \item \textbf{Aktualizacja parametrów modelu}
+    Po zebraniu odpowiedniej liczby próbek, następuje aktualizacja parametrów sieci neuronowych. Proces ten optymalizuje zarówno politykę sterowania, jak i estymację wartości, wykorzystując specjalnie zaprojektowaną funkcję celu PPO.
+\end{enumerate}
+
+Proces uczenia charakteryzuje się epizodyczną strukturą, gdzie każda próba stanowi niezależną symulację lotu. Równowaga między eksploracją nowych strategii a wykorzystaniem sprawdzonych rozwiązań jest kluczowa dla skutecznego uczenia. System stopniowo doskonali politykę sterowania, optymalizując długoterminową nagrodę poprzez ciągłą interakcję ze środowiskiem.
+
+\subsection{Podsumowanie}
+\label{subsec:podsumowanie}
+
+Przedstawiona architektura stanowi kompleksowe rozwiązanie łączące zaawansowany silnik fizyczny z nowoczesnymi technikami uczenia maszynowego. Kluczowe elementy systemu to:
+
+\begin{itemize}
+    \item Elastyczny wrapper integrujący środowisko symulacyjne z frameworkiem RL
+    \item Starannie zaprojektowana funkcja nagrody promująca pożądane zachowania
+    \item Wydajny model uczący oparty na algorytmie PPO
+    \item Skalowalny proces uczenia umożliwiający iteracyjne doskonalenie strategii
+\end{itemize}
+
+Ta struktura nie tylko umożliwia efektywne trenowanie modeli sterowania, ale także zapewnia możliwość łatwej rozbudowy i modyfikacji poszczególnych komponentów. W kolejnych rozdziałach przedstawione zostaną szczegółowe wyniki osiągnięte dzięki tej architekturze.
+
+
+
+
+
+
+\section{Wyniki i wnioski.}
