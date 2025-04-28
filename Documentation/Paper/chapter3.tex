@@ -10,7 +10,6 @@ Niniejszy rozdział opisuje założenia projektowe, teoretyczne podstawy, użyte
 technologie oraz wybór odpowiedniego algorytmu uczenia maszynowego, a także
 sposoby i efekty uczenia algorytmu.\\
 
-
 \section{Założenia i cele projektowe.}\label{sec:założenia-projektowe-2.}
 
 W trakcie pracy nad algorytmem sterującym rakietą poczynione zostały następujące założenia:
@@ -278,7 +277,7 @@ Na Rysunku \ref{fig:arhci_infr} przedstawiono ogólną architekturę rozwiązani
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{images/wrapper_archi}
-    \caption{Schemat architektury systemu uczącego. \textit{Opracowanie własne.}}
+    \caption{Schemat architektury systemu uczącego. Opracowanie własne.}
     \label{fig:arhci_infr}
 \end{figure}
 
@@ -311,7 +310,7 @@ Wrapper implementuje dwa kluczowe metody:
 
 Funkcja nagrody została zaprojektowana tak, aby promować stabilny lot pionowy. Jej implementacja w języku Python przedstawia się następująco:
 
-\begin{pycode}
+\begin{lstlisting}[language=Python]
 def reward_function(obj):
     # Ekstrakcja podstawowych parametrów
     pitch, yaw, _ = obj.rotation
@@ -340,7 +339,7 @@ def reward_function(obj):
         angle = -angle
 
     return angle
-\end{pycode}
+\end{lstlisting}
 
 Funkcja ta oblicza kąt odchylenia rakiety od idealnej osi pionowej, uwzględniając zarówno orientację, jak i pozycję obiektu. Im mniejsze odchylenie, tym wyższa nagroda, co skutecznie promuje stabilny lot pionowy. Jest to kluczowy element systemu, bezpośrednio wpływający na skuteczność uczenia.
 
@@ -380,19 +379,19 @@ Proces rozpoczyna się od inicjalizacji środowiska symulacyjnego. W tym kroku r
 Dla każdego kroku epizodu ($t = 1$ do $T$):
 
 \begin{enumerate}
-    \item \textbf{Pobranie stanu bieżącego}
+    \item \textbf{Pobranie stanu bieżącego} \\
     Model otrzymuje aktualny stan rakiety w postaci znormalizowanego wektora obserwacji. Dane te obejmują pełną informację o pozycji, prędkości, orientacji i ustawieniach sterowania. Normalizacja wartości do zakresu [-1, 1] poprawia stabilność procesu uczenia.
 
-    \item \textbf{Generacja akcji sterującej}
+    \item \textbf{Generacja akcji sterującej} \\
     Na podstawie bieżącego stanu, sieć polityki generuje akcję sterującą. Proces ten uwzględnia zarówno wyuczone strategie, jak i komponent losowy umożliwiający eksplorację nowych rozwiązań. Wygenerowana akcja jest następnie transformowana do odpowiedniego zakresu kątów wychylenia silnika.
 
-    \item \textbf{Wykonanie kroku symulacji}
+    \item \textbf{Wykonanie kroku symulacji} \\
     Wyliczona akcja jest przekazywana do silnika fizycznego, który aktualizuje stan symulacji na jeden krok czasowy. W tym etapie obliczane są wszystkie siły działające na rakietę i aktualizowane jej parametry ruchu. Sprawdzane są również warunki zakończenia epizodu.
 
-    \item \textbf{Obliczenie nagrody}
+    \item \textbf{Obliczenie nagrody} \\
     System oblicza nagrodę na podstawie aktualnego zachowania rakiety. Nagroda uwzględnia zarówno stabilność lotu, jak i postęp w osiąganiu celów misji. Wartość ta jest kluczowym sygnałem uczącym dla modelu.
 
-    \item \textbf{Aktualizacja parametrów modelu}
+    \item \textbf{Aktualizacja parametrów modelu} \\
     Po zebraniu odpowiedniej liczby próbek, następuje aktualizacja parametrów sieci neuronowych. Proces ten optymalizuje zarówno politykę sterowania, jak i estymację wartości, wykorzystując specjalnie zaprojektowaną funkcję celu PPO.
 \end{enumerate}
 
@@ -410,11 +409,11 @@ Przedstawiona architektura stanowi kompleksowe rozwiązanie łączące zaawansow
     \item Skalowalny proces uczenia umożliwiający iteracyjne doskonalenie strategii
 \end{itemize}
 
-Ta struktura nie tylko umożliwia efektywne trenowanie modeli sterowania, ale także zapewnia możliwość łatwej rozbudowy i modyfikacji poszczególnych komponentów. W kolejnych rozdziałach przedstawione zostaną szczegółowe wyniki osiągnięte dzięki tej architekturze.
-
-
+Ta struktura nie tylko umożliwia efektywne trenowanie modelu sterowania
+rakietą, ale także zapewnia możliwość łatwej rozbudowy i modyfikacji poszczególnych komponentów. W kolejnych rozdziałach przedstawione zostaną szczegółowe wyniki osiągnięte dzięki tej architekturze.
 
 
 
 
 \section{Wyniki i wnioski.}
+

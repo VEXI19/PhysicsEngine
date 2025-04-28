@@ -1,4 +1,42 @@
-\chapter{Integracja komponentów: Silnik fizyczny i sztuczna inteligencja}
-\section{Interakcja między silnikiem fizycznym a modelem AI}
-\section{Synchronizacja działania obu modułów}
-\section{Rozwój interfejsu użytkownika}
+\chapter{Podsumowanie}
+
+\section{Podsumowanie}
+Praca przedstawia kompleksowe rozwiązanie problemu autonomicznego sterowania rakietą, które łączy zaawansowany silnik fizyczny z nowoczesnymi technikami uczenia maszynowego. W ramach projektu opracowane zostały dwa główne moduły:
+
+\begin{itemize}
+    \item \textbf{Moduł symulacji fizycznej} – stworzono model dynamiki lotu rakiety, który uwzględnia kluczowe siły i zjawiska fizyczne. Silnik symulacyjny został zoptymalizowany pod kątem wydajności, co pozwoliło na szybkie przeprowadzanie symulacji na standardowym sprzęcie komputerowym.
+
+    \item \textbf{Moduł uczenia maszynowego} – zaimplementowano system uczący oparty na algorytmie PPO, który okazał się skuteczny w sterowaniu rakietą. Zaprojektowana architektura obejmowała specjalny wrapper łączący środowisko symulacyjne z frameworkiem RL oraz precyzyjnie zdefiniowaną funkcję nagrody.
+\end{itemize}
+
+Eksperymenty przeprowadzone na zaprojektowanej platformie wykazały, że połączenie modelu fizycznego z algorytmem uczenia maszynowego pozwala na skuteczną stabilizację i kontrolę lotu rakiety. System wykazał zdolność do adaptacji do różnych warunków początkowych i utrzymania stabilnego lotu pionowego.
+
+\section{Wnioski końcowe}
+Na podstawie przeprowadzonych badań można sformułować kilka kluczowych wniosków:
+
+\begin{itemize}
+    \item Projekt okazał się trudniejszy niż początkowo zakładałem, co potwierdziło skomplikowanie procesu zarówno w aspekcie modelowania fizycznego, jak i implementacji algorytmu sterowania.
+    \item Jakość symulacji i jej dokładność mają ogromne znaczenie dla całego procesu. Wyważenie między dokładnością modelu a wydajnością obliczeniową stanowi istotne wyzwanie przy projektowaniu silnika symulacyjnego.
+    \item Tworzenie zaawansowanego silnika symulacyjnego jest trudnym zadaniem, w którym należy uwzględnić wiele skomplikowanych metod i technik. Opracowanie odpowiedniej architektury silnika, uwzględniającej zarówno efektywność, jak i dokładność, jest kluczowe.
+    \item Trenowanie modelu wymaga precyzyjnego dostrojenia funkcji nagrody, co jest decydującym elementem procesu uczenia. Właściwy dobór metod optymalizacji tej funkcji jest kluczowy dla uzyskania pożądanych rezultatów.
+    \item Wybór odpowiedniej metody i modelu RL ma duży wpływ na wyniki. Algorytm PPO okazał się skuteczny, ale warto rozważyć testowanie innych algorytmów w przyszłości, aby sprawdzić, czy oferują one lepszą efektywność.
+
+\end{itemize}
+
+\section{Perspektywy rozwoju i dalsze badania}
+Praca otwiera kilka perspektyw dla przyszłych badań i rozwoju:
+
+\begin{itemize}
+    \item \textbf{Ulepszenie silnika fizycznego} – w celu uzyskania bardziej precyzyjnych symulacji, konieczne jest dodanie stabilizacji numerycznej, zaimplementowanie metod Computational Fluid Dynamics (CFD), a także poprawienie implementacji funkcji fizycznych, co przyczyni się do zwiększenia dokładności modelu.
+
+    \item \textbf{Testowanie symulacji} – interesującym kierunkiem rozwoju jest porównanie wyników symulacji z rzeczywistymi testami, na przykład poprzez przeprowadzenie symulacji ruchu obiektów (np. rzut jabłka) w silniku i porównanie wyników z rzeczywistym filmem tego samego zjawiska. Tego typu testy pozwolą zweryfikować poprawność modelu.
+
+    \item \textbf{Ulepszenie modelu trenującego} – poprawa funkcji nagrody oraz dalsze fine-tuningowanie algorytmu sterującego są niezbędne, aby uzyskać jeszcze lepsze wyniki. Możliwe jest również przetestowanie alternatywnych algorytmów uczenia maszynowego, co mogłoby poprawić efektywność systemu.
+
+    \item \textbf{Rozwój metody symulacji} – warto kontynuować badania nad zastosowaniem zaawansowanych technik modelowania i optymalizacji procesów sterowania, które umożliwią rozszerzenie zastosowań systemu, np. w kontekście symulacji w bardziej złożonych warunkach.
+\end{itemize}
+
+Podsumowując, zaprezentowane w pracy rozwiązanie stanowi autorskie podejście
+do rozwoju autonomicznych systemów sterowania rakietami. Połączenie
+precyzyjnego modelu fizycznego z nowoczesnymi technikami uczenia maszynowego pozwoliło na stworzenie funkcjonalnego systemu, który wykazuje dużą skuteczność w symulacji i kontrolowaniu lotu rakiety. Uzyskane wyniki potwierdzają potencjał tego podejścia w praktycznych zastosowaniach w inżynierii kosmicznej. Mimo pewnych uproszczeń, opracowane rozwiązanie stanowi solidną podstawę do dalszych badań, które mogą prowadzić do znaczących postępów w autonomicznym sterowaniu rakietami i rozwijaniu technologii kosmicznych. Dalszy rozwój tego systemu uwzględnia wyzwania związane z dokładnością modelu, optymalizacją algorytmów oraz adaptacją do rzeczywistych warunków.
+

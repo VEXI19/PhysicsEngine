@@ -4,7 +4,7 @@ from PhysicsEngine import MainWindow
 import qdarkstyle
 import sys
 
-def main():
+def main(): 
     app = QtWidgets.QApplication(sys.argv)
     app.setWindowIcon(QIcon('icon.ico'))
     main_stylesheet = qdarkstyle.load_stylesheet_pyqt5()
