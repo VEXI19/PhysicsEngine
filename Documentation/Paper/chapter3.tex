@@ -417,3 +417,71 @@ rakietą, ale także zapewnia możliwość łatwej rozbudowy i modyfikacji poszc
 
 \section{Wyniki i wnioski.}
 
+\subsection{Cel działania algorytmu}
+
+Celem działania wytrenowanego algorytmu PPO było zapewnienie stabilnego, pionowego lotu rakiety. Zakładano, że model nauczy się kompensować działanie sił zakłócających,
+takich jak boczny wiatr, oraz samodzielnie korygować odchylenia od osi pionowej za pomocą wektorowania ciągu (TVC).
+
+\subsection{Metodyka pomiaru skuteczności}
+Aby ocenić skuteczność działania algorytmu, zastosowano następujące kryteria:
+
+\begin{itemize}
+    \item Odchylenie kątowe: średnie i maksymalne odchylenie rakiety od osi pionowej w stopniach.
+    \item Stabilność lotu: procent czasu epizodu, w którym odchylenie nie przekraczało ustalonego progu (np. 5°).
+    \item Nagroda całkowita: suma nagród osiągniętych podczas pojedynczego epizodu.
+\end{itemize}
+
+Pomiarów dokonywano podczas treningu oraz podczas osobnych sesji testowych, przy stałych warunkach środowiskowych.
+
+\subsection{Wyniki}
+Model PPO nauczył się podstawowej stabilizacji rakiety, jednak nie osiągnął pełnej niezawodności:
+
+\begin{itemize}
+    \item Średnie odchylenie od osi pionowej wynosiło około 4,8°, a w niektórych momentach maksymalne odchylenia przekraczały 12°, zwłaszcza przy nagłych zakłóceniach.
+    \item Czas stabilnego lotu wynosił średnio około 68\% długości epizodu, przy czym w trudniejszych warunkach rakieta częściej przekraczała próg 5°.
+    \item Krzywa nagrody w czasie treningu wzrastała nieregularnie, z wyraźnymi fluktuacjami, osiągając względne ustabilizowanie po około 500 000 kroków środowiska.
+    \item Trajektorie lotu pokazywały zauważalne oscylacje, które model często tłumił dopiero po kilku sekundach.
+\end{itemize}
+
+Wizualizacje wyników (krzywe nagrody i odchylenia) wskazywały na postępy w nauce, choć widoczne były również trudności w utrzymywaniu stabilnego lotu w bardziej dynamicznych sytuacjach.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/steering_before}
+    \caption{Tor lotu rakiety przed treningiem. Opracowanie własne.}
+    \label{fig:steering_before}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/steering_after}
+    \caption{Tor lotu po trenowaniu modelu. Opracowanie własne.}
+    \label{fig:steering_after}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/cumulitive_rewards}
+    \caption{Graf sum nagród dla epizodów treningowych. Opracowanie własne.}
+    \label{fig:cumulitive_rewards}
+\end{figure}
+
+\subsection{Wnioski}
+Na podstawie przeprowadzonych eksperymentów można stwierdzić, że algorytm PPO częściowo nauczył się stabilizować rakietę w pionowym locie, jednak osiągnięta jakość kontroli była ograniczona.
+
+Mocnymi stronami uzyskanego modelu były:
+
+\begin{itemize}
+    \item Zdolność do podstawowej korekty odchyleń, szczególnie w przypadku umiarkowanych zakłóceń.
+    \item Zdobycie podstawowej strategii sterowania, umożliwiającej utrzymanie lotu przez większość czasu epizodu.
+\end{itemize}
+Ograniczenia zaobserwowane podczas testów obejmowały:
+
+\begin{itemize}
+    \item Niska skuteczność przy silnych zakłóceniach, prowadząca do dużych wychyleń i długich czasów stabilizacji.
+    \item Powolne tłumienie oscylacji, co zwiększało ryzyko dalszych destabilizacji po początkowym wychyleniu.
+    \item Problemy ze stabilnością uczenia, objawiające się w postaci dużych wahań krzywej nagrody podczas treningu.
+\end{itemize}
+
+\subsection{Podsumowanie}
+Podsumowując, zastosowanie algorytmu PPO do sterowania rakietą wykazało zarówno potencjał, jak i ograniczenia tej metody. Choć model nauczył się podstawowych zasad stabilizacji, wymaga dalszej optymalizacji i dostrojenia, aby osiągnąć pożądany poziom niezawodności i precyzji. W przyszłych badaniach warto rozważyć zastosowanie bardziej zaawansowanych technik eksploracji oraz dodatkowych mechanizmów stabilizacji, aby poprawić wyniki w trudnych warunkach lotu.

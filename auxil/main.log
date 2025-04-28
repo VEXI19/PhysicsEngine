@@ -1,0 +1,1924 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.14)  28 APR 2025 14:22
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-07> (SGGW-thesis/SGGW-thesis.cls
+
+LaTeX Warning: You have requested document class `SGGW-thesis/SGGW-thesis',
+               but the document class provides `SGGW-thesis'.
+
+Document Class: SGGW-thesis 2024/10/12 LaTeX class for writing theses in WULS-S
+GGW
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+\caption@tempdima=\dimen141
+\captionmargin=\dimen142
+\caption@leftmargin=\dimen143
+\caption@rightmargin=\dimen144
+\caption@width=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count194
+\c@continuedfloat=\count195
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count196
+\Gm@cntv=\count197
+\c@Gm@tempcnt=\count198
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks19
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/polski\polski.sty
+Package: polski 2021/08/25 v1.3.6 Polish language package
+
+   Inputenc package detected. Catcodes not changed.
+) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen159
+\ttl@minus=\dimen160
+\ttl@toksa=\toks20
+\titlewidth=\dimen161
+\titlewidthlast=\dimen162
+\titlewidthfirst=\dimen163
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip52
+\enit@outerparindent=\dimen164
+\enit@toks=\toks21
+\enit@inbox=\box52
+\enit@count@id=\count199
+\enitdp@description=\count266
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count267
+\calc@Bcount=\count268
+\calc@Adimen=\dimen165
+\calc@Bdimen=\dimen166
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count269
+\calc@Cskip=\skip55
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)))
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2023/02/13 3.86 The Babel package
+\babel@savecnt=\count270
+\U@D=\dimen167
+\l@unhyphenated=\language79
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count271
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/babel-polish\polish.ldf
+Language: polish 2022/03/12 1.3 Babel support for Polish
+Package babel Info: Making " an active character on input line 101.
+))
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pl\babel
+-polish.tex
+Package babel Info: Importing font and identification data for polish
+(babel)             from babel-pl.ini. Reported on input line 11.
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen168
+))
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen169
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count272
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count273
+\leftroot@=\count274
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count275
+\DOTSCASE@=\count276
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen170
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count277
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count278
+\dotsspace@=\muskip17
+\c@parentequation=\count279
+\dspbrk@lvl=\count280
+\tag@help=\toks23
+\row@=\count281
+\column@=\count282
+\maxfields@=\count283
+\andhelp@=\toks24
+\eqnshift@=\dimen171
+\alignsep@=\dimen172
+\tagshift@=\dimen173
+\tagwidth@=\dimen174
+\totwidth@=\dimen175
+\lineht@=\dimen176
+\@envbody=\toks25
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count284
+\lst@gtempboxa=\box55
+\lst@token=\toks27
+\lst@length=\count285
+\lst@currlwidth=\dimen177
+\lst@column=\count286
+\lst@pos=\count287
+\lst@lostspace=\dimen178
+\lst@width=\dimen179
+\lst@newlines=\count288
+\lst@lineno=\count289
+\lst@maxwidth=\dimen180
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count290
+\lst@skipnumbers=\count291
+\lst@framebox=\box56
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\hypbmsec.sty
+Package: hypbmsec 2016/05/16 v2.5 Bookmarks in sectioning commands (HO)
+) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count292
+\float@exts=\toks28
+\float@box=\box57
+\@float@everytoks=\toks29
+\@floatcapt=\box58
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2022/07/12 v3.18b programmable bibliographies (PK/MW)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count293
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count294
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count295
+\c@listtotal=\count296
+\c@listcount=\count297
+\c@liststart=\count298
+\c@liststop=\count299
+\c@citecount=\count300
+\c@citetotal=\count301
+\c@multicitecount=\count302
+\c@multicitetotal=\count303
+\c@instcount=\count304
+\c@maxnames=\count305
+\c@minnames=\count306
+\c@maxitems=\count307
+\c@minitems=\count308
+\c@citecounter=\count309
+\c@maxcitecounter=\count310
+\c@savedcitecounter=\count311
+\c@uniquelist=\count312
+\c@uniquename=\count313
+\c@refsection=\count314
+\c@refsegment=\count315
+\c@maxextratitle=\count316
+\c@maxextratitleyear=\count317
+\c@maxextraname=\count318
+\c@maxextradate=\count319
+\c@maxextraalpha=\count320
+\c@abbrvpenalty=\count321
+\c@highnamepenalty=\count322
+\c@lownamepenalty=\count323
+\c@maxparens=\count324
+\c@parenlevel=\count325
+\blx@tempcnta=\count326
+\blx@tempcntb=\count327
+\blx@tempcntc=\count328
+\c@blx@maxsection=\count329
+\blx@maxsegment@0=\count330
+\blx@notetype=\count331
+\blx@parenlevel@text=\count332
+\blx@parenlevel@foot=\count333
+\blx@sectionciteorder@0=\count334
+\blx@sectionciteorderinternal@0=\count335
+\blx@entrysetcounter=\count336
+\blx@biblioinstance=\count337
+\labelnumberwidth=\skip59
+\labelalphawidth=\skip60
+\biblabelsep=\skip61
+\bibitemsep=\skip62
+\bibnamesep=\skip63
+\bibinitsep=\skip64
+\bibparsep=\skip65
+\bibhang=\skip66
+\blx@bcfin=\read3
+\blx@bcfout=\write3
+\blx@langwohyphens=\language80
+\c@mincomprange=\count338
+\c@maxcomprange=\count339
+\c@mincompwidth=\count340
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count341
+\c@savedafterword=\count342
+\c@annotator=\count343
+\c@savedannotator=\count344
+\c@author=\count345
+\c@savedauthor=\count346
+\c@bookauthor=\count347
+\c@savedbookauthor=\count348
+\c@commentator=\count349
+\c@savedcommentator=\count350
+\c@editor=\count351
+\c@savededitor=\count352
+\c@editora=\count353
+\c@savededitora=\count354
+\c@editorb=\count355
+\c@savededitorb=\count356
+\c@editorc=\count357
+\c@savededitorc=\count358
+\c@foreword=\count359
+\c@savedforeword=\count360
+\c@holder=\count361
+\c@savedholder=\count362
+\c@introduction=\count363
+\c@savedintroduction=\count364
+\c@namea=\count365
+\c@savednamea=\count366
+\c@nameb=\count367
+\c@savednameb=\count368
+\c@namec=\count369
+\c@savednamec=\count370
+\c@translator=\count371
+\c@savedtranslator=\count372
+\c@shortauthor=\count373
+\c@savedshortauthor=\count374
+\c@shorteditor=\count375
+\c@savedshorteditor=\count376
+\c@labelname=\count377
+\c@savedlabelname=\count378
+\c@institution=\count379
+\c@savedinstitution=\count380
+\c@lista=\count381
+\c@savedlista=\count382
+\c@listb=\count383
+\c@savedlistb=\count384
+\c@listc=\count385
+\c@savedlistc=\count386
+\c@listd=\count387
+\c@savedlistd=\count388
+\c@liste=\count389
+\c@savedliste=\count390
+\c@listf=\count391
+\c@savedlistf=\count392
+\c@location=\count393
+\c@savedlocation=\count394
+\c@organization=\count395
+\c@savedorganization=\count396
+\c@origlocation=\count397
+\c@savedoriglocation=\count398
+\c@origpublisher=\count399
+\c@savedorigpublisher=\count400
+\c@publisher=\count401
+\c@savedpublisher=\count402
+\c@language=\count403
+\c@savedlanguage=\count404
+\c@origlanguage=\count405
+\c@savedoriglanguage=\count406
+\c@pageref=\count407
+\c@savedpageref=\count408
+\shorthandwidth=\skip67
+\shortjournalwidth=\skip68
+\shortserieswidth=\skip69
+\shorttitlewidth=\skip70
+\shortauthorwidth=\skip71
+\shorteditorwidth=\skip72
+\locallabelnumberwidth=\skip73
+\locallabelalphawidth=\skip74
+\localshorthandwidth=\skip75
+\localshortjournalwidth=\skip76
+\localshortserieswidth=\skip77
+\localshorttitlewidth=\skip78
+\localshortauthorwidth=\skip79
+\localshorteditorwidth=\skip80
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+\c@textcitecount=\count409
+\c@textcitetotal=\count410
+\c@textcitemaxnames=\count411
+\c@biburlbigbreakpenalty=\count412
+\c@biburlbreakpenalty=\count413
+\c@biburlnumpenalty=\count414
+\c@biburlucpenalty=\count415
+\c@biburllcpenalty=\count416
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count417
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
+File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count418
+\c@bbx:relatedtotal=\count419
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cb
+x
+File: numeric.cbx 2022/07/12 v3.18b biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2023-02-07 L3 programming layer (loader) 
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count420
+\l__pdf_internal_box=\box59
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2023-02-07 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2023-01-16 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2022/07/12 v3.18b expl3 case changing code for biblatex
+
+))
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count421
+\@quotereset=\count422
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 51
+.
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(C:/Users\domi1\Programowanie\physics-engine\auxil\main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(99.58464pt, 426.79135pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=702.78308pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count423
+\scratchdimen=\dimen181
+\scratchbox=\box60
+\nofMPsegments=\count424
+\nofMParguments=\count425
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count426
+\MPscratchDim=\dimen182
+\MPnumerator=\count427
+\makeMPintoPDFobject=\count428
+\everyMPtoPDFconversion=\toks31
+)
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+\c@lstlisting=\count429
+Package hypbmsec Info: Package hyperref not loaded,
+(hypbmsec)             bookmark parameters will be ignored on input line 51.
+Package biblatex Info: Trying to load language 'polish'...
+Package biblatex Info: ... file 'polish.lbx' found.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\polish.lbx
+File: polish.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 51.
+Package biblatex Info: Reference segment=0 on input line 51.
+<SGGW-thesis/naglowek_inz.png, id=1, 742.775pt x 182.6825pt>
+File: SGGW-thesis/naglowek_inz.png Graphic file (type png)
+<use SGGW-thesis/naglowek_inz.png>
+Package pdftex.def Info: SGGW-thesis/naglowek_inz.png  used on input line 52.
+(pdftex.def)             Requested size: 279.12146pt x 68.65071pt.
+<SGGW-thesis/stopka_WZIM.png, id=3, 483.30562pt x 82.80937pt>
+File: SGGW-thesis/stopka_WZIM.png Graphic file (type png)
+<use SGGW-thesis/stopka_WZIM.png>
+Package pdftex.def Info: SGGW-thesis/stopka_WZIM.png  used on input line 52.
+(pdftex.def)             Requested size: 314.11823pt x 53.8229pt.
+[1
+
+{C:/Users/domi1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./SGGW-thesi
+s/naglowek_inz.png> <./SGGW-thesis/stopka_WZIM.png>] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+
+ []
+
+[3] [4] [5] [6] (C:/Users\domi1\Programowanie\physics-engine\auxil\main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
+[7
+
+] [8])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [9] [10]
+\openout2 = `chapter1.aux'.
+
+ (chapter1.tex
+Rozdzia\l  1.
+
+LaTeX Warning: Reference `sec:zalozenia-projektowe.' on page 11 undefined on in
+put line 14.
+
+
+LaTeX Warning: Reference `sec:zaÅ‚oÅ¼enia-projektowe-2.' on page 11 undefined o
+n input line 15.
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+5.
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+chapter1.tex:40: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 G
+      Å‚Ã³wne moduÅ‚y pracy sÄ… ze sobÄ… tak Å›ciÅ›le zwiÄ…zane, Å¼e aby zac...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[11
+
+
+]
+
+LaTeX Warning: Reference `sec:uzyte-technologie.' on page 12 undefined on input
+ line 63.
+
+
+LaTeX Warning: Reference `sec:uÅ¼yte-technologie-2.' on page 12 undefined on in
+put line 64.
+
+
+LaTeX Warning: Citation 'chacon2014pro' on page 12 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'GitHub' on page 12 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'python3docs' on page 12 undefined on input line 76.
+
+
+LaTeX Warning: Citation 'pycharm' on page 12 undefined on input line 84.
+
+[12]
+
+chapter1.tex:91: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 \\P
+        onadto, do tworzenia pracy inÅ¼ynierskiej wykorzystane zostaÅ‚y nast...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Citation 'mittelbach2004latex' on page 13 undefined on input lin
+e 95.
+
+
+LaTeX Warning: Citation 'chmiel2024sggwthesislatex' on page 13 undefined on inp
+ut line 100.
+
+chapter1.tex:103: Undefined control sequence.
+l.103     w \latex
+                   zgodnie z wymaganiami formatowania pracy inÅ¼ynierskiej n...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (6.64597pt too wide) in paragraph at lines 100--104
+[]\T1/lmr/bx/n/12 SGGW-thesis [[]] \T1/lmr/m/n/12 - bi-blio-teka do two-rze-nia
+ pracy
+ []
+
+
+chapter1.tex:116: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 \\Z
+         nacznie bardziej popularna dziedzina uczenia maszynowego, oparta na
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+
+ []
+
+
+LaTeX Warning: Citation 'matlab2019simulink' on page 14 undefined on input line
+ 135.
+
+
+LaTeX Warning: Citation 'ansys2020fluent' on page 14 undefined on input line 14
+8.
+
+[14]
+
+LaTeX Warning: Citation 'openfoam2020' on page 15 undefined on input line 155.
+
+
+LaTeX Warning: Citation 'openfoam2023' on page 15 undefined on input line 162.
+
+
+LaTeX Warning: Citation 'openrocket' on page 15 undefined on input line 171.
+
+
+LaTeX Warning: Citation 'niskanen2013openrocket' on page 15 undefined on input 
+line 175.
+
+
+Overfull \hbox (148.44121pt too wide) in paragraph at lines 171--176
+\T1/lmr/m/n/12 Narz¦dzie to byªo te» w du-»ym stop-niu in-spi-ra-cj¡ ni-niej-sz
+ej pracy in»ynierskiej[[]]. 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+
+LaTeX Warning: Citation 'rocksim' on page 16 undefined on input line 178.
+
+
+LaTeX Warning: Citation 'rasaero' on page 16 undefined on input line 183.
+
+
+chapter1.tex:198: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Citation 'DBLP:journals/corr/AbadiBCCDDDGIIK16' on page 16 undef
+ined on input line 204.
+
+[16]
+
+LaTeX Warning: Citation 'DBLP:journals/corr/abs-1912-01703' on page 17 undefine
+d on input line 207.
+
+
+LaTeX Warning: Citation 'stable-baselines3' on page 17 undefined on input line 
+211.
+
+
+chapter1.tex:216: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 P
+       oniÅ¼ej przedstawione zostaÅ‚y jedne
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+
+LaTeX Warning: Citation 'mathworks_aerospace_blockset' on page 18 undefined on 
+input line 222.
+
+
+LaTeX Warning: Citation 'airsim' on page 18 undefined on input line 225.
+
+
+LaTeX Warning: Citation 'gazebo_ros' on page 18 undefined on input line 228.
+
+
+LaTeX Warning: Citation 'ros_gazebo' on page 18 undefined on input line 228.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18])
+Underfull \hbox (badness 10000) in paragraph at lines 233--74
+
+ []
+
+[19]
+\openout2 = `chapter2.aux'.
+
+ (chapter2.tex
+Rozdzia\l  2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+[20
+
+
+
+
+]
+Overfull \hbox (0.7737pt too wide) in paragraph at lines 42--47
+[]\T1/lmr/bx/n/12 Mo»liwo±¢ mo-dy-fi-ka-cji pa-ra-me-trów sy-mu-la-cji w cza-si
+e rze-czy-wi-stym. 
+ []
+
+
+LaTeX Warning: Reference `fig:rocket_forces' on page 21 undefined on input line
+ 75.
+
+[21]
+<images/all-forces.png, id=76, 412.54124pt x 411.78844pt>
+File: images/all-forces.png Graphic file (type png)
+<use images/all-forces.png>
+Package pdftex.def Info: images/all-forces.png  used on input line 79.
+(pdftex.def)             Requested size: 298.75264pt x 298.20908pt.
+<images/gravity-force.png, id=77, 467.49657pt x 386.94562pt>
+File: images/gravity-force.png Graphic file (type png)
+<use images/gravity-force.png>
+Package pdftex.def Info: images/gravity-force.png  used on input line 100.
+(pdftex.def)             Requested size: 298.75264pt x 247.29008pt.
+
+Underfull \vbox (badness 4765) has occurred while \output is active []
+
+ [22 <./images/all-forces.png>]
+<images/drag-force.png, id=89, 411.78844pt x 389.95688pt>
+File: images/drag-force.png Graphic file (type png)
+<use images/drag-force.png>
+Package pdftex.def Info: images/drag-force.png  used on input line 123.
+(pdftex.def)             Requested size: 298.75264pt x 282.91678pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./images/gravity-force.png>]
+<images/lift-force.png, id=94, 417.81094pt x 347.04657pt>
+File: images/lift-force.png Graphic file (type png)
+<use images/lift-force.png>
+Package pdftex.def Info: images/lift-force.png  used on input line 145.
+(pdftex.def)             Requested size: 298.75264pt x 248.16818pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24 <./images/drag-force.png>]
+<images/thrust-force.png, id=99, 378.66469pt x 314.67563pt>
+File: images/thrust-force.png Graphic file (type png)
+<use images/thrust-force.png>
+Package pdftex.def Info: images/thrust-force.png  used on input line 164.
+(pdftex.def)             Requested size: 298.75264pt x 248.2693pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25 <./images/lift-force.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26 <./images/thrust-force.png>] [27]
+Overfull \hbox (0.57828pt too wide) in paragraph at lines 291--292
+[]\T1/lmr/m/n/12 W przy-padku obiektu dys-kret-nego (np. mo-de-lo-wa-nego jako 
+zbiór punk-tów masy),
+ []
+
+
+Underfull \vbox (badness 1092) has occurred while \output is active []
+
+ [28]
+[29]
+
+LaTeX Warning: Reference `fig:stabilisation' on page 30 undefined on input line
+ 367.
+
+
+LaTeX Warning: Reference `fig:stabilisation' on page 30 undefined on input line
+ 374.
+
+<images/stabilisation.png, id=121, 668.4975pt x 452.4403pt>
+File: images/stabilisation.png Graphic file (type png)
+<use images/stabilisation.png>
+Package pdftex.def Info: images/stabilisation.png  used on input line 380.
+(pdftex.def)             Requested size: 298.75264pt x 202.2017pt.
+[30 <./images/stabilisation.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Underfull \vbox (badness 6001) has occurred while \output is active []
+
+ [33]
+<images/angle-of-attack.png, id=138, 411.03563pt x 370.38374pt>
+File: images/angle-of-attack.png Graphic file (type png)
+<use images/angle-of-attack.png>
+Package pdftex.def Info: images/angle-of-attack.png  used on input line 490.
+(pdftex.def)             Requested size: 298.75264pt x 269.20235pt.
+
+[34 <./images/angle-of-attack.png>] [35]
+<images/cylinder.png, id=146, 261.22594pt x 342.5297pt>
+File: images/cylinder.png Graphic file (type png)
+<use images/cylinder.png>
+Package pdftex.def Info: images/cylinder.png  used on input line 552.
+(pdftex.def)             Requested size: 298.75264pt x 391.74228pt.
+ [36 <./images/cylinder.png>] [37]
+<images/uklady.png, id=155, 817.55438pt x 475.7775pt>
+File: images/uklady.png Graphic file (type png)
+<use images/uklady.png>
+Package pdftex.def Info: images/uklady.png  used on input line 646.
+(pdftex.def)             Requested size: 298.75264pt x 173.85698pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+<images/roll_pitch_yaw.png, id=159, 258.9675pt x 451.6875pt>
+File: images/roll_pitch_yaw.png Graphic file (type png)
+<use images/roll_pitch_yaw.png>
+Package pdftex.def Info: images/roll_pitch_yaw.png  used on input line 673.
+(pdftex.def)             Requested size: 298.75264pt x 521.13895pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39 <./images/uklady.png>] [40 <./images/roll_pitch_yaw.png>] [41] [42]
+
+LaTeX Warning: Reference `sec:uzyte-technologie.' on page 43 undefined on input
+ line 858.
+
+[43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+
+LaTeX Warning: Reference `sec:zalozenia-projektowe.' on page 45 undefined on in
+put line 922.
+
+
+LaTeX Warning: Reference `fig:architektura' on page 45 undefined on input line 
+931.
+
+<images/architektura.jpg, id=180, 905.3825pt x 1205.50375pt>
+File: images/architektura.jpg Graphic file (type jpg)
+<use images/architektura.jpg>
+Package pdftex.def Info: images/architektura.jpg  used on input line 935.
+(pdftex.def)             Requested size: 341.43437pt x 454.60124pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+[46 <./images/architektura.jpg>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+69.
+
+(C:\Users\domi1\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 970.
+ [47]
+Overfull \hbox (6.04779pt too wide) in paragraph at lines 1013--1014
+[]\T1/lmr/m/n/12 `load_model(object_model_path)`: Ša-duje mo-del 3D obiektu z p
+o-da-nej ±cie»ki.
+ []
+
+[48] [49] [50]
+Overfull \hbox (11.78726pt too wide) in paragraph at lines 1140--1141
+[]\T1/lmr/m/n/12 `get_speed_of_sound(position=None)`: Me-toda, która zwraca pr¦
+d-ko±¢ d¹wi¦ku
+ []
+
+[51]
+
+LaTeX Warning: Reference `sec:model-si-dziaajacych-na-rakiete.' on page 52 unde
+fined on input line 1162.
+
+[52]
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 1214--1215
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.31294pt too wide) in paragraph at lines 1233--1235
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+[53]
+
+chapter2.tex:1256: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 \\ G
+           Å‚Ã³wna pÄ™tla symulacyjna dziaÅ‚a w nastÄ™pujÄ…cy sposÃ³b:
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (43.5867pt too wide) in paragraph at lines 1259--1260
+[]\T1/lmr/bx/n/12 Aktualizacja czasu: \T1/lmr/m/n/12 Po ka»-dym kroku, zmie-nia
+ne s¡ dwie zmienne: \T1/lmtt/m/n/12 simulation_time
+ []
+
+[54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1313--1324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1336
+
+ []
+
+[56]
+
+LaTeX Warning: Reference `fig:sily' on page 57 undefined on input line 1358.
+
+<images/physics_map.png, id=223, 482.80376pt x 623.32875pt>
+File: images/physics_map.png Graphic file (type png)
+<use images/physics_map.png>
+Package pdftex.def Info: images/physics_map.png  used on input line 1363.
+(pdftex.def)             Requested size: 341.43437pt x 440.82596pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57]
+[58 <./images/physics_map.png>] [59] [60] [61] [62]
+Overfull \hbox (1.12518pt too wide) in paragraph at lines 1544--1545
+\T1/lmr/m/n/12 kiety, który jest ob-li-czany za po-moc¡ ilo-czynu wek-to-ro-weg
+o (\T1/lmtt/m/n/12 lift_direction\T1/lmr/m/n/12 ). 
+ []
+
+[63]
+Overfull \hbox (22.11751pt too wide) in paragraph at lines 1593--1594
+[]\T1/lmr/bx/n/12 Korekcje ae-ro-dy-na-miczne\T1/lmr/m/n/12 : Je-±li obiekt im-
+ple-men-tuje in-ter-fejs \T1/lmtt/m/n/12 IAerodependent\T1/lmr/m/n/12 ,
+ []
+
+
+Underfull \vbox (badness 1990) has occurred while \output is active []
+
+ [64]
+Overfull \hbox (41.21997pt too wide) in paragraph at lines 1598--1599
+\T1/lmr/m/n/12 W trak-cie ak-tu-ali-za-cji stanu ra-kiety wy-wo-ªy-wana jest fu
+nk-cja \T1/lmtt/m/n/12 calculate_angle_of_attack\T1/lmr/m/n/12 ,
+ []
+
+
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+ [65]
+
+LaTeX Warning: Reference `sec:zapisywanie-danych-symulacji.' on page 66 undefin
+ed on input line 1638.
+
+
+Overfull \hbox (49.44084pt too wide) in paragraph at lines 1641--1646
+\T1/lmr/m/n/12 Uruchomienie mo-duªu wi-zu-ali-za-cyj-nego po-lega na uru-cho-mi
+e-niu skryptu  \T1/lmtt/m/n/12 visualisation.py\T1/lmr/m/n/12 . 
+ []
+
+chapter2.tex:1654: Undefined control sequence.
+l.1654 ...ane sÄ… przez komponent nazwany \texzttt
+                                                  {picker}, ktÃ³ry przeÅ‚Ä…c...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:main_window' on page 66 undefined on input line 1
+661.
+
+<images/main_window.png, id=253, 255.95625pt x 242.40562pt>
+File: images/main_window.png Graphic file (type png)
+<use images/main_window.png>
+Package pdftex.def Info: images/main_window.png  used on input line 1664.
+(pdftex.def)             Requested size: 341.43437pt x 323.37929pt.
+[66]
+
+LaTeX Warning: Reference `fig:picker' on page 67 undefined on input line 1672.
+
+<images/file_picker.png, id=257, 258.21469pt x 267.24844pt>
+File: images/file_picker.png Graphic file (type png)
+<use images/file_picker.png>
+Package pdftex.def Info: images/file_picker.png  used on input line 1675.
+(pdftex.def)             Requested size: 341.43437pt x 353.41333pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67 <./images/main_window.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1683--1686
+
+ []
+
+[68 <./images/file_picker.png>]
+
+LaTeX Warning: Reference `fig:simulation_window' on page 69 undefined on input 
+line 1717.
+
+<images/simulation_window.png, id=267, 1442.38875pt x 796.47563pt>
+File: images/simulation_window.png Graphic file (type png)
+<use images/simulation_window.png>
+Package pdftex.def Info: images/simulation_window.png  used on input line 1721.
+
+(pdftex.def)             Requested size: 341.43437pt x 188.53296pt.
+[69 <./images/simulation_window.png>] [70] [71] [72]
+
+LaTeX Warning: Citation 'alma991019564819703276' on page 73 undefined on input 
+line 1859.
+
+[73]
+Underfull \vbox (badness 2547) has occurred while \output is active []
+
+ [74]
+
+LaTeX Warning: Reference `sec:dokadnosc-symulacji' on page 75 undefined on inpu
+t line 1886.
+
+
+LaTeX Warning: Reference `sec:zalozenia-projektowe.' on page 75 undefined on in
+put line 1888.
+
+) [75]
+\openout2 = `chapter3.aux'.
+
+ (chapter3.tex
+Rozdzia\l  3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
+
+ []
+
+
+Underfull \vbox (badness 4266) has occurred while \output is active []
+
+ [76
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 46--50
+
+ []
+
+[77]
+
+chapter3.tex:69: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 S
+      tanowiÄ… podstawowÄ… rodzinÄ™ algorytmÃ³w bezpoÅ›rednio optymalizujÄ…c...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapter3.tex:72: Undefined control sequence.
+l.72     \nabla_\theta J(\theta) = \mathbb
+                                          {E}_\pi\left[\nabla_\theta \log \p...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
+
+ []
+
+
+chapter3.tex:88: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 S
+      tanowi hybrydowe podejÅ›cie Å‚Ä…czÄ…ce zalety metod opartych na funkcj...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[78]
+
+chapter3.tex:99: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 K
+      luczowym aspektem skutecznego zastosowania RL w sterowaniu rakietÄ… je...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapter3.tex:114: Undefined control sequence.
+l.114 ...w_2\|\theta_t\| - w_3 a_t^2 - w_4 \mathbb
+                                                  {I}_{\text{awaria}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapter3.tex:118: Undefined control sequence.
+<recently read> \mathbb 
+                        
+l.118 ...znaczenie kaÅ¼dego komponentu, a $\mathbb
+                                                  {I}_{\text{awaria}}$ to fu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[79]
+Overfull \hbox (5.09871pt too wide) in paragraph at lines 130--131
+[]\T1/lmr/bx/n/12 Wymagania wier-no-±ci sy-mu-la-cji\T1/lmr/m/n/12 : Nie-do-kªa
+d-no-±ci w mo-delu fi-zycz-nym mog¡
+ []
+
+[80] [81]
+
+chapter3.tex:173: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 P
+       odstawÄ… teoretycznÄ… PPO jest zmodyfikowana funkcja kosztu, ktÃ³ra w...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+chapter3.tex:176: Undefined control sequence.
+l.176 L^{CLIP}(\theta) = \mathbb
+                                {E}_t[\min(r_t(\theta)\hat{A}_t, \text{clip}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+chapter3.tex:189: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 P
+       PO oferuje szereg unikalnych korzyÅ›ci w zastosowaniach aerokosmicznych:
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (15.45087pt too wide) in paragraph at lines 195--196
+[]\T1/lmr/bx/n/12 Efektywno±¢ ob-li-cze-niowa\T1/lmr/m/n/12 : W prze-ci-wie«-st
+wie do swo-jego po-przed-nika TRPO,
+ []
+
+
+chapter3.tex:206: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.206 M
+       imo licznych zalet, PPO nie jest pozbawiony wad, ktÃ³re naleÅ¼y uwzgl...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \vbox (badness 1565) has occurred while \output is active []
+
+ [82]
+[83]
+
+chapter3.tex:231: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+chapter3.tex:242: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84]
+
+LaTeX Warning: Reference `fig:arhci_infr' on page 85 undefined on input line 27
+5.
+
+<images/wrapper_archi.png, id=319, 362.10281pt x 550.30594pt>
+File: images/wrapper_archi.png Graphic file (type png)
+<use images/wrapper_archi.png>
+Package pdftex.def Info: images/wrapper_archi.png  used on input line 279.
+(pdftex.def)             Requested size: 341.43437pt x 518.89987pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86 <./images/wrapper_archi.png>]
+
+chapter3.tex:315: LaTeX Error: Invalid UTF-8 byte sequence (Ã\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.315     # Ekstrakcja podstawowych parametrÃ³w
+                                               
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:315: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.315     # Ekstrakcja podstawowych parametrÃ³w
+                                               
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte sequence (Ã\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte sequence (Å\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte sequence (Ä\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:322: LaTeX Error: Invalid UTF-8 byte "99.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322     # Transformacja do wspÃ³Å‚rzÄ™dnych 
+                                              globalnych
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:327: LaTeX Error: Invalid UTF-8 byte sequence (Ä\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     # Obliczenie kÄ…ta 
+                             odchylenia od pionu
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:327: LaTeX Error: Invalid UTF-8 byte "85.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     # Obliczenie kÄ…ta 
+                             odchylenia od pionu
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:333: LaTeX Error: Invalid UTF-8 byte sequence (Ä\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.333     # Korekta znaku kÄ…ta
+                               
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+chapter3.tex:333: LaTeX Error: Invalid UTF-8 byte "85.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.333     # Korekta znaku kÄ…ta
+                               
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[87]
+
+LaTeX Warning: Reference `sec:wybrany-model' on page 88 undefined on input line
+ 349.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
+[89] [90]
+<images/steering_before.png, id=341, 1443.14156pt x 774.64406pt>
+File: images/steering_before.png Graphic file (type png)
+<use images/steering_before.png>
+Package pdftex.def Info: images/steering_before.png  used on input line 450.
+(pdftex.def)             Requested size: 341.43437pt x 183.27066pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
+<images/steering_after.png, id=346, 1925.1925pt x 1028.84375pt>
+File: images/steering_after.png Graphic file (type png)
+<use images/steering_after.png>
+Package pdftex.def Info: images/steering_after.png  used on input line 457.
+(pdftex.def)             Requested size: 341.43437pt x 182.45227pt.
+<images/cumulitive_rewards.png, id=347, 722.7pt x 433.62pt>
+File: images/cumulitive_rewards.png Graphic file (type png)
+<use images/cumulitive_rewards.png>
+Package pdftex.def Info: images/cumulitive_rewards.png  used on input line 464.
+
+(pdftex.def)             Requested size: 341.43437pt x 204.86006pt.
+
+Overfull \hbox (1.29057pt too wide) in paragraph at lines 470--471
+\T1/lmr/m/n/12 Na pod-sta-wie prze-pro-wa-dzo-nych eks-pe-ry-men-tów mo»na stwi
+er-dzi¢, »e al-go-rytm PPO
+ []
+
+[92 <./images/steering_before.png> <./images/steering_after.png> <./images/cumu
+litive_rewards.png>]) [93]
+\openout2 = `chapter4.aux'.
+
+ (chapter4.tex
+Rozdzia\l  4.
+[94
+
+
+
+
+] [95]) [96]
+
+LaTeX Warning: Empty bibliography on input line 82.
+
+[97
+
+
+] [98] (C:/Users\domi1\Programowanie\physics-engine\auxil\main.aux
+(C:/Users\domi1\Programowanie\physics-engine\auxil\chapter1.aux)
+(C:/Users\domi1\Programowanie\physics-engine\auxil\chapter2.aux)
+(C:/Users\domi1\Programowanie\physics-engine\auxil\chapter3.aux)
+(C:/Users\domi1\Programowanie\physics-engine\auxil\chapter4.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 17714 strings out of 476339
+ 320793 string characters out of 5788119
+ 1945340 words of memory out of 5000000
+ 37862 multiletter control sequences out of 15000+600000
+ 591602 words of font info for 75 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,7n,77p,882b,1814s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Users/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
+:/Users/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
+:/Users/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
+ers/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
+ers/domi1/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users
+/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/User
+s/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/User
+s/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/User
+s/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users
+/domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/
+domi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/d
+omi1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/dom
+i1/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/domi1
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/domi1
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/domi1
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/domi1/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/domi1/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/domi1/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/domi1/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb>
+Output written on C:/Users\domi1\Programowanie\physics-engine\out\main.pdf (98 
+pages, 1176393 bytes).
+PDF statistics:
+ 456 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+
