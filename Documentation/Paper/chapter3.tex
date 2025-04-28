@@ -40,7 +40,7 @@ uwzględnieniem metod stosowanych w sterowaniu lotami rakietowymi. Omówione
 zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. Rozdział stanowi teoretyczną podbudowę dla przedstawionych w dalszej części pracy rozwiązań praktycznych.
 
 
-\subsection{Podejścia do uczenia maszynowego.}
+\subsection{Podejścia do uczenia maszynowego. \cite{geron-hands-on}}
 \label{sec:rodzaje-uczenia-maszynowego.}
 
 Współczesne systemy sztucznej inteligencji wykorzystują różne paradygmaty
@@ -65,7 +65,7 @@ W niniejszej pracy zastosowano podejście z zakresu uczenia przez wzmacnianie, k
 \subsection{Algorytmy uczenia przez wzmacnianie}
 W kontekście sterowania rakietą szczególnie istotne są następujące klasy algorytmów uczenia przez wzmacnianie, każda oferująca unikalne podejście do problemu optymalizacji strategii sterowania:
 
-\paragraph{Metody gradientu polityki (Policy Gradient Methods)}\\
+\paragraph{Metody gradientu polityki (Policy Gradient Methods) \cite{ciosek2020expectedpolicygradientsreinforcement}}\\
 Stanowią podstawową rodzinę algorytmów bezpośrednio optymalizujących funkcję nagrody poprzez aktualizację parametrów polityki. Ich matematyczną podstawę opisuje równanie:
 
 \begin{equation}
@@ -84,7 +84,7 @@ W praktyce rakietowej, metody te pozwalają na bezpośrednie uczenie się
 strategii sterowania bez konieczności modelowania pełnej funkcji wartości.
 Ich główną zaletą jest zdolność do obsługi ciągłych przestrzeni akcji, co jest kluczowe dla precyzyjnego sterowania rakietą. Wyzwaniem pozostaje jednak wysoka wariancja estymatorów gradientu, co może prowadzić do niestabilności procesu uczenia.\\
 
-\paragraph{Architektura Aktor-Krytyk (Actor-Critic)}\\
+\paragraph{Architektura Aktor-Krytyk (Actor-Critic) \cite{han2020actorcriticreinforcementlearningcontrol}}\\
 Stanowi hybrydowe podejście łączące zalety metod opartych na funkcji wartości i metod gradientu polityki. Składa się z dwóch współpracujących komponentów:
 
 \begin{itemize}
@@ -155,7 +155,7 @@ Pozwalają na kompresję wysokowymiarowych danych sensorycznych do reprezentacji
 Użyteczne do klasteryzacji stanów rakiety i identyfikacji typowych konfiguracji. Mogą wspomagać system sterowania poprzez szybką klasyfikację sytuacji awaryjnych.
 \end{itemize}
 
-\subsubsection{Modele dla uczenia przez wzmacnianie}
+\subsubsection{Modele dla uczenia przez wzmacnianie \cite{sutton2018reinforcement}}
 \begin{itemize}
 \item \textbf{DDPG (Deep Deterministic Policy Gradient)} \
 Algorytm łączący podejście policy gradient z Q-learningiem, szczególnie skuteczny dla ciągłych przestrzeni akcji. Wymaga jednak starannego dostrojenia hiperparametrów i może być niestabilny.
@@ -167,7 +167,7 @@ Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki,
 
 \subsection{Wybrany model - PPO (Proximal Policy Optimization)}
 \label{sec:wybrany-model}
-Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
+Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
 
 \paragraph{Charakterystyka teoretyczna}\\
 Podstawą teoretyczną PPO jest zmodyfikowana funkcja kosztu, która wprowadza inteligentne ograniczenie aktualizacji polityki. Matematycznie wyraża się to wzorem:
