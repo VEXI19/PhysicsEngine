@@ -12,7 +12,7 @@ W tym rozdziale przedstawione zostały teoretyczne podstawy fizyczne, użyte tec
 \begin{itemize}
     \item Projekt architektury systemu.
     \item Model sił fizycznych w systemie.
-    \item Moduł wizualizacyjny symulacji.
+    \item Moduł wizualizacji symulacji.
 \end{itemize}
 
 Omówione zostały także zagadnienia związane ze
@@ -665,13 +665,13 @@ konieczne jest zamodelowanie układów współrzędnych związanych z ruchem rak
 \subsubsection{Kąty Eulera i transformacje układów współrzędnych}
 Do opisu orientacji rakiety w przestrzeni wykorzystuje się kąty Eulera,
 umożliwiające transformacje układów współrzędnych za pomocą operacji
-macierzowych. Kąty Eulera to trzy kąty opisujące orientację rakiety wzgledem
+macierzowych. Kąty Eulera to trzy kąty opisujące orientację rakiety względem
 trzech osi układu inercjalnego:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/roll_pitch_yaw}
-    \caption{Obroty erakiety w trzech osiach (Roll, Pitch, Yaw),
+    \caption{Obroty rakiety w trzech osiach (Roll, Pitch, Yaw),
         \textit{źródło: Science Learning Hub, https://www.sciencelearn.org.nz/resources/387-rocket-control}}
     \label{fig:roll_pitch_yaw}
 \end{figure}
@@ -951,7 +951,7 @@ korzystać z konkretnego rodzaju sił, musi implementować odpowiednie
 interfejsy, które to umożliwiają. Dzięki temu, w łatwy sposób można
 rozszerzyć dany obiekt o parametry konieczne do symulacji nowych sił.
 Pozwala to na elastyczność silnika i jego łatwe dostosowanie do różnych
-wesji symulacji.
+wersji symulacji.
 \\W stworzonym na
 potrzeby tej pracy silniku fizycznym wyróżniamy następujące interfejsy:
 
@@ -960,9 +960,9 @@ potrzeby tej pracy silniku fizycznym wyróżniamy następujące interfejsy:
 \subsubsection{`IObject`}
 
 Interfejs `IObject` jest podstawowym interfejsem dla wszystkich obiektów w
-symulacji. Przez obiekty rozumie się rakiety, na które oddziaływują siły
+symulacji. Przez obiekty rozumie się rakiety, na które oddziałują siły
 podczas symulacji. Interfejs ten definiuje podstawowe właściwości rakiety,
-które powinna ona posiadać bez względu na to, jakie siły będa ostatecznie na
+które powinna ona posiadać bez względu na to, jakie siły będą ostatecznie na
 nią oddziaływały. W obecnej implementacji rakieta traktowana jest jako walec
 o jednolitej dystrybucji masy.
 
@@ -1008,7 +1008,7 @@ Dodatkowo, konstruktor inicjalizuje:
     \item `self.object\_model`: Model obiektu 3D.
 \end{itemize}
 
-\textbf{Metody w intefejsie IObject:}
+\textbf{Metody w interfejsie IObject:}
 \begin{itemize}
     \item `load\_model(object\_model\_path)`: Ładuje model 3D obiektu z podanej ścieżki. Model jest skalowany i translokowany do odpowiednich wymiarów.
     \item `calculate\_inertia\_tensor()`: Oblicza tensor bezwładności obiektu na podstawie jego masy i wymiarów.
@@ -1021,8 +1021,8 @@ Dodatkowo, konstruktor inicjalizuje:
 \subsubsection{`IThrust`}
 
 Interfejs `IThrust` rozszerza interfejs `IObject` o właściwości specyficzne
-dla obiektów posiadających silnik. Każdy obiekt, implemetujący ten interfej
-posiada wszystkie własności konieczne do obliczania sił ciągu, nań działającyh.
+dla obiektów posiadających silnik. Każdy obiekt, implementujący ten interfejs
+posiada wszystkie własności konieczne do obliczania sił ciągu, nań działających.
 
 \begin{lstlisting}[language=Python]
 class IThrust(ABC):
@@ -1034,7 +1034,7 @@ class IThrust(ABC):
             raise RuntimeError("Object needs to extend IObject to be IThrust")
 \end{lstlisting}
 
-\textbf{W konstruktorze deklarowane sa następujące parametry:}
+\textbf{W konstruktorze deklarowane są następujące parametry:}
 \begin{itemize}
     \item `cot`: Odległość środka ciągu (Center of Thrust) w osi Z od środka masy rakiety.
     \item `engine\_angle`: Kąt nachylenia silnika względem lokalnego układu współrzędnych rakiety.
@@ -1159,7 +1159,7 @@ systemie, to:
     \item \textbf{`PhysicsEngine`}: Jest to najważniejsza klasa silnika, odpowiedzialna za zarządzanie przebiegiem symulacji. Oblicza siły działające na obiekty, aktualizuje ich pozycje, prędkości oraz momenty obrotowe, a także zapisuje wyniki do plików.
     \item \textbf{`Forces`}: Klasa ta zawiera różne typy sił działających na
     obiekty w symulacji. W ramach tej klasy znajdują się konkretne
-    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez system do obliczeń. Więcej o implementacji tych sił opisano w podrodziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
+    implementacje sił takich jak \textit{Drag}, \textit{Gravity} oraz \textit{Thrust}, które są używane przez system do obliczeń. Więcej o implementacji tych sił opisano w podrozdziale \ref{sec:model-si-dziaajacych-na-rakiete.}.
 \end{itemize}
 
 \subsection{Proces symulacji.}\label{sec:proces-symulacji.}
@@ -1221,7 +1221,7 @@ w trakcie trwania symulacji.
 
 \subsection{Symulacja}
 
-Po zapisaniu plików z konfiguracją, wczytujemy je do sryptu
+Po zapisaniu plików z konfiguracją, wczytujemy je do skryptu
 \texttt{symulation.py} i uruchamiamy
 symulację. W
 tym celu używamy poniższego kodu:
@@ -1268,7 +1268,7 @@ Pętla symulacyjna silnika \texttt{PhysicsEngine} jest odpowiedzialna za zarząd
 W trakcie symulacji, po każdym kroku, zapisywane są dane o stanie obiektów w
 symulacji. Dane te zawierają informacje o pozycji, prędkości, przyspieszeniu
 , rotacji oraz prędkości kątowej obiektów. Zapisywane są one w formie plików CSV, które zawierają informacje o stanie obiektów w danym kroku czasowym. Dzięki temu, po zakończeniu symulacji, możliwe jest analizowanie wyników oraz generowanie wizualizacji trajektorii lotu rakiety.\\
-Pliki zapisywane są w folderze opowiednim dla danej symulacji, w formacie CSV, który zawiera następujące kolumny:
+Pliki zapisywane są w folderze odpowiednim dla danej symulacji, w formacie CSV, który zawiera następujące kolumny:
 
 \begin{itemize}
     \item \texttt{sim\_tick} - Licznik symulacji (numer kroku symulacji)
@@ -1320,7 +1320,7 @@ Jeżeli nowe siły wymagają dodania do obiektu rakiety nowych parametrów, w
 zupełnie nowy interfejs umożliwiający tworzenie nowej klasy sił.\\
 Innym dużym atutem jest możliwość wielokrotnej implementacji tej samej siły w
 różnych wariantach, co pozwala na porównanie różnych modeli sił i ich wp
-ływu, dopracowywanie modely fizyki oraz optymalizację symulacji.\\
+ływu, dopracowywanie modelu fizyki oraz optymalizację symulacji.\\
 
 \textbf{Łatwość zmiany parametrów}
 
@@ -1501,7 +1501,7 @@ def thrust(object: IThrust, environment: IEnvironment, time: float):
     \item Wielkość siły ciągu jest obliczana jako iloczyn natężenia przepływu masy gazów i ich prędkości wylotowej.
     \item Wektor siły ciągu jest przekształcany z układu lokalnego (
     związanego z silnikiem) na układ
-    globalny, uwzględniający aktualny kąt nachylenia silnika wzgledem rakiety.
+    globalny, uwzględniający aktualny kąt nachylenia silnika względem rakiety.
     \item Moment obrotowy wynika z przesunięcia środka ciągu (\textit{Center of Thrust, CoT}) względem środka masy rakiety.
 \end{itemize}
 
@@ -1624,24 +1624,24 @@ Warto zauważyć, że wszystkie obliczenia dotyczące ruchu postępowego są pro
 
 Przedstawiony powyżej model zaimplementowanej fizyki ruchu rakiety w
 symulacji lotu, jest modelem uproszczonym, nie biorącym pod uwagę wielu
-czynników. Spowodowane jest to niewystarczającymi zasobami (czasem, więdzą,
+czynników. Spowodowane jest to niewystarczającymi zasobami (czasem, wiedzą,
 mocą obliczeniową). Model ten jednak dzięki modułowej architekturze silnika
 może być w łatwy sposób rozbudowany, tak aby bardziej
 realnie odzwierciedlał warunki panujące podczas rzeczywistych lotów
 rakietowych. Na potrzeby niniejszej pracy inżynierskiej
-zaimplementowana fizyka wydaje się byc wystarczającą.
+zaimplementowana fizyka wydaje się być wystarczającą.
 
-\section{Moduł wizualizacyjny symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
+\section{Moduł wizualizacji symulacji.}\label{sec:modul-wizualizacyjny-symulacji.}
 
-Moduł wizualizacyjny symulacji jest odpowiedzialny za generowanie
+Moduł wizualizacji symulacji jest odpowiedzialny za generowanie
 wizualizacji lotów rakiety na podstawie danych zapisanych w trakcie symulacji . Struktura zapisywanych danych opisana została z w sekcji
 \ref{sec:zapisywanie-danych-symulacji.}. Wizualizacja jest generowana w formie
 animacji, która przedstawia trajektorię lotu rakiety w przestrzeni trójwymiarowej oraz zmiany kluczowych parametrów w czasie.
 
-Moduł wizualizacyjny stworzony został za pomocą
+Moduł wizualizacji stworzony został za pomocą
 biblioteki \texttt{PyQt}, która umożliwia generowanie dynamicznie zmieniających się interfejsów graficznych. Składa się on z dwóch
 głównych okien aplikacji: okna głównego oraz okna wizualizacji.\\
-Uruchomienie modułu wizualizacyjnego polega na uruchomieniu skryptu \texttt{
+Uruchomienie modułu wizualizacji polega na uruchomieniu skryptu \texttt{
     visualisation.py}.
 
 \subsection{Okno główne}
@@ -1657,7 +1657,7 @@ Przedstawiając więc strukturę okna głównego, można wyróżnić następują
     \item \textbf{Wybór konfiguracji symulacji:} Użytkownik ma możliwość
     wyboru jednej z dostępnych konfiguracji symulacji, które zostały
     zdefiniowane w plikach konfiguracyjnych. Wybór konfiguracji powoduje wyświetlenie listy dostępnych symulacji przeprowadzonych w ramach tej
-    konfiguracji. Funkcjonalnośc ta obsługiwana jest przez widget
+    konfiguracji. Funkcjonalność ta obsługiwana jest przez widget
     \texttt{folder\_picker}. Wygląd tego widoku przedstawiony jest na rysunku \ref{fig:main_window}
     \begin{figure}[H]
     \centering
@@ -1766,7 +1766,7 @@ W pewnych przypadkach symulacja pokazuje, że niewielki stały kąt nachylenia s
 Powyższe obserwacje stanowią mocne dowody na dokładność i wiarygodność
 symulacji, pozwalając na jej wykorzystanie w analizach trajektorii lotu
 rakiety i jej zachowania w różnych warunkach.
-\\Trudnym do ustalenia jest także jakośc i dokładność
+\\Trudnym do ustalenia jest także jakość i dokładność
 opisanych wyżej zjawisk, ponieważ nie ma możliwości porównania wyników do
 rzeczywistych danych. Istnieje wysokie prawdopodobieństwo, że zjawiska te
 mimo iż występują w symulacji lotów odbiegają znacząco od odpowiadających im
@@ -1816,7 +1816,7 @@ warunki atmosferyczne, które mogą wpływać na zachowanie rakiety w locie.
 Symulowanie takich warunków w symulacji komputerowej jest trudne, gdyż
 chociażby podmuchy wiatru działające na rakietę mogą być trudne do zbadania,
 mają one ogromny wpływ na trajektorię lotu rakiety.\\ Prowadzenie lotów
-rakiety w labolarium, gdzie można kontrolować warunki atmosferyczne, może
+rakiety w laboratorium, gdzie można kontrolować warunki atmosferyczne, może
 być jeszcze bardziej kosztowne i czasochłonne.
 
 \subsubsection{Porównanie z danymi testów nierakietowych}
@@ -1845,7 +1845,7 @@ celach treningowych modelu AI.
 
 \section{Ewolucja projektu i wnioski}\label{sec:ewolucja-projektu-i-wnioski}
 
-W trakcie pracy nad projektem opracowano kompletny system symulacji fizycznej lotów rakiet. Składa się on z dwóch głównych podsystemów: silnika fizycznego oraz modułu wizualizacyjnego. Projekt realizowano przez około cztery miesiące, a jego rezultatem jest w pełni funkcjonalny system. Proces realizacji można podzielić na kilka kluczowych etapów.
+W trakcie pracy nad projektem opracowano kompletny system symulacji fizycznej lotów rakiet. Składa się on z dwóch głównych podsystemów: silnika fizycznego oraz modułu wizualizacji. Projekt realizowano przez około cztery miesiące, a jego rezultatem jest w pełni funkcjonalny system. Proces realizacji można podzielić na kilka kluczowych etapów.
 
 \subsection{Historia powstania projektu}
 
@@ -1855,7 +1855,7 @@ Pierwszym etapem pracy było zgłębianie zagadnień związanych z fizyką lotu
 rakiet oraz zasadami działania silników rakietowych. W ramach tego etapu
 przeprowadzono analizę literatury oraz materiałów online dotyczących lotów
 rakietowych, modelowania dynamiki i symulacji fizycznych. W dużej mierze do
-zglębienia tych zagadnień wykorzystano podręcznik "Topics in Advanced Model
+zgłębienia tych zagadnień wykorzystano podręcznik "Topics in Advanced Model
 Rocketry" autorstwa Gordona K. Mandella\cite{alma991019564819703276}, który stanowił cenne źródło wiedzy
 o modelowaniu lotów rakietowych.
 Zgromadzona

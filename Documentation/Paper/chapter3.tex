@@ -123,7 +123,7 @@ Implementacja systemów RL dla sterowania rakietą wiąże się z szeregiem isto
 \begin{itemize}
     \item \textbf{Wysoka wymiarowość przestrzeni stanów}: Pełny stan dynamiczny rakiety może obejmować kilkanaście zmiennych (pozycja, prędkość, orientacja, prędkość kątowa, parametry silnika), co wymaga zaawansowanych technik aproksymacji funkcji wartości.
 
-    \item \textbf{Niestacjonarność dynamiki}: Zmieniająca się masa rakiety (w wyniku spalania paliwa) oraz zmienne warunki atmosferyczne prowadzą do ciągłych zmian parametrów systemu, wymagając algorytmów zdolnych do adaptacji.
+    \item \textbf{Zmienna dynamika systemu}: Zmieniająca się masa rakiety (w wyniku spalania paliwa) oraz zmienne warunki atmosferyczne prowadzą do ciągłych zmian parametrów systemu, wymagając algorytmów zdolnych do adaptacji.
 
     \item \textbf{Ryzyko katastrofalnych awarii}: Błędy w fazie uczenia mogą prowadzić do niestabilności i utraty kontroli, co w rzeczywistych systemach jest niedopuszczalne. Konieczne są mechanizmy bezpieczeństwa i symulacje w pętli sprzężenia zwrotnego (hardware-in-the-loop).
 
@@ -149,7 +149,7 @@ Metoda bayesowska szczególnie przydatna gdy dostępna jest ograniczona liczba d
 \subsubsection{Modele dla uczenia nienadzorowanego}
 \begin{itemize}
 \item \textbf{Autoenkodery wariacyjne (VAE)} \
-Pozwalają na kompresję wysokowymiarowych danych sensorycznych do reprezentacji latentnej, zachowując kluczowe informacje o stanie rakiety. Mogą służyć jako wstępny etap przetwarzania przed właściwym algorytmem sterującym.
+Pozwalają na kompresję wielowymiarowych danych sensorycznych do reprezentacji latentnej, zachowując kluczowe informacje o stanie rakiety. Mogą służyć jako wstępny etap przetwarzania przed właściwym algorytmem sterującym.
 
 \item \textbf{GMM (Gaussian Mixture Models)} \
 Użyteczne do klasteryzacji stanów rakiety i identyfikacji typowych konfiguracji. Mogą wspomagać system sterowania poprzez szybką klasyfikację sytuacji awaryjnych.
@@ -186,7 +186,7 @@ gdzie poszczególne składniki mają kluczowe znaczenie:
 Mechanizm ten zapewnia, że aktualizacje polityki są wystarczająco duże, by efektywnie się uczyć, ale na tyle małe, by zachować stabilność procesu treningowego - kluczowa właściwość w bezpieczeństwie krytycznych aplikacjach rakietowych.
 
 \paragraph{Zalety w kontekście sterowania rakietą}\\
-PPO oferuje szereg unikalnych korzyści w zastosowaniach aerokosmicznych:
+PPO oferuje szereg unikalnych korzyści w zastosowaniach aero-kosmicznych:
 
 \begin{itemize}
     \item \textbf{Bezpieczeństwo i stabilność uczenia}: Mechanizm clip
@@ -221,7 +221,7 @@ Podsumowując, PPO stanowi doskonały kompromis między stabilnością, efektywn
 
 Przedstawione w rozdziale teoretyczne podstawy uczenia maszynowego stanowią fundament dla opracowanego systemu sterowania rakietą. Wybór metody uczenia przez wzmacnianie, a w szczególności algorytmu PPO, podyktowany został jego unikalnymi właściwościami w kontekście problemów sterowania dynamicznego. Zaprezentowane modele i algorytmy, poparte solidnymi podstawami matematycznymi, tworzą kompleksową teoretyczną podbudowę dla praktycznych rozwiązań przedstawionych w kolejnych rozdziałach pracy.
 
-W szczególności, analiza zalet i ograniczeń poszczególnych podejść pozwoliła na świadomy wybór architektury systemu, który łączy w sobie stabilność uczenia, efektywność obliczeniową i praktyczną przydatność w rzeczywistych zastosowaniach aerokosmicznych.
+W szczególności, analiza zalet i ograniczeń poszczególnych podejść pozwoliła na świadomy wybór architektury systemu, który łączy w sobie stabilność uczenia, efektywność obliczeniową i praktyczną przydatność w rzeczywistych zastosowaniach aero-kosmicznych.
 
 
 \section{Użyte technologie.}\label{sec:użyte-technologie-2.}
@@ -420,7 +420,7 @@ rakietą, ale także zapewnia możliwość łatwej rozbudowy i modyfikacji poszc
 \subsection{Cel działania algorytmu}
 
 Celem działania wytrenowanego algorytmu PPO było zapewnienie stabilnego, pionowego lotu rakiety. Zakładano, że model nauczy się kompensować działanie sił zakłócających,
-takich jak boczny wiatr, oraz samodzielnie korygować odchylenia od osi pionowej za pomocą wektorowania ciągu (TVC).
+takich jak boczny wiatr, oraz samodzielnie korygować odchylenia od osi pionowej za pomocą kontroli wektora ciągu (TVC).
 
 \subsection{Metodyka pomiaru skuteczności}
 Aby ocenić skuteczność działania algorytmu, zastosowano następujące kryteria:
