@@ -1,10 +1,8 @@
 \chapter{Moduł II: Algorytm sterujący rakietą.}\
 
 Algorytm sterujący rakietą jest drugim modułem projektu.
-Jego celem jest stworzenie algorytmu, który będzie w stanie samodzielnie sterować rakietą w
-symulacji. Zadaniem algorytmu będzie pionizacja trajektorii lotu rakiety.
-Algorytm będzie uczony na silniku symulacyjnym będącym efektem pracy nad
-modułem I.\\
+Jego celem jest stworzenie algorytmu, który będzie w stanie samodzielnie sterować rakietą i utrzymać pionową trajktorię lotu.
+Algorytm będzie uczony na silniku symulacyjnym z modułu I.\\
 Autorem tego modułu jest Dominik Kubicki.\\
 Niniejszy rozdział opisuje założenia projektowe, teoretyczne podstawy, użyte
 technologie oraz wybór odpowiedniego algorytmu uczenia maszynowego, a także
@@ -15,29 +13,127 @@ sposoby i efekty uczenia algorytmu.\\
 W trakcie pracy nad algorytmem sterującym rakietą poczynione zostały następujące założenia:
 
 \begin{itemize}
-    \item Algorytm sterujący rakietą będzie miał za zadanie pionizację
+    \item Algorytm sterujący rakietą będzie miał za zadanie utrzymanie stabilnej
     trajektorii lotu rakiety, czyli doprowadzenie rakiety do pionu w rożnych
     warunkach atmosferycznych. Bardziej skomplikowane trajektorie lotu nie
     są obiektem badań w tej pracy.
-    \item Algorytm będzie uczony na silniku symulacyjnym będącym efektem pracy nad modułem I.
+    \item Algorytm będzie uczony na silniku symulacyjnym, będącym efektem pracy nad modułem I.
     \item Algorytm będzie wykorzystywał algorytmy sztucznej inteligencji do
     nauki, która będzie przebiegała w sposób dynamiczny w trakcie lotu rakiety.
-    \item Konieczne jest stworzenie komponentu umożliwiającego komunikację
-    pomiędzy silnikiem symulacyjnym a algorytmem sterującym rakietą.
 \end{itemize}
 
 Założenia te pozwalają na usystematyzowanie pracy nad algorytmem oraz
 ubranie go w ramy teoretyczne, upraszczając skomplikowanie problemu.\\
 
+\section{System sterowania lotu rakietą}
 
-\section{Teoretyczne podstawy uczenia modeli sztucznej inteligencji.}
-\label{ch:teoretyczne-podstawy-uczenia-modeli-sztucznej-inteligencji.}
+System sterowania rakietą oparty jest na wytrenowanej sieci neuronowej typu
+\textit{MLP} (Multilayer Perceptron). Została ona zaprojektowana tak, aby
+przekształcać wektor stanu rakiety na odpowiednie komendy sterujące.
+Wektor wejściowy modelu zawiera dwadzieścia wartości opisujących aktualny stan rakiety:
+\begin{itemize}
+    \item Położenie \([x, y, z]\)
+    \item Prędkość liniowa \([v_x, v_y, v_z]\)
+    \item Przyspieszenie liniowe \([a_x, a_y, a_z]\)
+    \item Orientacja rakiety w przestrzeni wyrażona jako kąty Eulera \([roll, pitch, yaw]\)
+    \item Prędkość kątowa \([w_x, w_y, w_z]\)
+    \item Przyspieszenie kątowe \([a_x, a_y, a_z]\)
+    \item Aktualny kąt wychylenia silnika \([\alpha_x, \alpha_y]\)
+\end{itemize}
 
+które następnie przechodzą przez warstwy ukryte sieci neuronowej.
+Sieć składa się z pięciu warstw ukrytych o rozmiarach kolejno: 32, 64, 64, 64 i 32 neurony.
+Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt odchylenia silnika w osi \( x \) oraz \( y \), ograniczony do przedziału od \(-20^\circ\) do \(20^\circ\).
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.8\textwidth]{images/neural_network}
+    \caption{Schemat sieci neuronowej systemu sterowania}
+    \label{fig:neural_network}
+\end{figure}
+
+\begin{figure}
+    \subfloat[Wyjście modelu sterującego (0, 0)]{\label{Fig1:a} \includegraphics[width=0.3\textwidth]{images/rocket_neutral_position}}%
+    \hfill
+    \subfloat[Wyjście modelu sterującego (10, 0)]{\label{Fig1:b} \includegraphics[width=0.3\textwidth]{images/rocket_right_turn}}%
+    \hfill
+    \subfloat[Wyjście modelu sterującego (0, 10)]{\label{Fig1:c} \includegraphics[width=0.3\textwidth]{images/rocket_down_turn}}
+
+    \caption{Wpływ wartości warswy wyjściowej na kąty wychylenia silnika. Wyjście (x, y) powoduje ustawienie silnika pod kątami x i y w osiach X i Y]} \label{Fig1:rocket_engines_angles}
+\end{figure}
+
+
+\subsection{Funkcja aktywacji}
+
+W każdej warstwie ukrytej sieci neuronowej zastosowano funkcję aktywacji typu tangens hiperboliczny (\( \tanh \)), która przekształca sumę ważoną wejść neuronu w zakres \((-1, 1)\). Funkcja ta opisana jest wzorem:
+
+\[
+\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
+\]
+
+Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci, co umożliwia modelowi aproksymację złożonych zależności pomiędzy stanem rakiety a odpowiednimi komendami sterującymi. W przeciwieństwie do funkcji ReLU, funkcja \( \tanh \) jest symetryczna względem zera, co może przyspieszyć zbieżność w sytuacjach, gdy dane wejściowe są również odpowiednio znormalizowane wokół zera. Wybór tej funkcji aktywacji wspomaga stabilność propagacji sygnału w głębokich sieciach neuronowych.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/tanh_function}
+    \caption{Funkcja aktywacji tangens hiperboliczny}
+    \label{fig:tanh}
+\end{figure}
+
+\subsection{Inicjalizacja wag}
+
+Wagi sieci neuronowej zostały zainicjalizowane metodą ortogonalną, co oznacza, że każda macierz wag w warstwach ukrytych została początkowo ustawiona jako macierz ortogonalna. Metoda ta polega na wygenerowaniu macierzy o ortonormalnych kolumnach (lub wierszach), spełniających warunek:
+
+\[
+\mathbf{W}^\top \mathbf{W} = \mathbf{I}
+\]
+
+Inicjalizacja ortogonalna ma na celu utrzymanie odpowiedniego przepływu gradientów podczas procesu uczenia – szczególnie w głębokich sieciach. Zmniejsza to ryzyko eksplozji lub zaniku gradientu w czasie wstecznej propagacji błędu. W praktyce metoda ta często przyczynia się do szybszej i bardziej stabilnej konwergencji modelu, a także poprawia jego końcową skuteczność.
+
+\subsection{Działanie sieci MLP}
+
+Sieć neuronowa typu MLP (Multilayer Perceptron) jest klasycznym modelem sieci neuronowej składającym się z kilku warstw neuronów, w tym jednej warstwy wejściowej, kilku warstw ukrytych oraz warstwy wyjściowej. Celem tej sieci jest nauka nieliniowej funkcji odwzorowującej dane wejściowe na pożądane wyjście, które w przypadku systemu sterowania rakietą reprezentuje kąty wychylenia silnika w osiach \(x\) oraz \(y\).
+
+W każdej warstwie sieci neuronowej obliczana jest suma ważona wejść \( \mathbf{h}^{(l-1)} \) z poprzedniej warstwy, do której dodawany jest wektor przesunięcia \( \mathbf{b}^{(l)} \). Wynik tej operacji przechodzi przez funkcję aktywacji \( \tanh \), aby uzyskać wyjście z warstwy ukrytej. Proces ten dla każdej warstwy \( l \) opisuje wzór:
+
+\[
+\mathbf{h}^{(l)} = \tanh\left( \mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)} \right)
+\]
+
+gdzie:
+\begin{itemize}
+  \item \( \mathbf{h}^{(l-1)} \) to wektor wyjściowy z poprzedniej warstwy (dla warstwy wejściowej \( \mathbf{h}^{(0)} \) to wektor wejściowy \( \mathbf{x} \)),
+  \item \( \mathbf{W}^{(l)} \in \mathbb{R}^{d_l \times d_{l-1}} \) to macierz wag dla warstwy \( l \),
+  \item \( \mathbf{b}^{(l)} \in \mathbb{R}^{d_l} \) to wektor przesunięcia dla warstwy \( l \),
+  \item \( \tanh(\cdot) \) to funkcja aktywacji tangens hiperboliczny.
+\end{itemize}
+
+W przypadku sieci MLP z pięcioma warstwami ukrytymi, obliczenia te będą zachodziły pięciokrotnie, aż do uzyskania wyjścia z ostatniej warstwy ukrytej \( \mathbf{h}^{(5)} \).
+
+Po przejściu przez wszystkie warstwy ukryte, ostatnia warstwa generuje ostateczne wyjście, które w przypadku systemu sterowania rakietą reprezentuje wektor \([\alpha_x, \alpha_y]\) – kąty wychylenia silnika w osiach \(x\) oraz \(y\). Wyjście tej warstwy jest obliczane za pomocą:
+
+\[
+\mathbf{y} = \mathbf{W}^{(6)} \mathbf{h}^{(5)} + \mathbf{b}^{(6)}
+\]
+
+gdzie:
+\begin{itemize}
+  \item \( \mathbf{y} \in \mathbb{R}^2 \) to wektor wyjściowy, który zawiera kąty wychylenia silnika w osiach \( x \) oraz \( y \),
+  \item \( \mathbf{W}^{(6)} \in \mathbb{R}^{2 \times 32} \) to macierz wag dla warstwy wyjściowej,
+  \item \( \mathbf{b}^{(6)} \in \mathbb{R}^2 \) to wektor przesunięcia dla warstwy wyjściowej.
+\end{itemize}
+
+Z racji ograniczeń na kąty wychylenia silnika, wartości \( \alpha_x \) oraz \( \alpha_y \) są później ograniczane do przedziału od \(-20^\circ\) do \(20^\circ\).
+
+
+
+
+\section{Model uczący}
 
 W niniejszym rozdziale przedstawione zostały kompleksowe podstawy teoretyczne
 dotyczące uczenia modeli sztucznej inteligencji, ze szczególnym
 uwzględnieniem metod stosowanych w sterowaniu lotami rakietowymi. Omówione
-zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. Rozdział stanowi teoretyczną podbudowę dla przedstawionych w dalszej części pracy rozwiązań praktycznych.
+zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. Opisane zostały również różne modele uczące, które mogą być wykorzystane w tym kontekście, z szczególnym uwzględnieniem PPO (Proximal Policy Optimization), który został wybrany jako algorytm do trenowania modelu sterującego rakietą.\\
 
 
 \subsection{Podejścia do uczenia maszynowego. \cite{geron-hands-on}}
@@ -167,42 +263,119 @@ Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki,
 
 \subsection{Wybrany model - PPO (Proximal Policy Optimization)}
 \label{sec:wybrany-model}
-Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
+%Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
+%
+%\paragraph{Charakterystyka teoretyczna}\\
+%Podstawą teoretyczną PPO jest zmodyfikowana funkcja kosztu, która wprowadza inteligentne ograniczenie aktualizacji polityki. Matematycznie wyraża się to wzorem:
+%
+%\begin{equation}
+%L^{CLIP}(\theta) = \mathbb{E}_t[\min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t)]
+%\end{equation}
+%
+%gdzie poszczególne składniki mają kluczowe znaczenie:
+%\begin{itemize}
+%    \item $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}$ - stosunek prawdopodobieństw wskazujący, jak bardzo nowa polityka różni się od starej
+%    \item $\hat{A}_t$ - estymata funkcji przewagi, mierząca względną jakość podjętej akcji
+%    \item $\epsilon$ - parametr ograniczający (zwykle 0.1-0.3), który determinuje maksymalny dopuszczalny krok aktualizacji
+%\end{itemize}
+%
+%Mechanizm ten zapewnia, że aktualizacje polityki są wystarczająco duże, by efektywnie się uczyć, ale na tyle małe, by zachować stabilność procesu treningowego - kluczowa właściwość w bezpieczeństwie krytycznych aplikacjach rakietowych.
 
-\paragraph{Charakterystyka teoretyczna}\\
-Podstawą teoretyczną PPO jest zmodyfikowana funkcja kosztu, która wprowadza inteligentne ograniczenie aktualizacji polityki. Matematycznie wyraża się to wzorem:
+Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji — dokładnie taki przypadek mamy w sterowaniu rakietą.
+
+\paragraph{}
+
+Podstawą PPO jest funkcja kosztu, która ogranicza zakres zmian w polityce podczas aktualizacji. Dzięki temu algorytm unika niestabilności charakterystycznych dla wcześniejszych metod. Funkcja kosztu PPO w wersji z mechanizmem \textit{clipping} jest zdefiniowana jako:
 
 \begin{equation}
-L^{CLIP}(\theta) = \mathbb{E}_t[\min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t)]
+L^{CLIP}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta)\hat{A}_t, \ \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t\right)\right],
 \end{equation}
 
-gdzie poszczególne składniki mają kluczowe znaczenie:
-\begin{itemize}
-    \item $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}$ - stosunek prawdopodobieństw wskazujący, jak bardzo nowa polityka różni się od starej
-    \item $\hat{A}_t$ - estymata funkcji przewagi, mierząca względną jakość podjętej akcji
-    \item $\epsilon$ - parametr ograniczający (zwykle 0.1-0.3), który determinuje maksymalny dopuszczalny krok aktualizacji
-\end{itemize}
-
-Mechanizm ten zapewnia, że aktualizacje polityki są wystarczająco duże, by efektywnie się uczyć, ale na tyle małe, by zachować stabilność procesu treningowego - kluczowa właściwość w bezpieczeństwie krytycznych aplikacjach rakietowych.
-
-\paragraph{Zalety w kontekście sterowania rakietą}\\
-PPO oferuje szereg unikalnych korzyści w zastosowaniach aero-kosmicznych:
+gdzie:
 
 \begin{itemize}
-    \item \textbf{Bezpieczeństwo i stabilność uczenia}: Mechanizm clip
-    skutecznie zapobiega zbyt radykalnym zmianom polityki, które w przypadku
-    rakiet mogłyby prowadzić do katastrofalnych awarii. \
-    \item \textbf{Efektywność obliczeniowa}: W przeciwieństwie do swojego poprzednika TRPO, PPO nie wymaga kosztownych obliczeń macierzy Hessego, co pozwala na szybsze iteracje treningowe. W praktyce oznacza to możliwość przeprowadzenia pełnego treningu w rozsądnym czasie nawet na pojedynczym GPU.
-
-    \item \textbf{Elastyczność architektoniczna}: PPO doskonale radzi sobie
-    zarówno z prostymi układami sterowania (np. stabilizacja jednej osi),
-    jak i złożonymi manewrami 3D. \
-
-    \item \textbf{Scalalność}: Algorytm łatwo zrównoleglić na wiele
-    instancji środowiska, co znacząco przyspiesza zbieranie doświadczeń.\
+    \item $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}$ — stosunek nowych i starych prawdopodobieństw wyboru akcji, mierzący zmianę polityki,
+    \item $\hat{A}_t$ — estymata funkcji przewagi (advantage), która wskazuje, jak bardzo dana akcja była lepsza niż oczekiwano,
+    \item $\epsilon$ — hiperparametr (np. 0.2), ograniczający zakres dopuszczalnych zmian w polityce.
 \end{itemize}
 
-\paragraph{Ograniczenia i wyzwania}\\
+Mechanizm \textit{clip} ogranicza aktualizację funkcji polityki, jeśli zmiana $r_t(\theta)$ jest zbyt duża, co zapobiega destabilizacji podczas uczenia.
+
+\paragraph{}
+
+Polityka $\pi_\theta(a_t|s_t)$ jest reprezentowana przez sieć neuronową typu MLP (wielowarstwowy perceptron), której parametry $\theta$ są trenowane w oparciu o gradient funkcji kosztu $L^{CLIP}(\theta)$. Po każdej serii interakcji ze środowiskiem (w tym przypadku, po każdym kroku symulacji), algorytm PPO oblicza gradient:
+
+\[
+\nabla_\theta L^{CLIP}(\theta)
+\]
+
+i wykorzystuje go do aktualizacji wag MLP przy pomocy optymalizatora. Proces ten polega na modyfikacji wag w kierunku maksymalizacji funkcji nagrody przy jednoczesnym ograniczeniu zmian w polityce. Dodatkowo, równolegle aktualizowana jest także sieć wartości (critic), która minimalizuje błąd estymacji wartości funkcji stanu $V(s_t)$, poprzez funkcję strat typu MSE:
+
+\[
+L^{\text{value}}(\phi) = \left(V_\phi(s_t) - R_t\right)^2,
+\]
+
+gdzie $R_t$ to zwrot zdyskontowany, a $\phi$ oznacza parametry sieci krytyka. Obie sieci — aktora i krytyka — uczą się jednocześnie, lecz niezależnie, umożliwiając stabilne i szybkie dostosowanie strategii sterowania.
+
+\paragraph{}
+
+W przypadku rakiety, stan $s_t$ obejmuje informacje o położeniu, prędkościach, orientacji oraz aktualnych ustawieniach silnika. Na przykład:
+
+\[
+s_t = [x, y, z, v_x, v_y, v_z, \text{pitch}, \text{yaw}]
+\]
+
+Akcja $a_t = [\alpha_x, \alpha_y]$ odpowiada kątom wychylenia silnika w osi \( x \) i \( y \). Polityka PPO $\pi_\theta(a_t|s_t)$ reprezentowana jest przez sieć MLP, która przekształca stan na akcję w sposób ciągły. Dzięki funkcji kosztu $L^{CLIP}(\theta)$ model uczy się tak aktualizować parametry $\theta$, by wybierać coraz lepsze komendy sterujące przy zachowaniu stabilności uczenia.
+
+
+%Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji — dokładnie taki przypadek mamy w sterowaniu rakietą.
+%
+%\paragraph{Charakterystyka teoretyczna}
+%
+%Podstawą PPO jest funkcja kosztu, która ogranicza zakres zmian w polityce podczas aktualizacji. Dzięki temu algorytm unika niestabilności charakterystycznych dla wcześniejszych metod. Funkcja kosztu PPO w wersji z mechanizmem \textit{clipping} jest zdefiniowana jako:
+%
+%\begin{equation}
+%L^{CLIP}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta)\hat{A}_t, \ \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t\right)\right],
+%\end{equation}
+%
+%gdzie:
+%
+%\begin{itemize}
+%    \item $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}$ — stosunek nowych i starych prawdopodobieństw wyboru akcji, mierzący zmianę polityki,
+%    \item $\hat{A}_t$ — estymata funkcji przewagi (advantage), która wskazuje, jak bardzo dana akcja była lepsza niż oczekiwano,
+%    \item $\epsilon$ — hiperparametr (np. 0.2), ograniczający zakres dopuszczalnych zmian w polityce.
+%\end{itemize}
+%
+%Mechanizm \textit{clip} ogranicza aktualizację funkcji polityki, jeśli zmiana $r_t(\theta)$ jest zbyt duża, co zapobiega destabilizacji podczas uczenia.
+%
+%\paragraph{}
+%
+%W przypadku rakiety, stan $s_t$ obejmuje informacje o położeniu, prędkościach, orientacji oraz aktualnych ustawieniach silnika. Na przykład:
+%
+%\[
+%s_t = [x, y, z, v_x, v_y, v_z, \text{pitch}, \text{yaw}]
+%\]
+%
+%Akcja $a_t = [\alpha_x, \alpha_y]$ odpowiada kątom wychylenia silnika w osi \( x \) i \( y \). Polityka PPO $\pi_\theta(a_t|s_t)$ reprezentowana jest przez sieć neuronową MLP, która przekształca stan na akcję w sposób ciągły. Dzięki funkcji kosztu $L^{CLIP}(\theta)$ model uczy się tak aktualizować parametry $\theta$, by wybierać coraz lepsze komendy sterujące przy zachowaniu stabilności uczenia.
+%
+%\paragraph{Zalety w kontekście sterowania rakietą}\\
+%PPO oferuje szereg unikalnych korzyści w zastosowaniach aero-kosmicznych:
+%
+%\begin{itemize}
+%    \item \textbf{Bezpieczeństwo i stabilność uczenia}: Mechanizm clip
+%    skutecznie zapobiega zbyt radykalnym zmianom polityki, które w przypadku
+%    rakiet mogłyby prowadzić do katastrofalnych awarii. \
+%    \item \textbf{Efektywność obliczeniowa}: W przeciwieństwie do swojego poprzednika TRPO, PPO nie wymaga kosztownych obliczeń macierzy Hessego, co pozwala na szybsze iteracje treningowe. W praktyce oznacza to możliwość przeprowadzenia pełnego treningu w rozsądnym czasie nawet na pojedynczym GPU.
+%
+%    \item \textbf{Elastyczność architektoniczna}: PPO doskonale radzi sobie
+%    zarówno z prostymi układami sterowania (np. stabilizacja jednej osi),
+%    jak i złożonymi manewrami 3D. \
+%
+%    \item \textbf{Scalalność}: Algorytm łatwo zrównoleglić na wiele
+%    instancji środowiska, co znacząco przyspiesza zbieranie doświadczeń.\
+%\end{itemize}
+
+\paragraph{}\\
 Mimo licznych zalet, PPO nie jest pozbawiony wad, które należy uwzględnić w projektowaniu systemu:
 
 \begin{itemize}
@@ -214,14 +387,18 @@ Mimo licznych zalet, PPO nie jest pozbawiony wad, które należy uwzględnić w 
 \end{itemize}
 
 
-Podsumowując, PPO stanowi doskonały kompromis między stabilnością, efektywnością i praktyczną użytecznością w problemach sterowania rakietą. Jego unikalne właściwości, szczególnie mechanizm ograniczonej aktualizacji polityki, czynią go preferowanym wyborem dla zastosowań wymagających zarówno bezpieczeństwa, jak i adaptacyjności. Mimo pewnych ograniczeń, odpowiednio zaimplementowany i dostrojony algorytm PPO jest w stanie osiągać wyniki porównywalne z zaawansowanymi kontrolerami specjalistycznymi, oferując przy tym znaczną elastyczność.
 
+
+%
+%%\subsection{Wprowadzenie do uczenia przez wzmacnianie}
+%
+%Uczenie przez wzmacnianie (\textit{Reinforcement Learning}, RL) to jedna z głównych dziedzin uczenia maszynowego, której celem jest znalezienie strategii działania (polityki), maksymalizującej długoterminową nagrodę w nieznanym środowisku. W kontekście sterowania rakietą, podejście to wyróżnia się na tle klasycznych regulatorów, takich jak PID czy układy sterowania optymalnego, dzięki zdolności do autonomicznego uczenia się skutecznych strategii nawet w warunkach silnej nieliniowości, zmiennej dynamiki oraz niepewności sensorycznej.
+%
+%Jednym z kluczowych elementów RL jest tzw. architektura \textit{actor-critic}, która łączy dwa modele: aktora (policy network), generującego akcje na podstawie aktualnego stanu, oraz krytyka (value network), oceniającego jakość podjętych decyzji. Rozdzielenie tych funkcji umożliwia bardziej stabilne i wydajne uczenie, co jest szczególnie ważne w zadaniach sterowania fizycznymi obiektami, takimi jak rakieta.
 
 \subsection{Podsumowanie}
 
-Przedstawione w rozdziale teoretyczne podstawy uczenia maszynowego stanowią fundament dla opracowanego systemu sterowania rakietą. Wybór metody uczenia przez wzmacnianie, a w szczególności algorytmu PPO, podyktowany został jego unikalnymi właściwościami w kontekście problemów sterowania dynamicznego. Zaprezentowane modele i algorytmy, poparte solidnymi podstawami matematycznymi, tworzą kompleksową teoretyczną podbudowę dla praktycznych rozwiązań przedstawionych w kolejnych rozdziałach pracy.
-
-W szczególności, analiza zalet i ograniczeń poszczególnych podejść pozwoliła na świadomy wybór architektury systemu, który łączy w sobie stabilność uczenia, efektywność obliczeniową i praktyczną przydatność w rzeczywistych zastosowaniach aero-kosmicznych.
+PPO stanowi doskonały kompromis między stabilnością, efektywnością i praktyczną użytecznością w problemach sterowania rakietą. Jego unikalne właściwości, szczególnie mechanizm ograniczonej aktualizacji polityki, czynią go preferowanym wyborem dla zastosowań wymagających zarówno bezpieczeństwa, jak i adaptacyjności. Mimo pewnych ograniczeń, odpowiednio zaimplementowany i dostrojony algorytm PPO jest w stanie osiągać wyniki porównywalne z zaawansowanymi kontrolerami specjalistycznymi, oferując przy tym znaczną elastyczność.
 
 
 \section{Użyte technologie.}\label{sec:użyte-technologie-2.}
