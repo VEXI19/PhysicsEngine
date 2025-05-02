@@ -222,7 +222,7 @@ Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt 
 \begin{figure}
     \centering
     \includegraphics[height=0.8\textwidth]{images/neural_network}
-    \caption{Schemat sieci neuronowej systemu sterowania}
+    \caption{Schemat sieci neuronowej systemu sterowania, \textit{źródło: Opracowanie własne.}}
     \label{fig:neural_network}
 \end{figure}
 
@@ -233,7 +233,7 @@ Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt 
     \hfill
     \subfloat[Wyjście modelu sterującego (0, 10)]{\label{Fig1:c} \includegraphics[width=0.3\textwidth]{images/rocket_down_turn}}
 
-    \caption{Wpływ wartości warswy wyjściowej na kąty wychylenia silnika. Wyjście (x, y) powoduje ustawienie silnika pod kątami x i y w osiach X i Y]} \label{Fig1:rocket_engines_angles}
+    \caption{Wpływ wartości warswy wyjściowej na kąty wychylenia silnika. Wyjście (x, y) powoduje ustawienie silnika pod kątami x i y w osiach X i Y], \textit{źródło: Opracowanie własne.}} \label{Fig1:rocket_engines_angles}
 \end{figure}
 
 
@@ -250,7 +250,7 @@ Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{images/tanh_function}
-    \caption{Funkcja aktywacji tangens hiperboliczny}
+    \caption{Funkcja aktywacji tangens hiperboliczny, \textit{źródło: Opracowanie własne.}}
     \label{fig:tanh}
 \end{figure}
 
@@ -304,7 +304,7 @@ Z racji ograniczeń na kąty wychylenia silnika, wartości \( \alpha_x \) oraz \
 
 
 
-\section{PPO - wybrany model do trenowania}
+\section{Algorytm uczący - PPO}
 \label{sec:wybrany-model}
 %Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
 %
@@ -461,7 +461,7 @@ Na Rysunku \ref{fig:arhci_infr} przedstawiono ogólną architekturę rozwiązani
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{images/wrapper_archi}
-    \caption{Schemat architektury systemu uczącego. Opracowanie własne.}
+    \caption{Schemat architektury systemu uczącego. \textit{źródło: Opracowanie własne.}}
     \label{fig:arhci_infr}
 \end{figure}
 
@@ -635,21 +635,21 @@ Wizualizacje wyników (krzywe nagrody i odchylenia) wskazywały na postępy w na
     \hfill
     \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c2} \includegraphics[width=0.5\textwidth]{images/trajectory_start_y}}
 
-    \caption{Trajektoria lotu rakiety przed trenowaniem modelu} \label{Fig1:trajcetory_start}
+    \caption{Trajektoria lotu rakiety przed trenowaniem modelu, \textit{źródło: Opracowanie własne.}} \label{Fig1:trajcetory_start}
 \end{figure}
 \begin{figure}
     \subfloat[Rzut na płaszczyznę YZ]{\label{Fig1:b3} \includegraphics[width=0.5\textwidth]{images/trajectory_mid_x}}%
     \hfill
     \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c3} \includegraphics[width=0.5\textwidth]{images/trajectory_mid_y}}
 
-    \caption{Trajektoria lotu rakiety po 150 episodach} \label{Fig1:trajcetory_mid}
+    \caption{Trajektoria lotu rakiety po 150 episodach, \textit{źródło: Opracowanie własne.}} \label{Fig1:trajcetory_mid}
 \end{figure}
 \begin{figure}
     \subfloat[Rzut na płaszczyznę YZ]{\label{Fig1:b4} \includegraphics[width=0.5\textwidth]{images/trajectory_final_x}}%
     \hfill
     \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c4} \includegraphics[width=0.5\textwidth]{images/trajectory_final_y}}
 
-    \caption{Trajektoria lotu rakiety wytrenowanego modelu} \label{Fig1:trajcetory_final}
+    \caption{Trajektoria lotu rakiety wytrenowanego modelu, \textit{źródło: Opracowanie własne.}} \label{Fig1:trajcetory_final}
 \end{figure}
 
 %\begin{figure}[H]
