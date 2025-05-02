@@ -581,6 +581,7 @@ Dla każdego kroku epizodu ($t = 1$ do $T$):
 
 Proces uczenia charakteryzuje się epizodyczną strukturą, gdzie każda próba stanowi niezależną symulację lotu. Równowaga między eksploracją nowych strategii a wykorzystaniem sprawdzonych rozwiązań jest kluczowa dla skutecznego uczenia. System stopniowo doskonali politykę sterowania, optymalizując długoterminową nagrodę poprzez ciągłą interakcję ze środowiskiem.
 
+
 \subsection{Podsumowanie}
 \label{subsec:podsumowanie}
 
@@ -627,28 +628,50 @@ Model PPO nauczył się podstawowej stabilizacji rakiety, jednak nie osiągnął
     \item Trajektorie lotu pokazywały zauważalne oscylacje, które model często tłumił dopiero po kilku sekundach.
 \end{itemize}
 
-Wizualizacje wyników (krzywe nagrody i odchylenia) wskazywały na postępy w nauce, choć widoczne były również trudności w utrzymywaniu stabilnego lotu w bardziej dynamicznych sytuacjach.
+Wizualizacje wyników (krzywe nagrody i odchylenia) wskazywały na postępy w nauce, choć widoczne były również trudności w utrzymywaniu stabilnego lotu w bardziej dynamicznych sytuacjach. Poniżej zostały przedstwione tory lotu rakiety w wybranych epizodach treningowych.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/steering_before}
-    \caption{Tor lotu rakiety przed treningiem. Opracowanie własne.}
-    \label{fig:steering_before}
+\begin{figure}
+    \subfloat[Rzut na płaszczyznę YZ]{\label{Fig1:b2} \includegraphics[width=0.5\textwidth]{images/trajectory_start_x}}%
+    \hfill
+    \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c2} \includegraphics[width=0.5\textwidth]{images/trajectory_start_y}}
+
+    \caption{Trajektoria lotu rakiety przed trenowaniem modelu} \label{Fig1:trajcetory_start}
+\end{figure}
+\begin{figure}
+    \subfloat[Rzut na płaszczyznę YZ]{\label{Fig1:b3} \includegraphics[width=0.5\textwidth]{images/trajectory_mid_x}}%
+    \hfill
+    \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c3} \includegraphics[width=0.5\textwidth]{images/trajectory_mid_y}}
+
+    \caption{Trajektoria lotu rakiety po 150 episodach} \label{Fig1:trajcetory_mid}
+\end{figure}
+\begin{figure}
+    \subfloat[Rzut na płaszczyznę YZ]{\label{Fig1:b4} \includegraphics[width=0.5\textwidth]{images/trajectory_final_x}}%
+    \hfill
+    \subfloat[Rzut na płaszczyznę XZ]{\label{Fig1:c4} \includegraphics[width=0.5\textwidth]{images/trajectory_final_y}}
+
+    \caption{Trajektoria lotu rakiety wytrenowanego modelu} \label{Fig1:trajcetory_final}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/steering_after}
-    \caption{Tor lotu po trenowaniu modelu. Opracowanie własne.}
-    \label{fig:steering_after}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/cumulitive_rewards}
-    \caption{Graf sum nagród dla epizodów treningowych. Opracowanie własne.}
-    \label{fig:cumulitive_rewards}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.8\linewidth]{images/steering_before}
+%    \caption{Tor lotu rakiety przed treningiem. Opracowanie własne.}
+%    \label{fig:steering_before}
+%\end{figure}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.8\linewidth]{images/steering_after}
+%    \caption{Tor lotu po trenowaniu modelu. Opracowanie własne.}
+%    \label{fig:steering_after}
+%\end{figure}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.8\linewidth]{images/cumulitive_rewards}
+%    \caption{Graf sum nagród dla epizodów treningowych. Opracowanie własne.}
+%    \label{fig:cumulitive_rewards}
+%\end{figure}
 
 \subsection{Wnioski}
 Na podstawie przeprowadzonych eksperymentów można stwierdzić, że algorytm PPO częściowo nauczył się stabilizować rakietę w pionowym locie, jednak osiągnięta jakość kontroli była ograniczona.
@@ -663,8 +686,8 @@ Ograniczenia zaobserwowane podczas testów obejmowały:
 
 \begin{itemize}
     \item Niska skuteczność przy silnych zakłóceniach, prowadząca do dużych wychyleń i długich czasów stabilizacji.
+    \item Tendencja do utrzymywania kursu pod kątem 45 stopni w stosunku do osi Z wzdłuż jednej z osi.
     \item Powolne tłumienie oscylacji, co zwiększało ryzyko dalszych destabilizacji po początkowym wychyleniu.
-    \item Problemy ze stabilnością uczenia, objawiające się w postaci dużych wahań krzywej nagrody podczas treningu.
 \end{itemize}
 
 \subsection{Podsumowanie}
