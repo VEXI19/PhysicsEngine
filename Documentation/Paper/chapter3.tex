@@ -8,6 +8,7 @@ Niniejszy rozdział opisuje założenia projektowe, teoretyczne podstawy, użyte
 technologie oraz wybór odpowiedniego algorytmu uczenia maszynowego, a także
 sposoby i efekty uczenia algorytmu.\\
 
+
 \section{Założenia i cele projektowe.}\label{sec:założenia-projektowe-2.}
 
 W trakcie pracy nad algorytmem sterującym rakietą poczynione zostały następujące założenia:
@@ -25,124 +26,61 @@ W trakcie pracy nad algorytmem sterującym rakietą poczynione zostały następu
 Założenia te pozwalają na usystematyzowanie pracy nad algorytmem oraz
 ubranie go w ramy teoretyczne, upraszczając skomplikowanie problemu.\\
 
-\section{System sterowania lotu rakietą}
+\section{Użyte technologie.}\label{sec:użyte-technologie-2.}
+Do implementacji modułu sterowania rakietą wykorzystano następujące technologie i biblioteki:
 
-System sterowania rakietą oparty jest na wytrenowanej sieci neuronowej typu
-\textit{MLP} (Multilayer Perceptron). Została ona zaprojektowana tak, aby
-przekształcać wektor stanu rakiety na odpowiednie komendy sterujące.
-Wektor wejściowy modelu zawiera dwadzieścia wartości opisujących aktualny stan rakiety:
+\paragraph{Gymnasium} \\
+
+to biblioteka służąca do tworzenia i zarządzania środowiskami dla algorytmów uczenia przez wzmacnianie. Stanowi rozwinięcie popularnej biblioteki OpenAI Gym, oferując:
+
 \begin{itemize}
-    \item Położenie \([x, y, z]\)
-    \item Prędkość liniowa \([v_x, v_y, v_z]\)
-    \item Przyspieszenie liniowe \([a_x, a_y, a_z]\)
-    \item Orientacja rakiety w przestrzeni wyrażona jako kąty Eulera \([roll, pitch, yaw]\)
-    \item Prędkość kątowa \([w_x, w_y, w_z]\)
-    \item Przyspieszenie kątowe \([a_x, a_y, a_z]\)
-    \item Aktualny kąt wychylenia silnika \([\alpha_x, \alpha_y]\)
+    \item Standardowy interfejs do definiowania środowisk RL
+    \item Narzędzia do tworzenia wrapperów modyfikujących zachowanie środowisk
+    \item Implementacje popularnych środowisk testowych
+    \item Mechanizmy do obsługi przestrzeni obserwacji i akcji
 \end{itemize}
 
-które następnie przechodzą przez warstwy ukryte sieci neuronowej.
-Sieć składa się z pięciu warstw ukrytych o rozmiarach kolejno: 32, 64, 64, 64 i 32 neurony.
-Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt odchylenia silnika w osi \( x \) oraz \( y \), ograniczony do przedziału od \(-20^\circ\) do \(20^\circ\).
+\paragraph{Stable Baselines3} \\
 
-\begin{figure}
-    \centering
-    \includegraphics[height=0.8\textwidth]{images/neural_network}
-    \caption{Schemat sieci neuronowej systemu sterowania}
-    \label{fig:neural_network}
-\end{figure}
+to biblioteka implementująca współczesne algorytmy uczenia przez wzmacnianie. Zawiera:
 
-\begin{figure}
-    \subfloat[Wyjście modelu sterującego (0, 0)]{\label{Fig1:a} \includegraphics[width=0.3\textwidth]{images/rocket_neutral_position}}%
-    \hfill
-    \subfloat[Wyjście modelu sterującego (10, 0)]{\label{Fig1:b} \includegraphics[width=0.3\textwidth]{images/rocket_right_turn}}%
-    \hfill
-    \subfloat[Wyjście modelu sterującego (0, 10)]{\label{Fig1:c} \includegraphics[width=0.3\textwidth]{images/rocket_down_turn}}
-
-    \caption{Wpływ wartości warswy wyjściowej na kąty wychylenia silnika. Wyjście (x, y) powoduje ustawienie silnika pod kątami x i y w osiach X i Y]} \label{Fig1:rocket_engines_angles}
-\end{figure}
-
-
-\subsection{Funkcja aktywacji}
-
-W każdej warstwie ukrytej sieci neuronowej zastosowano funkcję aktywacji typu tangens hiperboliczny (\( \tanh \)), która przekształca sumę ważoną wejść neuronu w zakres \((-1, 1)\). Funkcja ta opisana jest wzorem:
-
-\[
-\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
-\]
-
-Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci, co umożliwia modelowi aproksymację złożonych zależności pomiędzy stanem rakiety a odpowiednimi komendami sterującymi. W przeciwieństwie do funkcji ReLU, funkcja \( \tanh \) jest symetryczna względem zera, co może przyspieszyć zbieżność w sytuacjach, gdy dane wejściowe są również odpowiednio znormalizowane wokół zera. Wybór tej funkcji aktywacji wspomaga stabilność propagacji sygnału w głębokich sieciach neuronowych.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/tanh_function}
-    \caption{Funkcja aktywacji tangens hiperboliczny}
-    \label{fig:tanh}
-\end{figure}
-
-\subsection{Inicjalizacja wag}
-
-Wagi sieci neuronowej zostały zainicjalizowane metodą ortogonalną, co oznacza, że każda macierz wag w warstwach ukrytych została początkowo ustawiona jako macierz ortogonalna. Metoda ta polega na wygenerowaniu macierzy o ortonormalnych kolumnach (lub wierszach), spełniających warunek:
-
-\[
-\mathbf{W}^\top \mathbf{W} = \mathbf{I}
-\]
-
-Inicjalizacja ortogonalna ma na celu utrzymanie odpowiedniego przepływu gradientów podczas procesu uczenia – szczególnie w głębokich sieciach. Zmniejsza to ryzyko eksplozji lub zaniku gradientu w czasie wstecznej propagacji błędu. W praktyce metoda ta często przyczynia się do szybszej i bardziej stabilnej konwergencji modelu, a także poprawia jego końcową skuteczność.
-
-\subsection{Działanie sieci MLP}
-
-Sieć neuronowa typu MLP (Multilayer Perceptron) jest klasycznym modelem sieci neuronowej składającym się z kilku warstw neuronów, w tym jednej warstwy wejściowej, kilku warstw ukrytych oraz warstwy wyjściowej. Celem tej sieci jest nauka nieliniowej funkcji odwzorowującej dane wejściowe na pożądane wyjście, które w przypadku systemu sterowania rakietą reprezentuje kąty wychylenia silnika w osiach \(x\) oraz \(y\).
-
-W każdej warstwie sieci neuronowej obliczana jest suma ważona wejść \( \mathbf{h}^{(l-1)} \) z poprzedniej warstwy, do której dodawany jest wektor przesunięcia \( \mathbf{b}^{(l)} \). Wynik tej operacji przechodzi przez funkcję aktywacji \( \tanh \), aby uzyskać wyjście z warstwy ukrytej. Proces ten dla każdej warstwy \( l \) opisuje wzór:
-
-\[
-\mathbf{h}^{(l)} = \tanh\left( \mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)} \right)
-\]
-
-gdzie:
 \begin{itemize}
-  \item \( \mathbf{h}^{(l-1)} \) to wektor wyjściowy z poprzedniej warstwy (dla warstwy wejściowej \( \mathbf{h}^{(0)} \) to wektor wejściowy \( \mathbf{x} \)),
-  \item \( \mathbf{W}^{(l)} \in \mathbb{R}^{d_l \times d_{l-1}} \) to macierz wag dla warstwy \( l \),
-  \item \( \mathbf{b}^{(l)} \in \mathbb{R}^{d_l} \) to wektor przesunięcia dla warstwy \( l \),
-  \item \( \tanh(\cdot) \) to funkcja aktywacji tangens hiperboliczny.
+    \item Gotowe implementacje popularnych algorytmów RL (PPO, SAC, TD3 itp.)
+    \item Narzędzia do trenowania i ewaluacji modeli
+    \item Wsparcie dla środowisk wektorowych
+    \item Mechanizmy callbacków i logowania
 \end{itemize}
 
-W przypadku sieci MLP z pięcioma warstwami ukrytymi, obliczenia te będą zachodziły pięciokrotnie, aż do uzyskania wyjścia z ostatniej warstwy ukrytej \( \mathbf{h}^{(5)} \).
 
-Po przejściu przez wszystkie warstwy ukryte, ostatnia warstwa generuje ostateczne wyjście, które w przypadku systemu sterowania rakietą reprezentuje wektor \([\alpha_x, \alpha_y]\) – kąty wychylenia silnika w osiach \(x\) oraz \(y\). Wyjście tej warstwy jest obliczane za pomocą:
+\subsection{Biblioteki pomocnicze}
 
-\[
-\mathbf{y} = \mathbf{W}^{(6)} \mathbf{h}^{(5)} + \mathbf{b}^{(6)}
-\]
-
-gdzie:
 \begin{itemize}
-  \item \( \mathbf{y} \in \mathbb{R}^2 \) to wektor wyjściowy, który zawiera kąty wychylenia silnika w osiach \( x \) oraz \( y \),
-  \item \( \mathbf{W}^{(6)} \in \mathbb{R}^{2 \times 32} \) to macierz wag dla warstwy wyjściowej,
-  \item \( \mathbf{b}^{(6)} \in \mathbb{R}^2 \) to wektor przesunięcia dla warstwy wyjściowej.
+    \item \textbf{numpy} biblioteka do obliczeń numerycznych i operacji na
+    tablicach wielowymiarowych
+    \item \textbf{pandas} narzędzia do analizy i przetwarzania danych
+    tabelarycznych
+    \item \textbf{matplotlib} tworzenie wizualizacji i wykresów
+    \item \textbf{pyyaml} obsługa plików konfiguracyjnych w formacie YAML
 \end{itemize}
 
-Z racji ograniczeń na kąty wychylenia silnika, wartości \( \alpha_x \) oraz \( \alpha_y \) są później ograniczane do przedziału od \(-20^\circ\) do \(20^\circ\).
+Wszystkie wymienione technologie zostały zintegrowane z istniejącym
+silnikiem fizycznym opisanym w rozdziale II.
 
-
-
-
-\section{Model uczący}
+\section{Podstawy teoretyczne uczenia maszynowego.}
 
 W niniejszym rozdziale przedstawione zostały kompleksowe podstawy teoretyczne
 dotyczące uczenia modeli sztucznej inteligencji, ze szczególnym
 uwzględnieniem metod stosowanych w sterowaniu lotami rakietowymi. Omówione
-zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. Opisane zostały również różne modele uczące, które mogą być wykorzystane w tym kontekście, z szczególnym uwzględnieniem PPO (Proximal Policy Optimization), który został wybrany jako algorytm do trenowania modelu sterującego rakietą.\\
+zostały różne paradygmaty uczenia maszynowego, ich matematyczne fundamenty oraz praktyczne aspekty implementacyjne w kontekście systemów autonomicznego sterowania. \\
 
 
-\subsection{Podejścia do uczenia maszynowego. \cite{geron-hands-on}}
+\subsection{Podejścia do uczenia maszynowego.}
 \label{sec:rodzaje-uczenia-maszynowego.}
 
 Współczesne systemy sztucznej inteligencji wykorzystują różne paradygmaty
 uczenia maszynowego, z których każdy znajduje zastosowanie w innych
 scenariuszach sterowania rakietą. Poniżej przedstawiono charakterystykę i
-obszary zastosowań trzech przewodnich podejść do uczenia maszynowego.\\
+obszary zastosowań trzech przewodnich podejść do uczenia maszynowego. \cite{geron-hands-on} \\
 
 \begin{itemize}
 \item \textbf{Uczenie nadzorowane (Supervised Learning)} \\
@@ -261,7 +199,112 @@ Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki,
 \end{itemize}
 
 
-\subsection{Wybrany model - PPO (Proximal Policy Optimization)}
+\section{System sterowania lotu rakietą}
+
+System sterowania rakietą oparty jest na wytrenowanej sieci neuronowej typu
+\textit{MLP} (Multilayer Perceptron). Została ona zaprojektowana tak, aby
+przekształcać wektor stanu rakiety na odpowiednie komendy sterujące.
+Wektor wejściowy modelu zawiera dwadzieścia wartości opisujących aktualny stan rakiety:
+\begin{itemize}
+    \item Położenie \([x, y, z]\)
+    \item Prędkość liniowa \([v_x, v_y, v_z]\)
+    \item Przyspieszenie liniowe \([a_x, a_y, a_z]\)
+    \item Orientacja rakiety w przestrzeni wyrażona jako kąty Eulera \([roll, pitch, yaw]\)
+    \item Prędkość kątowa \([w_x, w_y, w_z]\)
+    \item Przyspieszenie kątowe \([a_x, a_y, a_z]\)
+    \item Aktualny kąt wychylenia silnika \([\alpha_x, \alpha_y]\)
+\end{itemize}
+
+które następnie przechodzą przez warstwy ukryte sieci neuronowej.
+Sieć składa się z pięciu warstw ukrytych o rozmiarach kolejno: 32, 64, 64, 64 i 32 neurony.
+Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt odchylenia silnika w osi \( x \) oraz \( y \), ograniczony do przedziału od \(-20^\circ\) do \(20^\circ\).
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.8\textwidth]{images/neural_network}
+    \caption{Schemat sieci neuronowej systemu sterowania}
+    \label{fig:neural_network}
+\end{figure}
+
+\begin{figure}
+    \subfloat[Wyjście modelu sterującego (0, 0)]{\label{Fig1:a} \includegraphics[width=0.3\textwidth]{images/rocket_neutral_position}}%
+    \hfill
+    \subfloat[Wyjście modelu sterującego (10, 0)]{\label{Fig1:b} \includegraphics[width=0.3\textwidth]{images/rocket_right_turn}}%
+    \hfill
+    \subfloat[Wyjście modelu sterującego (0, 10)]{\label{Fig1:c} \includegraphics[width=0.3\textwidth]{images/rocket_down_turn}}
+
+    \caption{Wpływ wartości warswy wyjściowej na kąty wychylenia silnika. Wyjście (x, y) powoduje ustawienie silnika pod kątami x i y w osiach X i Y]} \label{Fig1:rocket_engines_angles}
+\end{figure}
+
+
+\subsection{Funkcja aktywacji}
+
+W każdej warstwie ukrytej sieci neuronowej zastosowano funkcję aktywacji typu tangens hiperboliczny (\( \tanh \)), która przekształca sumę ważoną wejść neuronu w zakres \((-1, 1)\). Funkcja ta opisana jest wzorem:
+
+\[
+\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
+\]
+
+Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci, co umożliwia modelowi aproksymację złożonych zależności pomiędzy stanem rakiety a odpowiednimi komendami sterującymi. W przeciwieństwie do funkcji ReLU, funkcja \( \tanh \) jest symetryczna względem zera, co może przyspieszyć zbieżność w sytuacjach, gdy dane wejściowe są również odpowiednio znormalizowane wokół zera. Wybór tej funkcji aktywacji wspomaga stabilność propagacji sygnału w głębokich sieciach neuronowych.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/tanh_function}
+    \caption{Funkcja aktywacji tangens hiperboliczny}
+    \label{fig:tanh}
+\end{figure}
+
+\subsection{Inicjalizacja wag}
+
+Wagi sieci neuronowej zostały zainicjalizowane metodą ortogonalną, co oznacza, że każda macierz wag w warstwach ukrytych została początkowo ustawiona jako macierz ortogonalna. Metoda ta polega na wygenerowaniu macierzy o ortonormalnych kolumnach (lub wierszach), spełniających warunek:
+
+\[
+\mathbf{W}^\top \mathbf{W} = \mathbf{I}
+\]
+
+Inicjalizacja ortogonalna ma na celu utrzymanie odpowiedniego przepływu gradientów podczas procesu uczenia – szczególnie w głębokich sieciach. Zmniejsza to ryzyko eksplozji lub zaniku gradientu w czasie wstecznej propagacji błędu. W praktyce metoda ta często przyczynia się do szybszej i bardziej stabilnej konwergencji modelu, a także poprawia jego końcową skuteczność.
+
+\subsection{Działanie sieci MLP}
+
+Sieć neuronowa typu MLP (Multilayer Perceptron) jest klasycznym modelem sieci neuronowej składającym się z kilku warstw neuronów, w tym jednej warstwy wejściowej, kilku warstw ukrytych oraz warstwy wyjściowej. Celem tej sieci jest nauka nieliniowej funkcji odwzorowującej dane wejściowe na pożądane wyjście, które w przypadku systemu sterowania rakietą reprezentuje kąty wychylenia silnika w osiach \(x\) oraz \(y\).
+
+W każdej warstwie sieci neuronowej obliczana jest suma ważona wejść \( \mathbf{h}^{(l-1)} \) z poprzedniej warstwy, do której dodawany jest wektor przesunięcia \( \mathbf{b}^{(l)} \). Wynik tej operacji przechodzi przez funkcję aktywacji \( \tanh \), aby uzyskać wyjście z warstwy ukrytej. Proces ten dla każdej warstwy \( l \) opisuje wzór:
+
+\[
+\mathbf{h}^{(l)} = \tanh\left( \mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)} \right)
+\]
+
+gdzie:
+\begin{itemize}
+  \item \( \mathbf{h}^{(l-1)} \) to wektor wyjściowy z poprzedniej warstwy (dla warstwy wejściowej \( \mathbf{h}^{(0)} \) to wektor wejściowy \( \mathbf{x} \)),
+  \item \( \mathbf{W}^{(l)} \in \mathbb{R}^{d_l \times d_{l-1}} \) to macierz wag dla warstwy \( l \),
+  \item \( \mathbf{b}^{(l)} \in \mathbb{R}^{d_l} \) to wektor przesunięcia dla warstwy \( l \),
+  \item \( \tanh(\cdot) \) to funkcja aktywacji tangens hiperboliczny.
+\end{itemize}
+
+W przypadku sieci MLP z pięcioma warstwami ukrytymi, obliczenia te będą zachodziły pięciokrotnie, aż do uzyskania wyjścia z ostatniej warstwy ukrytej \( \mathbf{h}^{(5)} \).
+
+Po przejściu przez wszystkie warstwy ukryte, ostatnia warstwa generuje ostateczne wyjście, które w przypadku systemu sterowania rakietą reprezentuje wektor \([\alpha_x, \alpha_y]\) – kąty wychylenia silnika w osiach \(x\) oraz \(y\). Wyjście tej warstwy jest obliczane za pomocą:
+
+\[
+\mathbf{y} = \mathbf{W}^{(6)} \mathbf{h}^{(5)} + \mathbf{b}^{(6)}
+\]
+
+gdzie:
+\begin{itemize}
+  \item \( \mathbf{y} \in \mathbb{R}^2 \) to wektor wyjściowy, który zawiera kąty wychylenia silnika w osiach \( x \) oraz \( y \),
+  \item \( \mathbf{W}^{(6)} \in \mathbb{R}^{2 \times 32} \) to macierz wag dla warstwy wyjściowej,
+  \item \( \mathbf{b}^{(6)} \in \mathbb{R}^2 \) to wektor przesunięcia dla warstwy wyjściowej.
+\end{itemize}
+
+Z racji ograniczeń na kąty wychylenia silnika, wartości \( \alpha_x \) oraz \( \alpha_y \) są później ograniczane do przedziału od \(-20^\circ\) do \(20^\circ\).
+
+
+
+
+
+
+\section{PPO - wybrany model do trenowania}
 \label{sec:wybrany-model}
 %Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji - dokładnie taki przypadek mamy w sterowaniu rakietą.
 %
@@ -283,7 +326,7 @@ Nowoczesny algorytm maksymalizujący zarówno nagrodę jak i entropię polityki,
 
 Wśród różnych algorytmów uczenia przez wzmacnianie, Proximal Policy Optimization (PPO) \cite{schulman2017proximalpolicyoptimizationalgorithms} wyróżnia się jako szczególnie odpowiedni wybór dla problemów sterowania rakietą. Opracowany w 2017 roku przez zespół badawczy OpenAI pod kierownictwem Johna Schulmana, PPO szybko stał się złotym standardem w zastosowaniach wymagających stabilnego uczenia w ciągłych przestrzeniach akcji — dokładnie taki przypadek mamy w sterowaniu rakietą.
 
-\paragraph{}
+\subsection{Charakterystyka teoretyczna}
 
 Podstawą PPO jest funkcja kosztu, która ogranicza zakres zmian w polityce podczas aktualizacji. Dzięki temu algorytm unika niestabilności charakterystycznych dla wcześniejszych metod. Funkcja kosztu PPO w wersji z mechanizmem \textit{clipping} jest zdefiniowana jako:
 
@@ -301,15 +344,15 @@ gdzie:
 
 Mechanizm \textit{clip} ogranicza aktualizację funkcji polityki, jeśli zmiana $r_t(\theta)$ jest zbyt duża, co zapobiega destabilizacji podczas uczenia.
 
-\paragraph{}
+\subsection{Aktualizacja wag sieci MLP}
 
-Polityka $\pi_\theta(a_t|s_t)$ jest reprezentowana przez sieć neuronową typu MLP (wielowarstwowy perceptron), której parametry $\theta$ są trenowane w oparciu o gradient funkcji kosztu $L^{CLIP}(\theta)$. Po każdej serii interakcji ze środowiskiem (w tym przypadku, po każdym kroku symulacji), algorytm PPO oblicza gradient:
+Polityka $\pi_\theta(a_t|s_t)$ jest reprezentowana przez sieć neuronową typu MLP (wielowarstwowy perceptron), której parametry $\theta$ są trenowane w oparciu o gradient funkcji kosztu $L^{CLIP}(\theta)$. Po każdej serii interakcji ze środowiskiem (np. po kilku epizodach lotu rakiety), algorytm PPO oblicza gradient:
 
 \[
 \nabla_\theta L^{CLIP}(\theta)
 \]
 
-i wykorzystuje go do aktualizacji wag MLP przy pomocy optymalizatora. Proces ten polega na modyfikacji wag w kierunku maksymalizacji funkcji nagrody przy jednoczesnym ograniczeniu zmian w polityce. Dodatkowo, równolegle aktualizowana jest także sieć wartości (critic), która minimalizuje błąd estymacji wartości funkcji stanu $V(s_t)$, poprzez funkcję strat typu MSE:
+i wykorzystuje go do aktualizacji wag MLP przy pomocy optymalizatora (najczęściej Adam). Proces ten polega na modyfikacji wag w kierunku maksymalizacji funkcji nagrody przy jednoczesnym ograniczeniu zmian w polityce. Dodatkowo, równolegle aktualizowana jest także sieć wartości (critic), która minimalizuje błąd estymacji wartości funkcji stanu $V(s_t)$, najczęściej poprzez funkcję strat typu MSE:
 
 \[
 L^{\text{value}}(\phi) = \left(V_\phi(s_t) - R_t\right)^2,
@@ -401,44 +444,8 @@ Mimo licznych zalet, PPO nie jest pozbawiony wad, które należy uwzględnić w 
 PPO stanowi doskonały kompromis między stabilnością, efektywnością i praktyczną użytecznością w problemach sterowania rakietą. Jego unikalne właściwości, szczególnie mechanizm ograniczonej aktualizacji polityki, czynią go preferowanym wyborem dla zastosowań wymagających zarówno bezpieczeństwa, jak i adaptacyjności. Mimo pewnych ograniczeń, odpowiednio zaimplementowany i dostrojony algorytm PPO jest w stanie osiągać wyniki porównywalne z zaawansowanymi kontrolerami specjalistycznymi, oferując przy tym znaczną elastyczność.
 
 
-\section{Użyte technologie.}\label{sec:użyte-technologie-2.}
-Do implementacji modułu sterowania rakietą wykorzystano następujące technologie i biblioteki:
 
-\paragraph{Gymnasium} \\
 
-to biblioteka służąca do tworzenia i zarządzania środowiskami dla algorytmów uczenia przez wzmacnianie. Stanowi rozwinięcie popularnej biblioteki OpenAI Gym, oferując:
-
-\begin{itemize}
-    \item Standardowy interfejs do definiowania środowisk RL
-    \item Narzędzia do tworzenia wrapperów modyfikujących zachowanie środowisk
-    \item Implementacje popularnych środowisk testowych
-    \item Mechanizmy do obsługi przestrzeni obserwacji i akcji
-\end{itemize}
-
-\paragraph{Stable Baselines3} \\
-
-to biblioteka implementująca współczesne algorytmy uczenia przez wzmacnianie. Zawiera:
-
-\begin{itemize}
-    \item Gotowe implementacje popularnych algorytmów RL (PPO, SAC, TD3 itp.)
-    \item Narzędzia do trenowania i ewaluacji modeli
-    \item Wsparcie dla środowisk wektorowych
-    \item Mechanizmy callbacków i logowania
-\end{itemize}
-
-\subsection{Biblioteki pomocnicze}
-
-\begin{itemize}
-    \item \textbf{numpy} biblioteka do obliczeń numerycznych i operacji na
-    tablicach wielowymiarowych
-    \item \textbf{pandas} narzędzia do analizy i przetwarzania danych
-    tabelarycznych
-    \item \textbf{matplotlib} tworzenie wizualizacji i wykresów
-    \item \textbf{pyyaml} obsługa plików konfiguracyjnych w formacie YAML
-\end{itemize}
-
-Wszystkie wymienione technologie zostały zintegrowane z istniejącym
-silnikiem fizycznym opisanym w rozdziale II.
 
 
 \section{Architektura i implementacja modelu uczącego}
