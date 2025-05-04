@@ -109,28 +109,28 @@
 \contentsline {subsection}{\numberline {3.4.1}Funkcja aktywacji}{90}{}%
 \contentsline {subsection}{\numberline {3.4.2}Inicjalizacja wag}{92}{}%
 \contentsline {subsection}{\numberline {3.4.3}Działanie sieci MLP}{93}{}%
-\contentsline {section}{\numberline {3.5}Model uczący - Proximal Policy Optimization (PPO)}{94}{}%
+\contentsline {section}{\numberline {3.5}Algorytm uczący - PPO}{94}{}%
 \contentsline {subsection}{\numberline {3.5.1}Charakterystyka teoretyczna}{94}{}%
 \contentsline {subsection}{\numberline {3.5.2}Aktualizacja wag sieci MLP}{95}{}%
 \contentsline {paragraph}{}{95}{}%
 \contentsline {paragraph}{}{96}{}%
 \contentsline {subsection}{\numberline {3.5.3}Podsumowanie}{96}{}%
-\contentsline {section}{\numberline {3.6}Architektura i implementacja modelu uczącego}{97}{}%
+\contentsline {section}{\numberline {3.6}Architektura i implementacja modelu uczącego}{96}{}%
 \contentsline {subsection}{\numberline {3.6.1}Architektura systemu uczącego}{97}{}%
-\contentsline {subsubsection}{Wrapper środowiska symulacyjnego}{99}{}%
-\contentsline {subsubsection}{Funkcja nagrody}{99}{}%
-\contentsline {subsection}{\numberline {3.6.2}Model uczący}{100}{}%
-\contentsline {subsection}{\numberline {3.6.3}Proces uczenia}{101}{}%
-\contentsline {subsubsection}{Inicjalizacja środowiska}{101}{}%
-\contentsline {subsubsection}{Główna pętla uczenia}{101}{}%
-\contentsline {subsection}{\numberline {3.6.4}Podsumowanie}{102}{}%
-\contentsline {section}{\numberline {3.7}Wyniki i wnioski.}{103}{}%
-\contentsline {subsection}{\numberline {3.7.1}Cel działania algorytmu}{103}{}%
-\contentsline {subsection}{\numberline {3.7.2}Metodyka pomiaru skuteczności}{103}{}%
-\contentsline {subsection}{\numberline {3.7.3}Wyniki}{103}{}%
+\contentsline {subsubsection}{Wrapper środowiska symulacyjnego}{98}{}%
+\contentsline {subsubsection}{Funkcja nagrody}{98}{}%
+\contentsline {subsection}{\numberline {3.6.2}Model uczący}{99}{}%
+\contentsline {subsection}{\numberline {3.6.3}Proces uczenia}{100}{}%
+\contentsline {subsubsection}{Inicjalizacja środowiska}{100}{}%
+\contentsline {subsubsection}{Główna pętla uczenia}{100}{}%
+\contentsline {subsection}{\numberline {3.6.4}Podsumowanie}{101}{}%
+\contentsline {section}{\numberline {3.7}Wyniki i wnioski.}{102}{}%
+\contentsline {subsection}{\numberline {3.7.1}Cel działania algorytmu}{102}{}%
+\contentsline {subsection}{\numberline {3.7.2}Metodyka pomiaru skuteczności}{102}{}%
+\contentsline {subsection}{\numberline {3.7.3}Wyniki}{102}{}%
 \contentsline {subsection}{\numberline {3.7.4}Wnioski}{104}{}%
-\contentsline {subsection}{\numberline {3.7.5}Podsumowanie}{105}{}%
-\contentsline {chapter}{\numberline {4}Podsumowanie}{107}{}%
-\contentsline {section}{\numberline {4.1}Podsumowanie}{107}{}%
-\contentsline {section}{\numberline {4.2}Wnioski końcowe}{107}{}%
-\contentsline {section}{\numberline {4.3}Perspektywy rozwoju i dalsze badania}{108}{}%
+\contentsline {subsection}{\numberline {3.7.5}Podsumowanie}{104}{}%
+\contentsline {chapter}{\numberline {4}Podsumowanie}{106}{}%
+\contentsline {section}{\numberline {4.1}Podsumowanie}{106}{}%
+\contentsline {section}{\numberline {4.2}Wnioski końcowe}{106}{}%
+\contentsline {section}{\numberline {4.3}Perspektywy rozwoju i dalsze badania}{107}{}%
