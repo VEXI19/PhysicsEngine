@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.14)  4 MAY 2025 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.14)  4 MAY 2025 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1872,32 +1872,80 @@ Overfull \hbox (7.83322pt too wide) in paragraph at lines 643--646
 [][] [] 
  []
 
-<images/trajectory_final_x.png, id=362, 578.16pt x 433.62pt>
-File: images/trajectory_final_x.png Graphic file (type png)
-<use images/trajectory_final_x.png>
-Package pdftex.def Info: images/trajectory_final_x.png  used on input line 650.
-
+<images/trajectory_3_x.png, id=362, 578.16pt x 433.62pt>
+File: images/trajectory_3_x.png Graphic file (type png)
+<use images/trajectory_3_x.png>
+Package pdftex.def Info: images/trajectory_3_x.png  used on input line 650.
 (pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
-<images/trajectory_final_y.png, id=363, 578.16pt x 433.62pt>
-File: images/trajectory_final_y.png Graphic file (type png)
-<use images/trajectory_final_y.png>
-Package pdftex.def Info: images/trajectory_final_y.png  used on input line 652.
-
+<images/trajectory_3_y.png, id=363, 578.16pt x 433.62pt>
+File: images/trajectory_3_y.png Graphic file (type png)
+<use images/trajectory_3_y.png>
+Package pdftex.def Info: images/trajectory_3_y.png  used on input line 652.
 (pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
 
 Overfull \hbox (7.83322pt too wide) in paragraph at lines 650--653
 [][] [] 
  []
 
+<images/trajectory_final_x.png, id=364, 578.16pt x 433.62pt>
+File: images/trajectory_final_x.png Graphic file (type png)
+<use images/trajectory_final_x.png>
+Package pdftex.def Info: images/trajectory_final_x.png  used on input line 657.
 
-Overfull \hbox (1.29057pt too wide) in paragraph at lines 679--680
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+<images/trajectory_final_y.png, id=365, 578.16pt x 433.62pt>
+File: images/trajectory_final_y.png Graphic file (type png)
+<use images/trajectory_final_y.png>
+Package pdftex.def Info: images/trajectory_final_y.png  used on input line 659.
+
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+
+Overfull \hbox (7.83322pt too wide) in paragraph at lines 657--660
+[][] [] 
+ []
+
+<images/trajectory_4_x.png, id=366, 578.16pt x 433.62pt>
+File: images/trajectory_4_x.png Graphic file (type png)
+<use images/trajectory_4_x.png>
+Package pdftex.def Info: images/trajectory_4_x.png  used on input line 665.
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+<images/trajectory_4_y.png, id=367, 578.16pt x 433.62pt>
+File: images/trajectory_4_y.png Graphic file (type png)
+<use images/trajectory_4_y.png>
+Package pdftex.def Info: images/trajectory_4_y.png  used on input line 667.
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+
+Overfull \hbox (7.83322pt too wide) in paragraph at lines 665--668
+[][] [] 
+ []
+
+<images/trajectory_5_x.png, id=368, 578.16pt x 433.62pt>
+File: images/trajectory_5_x.png Graphic file (type png)
+<use images/trajectory_5_x.png>
+Package pdftex.def Info: images/trajectory_5_x.png  used on input line 672.
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+<images/trajectory_5_y.png, id=369, 578.16pt x 433.62pt>
+File: images/trajectory_5_y.png Graphic file (type png)
+<use images/trajectory_5_y.png>
+Package pdftex.def Info: images/trajectory_5_y.png  used on input line 674.
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+
+Overfull \hbox (7.83322pt too wide) in paragraph at lines 672--675
+[][] [] 
+ []
+
+
+Overfull \hbox (1.29057pt too wide) in paragraph at lines 700--701
 \T1/lmr/m/n/12 Na pod-sta-wie prze-pro-wa-dzo-nych eks-pe-ry-men-tów mo»na stwi
 er-dzi¢, »e al-go-rytm PPO
  []
 
 [95] [96 <./images/trajectory_start_x.png> <./images/trajectory_start_y.png> <.
 /images/trajectory_mid_x.png> <./images/trajectory_mid_y.png> <./images/traject
-ory_final_x.png> <./images/trajectory_final_y.png>]) [97]
+ory_3_x.png> <./images/trajectory_3_y.png>] [97 <./images/trajectory_final_x.pn
+g> <./images/trajectory_final_y.png> <./images/trajectory_4_x.png> <./images/tr
+ajectory_4_y.png> <./images/trajectory_5_x.png> <./images/trajectory_5_y.png>])
+[98]
 \openout2 = `chapter4.aux'.
 
  (chapter4.tex
@@ -1908,19 +1956,19 @@ Overfull \hbox (1.55768pt too wide) in paragraph at lines 18--20
 , co po-twier-dziªo skom-
  []
 
-[98
+[99
 
 
 
 
-] [99]) [100]
+] [100]) [101]
 
 LaTeX Warning: Empty bibliography on input line 84.
 
-[101
+[102
 
 
-] [102] (C:/Users\domi1\Programowanie\physics-engine\out\main.aux
+] [103] [104] (C:/Users\domi1\Programowanie\physics-engine\out\main.aux
 (C:/Users\domi1\Programowanie\physics-engine\out\chapter1.aux)
 (C:/Users\domi1\Programowanie\physics-engine\out\chapter2.aux)
 (C:/Users\domi1\Programowanie\physics-engine\out\chapter3.aux)
@@ -1938,10 +1986,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17996 strings out of 476339
- 327188 string characters out of 5788119
+ 18062 strings out of 476339
+ 329078 string characters out of 5788119
  1945340 words of memory out of 5000000
- 38123 multiletter control sequences out of 15000+600000
+ 38183 multiletter control sequences out of 15000+600000
  594597 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,10n,77p,1081b,1814s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1971,10 +2019,10 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/domi1/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/domi1/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/domi1/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb>
-Output written on C:/Users\domi1\Programowanie\physics-engine\out\main.pdf (102
- pages, 1328148 bytes).
+Output written on C:/Users\domi1\Programowanie\physics-engine\out\main.pdf (104
+ pages, 1498173 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
+ 515 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

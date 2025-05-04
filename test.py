@@ -4,7 +4,7 @@ import os
 import glob
 
 # Set the directory containing your CSV files
-directory = 'C:\\Users\\domi1\\Programowanie\\physics-engine\\Simulations\\training_1\\Simulations\\sims'  # Change this to your directory path
+directory = 'C:\\Users\\domi1\\Programowanie\\physics-engine\\Simulations\\training_1\\Simulations\\tet'
 csv_files = glob.glob(os.path.join(directory, '*.csv'))
 
 # Store all trajectory data to calculate global axis limits
@@ -45,7 +45,7 @@ for file, df in dataframes:
     plt.axis('equal')
     plt.tight_layout()
     # plt.show()
-    plt.savefig(os.path.join(directory, f'{filename}x.png'))
+    plt.savefig(os.path.join(directory, f'images/{filename}x.png'))
     plt.close()
 
     # YZ Plane
@@ -60,5 +60,5 @@ for file, df in dataframes:
     plt.tick_params(axis='both', which='major', labelsize=16)
     plt.axis('equal')
     plt.tight_layout()
-    plt.savefig(os.path.join(directory, f'{filename}y.png'))
+    plt.savefig(os.path.join(directory, f'images/{filename}y.png'))
     plt.close()

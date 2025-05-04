@@ -10,7 +10,7 @@ from SteeringAlgorithm.Wrapper import RocketEnv
 import torch
 
 from Configs.Rockets.training_1 import Rocket
-from Configs.Environments.no_wind import Environment1
+from Configs.Environments.medium_wind import Environment1
 
 def reward_function(obj):
     return obj.position[2] - np.linalg.norm(obj.angular_velocity) - np.linalg.norm(obj.acceleration[:2])
@@ -19,7 +19,7 @@ def reward_function(obj):
 env = make_vec_env(lambda: RocketEnv(Rocket, Environment1, reward_function, True))
 env = VecNormalize(env, norm_obs=True, norm_reward=True)
 
-model_name = "straight_flight"
+model_name = "straight_flight_v5"
 config = Config()
 path = os.path.join(config["SIMULATION"]["simulation_files_folder_path"], "training_1", "models", model_name)
 model = PPO.load(path)
