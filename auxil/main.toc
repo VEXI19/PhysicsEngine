@@ -65,7 +65,7 @@
 \contentsline {subsubsection}{Kąt natarcia rakiety}{70}{}%
 \contentsline {subsubsection}{Uwagi dotyczące układów współrzędnych}{71}{}%
 \contentsline {subsection}{\numberline {2.5.4}Podsumowanie}{71}{}%
-\contentsline {section}{\numberline {2.6}Moduł wizualizacyjny symulacji.}{71}{}%
+\contentsline {section}{\numberline {2.6}Moduł wizualizacji symulacji.}{71}{}%
 \contentsline {subsection}{\numberline {2.6.1}Okno główne}{72}{}%
 \contentsline {subsection}{\numberline {2.6.2}Okno wizualizacji}{74}{}%
 \contentsline {section}{\numberline {2.7}Dokładność symulacji.}{76}{}%
@@ -90,42 +90,47 @@
 \contentsline {subsection}{\numberline {2.8.2}Wnioski}{81}{}%
 \contentsline {chapter}{\numberline {3}Moduł II: Algorytm sterujący rakietą.}{83}{}%
 \contentsline {section}{\numberline {3.1}Założenia i cele projektowe.}{83}{}%
-\contentsline {section}{\numberline {3.2}Teoretyczne podstawy uczenia modeli sztucznej inteligencji.}{84}{}%
-\contentsline {subsection}{\numberline {3.2.1}Podejścia do uczenia maszynowego. \blx@tocontentsinit {0}\cite {geron-hands-on}}{84}{}%
-\contentsline {subsection}{\numberline {3.2.2}Algorytmy uczenia przez wzmacnianie}{85}{}%
-\contentsline {paragraph}{Metody gradientu polityki (Policy Gradient Methods) \blx@tocontentsinit {0}\cite {ciosek2020expectedpolicygradientsreinforcement}}{85}{}%
-\contentsline {paragraph}{Architektura Aktor-Krytyk (Actor-Critic) \blx@tocontentsinit {0}\cite {han2020actorcriticreinforcementlearningcontrol}}{86}{}%
-\contentsline {paragraph}{Projektowanie funkcji nagrody}{86}{}%
-\contentsline {paragraph}{Wyzwania w zastosowaniu do sterowania rakietą}{87}{}%
-\contentsline {subsection}{\numberline {3.2.3}Modele stosowane w sterowaniu rakietą.}{88}{}%
-\contentsline {subsubsection}{Modele dla uczenia nadzorowanego}{88}{}%
-\contentsline {subsubsection}{Modele dla uczenia nienadzorowanego}{88}{}%
-\contentsline {subsubsection}{Modele dla uczenia przez wzmacnianie \blx@tocontentsinit {0}\cite {sutton2018reinforcement}}{89}{}%
-\contentsline {subsection}{\numberline {3.2.4}Wybrany model - PPO (Proximal Policy Optimization)}{89}{}%
-\contentsline {paragraph}{Charakterystyka teoretyczna}{89}{}%
-\contentsline {paragraph}{Zalety w kontekście sterowania rakietą}{90}{}%
-\contentsline {paragraph}{Ograniczenia i wyzwania}{90}{}%
-\contentsline {subsection}{\numberline {3.2.5}Podsumowanie}{91}{}%
-\contentsline {section}{\numberline {3.3}Użyte technologie.}{91}{}%
-\contentsline {paragraph}{Gymnasium}{92}{}%
-\contentsline {paragraph}{Stable Baselines3}{92}{}%
-\contentsline {subsection}{\numberline {3.3.1}Biblioteki pomocnicze}{92}{}%
-\contentsline {section}{\numberline {3.4}Architektura i implementacja modelu uczącego}{92}{}%
-\contentsline {subsection}{\numberline {3.4.1}Architektura systemu uczącego}{93}{}%
-\contentsline {subsubsection}{Wrapper środowiska symulacyjnego}{94}{}%
-\contentsline {subsubsection}{Funkcja nagrody}{94}{}%
-\contentsline {subsection}{\numberline {3.4.2}Model uczący}{95}{}%
-\contentsline {subsection}{\numberline {3.4.3}Proces uczenia}{96}{}%
-\contentsline {subsubsection}{Inicjalizacja środowiska}{96}{}%
-\contentsline {subsubsection}{Główna pętla uczenia}{96}{}%
-\contentsline {subsection}{\numberline {3.4.4}Podsumowanie}{97}{}%
-\contentsline {section}{\numberline {3.5}Wyniki i wnioski.}{98}{}%
-\contentsline {subsection}{\numberline {3.5.1}Cel działania algorytmu}{98}{}%
-\contentsline {subsection}{\numberline {3.5.2}Metodyka pomiaru skuteczności}{98}{}%
-\contentsline {subsection}{\numberline {3.5.3}Wyniki}{98}{}%
-\contentsline {subsection}{\numberline {3.5.4}Wnioski}{100}{}%
-\contentsline {subsection}{\numberline {3.5.5}Podsumowanie}{100}{}%
-\contentsline {chapter}{\numberline {4}Podsumowanie}{102}{}%
-\contentsline {section}{\numberline {4.1}Podsumowanie}{102}{}%
-\contentsline {section}{\numberline {4.2}Wnioski końcowe}{102}{}%
-\contentsline {section}{\numberline {4.3}Perspektywy rozwoju i dalsze badania}{103}{}%
+\contentsline {section}{\numberline {3.2}Użyte technologie.}{84}{}%
+\contentsline {paragraph}{Gymnasium}{84}{}%
+\contentsline {paragraph}{Stable Baselines3}{84}{}%
+\contentsline {subsection}{\numberline {3.2.1}Biblioteki pomocnicze}{84}{}%
+\contentsline {section}{\numberline {3.3}Podstawy teoretyczne uczenia maszynowego.}{85}{}%
+\contentsline {subsection}{\numberline {3.3.1}Podejścia do uczenia maszynowego.}{85}{}%
+\contentsline {subsection}{\numberline {3.3.2}Algorytmy uczenia przez wzmacnianie}{86}{}%
+\contentsline {paragraph}{Metody gradientu polityki (Policy Gradient Methods) \blx@tocontentsinit {0}\cite {ciosek2020expectedpolicygradientsreinforcement}}{86}{}%
+\contentsline {paragraph}{Architektura Aktor-Krytyk (Actor-Critic) \blx@tocontentsinit {0}\cite {han2020actorcriticreinforcementlearningcontrol}}{87}{}%
+\contentsline {paragraph}{Projektowanie funkcji nagrody}{87}{}%
+\contentsline {paragraph}{Wyzwania w zastosowaniu do sterowania rakietą}{88}{}%
+\contentsline {subsection}{\numberline {3.3.3}Modele stosowane w sterowaniu rakietą.}{89}{}%
+\contentsline {subsubsection}{Modele dla uczenia nadzorowanego}{89}{}%
+\contentsline {subsubsection}{Modele dla uczenia nienadzorowanego}{89}{}%
+\contentsline {subsubsection}{Modele dla uczenia przez wzmacnianie \blx@tocontentsinit {0}\cite {sutton2018reinforcement}}{90}{}%
+\contentsline {section}{\numberline {3.4}System sterowania lotu rakietą}{90}{}%
+\contentsline {subsection}{\numberline {3.4.1}Funkcja aktywacji}{90}{}%
+\contentsline {subsection}{\numberline {3.4.2}Inicjalizacja wag}{92}{}%
+\contentsline {subsection}{\numberline {3.4.3}Działanie sieci MLP}{93}{}%
+\contentsline {section}{\numberline {3.5}Model uczący - Proximal Policy Optimization (PPO)}{94}{}%
+\contentsline {subsection}{\numberline {3.5.1}Charakterystyka teoretyczna}{94}{}%
+\contentsline {subsection}{\numberline {3.5.2}Aktualizacja wag sieci MLP}{95}{}%
+\contentsline {paragraph}{}{95}{}%
+\contentsline {paragraph}{}{96}{}%
+\contentsline {subsection}{\numberline {3.5.3}Podsumowanie}{96}{}%
+\contentsline {section}{\numberline {3.6}Architektura i implementacja modelu uczącego}{97}{}%
+\contentsline {subsection}{\numberline {3.6.1}Architektura systemu uczącego}{97}{}%
+\contentsline {subsubsection}{Wrapper środowiska symulacyjnego}{99}{}%
+\contentsline {subsubsection}{Funkcja nagrody}{99}{}%
+\contentsline {subsection}{\numberline {3.6.2}Model uczący}{100}{}%
+\contentsline {subsection}{\numberline {3.6.3}Proces uczenia}{101}{}%
+\contentsline {subsubsection}{Inicjalizacja środowiska}{101}{}%
+\contentsline {subsubsection}{Główna pętla uczenia}{101}{}%
+\contentsline {subsection}{\numberline {3.6.4}Podsumowanie}{102}{}%
+\contentsline {section}{\numberline {3.7}Wyniki i wnioski.}{103}{}%
+\contentsline {subsection}{\numberline {3.7.1}Cel działania algorytmu}{103}{}%
+\contentsline {subsection}{\numberline {3.7.2}Metodyka pomiaru skuteczności}{103}{}%
+\contentsline {subsection}{\numberline {3.7.3}Wyniki}{103}{}%
+\contentsline {subsection}{\numberline {3.7.4}Wnioski}{104}{}%
+\contentsline {subsection}{\numberline {3.7.5}Podsumowanie}{105}{}%
+\contentsline {chapter}{\numberline {4}Podsumowanie}{107}{}%
+\contentsline {section}{\numberline {4.1}Podsumowanie}{107}{}%
+\contentsline {section}{\numberline {4.2}Wnioski końcowe}{107}{}%
+\contentsline {section}{\numberline {4.3}Perspektywy rozwoju i dalsze badania}{108}{}%
