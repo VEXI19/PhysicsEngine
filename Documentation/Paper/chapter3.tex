@@ -228,8 +228,10 @@ Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt 
 
 \begin{figure}
     \subfloat[Wyjście modelu sterującego (0, 0)]{\label{Fig1:a} \includegraphics[width=0.3\textwidth]{images/rocket_neutral_position}}%
+    \\
     \hfill
     \subfloat[Wyjście modelu sterującego (10, 0)]{\label{Fig1:b} \includegraphics[width=0.3\textwidth]{images/rocket_right_turn}}%
+    \\
     \hfill
     \subfloat[Wyjście modelu sterującego (0, 10)]{\label{Fig1:c} \includegraphics[width=0.3\textwidth]{images/rocket_down_turn}}
 
@@ -241,9 +243,9 @@ Wyjściem modelu jest wektor \([\alpha_x, \alpha_y]\), który reprezentuje kąt 
 
 W każdej warstwie ukrytej sieci neuronowej zastosowano funkcję aktywacji typu tangens hiperboliczny (\( \tanh \)), która przekształca sumę ważoną wejść neuronu w zakres \((-1, 1)\). Funkcja ta opisana jest wzorem:
 
-\[
+\begin{equation}
 \tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
-\]
+\end{equation}
 
 Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci, co umożliwia modelowi aproksymację złożonych zależności pomiędzy stanem rakiety a odpowiednimi komendami sterującymi. W przeciwieństwie do funkcji ReLU, funkcja \( \tanh \) jest symetryczna względem zera, co może przyspieszyć zbieżność w sytuacjach, gdy dane wejściowe są również odpowiednio znormalizowane wokół zera. Wybór tej funkcji aktywacji wspomaga stabilność propagacji sygnału w głębokich sieciach neuronowych.
 
@@ -258,9 +260,9 @@ Zastosowanie funkcji \( \tanh \) zapewnia nieliniowość przekształceń w sieci
 
 Wagi sieci neuronowej zostały zainicjalizowane metodą ortogonalną, co oznacza, że każda macierz wag w warstwach ukrytych została początkowo ustawiona jako macierz ortogonalna. Metoda ta polega na wygenerowaniu macierzy o ortonormalnych kolumnach (lub wierszach), spełniających warunek:
 
-\[
+\begin{equation}
 \mathbf{W}^\top \mathbf{W} = \mathbf{I}
-\]
+\end{equation}
 
 Inicjalizacja ortogonalna ma na celu utrzymanie odpowiedniego przepływu gradientów podczas procesu uczenia – szczególnie w głębokich sieciach. Zmniejsza to ryzyko eksplozji lub zaniku gradientu w czasie wstecznej propagacji błędu. W praktyce metoda ta często przyczynia się do szybszej i bardziej stabilnej konwergencji modelu, a także poprawia jego końcową skuteczność.
 
@@ -270,9 +272,9 @@ Sieć neuronowa typu MLP (Multilayer Perceptron) jest klasycznym modelem sieci n
 
 W każdej warstwie sieci neuronowej obliczana jest suma ważona wejść \( \mathbf{h}^{(l-1)} \) z poprzedniej warstwy, do której dodawany jest wektor przesunięcia \( \mathbf{b}^{(l)} \). Wynik tej operacji przechodzi przez funkcję aktywacji \( \tanh \), aby uzyskać wyjście z warstwy ukrytej. Proces ten dla każdej warstwy \( l \) opisuje wzór:
 
-\[
+\begin{equation}
 \mathbf{h}^{(l)} = \tanh\left( \mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)} \right)
-\]
+\end{equation}
 
 gdzie:
 \begin{itemize}
@@ -286,9 +288,9 @@ W przypadku sieci MLP z pięcioma warstwami ukrytymi, obliczenia te będą zacho
 
 Po przejściu przez wszystkie warstwy ukryte, ostatnia warstwa generuje ostateczne wyjście, które w przypadku systemu sterowania rakietą reprezentuje wektor \([\alpha_x, \alpha_y]\) – kąty wychylenia silnika w osiach \(x\) oraz \(y\). Wyjście tej warstwy jest obliczane za pomocą:
 
-\[
+\begin{equation}
 \mathbf{y} = \mathbf{W}^{(6)} \mathbf{h}^{(5)} + \mathbf{b}^{(6)}
-\]
+\end{equation}
 
 gdzie:
 \begin{itemize}
@@ -348,15 +350,15 @@ Mechanizm \textit{clip} ogranicza aktualizację funkcji polityki, jeśli zmiana 
 
 Polityka $\pi_\theta(a_t|s_t)$ jest reprezentowana przez sieć neuronową typu MLP (wielowarstwowy perceptron), której parametry $\theta$ są trenowane w oparciu o gradient funkcji kosztu $L^{CLIP}(\theta)$. Po każdej serii interakcji ze środowiskiem (np. po kilku epizodach lotu rakiety), algorytm PPO oblicza gradient:
 
-\[
+\begin{equation}
 \nabla_\theta L^{CLIP}(\theta)
-\]
+\end{equation}
 
 i wykorzystuje go do aktualizacji wag MLP przy pomocy optymalizatora (najczęściej Adam). Proces ten polega na modyfikacji wag w kierunku maksymalizacji funkcji nagrody przy jednoczesnym ograniczeniu zmian w polityce. Dodatkowo, równolegle aktualizowana jest także sieć wartości (critic), która minimalizuje błąd estymacji wartości funkcji stanu $V(s_t)$, najczęściej poprzez funkcję strat typu MSE:
 
-\[
+\begin{equation}
 L^{\text{value}}(\phi) = \left(V_\phi(s_t) - R_t\right)^2,
-\]
+\end{equation}
 
 gdzie $R_t$ to zwrot zdyskontowany, a $\phi$ oznacza parametry sieci krytyka. Obie sieci — aktora i krytyka — uczą się jednocześnie, lecz niezależnie, umożliwiając stabilne i szybkie dostosowanie strategii sterowania.
 
@@ -364,9 +366,9 @@ gdzie $R_t$ to zwrot zdyskontowany, a $\phi$ oznacza parametry sieci krytyka. Ob
 
 W przypadku rakiety, stan $s_t$ obejmuje informacje o położeniu, prędkościach, orientacji oraz aktualnych ustawieniach silnika. Na przykład:
 
-\[
+\begin{equation}
 s_t = [x, y, z, v_x, v_y, v_z, \text{pitch}, \text{yaw}]
-\]
+\end{equation}
 
 Akcja $a_t = [\alpha_x, \alpha_y]$ odpowiada kątom wychylenia silnika w osi \( x \) i \( y \). Polityka PPO $\pi_\theta(a_t|s_t)$ reprezentowana jest przez sieć MLP, która przekształca stan na akcję w sposób ciągły. Dzięki funkcji kosztu $L^{CLIP}(\theta)$ model uczy się tak aktualizować parametry $\theta$, by wybierać coraz lepsze komendy sterujące przy zachowaniu stabilności uczenia.
 
