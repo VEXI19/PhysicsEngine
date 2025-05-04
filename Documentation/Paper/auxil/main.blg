@@ -1,14 +1,14 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[163] biber-MSWIN64:340> INFO - === 
-[223] Biber.pm:420> INFO - Reading 'main.bcf'
-[404] Biber.pm:994> INFO - Found 27 citekeys in bib section 0
-[428] Biber.pm:4463> INFO - Processing section 0
-[445] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[539] bibtex.pm:1713> INFO - LaTeX decoding ...
-[586] bibtex.pm:1519> INFO - Found BibTeX data source 'C:\Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\bibliography.bib'
-[894] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[895] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[895] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pl-PL'
-[939] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[964] bbl.pm:779> INFO - Output to main.bbl
+[174] biber-MSWIN64:340> INFO - === 
+[238] Biber.pm:420> INFO - Reading 'main.bcf'
+[440] Biber.pm:994> INFO - Found 27 citekeys in bib section 0
+[468] Biber.pm:4463> INFO - Processing section 0
+[485] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[618] bibtex.pm:1713> INFO - LaTeX decoding ...
+[681] bibtex.pm:1519> INFO - Found BibTeX data source 'C:\Users\Kuba\Documents\GitHub\PhysicsEngine\Documentation\Paper\bibliography.bib'
+[1012] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1013] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1013] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pl-PL'
+[1061] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1088] bbl.pm:779> INFO - Output to main.bbl
